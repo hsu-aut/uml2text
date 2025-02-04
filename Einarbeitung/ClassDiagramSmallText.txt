@@ -1,0 +1,83 @@
+
+Beschreibung des UML-Diagramms
+
+Das UML-Diagramm beschreibt ein Modell für eine Anwendung, die Benutzer (User), Tweets (Tweet) und Wörter (Word) verwaltet. Es umfasst drei Hauptklassen:
+
+    User (Benutzer)
+    Tweet (Kurznachricht)
+    Word (Wort mit emotionaler Bedeutung)
+
+Zusätzlich wurden folgende Beziehungen hinzugefügt:
+
+    Eine 1:n-Assoziation zwischen User und Tweet → Ein User kann mehrere Tweets erstellen, aber jeder Tweet gehört genau einem User.
+    Eine 1:n-Kompositionsbeziehung zwischen Tweet und Word → Ein Tweet besteht aus mehreren Wörtern, die nach Emotionen klassifiziert werden können. Wörter existieren nur innerhalb eines Tweets und können nicht unabhängig davon existieren.
+
+1. Klasse: User
+
+Attribute:
+
+    username: String → Benutzername des Users.
+    nombre: String → Vorname des Users.
+    apellido: String → Nachname des Users.
+    password: String → Passwort des Users (sollte sicher gespeichert werden, z. B. als Hash).
+
+Assoziationen:
+
+    1:n-Beziehung zu Tweet:
+        Ein User kann mehrere Tweets erstellen.
+        Ein Tweet gehört immer genau einem User.
+
+2. Klasse: Tweet
+
+Attribute:
+
+    created_by: String → Gibt an, von welchem User der Tweet erstellt wurde.
+    created_at: Date → Datum der Erstellung des Tweets.
+    paths: [String] → Eine Liste von Strings, möglicherweise URLs oder Referenzen auf Medieninhalte.
+    text: String → Der eigentliche Inhalt des Tweets.
+
+Assoziationen:
+
+    1:n-Assoziation mit User:
+        Jeder Tweet gehört zu genau einem User.
+        Ein User kann mehrere Tweets haben.
+    1:n-Komposition mit Word:
+        Ein Tweet besteht aus mehreren Wörtern.
+        Wörter existieren nur im Kontext eines Tweets.
+        Wenn ein Tweet gelöscht wird, werden alle zugehörigen Wörter ebenfalls gelöscht.
+
+3. Klasse: Word
+
+Attribute:
+
+    word: String → Das gespeicherte Wort.
+    emotion.name: String → Name der Emotion, die mit dem Wort verbunden ist (z. B. Freude, Trauer, Wut).
+    emotion.path: String → Möglicher Verweis auf eine Ressource oder Datei, die die Emotion näher beschreibt (z. B. ein Bild oder eine Audiodatei).
+    type: String → Art des Wortes (z. B. Substantiv, Adjektiv, Verb).
+    enabled: Boolean → Gibt an, ob das Wort aktiv ist oder nicht (anstatt eines Strings sollte hier ein Boolean genutzt werden).
+
+Assoziationen:
+
+    1:n-Kompositionsbeziehung mit Tweet:
+        Ein Tweet besteht aus mehreren Wörtern.
+        Ein Wort kann nicht unabhängig von einem Tweet existieren.
+        Wenn ein Tweet gelöscht wird, werden auch alle enthaltenen Wörter entfernt.
+
+Zusammenfassung der Assoziationen:
+
+    User (1) ↔ (n) Tweet
+        Ein User kann mehrere Tweets schreiben.
+        Jeder Tweet gehört genau einem User.
+
+    Tweet (1) ◼️↔ (n) Word (Komposition)
+        Ein Tweet besteht aus mehreren Wörtern.
+        Wörter existieren nur innerhalb eines Tweets.
+        Wenn ein Tweet gelöscht wird, verschwinden auch alle Wörter.
+
+Mögliche Verbesserungen:
+
+✅ Emotionen als eigene Klasse modellieren: Statt emotion.name und emotion.path als Attribute in Word zu speichern, könnte eine eigene Klasse Emotion eingeführt werden.
+
+✅ Passwortsicherheit verbessern: password sollte nicht im Klartext gespeichert werden, sondern als Hashwert mit Salt.
+
+✅ Datenbanknormalisierung prüfen: Falls dieselben Wörter in mehreren Tweets vorkommen, könnte die Word-Entität eventuell von Tweet entkoppelt werden, um Redundanz zu reduzieren.
