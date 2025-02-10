@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg/UML/1.4">
+   <XMI.header>
+      <XMI.documentation>
+         <XMI.exporter>ananas.org stylesheet</XMI.exporter>
+      </XMI.documentation>
+      <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+   </XMI.header>
+   <XMI.content>
+      <UML:Model xmi.id="M.1" name="address" visibility="public"
+                 isSpecification="fase" isRoot="false"
+                 isLeaf="false" isAbstract="false">
+         <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="S.1" name="root" visibility="public"
+                            isSpecification="false" baseClass="Class">
+            </UML:Stereotype>
+            <UML:TagDefinition xmi.id="TD.1" name="position"
+                               isSpecification="false" tagType="String">
+               <UML:TagDefinition.owner>
+                  <UML:Stereotype xmi.id="S.1"/>
+               </UML:TagDefinition.owner>
+            </UML:TagDefinition>
+            <UML:Class xmi.id="C.1" name="person" visibility="public"
+                       isSpecification="false" namespace="M.1" isRoot="true"
+                       isLeaf="true" isAbstract="false" isActive="false">
+               <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="S.1"/>
+               </UML:ModelElement.stereotype>
+               <UML:Classifier.feature>
+                  <UML:Attribute xmi.id="A.1" name="name" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+                  <UML:Attribute xmi.id="A.2" name="telephone" visibility="private"
+                                 isSpecification="false" ownerScope="instance">
+                     <UML:StructuralFeature.multiplicity>
+                        <UML:Multiplicity>
+                           <UML:Multiplicity.range>
+                              <UML:MultiplicityRange lower="0" upper="5"/>
+                           </UML:Multiplicity.range>
+                       </UML:Multiplicity>
+                     </UML:StructuralFeature.multiplicity>
+                  </UML:Attribute>
+                  <UML:Attribute xmi.id="A.3" name="fax" visibility="private"
+                                 isSpecification="false" ownerScope="instance">
+                     <UML:StructuralFeature.multiplicity>
+                        <UML:Multiplicity>
+                           <UML:Multiplicity.range>
+                              <UML:MultiplicityRange lower="0" upper="5"/>
+                           </UML:Multiplicity.range>
+                       </UML:Multiplicity>
+                     </UML:StructuralFeature.multiplicity>
+                  </UML:Attribute>
+                  <UML:Attribute xmi.id="A.4" name="email" visibility="private"
+                                 isSpecification="false" ownerScope="instance">
+                     <UML:StructuralFeature.multiplicity>
+                        <UML:Multiplicity>
+                           <UML:Multiplicity.range>
+                              <UML:MultiplicityRange lower="0" upper="5"/>
+                           </UML:Multiplicity.range>
+                       </UML:Multiplicity>
+                     </UML:StructuralFeature.multiplicity>
+                  </UML:Attribute>
+               </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="C.2" name="address" visibility="public"
+                       isSpecification="false" namespace="M.1" isRoot="true"
+                       isLeaf="true" isAbstract="false" isActive="false">
+               <UML:Classifier.feature>
+                  <UML:Attribute xmi.id="A.5" name="name" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+                  <UML:Attribute xmi.id="A.6" name="street" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+                  <UML:Attribute xmi.id="A.7" name="zip" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+                  <UML:Attribute xmi.id="A.8" name="region" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+                  <UML:Attribute xmi.id="A.9" name="city" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+                  <UML:Attribute xmi.id="A.10" name="country" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+               </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="C.3" name="job" visibility="public"
+                       isSpecification="false" namespace="M.1" isRoot="true"
+                       isLeaf="true" isAbstract="false" isActive="false">
+               <UML:Classifier.feature>
+                  <UML:Attribute xmi.id="A.11" name="title" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+                  <UML:Attribute xmi.id="A.12" name="organization" visibility="private"
+                                 isSpecification="false" ownerScope="instance"/>
+               </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Association xmi.id="A.1" isSpecification="false">
+               <UML:ModelElement.taggedValue>
+                  <UML:TaggedValue xmi.id="T.1" isSpecification="false"
+                                   dataValue="20">
+                     <UML:TaggedValue.type>
+                        <UML:TagDefinition xmi.idref="TD.1"/>
+                     </UML:TaggedValue.type>
+                  </UML:TaggedValue>
+               </UML:ModelElement.taggedValue>
+               <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AE.1" visibility="public"
+                                      isSpecification="false"
+                                      isNavigable="true">
+                     <UML:AssociationEnd.participant>
+                        <UML:Class xmi.idref="C.1"/>
+                     </UML:AssociationEnd.participant>
+                  </UML:AssociationEnd>
+                  <UML:AssociationEnd xmi.id="AE.2" visibility="public"
+                                     isSpecification="false"
+                                     isNavigable="true">
+                     <UML:AssociationEnd.participant>
+                       <UML:Class xmi.idref="C.2"/>
+                     </UML:AssociationEnd.participant>
+                     <UML:AssociationEnd.multiplicity>
+                        <UML:Multiplicity>
+                           <UML:Multiplicity.range>
+                              <UML:MultiplicityRange lower="1" upper="5"/>
+                           </UML:Multiplicity.range>
+                        </UML:Multiplicity>
+                     </UML:AssociationEnd.multiplicity>
+                  </UML:AssociationEnd>
+               </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="A.2" isSpecification="false">
+               <UML:ModelElement.taggedValue>
+                  <UML:TaggedValue xmi.id="T.2" isSpecification="false"
+                                   dataValue="120">
+                     <UML:TaggedValue.type>
+                        <UML:TagDefinition xmi.idref="TD.1"/>
+                     </UML:TaggedValue.type>
+                  </UML:TaggedValue>
+               </UML:ModelElement.taggedValue>
+               <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AE.3" visibility="public"
+                                      isSpecification="false"
+                                      isNavigable="true">
+                     <UML:AssociationEnd.participant>
+                        <UML:Class xmi.idref="C.1"/>
+                     </UML:AssociationEnd.participant>
+                  </UML:AssociationEnd>
+                  <UML:AssociationEnd xmi.id="AE.4" visibility="public"
+                                     isSpecification="false"
+                                     isNavigable="true">
+                     <UML:AssociationEnd.participant>
+                       <UML:Class xmi.idref="C.3"/>
+                     </UML:AssociationEnd.participant>
+                  </UML:AssociationEnd>
+               </UML:Association.connection>
+            </UML:Association>
+         </UML:Namespace.ownedElement>
+      </UML:Model>
+   </XMI.content>
+</XMI>

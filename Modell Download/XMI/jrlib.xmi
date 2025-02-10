@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.3" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Bouml" exporterVersion="1.15"/>
+	<uml:Model xmi:type="uml:Model" xmi:id="themodel" name="jrlib_bouml">
+		<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x81_22" name ="jrlib_bouml">
+			<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f702_22" name ="org">
+				<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f782_22" name ="jreserve">
+					<packagedElement xmi:type="uml:Interface" name="Changeable" xmi:id="BOUML_0x1f582_4" visibility="public" isAbstract="true">
+						<ownedOperation xmi:type="uml:Operation" name="addChangeListener" xmi:id="BOUML_0x1f482_2" visibility="public" isAbstract="false">
+							<ownedParameter xmi:type="uml:Parameter" name="listener" xmi:id="BOUML_op_param_1" direction ="in">
+								<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f402_4"/>
+							</ownedParameter>
+						</ownedOperation>
+						<ownedOperation xmi:type="uml:Operation" name="removeChangeListener" xmi:id="BOUML_0x1f502_2" visibility="public" isAbstract="false">
+							<ownedParameter xmi:type="uml:Parameter" name="listener" xmi:id="BOUML_op_param_2" direction ="in">
+								<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f402_4"/>
+							</ownedParameter>
+						</ownedOperation>
+					</packagedElement>
+					<packagedElement xmi:type="uml:Interface" name="CalculationData" xmi:id="BOUML_0x1f602_4" visibility="public" isAbstract="true">
+						<ownedOperation xmi:type="uml:Operation" name="recalculate" xmi:id="BOUML_0x1f582_2" visibility="public" isAbstract="false">
+						</ownedOperation>
+						<ownedOperation xmi:type="uml:Operation" name="detach" xmi:id="BOUML_0x1f602_2" visibility="public" isAbstract="false">
+						</ownedOperation>
+						<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1f482_0" general="BOUML_0x1f582_4"/>
+					</packagedElement>
+					<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f802_22" name ="triangle">
+						<packagedElement xmi:type="uml:Interface" name="Triangle" xmi:id="BOUML_0x1f682_4" visibility="public" isAbstract="true">
+							<ownedOperation xmi:type="uml:Operation" name="getAccidentCount" xmi:id="BOUML_0x1f682_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_1" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="getDevelopmentCount" xmi:id="BOUML_0x1f702_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_2" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="getDevelopmentCount" xmi:id="BOUML_0x1f782_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_3" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="accident" xmi:id="BOUML_op_param_3" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x1f802_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_4" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="accident" xmi:id="BOUML_op_param_4" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_5" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="toArray" xmi:id="BOUML_0x1f882_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_5" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_2"/>
+								</ownedParameter>
+							</ownedOperation>
+							<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1f502_0" general="BOUML_0x1f602_4"/>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Interface" name="ModifiedTriangle" xmi:id="BOUML_0x1f702_4" visibility="public">
+							<ownedOperation xmi:type="uml:Operation" name="getSourceTriangle" xmi:id="BOUML_0x1f902_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_6" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f682_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1f582_0" general="BOUML_0x1f682_4"/>
+							<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x21002_0" visibility="private" association="BOUML_ASSOC_0x21002_0" aggregation="none">
+								<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f682_4"/>
+							</ownedAttribute>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x21002_0" visibility="private">
+							<memberEnd xmi:idref="BOUML_0x21002_0"/>
+							<ownedEnd xmi:type="uml:Property" xmi:id="BOUML_REVERSE_0x21002_0" association="BOUML_ASSOC_0x21002_0" visibility="private" type="BOUML_0x1f702_4" aggregation="none" isNavigable="false"/>
+							<memberEnd  xmi:idref="BOUML_REVERSE_0x21002_0"/>
+						</packagedElement>
+					</packagedElement>
+					<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f882_22" name ="factor">
+						<packagedElement xmi:type="uml:Interface" name="FactorTriangle" xmi:id="BOUML_0x1f782_4" visibility="public">
+							<ownedOperation xmi:type="uml:Operation" name="getSourceTriangle" xmi:id="BOUML_0x1f982_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_7" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f682_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1f602_0" general="BOUML_0x1f682_4"/>
+							<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20f02_0" visibility="private" association="BOUML_ASSOC_0x20f02_0" aggregation="none">
+								<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f682_4"/>
+							</ownedAttribute>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Interface" name="ModifiedFactorTriangle" xmi:id="BOUML_0x20182_4" visibility="public">
+							<ownedOperation xmi:type="uml:Operation" name="getSourceFactors" xmi:id="BOUML_0x21482_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_8" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f782_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20e82_0" general="BOUML_0x1f782_4"/>
+							<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20f82_0" visibility="private" association="BOUML_ASSOC_0x20f82_0" aggregation="none">
+								<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f782_4"/>
+							</ownedAttribute>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f902_22" name ="linkratio">
+							<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1fb02_22" name ="standarderror">
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioSE" xmi:id="BOUML_0x1ff82_4" visibility="public">
+									<ownedOperation xmi:type="uml:Operation" name="getSourceLRScales" xmi:id="BOUML_0x20f82_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_9" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_0x1fe82_4"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="getDevelopmentCount" xmi:id="BOUML_0x21002_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_10" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x21082_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_11" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+										</ownedParameter>
+										<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_6" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="toArray" xmi:id="BOUML_0x21102_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_12" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_3"/>
+										</ownedParameter>
+									</ownedOperation>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20182_0" general="BOUML_0x1f602_4"/>
+									<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20a82_0" visibility="private" association="BOUML_ASSOC_0x20a82_0" aggregation="none">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1fe82_4"/>
+									</ownedAttribute>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioSESelection" xmi:id="BOUML_0x20002_4" visibility="public">
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20202_0" general="BOUML_0x1ff82_4"/>
+									<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20982_0" visibility="private" association="BOUML_ASSOC_0x20982_0" aggregation="none">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x20082_4"/>
+									</ownedAttribute>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20c02_0" general="BOUML_0x1f882_4"/>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioSEFunction" xmi:id="BOUML_0x20082_4" visibility="public">
+									<ownedOperation xmi:type="uml:Operation" name="fit" xmi:id="BOUML_0x21202_2" visibility="public" isAbstract="false">
+										<ownedParameter xmi:type="uml:Parameter" name="ses" xmi:id="BOUML_op_param_7" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_0x1ff82_4"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x21282_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_13" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+										</ownedParameter>
+										<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_8" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20a02_0" visibility="private" association="BOUML_ASSOC_0x20982_0" aggregation="composite">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x20002_4"/>
+									</ownedAttribute>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20e02_0" general="BOUML_0x20102_4"/>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20a82_0" visibility="private">
+									<memberEnd xmi:idref="BOUML_0x20a82_0"/>
+									<ownedEnd xmi:type="uml:Property" xmi:id="BOUML_REVERSE_0x20a82_0" association="BOUML_ASSOC_0x20a82_0" visibility="private" type="BOUML_0x1ff82_4" aggregation="none" isNavigable="false"/>
+									<memberEnd  xmi:idref="BOUML_REVERSE_0x20a82_0"/>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20982_0" visibility="private">
+									<memberEnd xmi:idref="BOUML_0x20982_0"/>
+									<memberEnd xmi:idref="BOUML_0x20a02_0"/>
+								</packagedElement>
+							</packagedElement>
+							<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1fa82_22" name ="curve">
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioFunction" xmi:id="BOUML_0x1fd02_4" visibility="public">
+									<ownedOperation xmi:type="uml:Operation" name="fit" xmi:id="BOUML_0x20a02_2" visibility="public" isAbstract="false">
+										<ownedParameter xmi:type="uml:Parameter" name="lr" xmi:id="BOUML_op_param_9" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f802_4"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x20a82_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_14" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+										</ownedParameter>
+										<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_10" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20802_0" visibility="private" association="BOUML_ASSOC_0x20782_0" aggregation="composite">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1fd82_4"/>
+									</ownedAttribute>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20d02_0" general="BOUML_0x20102_4"/>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioSmoothingSelection" xmi:id="BOUML_0x1fd82_4" visibility="public">
+									<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20782_0" visibility="private" association="BOUML_ASSOC_0x20782_0" aggregation="none">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1fd02_4"/>
+									</ownedAttribute>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x21202_0" general="BOUML_0x1f882_4"/>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x21382_0" general="BOUML_0x20202_4"/>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioSmoothing" xmi:id="BOUML_0x20202_4" visibility="public">
+									<ownedOperation xmi:type="uml:Operation" name="getSourceLinkRatios" xmi:id="BOUML_0x20b02_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_15" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f802_4"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="setDevelopmentCount" xmi:id="BOUML_0x20b82_2" visibility="public" isAbstract="false">
+										<ownedParameter xmi:type="uml:Parameter" name="developments" xmi:id="BOUML_op_param_11" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+										</ownedParameter>
+									</ownedOperation>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x21402_0" general="BOUML_0x1f802_4"/>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20782_0" visibility="private">
+									<memberEnd xmi:idref="BOUML_0x20782_0"/>
+									<memberEnd xmi:idref="BOUML_0x20802_0"/>
+								</packagedElement>
+							</packagedElement>
+							<packagedElement xmi:type="uml:Interface" name="LinkRatio" xmi:id="BOUML_0x1f802_4" visibility="public">
+								<ownedOperation xmi:type="uml:Operation" name="getSourceFactors" xmi:id="BOUML_0x1fa02_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_16" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f782_4"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="getDevelopmentCount" xmi:id="BOUML_0x1fa82_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_17" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x1fb02_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_18" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_12" direction ="in">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="toArray" xmi:id="BOUML_0x1fb82_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_19" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_3"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="getfWeight" xmi:id="BOUML_0x21582_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_20" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="accident" xmi:id="BOUML_op_param_13" direction ="in">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_14" direction ="in">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="getMackAlpha" xmi:id="BOUML_0x1fc02_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_21" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_15" direction ="in">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+								</ownedOperation>
+								<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1f682_0" general="BOUML_0x1f602_4"/>
+								<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20b82_0" visibility="private" association="BOUML_ASSOC_0x20b82_0" aggregation="none">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f782_4"/>
+								</ownedAttribute>
+							</packagedElement>
+							<packagedElement xmi:type="uml:Interface" name="LinkRatioSelection" xmi:id="BOUML_0x1fb82_4" visibility="public">
+								<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20682_0" visibility="private" association="BOUML_ASSOC_0x20682_0" aggregation="none">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1fc02_4"/>
+								</ownedAttribute>
+								<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x21082_0" general="BOUML_0x1f802_4"/>
+								<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x21182_0" general="BOUML_0x1f882_4"/>
+							</packagedElement>
+							<packagedElement xmi:type="uml:Interface" name="LinkRatioMethod" xmi:id="BOUML_0x1fc02_4" visibility="public">
+								<ownedOperation xmi:type="uml:Operation" name="fit" xmi:id="BOUML_0x20882_2" visibility="public" isAbstract="false">
+									<ownedParameter xmi:type="uml:Parameter" name="factors" xmi:id="BOUML_op_param_16" direction ="in">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f782_4"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x20902_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_22" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_17" direction ="in">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="getWeight" xmi:id="BOUML_0x21502_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_23" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="accident" xmi:id="BOUML_op_param_18" direction ="in">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_19" direction ="in">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="getMackAlpha" xmi:id="BOUML_0x20982_2" visibility="public" isAbstract="false">
+									<ownedParameter name="return" xmi:id="BOUML_return_24" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20702_0" visibility="private" association="BOUML_ASSOC_0x20682_0" aggregation="composite">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1fb82_4"/>
+								</ownedAttribute>
+								<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20c82_0" general="BOUML_0x20102_4"/>
+							</packagedElement>
+							<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1fb82_22" name ="scale">
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioScaleEstimator" xmi:id="BOUML_0x1ff02_4" visibility="public">
+									<ownedOperation xmi:type="uml:Operation" name="fit" xmi:id="BOUML_0x20e82_2" visibility="public" isAbstract="false">
+										<ownedParameter xmi:type="uml:Parameter" name="scales" xmi:id="BOUML_op_param_20" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_0x1fe82_4"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x20f02_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_25" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+										</ownedParameter>
+										<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_21" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20902_0" visibility="private" association="BOUML_ASSOC_0x20882_0" aggregation="composite">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1fe02_4"/>
+									</ownedAttribute>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20d82_0" general="BOUML_0x20102_4"/>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioScaleSelection" xmi:id="BOUML_0x1fe02_4" visibility="public">
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1ff82_0" general="BOUML_0x1fe82_4"/>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x20002_0" general="BOUML_0x1f882_4"/>
+									<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20882_0" visibility="private" association="BOUML_ASSOC_0x20882_0" aggregation="none">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1ff02_4"/>
+									</ownedAttribute>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Interface" name="LinkRatioScale" xmi:id="BOUML_0x1fe82_4" visibility="public">
+									<ownedOperation xmi:type="uml:Operation" name="getSourceLinkRatios" xmi:id="BOUML_0x20c02_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_26" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f802_4"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="getDevelopmentCount" xmi:id="BOUML_0x20d02_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_27" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x20d82_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_28" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+										</ownedParameter>
+										<ownedParameter xmi:type="uml:Parameter" name="development" xmi:id="BOUML_op_param_22" direction ="in">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+										</ownedParameter>
+									</ownedOperation>
+									<ownedOperation xmi:type="uml:Operation" name="toArray" xmi:id="BOUML_0x20e02_2" visibility="public" isAbstract="false">
+										<ownedParameter name="return" xmi:id="BOUML_return_29" direction="return">
+											<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_3"/>
+										</ownedParameter>
+									</ownedOperation>
+									<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1ff02_0" general="BOUML_0x1f602_4"/>
+									<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x20b02_0" visibility="private" association="BOUML_ASSOC_0x20b02_0" aggregation="none">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f802_4"/>
+									</ownedAttribute>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20882_0" visibility="private">
+									<memberEnd xmi:idref="BOUML_0x20882_0"/>
+									<memberEnd xmi:idref="BOUML_0x20902_0"/>
+								</packagedElement>
+								<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20b02_0" visibility="private">
+									<memberEnd xmi:idref="BOUML_0x20b02_0"/>
+									<ownedEnd xmi:type="uml:Property" xmi:id="BOUML_REVERSE_0x20b02_0" association="BOUML_ASSOC_0x20b02_0" visibility="private" type="BOUML_0x1fe82_4" aggregation="none" isNavigable="false"/>
+									<memberEnd  xmi:idref="BOUML_REVERSE_0x20b02_0"/>
+								</packagedElement>
+							</packagedElement>
+							<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20b82_0" visibility="private">
+								<memberEnd xmi:idref="BOUML_0x20b82_0"/>
+								<ownedEnd xmi:type="uml:Property" xmi:id="BOUML_REVERSE_0x20b82_0" association="BOUML_ASSOC_0x20b82_0" visibility="private" type="BOUML_0x1f802_4" aggregation="none" isNavigable="false"/>
+								<memberEnd  xmi:idref="BOUML_REVERSE_0x20b82_0"/>
+							</packagedElement>
+							<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20682_0" visibility="private">
+								<memberEnd xmi:idref="BOUML_0x20682_0"/>
+								<memberEnd xmi:idref="BOUML_0x20702_0"/>
+							</packagedElement>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20f02_0" visibility="private">
+							<memberEnd xmi:idref="BOUML_0x20f02_0"/>
+							<ownedEnd xmi:type="uml:Property" xmi:id="BOUML_REVERSE_0x20f02_0" association="BOUML_ASSOC_0x20f02_0" visibility="private" type="BOUML_0x1f782_4" aggregation="none" isNavigable="false"/>
+							<memberEnd  xmi:idref="BOUML_REVERSE_0x20f02_0"/>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x20f82_0" visibility="private">
+							<memberEnd xmi:idref="BOUML_0x20f82_0"/>
+							<ownedEnd xmi:type="uml:Property" xmi:id="BOUML_REVERSE_0x20f82_0" association="BOUML_ASSOC_0x20f82_0" visibility="private" type="BOUML_0x20182_4" aggregation="none" isNavigable="false"/>
+							<memberEnd  xmi:idref="BOUML_REVERSE_0x20f82_0"/>
+						</packagedElement>
+					</packagedElement>
+					<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f982_22" name ="util">
+						<packagedElement xmi:type="uml:Interface" name="MethodSelection&lt;T, M extends SelectableMethod&lt;T&gt;&gt;" xmi:id="BOUML_0x1f882_4" visibility="public">
+							<ownedOperation xmi:type="uml:Operation" name="getDefaultMethod" xmi:id="BOUML_0x1fc82_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_30" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="setDefaultMethod" xmi:id="BOUML_0x1fd02_2" visibility="public" isAbstract="false">
+								<ownedParameter xmi:type="uml:Parameter" name="method" xmi:id="BOUML_op_param_23" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="setMethod" xmi:id="BOUML_0x1fd82_2" visibility="public" isAbstract="false">
+								<ownedParameter xmi:type="uml:Parameter" name="method" xmi:id="BOUML_op_param_24" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_4"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="index" xmi:id="BOUML_op_param_25" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="setMethods" xmi:id="BOUML_0x1fe02_2" visibility="public" isAbstract="false">
+								<ownedParameter xmi:type="uml:Parameter" name="methods" xmi:id="BOUML_op_param_26" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_5"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="getMethod" xmi:id="BOUML_0x20802_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_31" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_4"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="index" xmi:id="BOUML_op_param_27" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="fit" xmi:id="BOUML_0x21402_2" visibility="public" isAbstract="false">
+								<ownedParameter xmi:type="uml:Parameter" name="source" xmi:id="BOUML_op_param_28" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_6"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x21282_0" visibility="private" association="BOUML_ASSOC_0x21282_0" aggregation="none">
+								<type xmi:type="uml:Class" xmi:idref="BOUML_0x20102_4"/>
+							</ownedAttribute>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Interface" name="SelectableMethod&lt;T&gt;" xmi:id="BOUML_0x20102_4" visibility="public">
+							<ownedOperation xmi:type="uml:Operation" name="fit" xmi:id="BOUML_0x21302_2" visibility="public" isAbstract="false">
+								<ownedParameter xmi:type="uml:Parameter" name="source" xmi:id="BOUML_op_param_29" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_6"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x21382_2" visibility="public" isAbstract="false">
+								<ownedParameter name="return" xmi:id="BOUML_return_32" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_1"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="index" xmi:id="BOUML_op_param_30" direction ="in">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x21302_0" visibility="private" association="BOUML_ASSOC_0x21282_0" aggregation="composite">
+								<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f882_4"/>
+							</ownedAttribute>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x21282_0" visibility="private">
+							<memberEnd xmi:idref="BOUML_0x21282_0"/>
+							<memberEnd xmi:idref="BOUML_0x21302_0"/>
+						</packagedElement>
+					</packagedElement>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f402_22" name ="src">
+				<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f482_22" name ="javax">
+					<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f502_22" name ="swing">
+						<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f582_22" name ="event">
+							<packagedElement xmi:type="uml:Interface" name="ChangeListener" xmi:id="BOUML_0x1f402_4" visibility="public">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_1" body="Defines an object which listens for ChangeEvents.&#10;&#10;@version 1.12 11/17/05&#10;@author Jeff Dinkins"/>
+								<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1f402_0" general="BOUML_0x1f482_4"/>
+								<ownedOperation xmi:type="uml:Operation" name="stateChanged" xmi:id="BOUML_0x1f402_2" visibility="public" isAbstract="false">
+									<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_2" body="Invoked when the target of the listener has changed its state.&#10;&#10;@param e  a ChangeEvent object"/>
+									<ownedParameter name="return" xmi:id="BOUML_return_33" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_7"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="e" xmi:id="BOUML_op_param_31" direction ="inout">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f502_4"/>
+									</ownedParameter>
+								</ownedOperation>
+							</packagedElement>
+							<packagedElement xmi:type="uml:Class" name="ChangeEvent" xmi:id="BOUML_0x1f502_4" visibility="package">
+							</packagedElement>
+						</packagedElement>
+					</packagedElement>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f602_22" name ="java">
+					<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1f682_22" name ="util">
+						<packagedElement xmi:type="uml:Interface" name="EventListener" xmi:id="BOUML_0x1f482_4" visibility="public">
+							<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_3" body="A tagging interface that all event listener interfaces must extend.&#10;@since JDK1.1"/>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Interface" name="Map" xmi:id="BOUML_0x1f902_4" visibility="public">
+							<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_4" body="An object that maps keys to values.  A map cannot contain duplicate keys;&#10;each key can map to at most one value.&#10;&#10;&lt;p&gt;This interface takes the place of the &lt;tt&gt;Dictionary&lt;/tt&gt; class, which&#10;was a totally abstract class rather than an interface.&#10;&#10;&lt;p&gt;The &lt;tt&gt;Map&lt;/tt&gt; interface provides three &lt;i&gt;collection views&lt;/i&gt;, which&#10;allow a map's contents to be viewed as a set of keys, collection of values,&#10;or set of key-value mappings.  The &lt;i&gt;order&lt;/i&gt; of a map is defined as&#10;the order in which the iterators on the map's collection views return their&#10;elements.  Some map implementations, like the &lt;tt&gt;TreeMap&lt;/tt&gt; class, make&#10;specific guarantees as to their order; others, like the &lt;tt&gt;HashMap&lt;/tt&gt;&#10;class, do not.&#10;&#10;&lt;p&gt;Note: great care must be exercised if mutable objects are used as map&#10;keys.  The behavior of a map is not specified if the value of an object is&#10;changed in a manner that affects &lt;tt&gt;equals&lt;/tt&gt; comparisons while the&#10;object is a key in the map.  A special case of this prohibition is that it&#10;is not permissible for a map to contain itself as a key.  While it is&#10;permissible for a map to contain itself as a value, extreme caution is&#10;advised: the &lt;tt&gt;equals&lt;/tt&gt; and &lt;tt&gt;hashCode&lt;/tt&gt; methods are no longer&#10;well defined on such a map.&#10;&#10;&lt;p&gt;All general-purpose map implementation classes should provide two&#10;&quot;standard&quot; constructors: a void (no arguments) constructor which creates an&#10;empty map, and a constructor with a single argument of type &lt;tt&gt;Map&lt;/tt&gt;,&#10;which creates a new map with the same key-value mappings as its argument.&#10;In effect, the latter constructor allows the user to copy any map,&#10;producing an equivalent map of the desired class.  There is no way to&#10;enforce this recommendation (as interfaces cannot contain constructors) but&#10;all of the general-purpose map implementations in the JDK comply.&#10;&#10;&lt;p&gt;The &quot;destructive&quot; methods contained in this interface, that is, the&#10;methods that modify the map on which they operate, are specified to throw&#10;&lt;tt&gt;UnsupportedOperationException&lt;/tt&gt; if this map does not support the&#10;operation.  If this is the case, these methods may, but are not required&#10;to, throw an &lt;tt&gt;UnsupportedOperationException&lt;/tt&gt; if the invocation would&#10;have no effect on the map.  For example, invoking the {@link #putAll(Map)}&#10;method on an unmodifiable map may, but is not required to, throw the&#10;exception if the map whose mappings are to be &quot;superimposed&quot; is empty.&#10;&#10;&lt;p&gt;Some map implementations have restrictions on the keys and values they&#10;may contain.  For example, some implementations prohibit null keys and&#10;values, and some have restrictions on the types of their keys.  Attempting&#10;to insert an ineligible key or value throws an unchecked exception,&#10;typically &lt;tt&gt;NullPointerException&lt;/tt&gt; or &lt;tt&gt;ClassCastException&lt;/tt&gt;.&#10;Attempting to query the presence of an ineligible key or value may throw an&#10;exception, or it may simply return false; some implementations will exhibit&#10;the former behavior and some will exhibit the latter.  More generally,&#10;attempting an operation on an ineligible key or value whose completion&#10;would not result in the insertion of an ineligible element into the map may&#10;throw an exception or it may succeed, at the option of the implementation.&#10;Such exceptions are marked as &quot;optional&quot; in the specification for this&#10;interface.&#10;&#10;&lt;p&gt;This interface is a member of the&#10;&lt;a href=&quot;{@docRoot}/../technotes/guides/collections/index.html&quot;&gt;&#10;Java Collections Framework&lt;/a&gt;.&#10;&#10;&lt;p&gt;Many methods in Collections Framework interfaces are defined&#10;in terms of the {@link Object#equals(Object) equals} method.  For&#10;example, the specification for the {@link #containsKey(Object)&#10;containsKey(Object key)} method says: &quot;returns &lt;tt&gt;true&lt;/tt&gt; if and&#10;only if this map contains a mapping for a key &lt;tt&gt;k&lt;/tt&gt; such that&#10;&lt;tt&gt;(key==null ? k==null : key.equals(k))&lt;/tt&gt;.&quot; This specification should&#10;&lt;i&gt;not&lt;/i&gt; be construed to imply that invoking &lt;tt&gt;Map.containsKey&lt;/tt&gt;&#10;with a non-null argument &lt;tt&gt;key&lt;/tt&gt; will cause &lt;tt&gt;key.equals(k)&lt;/tt&gt; to&#10;be invoked for any key &lt;tt&gt;k&lt;/tt&gt;.  Implementations are free to&#10;implement optimizations whereby the &lt;tt&gt;equals&lt;/tt&gt; invocation is avoided,&#10;for example, by first comparing the hash codes of the two keys.  (The&#10;{@link Object#hashCode()} specification guarantees that two objects with&#10;unequal hash codes cannot be equal.)  More generally, implementations of&#10;the various Collections Framework interfaces are free to take advantage of&#10;the specified behavior of underlying {@link Object} methods wherever the&#10;implementor deems it appropriate.&#10;&#10;@param &lt;K&gt; the type of keys maintained by this map&#10;@param &lt;V&gt; the type of mapped values&#10;&#10;@author  Josh Bloch&#10;@version 1.56, 04/21/06&#10;@see HashMap&#10;@see TreeMap&#10;@see Hashtable&#10;@see SortedMap&#10;@see Collection&#10;@see Set&#10;@since 1.2"/>
+							<ownedOperation xmi:type="uml:Operation" name="size" xmi:id="BOUML_0x1fe82_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_5" body=" Query Operations&#10;&#10;Returns the number of key-value mappings in this map.  If the&#10;map contains more than &lt;tt&gt;Integer.MAX_VALUE&lt;/tt&gt; elements, returns&#10;&lt;tt&gt;Integer.MAX_VALUE&lt;/tt&gt;.&#10;&#10;@return the number of key-value mappings in this map"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_34" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="isEmpty" xmi:id="BOUML_0x1ff02_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_6" body="Returns &lt;tt&gt;true&lt;/tt&gt; if this map contains no key-value mappings.&#10;&#10;@return &lt;tt&gt;true&lt;/tt&gt; if this map contains no key-value mappings"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_35" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_8"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="containsKey" xmi:id="BOUML_0x1ff82_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_7" body="Returns &lt;tt&gt;true&lt;/tt&gt; if this map contains a mapping for the specified&#10;key.  More formally, returns &lt;tt&gt;true&lt;/tt&gt; if and only if&#10;this map contains a mapping for a key &lt;tt&gt;k&lt;/tt&gt; such that&#10;&lt;tt&gt;(key==null ? k==null : key.equals(k))&lt;/tt&gt;.  (There can be&#10;at most one such mapping.)&#10;&#10;@param key key whose presence in this map is to be tested&#10;@return &lt;tt&gt;true&lt;/tt&gt; if this map contains a mapping for the specified&#10;        key&#10;@throws ClassCastException if the key is of an inappropriate type for&#10;        this map (optional)&#10;@throws NullPointerException if the specified key is null and this map&#10;        does not permit null keys (optional)"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_36" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_8"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="key" xmi:id="BOUML_op_param_32" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f982_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="containsValue" xmi:id="BOUML_0x20002_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_8" body="Returns &lt;tt&gt;true&lt;/tt&gt; if this map maps one or more keys to the&#10;specified value.  More formally, returns &lt;tt&gt;true&lt;/tt&gt; if and only if&#10;this map contains at least one mapping to a value &lt;tt&gt;v&lt;/tt&gt; such that&#10;&lt;tt&gt;(value==null ? v==null : value.equals(v))&lt;/tt&gt;.  This operation&#10;will probably require time linear in the map size for most&#10;implementations of the &lt;tt&gt;Map&lt;/tt&gt; interface.&#10;&#10;@param value value whose presence in this map is to be tested&#10;@return &lt;tt&gt;true&lt;/tt&gt; if this map maps one or more keys to the&#10;        specified value&#10;@throws ClassCastException if the value is of an inappropriate type for&#10;        this map (optional)&#10;@throws NullPointerException if the specified value is null and this&#10;        map does not permit null values (optional)"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_37" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_8"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="value" xmi:id="BOUML_op_param_33" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f982_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="get" xmi:id="BOUML_0x20082_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_9" body="Returns the value to which the specified key is mapped,&#10;or {@code null} if this map contains no mapping for the key.&#10;&#10;&lt;p&gt;More formally, if this map contains a mapping from a key&#10;{@code k} to a value {@code v} such that {@code (key==null ? k==null :&#10;key.equals(k))}, then this method returns {@code v}; otherwise&#10;it returns {@code null}.  (There can be at most one such mapping.)&#10;&#10;&lt;p&gt;If this map permits null values, then a return value of&#10;{@code null} does not &lt;i&gt;necessarily&lt;/i&gt; indicate that the map&#10;contains no mapping for the key; it's also possible that the map&#10;explicitly maps the key to {@code null}.  The {@link #containsKey&#10;containsKey} operation may be used to distinguish these two cases.&#10;&#10;@param key the key whose associated value is to be returned&#10;@return the value to which the specified key is mapped, or&#10;        {@code null} if this map contains no mapping for the key&#10;@throws ClassCastException if the key is of an inappropriate type for&#10;        this map (optional)&#10;@throws NullPointerException if the specified key is null and this map&#10;        does not permit null keys (optional)"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_38" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_9"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="key" xmi:id="BOUML_op_param_34" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f982_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="put" xmi:id="BOUML_0x20102_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_10" body=" Modification Operations&#10;&#10;Associates the specified value with the specified key in this map&#10;(optional operation).  If the map previously contained a mapping for&#10;the key, the old value is replaced by the specified value.  (A map&#10;&lt;tt&gt;m&lt;/tt&gt; is said to contain a mapping for a key &lt;tt&gt;k&lt;/tt&gt; if and only&#10;if {@link #containsKey(Object) m.containsKey(k)} would return&#10;&lt;tt&gt;true&lt;/tt&gt;.)&#10;&#10;@param key key with which the specified value is to be associated&#10;@param value value to be associated with the specified key&#10;@return the previous value associated with &lt;tt&gt;key&lt;/tt&gt;, or&#10;        &lt;tt&gt;null&lt;/tt&gt; if there was no mapping for &lt;tt&gt;key&lt;/tt&gt;.&#10;        (A &lt;tt&gt;null&lt;/tt&gt; return can also indicate that the map&#10;        previously associated &lt;tt&gt;null&lt;/tt&gt; with &lt;tt&gt;key&lt;/tt&gt;,&#10;        if the implementation supports &lt;tt&gt;null&lt;/tt&gt; values.)&#10;@throws UnsupportedOperationException if the &lt;tt&gt;put&lt;/tt&gt; operation&#10;        is not supported by this map&#10;@throws ClassCastException if the class of the specified key or value&#10;        prevents it from being stored in this map&#10;@throws NullPointerException if the specified key or value is null&#10;        and this map does not permit null keys or values&#10;@throws IllegalArgumentException if some property of the specified key&#10;        or value prevents it from being stored in this map"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_39" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_9"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="key" xmi:id="BOUML_op_param_35" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_10"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="value" xmi:id="BOUML_op_param_36" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_9"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="remove" xmi:id="BOUML_0x20182_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_11" body="Removes the mapping for a key from this map if it is present&#10;(optional operation).   More formally, if this map contains a mapping&#10;from key &lt;tt&gt;k&lt;/tt&gt; to value &lt;tt&gt;v&lt;/tt&gt; such that&#10;&lt;code&gt;(key==null ?  k==null : key.equals(k))&lt;/code&gt;, that mapping&#10;is removed.  (The map can contain at most one such mapping.)&#10;&#10;&lt;p&gt;Returns the value to which this map previously associated the key,&#10;or &lt;tt&gt;null&lt;/tt&gt; if the map contained no mapping for the key.&#10;&#10;&lt;p&gt;If this map permits null values, then a return value of&#10;&lt;tt&gt;null&lt;/tt&gt; does not &lt;i&gt;necessarily&lt;/i&gt; indicate that the map&#10;contained no mapping for the key; it's also possible that the map&#10;explicitly mapped the key to &lt;tt&gt;null&lt;/tt&gt;.&#10;&#10;&lt;p&gt;The map will not contain a mapping for the specified key once the&#10;call returns.&#10;&#10;@param key key whose mapping is to be removed from the map&#10;@return the previous value associated with &lt;tt&gt;key&lt;/tt&gt;, or&#10;        &lt;tt&gt;null&lt;/tt&gt; if there was no mapping for &lt;tt&gt;key&lt;/tt&gt;.&#10;@throws UnsupportedOperationException if the &lt;tt&gt;remove&lt;/tt&gt; operation&#10;        is not supported by this map&#10;@throws ClassCastException if the key is of an inappropriate type for&#10;        this map (optional)&#10;@throws NullPointerException if the specified key is null and this&#10;        map does not permit null keys (optional)"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_40" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_9"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="key" xmi:id="BOUML_op_param_37" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f982_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="putAll" xmi:id="BOUML_0x20202_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_12" body=" Bulk Operations&#10;&#10;Copies all of the mappings from the specified map to this map&#10;(optional operation).  The effect of this call is equivalent to that&#10;of calling {@link #put(Object,Object) put(k, v)} on this map once&#10;for each mapping from key &lt;tt&gt;k&lt;/tt&gt; to value &lt;tt&gt;v&lt;/tt&gt; in the&#10;specified map.  The behavior of this operation is undefined if the&#10;specified map is modified while the operation is in progress.&#10;&#10;@param m mappings to be stored in this map&#10;@throws UnsupportedOperationException if the &lt;tt&gt;putAll&lt;/tt&gt; operation&#10;        is not supported by this map&#10;@throws ClassCastException if the class of a key or value in the&#10;        specified map prevents it from being stored in this map&#10;@throws NullPointerException if the specified map is null, or if&#10;        this map does not permit null keys or values, and the&#10;        specified map contains null keys or values&#10;@throws IllegalArgumentException if some property of a key or value in&#10;        the specified map prevents it from being stored in this map"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_41" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_7"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="m" xmi:id="BOUML_op_param_38" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_basedontype_0"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="m" xmi:id="BOUML_op_param_39" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_basedontype_1"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="clear" xmi:id="BOUML_0x20282_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_13" body="Removes all of the mappings from this map (optional operation).&#10;The map will be empty after this call returns.&#10;&#10;@throws UnsupportedOperationException if the &lt;tt&gt;clear&lt;/tt&gt; operation&#10;        is not supported by this map"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_42" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_7"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="keySet" xmi:id="BOUML_0x20302_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_14" body=" Views&#10;&#10;Returns a {@link Set} view of the keys contained in this map.&#10;The set is backed by the map, so changes to the map are&#10;reflected in the set, and vice-versa.  If the map is modified&#10;while an iteration over the set is in progress (except through&#10;the iterator's own &lt;tt&gt;remove&lt;/tt&gt; operation), the results of&#10;the iteration are undefined.  The set supports element removal,&#10;which removes the corresponding mapping from the map, via the&#10;&lt;tt&gt;Iterator.remove&lt;/tt&gt;, &lt;tt&gt;Set.remove&lt;/tt&gt;,&#10;&lt;tt&gt;removeAll&lt;/tt&gt;, &lt;tt&gt;retainAll&lt;/tt&gt;, and &lt;tt&gt;clear&lt;/tt&gt;&#10;operations.  It does not support the &lt;tt&gt;add&lt;/tt&gt; or &lt;tt&gt;addAll&lt;/tt&gt;&#10;operations.&#10;&#10;@return a set view of the keys contained in this map"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_43" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_basedontype_2"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="values" xmi:id="BOUML_0x20382_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_15" body="Returns a {@link Collection} view of the values contained in this map.&#10;The collection is backed by the map, so changes to the map are&#10;reflected in the collection, and vice-versa.  If the map is&#10;modified while an iteration over the collection is in progress&#10;(except through the iterator's own &lt;tt&gt;remove&lt;/tt&gt; operation),&#10;the results of the iteration are undefined.  The collection&#10;supports element removal, which removes the corresponding&#10;mapping from the map, via the &lt;tt&gt;Iterator.remove&lt;/tt&gt;,&#10;&lt;tt&gt;Collection.remove&lt;/tt&gt;, &lt;tt&gt;removeAll&lt;/tt&gt;,&#10;&lt;tt&gt;retainAll&lt;/tt&gt; and &lt;tt&gt;clear&lt;/tt&gt; operations.  It does not&#10;support the &lt;tt&gt;add&lt;/tt&gt; or &lt;tt&gt;addAll&lt;/tt&gt; operations.&#10;&#10;@return a collection view of the values contained in this map"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_44" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_basedontype_3"/>
+								</ownedParameter>
+							</ownedOperation>
+							<nestedClassifier xmi:type="uml:Interface" name="Entry" xmi:id="BOUML_0x1fb02_4" visibility="public">
+								<ownedOperation xmi:type="uml:Operation" name="getKey" xmi:id="BOUML_0x20482_2" visibility="public" isAbstract="false">
+									<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_16" body="Returns the key corresponding to this entry.&#10;&#10;@return the key corresponding to this entry&#10;@throws IllegalStateException implementations may, but are not&#10;        required to, throw this exception if the entry has been&#10;        removed from the backing map."/>
+									<ownedParameter name="return" xmi:id="BOUML_return_45" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_10"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="getValue" xmi:id="BOUML_0x20502_2" visibility="public" isAbstract="false">
+									<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_17" body="Returns the value corresponding to this entry.  If the mapping&#10;has been removed from the backing map (by the iterator's&#10;&lt;tt&gt;remove&lt;/tt&gt; operation), the results of this call are undefined.&#10;&#10;@return the value corresponding to this entry&#10;@throws IllegalStateException implementations may, but are not&#10;        required to, throw this exception if the entry has been&#10;        removed from the backing map."/>
+									<ownedParameter name="return" xmi:id="BOUML_return_46" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_9"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="setValue" xmi:id="BOUML_0x20582_2" visibility="public" isAbstract="false">
+									<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_18" body="Replaces the value corresponding to this entry with the specified&#10;value (optional operation).  (Writes through to the map.)  The&#10;behavior of this call is undefined if the mapping has already been&#10;removed from the map (by the iterator's &lt;tt&gt;remove&lt;/tt&gt; operation).&#10;&#10;@param value new value to be stored in this entry&#10;@return old value corresponding to the entry&#10;@throws UnsupportedOperationException if the &lt;tt&gt;put&lt;/tt&gt; operation&#10;        is not supported by the backing map&#10;@throws ClassCastException if the class of the specified value&#10;        prevents it from being stored in the backing map&#10;@throws NullPointerException if the backing map does not permit&#10;        null values, and the specified value is null&#10;@throws IllegalArgumentException if some property of this value&#10;        prevents it from being stored in the backing map&#10;@throws IllegalStateException implementations may, but are not&#10;        required to, throw this exception if the entry has been&#10;        removed from the backing map."/>
+									<ownedParameter name="return" xmi:id="BOUML_return_47" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_9"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="value" xmi:id="BOUML_op_param_40" direction ="inout">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_9"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="equals" xmi:id="BOUML_0x20602_2" visibility="public" isAbstract="false">
+									<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_19" body="Compares the specified object with this entry for equality.&#10;Returns &lt;tt&gt;true&lt;/tt&gt; if the given object is also a map entry and&#10;the two entries represent the same mapping.  More formally, two&#10;entries &lt;tt&gt;e1&lt;/tt&gt; and &lt;tt&gt;e2&lt;/tt&gt; represent the same mapping&#10;if&lt;pre&gt;&#10;    (e1.getKey()==null ?&#10;     e2.getKey()==null : e1.getKey().equals(e2.getKey()))  &amp;amp;&amp;amp;&#10;    (e1.getValue()==null ?&#10;     e2.getValue()==null : e1.getValue().equals(e2.getValue()))&#10;&lt;/pre&gt;&#10;This ensures that the &lt;tt&gt;equals&lt;/tt&gt; method works properly across&#10;different implementations of the &lt;tt&gt;Map.Entry&lt;/tt&gt; interface.&#10;&#10;@param o object to be compared for equality with this map entry&#10;@return &lt;tt&gt;true&lt;/tt&gt; if the specified object is equal to this map&#10;        entry"/>
+									<ownedParameter name="return" xmi:id="BOUML_return_48" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_8"/>
+									</ownedParameter>
+									<ownedParameter xmi:type="uml:Parameter" name="o" xmi:id="BOUML_op_param_41" direction ="inout">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f982_4"/>
+									</ownedParameter>
+								</ownedOperation>
+								<ownedOperation xmi:type="uml:Operation" name="hashCode" xmi:id="BOUML_0x20682_2" visibility="public" isAbstract="false">
+									<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_20" body="Returns the hash code value for this map entry.  The hash code&#10;of a map entry &lt;tt&gt;e&lt;/tt&gt; is defined to be: &lt;pre&gt;&#10;    (e.getKey()==null   ? 0 : e.getKey().hashCode()) ^&#10;    (e.getValue()==null ? 0 : e.getValue().hashCode())&#10;&lt;/pre&gt;&#10;This ensures that &lt;tt&gt;e1.equals(e2)&lt;/tt&gt; implies that&#10;&lt;tt&gt;e1.hashCode()==e2.hashCode()&lt;/tt&gt; for any two Entries&#10;&lt;tt&gt;e1&lt;/tt&gt; and &lt;tt&gt;e2&lt;/tt&gt;, as required by the general&#10;contract of &lt;tt&gt;Object.hashCode&lt;/tt&gt;.&#10;&#10;@return the hash code value for this map entry&#10;@see Object#hashCode()&#10;@see Object#equals(Object)&#10;@see #equals(Object)"/>
+									<ownedParameter name="return" xmi:id="BOUML_return_49" direction="return">
+										<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+									</ownedParameter>
+								</ownedOperation>
+							</nestedClassifier>
+							<ownedOperation xmi:type="uml:Operation" name="entrySet" xmi:id="BOUML_0x20402_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_21" body="Returns a {@link Set} view of the mappings contained in this map.&#10;The set is backed by the map, so changes to the map are&#10;reflected in the set, and vice-versa.  If the map is modified&#10;while an iteration over the set is in progress (except through&#10;the iterator's own &lt;tt&gt;remove&lt;/tt&gt; operation, or through the&#10;&lt;tt&gt;setValue&lt;/tt&gt; operation on a map entry returned by the&#10;iterator) the results of the iteration are undefined.  The set&#10;supports element removal, which removes the corresponding&#10;mapping from the map, via the &lt;tt&gt;Iterator.remove&lt;/tt&gt;,&#10;&lt;tt&gt;Set.remove&lt;/tt&gt;, &lt;tt&gt;removeAll&lt;/tt&gt;, &lt;tt&gt;retainAll&lt;/tt&gt; and&#10;&lt;tt&gt;clear&lt;/tt&gt; operations.  It does not support the&#10;&lt;tt&gt;add&lt;/tt&gt; or &lt;tt&gt;addAll&lt;/tt&gt; operations.&#10;&#10;@return a set view of the mappings contained in this map"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_50" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_basedontype_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="equals" xmi:id="BOUML_0x20702_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_22" body=" Comparison and hashing&#10;&#10;Compares the specified object with this map for equality.  Returns&#10;&lt;tt&gt;true&lt;/tt&gt; if the given object is also a map and the two maps&#10;represent the same mappings.  More formally, two maps &lt;tt&gt;m1&lt;/tt&gt; and&#10;&lt;tt&gt;m2&lt;/tt&gt; represent the same mappings if&#10;&lt;tt&gt;m1.entrySet().equals(m2.entrySet())&lt;/tt&gt;.  This ensures that the&#10;&lt;tt&gt;equals&lt;/tt&gt; method works properly across different implementations&#10;of the &lt;tt&gt;Map&lt;/tt&gt; interface.&#10;&#10;@param o object to be compared for equality with this map&#10;@return &lt;tt&gt;true&lt;/tt&gt; if the specified object is equal to this map"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_51" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_8"/>
+								</ownedParameter>
+								<ownedParameter xmi:type="uml:Parameter" name="o" xmi:id="BOUML_op_param_42" direction ="inout">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f982_4"/>
+								</ownedParameter>
+							</ownedOperation>
+							<ownedOperation xmi:type="uml:Operation" name="hashCode" xmi:id="BOUML_0x20782_2" visibility="public" isAbstract="false">
+								<ownedComment xmi:type="uml:Comment" xmi:id="COMMENT_23" body="Returns the hash code value for this map.  The hash code of a map is&#10;defined to be the sum of the hash codes of each entry in the map's&#10;&lt;tt&gt;entrySet()&lt;/tt&gt; view.  This ensures that &lt;tt&gt;m1.equals(m2)&lt;/tt&gt;&#10;implies that &lt;tt&gt;m1.hashCode()==m2.hashCode()&lt;/tt&gt; for any two maps&#10;&lt;tt&gt;m1&lt;/tt&gt; and &lt;tt&gt;m2&lt;/tt&gt;, as required by the general contract of&#10;{@link Object#hashCode}.&#10;&#10;@return the hash code value for this map&#10;@see Map.Entry#hashCode()&#10;@see Object#equals(Object)&#10;@see #equals(Object)"/>
+								<ownedParameter name="return" xmi:id="BOUML_return_52" direction="return">
+									<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+								</ownedParameter>
+							</ownedOperation>
+						</packagedElement>
+						<packagedElement xmi:type="uml:Interface" name="Set" xmi:id="BOUML_0x1fa02_4" visibility="package">
+						</packagedElement>
+						<packagedElement xmi:type="uml:Interface" name="Collection" xmi:id="BOUML_0x1fa82_4" visibility="package">
+						</packagedElement>
+					</packagedElement>
+					<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x1fa02_22" name ="lang">
+						<packagedElement xmi:type="uml:Class" name="Object" xmi:id="BOUML_0x1f982_4" visibility="package">
+						</packagedElement>
+					</packagedElement>
+				</packagedElement>
+			</packagedElement>
+		</packagedElement>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_10" name="K"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_4" name="M"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_5" name="Map&lt;Integer, M&gt;"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_6" name="T"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_9" name="V"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_8" name="boolean"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_1" name="double"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_3" name="double[]"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_2" name="double[][]"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_0" name="int"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_7" name="void"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_basedontype_3" name = "Collection&lt;V&gt;"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_basedontype_2" name = "Set&lt;K&gt;"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_basedontype_4" name = "Set&lt;Map.Entry&lt;K, V&gt;&gt;"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_basedontype_1" name = "? extends V&gt; Map"/>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_basedontype_0" name = "Map&lt;? extends K"/>
+	</uml:Model>
+</xmi:XMI>

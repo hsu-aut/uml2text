@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Bouml" exporterVersion="1.15 patch 1"/>
+	<uml:Model xmi:type="uml:Model" xmi:id="themodel" name="bouml">
+		<packagedElement xmi:type="uml:Package" xmi:id="BOUML_0x81_22" name ="bouml">
+			<packagedElement xmi:type="uml:Class" name="Etudiant" xmi:id="BOUML_0x1f402_4" visibility="package">
+				<ownedOperation xmi:type="uml:Operation" name="reviser" xmi:id="BOUML_0x1f402_2" visibility="public" isAbstract="false">
+					<ownedParameter name="return" xmi:id="BOUML_return_1" direction="return">
+						<type xmi:type="uml:Class" xmi:idref="BOUML_datatype_0"/>
+					</ownedParameter>
+					<ownedParameter xmi:type="uml:Parameter" name="matiere" xmi:id="BOUML_op_param_1" direction="in">
+						<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
+					</ownedParameter>
+				</ownedOperation>
+				<generalization xmi:type="uml:Generalization" xmi:id="BOUML_0x1f482_0" general="BOUML_0x1f502_4"/>
+				<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x1f502_0" visibility="private" association="BOUML_ASSOC_0x1f502_0" aggregation="none">
+					<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f482_4"/>
+					<lowerValue xmi:type="uml:LiteralString" xmi:id="BOUML_MULTIPLICITY_L_0x1f502_0" value="*"/>
+					<upperValue xmi:type="uml:LiteralString" xmi:id="BOUML_MULTIPLICITY_U_0x1f502_0" value="*"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" name="Universite" xmi:id="BOUML_0x1f482_4" visibility="package">
+				<ownedAttribute xmi:type="uml:Property" name="nomUniversite" xmi:id="BOUML_0x1f482_1" visibility="private">
+					<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" name="" xmi:id="BOUML_0x1f582_0" visibility="private" association="BOUML_ASSOC_0x1f502_0" aggregation="none">
+					<type xmi:type="uml:Class" xmi:idref="BOUML_0x1f402_4"/>
+					<lowerValue xmi:type="uml:LiteralString" xmi:id="BOUML_MULTIPLICITY_L_0x1f582_0" value="1"/>
+					<upperValue xmi:type="uml:LiteralString" xmi:id="BOUML_MULTIPLICITY_U_0x1f582_0" value="*"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" name="Personne" xmi:id="BOUML_0x1f502_4" visibility="package">
+				<ownedAttribute xmi:type="uml:Property" name="nomPersonne" xmi:id="BOUML_0x1f502_1" visibility="private">
+					<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
+				</ownedAttribute>
+				<ownedAttribute xmi:type="uml:Property" name="prenomPersonne" xmi:id="BOUML_0x1f582_1" visibility="private">
+					<type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1/uml.xml#String"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="BOUML_ASSOC_0x1f502_0" name="etudier" visibility="private">
+				<memberEnd xmi:idref="BOUML_0x1f502_0"/>
+				<memberEnd xmi:idref="BOUML_0x1f582_0"/>
+			</packagedElement>
+		</packagedElement>
+		<ownedMember xmi:type="uml:DataType" xmi:id="BOUML_datatype_0" name="void"/>
+	</uml:Model>
+</xmi:XMI>
