@@ -1,0 +1,160 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="2.1" xmlns:UML="http://www.omg.org/spec/UML/20090901">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ChatGPT UML Generator</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="2.0"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model name="PHP_Beautifier_Model" isSpecification="false">
+      <UML:Namespace.ownedElement>
+
+        <!-- Paket php_beautifier -->
+        <UML:Package name="php_beautifier">
+          <UML:Namespace.ownedElement>
+
+            <!-- Klasse PHP_Beautifier -->
+            <UML:Class name="PHP_Beautifier" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation name="addFilter" visibility="public">
+                  <UML:Parameter name="return" kind="return">
+                    <UML:Parameter.type>
+                      <UML:DataType href="http://www.omg.org/spec/UML/20090901#Boolean"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Abhängigkeit PHP_Beautifier -> PHP_Beautifier_Filter -->
+            <UML:Dependency>
+              <UML:Dependency.client>
+                <UML:Class name="PHP_Beautifier"/>
+              </UML:Dependency.client>
+              <UML:Dependency.supplier>
+                <UML:Class name="PHP_Beautifier_Filter"/>
+              </UML:Dependency.supplier>
+            </UML:Dependency>
+
+            <!-- Klasse PHP_Beautifier_Batch -->
+            <UML:Class name="PHP_Beautifier_Batch" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation name="getBatchEngine" visibility="public">
+                  <UML:Parameter name="return" kind="return">
+                    <UML:Parameter.type>
+                      <UML:Class name="PHP_Beautifier_Batch_Engine"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+                <UML:Operation name="callBeautifier" visibility="public">
+                  <UML:Parameter name="engine" kind="in">
+                    <UML:Parameter.type>
+                      <UML:Class name="PHP_Beautifier_Batch_Engine"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                  <UML:Parameter name="method" kind="in">
+                    <UML:Parameter.type>
+                      <UML:DataType href="http://www.omg.org/spec/UML/20090901#String"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Generalisierung PHP_Beautifier_Batch -> PHP_Beautifier_Decorator -->
+            <UML:Generalization>
+              <UML:Generalization.child>
+                <UML:Class name="PHP_Beautifier_Batch"/>
+              </UML:Generalization.child>
+              <UML:Generalization.parent>
+                <UML:Class name="PHP_Beautifier_Decorator"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+
+            <!-- Klasse PHP_Beautifier_Common -->
+            <UML:Class name="PHP_Beautifier_Common" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation name="normalizeDir" visibility="public"/>
+                <UML:Operation name="getLog" visibility="public">
+                  <UML:Parameter name="return" kind="return">
+                    <UML:Parameter.type>
+                      <UML:Class name="Log_Composite"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Abstrakte Klasse PHP_Beautifier_Decorator -->
+            <UML:Class name="PHP_Beautifier_Decorator" visibility="public" isAbstract="true">
+              <UML:ModelElement.stereotype>
+                <UML:Stereotype name="Decorator"/>
+              </UML:ModelElement.stereotype>
+            </UML:Class>
+
+            <!-- Abstrakte Klasse PHP_Beautifier_Filter -->
+            <UML:Class name="PHP_Beautifier_Filter" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Attribute name="$aFilterTokenFunctions" visibility="protected"/>
+                <UML:Attribute name="$aSettings" visibility="protected"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Generalisierung PHP_Beautifier_Filter_Default -> PHP_Beautifier_Filter -->
+            <UML:Generalization>
+              <UML:Generalization.child>
+                <UML:Class name="PHP_Beautifier_Filter_Default"/>
+              </UML:Generalization.child>
+              <UML:Generalization.parent>
+                <UML:Class name="PHP_Beautifier_Filter"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+
+            <!-- Schnittstelle PHP_Beautifier_Interface -->
+            <UML:Interface name="PHP_Beautifier_Interface">
+              <UML:Classifier.feature>
+                <UML:Operation name="process" visibility="public"/>
+                <UML:Operation name="get" visibility="public"/>
+                <UML:Operation name="show" visibility="public"/>
+                <UML:Operation name="save" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket log -->
+        <UML:Package name="log">
+          <UML:Namespace.ownedElement>
+
+            <!-- Klasse Log -->
+            <UML:Class name="Log" visibility="public"/>
+
+            <!-- Klasse Log_Composite -->
+            <UML:Class name="Log_Composite" visibility="public">
+              <UML:ModelElement.stereotype>
+                <UML:Stereotype name="Composite"/>
+              </UML:ModelElement.stereotype>
+            </UML:Class>
+
+            <!-- Generalisierung Log_Composite -> Log -->
+            <UML:Generalization>
+              <UML:Generalization.child>
+                <UML:Class name="Log_Composite"/>
+              </UML:Generalization.child>
+              <UML:Generalization.parent>
+                <UML:Class name="Log"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

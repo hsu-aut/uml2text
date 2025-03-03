@@ -1,0 +1,27 @@
+### TEXTUELLE BESCHREIBUNG DES UML-MODELLS
+
+Das UML-Modell beschreibt die Struktur und Abhängigkeiten innerhalb eines Systems namens "PHP_Beautifier". Es enthält mehrere Pakete, Klassen, Schnittstellen und Abstraktionen, die miteinander in Beziehung stehen.
+
+Das Hauptpaket "php_beautifier" enthält die zentrale Klasse "PHP_Beautifier", die als öffentliche Klasse definiert ist. Diese Klasse besitzt eine Methode "addFilter", die eine Rückgabe vom Typ "Boolean" hat. Zudem gibt es eine Abhängigkeit zwischen "PHP_Beautifier" und der Klasse "PHP_Beautifier_Filter", was darauf hindeutet, dass Filtermechanismen eine wesentliche Rolle in diesem System spielen.
+
+Ein weiteres wichtiges Element ist die Klasse "PHP_Beautifier_Batch", die eine Methode "getBatchEngine" besitzt. Diese Methode gibt eine Instanz der Klasse "PHP_Beautifier_Batch_Engine" zurück. Dies deutet darauf hin, dass das System eine Batch-Verarbeitung unterstützt. Zusätzlich gibt es eine Methode "callBeautifier", die eine Engine-Instanz und eine Methode als Parameter entgegennimmt, was darauf schließen lässt, dass verschiedene Beautifier-Methoden aufgerufen werden können.
+
+Die Klasse "PHP_Beautifier_Common" enthält eine Methode "normalizeDir", die vermutlich zur Normalisierung von Verzeichnispfaden dient. Zudem gibt es eine Methode "getLog", die eine Instanz der Klasse "Log_Composite" zurückgibt. Dies zeigt, dass das System eine Logging-Funktionalität besitzt.
+
+Die Klasse "PHP_Beautifier_Decorator" ist als abstrakte Klasse definiert und trägt das Stereotyp "Decorator". Dies deutet darauf hin, dass sie als Basisklasse für Erweiterungen dient. Eine weitere abstrakte Klasse ist "PHP_Beautifier_Filter", die mehrere geschützte Attribute besitzt, darunter "$aFilterTokenFunctions" und "$aSettings", die vermutlich zur Konfiguration von Filtern verwendet werden.
+
+Es gibt mehrere Generalisierungsbeziehungen, darunter eine zwischen "PHP_Beautifier_Batch" und "PHP_Beautifier_Decorator", was darauf hindeutet, dass die Batch-Klasse eine spezialisierte Form eines Decorators ist. Ebenso erbt "PHP_Beautifier_Filter_Default" von "PHP_Beautifier_Filter", was darauf schließen lässt, dass es eine Standardimplementierung für Filter gibt.
+
+Zusätzlich gibt es eine Schnittstelle "PHP_Beautifier_Interface", die mehrere Methoden wie "process", "get", "show" und "save" definiert. Diese Methoden deuten darauf hin, dass das System eine standardisierte API für die Beautifier-Funktionalität bereitstellt.
+
+Das Modell enthält auch ein weiteres Paket "log", das die Klassen "Log" und "Log_Composite" enthält. Die Klasse "Log_Composite" erbt von "Log" und trägt das Stereotyp "Composite", was darauf hindeutet, dass sie eine zusammengesetzte Struktur für Logging-Mechanismen darstellt.
+
+### ERKLÄRUNG/REFLEXION:
+
+- Das Modell folgt einem klaren objektorientierten Design mit einer starken Nutzung von Abstraktionen, Generalisierungen und Abhängigkeiten.
+- Die Verwendung von Stereotypen wie "Decorator" und "Composite" deutet darauf hin, dass bekannte Entwurfsmuster angewendet wurden.
+- Die Abhängigkeiten zwischen den Klassen zeigen, dass das System modular aufgebaut ist und verschiedene Komponenten miteinander interagieren.
+- Die Schnittstelle "PHP_Beautifier_Interface" stellt eine standardisierte API bereit, was auf eine flexible Architektur hinweist.
+- Einige Methoden und Attribute sind nicht näher spezifiziert, sodass ihre genaue Funktionalität nicht vollständig aus dem Modell hervorgeht.
+
+Dieses UML-Modell beschreibt ein strukturiertes und erweiterbares System zur Code-Formatierung mit einer klaren Trennung von Verantwortlichkeiten.

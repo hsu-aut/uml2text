@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://schema.omg.org/spec/UML/2.1.1" xsi:schemaLocation="http://schema.omg.org/spec/UML/2.1.1 http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_bjgd83SXEeCbvogcUIXlQw" name="de.uni_koblenz.oneoonecompanies.schema.OneOOneSchema">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_bjgd9HSXEeCbvogcUIXlQw">
+    <importedPackage xmi:type="uml:Model" href="http://schema.omg.org/spec/UML/2.1.1/uml.xml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bjgd9XSXEeCbvogcUIXlQw" name="Company">
+    <generalization xmi:type="uml:Generalization" xmi:id="_bjgd9nSXEeCbvogcUIXlQw" general="_bjgd_XSXEeCbvogcUIXlQw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bjgd93SXEeCbvogcUIXlQw" name="departments" visibility="private" type="_bjgd_3SXEeCbvogcUIXlQw" aggregation="composite" association="_bjgeB3SXEeCbvogcUIXlQw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bjgd-HSXEeCbvogcUIXlQw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bjgd-XSXEeCbvogcUIXlQw" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bjgd-nSXEeCbvogcUIXlQw" name="CompaniesGraph">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bjgd-3SXEeCbvogcUIXlQw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bjgd_HSXEeCbvogcUIXlQw" key="graphclass"/>
+      </eAnnotations>
+    </xmi:Extension>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bjgd_XSXEeCbvogcUIXlQw" name="NamedElement" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bjgd_nSXEeCbvogcUIXlQw" name="name" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1.1/uml.xml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bjgd_3SXEeCbvogcUIXlQw" name="Department">
+    <generalization xmi:type="uml:Generalization" xmi:id="_bjgeAHSXEeCbvogcUIXlQw" general="_bjgd_XSXEeCbvogcUIXlQw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bjgeAXSXEeCbvogcUIXlQw" name="subDepts" visibility="private" type="_bjgd_3SXEeCbvogcUIXlQw" aggregation="composite" association="_bjgeC3SXEeCbvogcUIXlQw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bjgeAnSXEeCbvogcUIXlQw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bjgeA3SXEeCbvogcUIXlQw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bjgeBHSXEeCbvogcUIXlQw" name="persons" visibility="private" type="_bjgeFXSXEeCbvogcUIXlQw" aggregation="shared" association="_bjgeD3SXEeCbvogcUIXlQw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bjgeBXSXEeCbvogcUIXlQw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bjgeBnSXEeCbvogcUIXlQw" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bjgeB3SXEeCbvogcUIXlQw" name="HasDepartment" memberEnd="_bjgd93SXEeCbvogcUIXlQw _bjgeCHSXEeCbvogcUIXlQw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bjgeCHSXEeCbvogcUIXlQw" name="" visibility="private" type="_bjgd9XSXEeCbvogcUIXlQw" association="_bjgeB3SXEeCbvogcUIXlQw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bjgeCXSXEeCbvogcUIXlQw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bjgeCnSXEeCbvogcUIXlQw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bjgeC3SXEeCbvogcUIXlQw" name="HasSubDepartment" memberEnd="_bjgeAXSXEeCbvogcUIXlQw _bjgeDHSXEeCbvogcUIXlQw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bjgeDHSXEeCbvogcUIXlQw" name="parentDept" visibility="private" type="_bjgd_3SXEeCbvogcUIXlQw" association="_bjgeC3SXEeCbvogcUIXlQw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bjgeDXSXEeCbvogcUIXlQw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bjgeDnSXEeCbvogcUIXlQw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bjgeD3SXEeCbvogcUIXlQw" name="HasEmployee" memberEnd="_bjgeBHSXEeCbvogcUIXlQw _bjgeEHSXEeCbvogcUIXlQw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bjgeEHSXEeCbvogcUIXlQw" name="department" visibility="private" type="_bjgd_3SXEeCbvogcUIXlQw" association="_bjgeD3SXEeCbvogcUIXlQw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bjgeEXSXEeCbvogcUIXlQw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bjgeEnSXEeCbvogcUIXlQw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bjgeE3SXEeCbvogcUIXlQw" name="Manager">
+    <generalization xmi:type="uml:Generalization" xmi:id="_bjgeFHSXEeCbvogcUIXlQw" general="_bjgeFXSXEeCbvogcUIXlQw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bjgeFXSXEeCbvogcUIXlQw" name="Employee">
+    <generalization xmi:type="uml:Generalization" xmi:id="_bjgeFnSXEeCbvogcUIXlQw" general="_bjgd_XSXEeCbvogcUIXlQw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bjgeF3SXEeCbvogcUIXlQw" name="address" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="http://schema.omg.org/spec/UML/2.1.1/uml.xml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bjgeGHSXEeCbvogcUIXlQw" name="mentee" visibility="private" type="_bjgeFXSXEeCbvogcUIXlQw" association="_bjgeHHSXEeCbvogcUIXlQw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bjgeGXSXEeCbvogcUIXlQw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bjgeGnSXEeCbvogcUIXlQw"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bjgeG3SXEeCbvogcUIXlQw" name="salary" visibility="protected" type="_bjgeIXSXEeCbvogcUIXlQw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_bjgeHHSXEeCbvogcUIXlQw" name="Mentors" memberEnd="_bjgeGHSXEeCbvogcUIXlQw _bjgeHXSXEeCbvogcUIXlQw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_bjgeHXSXEeCbvogcUIXlQw" name="mentor" visibility="private" type="_bjgeFXSXEeCbvogcUIXlQw" association="_bjgeHHSXEeCbvogcUIXlQw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bjgeHnSXEeCbvogcUIXlQw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bjgeH3SXEeCbvogcUIXlQw"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_bjgeIHSXEeCbvogcUIXlQw" name="PrimitiveTypes">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_bjgeIXSXEeCbvogcUIXlQw" name="Double"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_bjgeInSXEeCbvogcUIXlQw">
+    <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bjgeI3SXEeCbvogcUIXlQw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://schema.omg.org/spec/UML/2.1.1/StandardProfileL2.xmi#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+    </xmi:Extension>
+    <appliedProfile xmi:type="uml:Profile" href="http://schema.omg.org/spec/UML/2.1.1/StandardProfileL2.xmi#_0"/>
+  </profileApplication>
+</uml:Package>
