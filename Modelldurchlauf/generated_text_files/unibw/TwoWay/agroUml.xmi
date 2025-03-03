@@ -35,13 +35,7 @@
 
         <!-- Klasse Adresse -->
         <UML:Class name="Adresse" visibility="public">
-          <UML:Classifier.feature>
-            <UML:Attribute name="name" visibility="public">
-              <UML:StructuralFeature.type>
-                <UML:DataType href="http://www.omg.org/spec/UML/20090901#String"/>
-              </UML:StructuralFeature.type>
-            </UML:Attribute>
-          </UML:Classifier.feature>
+          <UML:Classifier.feature/>
         </UML:Class>
 
         <!-- Assoziation Person - Adresse -->
@@ -54,32 +48,20 @@
 
         <!-- Klasse Auto -->
         <UML:Class name="Auto" visibility="public">
-          <UML:Classifier.feature>
-            <UML:Attribute name="marke" visibility="public">
-              <UML:StructuralFeature.type>
-                <UML:DataType href="http://www.omg.org/spec/UML/20090901#String"/>
-              </UML:StructuralFeature.type>
-            </UML:Attribute>
-          </UML:Classifier.feature>
+          <UML:Classifier.feature/>
         </UML:Class>
 
         <!-- Assoziation Person - Auto -->
         <UML:Association name="posses">
           <UML:Association.connection>
             <UML:AssociationEnd name="person" type="Person" multiplicity="1"/>
-            <UML:AssociationEnd name="auto" type="Auto" multiplicity="1"/>
+            <UML:AssociationEnd name="auto" type="Auto" multiplicity="*"/>
           </UML:Association.connection>
         </UML:Association>
 
         <!-- Klasse Buch -->
         <UML:Class name="Buch" visibility="public">
-          <UML:Classifier.feature>
-            <UML:Attribute name="title" visibility="public">
-              <UML:StructuralFeature.type>
-                <UML:DataType href="http://www.omg.org/spec/UML/20090901#String"/>
-              </UML:StructuralFeature.type>
-            </UML:Attribute>
-          </UML:Classifier.feature>
+          <UML:Classifier.feature/>
         </UML:Class>
 
         <!-- Assoziation Person - Buch -->
@@ -92,17 +74,11 @@
 
         <!-- Klasse Page -->
         <UML:Class name="Page" visibility="public">
-          <UML:Classifier.feature>
-            <UML:Attribute name="number" visibility="public">
-              <UML:StructuralFeature.type>
-                <UML:DataType href="http://www.omg.org/spec/UML/20090901#Integer"/>
-              </UML:StructuralFeature.type>
-            </UML:Attribute>
-          </UML:Classifier.feature>
+          <UML:Classifier.feature/>
         </UML:Class>
 
-        <!-- Assoziation Buch - Page -->
-        <UML:Association name="consistsOf">
+        <!-- Aggregation Buch - Page -->
+        <UML:Association name="consistsOf" aggregation="composite">
           <UML:Association.connection>
             <UML:AssociationEnd name="buch" type="Buch" multiplicity="1"/>
             <UML:AssociationEnd name="page" type="Page" multiplicity="*"/>
@@ -112,22 +88,14 @@
         <!-- Klasse EmailService -->
         <UML:Class name="EmailService" visibility="public" isAbstract="false">
           <UML:Classifier.feature>
-            <UML:Attribute name="messageSource" visibility="private">
-              <UML:StructuralFeature.type>
-                <UML:DataType href="http://www.omg.org/spec/UML/20090901#String"/>
-              </UML:StructuralFeature.type>
-            </UML:Attribute>
+            <UML:Attribute name="messageSource" visibility="private"/>
             <UML:Operation name="sendMail">
               <UML:Parameter name="content" kind="in">
                 <UML:Parameter.type>
                   <UML:DataType href="http://www.omg.org/spec/UML/20090901#String"/>
                 </UML:Parameter.type>
               </UML:Parameter>
-              <UML:Parameter name="return" kind="return">
-                <UML:Parameter.type>
-                  <UML:DataType href="http://www.omg.org/spec/UML/20090901#String"/>
-                </UML:Parameter.type>
-              </UML:Parameter>
+              <UML:Parameter name="returnValue" kind="return"/>
             </UML:Operation>
           </UML:Classifier.feature>
         </UML:Class>

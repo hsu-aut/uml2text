@@ -1,100 +1,93 @@
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI xmi.version="2.1" xmlns:UML="http://www.omg.org/spec/UML/20090901">
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
   <XMI.header>
     <XMI.documentation>
       <XMI.exporter>ChatGPT UML Generator</XMI.exporter>
       <XMI.exporterVersion>1.0</XMI.exporterVersion>
     </XMI.documentation>
-    <XMI.metamodel xmi.name="UML" xmi.version="2.0"/>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
   </XMI.header>
   <XMI.content>
     <UML:Model name="ROSystem" isSpecification="false">
       <UML:Namespace.ownedElement>
 
         <!-- Schnittstellen -->
-        <UML:Interface name="InterfaceOption_Product" visibility="public">
+        <UML:Interface name="InterfaceOption_Product" visibility="public"/>
+        <UML:Interface name="InterfaceOption_Meal" visibility="public"/>
+        <UML:Interface name="InterfaceDrink" visibility="public"/>
+        <UML:Interface name="InterfaceMeal" visibility="public"/>
+        <UML:Interface name="InterfaceLanch" visibility="public"/>
+        <UML:Interface name="InterfaceCuisine" visibility="public"/>
+        <UML:Interface name="InterfaceProduct" visibility="public"/>
+
+        <!-- Abstrakte Klassen -->
+        <UML:Class name="OptionAbstract" visibility="public" isAbstract="true">
           <UML:Classifier.feature>
             <UML:Operation name="getName"/>
             <UML:Operation name="toArray"/>
           </UML:Classifier.feature>
-        </UML:Interface>
+        </UML:Class>
 
-        <UML:Interface name="InterfaceOption_Meal" visibility="public">
+        <UML:Class name="DrinkAbstract" visibility="public" isAbstract="true">
           <UML:Classifier.feature>
-            <UML:Operation name="getName"/>
-            <UML:Operation name="toArray"/>
+            <UML:Operation name="addOption"/>
+            <UML:Operation name="getOptionList"/>
+            <UML:Operation name="__construct"/>
           </UML:Classifier.feature>
-        </UML:Interface>
+        </UML:Class>
 
-        <UML:Interface name="InterfaceDrink" visibility="public">
-          <UML:Classifier.feature>
-            <UML:Operation name="getName"/>
-            <UML:Operation name="toArray"/>
-          </UML:Classifier.feature>
-        </UML:Interface>
-
-        <UML:Interface name="InterfaceMeal" visibility="public">
+        <UML:Class name="MealAbstract" visibility="public" isAbstract="true">
           <UML:Classifier.feature>
             <UML:Operation name="setPrice"/>
             <UML:Operation name="getPrice"/>
             <UML:Operation name="toArray"/>
           </UML:Classifier.feature>
-        </UML:Interface>
-
-        <UML:Interface name="InterfaceLanch" visibility="public">
-          <UML:Classifier.feature>
-            <UML:Operation name="setDrink"/>
-            <UML:Operation name="setMainCourse"/>
-            <UML:Operation name="setDessert"/>
-          </UML:Classifier.feature>
-        </UML:Interface>
-
-        <!-- Abstrakte Klassen -->
-        <UML:Class name="OptionAbstract" visibility="public" isAbstract="true">
-          <UML:Generalization>
-            <UML:Generalization.child>
-              <UML:Class href="#OptionAbstract"/>
-            </UML:Generalization.child>
-            <UML:Generalization.parent>
-              <UML:Interface href="#InterfaceOption_Meal"/>
-            </UML:Generalization.parent>
-          </UML:Generalization>
-          <UML:Classifier.feature>
-            <UML:Operation name="getName"/>
-          </UML:Classifier.feature>
-        </UML:Class>
-
-        <UML:Class name="DrinkAbstract" visibility="public" isAbstract="true">
-          <UML:Generalization>
-            <UML:Generalization.child>
-              <UML:Class href="#DrinkAbstract"/>
-            </UML:Generalization.child>
-            <UML:Generalization.parent>
-              <UML:Interface href="#InterfaceDrink"/>
-            </UML:Generalization.parent>
-          </UML:Generalization>
         </UML:Class>
 
         <UML:Class name="AbstractCuisine" visibility="public" isAbstract="true">
           <UML:Classifier.feature>
-            <UML:Attribute name="name" visibility="private"/>
-            <UML:Attribute name="meal_list" visibility="private"/>
+            <UML:Operation name="getName"/>
             <UML:Operation name="add"/>
             <UML:Operation name="getMealList"/>
             <UML:Operation name="toArray"/>
           </UML:Classifier.feature>
         </UML:Class>
 
-        <UML:Class name="AbstractLanch" visibility="public" isAbstract="true">
-          <UML:Classifier.feature>
-            <UML:Operation name="setDrink"/>
-            <UML:Operation name="setMainCourse"/>
-            <UML:Operation name="setDessert"/>
-          </UML:Classifier.feature>
+        <!-- Konkrete Implementierungen -->
+        <UML:Class name="OptionConcrete" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class href="#OptionConcrete"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class href="#OptionAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
         </UML:Class>
 
-        <!-- Konkrete Klassen -->
+        <UML:Class name="DrinkConcrete" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class href="#DrinkConcrete"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class href="#DrinkAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class name="MealConcrete" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class href="#MealConcrete"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class href="#MealAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
         <UML:Class name="CuisineConcrete" visibility="public">
           <UML:Generalization>
             <UML:Generalization.child>
@@ -106,40 +99,34 @@
           </UML:Generalization>
         </UML:Class>
 
-        <UML:Class name="MealConcrete" visibility="public">
-          <UML:Generalization>
-            <UML:Generalization.child>
-              <UML:Class href="#MealConcrete"/>
-            </UML:Generalization.child>
-            <UML:Generalization.parent>
-              <UML:Class href="#AbstractCuisine"/>
-            </UML:Generalization.parent>
-          </UML:Generalization>
-        </UML:Class>
-
-        <UML:Class name="LanchConcrete" visibility="public">
-          <UML:Generalization>
-            <UML:Generalization.child>
-              <UML:Class href="#LanchConcrete"/>
-            </UML:Generalization.child>
-            <UML:Generalization.parent>
-              <UML:Class href="#AbstractLanch"/>
-            </UML:Generalization.parent>
-          </UML:Generalization>
-        </UML:Class>
-
         <!-- Assoziationen -->
-        <UML:Association name="DrinkOptionDependency">
+        <UML:Association name="DrinkAbstract_to_InterfaceDrink">
           <UML:Association.connection>
-            <UML:AssociationEnd name="drink" type="DrinkAbstract" multiplicity="1"/>
-            <UML:AssociationEnd name="option" type="OptionAbstract" multiplicity="*"/>
+            <UML:AssociationEnd name="drinkAbstract" type="DrinkAbstract" multiplicity="1"/>
+            <UML:AssociationEnd name="interfaceDrink" type="InterfaceDrink" multiplicity="*"/>
           </UML:Association.connection>
         </UML:Association>
 
-        <UML:Association name="DrinkOptionAggregation" aggregation="aggregate">
+        <UML:Association name="AbstractCuisine_to_InterfaceCuisine">
           <UML:Association.connection>
-            <UML:AssociationEnd name="drinkConcrete" type="DrinkConcrete" multiplicity="1"/>
-            <UML:AssociationEnd name="optionConcrete" type="OptionConcrete" multiplicity="*"/>
+            <UML:AssociationEnd name="abstractCuisine" type="AbstractCuisine" multiplicity="1"/>
+            <UML:AssociationEnd name="interfaceCuisine" type="InterfaceCuisine" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association name="InterfaceLanch_to_MealComponents">
+          <UML:Association.connection>
+            <UML:AssociationEnd name="interfaceLanch" type="InterfaceLanch" multiplicity="1"/>
+            <UML:AssociationEnd name="drink" type="InterfaceDrink" multiplicity="*"/>
+            <UML:AssociationEnd name="mainCourse" type="InterfaceMeal" multiplicity="*"/>
+            <UML:AssociationEnd name="dessert" type="InterfaceMeal" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association name="MealAbstract_to_MealList">
+          <UML:Association.connection>
+            <UML:AssociationEnd name="mealAbstract" type="MealAbstract" multiplicity="1"/>
+            <UML:AssociationEnd name="mealList" type="SplObjectStorage" multiplicity="*"/>
           </UML:Association.connection>
         </UML:Association>
 
