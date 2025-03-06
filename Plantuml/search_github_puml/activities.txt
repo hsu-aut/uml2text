@@ -1,0 +1,109 @@
+@startuml
+' Actors
+'skinparam actorStyle awesome
+'skinparam controlStyle awesome
+
+title draft displaying the possible interAction of the L4 with the L3
+
+actor HW as "health workers"
+'interface UI as "user interface"
+
+
+HW -> UI :search for patient (created before if needed)
+
+control L as "Engine"
+database F as "Fhir"
+note over HW, F
+    This diagrams to avoid puting too much load on handset in LIMC,
+    * latest phones and tablets are not always avaiable
+    * in general, electonic equipment are more expensive (~30%),
+    * if the L4 need to be scaled up, political and financial constraint might prevent the purshase of high end handsets
+
+    This PlanDefinition only allow the triggering of questionnaires for clinical interogation, classification proposal, treatment proposal,
+    each questionnaire could have a Action.code so the formfiller application may organise/group the quesitonnaire
+end note
+
+UI -> L : search for patient
+
+
+== chosing the IG to run ==
+
+L->F: PlanDefinition/$Apply to find the available CarePlan\n Actions.code (system=cpg-common-process) = "registration",\n (possibly using the named-event trigger "registration"  ) with patient as subject
+F->L: evaluate the condition of the PlanDefinition available, then create CarePlan for the plan definiotn that have valid Actions
+F->L: send a list of CarePlans
+L->UI: display available CarePlan (Action title + description in infobox)
+HW<-> UI : select the CarePlan (ie. further $Apply will be applied on the PlanDefinition that gave the selected "registration" Action )
+UI -> L: send the CarePlan to use ( does include sub PlanDefinition)
+L->L : save "inMemory" the PlanDefinition for \nguideline-based-care / determine-diagnosis / dispense-medications / provide-counseling\n based on Actioncode from the system cpg-common-process
+
+
+
+== executing the careplan ==
+L-> L : create the encounter
+
+
+note over HW, F
+    the section below, could be run at multiple time, for example after the upload of the bundle created by applying the structure map to the submitted quesitonnaire
+end note
+loop
+    L -> F : PlanDefinition/EmCareDXX/$Apply,   with patient as subject and encounter in the launch context
+    F -> L: reply with CarePlan, this CarePlan Action will refers to Activity or questionnaire
+    alt CarePlan has "new Actions"
+        == clinical interogation ==
+        loop  on all not-done Actions
+            L->L: Save the Action "inMemory"
+            alt next Action is an ActivityDefinition (interrogation, test)
+                alt ActivityDefinition already run/started
+                    L-> L: skip that activity
+                else
+                    L->L: get the questionnaire in the "cpg-collect-with"
+                    L->L: save that this activity is started
+                end
+            end
+            L -> F : $populate the questionnaire
+            F -> L : send back the pre-filled QuestionnaireResponse, \nattach that questionnaire to the "tile" matching\n the Actions.code (system=cpg-common-process)
+            L -> UI: Send Questionnaire & QuestionnaireResponse
+            HW -> UI : Fill the questionnaire and submit
+            UI -> L: send the questionnaire response
+            L -> L: run the structureMap on the QuestionnaireResponse
+            L -> F: save the created bundle (QR ?  and observation/Patient/encounter/RelatedPsrsons)
+        end
+    else
+        L->L: break
+    end
+end
+==  determine-diagnosis ==
+
+group  Diagnostic :
+    L -> F : PlanDefinition/EmCareDXX/$Apply,
+    F -> L: send the classification questionnaire
+
+    L->UI:  display the classification questionnaire
+    HW->UI: agree or disagree with classification
+    HW->UI: add classification
+    UI -> L: send the questionnaire response
+    L -> L: run the structureMap on the QuestionnaireResponse
+    L -> F: save the created bundle (QR ?  and condition for confirmed classifications /update Encounter.diagnostic)
+end
+
+== dispense-medications	==
+
+loop
+
+    L -> F : PlanDefinition/EmCareDXX/$Apply,
+    F -> L: send the medication questionnaire
+    L->UI:  display the medication questionnaire
+    HW->UI: document if the medication is available
+    UI -> L: send the questionnaire response
+    L -> L: run the structureMap on the QuestionnaireResponse
+    L -> F: save the created bundle (QR ?  and medicationRequest for treatment not available, DispenseMedication  for the treatment provided)
+
+end
+
+== provide-counseling ==
+
+ L -> F : PlanDefinition/EmCareDXX/$Apply,
+    F -> L: send the counseling questionnaire
+    L->UI:  display the counseling questionnaire
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+
+start
+:AccountController.Login(email, password);
+:User.Find(email);
+
+if(User) then (false)
+	:Render(Bad user/pass);
+	stop
+else (true)
+	:h = hash(password);
+	if(h == User.hash) then (false)
+		:Render(Bad user/pass);
+		stop
+	else (true)
+		:Session.save();
+		:Render(home);
+		stop
+	endif
+endif
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+!theme cyborg
+
+
+title Boarding- Activity Diagram
+
+
+start
+
+:Passenger enters the plane;
+
+:Stewardess Welcomes;
+
+:Stewardess indicates seat;
+
+:Passenger stows hand luggage;
+
+if (hand luggage < storage space) then (yes)
+  :Stow luggage;
+else (no)
+  :Stewardess packs hand luggage under the seat;
+endif
+
+:Passenger sits down;
+
+:Stewardess checks seat belt;
+if (seat belt unfastened) then (yes)
+  :Stewardess arranges safety;
+  :Passenger buckles up;
+
+endif;
+:Stewardess confirms safety;
+:Stewardess demonstrates safety demo;
+:Pilot welcomes passengers and introduces himself and crew;
+:Pilot flies off;
+
+stop
+@enduml
