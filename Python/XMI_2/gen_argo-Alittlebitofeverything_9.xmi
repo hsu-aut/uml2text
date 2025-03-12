@@ -1,0 +1,85 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_testing" name="testing">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Name" name="Name" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Name_NameIf" parent="interface_NameIf"/>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="interface_NameIf" name="NameIf" visibility="public"/>
+        
+        <UML:Class xmi.id="class_Little" name="Little" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Little_A" parent="class_A"/>
+          <UML:StateMachine xmi.id="stateMachine_Little">
+            <UML:TopState xmi.id="topState_Little">
+              <UML:State xmi.id="state_s2" name="s2"/>
+              <UML:State xmi.id="state_s3" name="s3"/>
+              <UML:FinalState xmi.id="finalState_Little" name="Final"/>
+              <UML:Transition xmi.id="transition_initial_s2" source="initial" target="state_s2"/>
+              <UML:Transition xmi.id="transition_s2_s3" source="state_s2" target="state_s3"/>
+              <UML:Transition xmi.id="transition_s3_final" source="state_s3" target="finalState_Little"/>
+            </UML:TopState>
+          </UML:StateMachine>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_BitOf" name="Bit of" visibility="public" isAbstract="true">
+          <UML:Generalization xmi.id="gen_BitOf_Everything" parent="class_Everything"/>
+          <UML:StateMachine xmi.id="activityGraph_BitOf">
+            <UML:TopState xmi.id="topState_BitOf">
+              <UML:CompositeState xmi.id="composite_activities_top" name="activities_top">
+                <UML:State xmi.id="state_h1" name="h1"/>
+                <UML:State xmi.id="state_h2" name="h2"/>
+                <UML:State xmi.id="state_h3" name="h3"/>
+                <UML:FinalState xmi.id="finalState_BitOf" name="finalen"/>
+                <UML:Transition xmi.id="transition_h1_h2" source="state_h1" target="state_h2"/>
+                <UML:Transition xmi.id="transition_h2_h3" source="state_h2" target="state_h3"/>
+                <UML:Transition xmi.id="transition_h3_finalen" source="state_h3" target="finalState_BitOf"/>
+              </UML:CompositeState>
+            </UML:TopState>
+          </UML:StateMachine>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Everything" name="Everything" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Simple" name="Simple" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_A" name="A" visibility="public" isAbstract="false"/>
+        
+        <UML:UseCase xmi.id="useCase_UC1" name="UC1"/>
+        <UML:UseCase xmi.id="useCase_UC2" name="UC2">
+          <UML:Extend xmi.id="extend_UC2_UC1" base="useCase_UC1"/>
+        </UML:UseCase>
+        
+        <UML:Actor xmi.id="actor_JohnWayne" name="John Wayne">
+          <UML:AssociationEnd xmi.id="assocEnd_JohnWayne_UC1" type="useCase_UC1"/>
+        </UML:Actor>
+        
+        <UML:Collaboration xmi.id="collaboration_Collaboration" name="Collaboration">
+          <UML:ClassifierRole xmi.id="role_j1" base="class_Name"/>
+          <UML:ClassifierRole xmi.id="role_j2" base="class_Model"/>
+          <UML:AssociationRole xmi.id="assocRole_j1_j2">
+            <UML:AssociationEndRole xmi.id="endRole_j1" type="role_j1"/>
+            <UML:AssociationEndRole xmi.id="endRole_j2" type="role_j2"/>
+          </UML:AssociationRole>
+          <UML:Interaction xmi.id="interaction_Collaboration">
+            <UML:Message xmi.id="message_1" name="1 happening first" sender="role_j1" receiver="role_j2"/>
+            <UML:Message xmi.id="message_2" name="2 happening then" sender="role_j2" receiver="role_j1"/>
+          </UML:Interaction>
+        </UML:Collaboration>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

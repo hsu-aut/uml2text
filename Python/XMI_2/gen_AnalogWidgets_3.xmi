@@ -1,0 +1,112 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Stereotypes Definitions -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_int" name="int"/>
+        <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+        <UML:Stereotype xmi.id="stereotype_friend" name="friend"/>
+        <UML:Stereotype xmi.id="stereotype_virtual" name="virtual"/>
+        <UML:Stereotype xmi.id="stereotype_subsystem" name="subsystem"/>
+        <UML:Stereotype xmi.id="stereotype_typ_danych" name="typ danych"/>
+        <UML:Stereotype xmi.id="stereotype_adapter" name="adapter"/>
+        <UML:Stereotype xmi.id="stereotype_template" name="template"/>
+        <UML:Stereotype xmi.id="stereotype_Decorator" name="Decorator"/>
+        <UML:Stereotype xmi.id="stereotype_struct" name="struct"/>
+        <UML:Stereotype xmi.id="stereotype_component" name="component"/>
+        <UML:Stereotype xmi.id="stereotype_Concrete" name="Concrete"/>
+        
+        <!-- Logical View Package -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_char" name="char" stereotype="datatype"/>
+                <UML:Class xmi.id="class_bool" name="bool" stereotype="datatype"/>
+                <UML:Class xmi.id="class_float" name="float" stereotype="datatype"/>
+                <UML:Class xmi.id="class_double" name="double" stereotype="datatype"/>
+                <UML:Class xmi.id="class_long" name="long" stereotype="datatype"/>
+                <UML:Class xmi.id="class_short" name="short" stereotype="datatype"/>
+                <UML:Class xmi.id="class_string" name="string" stereotype="datatype"/>
+                <UML:Class xmi.id="class_void" name="void" stereotype="datatype"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- AnalogWidgets Package -->
+            <UML:Package xmi.id="package_AnalogWidgets" name="AnalogWidgets">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_ChartDecorator" name="ChartDecorator" stereotype="Decorator"/>
+                <UML:Class xmi.id="class_ScalesGridDecorator" name="ScalesGridDecorator"/>
+                <UML:Class xmi.id="class_LegendDecorator" name="LegendDecorator"/>
+                <UML:Class xmi.id="class_LabelsDecorator" name="LabelsDecorator"/>
+                <UML:Class xmi.id="class_GlassDecorator" name="GlassDecorator"/>
+                <UML:Class xmi.id="class_ChannelDecorator" name="ChannelDecorator"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Mnemonics Package -->
+            <UML:Package xmi.id="package_Mnemonics" name="Mnemonics">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_QMnemonicBox" name="QMnemonicBox"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Qt Package -->
+            <UML:Package xmi.id="package_Qt" name="Qt">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_QColor" name="QColor"/>
+                <UML:Class xmi.id="class_QFont" name="QFont"/>
+                <UML:Class xmi.id="class_QString" name="QString"/>
+                <UML:Class xmi.id="class_QWidget" name="QWidget"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Common Package -->
+            <UML:Package xmi.id="package_common" name="common">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_AbstractMeter" name="AbstractMeter"/>
+                <UML:Class xmi.id="class_WidgetWithBackground" name="WidgetWithBackground"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Class Relationships -->
+        
+        <!-- Iterator -->
+        <UML:Class xmi.id="class_Iterator" name="Iterator" stereotype="adapter"/>
+        <UML:Class xmi.id="class_iterator" name="iterator"/>
+        <UML:Generalization xmi.id="gen_Iterator" parent="class_Iterator" child="class_iterator"/>
+        
+        <!-- ChartDecorator Relations -->
+        <UML:Generalization xmi.id="gen_ChartDecorator_ScalesGridDecorator" parent="class_ChartDecorator" child="class_ScalesGridDecorator"/>
+        <UML:Generalization xmi.id="gen_ChartDecorator_LegendDecorator" parent="class_ChartDecorator" child="class_LegendDecorator"/>
+        <UML:Generalization xmi.id="gen_ChartDecorator_LabelsDecorator" parent="class_ChartDecorator" child="class_LabelsDecorator"/>
+        <UML:Generalization xmi.id="gen_ChartDecorator_GlassDecorator" parent="class_ChartDecorator" child="class_GlassDecorator"/>
+        <UML:Generalization xmi.id="gen_ChartDecorator_ChannelDecorator" parent="class_ChartDecorator" child="class_ChannelDecorator"/>
+        
+        <!-- Widget Generalization -->
+        <UML:Generalization xmi.id="gen_WidgetWithBackground_ManoMeter" parent="class_WidgetWithBackground" child="class_ManoMeter"/>
+        <UML:Generalization xmi.id="gen_AbstractMeter_ThermoMeter" parent="class_AbstractMeter" child="class_ThermoMeter"/>
+        <UML:Generalization xmi.id="gen_AbstractMeter_WallClock" parent="class_AbstractMeter" child="class_WallClock"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

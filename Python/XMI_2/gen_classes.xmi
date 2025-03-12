@@ -1,0 +1,110 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        <!-- Package for Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <!-- Define Datatypes -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class definitions -->
+        <UML:Class xmi.id="class_PVirtualMachine" name="PVirtualMachine" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_QImage" name="QImage" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PCodePointer" name="PCodePointer" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PBlockManager" name="PBlockManager" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PColorManager" name="PColorManager" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PConsole" name="PConsole" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PCalcStack" name="PCalcStack" visibility="public" isAbstract="false"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_PBlockManager_PCodePointer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PBlockManager" type="class_PBlockManager"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PCodePointer" type="class_PCodePointer"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PCodePointer_QImage">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PCodePointer" type="class_PCodePointer"/>
+            <UML:AssociationEnd xmi.id="assocEnd_QImage" type="class_QImage"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_QImage_PBlockManager">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_QImage" type="class_QImage"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PBlockManager" type="class_PBlockManager"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Compositions -->
+        <UML:Association xmi.id="composition_PVirtualMachine_QImage">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compositionEnd_PVirtualMachine" type="class_PVirtualMachine" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compositionEnd_QImage" type="class_QImage"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="composition_PVirtualMachine_PCodePointer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compositionEnd_PVirtualMachine" type="class_PVirtualMachine" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compositionEnd_PCodePointer" type="class_PCodePointer"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="composition_PVirtualMachine_PBlockManager">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compositionEnd_PVirtualMachine" type="class_PVirtualMachine" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compositionEnd_PBlockManager" type="class_PBlockManager"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="composition_PVirtualMachine_PColorManager">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compositionEnd_PVirtualMachine" type="class_PVirtualMachine" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compositionEnd_PColorManager" type="class_PColorManager"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="composition_PVirtualMachine_PConsole">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compositionEnd_PVirtualMachine" type="class_PVirtualMachine" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compositionEnd_PConsole" type="class_PConsole"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="composition_PVirtualMachine_PCalcStack">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compositionEnd_PVirtualMachine" type="class_PVirtualMachine" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compositionEnd_PCalcStack" type="class_PCalcStack"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

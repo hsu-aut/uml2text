@@ -1,0 +1,67 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StateMachine" name="StateMachine">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Class_1" name="Class_1" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Class_2" name="Class_2" visibility="public" isAbstract="false"/>
+        
+        <UML:StateMachine xmi.id="stateMachine_1" name="StateMachine_1">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="composite_state_1" name="top">
+              <UML:CompositeState.subvertex>
+                <UML:SimpleState xmi.id="simple_state_1" name="Simple_State_1"/>
+                <UML:SimpleState xmi.id="simple_state_2" name="Simple_State_2"/>
+                <UML:FinalState xmi.id="final_state_1" name="Final_State_1"/>
+              </UML:CompositeState.subvertex>
+              <UML:CompositeState.internalTransition>
+                <UML:Transition xmi.id="transition_1" name="Transition_1">
+                  <UML:Transition.guard>
+                    <UML:Guard xmi.id="guard_1" name="Guard_1" expression="x > 20"/>
+                  </UML:Transition.guard>
+                  <UML:Transition.source>
+                    <UML:ModelElement xmi.idref="simple_state_1"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:ModelElement xmi.idref="final_state_1"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+                <UML:Transition xmi.id="transition_2" name="Transition_2">
+                  <UML:Transition.source>
+                    <UML:ModelElement xmi.idref="simple_state_1"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:ModelElement xmi.idref="simple_state_2"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+                <UML:Transition xmi.id="transition_3" name="Transition_3">
+                  <UML:Transition.guard>
+                    <UML:Guard xmi.id="guard_2" name="Guard_2" expression="x > 20"/>
+                  </UML:Transition.guard>
+                  <UML:Transition.source>
+                    <UML:ModelElement xmi.idref="simple_state_2"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:ModelElement xmi.idref="final_state_1"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+              </UML:CompositeState.internalTransition>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

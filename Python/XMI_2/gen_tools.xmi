@@ -1,0 +1,147 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_Tool" name="Tool" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_getAction" name="getAction" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_getAction_return" name="return" kind="return" type="QAction"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_hasSharedData" name="hasSharedData" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_hasSharedData_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolManager" name="ToolManager" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_new" name="new" visibility="public"/>
+            <UML:Operation xmi.id="operation_setTool" name="setTool" visibility="public"/>
+            <UML:Operation xmi.id="operation_activateTool" name="activateTool" visibility="public"/>
+            <UML:Operation xmi.id="operation_deactivateTool" name="deactivateTool" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QViewer" name="QViewer" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_m_toolProxy" name="m_toolProxy" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ToolProxy"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolConfiguration" name="ToolConfiguration" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_newToolConfiguration" name="new" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolRegistry" name="ToolRegistry" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_getAction" name="getAction" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_getAction_return_registry" name="return" kind="return" type="QAction"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_getTool" name="getTool" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_getTool_return" name="return" kind="return" type="Tool"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolProxy" name="ToolProxy" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_addTool" name="addTool" visibility="public"/>
+            <UML:Operation xmi.id="operation_isToolActive" name="isToolActive" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_isToolActive_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_removeTool" name="removeTool" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QAction" name="QAction" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ToolData" name="ToolData" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_newToolData" name="new" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolRepresentation" name="ToolRepresentation" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ToolHandler" name="ToolHandler" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_handleEvents" name="handleEvents" visibility="public"/>
+            <UML:Operation xmi.id="operation_create" name="create" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolHandlerWithRepresentation" name="ToolHandlerWithRepresentation" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="generalization_ToolHandlerWithRepresentation" parent="class_ToolHandler"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolHandlerWithoutRepresentation" name="ToolHandlerWithoutRepresentation" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="generalization_ToolHandlerWithoutRepresentation" parent="class_ToolHandler"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Scene" name="Scene" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="assoc_Tool_ToolData">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Tool_ToolData_Tool" type="class_Tool" name="tool" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Tool_ToolData_ToolData" type="class_ToolData" name="toolData" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Tool_ToolProxy">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Tool_ToolProxy_Tool" type="class_Tool" name="tool" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Tool_ToolProxy_ToolProxy" type="class_ToolProxy" name="toolProxy" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_QViewer_ToolProxy">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_QViewer_ToolProxy_QViewer" type="class_QViewer" name="viewer" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_QViewer_ToolProxy_ToolProxy" type="class_ToolProxy" name="toolProxy" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ToolRegistry_ToolManager">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ToolRegistry_ToolManager_ToolRegistry" type="class_ToolRegistry" name="toolRegistry" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ToolRegistry_ToolManager_ToolManager" type="class_ToolManager" name="toolManager" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

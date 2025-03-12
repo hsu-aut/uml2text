@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="unbenanntesModell" name="unbenanntesModell">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Amplifier" name="Amplifier" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_audioEnhancement" name="audioEnhancement" visibility="public">
+              <UML:Parameter xmi.id="parameter_return" name="return" kind="return" type="void"/>
+              <UML:Parameter xmi.id="parameter_active" name="active" kind="in" type="Enumeration"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Remote" name="Remote" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_update" name="update" visibility="public">
+              <UML:Parameter xmi.id="parameter_update_return" name="return" kind="return" type="void"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_hasRemote" name="hasRemote">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier" type="class_Amplifier" name="amplifier" visibility="public" aggregation="none" multiplicity="1..1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Remote" type="class_Remote" name="remote" visibility="public" aggregation="none" multiplicity="1..1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:DataType xmi.id="Enumeration" name="Enumeration"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

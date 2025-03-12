@@ -1,0 +1,92 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="NetworkSimulation">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="OOeCgWdKNQMb" name="Router" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ip" name="ip" visibility="private"/>
+            <UML:Attribute xmi.id="attr_computadoras" name="computadoras" visibility="private" type="Lista<Computadora>"/>
+            <UML:Attribute xmi.id="attr_tabla_enrutamiento" name="tabla_enrutamiento" visibility="private" type="Lista<Etiqueta>"/>
+            <UML:Attribute xmi.id="attr_organizador_paquetes" name="organizador_paquetes" visibility="private" type="Biblioteca_paquetes"/>
+            <UML:Attribute xmi.id="attr_conexiones" name="conexiones_envio/recepcion" visibility="private" type="Conexion*"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="emQFfZ581VuX" name="Paquete" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ip_comp_origen" name="ip_comp_origen" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ip_comp_destino" name="ip_comp_destino" visibility="private"/>
+            <UML:Attribute xmi.id="attr_id_pagina" name="id_pagina" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tamanio_pagina" name="tamanio_pagina" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="yrg8L7oc2RyM" name="Pagina" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tamanio" name="tamanio" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ip_origen" name="ip_origen" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ip_destino" name="ip_destino" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="bMgFAlYW8Ajo" name="Lista" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Methoden zur Manipulation der Listenelemente -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="Low3bUHBn0AK" name="Etiqueta" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_router_destino" name="router_destino" visibility="private"/>
+            <UML:Attribute xmi.id="attr_router_despacho" name="router_despacho" visibility="private"/>
+            <UML:Attribute xmi.id="attr_peso_trayecto" name="peso_trayecto" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="vb6QwcRUqkkd" name="Conexion" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Conexion_Arco" general="ykOIcmlj3gxR"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_canal" name="canal" visibility="private"/>
+            <UML:Attribute xmi.id="attr_estado" name="estado" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="ON23g0m8Gzmy" name="Computadora" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ip" name="ip" visibility="private"/>
+            <UML:Attribute xmi.id="attr_paginas_recibidas" name="paginas_recibidas" visibility="private" type="Lista<Pagina>"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="NQll79Fa1FB4" name="Biblioteca_paquetes" visibility="public" isAbstract="false">
+          <!-- Paketmanagementsystem -->
+        </UML:Class>
+
+        <UML:Class xmi.id="tiRvHOKfHfs0" name="Administrador" visibility="public" isAbstract="false">
+          <!-- Netzwerkverwaltung und Optimierung -->
+        </UML:Class>
+
+        <!-- Assoziationen und Beziehungen -->
+        <UML:Association xmi.id="assoc_Router_Computadora">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Router_Computadora_Router" type="OOeCgWdKNQMb" name="router" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Router_Computadora_Computadora" type="ON23g0m8Gzmy" name="computadora" visibility="public" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

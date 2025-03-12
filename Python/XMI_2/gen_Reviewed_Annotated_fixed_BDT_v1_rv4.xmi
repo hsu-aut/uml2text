@@ -1,0 +1,139 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EARootClass" name="EARootClass">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View Package -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Data Model Package -->
+            <UML:Package xmi.id="package_DataModel" name="Data Model"/>
+            
+            <!-- Logical Model Package -->
+            <UML:Package xmi.id="package_LogicalModel" name="Logical Model">
+              <UML:Namespace.ownedElement>
+                <UML:Package xmi.id="package_java" name="java">
+                  <UML:Namespace.ownedElement>
+                    
+                    <!-- lang Package -->
+                    <UML:Package xmi.id="package_lang" name="lang">
+                      <UML:Namespace.ownedElement>
+                        <UML:Class xmi.id="class_String" name="String" visibility="public"/>
+                        <UML:Class xmi.id="class_Integer" name="Integer" visibility="public"/>
+                        <UML:Class xmi.id="class_Boolean" name="Boolean" visibility="public"/>
+                        <UML:Class xmi.id="class_Float" name="Float" visibility="public"/>
+                        <UML:Class xmi.id="class_Long" name="Long" visibility="public"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Package>
+                    
+                    <!-- util Package -->
+                    <UML:Package xmi.id="package_util" name="util">
+                      <UML:Namespace.ownedElement>
+                        <UML:Class xmi.id="class_Date" name="Date" visibility="public"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Package>
+                    
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+                <UML:Package xmi.id="package_gov" name="gov">
+                  <UML:Namespace.ownedElement>
+                    <UML:Package xmi.id="package_nih" name="nih">
+                      <UML:Namespace.ownedElement>
+                        <UML:Package xmi.id="package_nci" name="nci">
+                          <UML:Namespace.ownedElement>
+                            <UML:Package xmi.id="package_ivi" name="ivi">
+                              <UML:Namespace.ownedElement>
+                                
+                                <!-- bdt Package -->
+                                <UML:Package xmi.id="package_bdt" name="bdt">
+                                  <UML:Namespace.ownedElement>
+                                    <UML:Class xmi.id="class_DataLocation" name="DataLocation" visibility="public">
+                                      <UML:Classifier.feature>
+                                        <UML:Attribute xmi.id="attr_compressionType" name="compressionType" visibility="public"/>
+                                        <UML:Attribute xmi.id="attr_locationPort" name="locationPort" visibility="public"/>
+                                        <UML:Attribute xmi.id="attr_locationURL" name="locationURL" visibility="public"/>
+                                        <UML:Attribute xmi.id="attr_transportMechanismType" name="transportMechanismType" visibility="public"/>
+                                      </UML:Classifier.feature>
+                                    </UML:Class>
+                                    
+                                    <UML:Class xmi.id="class_DataItem" name="DataItem" visibility="public">
+                                      <UML:Classifier.feature>
+                                        <UML:Attribute xmi.id="attr_identifier" name="identifier" visibility="public"/>
+                                        <UML:Attribute xmi.id="attr_id" name="id" visibility="public"/>
+                                      </UML:Classifier.feature>
+                                    </UML:Class>
+                                    
+                                    <UML:Class xmi.id="class_BundledDataItem" name="BundledDataItem" visibility="public" isAbstract="false">
+                                      <UML:Generalization>
+                                        <UML:Generalization xmi.id="generalization_BundledDataItem_DataItem" parent="class_DataItem"/>
+                                      </UML:Generalization>
+                                    </UML:Class>
+                                    
+                                    <UML:Class xmi.id="class_Base64DataItem" name="Base64DataItem" visibility="public">
+                                      <UML:Classifier.feature>
+                                        <UML:Attribute xmi.id="attr_binaryData" name="binaryData" visibility="public"/>
+                                      </UML:Classifier.feature>
+                                      <UML:Generalization>
+                                        <UML:Generalization xmi.id="generalization_Base64DataItem_BundledDataItem" parent="class_BundledDataItem"/>
+                                      </UML:Generalization>
+                                    </UML:Class>
+                                    
+                                    <UML:Class xmi.id="class_GridFTPDataItem" name="GridFTPDataItem" visibility="public">
+                                      <UML:Generalization>
+                                        <UML:Generalization xmi.id="generalization_GridFTPDataItem_BundledDataItem" parent="class_BundledDataItem"/>
+                                      </UML:Generalization>
+                                    </UML:Class>
+                                    
+                                    <UML:Class xmi.id="class_FileSystemDataItem" name="FileSystemDataItem" visibility="public">
+                                      <UML:Generalization>
+                                        <UML:Generalization xmi.id="generalization_FileSystemDataItem_BundledDataItem" parent="class_BundledDataItem"/>
+                                      </UML:Generalization>
+                                    </UML:Class>
+                                    
+                                  </UML:Namespace.ownedElement>
+                                </UML:Package>
+                                
+                              </UML:Namespace.ownedElement>
+                            </UML:Package>
+                          </UML:Namespace.ownedElement>
+                        </UML:Package>
+                      </UML:Namespace.ownedElement>
+                    </UML:Package>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Metadata Package -->
+        <UML:Package xmi.id="package_metadata" name="metadata">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Metadata" name="Metadata" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="public"/>
+                <UML:Attribute xmi.id="attr_value" name="value" visibility="public"/>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

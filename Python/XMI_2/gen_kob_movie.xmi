@@ -1,0 +1,91 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+    <XMI.header>
+        <XMI.documentation>
+            <XMI.exporter>ArgoUML</XMI.exporter>
+            <XMI.exporterVersion>0.34</XMI.exporterVersion>
+        </XMI.documentation>
+        <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+    </XMI.header>
+    <XMI.content>
+        <UML:Model xmi.id="m1" name="UML Model">
+            <UML:Namespace.ownedElement>
+                <UML:Package xmi.id="XMkZ0ObzAJk2" name="Logical View">
+                    <UML:Namespace.ownedElement>
+                        <UML:Class xmi.id="fXyxkrzUDsxU" name="Movie" visibility="public" isAbstract="false">
+                            <UML:Attribute xmi.id="attr_movie_id" name="id" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_movie_title" name="title" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_movie_author" name="author" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_movie_date" name="date" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_movie_url" name="url" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_movie_spot" name="spot" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_movie_passwd" name="passwd" visibility="private"/>
+                        </UML:Class>
+                        <UML:Class xmi.id="23kWqYZoBVIK" name="Spot" visibility="public" isAbstract="false">
+                            <UML:Attribute xmi.id="attr_spot_id" name="id" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_spot_link" name="link" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_spot_frame" name="frame" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_spot_dur" name="dur" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_spot_thumb" name="thumb" visibility="private"/>
+                            <UML:Attribute xmi.id="attr_spot_media" name="media" visibility="private"/>
+                        </UML:Class>
+                        <UML:Interface xmi.id="Ob63nMcCVPbk" name="iPlayer" visibility="public">
+                            <UML:Operation xmi.id="op_play" name="play"/>
+                            <UML:Operation xmi.id="op_stop" name="stop"/>
+                            <UML:Operation xmi.id="op_load" name="load"/>
+                        </UML:Interface>
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+
+                <UML:Package xmi.id="ComponentView" name="Component View">
+                    <UML:Namespace.ownedElement>
+                        <UML:Component xmi.id="8MuJOf3wVFqq" name="Player" isAbstract="false" isLeaf="false" isSpecification="false"/>
+                        <UML:Component xmi.id="JETi8vZEHTXd" name="Editor" isAbstract="false" isLeaf="false" isSpecification="false"/>
+                        <UML:Component xmi.id="4zYwdNwUfmKx" name="Sender" isAbstract="false" isLeaf="false" isSpecification="false"/>
+                        <UML:Component xmi.id="YF12zoJJ2mz8" name="Model" isAbstract="false" isLeaf="false" isSpecification="false"/>
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+
+                <UML:Package xmi.id="DeploymentView" name="Deployment View">
+                    <UML:Namespace.ownedElement>
+                        <UML:Node xmi.id="UCMfAWDVGPuf" name="Web server" isSpecification="false" isRuntimeImplementation="false"/>
+                        <UML:Node xmi.id="XxGluTDF7OvN" name="Media Server" isSpecification="false" isRuntimeImplementation="false"/>
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+
+                <UML:Package xmi.id="UseCaseView" name="Use Case View">
+                    <UML:Namespace.ownedElement>
+                        <UML:UseCase xmi.id="RnVGXEw2D2lk" name="Player" visibility="public">
+                            <UML:ExtensionPoint name="Play"/>
+                            <UML:ExtensionPoint name="Load"/>
+                            <UML:ExtensionPoint name="Pause"/>
+                            <UML:ExtensionPoint name="Seek"/>
+                            <UML:ExtensionPoint name="Set Volume"/>
+                        </UML:UseCase>
+
+                        <UML:UseCase xmi.id="rC9TqRhYMCc7" name="Spot" visibility="public">
+                            <UML:ExtensionPoint name="Show"/>
+                            <UML:ExtensionPoint name="Send links"/>
+                            <UML:ExtensionPoint name="Open links"/>
+                        </UML:UseCase>
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+
+                <UML:Package xmi.id="EntityRelationshipModel" name="Entity Relationship Model">
+                    <UML:Namespace.ownedElement>
+                        <UML:Entity xmi.id="entity_Movie" name="Movie"/>
+                        <UML:Entity xmi.id="entity_Spot" name="Spot"/>
+                        <UML:Association xmi.id="assoc_in_movies" name="in_movies">
+                            <UML:Association.connection>
+                                <UML:AssociationEnd xmi.id="assocEnd_Movie" type="entity_Movie" name="movie"/>
+                                <UML:AssociationEnd xmi.id="assocEnd_Spot" type="entity_Spot" name="spot"/>
+                            </UML:Association.connection>
+                        </UML:Association>
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+            </UML:Namespace.ownedElement>
+        </UML:Model>
+    </XMI.content>
+</XMI>
+```

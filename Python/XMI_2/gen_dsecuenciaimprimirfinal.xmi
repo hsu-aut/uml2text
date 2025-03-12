@@ -1,0 +1,122 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+     <UML:Model xmi.id="model_Proceso" name="Proceso">
+      <UML:Namespace.ownedElement>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+        <UML:Stereotype xmi.id="stereotype_friend" name="friend"/>
+        <UML:Stereotype xmi.id="stereotype_virtual" name="virtual"/>
+        
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        
+        <UML:Actor xmi.id="actor_pda" name="pda"/>
+        <UML:Actor xmi.id="actor_host" name="host"/>
+        <UML:Actor xmi.id="actor_servidor" name="servidor"/>
+        <UML:Actor xmi.id="actor_medico" name="medico"/>
+        <UML:Actor xmi.id="actor_impresora" name="impresora"/>
+        
+        <UML:Interaction xmi.id="interaction_dsecuenciaimprimir" name="dsecuenciaimprimir">
+          <UML:Message xmi.id="message_imprimir" name="imprimir">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_pda"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_impresora"/>
+            </UML:Message.receiver>
+          </UML:Message>
+          <UML:Message xmi.id="message_buscarBD" name="buscarBD">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_servidor"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_host"/>
+            </UML:Message.receiver>
+          </UML:Message>
+          <UML:Message xmi.id="message_localizador" name="localizador">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_host"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_servidor"/>
+            </UML:Message.receiver>
+          </UML:Message>
+          <UML:Message xmi.id="message_confirmacion" name="confirmacion">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_servidor"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_pda"/>
+            </UML:Message.receiver>
+          </UML:Message>
+          <UML:Message xmi.id="message_encolar" name="encolar">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_servidor"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_impresora"/>
+            </UML:Message.receiver>
+          </UML:Message>
+        </UML:Interaction>
+        
+        <UML:Interaction xmi.id="interaction_consultar_expediente" name="consultar_expediente">
+          <UML:Message xmi.id="message_consultarExpediente" name="consultarExpediente">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_pda"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_servidor"/>
+            </UML:Message.receiver>
+          </UML:Message>
+          <UML:Message xmi.id="message_consultaBD" name="consultaBD">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_servidor"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_host"/>
+            </UML:Message.receiver>
+          </UML:Message>
+          <UML:Message xmi.id="message_leerExpediente" name="leerExpediente">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_host"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_servidor"/>
+            </UML:Message.receiver>
+          </UML:Message>
+          <UML:Message xmi.id="message_enviaExpediente" name="enviaExpediente">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_servidor"/>
+            </UML:Message.sender>
+            <UML:Message.receiver>
+              <UML:Actor xmi.idref="actor_pda"/>
+            </UML:Message.receiver>
+          </UML:Message>
+          <UML:Message xmi.id="message_muestraExpediente" name="muestraExpediente">
+            <UML:Message.sender>
+              <UML:Actor xmi.idref="actor_pda"/>
+            </UML:Message.sender>
+            <UML:Message.receiver/>
+          </UML:Message>
+        </UML:Interaction>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

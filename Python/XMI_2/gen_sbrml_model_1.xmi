@@ -1,0 +1,196 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes -->
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Analysis -->
+            <UML:Class xmi.id="386" name="Analysis" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="386_name" name="name" type="AnalysisType"/>
+                <UML:Attribute xmi.id="386_id" name="id" type="string"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="Assoc_Analysis_Algorithm" name="analysisAlgorithm">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Analysis_Algorithm_Analysis" type="386" name="analysis" visibility="public" aggregation="none"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Analysis_Algorithm_Algorithm" type="1586" name="algorithm" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+              <UML:Association xmi.id="Assoc_Analysis_Software" name="analysisSoftware">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Analysis_Software_Analysis" type="386" name="analysis" visibility="public" aggregation="none"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Analysis_Software_Software" type="1710" name="software" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+              <UML:Association xmi.id="Assoc_Analysis_SBRML" name="analysisSBRML">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Analysis_SBRML_Analysis" type="386" name="analysis" visibility="public" aggregation="none"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Analysis_SBRML_SBRML" type="1698" name="sbrml" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+
+            <!-- Results -->
+            <UML:Class xmi.id="451" name="Results" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="451_analysisId" name="analysisId" type="string"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="Assoc_Results_SingleValueData" name="resultsSingleValueData">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Results_SingleValueData_Results" type="451" name="results" visibility="public" aggregation="composite"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Results_SingleValueData_SingleValueData" type="1114" name="singleValueData" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+              <UML:Association xmi.id="Assoc_Results_TwoDimentionalData" name="resultsTwoDimentionalData">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Results_TwoDimentionalData_Results" type="451" name="results" visibility="public" aggregation="composite"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Results_TwoDimentionalData_TwoDimentionalData" type="1114" name="twoDimentionalData" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+
+            <!-- Column -->
+            <UML:Class xmi.id="469" name="Column" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="469_colNo" name="colNo" type="int"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="Assoc_Column_Row" name="columnRow">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Column_Row_Column" type="469" name="column" visibility="public" aggregation="none"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Column_Row_Row" type="473" name="row" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+
+            <!-- Data -->
+            <UML:Class xmi.id="472" name="Data" visibility="public" isAbstract="false">
+              <!-- No Attributes or Operations -->
+            </UML:Class>
+
+            <!-- Row -->
+            <UML:Class xmi.id="473" name="Row" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="473_rowNo" name="rowNo" type="int"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- MetaData -->
+            <UML:Class xmi.id="513" name="MetaData" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="513_description" name="description" type="string"/>
+                <UML:Attribute xmi.id="513_id" name="id" type="string"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="Assoc_MetaData_RowMetaData" name="metaDataRowMetaData">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_MetaData_RowMetaData_MetaData" type="513" name="metaData" visibility="public" aggregation="composite"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_MetaData_RowMetaData_RowMetaData" type="515" name="rowMetaData" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+
+            <!-- ColMetaData -->
+            <UML:Class xmi.id="514" name="ColMetaData" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="514_colModelQuantityReference" name="colModelQuantityReference" type="ModelQuantityType"/>
+                <UML:Attribute xmi.id="514_columnSize" name="columnSize" type="int"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- RowMetaData -->
+            <UML:Class xmi.id="515" name="RowMetaData" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="515_rowModelQuantityReference" name="rowModelQuantityReference" type="ModelQuantityType"/>
+                <UML:Attribute xmi.id="515_rowSize" name="rowSize" type="int"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- ModelQuantityType -->
+            <UML:Enumeration xmi.id="518" name="ModelQuantityType">
+              <UML:Enumeration.literal name="Reaction"/>
+              <UML:Enumeration.literal name="Species"/>
+            </UML:Enumeration>
+
+            <!-- Model -->
+            <UML:Class xmi.id="1704" name="Model" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="1704_url" name="url" type="string"/>
+                <UML:Attribute xmi.id="1704_sbml" name="sbml" type="string"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="Assoc_Model_SBRML" name="modelSBRML">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Model_SBRML_Model" type="1704" name="model" visibility="public" aggregation="none"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Model_SBRML_SBRML" type="1698" name="sbrml" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+
+            <!-- Software -->
+            <UML:Class xmi.id="1710" name="Software" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="1710_version" name="version" type="string"/>
+                <UML:Attribute xmi.id="1710_url" name="url" type="string"/>
+                <UML:Attribute xmi.id="1710_name" name="name" type="string"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Algorithm -->
+            <UML:Class xmi.id="1586" name="Algorithm" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="1586_name" name="name" type="AlgorithmType"/>
+                <UML:Operation xmi.id="operation_getParameters" name="getParameters" visibility="public" isQuery="true"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="Assoc_Algorithm_Parameter" name="algorithmParameter">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Algorithm_Parameter_Algorithm" type="1586" name="algorithm" visibility="public" aggregation="composite"/>
+                  <UML:AssociationEnd xmi.id="AssocEnd_Algorithm_Parameter_Parameter" type="1669" name="parameter" visibility="public" aggregation="none"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+
+            <!-- Parameter -->
+            <UML:Class xmi.id="1669" name="Parameter" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="1669_name" name="name" type="SimpleType"/>
+                <UML:Attribute xmi.id="1669_type" name="type" type="SimpleType"/>
+                <UML:Attribute xmi.id="1669_value" name="value" type="string"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- ModelQuantityReference -->
+            <UML:Class xmi.id="1846" name="ModelQuantityReference" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="1846_measurementType" name="measurementType" type="MeasurementType"/>
+                <UML:Attribute xmi.id="1846_quantityName" name="quantityName" type="ModelQuantityType"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

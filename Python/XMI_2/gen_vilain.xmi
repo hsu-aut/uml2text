@@ -1,0 +1,87 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="uml_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" namespace="uml_Model" isAbstract="false" isLeaf="false" isRoot="false">
+          <UML:ModelElement.stereotype>
+            <UML:Stereotype xmi.idref="stereotype_folder"/>
+          </UML:ModelElement.stereotype>
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View" namespace="uml_Model" isAbstract="false" isLeaf="false" isRoot="false">
+          <UML:Namespace.ownedElement>
+            <!-- Actors -->
+            <UML:Actor xmi.id="actor_Designer" name="Designer" namespace="package_UseCaseView"/>
+            <UML:Actor xmi.id="actor_Mapper" name="Mapper" namespace="package_UseCaseView"/>
+            <UML:Actor xmi.id="actor_Compositor" name="Compositor" namespace="package_UseCaseView"/>
+            <UML:Actor xmi.id="actor_Animator" name="Animator" namespace="package_UseCaseView"/>
+            <UML:Actor xmi.id="actor_Configurator" name="Configurator" namespace="package_UseCaseView"/>
+
+            <!-- Use Cases -->
+            <UML:UseCase xmi.id="usecase_Network" name="Network" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_AddStillPictureTexture" name="Add still picture as Texture" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_AddMovieTexture" name="Add movie as Texture" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_AddImageSequenceTexture" name="Add image sequence as sequenced Texture" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_AddMovieCameraInputTexture" name="Add movie camera input as Texture" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_CreateMesh" name="Create Mesh" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_JoinTextureMeshToObject" name="Join Texture and Mesh to Object" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_AddFXTexture" name="Add FX (modifier) to Texture" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_ControlFXMesh" name="Control FX (modifier) to Mesh" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_AddFXObject" name="Add FX (modifier) to Object" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_DisplayScreens" name="Display/Screens" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_ManagePlugins" name="Manage Plugins (modifiers)" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_DefineUVMapping" name="Define UV Mapping" namespace="package_UseCaseView"/>
+            <UML:UseCase xmi.id="usecase_MapObjectToProjection" name="Map Object to projection" namespace="package_UseCaseView"/>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="association_Designer_AddStillPictureTexture">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Designer" type="actor_Designer" multiplicity="1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_AddStillPictureTexture" type="usecase_AddStillPictureTexture" multiplicity="1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="association_Designer_AddImageSequenceTexture">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Designer2" type="actor_Designer" multiplicity="1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_AddImageSequenceTexture" type="usecase_AddImageSequenceTexture" multiplicity="1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="association_Mapper_CreateMesh">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Mapper" type="actor_Mapper" multiplicity="1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_CreateMesh" type="usecase_CreateMesh" multiplicity="1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="association_Mapper_JoinTextureMeshToObject">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Mapper2" type="actor_Mapper" multiplicity="1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_JoinTextureMeshToObject" type="usecase_JoinTextureMeshToObject" multiplicity="1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+
+      <!-- Stereotypes -->
+      <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+      <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

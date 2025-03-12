@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_1" name="Model_1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Akteure -->
+        <UML:Actor xmi.id="Actor_1" name="Actor 1" visibility="public" isAbstract="false"/>
+        <UML:Actor xmi.id="Actor_2" name="Actor 2" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Use Cases -->
+        <UML:UseCase xmi.id="UC_RegisterForCourse" name="Register for Course" visibility="public" isAbstract="false"/>
+        <UML:UseCase xmi.id="UC_RegisterByMail" name="Register By Mail" visibility="public" isAbstract="false">
+          <UML:Extend xmi.id="Extend_RegisterByMail" extension="UC_RegisterForCourse"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="UC_RegisterByPhone" name="Register By Phone" visibility="public" isAbstract="false">
+          <UML:Extend xmi.id="Extend_RegisterByPhone" extension="UC_RegisterForCourse"/>
+        </UML:UseCase>
+
+        <!-- Definition der Assoziationen -->
+        <UML:Association xmi.id="Association_Actor2_RegisterForCourse" name="association_Actor2_RegisterForCourse" visibility="public" isAbstract="false">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AssocEnd_Actor2_UC" type="Actor_2" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="AssocEnd_UC_Actor2" type="UC_RegisterForCourse" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

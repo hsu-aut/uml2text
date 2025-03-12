@@ -1,0 +1,220 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:DataType xmi.id="2" name="int"/>
+        <UML:DataType xmi.id="4" name="char"/>
+        <UML:DataType xmi.id="5" name="bool"/>
+        <UML:DataType xmi.id="6" name="float"/>
+        <UML:DataType xmi.id="7" name="double"/>
+        <UML:DataType xmi.id="8" name="short"/>
+        <UML:DataType xmi.id="9" name="long"/>
+        <UML:DataType xmi.id="10" name="unsigned int"/>
+        <UML:DataType xmi.id="11" name="unsigned short"/>
+        <UML:DataType xmi.id="12" name="unsigned long"/>
+        <UML:DataType xmi.id="13" name="string"/>
+        <UML:DataType xmi.id="89" name="data"/>
+
+        <UML:Class xmi.id="14" name="InstallInfo" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="15" name="state" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="16" name="version" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="17" name="release" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="18" name="build" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="19" name="distribution" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="20" name="time" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="24" name="InstallDB" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="25" name="d" visibility="public"/>
+            <UML:Attribute xmi.id="77" name="db" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Namespace.ownedElement>
+            <UML:Association xmi.id="26">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="27" name="installDB" type="24" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="28" name="installInfo" type="14" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="76" name="LockedDBShelf" visibility="public"/>
+
+        <UML:Class xmi.id="86" name="RepoDB" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="87" name="d" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="98" name="Repo" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="99" name="indexuri" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="111" name="FilesDB" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="112" name="d" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="114" name="FileInfo" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="115" name="path" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="116" name="type" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="117" name="size" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="118" name="hash" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="119" name="permanent" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="5"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="146" name="ItemByRepo" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="155" name="ComponentDB" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Association xmi.id="156">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="157" name="componentDB" type="155" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="158" name="component" type="163" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="163" name="Component" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="164" name="name" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="165" name="localname" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="166" name="summary" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="186" name="PackageDB" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Association xmi.id="187">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="188" name="packageDB" type="186" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="189" name="package" type="190" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="190" name="Package" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="191" name="name" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="192" name="summary" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="193" name="description" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="13"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="211" name="SourceDB" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Association xmi.id="212">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="213" name="sourceDB" type="211" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="214" name="specFile" type="215" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="215" name="SpecFile" visibility="public" isAbstract="false"/>
+        
+        <UML:Enumeration xmi.id="141" name="repo" visibility="public">
+          <UML:Enumeration.literal name="installed"/>
+          <UML:Enumeration.literal name="thirdparty"/>
+          <UML:Enumeration.literal name="repos"/>
+          <UML:Enumeration.literal name="all"/>
+        </UML:Enumeration>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```
+This XMI describes the UML model you provided, capturing the various classes, attributes, associations, and datatypes as described in the overview text.

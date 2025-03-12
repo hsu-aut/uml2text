@@ -1,0 +1,166 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ROSystem" name="ROSystem">
+      <UML:Namespace.ownedElement>
+
+        <!-- Klasse ROSystem/AbstractCuisine -->
+        <UML:Class xmi.id="class_AbstractCuisine" name="AbstractCuisine" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_cuisine_name" name="name" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_meal_list" name="meal_list" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_SplObjectStorage"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_MealAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_CuisineConcrete"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Klasse ROSystem/MealAbstract -->
+        <UML:Class xmi.id="class_MealAbstract" name="MealAbstract" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_meal_name" name="name" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_price" name="price" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="Float"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Operation xmi.id="op_getName" name="getName" visibility="public"/>
+          <UML:Operation xmi.id="op_setPrice" name="setPrice" visibility="public"/>
+          <UML:Operation xmi.id="op_getPrice" name="getPrice" visibility="public"/>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_MealConcrete"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Schnittstelle ROSystem/Product/Drink/InterfaceDrink -->
+        <UML:Interface xmi.id="interface_InterfaceDrink" name="InterfaceDrink" visibility="public"/>
+        
+        <!-- Klasse ROSystem/Meal/Option/OptionAbstract -->
+        <UML:Class xmi.id="class_OptionAbstract" name="OptionAbstract" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_option_name" name="name" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Operation xmi.id="op_getName" name="getName" visibility="public"/>
+          <UML:Realization>
+            <UML:Client>
+              <UML:Class xmi.idref="class_InterfaceOption"/>
+            </UML:Client>
+          </UML:Realization>
+        </UML:Class>
+
+        <!-- Klasse ROSystem/Meal/Option/*OptionConcrete -->
+        <UML:Class xmi.id="class_OptionConcrete" name="OptionConcrete" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_OptionAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Schnittstelle ROSystem/InterfaceMeal -->
+        <UML:Interface xmi.id="interface_InterfaceMeal" name="InterfaceMeal" visibility="public">
+          <UML:Operation xmi.id="op_iMeal_getName" name="getName" visibility="public"/>
+          <UML:Operation xmi.id="op_iMeal_setPrice" name="setPrice" visibility="public"/>
+          <UML:Operation xmi.id="op_iMeal_getPrice" name="getPrice" visibility="public"/>
+        </UML:Interface>
+
+        <!-- Klasse ROSystem/InterfaceCuisine -->
+        <UML:Interface xmi.id="interface_InterfaceCuisine" name="InterfaceCuisine" visibility="public">
+          <UML:Operation xmi.id="op_getName" name="getName" visibility="public"/>
+          <UML:Abstraction>
+            <UML:Supplier>
+              <UML:Class xmi.idref="class_ModificationCuisine"/>
+            </UML:Supplier>
+          </UML:Abstraction>
+        </UML:Interface>
+
+        <!-- Klasse ROSystem/*MealConcrete -->
+        <UML:Class xmi.id="class_MealConcrete" name="MealConcrete" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_MealAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Klasse ROSystem/AbstractLanch -->
+        <UML:Class xmi.id="class_AbstractLanch" name="AbstractLanch" visibility="public" isAbstract="true">
+          <UML:Operation xmi.id="op_setDrink" name="setDrink" visibility="public"/>
+          <UML:Operation xmi.id="op_setMainCourse" name="setMainCourse" visibility="public"/>
+          <UML:Operation xmi.id="op_setDessert" name="setDessert" visibility="public"/>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_LanchConcrete"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Abstraction>
+            <UML:Supplier>
+              <UML:Class xmi.idref="interface_InterfaceLanch"/>
+            </UML:Supplier>
+          </UML:Abstraction>
+        </UML:Class>
+
+        <!-- Klasse ROSystem/Product/Drink/DrinkAbstract -->
+        <UML:Class xmi.id="class_DrinkAbstract" name="DrinkAbstract" visibility="public" isAbstract="true">
+          <UML:Operation xmi.id="op_manageOptions" name="manageOptions" visibility="public"/>
+          <UML:Attribute xmi.id="attr_option_storage" name="option_storage" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_SplObjectStorage"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Klasse ROSystem/Meal/Drink/*DrinkConcrete -->
+        <UML:Class xmi.id="class_DrinkConcrete" name="DrinkConcrete" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DrinkAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Klasse ROSystem/InterfaceDrink -->
+        <UML:Interface xmi.id="interface_ROSystem_InterfaceDrink" name="InterfaceDrink" visibility="public">
+          <UML:Realization>
+            <UML:Client>
+              <UML:Class xmi.idref="interface_InterfaceDrink"/>
+            </UML:Client>
+          </UML:Realization>
+        </UML:Interface>
+
+        <!-- Klasse SplObjectStorage -->
+        <UML:Class xmi.id="class_SplObjectStorage" name="SplObjectStorage" visibility="public"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

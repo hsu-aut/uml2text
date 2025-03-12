@@ -1,0 +1,128 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="p1" name="Logical View" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="datatypes" name="Datatypes" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned" name="unsigned"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Interface xmi.id="interface_ConsoleFactory" name="ConsoleFactory" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_create_console" name="create_console" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+            
+            <UML:Interface xmi.id="interface_Console" name="Console" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_info_console" name="info_console" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+            
+            <UML:Class xmi.id="abstract_SonyFactory" name="SonyFactory" isAbstract="true" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_ConsoleFactory"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_SonyFactory_create_console" name="create_console" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="abstract_MicrosoftFactory" name="MicrosoftFactory" isAbstract="true" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_ConsoleFactory"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_MicrosoftFactory_create_console" name="create_console" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_PS4" name="PS4" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_Console"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_XboxOne" name="XboxOne" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_Console"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_PS3" name="PS3" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_Console"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Xbox360" name="Xbox360" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_Console"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Cliente" name="Cliente" visibility="public">
+              <UML:Dependency>
+                <UML:Dependency.supplier>
+                  <UML:Interface xmi.idref="interface_ConsoleFactory"/>
+                </UML:Dependency.supplier>
+              </UML:Dependency>
+            </UML:Class>
+            
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_SonyFactory_PS" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_SonyFactory_PS_SonyFactory" type="abstract_SonyFactory" name="sonyFactory" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_SonyFactory_PS_PS4" type="class_PS4" name="ps4" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_SonyFactory_PS_PS3" type="class_PS3" name="ps3" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_MicrosoftFactory_Xbox" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MicrosoftFactory_Xbox_MicrosoftFactory" type="abstract_MicrosoftFactory" name="microsoftFactory" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_MicrosoftFactory_Xbox_XboxOne" type="class_XboxOne" name="xboxOne" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_MicrosoftFactory_Xbox_Xbox360" type="class_Xbox360" name="xbox360" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,71 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ValidationProfile" name="ValidationProfile">
+      <UML:Namespace.ownedElement>
+        <UML:Profile xmi.id="profile_ValidationProfile" name="ValidationProfile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_validationSuite" name="validationSuite" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_base_Constraint_vs" name="base_Constraint" visibility="public" />
+                <UML:Attribute xmi.id="attr_abbreviation_vs" name="abbreviation" visibility="public" />
+                <UML:Attribute xmi.id="attr_errorMessage_vs" name="errorMessage" visibility="public" />
+                <UML:Attribute xmi.id="attr_severity_vs" name="severity" visibility="public" />
+              </UML:Classifier.feature>
+            </UML:Stereotype>
+
+            <UML:Stereotype xmi.id="stereotype_validationRule" name="validationRule" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_base_Constraint_vr" name="base_Constraint" visibility="public" />
+                <UML:Attribute xmi.id="attr_abbreviation_vr" name="abbreviation" visibility="public" />
+                <UML:Attribute xmi.id="attr_errorMessage_vr" name="errorMessage" visibility="public" />
+                <UML:Attribute xmi.id="attr_severity_vr" name="severity" visibility="public" />
+              </UML:Classifier.feature>
+            </UML:Stereotype>
+
+            <UML:Stereotype xmi.id="stereotype_debugIcon" name="debugIcon" visibility="public" isAbstract="false"/>
+            <UML:Stereotype xmi.id="stereotype_errorIcon" name="errorIcon" visibility="public" isAbstract="false"/>
+            <UML:Stereotype xmi.id="stereotype_infoIcon" name="infoIcon" visibility="public" isAbstract="false"/>
+            <UML:Stereotype xmi.id="stereotype_warningIcon" name="warningIcon" visibility="public" isAbstract="false"/>
+            <UML:Stereotype xmi.id="stereotype_fatalIcon" name="fatalIcon" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Profile>
+
+        <UML:Class xmi.id="class_validationSuite" name="validationSuite" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_validationRule" name="validationRule" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="assoc_Profile_ValidationSuite">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Profile_ValidationSuite_Profile" type="profile_ValidationProfile" name="profile" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Profile_ValidationSuite_ValidationSuite" type="class_validationSuite" name="validationSuite" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ValidationSuite_ValidationRule">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidationSuite_ValidationSuite" type="class_validationSuite" name="validationSuite" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidationSuite_ValidationRule" type="class_validationRule" name="validationRule" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Package xmi.id="package_OCLLibrary" name="OCL Library" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="$OCL_Real" name="$OCL_Real" visibility="public"/>
+            <UML:DataType xmi.id="$OCL_Boolean" name="$OCL_Boolean" visibility="public"/>
+            <UML:DataType xmi.id="$OCL_Integer" name="$OCL_Integer" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

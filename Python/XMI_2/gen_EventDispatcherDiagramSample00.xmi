@@ -1,0 +1,90 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_um1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Model xmi.id="model_lView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="class_EventDispatcher" name="EventDispatcher" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_ids" name="ids" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                  <UML:Attribute.initialValue>
+                    <UML:Expression body="0"/>
+                  </UML:Attribute.initialValue>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_ports" name="ports" visibility="private" />
+                <UML:Attribute xmi.id="attr_inqueue" name="inqueue" visibility="private" />
+                <UML:Attribute xmi.id="attr_clss" name="clss" visibility="private" />
+                <UML:Attribute xmi.id="attr_getId" name="getId" visibility="private" />
+                <UML:Operation xmi.id="op_enqueue" name="enqueue" visibility="public">
+                  <UML:Parameter name="return" kind="return">
+                    <UML:Parameter.type>
+                      <UML:DataType xmi.idref="datatype_int"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_addPort" name="addPort" visibility="public"/>
+                <UML:Operation xmi.id="op_joinPorts" name="joinPorts" visibility="public"/>
+                <UML:Operation xmi.id="op_delPort" name="delPort" visibility="public"/>
+                <UML:Operation xmi.id="op_fireEvent" name="fireEvent" visibility="public"/>
+                <UML:Operation xmi.id="op_shift" name="shift" visibility="public">
+                  <UML:Parameter name="return" kind="return">
+                    <UML:Parameter.type>
+                      <UML:DataType xmi.idref="datatype_bool"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_ThreadAutomata" name="ThreadAutomata" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_hush" name="hush" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Array" name="Array" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_function" name="function" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Object" name="Object" visibility="public" isAbstract="false"/>
+            
+            <UML:Association xmi.id="assoc_EventDispatcher_ThreadAutomata">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_EventDispatcher_ThreadAutomata_ED" type="class_EventDispatcher" name="eventdispatcher" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_ThreadAutomata_EventDispatcher_TA" type="class_ThreadAutomata" name="threadautomata" visibility="public" aggregation="none" isNavigable="true"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

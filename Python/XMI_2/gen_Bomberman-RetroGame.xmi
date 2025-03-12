@@ -1,0 +1,156 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Player" name="Player" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Player_position" name="position" visibility="private" type="char"/>
+            <UML:Attribute xmi.id="attr_Player_hearts" name="hearts" visibility="private" type="int"/>
+            <UML:Attribute xmi.id="attr_Player_speed" name="speed" visibility="private" type="int"/>
+            <UML:Attribute xmi.id="attr_Player_score" name="score" visibility="private" type="long"/>
+            <UML:Operation xmi.id="op_Player_move" name="move" visibility="public"/>
+            <UML:Operation xmi.id="op_Player_putBomb" name="putBomb" visibility="public"/>
+            <UML:Operation xmi.id="op_Player_addScore" name="addScore" visibility="public"/>
+            <UML:Operation xmi.id="op_Player_die" name="die" visibility="public"/>
+            <UML:Operation xmi.id="op_Player_addHerts" name="addHerts" visibility="public"/>
+            <UML:Operation xmi.id="op_Player_addSpeed" name="addSpeed" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Game" name="Game" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Game_level" name="level" visibility="private" type="int"/>
+            <UML:Attribute xmi.id="attr_Game_difficulty" name="difficulty" visibility="private" type="int"/>
+            <UML:Operation xmi.id="op_Game_startGame" name="startGame" visibility="public"/>
+            <UML:Operation xmi.id="op_Game_exitGame" name="exitGame" visibility="public"/>
+            <UML:Operation xmi.id="op_Game_goNextLevel" name="goNextLevel" visibility="public"/>
+            <UML:Operation xmi.id="op_Game_gameLoop" name="gameLoop" visibility="public"/>
+            <UML:Operation xmi.id="op_Game_keyEvent" name="keyEvent" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_regularMonster" name="regularMonster" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_regularMonster_speed" name="speed" visibility="private" type="int"/>
+            <UML:Operation xmi.id="op_regularMonster_constructor" name="regularMonster" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Generalization xmi.id="gen_regularMonster_Monster" parent="class_Monster"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_intelligentMonster" name="intelligentMonster" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_intelligentMonster_constructor" name="intelligentMonster" visibility="public"/>
+            <UML:Operation xmi.id="op_intelligentMonster_GetAwayFromBombs" name="GetAwayFromBombs" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Generalization xmi.id="gen_intelligentMonster_Monster" parent="class_Monster"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Bomb" name="Bomb" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Bomb_position" name="position" visibility="private" type="char"/>
+            <UML:Attribute xmi.id="attr_Bomb_type" name="type" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Bomb_range" name="range" visibility="private"/>
+            <UML:Operation xmi.id="op_Bomb_tick" name="tick" visibility="public"/>
+            <UML:Operation xmi.id="op_Bomb_explode" name="explode" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Wall" name="Wall" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Wall_position" name="position" visibility="private" type="char"/>
+            <UML:Attribute xmi.id="attr_Wall_solid" name="solid" visibility="private"/>
+            <UML:Operation xmi.id="op_Wall_destroy" name="destroy" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Explosion" name="Explosion" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Explosion_position" name="position" visibility="private" type="char"/>
+            <UML:Attribute xmi.id="attr_Explosion_element" name="element" visibility="private"/>
+            <UML:Operation xmi.id="op_Explosion_fire" name="fire" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Map" name="Map" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Map_x" name="x" visibility="private" type="int"/>
+            <UML:Attribute xmi.id="attr_Map_y" name="y" visibility="private" type="int"/>
+            <UML:Operation xmi.id="op_Map_getX" name="getX" visibility="public"/>
+            <UML:Operation xmi.id="op_Map_getY" name="GetY" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Monster" name="Monster" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Monster_hearts" name="hearts" visibility="private" type="int"/>
+          </UML:Classifier.feature>
+          <UML:Generalization xmi.id="gen_Monster_Character" parent="class_Character"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Image" name="Image" visibility="public" isAbstract="false"/>
+
+        <UML:Generalization xmi.id="gen_Player_Character" parent="class_Character"/>
+
+        <UML:Class xmi.id="class_Character" name="Character" visibility="public" isAbstract="true"/>
+
+        <UML:Association xmi.id="assoc_Map_intelligentMonster" name="map-intelligentMonster">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_map_intelligentMonster_map" type="class_Map" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_map_intelligentMonster_intelligentMonster" type="class_intelligentMonster"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Map_regularMonster" name="map-regularMonster">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_map_regularMonster_map" type="class_Map" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_map_regularMonster_regularMonster" type="class_regularMonster"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Map_Wall" name="map-Wall">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_map_Wall_map" type="class_Map" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_map_Wall_Wall" type="class_Wall"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Map_Explosion" name="map-Explosion">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_map_Explosion_map" type="class_Map" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_map_Explosion_Explosion" type="class_Explosion"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Map_Game" name="map-Game">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_map_Game_map" type="class_Map" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_map_Game_Game" type="class_Game"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Bomb_Map" name="bomb-Map">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_bomb_Map_Bomb" type="class_Bomb"/>
+            <UML:AssociationEnd xmi.id="assocEnd_bomb_Map_Map" type="class_Map" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

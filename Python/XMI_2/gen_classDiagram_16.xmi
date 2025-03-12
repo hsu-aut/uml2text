@@ -1,0 +1,347 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LabManagement" name="LabManagement">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_AbstractBaseObject" name="AbstractBaseObject" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_creator" name="creator" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_User"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_deleted" name="deleted" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_delete" name="delete" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AbstractAuditableObject" name="AbstractAuditableObject" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractBaseObject"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_auditLogs" name="auditLogs" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AuditLog"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AbstractAnnotatableObject" name="AbstractAnnotatableObject" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractBaseObject"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_abstractAnnotationInstances" name="abstractAnnotationInstances" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AbstractAnnotationInstance"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AbstractPlate" name="AbstractPlate" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractBaseObject"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_wells" name="wells" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Well"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_delete_abstractPlate" name="delete" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Well" name="Well" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractAuditableObject"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_sampleContainer" name="sampleContainer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SampleContainer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sampleMarkers" name="sampleMarkers" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SampleMarker"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_outlier" name="outlier" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_plate" name="plate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AbstractPlate"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SampleContainer" name="SampleContainer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_samples" name="samples" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Sample"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_well" name="well" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Well"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_workList" name="workList" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_WorkList"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Measurement" name="Measurement" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractOperation"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_results" name="results" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Result"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_instrument" name="instrument" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Instrument"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_resultType" name="resultType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ResultType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_delete_measurement" name="delete" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_deepCopy_measurement" name="deepCopy" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Result" name="Result" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_resultValue" name="resultValue" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float[]"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_version" name="version" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_deepCopy_result" name="deepCopy" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractBaseObject"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_password" name="password" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_auditings" name="auditings" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AuditLog"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="interface_IAuditable" name="IAuditable" visibility="public" isAbstract="true">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PlateLayout" name="PlateLayout" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractBasePlate"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_plateType" name="plateType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_PlateType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_layoutWells" name="layoutWells" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LayoutWell"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PlateType" name="PlateType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractBaseObject"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_cols" name="cols" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_rows" name="rows" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_plateLayouts" name="plateLayouts" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_PlateLayout"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pickLists" name="pickLists" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_PickList"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SampleMarker" name="SampleMarker" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_abstractSample" name="abstractSample" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AbstractSample"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_well" name="well" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Well"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DrugSample" name="DrugSample" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractSample"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_concentration" name="concentration" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_drugOrigin" name="drugOrigin" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DrugOrigin"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FloatAnnotation" name="FloatAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractAnnotationInstance"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_value_float" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_deepCopy_floatAnnotation" name="deepCopy" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TextAnnotation" name="TextAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractAnnotationInstance"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_value_string" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_deepCopy_textAnnotation" name="deepCopy" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EnumAnnotation" name="EnumAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AbstractAnnotationInstance"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_value_enum" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SampleOriginType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_deepCopy_enumAnnotation" name="deepCopy" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="string" name="string"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="float[]" name="float[]"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

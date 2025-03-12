@@ -1,0 +1,161 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AddressComponent" name="AddressComponent">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="pkg_org" name="org">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="pkg_soulspace" name="soulspace">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Package xmi.id="pkg_address" name="address">
+                  <UML:Namespace.ownedElement>
+
+                    <UML:Package xmi.id="pkg_domain" name="domain">
+                      <UML:Namespace.ownedElement>
+                        
+                        <UML:Class xmi.id="class_PostalAddress" name="PostalAddress" visibility="public" isAbstract="false">
+                          <UML:Attribute xmi.id="attr_street" name="street" visibility="public">
+                            <UML:StructuralFeature.type>
+                              <UML:DataType xmi.idref="String"/>
+                            </UML:StructuralFeature.type>
+                          </UML:Attribute>
+                          <UML:Attribute xmi.id="attr_houseNumber" name="houseNumber" visibility="public">
+                            <UML:StructuralFeature.type>
+                              <UML:DataType xmi.idref="String"/>
+                            </UML:StructuralFeature.type>
+                          </UML:Attribute>
+                          <UML:Attribute xmi.id="attr_zip" name="zip" visibility="public">
+                            <UML:StructuralFeature.type>
+                              <UML:DataType xmi.idref="String"/>
+                            </UML:StructuralFeature.type>
+                          </UML:Attribute>
+                          <UML:Attribute xmi.id="attr_city" name="city" visibility="public">
+                            <UML:StructuralFeature.type>
+                              <UML:DataType xmi.idref="String"/>
+                            </UML:StructuralFeature.type>
+                          </UML:Attribute>
+                        </UML:Class>
+                        
+                        <UML:Class xmi.id="class_EmailAddress" name="EmailAddress" visibility="public" isAbstract="false">
+                          <UML:Attribute xmi.id="attr_prefix" name="prefix" visibility="public">
+                            <UML:StructuralFeature.type>
+                              <UML:DataType xmi.idref="String"/>
+                            </UML:StructuralFeature.type>
+                          </UML:Attribute>
+                          <UML:Attribute xmi.id="attr_domain" name="domain" visibility="public">
+                            <UML:StructuralFeature.type>
+                              <UML:DataType xmi.idref="String"/>
+                            </UML:StructuralFeature.type>
+                          </UML:Attribute>
+                        </UML:Class>
+
+                        <UML:Class xmi.id="class_PhoneNumber" name="PhoneNumber" visibility="public" isAbstract="false">
+                          <UML:Attribute xmi.id="attr_number" name="number" visibility="public">
+                            <UML:StructuralFeature.type>
+                              <UML:DataType xmi.idref="String"/>
+                            </UML:StructuralFeature.type>
+                          </UML:Attribute>
+                        </UML:Class>
+                        
+                        <UML:Class xmi.id="class_AddressRepository" name="AddressRepository" visibility="public" isAbstract="false"/>
+                        
+                        <UML:Class xmi.id="class_AddressFactory" name="AddressFactory" visibility="public" isAbstract="false"/>
+                        
+                        <UML:Class xmi.id="class_AddressService" name="AddressService" visibility="public" isAbstract="false"/>
+                        
+                        <UML:Association xmi.id="assoc_AddressRepository_PostalAddress">
+                          <UML:Association.connection>
+                            <UML:AssociationEnd xmi.id="end_AddressRepository" type="class_AddressRepository" name="addressRepository" visibility="public" aggregation="composite" multiplicity="1"/>
+                            <UML:AssociationEnd xmi.id="end_PostalAddress" type="class_PostalAddress" name="postalAddress" visibility="public" aggregation="none" multiplicity="*"/>
+                          </UML:Association.connection>
+                        </UML:Association>
+
+                        <UML:Association xmi.id="assoc_AddressRepository_EmailAddress">
+                          <UML:Association.connection>
+                            <UML:AssociationEnd xmi.id="end_AddressRepository_email" type="class_AddressRepository" name="addressRepository" visibility="public" aggregation="composite" multiplicity="1"/>
+                            <UML:AssociationEnd xmi.id="end_EmailAddress" type="class_EmailAddress" name="emailAddress" visibility="public" aggregation="none" multiplicity="*"/>
+                          </UML:Association.connection>
+                        </UML:Association>
+
+                        <UML:Association xmi.id="assoc_AddressRepository_PhoneNumber">
+                          <UML:Association.connection>
+                            <UML:AssociationEnd xmi.id="end_AddressRepository_phone" type="class_AddressRepository" name="addressRepository" visibility="public" aggregation="composite" multiplicity="1"/>
+                            <UML:AssociationEnd xmi.id="end_PhoneNumber" type="class_PhoneNumber" name="phoneNumber" visibility="public" aggregation="none" multiplicity="*"/>
+                          </UML:Association.connection>
+                        </UML:Association>
+                        
+                        <UML:Dependency xmi.id="dep_AddressFactory_PostalAddress">
+                          <UML:Dependency.client>
+                            <UML:Class xmi.idref="class_AddressFactory"/>
+                          </UML:Dependency.client>
+                          <UML:Dependency.supplier>
+                            <UML:Class xmi.idref="class_PostalAddress"/>
+                          </UML:Dependency.supplier>
+                        </UML:Dependency>
+                        
+                        <UML:Dependency xmi.id="dep_AddressFactory_EmailAddress">
+                          <UML:Dependency.client>
+                            <UML:Class xmi.idref="class_AddressFactory"/>
+                          </UML:Dependency.client>
+                          <UML:Dependency.supplier>
+                            <UML:Class xmi.idref="class_EmailAddress"/>
+                          </UML:Dependency.supplier>
+                        </UML:Dependency>
+                        
+                        <UML:Dependency xmi.id="dep_AddressFactory_PhoneNumber">
+                          <UML:Dependency.client>
+                            <UML:Class xmi.idref="class_AddressFactory"/>
+                          </UML:Dependency.client>
+                          <UML:Dependency.supplier>
+                            <UML:Class xmi.idref="class_PhoneNumber"/>
+                          </UML:Dependency.supplier>
+                        </UML:Dependency>
+                        
+                        <UML:Dependency xmi.id="dep_AddressService_AddressFactory">
+                          <UML:Dependency.client>
+                            <UML:Class xmi.idref="class_AddressService"/>
+                          </UML:Dependency.client>
+                          <UML:Dependency.supplier>
+                            <UML:Class xmi.idref="class_AddressFactory"/>
+                          </UML:Dependency.supplier>
+                        </UML:Dependency>
+                        
+                        <UML:Dependency xmi.id="dep_AddressService_AddressRepository">
+                          <UML:Dependency.client>
+                            <UML:Class xmi.idref="class_AddressService"/>
+                          </UML:Dependency.client>
+                          <UML:Dependency.supplier>
+                            <UML:Class xmi.idref="class_AddressRepository"/>
+                          </UML:Dependency.supplier>
+                        </UML:Dependency>
+
+                      </UML:Namespace.ownedElement>
+                    </UML:Package>
+                    
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

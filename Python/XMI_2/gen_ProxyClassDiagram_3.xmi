@@ -1,0 +1,189 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_PhotoManagementSystem" name="PhotoManagementSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Interface IComponent -->
+        <UML:Interface xmi.id="interface_IComponent" name="IComponent" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_displaySelectedPhotoTags" name="displaySelectedPhotoTags" visibility="public">
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <!-- Definition der Klasse FBAdapter:FacebookService -->
+        <UML:Class xmi.id="class_FacebookService" name="FBAdapter:FacebookService" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FacebookService"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_IComponent"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Login" name="Login" visibility="public">
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_LoginWithParams" name="Login" visibility="public">
+              <UML:Parameter name="params" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der generischen Klasse Singleton<T> -->
+        <UML:Class xmi.id="class_Singleton" name="Singleton<T>" visibility="public" isAbstract="false">
+          <UML:Property xmi.id="attr_Instance" name="Instance" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="T"/>
+            </UML:StructuralFeature.type>
+          </UML:Property>
+        </UML:Class>
+
+        <!-- Definition der Klasse User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse FacebookAlbum -->
+        <UML:Class xmi.id="class_FacebookAlbum" name="FacebookAlbum" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FacebookAlbum"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Singleton"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FacebookAlbum"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_IComponent"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_m_Album" name="m_Album" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_User" name="m_User" visibility="private"/>
+            <UML:Operation xmi.id="operation_displaySelectedAlbumsPhotos" name="displaySelectedAlbumsPhotos" visibility="private"/>
+            <UML:Operation xmi.id="operation_displaySelectedAlbumsTags" name="displaySelectedAlbumsTags" visibility="public"/>
+            <UML:Operation xmi.id="operation_FriendsListBox_SelectedIndexChanged" name="FriendsListBox_SelectedIndexChanged" visibility="public"/>
+            <UML:Operation xmi.id="operation_ListBoxAlbums_SelectedIndexChanged" name="ListBoxAlbums_SelectedIndexChanged" visibility="public"/>
+            <UML:Operation xmi.id="operation_thumbnail_Click" name="thumbnail_Click" visibility="public"/>
+            <UML:Operation xmi.id="operation_buttonDowload_Click" name="buttonDowload_Click" visibility="public"/>
+            <UML:Operation xmi.id="operation_displaySelectedPhotoTags" name="displaySelectedPhotoTags" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse MainWindow -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_m_FBAdapter" name="m_FBAdapter" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_FacebookUser" name="m_FacebookUser" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_FacebookUserFriend" name="m_FacebookUserFriend" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_FacebookAlbum" name="m_FacebookAlbum" visibility="private"/>
+            <UML:Operation xmi.id="operation_loginAndInit" name="loginAndInit" visibility="public"/>
+            <UML:Operation xmi.id="operation_buttonLogin_Click" name="buttonLogin_Click" visibility="public"/>
+            <UML:Operation xmi.id="operation_buttonExit_Click" name="buttonExit_Click" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Album -->
+        <UML:Class xmi.id="class_Album" name="Album" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse PictureBox -->
+        <UML:Class xmi.id="class_PictureBox" name="PictureBox" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Load" name="Load" visibility="private">
+              <UML:Parameter name="url" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Hashtable -->
+        <UML:Class xmi.id="class_Hashtable" name="Hashtable" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse AlbumsPhotosControler -->
+        <UML:Class xmi.id="class_AlbumsPhotosControler" name="AlbumsPhotosControler" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_pictureBoxAlbumsPhoto" name="pictureBoxAlbumsPhoto" visibility="private"/>
+            <UML:Attribute xmi.id="attr_PictureBox" name="PictureBox" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_PictureBox"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse PictureBoxProxy -->
+        <UML:Class xmi.id="class_PictureBoxProxy" name="PictureBoxProxy" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_PictureBoxProxy"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PictureBox"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:InterfaceRealization>
+            <UML:InterfaceRealization.contract>
+              <UML:Interface xmi.idref="interface_IPictureBox"/>
+            </UML:InterfaceRealization.contract>
+          </UML:InterfaceRealization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_m_AlbumPicture" name="m_AlbumPicture" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pictureBoxAlbumsPhoto" name="pictureBoxAlbumsPhoto" visibility="private"/>
+            <UML:Operation xmi.id="operation_LoadProxy" name="Load" visibility="public">
+              <UML:Parameter name="url" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition des Interface IPictureBox -->
+        <UML:Interface xmi.id="interface_IPictureBox" name="IPictureBox" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_LoadInterface" name="Load" visibility="public">
+              <UML:Parameter name="url" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <!-- Definition der Klasse Dictionary -->
+        <UML:Class xmi.id="class_Dictionary" name="Dictionary" visibility="public" isAbstract="false"/>
+
+        <!-- Association between MainWindow and IComponent -->
+        <UML:Association xmi.id="assoc_MainWindow_IComponent">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MainWindow" type="class_MainWindow" name="mainWindow" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_IComponent" type="interface_IComponent" name="component" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between Dictionary and AlbumsPhotosControler -->
+        <UML:Association xmi.id="assoc_Dictionary_AlbumsPhotosControler">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Dictionary" type="class_Dictionary" name="dictionary" visibility="public" aggregation="composite" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AlbumsPhotosControler" type="class_AlbumsPhotosControler" name="albumsPhotosControler" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between Dictionary and PictureBoxProxy -->
+        <UML:Association xmi.id="assoc_Dictionary_PictureBoxProxy">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Dictionary" type="class_Dictionary" name="dictionary" visibility="public" aggregation="composite" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PictureBoxProxy" type="class_PictureBoxProxy" name="pictureBoxProxy" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

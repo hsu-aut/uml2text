@@ -1,0 +1,90 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Arbaro" name="Arbaro">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse Model -->
+        <UML:Class xmi.id="class_Model" name="arbaro.modeler.Model" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der grundlegenden Operationseinheiten als Komponenten -->
+        <UML:Component xmi.id="component_ParamManager" name="ParamManager" visibility="public"/>
+        <UML:Component xmi.id="component_TreeModelGenerator" name="arbaro.TreeModelGenerator" visibility="public"/>
+        <UML:Component xmi.id="component_TreeGenerator" name="arbaro.TreeGenerator" visibility="public"/>
+        <UML:Component xmi.id="component_TreeModel" name="arbaro.TreeModel" visibility="public"/>
+        <UML:Component xmi.id="component_MeshObjViewer" name="MeshObjViewer" visibility="public"/>
+        <UML:Component xmi.id="component_ParamEditor" name="ParamEditor" visibility="public"/>
+        <UML:Component xmi.id="component_arbaro_cmd" name="arbaro_cmd" visibility="public"/>
+        <UML:Component xmi.id="component_arbaro_gui" name="arbaro_gui" visibility="public"/>
+        <UML:Component xmi.id="component_Transformations" name="Transformations" visibility="public"/>
+        <UML:Component xmi.id="component_3DFormatWriter" name="3DFormatWriter" visibility="public"/>
+        
+        <!-- Definition der Dialogkomponenten -->
+        <UML:Component xmi.id="component_ExportDlg" name="arbaro.ExportDlg" visibility="public"/>
+        <UML:Component xmi.id="component_ParamFileDlg" name="arbaro.ParamFileDlg" visibility="public"/>
+        
+        <!-- Definition der Implementierungs- und Benutzerkomponenten -->
+        <UML:Component xmi.id="component_TreeModeler" name="arbaro.TreeModeler" visibility="public"/>
+        <UML:Component xmi.id="component_Modeler" name="arbaro.Modeler" visibility="public"/>
+        <UML:Component xmi.id="component_ModelerGUI" name="arbaro.ModelerGUI" visibility="public"/>
+        
+        <!-- Definition der Arbeitsumgebungskomponente -->
+        <UML:Component xmi.id="component_Workplace" name="Workplace" visibility="public"/>
+        
+        <!-- Definition des externen Benutzers (Akteur) -->
+        <UML:Actor xmi.id="actor_User" name="User" visibility="public"/>
+        
+        <!-- Definition der Interfaces -->
+        <UML:Interface xmi.id="interface__3DFormatWriter" name="_3DFormatWriter" visibility="public"/>
+        <UML:Interface xmi.id="interface_Model" name="Model" visibility="public"/>
+        <UML:Interface xmi.id="interface_ParamPersistence" name="ParamPersistence" visibility="public"/>
+        <UML:Interface xmi.id="interface_Params" name="Params" visibility="public"/>
+        <UML:Interface xmi.id="interface_Mesh" name="Mesh" visibility="public"/>
+        <UML:Interface xmi.id="interface_ModelGenerator" name="ModelGenerator" visibility="public"/>
+        <UML:Interface xmi.id="interface_ModelerConfig" name="ModelerConfig" visibility="public"/>
+        <UML:Interface xmi.id="interface_Leaf" name="Leaf" visibility="public"/>
+        <UML:Interface xmi.id="interface_Segment" name="Segment" visibility="public"/>
+        <UML:Interface xmi.id="interface_Stem" name="Stem" visibility="public"/>
+        <UML:Interface xmi.id="interface_Subsegment" name="Subsegment" visibility="public"/>
+        <UML:Interface xmi.id="interface_Tree" name="Tree" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeExporterConfig" name="TreeExporterConfig" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeGenerator" name="TreeGenerator" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeGeneratorConfig" name="TreeGeneratorConfig" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeModelerConfig" name="TreeModelerConfig" visibility="public"/>
+        <UML:Interface xmi.id="interface_ParamFileDlg" name="ParamFileDlg" visibility="public"/>
+        
+        <!-- Definition der Use Cases -->
+        <UML:UseCase xmi.id="usecase_editTrees" name="edit Trees" visibility="public"/>
+        <UML:UseCase xmi.id="usecase_exportTrees" name="export Trees" visibility="public"/>
+        <UML:UseCase xmi.id="usecase_loadParamFile" name="load Param file" visibility="public"/>
+        <UML:UseCase xmi.id="usecase_changeParams" name="change Params" visibility="public"/>
+        
+        <!-- Definition der Verbindungen und Abhängigkeiten -->
+        <UML:Generalization xmi.id="gen_leaves1" parent="actor_User" child="usecase_editTrees"/>
+        <UML:Generalization xmi.id="gen_leaves2" parent="actor_User" child="usecase_exportTrees"/>
+        <UML:Generalization xmi.id="gen_leaves3" parent="actor_User" child="usecase_loadParamFile"/>
+        <UML:Generalization xmi.id="gen_leaves4" parent="actor_User" child="usecase_changeParams"/>
+        
+        <!-- Data Types -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="string" name="string"/>
+      
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,78 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ApplicationModel" name="ApplicationModel">
+      <UML:Namespace.ownedElement>
+        <!-- Akteure -->
+        <UML:Actor xmi.id="actor_AdvancedUser" name="Advanced User" visibility="public"/>
+        <UML:Actor xmi.id="actor_NoviceUser" name="Novice User" visibility="public"/>
+        
+        <!-- Use Cases -->
+        <UML:UseCase xmi.id="useCase_LoadOccurences" name="Load Occurences as Coordinates" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_SelectAlgorithm" name="Select Model Algorithm" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_ObtainTechDesc" name="Obtain Detailed Technical Description of Alg" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_RunModel" name="Run Model" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_DefineDatasets" name="Define Dataset(s)" visibility="public"/>
+
+        <!-- Klasse OmgDataset -->
+        <UML:Class xmi.id="class_OmgDataset" name="OmgDataset" visibility="public" isAbstract="false"/>
+
+        <!-- Interfaces -->
+        <UML:Interface xmi.id="interface_OccurenceData" name="Occurence Data" visibility="public"/>
+        <UML:Interface xmi.id="interface_LayerDatasets" name="Layer Datasets" visibility="public"/>
+        <UML:Interface xmi.id="interface_Algorithms" name="Algorithms" visibility="public"/>
+        <UML:Interface xmi.id="interface_Projections" name="Projections" visibility="public"/>
+        <UML:Interface xmi.id="interface_ConfigurationManager" name="Configuration Manager" visibility="public"/>
+
+        <!-- Komponenten Klassen -->
+        <UML:Class xmi.id="class_MainApplication" name="Main Application" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_OccurenceDataModel" name="Occurence Data Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_OccurenceDataView" name="Occurence Data View" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_AlgorithmsModel" name="Algorithms Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_AlgorithmsView" name="Algorithms View" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DatasetsModel" name="Datasets Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DatasetsView" name="Datasets View" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ProjectionSetModel" name="ProjectionSet Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ProjectionSetView" name="ProjectionSet View" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TaskProgressModel" name="Task Progress Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TaskProgressView" name="Task Progress View" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_LogModel" name="Log Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_LogView" name="Log View" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_MapModel" name="Map Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_MapView" name="Map View" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ChartModel" name="Chart Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ChartView" name="Chart View" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ConfigurationModel" name="Configuration Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ConfigurationView" name="Configuration View" visibility="public" isAbstract="false"/>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_AdvancedUser_LoadOccurences">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AdvancedUser" type="actor_AdvancedUser" name="AdvancedUser"/>
+            <UML:AssociationEnd xmi.id="assocEnd_LoadOccurences" type="useCase_LoadOccurences" name="LoadOccurences"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_NoviceUser_SelectAlgorithm">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_NoviceUser" type="actor_NoviceUser" name="NoviceUser"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SelectAlgorithm" type="useCase_SelectAlgorithm" name="SelectAlgorithm"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Interfaces Implementationen -->
+        <UML:Dependency xmi.id="dep_OccurenceDataModel_OccurenceData" supplier="interface_OccurenceData" client="class_OccurenceDataModel"/>
+        <UML:Dependency xmi.id="dep_AlgorithmsModel_Algorithms" supplier="interface_Algorithms" client="class_AlgorithmsModel"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

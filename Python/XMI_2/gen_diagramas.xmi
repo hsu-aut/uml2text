@@ -1,0 +1,100 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Klasse Simulation -->
+            <UML:Class xmi.id="class_Simulation" name="Simulation" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_Simulation" name="Simulation"/>
+                <UML:Operation xmi.id="operation_initializePopulation" name="initializePopulation"/>
+                <UML:Operation xmi.id="operation_initializeNormativePhenotypicPart" name="initializeNormativePhenotypicPart"/>
+                <UML:Operation xmi.id="operation_initializeNormativeGrid" name="initializeNormativeGrid"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Klasse Individual -->
+            <UML:Class xmi.id="class_Individual" name="Individual" visibility="public" isAbstract="false">
+            </UML:Class>
+            
+            <!-- Klasse NormativePhenotypicPart-->
+            <UML:Class xmi.id="class_NormativePhenotypicPart" name="NormativePhenotypicPart" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <!-- Klasse NormativeGrid -->
+            <UML:Class xmi.id="class_NormativeGrid" name="NormativeGrid" visibility="public" isAbstract="false">
+            </UML:Class>
+
+             <!-- Klasse ExternalFile -->
+            <UML:Class xmi.id="class_ExternalFile" name="ExternalFile" visibility="public" isAbstract="false">
+            </UML:Class>
+            
+            <!-- Association zwischen Simulation und NormativePhenotypicPart -->
+            <UML:Association xmi.id="assoc_Simulation_NormativePhenotypicPart" name="Simulation-NormativePhenotypicPart" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Simulation_NormativePhenotypicPart_Simulation" type="class_Simulation" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Simulation_NormativePhenotypicPart_NormativePhenotypicPart" type="class_NormativePhenotypicPart" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Association zwischen Simulation und Individual -->
+            <UML:Association xmi.id="assoc_Simulation_Individual" name="Simulation-Individual" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Simulation_Individual_Simulation" type="class_Simulation" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Simulation_Individual_Individual" type="class_Individual" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Association zwischen Simulation und ExternalFile -->
+            <UML:Association xmi.id="assoc_Simulation_ExternalFile" name="Simulation-ExternalFile" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Simulation_ExternalFile_Simulation" type="class_Simulation" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Simulation_ExternalFile_ExternalFile" type="class_ExternalFile" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Association zwischen Simulation und NormativeGrid -->
+            <UML:Association xmi.id="assoc_Simulation_NormativeGrid" name="Simulation-NormativeGrid" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Simulation_NormativeGrid_Simulation" type="class_Simulation" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Simulation_NormativeGrid_NormativeGrid" type="class_NormativeGrid" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

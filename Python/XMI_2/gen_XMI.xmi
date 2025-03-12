@@ -1,0 +1,113 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_modeloSemTitulo" name="modeloSemTitulo">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_pt" name="pt">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_uminho" name="uminho">
+              <UML:Namespace.ownedElement>
+                <UML:Package xmi.id="package_xmi" name="xmi">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="class_Class1" name="Class1" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="int"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Operation xmi.id="op_getName" name="getName" visibility="public" ownerScope="instance" isQuery="true"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_Class2" name="Class2" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_value" name="value" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="int"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Operation xmi.id="op_total" name="total" visibility="public" ownerScope="instance" isQuery="true"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_Items" name="Items" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_price" name="price" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="double"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Operation xmi.id="op_getPrice" name="getPrice" visibility="public" ownerScope="instance" isQuery="true"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_Element" name="Element" visibility="public" isAbstract="false">
+                      <UML:Generalization xmi.id="gen_Element_SimpleElement" parent="class_SimpleElement"/>
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_test" name="test" visibility="private"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_SimpleElement" name="SimpleElement" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_value_simple" name="value" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="int"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                    <UML:Interface xmi.id="interface_IElement" name="IElement" visibility="public" isAbstract="true">
+                      <UML:Namespace.ownedElement>
+                        <UML:Operation xmi.id="op_getName_interface" name="getName" visibility="public" ownerScope="instance" isQuery="true"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Interface>
+                    <UML:Association xmi.id="assoc1" name="assoc1" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assoc1_end1" type="class_Class1" aggregation="none" navigable="false"/>
+                        <UML:AssociationEnd xmi.id="assoc1_end2" type="class_Class2" aggregation="none" navigable="true"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                    <UML:Association xmi.id="assoc2" name="assoc2" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assoc2_end1" type="class_Class1" aggregation="none" navigable="false"/>
+                        <UML:AssociationEnd xmi.id="assoc2_end2" type="class_Items" aggregation="none" navigable="true"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                    <UML:Aggregation xmi.id="aggregation" name="aggregation" visibility="public" isSpecification="false">
+                      <UML:AssociationEnd xmi.id="aggregation_end1" type="class_Class1" aggregation="shared" navigable="false"/>
+                      <UML:AssociationEnd xmi.id="aggregation_end2" type="class_SimpleElement" aggregation="none" navigable="true"/>
+                    </UML:Aggregation>
+                    <UML:Composition xmi.id="composition1" name="comp1" visibility="public" isSpecification="false">
+                      <UML:AssociationEnd xmi.id="comp1_end1" type="class_Class1" aggregation="composite" navigable="false"/>
+                      <UML:AssociationEnd xmi.id="comp1_end2" type="class_SimpleElement" aggregation="none" navigable="true"/>
+                    </UML:Composition>
+                    <UML:Abstraction xmi.id="abstraction_IElement" supplier="interface_IElement" client="class_SimpleElement">
+                      <UML:Dependency.stereotype>
+                        <UML:Stereotype xmi.idref="realize"/>
+                      </UML:Dependency.stereotype>
+                    </UML:Abstraction>
+                    <UML:DataType xmi.id="int" name="int"/>
+                    <UML:DataType xmi.id="double" name="double"/>
+                    <UML:DataType xmi.id="String" name="String"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

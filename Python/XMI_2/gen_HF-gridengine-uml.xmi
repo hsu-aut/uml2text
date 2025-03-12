@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="basicPackage" name="BasicPackage">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_GridEnvReader" name="GridEnvReader" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Package xmi.id="hfGridsubprocess" name="hf.gridsubprocess">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_GridPopen" name="GridPopen" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_GridPopen_init" name="__init__" visibility="public" isAbstract="false"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Class xmi.id="class_CvmfsEnv" name="CvmfsEnv" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_CvmfsEnv" parent="baseEnv"/>
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_localSetup" name="localSetup" visibility="public" isAbstract="false"/>
+                    <UML:Operation xmi.id="op_generateLoader" name="generateLoader" visibility="public" isAbstract="false"/>
+                    <UML:Operation xmi.id="op_setEnabled" name="setEnabled" visibility="public" isAbstract="false"/>
+                    <UML:Operation xmi.id="op_setDisabled" name="setDisabled" visibility="public" isAbstract="false"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Package xmi.id="hfGridtoolkit" name="hf.gridtoolkit">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_ProxyCertificateHandler" name="ProxyCertificateHandler" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_generateProxy" name="generateProxy" visibility="public" isAbstract="false"/>
+                    <UML:Operation xmi.id="op_delegateProxy" name="delegateProxy" visibility="public" isAbstract="false"/>
+                    <UML:Operation xmi.id="op_checkProxy" name="checkProxy" visibility="public" isAbstract="false"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Class xmi.id="class_GridFtpHandler" name="GridFtpHandler" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_setSourceHost" name="setSourceHost" visibility="public" isAbstract="false"/>
+                    <UML:Operation xmi.id="op_setDestinationPath" name="setDestinationPath" visibility="public" isAbstract="false"/>
+                    <UML:Operation xmi.id="op_setMode" name="setMode" visibility="public" isAbstract="false"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Interface xmi.id="interface_Popen" name="Popen" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_HFConfig" name="HFConfig" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_get" name="get" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_GridSubprocessBaseHandler" name="GridSubprocessBaseHandler" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_gridProcess" name="gridProcess" visibility="private"/>
+            <UML:Attribute xmi.id="attr_standardInput" name="standardInput" visibility="private"/>
+            <UML:Attribute xmi.id="attr_cvmfsEnv" name="cvmfsEnv" visibility="private"/>
+            <UML:Operation xmi.id="op_execute" name="execute" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_showGridProcess" name="showGridProcess" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Association xmi.id="assoc_GridEnvReader_CvmfsEnv" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_GridEnvReader" type="class_GridEnvReader" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CvmfsEnv" type="class_CvmfsEnv" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_GridFtpHandler_ProxyCertificateHandler" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_GridFtpHandler" type="class_GridFtpHandler" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ProxyCertificateHandler" type="class_ProxyCertificateHandler" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

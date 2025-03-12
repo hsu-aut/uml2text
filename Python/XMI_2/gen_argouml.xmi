@@ -1,0 +1,127 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ExampleModelExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="xmi.1" name="example.one">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="xmi.2" name="Actor" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Attribute, if any, would be listed here -->
+          </UML:Classifier.feature>
+          <UML:StateMachine xmi.id="xmi.3" name="ActorStateMachine">
+            <UML:StateMachine.top>
+              <UML:CompositeState xmi.id="xmi.4">
+                <UML:CompositeState.subVertex>
+                  <UML:Pseudostate xmi.id="xmi.5" kind="initial"/>
+                  <UML:State xmi.id="xmi.7" name="0">
+                    <UML:State.internalTransition>
+                      <!-- Outgoing transitions to the same state "0" -->
+                      <UML:Transition xmi.id="xmi.6" source="xmi.7" target="xmi.7"/>
+                      <UML:Transition xmi.id="xmi.8" source="xmi.7" target="xmi.7"/>
+                      <UML:Transition xmi.id="xmi.9" source="xmi.7" target="xmi.7"/>
+                    </UML:State.internalTransition>
+                  </UML:State>
+                </UML:CompositeState.subVertex>
+              </UML:CompositeState>
+            </UML:StateMachine.top>
+          </UML:StateMachine>
+        </UML:Class>
+        
+        <UML:Class xmi.id="xmi.26" name="Mod2x2" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="xmi.72" name="dummy" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="xmi.69" name="value" type="int" visibility="private"/>
+            <UML:Operation xmi.id="xmi.65" name="get">
+              <!-- Parameters and details omitted for brevity -->
+            </UML:Operation>
+            <UML:Operation xmi.id="xmi.67" name="inc">
+              <!-- Parameters and details omitted for brevity -->
+            </UML:Operation>
+          </UML:Classifier.feature>
+          <UML:StateMachine xmi.id="xmi.27" name="Mod2x2StateMachine">
+            <UML:StateMachine.top>
+              <UML:CompositeState xmi.id="xmi.28">
+                <UML:CompositeState.subVertex>
+                  <UML:Pseudostate xmi.id="xmi.29" kind="initial"/>
+                  <UML:State xmi.id="xmi.30" name="0"/>
+                  <UML:State xmi.id="xmi.31" name="1"/>
+                  <UML:State xmi.id="xmi.32" name="2"/>
+                </UML:CompositeState.subVertex>
+              </UML:CompositeState>
+            </UML:StateMachine.top>
+          </UML:StateMachine>
+        </UML:Class>
+        
+        <UML:Class xmi.id="xmi.75" name="Mod2" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="xmi.120" name="value" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="xmi.124" name="nextElement" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="xmi.127" name="x" type="int" visibility="private"/>
+            <UML:Operation xmi.id="xmi.132" name="get">
+              <!-- Parameters and details omitted for brevity -->
+            </UML:Operation>
+            <UML:Operation xmi.id="xmi.130" name="inc">
+              <!-- Parameters and details omitted for brevity -->
+            </UML:Operation>
+          </UML:Classifier.feature>
+          <UML:StateMachine xmi.id="xmi.76" name="Mod2StateMachine">
+            <UML:StateMachine.top>
+              <UML:CompositeState xmi.id="xmi.77">
+                <UML:CompositeState.subVertex>
+                  <UML:Pseudostate xmi.id="xmi.78" kind="initial"/>
+                  <UML:State xmi.id="xmi.79" name="0"/>
+                  <UML:State xmi.id="xmi.80" name="1"/>
+                  <UML:State xmi.id="xmi.81" name="2"/>
+                  <UML:State xmi.id="xmi.82" name="3"/>
+                  <UML:State xmi.id="xmi.83" name="4"/>
+                </UML:CompositeState.subVertex>
+              </UML:CompositeState>
+            </UML:StateMachine.top>
+          </UML:StateMachine>
+        </UML:Class>
+        
+        <UML:DataType xmi.id="xmi.22" name="int"/>
+        <UML:DataType xmi.id="xmi.25" name="void"/>
+        <UML:DataType xmi.id="xmi.134" name="char"/>
+        
+        <UML:Association xmi.id="xmi.135">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="xmi.2" name="actor" type="Actor"/>
+            <UML:AssociationEnd xmi.idref="xmi.26" name="counter" type="Mod2x2"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="xmi.138" name="first">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="xmi.75" name="mod2" type="Mod2"/>
+            <UML:AssociationEnd xmi.idref="xmi.26"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="xmi.141" name="second">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="xmi.26" name="mod2x2" type="Mod2x2"/>
+            <UML:AssociationEnd xmi.idref="xmi.75" name="mod2" type="Mod2"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="xmi.145" name="next">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="xmi.75" name="mod2source" type="Mod2"/>
+            <UML:AssociationEnd xmi.idref="xmi.75" name="mod2target" type="Mod2"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

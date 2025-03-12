@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logische Ansicht -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Paket Datatypes -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Anwendungsfall-Ansicht -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Akteur Developer -->
+            <UML:Actor xmi.id="actor_Developer" name="Developer" visibility="public"/>
+
+            <!-- Anwendungsfälle -->
+            <UML:UseCase xmi.id="usecase_downloads_emerge_Installer" name="downloads emerge Installer" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_runs_installer" name="runs installer" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_configure_installation" name="configure installation" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_build_packages_applications" name="build packages/applications" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_uploads_package_application_to_release_server" name="uploads package/application to release server" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_debug_packages_applications" name="debug packages/applications" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_may_download_install_required_3rdparty_packages" name="may download/install required 3rdparty packages" visibility="public"/>
+
+            <!-- Assoziationen zwischen Akteur und Anwendungsfällen -->
+            <UML:Association xmi.id="assoc_1" name="association1">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" name="developer" visibility="public" isSpecification="false"/>
+                <UML:AssociationEnd xmi.id="assocEnd_downloads_emerge_Installer" type="usecase_downloads_emerge_Installer" name="downloads emerge Installer" visibility="public" isSpecification="false"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_2" name="association2">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" name="developer" visibility="public" isSpecification="false"/>
+                <UML:AssociationEnd xmi.id="assocEnd_runs_installer" type="usecase_runs_installer" name="runs installer" visibility="public" isSpecification="false"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_3" name="association3">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" name="developer" visibility="public" isSpecification="false"/>
+                <UML:AssociationEnd xmi.id="assocEnd_configure_installation" type="usecase_configure_installation" name="configure installation" visibility="public" isSpecification="false"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_4" name="association4">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" name="developer" visibility="public" isSpecification="false"/>
+                <UML:AssociationEnd xmi.id="assocEnd_build_packages_applications" type="usecase_build_packages_applications" name="build packages/applications" visibility="public" isSpecification="false"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_5" name="association5">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" name="developer" visibility="public" isSpecification="false"/>
+                <UML:AssociationEnd xmi.id="assocEnd_uploads_package_application_to_release_server" type="usecase_uploads_package_application_to_release_server" name="uploads package/application to release server" visibility="public" isSpecification="false"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_6" name="association6">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" name="developer" visibility="public" isSpecification="false"/>
+                <UML:AssociationEnd xmi.id="assocEnd_debug_packages_applications" type="usecase_debug_packages_applications" name="debug packages/applications" visibility="public" isSpecification="false"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_7" name="association7">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" name="developer" visibility="public" isSpecification="false"/>
+                <UML:AssociationEnd xmi.id="assocEnd_may_download_install_required_3rdparty_packages" type="usecase_may_download_install_required_3rdparty_packages" name="may download/install required 3rdparty packages" visibility="public" isSpecification="false"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

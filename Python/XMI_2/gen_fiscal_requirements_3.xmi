@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Model xmi.id="logical_view" name="Logical View" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:ActivityGraph xmi.id="activity_diagram_vat_validation" name="VAT Validation Activity Diagram">
+              <UML:State xmi.id="activity_start" name="Start"/>
+              <UML:State xmi.id="activity_button_check_vat" name="button_check_vat"/>
+              <UML:State xmi.id="activity_vat_check_vies" name="vat_check_vies"/>
+              <UML:State xmi.id="activity_simple_vat_check" name="simple_vat_check"/>
+              <UML:State xmi.id="activity_check_vat_ve" name="check_vat_ve"/>
+              <UML:State xmi.id="activity_update_rif" name="update_rif"/>
+              <UML:State xmi.id="activity_end_success" name="End [Success]"/>
+              <UML:State xmi.id="activity_end_failed" name="End [Failed]"/>
+              <UML:Transition xmi.id="transition_button_check_vat" source="activity_start" target="activity_button_check_vat"/>
+              <UML:Transition xmi.id="transition_check_vies_true" source="activity_button_check_vat" target="activity_vat_check_vies" guard="check_vies = True"/>
+              <UML:Transition xmi.id="transition_check_vies_false" source="activity_vat_check_vies" target="activity_simple_vat_check" guard="success = False"/>
+              <UML:Transition xmi.id="transition_simple_vat_check" source="activity_simple_vat_check" target="activity_check_vat_ve"/>
+              <UML:Transition xmi.id="transition_update_rif" source="activity_check_vat_ve" target="activity_update_rif"/>
+              <UML:Transition xmi.id="transition_end_success" source="activity_vat_check_vies" target="activity_end_success" guard="success = True"/>
+              <UML:Transition xmi.id="transition_end_failed" source="activity_update_rif" target="activity_end_failed"/>
+            </UML:ActivityGraph>
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

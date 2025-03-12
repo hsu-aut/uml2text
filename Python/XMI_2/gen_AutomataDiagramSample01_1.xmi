@@ -1,0 +1,113 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Stereotypes -->
+        
+        <UML:Stereotype xmi.id="stereotype_Folder" name="Folder"/>
+        <UML:Stereotype xmi.id="stereotype_Datatype" name="Datatype"/>
+        <UML:Stereotype xmi.id="stereotype_Enum" name="Enum"/>
+        
+        <!-- Logical View (Stereotype: Folder) -->
+        <UML:Package xmi.id="logicalView" name="Logical View" stereotype="Folder">
+          <UML:Namespace.ownedElement>
+          
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_Array" name="Array"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Automata Class -->
+            <UML:Class xmi.id="class_Automata" name="Automata">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_state" name="state" type="enum_state"/>
+                <UML:Attribute xmi.id="attr_stateChange" name="stateChange" type="enum_stateChange"/>
+                <UML:Attribute xmi.id="attr_currentState" name="currentState" type="enum_currentState"/>
+                <UML:Attribute xmi.id="attr_solicitor" name="solicitor" type="datatype_Array"/>
+                <UML:Operation xmi.id="op_run" name="run"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Array of functions and enum Collections -->
+            <UML:Class xmi.id="class_ArrayOfFunctions" name="Array of functions"/>
+            <UML:Class xmi.id="class_ArrayOfEnum" name="Array of enum"/>
+            <UML:Class xmi.id="class_ArrayOfEnum2" name="Arrayof enum"/>
+            
+            <!-- Enumerations -->
+            <UML:Enumeration xmi.id="enum_state" name="state">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_none" name="none"/>
+                <UML:EnumerationLiteral xmi.id="literal_walking" name="walking"/>
+                <UML:EnumerationLiteral xmi.id="literal_running" name="running"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            
+            <UML:Enumeration xmi.id="enum_stateChange" name="stateChange">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_up" name="up"/>
+                <UML:EnumerationLiteral xmi.id="literal_steady" name="steady"/>
+                <UML:EnumerationLiteral xmi.id="literal_down" name="down"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            
+            <UML:Enumeration xmi.id="enum_currentState" name="currentState">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_previous" name="previous"/>
+                <UML:EnumerationLiteral xmi.id="literal_current" name="current"/>
+                <UML:EnumerationLiteral xmi.id="literal_requested" name="requested"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_Automata_state" name="Automata-state">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_state_Automata" type="class_Automata" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_state_state" type="enum_state" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Automata_stateChange" name="Automata-stateChange">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_stateChange_Automata" type="class_Automata" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_stateChange_stateChange" type="enum_stateChange" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Automata_currentState" name="Automata-currentState">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_currentState_Automata" type="class_Automata" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_currentState_currentState" type="enum_currentState" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

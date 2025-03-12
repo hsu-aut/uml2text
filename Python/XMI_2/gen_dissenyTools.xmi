@@ -1,0 +1,86 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Tool" name="ToolSystem">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Tool" name="Tool" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Child xmi.idref="class_NonGraphicTool"/>
+            <UML:Child xmi.idref="class_GraphicTool"/>
+          </UML:Generalization>
+          <UML:AssociationEnd xmi.id="assoc_Tool_ToolData" type="class_ToolData"/>
+          <UML:AssociationEnd xmi.id="assoc_Tool_ToolRepresentation" type="class_ToolRepresentation"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_NonGraphicTool" name="NonGraphicTool" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_NonGraphicTool_Tool">
+            <UML:Parent xmi.idref="class_Tool"/>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Child xmi.idref="class_SliceTool"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GraphicTool" name="GraphicTool" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_GraphicTool_Tool">
+            <UML:Parent xmi.idref="class_Tool"/>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Child xmi.idref="class_AnnotationTool"/>
+            <UML:Child xmi.idref="class_MeasureTool"/>
+            <UML:Child xmi.idref="class_TextTool"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AnnotationTool" name="AnnotationTool" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_AnnotationTool_GraphicTool">
+            <UML:Parent xmi.idref="class_GraphicTool"/>
+          </UML:Generalization>
+          <UML:AssociationEnd xmi.id="assoc_AnnotationTool_TextTool" type="class_TextTool"/>
+          <UML:AssociationEnd xmi.id="assoc_AnnotationTool_KinTool" type="class_KinTool"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MeasureTool" name="MeasureTool" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_MeasureTool_GraphicTool">
+            <UML:Parent xmi.idref="class_GraphicTool"/>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Child xmi.idref="class_AngleTool"/>
+            <UML:Child xmi.idref="class_DistanceTool"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolData" name="ToolData" visibility="public" isAbstract="false">
+          <UML:AssociationEnd xmi.id="assoc_ToolData_Tool" type="class_Tool"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolRepresentation" name="ToolRepresentation" visibility="public" isAbstract="false">
+          <UML:AssociationEnd xmi.id="assoc_ToolRepresentation_Tool" type="class_Tool"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ToolProxy" name="ToolProxy" visibility="public" isAbstract="false">
+          <UML:AssociationEnd xmi.id="assoc_ToolProxy_Tool" type="class_Tool"/>
+          <UML:AssociationEnd xmi.id="assoc_ToolProxy_QViewer" type="class_QViewer"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QViewer" name="QViewer" visibility="public" isAbstract="false">
+          <UML:AssociationEnd xmi.id="assoc_QViewer_ToolProxy" type="class_ToolProxy"/>
+          <UML:AssociationEnd xmi.id="assoc_QViewer_ToolRegistry" type="class_ToolRegistry"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AnnotationData" name="AnnotationData" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

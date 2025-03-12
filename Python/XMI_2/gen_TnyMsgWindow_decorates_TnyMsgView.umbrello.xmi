@@ -1,0 +1,116 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_E-Mail_System" name="E-Mail System">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package: libtinymailui -->
+        <UML:Package xmi.id="pkg_libtinymailui" name="libtinymailui">
+          <UML:Namespace.ownedElement>
+
+            <UML:Interface xmi.id="iface_TnyMsgView" name="TnyMsgView" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_set_msg" name="set_msg" visibility="public"/>
+                <UML:Attribute xmi.id="attr_msg" name="msg" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Interface xmi.idref="iface_TnyMsg"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Interface>
+
+            <UML:Interface xmi.id="iface_TnyMsgWindow" name="TnyMsgWindow" visibility="public"/>
+
+            <UML:Interface xmi.id="iface_TnySaveStrategy" name="TnySaveStrategy" visibility="public"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: libtinymailui-gtk -->
+        <UML:Package xmi.id="pkg_libtinymailui_gtk" name="libtinymailui-gtk">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_TnyGtkMsgWindow" name="TnyGtkMsgWindow" visibility="public">
+              <UML:Generalization xmi.id="gen_TnyGtkMsgWindow_GtkWindow" parent="class_GtkWindow"/>
+              <UML:InterfaceRealization xmi.id="realization_TnyGtkMsgWindow_TnyMsgWindow" contract="iface_TnyMsgWindow"/>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_msgview" name="msgview" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Interface xmi.idref="iface_TnyMsgView"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_save_strategy" name="save_strategy" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Interface xmi.idref="iface_TnySaveStrategy"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_TnyGtkMsgView" name="TnyGtkMsgView" visibility="public">
+              <UML:Generalization xmi.id="gen_TnyGtkMsgView_GtkWidget" parent="class_GtkWidget"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_TnyGtkSaveStrategy" name="TnyGtkSaveStrategy" visibility="public">
+              <UML:InterfaceRealization xmi.id="realization_TnyGtkSaveStrategy_TnySaveStrategy" contract="iface_TnySaveStrategy"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_TnyGtkTextBufferStream" name="TnyGtkTextBufferStream" visibility="public">
+              <UML:InterfaceRealization xmi.id="realization_TnyGtkTextBufferStream_TnyStream" contract="iface_TnyStream"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: libtinymail -->
+        <UML:Package xmi.id="pkg_libtinymail" name="libtinymail">
+          <UML:Namespace.ownedElement>
+
+            <UML:Interface xmi.id="iface_TnyMsg" name="TnyMsg" visibility="public"/>
+
+            <UML:Interface xmi.id="iface_TnyStream" name="TnyStream" visibility="public"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: libtinymailui-mozembed -->
+        <UML:Package xmi.id="pkg_libtinymailui_mozembed" name="libtinymailui-mozembed">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_TnyMozEmbedStream" name="TnyMozEmbedStream" visibility="public">
+              <UML:InterfaceRealization xmi.id="realization_TnyMozEmbedStream_TnyStream" contract="iface_TnyStream"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_TnyMozEmbedMsgView" name="TnyMozEmbedMsgView" visibility="public">
+              <UML:Dependency xmi.id="dep_TnyMozEmbedMsgView_TnyMsgView" supplier="iface_TnyMsgView"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: libgtk+ -->
+        <UML:Package xmi.id="pkg_libgtk" name="libgtk+">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_GtkWidget" name="GtkWidget" visibility="public"/>
+
+            <UML:Class xmi.id="class_GtkWindow" name="GtkWindow" visibility="public">
+              <UML:Generalization xmi.id="gen_GtkWindow_GtkWidget" parent="class_GtkWidget"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

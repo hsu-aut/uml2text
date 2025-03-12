@@ -1,0 +1,134 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Model xmi.id="LV" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Interfaces and Abstractions -->
+            <UML:Interface xmi.id="HNEzgiF4fTod" name="Iserver&lt;T extends IApplication&gt;">
+              <!-- No operations -->
+            </UML:Interface>
+            
+            <UML:Interface xmi.id="OhSLGYF8LPpL" name="IDao">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="fetchOne" name="fetchOne"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+
+            <UML:Interface xmi.id="a2oOapkwWAGk" name="IDao&lt;T&gt;">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="fetchOne" name="fetchOne"/>
+                <UML:Operation xmi.id="fetch" name="fetch"/>
+                <UML:Operation xmi.id="insert" name="insert"/>
+                <UML:Operation xmi.id="update" name="update"/>
+                <UML:Operation xmi.id="delete" name="delete"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+
+            <!-- Classes -->
+            <UML:Class xmi.id="Vnkbz3ON6vRN" name="NIOServer&lt;T extends IApplication&gt;">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="HNEzgiF4fTod"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="Kli36a4yYWip" name="Application&lt;T extends IHandler&gt;"/>
+            <UML:Class xmi.id="U37731vPBK0K" name="Command"/>
+            <UML:Class xmi.id="1lVJ4m8MYoQc" name="Option"/>
+            <UML:Class xmi.id="NSoEEhSDxuWp" name="DPAdapter"/>
+            <UML:Class xmi.id="LIHPw24Xzwlr" name="DBBaseDao"/>
+            <UML:Class xmi.id="GfURObzl3lxF" name="Mem"/>
+            <UML:Class xmi.id="SNTPHxEcFU19" name="Log"/>
+            
+            <UML:Class xmi.id="yZKR1weVha0F" name="MyApp">
+              <UML:Generalization>
+                <UML:Generalization.general>
+                  <UML:Class xmi.idref="Kli36a4yYWip"/>
+                </UML:Generalization.general>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="BR6n410qAqCJ" name="MyHandler"/>
+            
+            <UML:Class xmi.id="iwrZt8pr6lDr" name="MyServer">
+              <UML:Generalization>
+                <UML:Generalization.general>
+                  <UML:Class xmi.idref="Vnkbz3ON6vRN"/>
+                </UML:Generalization.general>
+              </UML:Generalization>
+              <UML:Dependency>
+                <UML:Dependency.supplier>
+                  <UML:Class xmi.idref="yZKR1weVha0F"/>
+                </UML:Dependency.supplier>
+              </UML:Dependency>
+            </UML:Class>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_Application_Command">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Application_Command_Application" type="Kli36a4yYWip" name="application" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Application_Command_Command" type="U37731vPBK0K" name="command" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Command_Option">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Command_Option_Command" type="U37731vPBK0K" name="command" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Command_Option_Option" type="1lVJ4m8MYoQc" name="option" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_DPAdapter_Mem">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_DPAdapter_Mem_DPAdapter" type="NSoEEhSDxuWp" name="dpadapter" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_DPAdapter_Mem_Mem" type="GfURObzl3lxF" name="mem" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_DPAdapter_Log">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_DPAdapter_Log_DPAdapter" type="NSoEEhSDxuWp" name="dpadapter" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_DPAdapter_Log_Log" type="SNTPHxEcFU19" name="log" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_DPAdapter_DBBaseDao">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_DPAdapter_DBBaseDao_DPAdapter" type="NSoEEhSDxuWp" name="dpadapter" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_DPAdapter_DBBaseDao_DBBaseDao" type="LIHPw24Xzwlr" name="dbbasedao" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

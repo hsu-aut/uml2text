@@ -1,0 +1,72 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_PluginSystem" name="PluginSystem" isSpecification="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+
+        <!-- BasePlugin Class -->
+        <UML:Class xmi.id="class_BasePlugin" name="BasePlugin" visibility="public" isAbstract="false"/>
+        
+        <!-- ProjectPlugin Class -->
+        <UML:Class xmi.id="class_ProjectPlugin" name="ProjectPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ProjectPlugin_BasePlugin" parent="class_BasePlugin"/>
+        </UML:Class>
+
+        <!-- CompilerPlugin Class -->
+        <UML:Class xmi.id="class_CompilerPlugin" name="CompilerPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_CompilerPlugin_BasePlugin" parent="class_BasePlugin"/>
+        </UML:Class>
+        
+        <!-- CLIToolPlugin Class -->
+        <UML:Class xmi.id="class_CLIToolPlugin" name="CLIToolPlugin" visibility="public" isAbstract="false"/>
+
+        <!-- BuilderPlugin Class -->
+        <UML:Class xmi.id="class_BuilderPlugin" name="BuilderPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_BuilderPlugin_BasePlugin" parent="class_BasePlugin"/>
+          <UML:Generalization xmi.id="gen_BuilderPlugin_CLIToolPlugin" parent="class_CLIToolPlugin"/>
+        </UML:Class>
+        
+        <!-- DebuggerPlugin Class -->
+        <UML:Class xmi.id="class_DebuggerPlugin" name="DebuggerPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_DebuggerPlugin_BasePlugin" parent="class_BasePlugin"/>
+        </UML:Class>
+        
+        <!-- InterpreterPlugin Class -->
+        <UML:Class xmi.id="class_InterpreterPlugin" name="InterpreterPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_InterpreterPlugin_BasePlugin" parent="class_BasePlugin"/>
+        </UML:Class>
+
+        <!-- ProjectItem Class -->
+        <UML:Class xmi.id="class_ProjectItem" name="ProjectItem" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_mPlugin" name="mPlugin" visibility="private" type="class_ProjectPlugin"/>
+        </UML:Class>
+        
+        <!-- QSortFilterProxyModel Class -->
+        <UML:Class xmi.id="class_QSortFilterProxyModel" name="QSortFilterProxyModel" visibility="public" isAbstract="false"/>
+        
+        <!-- ProjectsProxy Class -->
+        <UML:Class xmi.id="class_ProjectsProxy" name="ProjectsProxy" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ProjectsProxy_QSortFilterProxyModel" parent="class_QSortFilterProxyModel"/>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_ProjectPlugin_ProjectItem" name="association_ProjectPlugin_ProjectItem" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ProjectPlugin" type="class_ProjectPlugin" name="ProjectPlugin" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ProjectItem" type="class_ProjectItem" name="ProjectItem" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

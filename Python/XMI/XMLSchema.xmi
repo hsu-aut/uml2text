@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5"
+	xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://schema.omg.org/spec/UML/2.1.1"
+	xmi:version="2.1"
+	xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA http://schema.omg.org/spec/UML/2.1.1 http://www.eclipse.org/uml2/2.1.0/UML">
+	<uml:Model xmi:id="de.uni_koblenz.jgralab.utilities.xml2tg.schema.XMLSchema"
+		name="de.uni_koblenz.jgralab.utilities.xml2tg.schema.XMLSchema">
+		<packagedElement xmi:type="uml:Class" xmi:id="XMLGraph"
+			name="XMLGraph">
+			<xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+				<eAnnotations xmi:type="ecore:EAnnotation" xmi:id="XMLGraph_eAnnotations"
+					source="http://www.eclipse.org/uml2/2.0.0/UML">
+					<details xmi:type="ecore:EStringToStringMapEntry" xmi:id="XMLGraph_details"
+						key="graphclass" />
+				</eAnnotations>
+			</xmi:Extension>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Class" xmi:id="Attribute"
+			name="Attribute">
+			<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute_name"
+				name="name" visibility="private">
+				<type xmi:type="uml:PrimitiveType"
+					href="http://schema.omg.org/spec/UML/2.1.1/uml.xml#String" />
+			</ownedAttribute>
+			<ownedAttribute xmi:type="uml:Property" xmi:id="Attribute_value"
+				name="value" visibility="private">
+				<type xmi:type="uml:PrimitiveType"
+					href="http://schema.omg.org/spec/UML/2.1.1/uml.xml#String" />
+			</ownedAttribute>
+			<ownedAttribute xmi:type="uml:Property"
+				xmi:id="Attribute_incidence_References_from" name="refs" visibility="private"
+				type="Element" association="References">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Attribute_incidence_References_from_uppervalue" value="*" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Attribute_incidence_References_from_lowervalue" value="0" />
+			</ownedAttribute>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Class" xmi:id="Element"
+			name="Element">
+			<ownedComment xmi:type="uml:Comment" xmi:id="Element_ownedComment0"
+				annotatedElement="Element">
+				<body>&lt;p&gt;
+					Each element except the root element must have exactly one parent.
+					&lt;/p&gt;</body>
+			</ownedComment>
+			<ownedRule xmi:type="uml:Constraint" xmi:id="Element_ownedRule0"
+				constrainedElement="Element">
+				<specification xmi:type="uml:OpaqueExpression"
+					xmi:id="Element_ownedRule0_specification">
+					<language></language>
+					<body>"There must be exactly one root element" "exists! e:
+						V{Element} @ inDegree{HasChild}(e) = 0" "from e: V{Element} with
+						inDegree{HasChild}(e) = 0 report e end"</body>
+				</specification>
+			</ownedRule>
+			<generalization xmi:type="uml:Generalization" xmi:id="generalization_Element"
+				general="Node" />
+			<ownedAttribute xmi:type="uml:Property" xmi:id="Element_name"
+				name="name" visibility="private">
+				<type xmi:type="uml:PrimitiveType"
+					href="http://schema.omg.org/spec/UML/2.1.1/uml.xml#String" />
+			</ownedAttribute>
+			<ownedAttribute xmi:type="uml:Property"
+				xmi:id="Element_incidence_HasText_from" name="texts" visibility="private"
+				type="Text" aggregation="composite" association="HasText">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Element_incidence_HasText_from_uppervalue" value="*" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Element_incidence_HasText_from_lowervalue" value="0" />
+			</ownedAttribute>
+			<ownedAttribute xmi:type="uml:Property"
+				xmi:id="Element_incidence_HasChild_from" name="children" visibility="private"
+				type="Element" aggregation="composite" association="HasChild">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Element_incidence_HasChild_from_uppervalue" value="*" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Element_incidence_HasChild_from_lowervalue" value="0" />
+			</ownedAttribute>
+			<ownedAttribute xmi:type="uml:Property"
+				xmi:id="Element_incidence_HasAttribute_from" name="attributes"
+				visibility="private" type="Attribute" aggregation="composite"
+				association="HasAttribute">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Element_incidence_HasAttribute_from_uppervalue" value="*" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Element_incidence_HasAttribute_from_lowervalue" value="0" />
+			</ownedAttribute>
+			<ownedAttribute xmi:type="uml:Property"
+				xmi:id="Element_incidence_HasContent_from" name="contents"
+				visibility="private" type="Node" aggregation="composite"
+				association="HasContent">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Element_incidence_HasContent_from_uppervalue" value="*" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Element_incidence_HasContent_from_lowervalue" value="0" />
+			</ownedAttribute>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Class" xmi:id="Node"
+			name="Node" isAbstract="true">
+			<xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+				<eAnnotations xmi:type="ecore:EAnnotation" xmi:id="Node_eAnnotations"
+					source="http://www.eclipse.org/uml2/2.0.0/UML">
+					<details xmi:type="ecore:EStringToStringMapEntry" xmi:id="Node_details"
+						key="abstract" />
+				</eAnnotations>
+			</xmi:Extension>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Class" xmi:id="Text"
+			name="Text">
+			<generalization xmi:type="uml:Generalization" xmi:id="generalization_Text"
+				general="Node" />
+			<ownedAttribute xmi:type="uml:Property" xmi:id="Text_content"
+				name="content" visibility="private">
+				<type xmi:type="uml:PrimitiveType"
+					href="http://schema.omg.org/spec/UML/2.1.1/uml.xml#String" />
+			</ownedAttribute>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Association" xmi:id="HasAttribute"
+			name="HasAttribute"
+			memberEnd="Element_incidence_HasAttribute_from Attribute_incidence_HasAttribute_to">
+			<ownedEnd xmi:type="uml:Property" xmi:id="Attribute_incidence_HasAttribute_to"
+				name="element" visibility="private" type="Element" association="HasAttribute">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Attribute_incidence_HasAttribute_to_uppervalue" value="1" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Attribute_incidence_HasAttribute_to_lowervalue" value="1" />
+			</ownedEnd>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Association" xmi:id="HasChild"
+			name="HasChild" memberEnd="Element_incidence_HasChild_from Element_incidence_HasChild_to">
+			<generalization xmi:type="uml:Generalization" xmi:id="generalization_HasChild"
+				general="HasContent" />
+			<ownedEnd xmi:type="uml:Property" xmi:id="Element_incidence_HasChild_to"
+				name="element0" visibility="private" type="Element" association="HasChild">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Element_incidence_HasChild_to_uppervalue" value="1" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Element_incidence_HasChild_to_lowervalue" value="0" />
+			</ownedEnd>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Association" xmi:id="HasContent"
+			name="HasContent" memberEnd="Element_incidence_HasContent_from Node_incidence_HasContent_to"
+			isAbstract="true">
+			<xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+				<eAnnotations xmi:type="ecore:EAnnotation" xmi:id="HasContent_eAnnotations"
+					source="http://www.eclipse.org/uml2/2.0.0/UML">
+					<details xmi:type="ecore:EStringToStringMapEntry" xmi:id="HasContent_details"
+						key="abstract" />
+				</eAnnotations>
+			</xmi:Extension>
+			<ownedEnd xmi:type="uml:Property" xmi:id="Node_incidence_HasContent_to"
+				name="parent" visibility="private" type="Element" association="HasContent">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Node_incidence_HasContent_to_uppervalue" value="1" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Node_incidence_HasContent_to_lowervalue" value="0" />
+			</ownedEnd>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Association" xmi:id="HasText"
+			name="HasText" memberEnd="Element_incidence_HasText_from Text_incidence_HasText_to">
+			<generalization xmi:type="uml:Generalization" xmi:id="generalization_HasText"
+				general="HasContent" />
+			<ownedEnd xmi:type="uml:Property" xmi:id="Text_incidence_HasText_to"
+				visibility="private" type="Element" association="HasText">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Text_incidence_HasText_to_uppervalue" value="1" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Text_incidence_HasText_to_lowervalue" value="1" />
+			</ownedEnd>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Association" xmi:id="References"
+			name="References"
+			memberEnd="Attribute_incidence_References_from Element_incidence_References_to">
+			<ownedEnd xmi:type="uml:Property" xmi:id="Element_incidence_References_to"
+				name="referent" visibility="private" type="Attribute" association="References">
+				<upperValue xmi:type="uml:LiteralUnlimitedNatural"
+					xmi:id="Element_incidence_References_to_uppervalue" value="*" />
+				<lowerValue xmi:type="uml:LiteralInteger"
+					xmi:id="Element_incidence_References_to_lowervalue" value="0" />
+			</ownedEnd>
+		</packagedElement>
+		<profileApplication xmi:type="uml:ProfileApplication"
+			xmi:id="profileApplication1348574902074">
+			<xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+				<eAnnotations xmi:type="ecore:EAnnotation" xmi:id="eAnnotations1348574902074"
+					source="http://www.eclipse.org/uml2/2.0.0/UML">
+					<references xmi:type="ecore:EPackage"
+						href="http://schema.omg.org/spec/UML/2.1.1/StandardProfileL2.xmi#_yzU58YinEdqtvbnfB2L_5w" />
+				</eAnnotations>
+			</xmi:Extension>
+			<appliedProfile xmi:type="uml:Profile"
+				href="http://schema.omg.org/spec/UML/2.1.1/StandardProfileL2.xmi#_0" />
+		</profileApplication>
+	</uml:Model>
+</xmi:XMI>

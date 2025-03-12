@@ -1,0 +1,127 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MedicalClinicalResearch" name="MedicalClinicalResearch">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Information_entity" name="Information_entity" visibility="public" isAbstract="true"/>
+
+        <UML:Class xmi.id="class_Outcome_entity" name="Outcome_entity" visibility="public" isAbstract="true"/>
+
+        <UML:Class xmi.id="class_Expression" name="Expression" visibility="public" isAbstract="true"/>
+
+        <UML:Class xmi.id="class_Thing" name="Thing" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Entity" name="Entity" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Thing"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Study" name="Study" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Entity"/>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_NCT_number" name="NCT_number" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_StudyProtocol" name="StudyProtocol" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Information_entity"/>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_public_title" name="public_title" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Contact_information" name="Contact_information" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Information_entity"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Outcome" name="Outcome" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Outcome_entity"/>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_has_name" name="has_name" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Outcome_variable" name="Outcome_variable" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Outcome_entity"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Terminology_code" name="Terminology_code" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_has_concept_id" name="has_concept_id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_has_terminology" name="has_terminology" visibility="public"/>
+            <UML:Attribute xmi.id="attr_has_version" name="has_version" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Role" name="Role" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Thing"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Subject" name="Subject" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Role"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Entity"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Organization" name="Organization" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Study_outcome" name="Study_outcome" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Outcome"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Investigator" name="Investigator" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_is_principal_investigator_of" name="is_principal_investigator_of"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_StudySite" name="StudySite" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Role"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HealthCareProvider" name="HealthCareProvider" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Role"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Study_characteristic" name="Study_characteristic" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Entity"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Statistical_analysis" name="Statistical_analysis" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Study_design_characteristic" name="Study_design_characteristic" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Study_characteristic"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Relative_time_point" name="Relative_time_point" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Expression"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Time_point" name="Time_point" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_Expression"/>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Study_Investigator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Study_Investigator_Study" type="class_Study" name="principal_investigator" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Study_Investigator_Investigator" type="class_Investigator" name="is_principal_investigator_of" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

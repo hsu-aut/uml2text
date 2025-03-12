@@ -1,0 +1,128 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4" />
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SpecimenPathology" name="SpecimenPathology">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Base class -->
+        <UML:Class xmi.id="class_DE_E_1325" name="SpecimenBaseSolidTissuePathologyAnnotation" visibility="public" isAbstract="true"/>
+
+        <!-- Derived classes -->
+        <UML:Class xmi.id="class_DE_E_1365" name="BreastSpecimenPathologyAnnotation" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_mitoticCountIfOtherGradingSystemUsed" name="mitoticCountIfOtherGradingSystemUsed" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DE_E_1349" name="MelanomaSpecimenPathologyAnnotation" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_mitoticIndex" name="mitoticIndex" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tumorRegression" name="tumorRegression" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_depthOfInvasionCannotBeDetermined" name="depthOfInvasionCannotBeDetermined" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ulceration" name="ulceration" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DE_E_1357" name="KidneySpecimenPathologyAnnotation" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_DE_E_1359" name="ColorectalSpecimenPathologyAnnotation" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_intratumoralPeritumoralLymphocyticResponse" name="intratumoralPeritumoralLymphocyticResponse" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DE_E_1363" name="CNSSpecimenPathologyAnnotation" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_DE_E_1377" name="ProstateSpecimenPathologyAnnotation" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_proportionOrPercentOfProstaticTissueInvolvedByTumor" name="proportionOrPercentOfProstaticTissueInvolvedByTumor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DE_E_1375" name="PancreasSpecimenPathologyAnnotation" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_DE_E_1386" name="LungSpecimenPathologyAnnotation" visibility="public" isAbstract="false"/>
+
+        <!-- Gleason Score classes -->
+        <UML:Class xmi.id="class_DE_E_1408" name="ProstateSpecimenGleasonScore" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_SpecimenGleasonScore" name="SpecimenGleasonScore" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_primaryPatternScore" name="primaryPatternScore" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_secondaryPatternScore" name="secondaryPatternScore" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Generalizations -->
+        <UML:Generalization xmi.id="gen_Breast" child="class_DE_E_1365" parent="class_DE_E_1325"/>
+        <UML:Generalization xmi.id="gen_Melanoma" child="class_DE_E_1349" parent="class_DE_E_1325"/>
+        <UML:Generalization xmi.id="gen_Kidney" child="class_DE_E_1357" parent="class_DE_E_1325"/>
+        <UML:Generalization xmi.id="gen_Colorectal" child="class_DE_E_1359" parent="class_DE_E_1325"/>
+        <UML:Generalization xmi.id="gen_CNS" child="class_DE_E_1363" parent="class_DE_E_1325"/>
+        <UML:Generalization xmi.id="gen_Prostate" child="class_DE_E_1377" parent="class_DE_E_1325"/>
+        <UML:Generalization xmi.id="gen_Pancreas" child="class_DE_E_1375" parent="class_DE_E_1325"/>
+        <UML:Generalization xmi.id="gen_Lung" child="class_DE_E_1386" parent="class_DE_E_1325"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_SpecimenGleasonScore_Reference">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecimenGleasonScore" type="class_SpecimenGleasonScore" name="SpecimenGleasonScore" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ProstateSpecimenGleasonScore" type="class_DE_E_1408" name="ProstateSpecimenGleasonScore" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Data Types -->
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="String" name="String"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

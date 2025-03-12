@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ERProfile" name="ERProfile">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Entity" name="Entity" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Stereotype for Entity -->
+            <UML:Stereotype xmi.id="stereotype_Entity" name="Entity"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Attribute" name="Attribute" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_minLength" name="minLength" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_maxLength" name="maxLength" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pattern" name="pattern" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_OneToManyRelation" name="OneToManyRelation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_Association" name="Association"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ManyToManyRelation" name="ManyToManyRelation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_Association" name="Association"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Associations -->
+
+        <UML:Association xmi.id="assoc_Entity_Attribute" name="entity-attribute" visibility="public" isSpecification="false">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_Attribute_Entity" type="class_Entity" name="entity" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_Attribute_Attribute" type="class_Attribute" name="attribute" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Entity_OneToManyRelation" name="entity-oneToMany" visibility="public" isSpecification="false">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_OneToManyRelation_Entity" type="class_Entity" name="entity" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_OneToManyRelation_OneToManyRelation" type="class_OneToManyRelation" name="oneToManyRelation" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Entity_ManyToManyRelation" name="entity-manyToMany" visibility="public" isSpecification="false">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_ManyToManyRelation_Entity" type="class_Entity" name="entity" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_ManyToManyRelation_ManyToManyRelation" type="class_ManyToManyRelation" name="manyToManyRelation" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- DataTypes -->
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

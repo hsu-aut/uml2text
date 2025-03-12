@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public">
+
+          <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:Class xmi.id="datatype_map" name="map" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_list_Commande" name="list<Commande>" isAbstract="false"/>
+          </UML:Package>
+
+          <UML:Class xmi.id="class_Robot" name="Robot" visibility="public">
+            <UML:Classifier.feature>
+              <UML:Operation xmi.id="operation_avancer" name="avancer" visibility="public"/>
+            </UML:Classifier.feature>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Commande" name="Commande" visibility="public">
+            <UML:Classifier.feature>
+              <UML:Attribute xmi.id="attr_commandes" name="commandes" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="datatype_list_Commande"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_queue" name="queue" visibility="private"/>
+              <UML:Operation xmi.id="operation_executeCommande" name="executeCommande" visibility="public"/>
+              <UML:Operation xmi.id="operation_undoLast" name="undoLast" visibility="public"/>
+              <UML:Operation xmi.id="operation_undo" name="undo" visibility="public"/>
+              <UML:Operation xmi.id="operation_enregistrerCommande" name="enregistrerCommande" visibility="public"/>
+            </UML:Classifier.feature>
+            <UML:Generalization xmi.id="gen_Commande_GestionnaireDeCommande" parent="class_GestionnaireDeCommande"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_GestionnaireDeCommande" name="GestionnaireDeCommande" visibility="public" isAbstract="true">
+            <UML:Classifier.feature>
+              <UML:Attribute xmi.id="attr_commandes_map" name="commandes" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="datatype_map"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Operation xmi.id="operation_registerCommand" name="registerCommand" visibility="public"/>
+              <UML:Operation xmi.id="operation_executeCommand" name="executeCommand" visibility="public"/>
+              <UML:Operation xmi.id="operation_constructeurVirtuel" name="constructeurVirtuel" visibility="public" isAbstract="true"/>
+            </UML:Classifier.feature>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_CommandeAvancer" name="CommandeAvancer" visibility="public">
+            <UML:Classifier.feature>
+              <UML:Operation xmi.id="operation_execute" name="execute" visibility="public"/>
+              <UML:Operation xmi.id="operation_undo" name="undo" visibility="public"/>
+            </UML:Classifier.feature>
+            <UML:Generalization xmi.id="gen_CommandeAvancer_Commande" parent="class_Commande"/>
+            <UML:Association xmi.id="assoc_CommandeAvancer_Robot">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_CommandeAvancer" type="class_CommandeAvancer" name="command" aggregation="composite" visibility="private"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Robot" type="class_Robot" name="robot" visibility="private" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Tty" name="Tty" visibility="public">
+            <UML:Classifier.feature>
+              <UML:Operation xmi.id="operation_readline" name="readline" visibility="public"/>
+            </UML:Classifier.feature>
+            <UML:Association xmi.id="assoc_Tty_GestionnaireDeCommande">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Tty" type="class_Tty" name="tty" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_GestionnaireDeCommande" type="class_GestionnaireDeCommande" name="commandManager" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Class>
+
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

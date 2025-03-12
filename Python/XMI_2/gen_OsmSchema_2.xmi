@@ -1,0 +1,217 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_OsmGraph" name="OsmGraph">
+      <UML:Namespace.ownedElement>
+
+        <!-- Class PrimitiveTypes for data types -->
+        <UML:DataType xmi.id="dataType_Map" name="Map&lt;String, String&gt;"/>
+        <UML:DataType xmi.id="dataType_Double" name="Double"/>
+        <UML:DataType xmi.id="dataType_Long" name="Long"/>
+
+        <!-- Class OsmPrimitive -->
+        <UML:Class xmi.id="class_OsmPrimitive" name="OsmPrimitive" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_osmId" name="osmId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dataType_Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tags" name="tags" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dataType_Map"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_timeStamp" name="timeStamp" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dataType_Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_user" name="user" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.id="dataType_String" name="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Node -->
+        <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Node"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_OsmPrimitive"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_latitude" name="latitude" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dataType_Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_longitude" name="longitude" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dataType_Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Way -->
+        <UML:Class xmi.id="class_Way" name="Way" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Way"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_OsmPrimitive"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_closed" name="closed" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.id="dataType_Boolean" name="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_wayType" name="wayType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.id="dataType_String" name="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Area -->
+        <UML:Class xmi.id="class_Area" name="Area" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Area"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Way"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class Relation -->
+        <UML:Class xmi.id="class_Relation" name="Relation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Relation"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_OsmPrimitive"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class KDTree -->
+        <UML:Class xmi.id="class_KDTree" name="KDTree" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_root" name="root" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Key"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Key -->
+        <UML:Class xmi.id="class_Key" name="Key" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nodeSet" name="nodeSet" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_NodeSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class NodeSet -->
+        <UML:Class xmi.id="class_NodeSet" name="NodeSet" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nodes" name="nodes" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Node"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Classes XKey and YKey -->
+        <UML:Class xmi.id="class_XKey" name="XKey" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XKey"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Key"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_YKey" name="YKey" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_YKey"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Key"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class Segment -->
+        <UML:Class xmi.id="class_Segment" name="Segment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_oneway" name="oneway" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.id="dataType_Boolean" name="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_wayType" name="wayType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.id="dataType_String" name="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Enumeration SegmentType -->
+        <UML:Enumeration xmi.id="enum_SegmentType" name="SegmentType">
+          <UML:Enumeration.literal xmi.id="lit_NOWAY" name="NOWAY"/>
+          <UML:Enumeration.literal xmi.id="lit_CYCLEWAY" name="CYCLEWAY"/>
+          <UML:Enumeration.literal xmi.id="lit_MOTORWAY" name="MOTORWAY"/>
+        </UML:Enumeration>
+
+        <!-- Association HasNode -->
+        <UML:Association xmi.id="assoc_HasNode">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Way_HasNode" type="class_Way" name="way" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_HasNode" type="class_Node" name="node" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association HasMember -->
+        <UML:Association xmi.id="assoc_HasMember">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Relation_HasMember" type="class_Relation" name="relation" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_OsmPrimitive_HasMember" type="class_OsmPrimitive" name="osmPrimitive" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

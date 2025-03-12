@@ -1,0 +1,209 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_StgTSOPtr" name="StgTSO *"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_StgTSO" name="StgTSO" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_link" name="_link" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_StgTSO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_global_link" name="global_link" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_StgTSO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_bound" name="bound" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_InCall"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_cap" name="cap" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Capability"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_stackobj" name="stackobj" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_StgStack"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_InCall" name="InCall" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_tso" name="tso" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_StgTSO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_suspended_tso" name="suspended_tso" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_StgTSO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_suspended_cap" name="suspended_cap" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Capability"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_task" name="task" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_prev_stack" name="prev_stack" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_InCall"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_prev" name="prev" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_InCall"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_next" name="next" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_InCall"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Capability" name="Capability" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_running_task" name="running_task" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_spare_workers" name="spare_workers" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_returning_tasks_hd" name="returning_tasks_hd" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_returning_tasks_tl" name="returning_tasks_tl" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_run_queue_hd" name="run_queue_hd" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_StgTSO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_run_queue_tl" name="run_queue_tl" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_StgTSO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_suspended_ccalls" name="suspended_ccalls" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_InCall"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_lock" name="lock" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_pthread_mutex_t"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_StgStack" name="StgStack" visibility="public" isAbstract="false"/>
+
+            <UML:Class xmi.id="class_Task" name="Task" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_pthread_t"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_cond" name="cond" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_pthread_cond_t"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_lock" name="lock" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_pthread_mutex_t"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_cap" name="cap" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Capability"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_incall" name="incall" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_InCall"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_spare_incalls" name="spare_incalls" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_InCall"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_next" name="next" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_all_next" name="all_next" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_all_prev" name="all_prev" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:DataType xmi.id="datatype_pthread_t" name="pthread_t"/>
+            <UML:DataType xmi.id="datatype_pthread_cond_t" name="pthread_cond_t"/>
+            <UML:DataType xmi.id="datatype_pthread_mutex_t" name="pthread_mutex_t"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

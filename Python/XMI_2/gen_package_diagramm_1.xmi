@@ -1,0 +1,72 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Paketes "Logical View" und Zeiger auf seine Unterelemente -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition des Pakets "Datatypes" -->
+            <UML:Class xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="type_int" name="int"/>
+                <UML:DataType xmi.id="type_char" name="char"/>
+                <UML:DataType xmi.id="type_bool" name="bool"/>
+                <UML:DataType xmi.id="type_float" name="float"/>
+                <UML:DataType xmi.id="type_double" name="double"/>
+                <UML:DataType xmi.id="type_short" name="short"/>
+                <UML:DataType xmi.id="type_long" name="long"/>
+                <UML:DataType xmi.id="type_unsignedint" name="unsigned int"/>
+                <UML:DataType xmi.id="type_unsignedshort" name="unsigned short"/>
+                <UML:DataType xmi.id="type_unsignedlong" name="unsigned long"/>
+                <UML:DataType xmi.id="type_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Definitionen der Pakete -->
+            <UML:Package xmi.id="package_DatabaseAccess" name="DatabaseAccess"/>
+            <UML:Package xmi.id="package_UI" name="UI"/>
+            <UML:Package xmi.id="package_BusinessLayer" name="BusinessLayer"/>
+            <UML:Package xmi.id="package_PatientDatabaseAccess" name="PatientDatabaseAccess"/>
+            <UML:Package xmi.id="package_MedikamentDatabaseAccess" name="MedikamentDatabaseAccess"/>
+            <UML:Package xmi.id="package_MedikamentSearch" name="MedikamentSearch"/>
+            <UML:Package xmi.id="package_PatientSuche" name="PatientSuche"/>
+            <UML:Package xmi.id="package_Controller" name="Controller"/>
+            <UML:Package xmi.id="package_Service" name="Service"/>
+            <UML:Package xmi.id="package_Medikament" name="Medikament"/>
+            <UML:Package xmi.id="package_Utils" name="Utils"/>
+            <UML:Package xmi.id="package_Entities" name="Entities"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Beziehung zwischen Paketen mittels Abhängigkeiten -->
+        <UML:Dependency xmi.id="dep_DatabaseAccess_Entities" client="package_DatabaseAccess" supplier="package_Entities"/>
+        <UML:Dependency xmi.id="dep_DatabaseAccess_Medikament" client="package_DatabaseAccess" supplier="package_Medikament"/>
+        <UML:Dependency xmi.id="dep_UI_BusinessLayer" client="package_UI" supplier="package_BusinessLayer"/>
+        <UML:Dependency xmi.id="dep_BusinessLayer_DatabaseAccess" client="package_BusinessLayer" supplier="package_DatabaseAccess"/>
+        <UML:Dependency xmi.id="dep_BusinessLayer_MedikamentDatabaseAccess" client="package_BusinessLayer" supplier="package_MedikamentDatabaseAccess"/>
+        <UML:Dependency xmi.id="dep_BusinessLayer_PatientDatabaseAccess" client="package_BusinessLayer" supplier="package_PatientDatabaseAccess"/>
+        <UML:Dependency xmi.id="dep_BusinessLayer_Service" client="package_BusinessLayer" supplier="package_Service"/>
+        <UML:Dependency xmi.id="dep_PatientDatabaseAccess_Service" client="package_PatientDatabaseAccess" supplier="package_Service"/>
+        <UML:Dependency xmi.id="dep_PatientDatabaseAccess_Entities" client="package_PatientDatabaseAccess" supplier="package_Entities"/>
+        <UML:Dependency xmi.id="dep_MedikamentDatabaseAccess_Service" client="package_MedikamentDatabaseAccess" supplier="package_Service"/>
+        <UML:Dependency xmi.id="dep_MedikamentDatabaseAccess_Entities" client="package_MedikamentDatabaseAccess" supplier="package_Entities"/>
+        <UML:Dependency xmi.id="dep_Controller_UI" client="package_Controller" supplier="package_UI"/>
+        <UML:Dependency xmi.id="dep_Controller_Service" client="package_Controller" supplier="package_Service"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

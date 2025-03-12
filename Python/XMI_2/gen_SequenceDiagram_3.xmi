@@ -1,0 +1,88 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UnbenanntesModell" name="unbenanntesModell">
+      <UML:Namespace.ownedElement>
+        <UML:Collaboration xmi.id="collab_unattachedCollaboration" name="unattachedCollaboration">
+          <UML:Collaboration.ownedElement>
+            <UML:Class xmi.id="class_Submission" name="submission" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Member" name="member" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Chair" name="chair" visibility="public" isAbstract="false"/>
+          </UML:Collaboration.ownedElement>
+          <UML:Collaboration.participation>
+            <UML:AssociationEnd xmi.id="assocEnd_Submission" type="class_Submission" name="submissionRole" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Member" type="class_Member" name="memberRole" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Chair" type="class_Chair" name="chairRole" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Collaboration.participation>
+        </UML:Collaboration>
+
+        <UML:Association xmi.id="assoc_Submission_Member" name="submission-member">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Submission_Role" type="class_Submission" name="submission" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Member_Role" type="class_Member" name="member" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Chair_Submission" name="chair-submission">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Chair_Role" type="class_Chair" name="chair" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Submission_Role" type="class_Submission" name="submission" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Member_Chair" name="member-chair">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Member_Role_2" type="class_Member" name="member" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Chair_Role_2" type="class_Chair" name="chair" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Message xmi.id="msg_verifyAssign" name="verifyAssign" visibility="public">
+          <UML:Message.sendEvent>
+            <UML:MessageEnd xmi.id="msgEnd_verifyAssign_send" reference="assocEnd_Submission_Role" role="submissionRole"/>
+          </UML:Message.sendEvent>
+          <UML:Message.receiveEvent>
+            <UML:MessageEnd xmi.id="msgEnd_verifyAssign_receive" reference="assocEnd_Submission_Role" role="submissionRole"/>
+          </UML:Message.receiveEvent>
+        </UML:Message>
+
+        <UML:Message xmi.id="msg_assignToPCMember" name="assignToPCMember" visibility="public">
+          <UML:Message.sendEvent>
+            <UML:MessageEnd xmi.id="msgEnd_assignToPCMember_send" reference="assocEnd_Chair_Role" role="chairRole"/>
+          </UML:Message.sendEvent>
+          <UML:Message.receiveEvent>
+            <UML:MessageEnd xmi.id="msgEnd_assignToPCMember_receive" reference="assocEnd_Submission_Role" role="submissionRole"/>
+          </UML:Message.receiveEvent>
+        </UML:Message>
+
+        <UML:Message xmi.id="msg_assign" name="assign" visibility="public">
+          <UML:Message.sendEvent>
+            <UML:MessageEnd xmi.id="msgEnd_assign_send" reference="assocEnd_Submission_Role" role="submissionRole"/>
+          </UML:Message.sendEvent>
+          <UML:Message.receiveEvent>
+            <UML:MessageEnd xmi.id="msgEnd_assign_receive" reference="assocEnd_Member_Role" role="memberRole"/>
+          </UML:Message.receiveEvent>
+        </UML:Message>
+
+        <UML:Message xmi.id="msg_verifyAssignLimits" name="verifyAssignLimits" visibility="public">
+          <UML:Message.sendEvent>
+            <UML:MessageEnd xmi.id="msgEnd_verifyAssignLimits_send" reference="assocEnd_Member_Role_2" role="memberRole"/>
+          </UML:Message.sendEvent>
+          <UML:Message.receiveEvent>
+            <UML:MessageEnd xmi.id="msgEnd_verifyAssignLimits_receive" reference="assocEnd_Submission_Role" role="submissionRole"/>
+          </UML:Message.receiveEvent>
+        </UML:Message>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

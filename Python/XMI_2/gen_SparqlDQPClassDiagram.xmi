@@ -1,0 +1,84 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SPQ" name="SPQ_Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Datatypes -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+
+        <!-- Klassen Definitionen -->
+        <UML:Class xmi.id="class_QueryPlanBuilder" name="QueryPlanBuilder"/>
+        <UML:Class xmi.id="class_SQLQueryPlanBuilder" name="SQLQueryPlanBuilder"/>
+        <UML:Class xmi.id="class_SPARQLQueryPlanBuilder" name="SPARQLQueryPlanBuilder"/>
+        <UML:Class xmi.id="class_SparqlQueryFactory" name="SparqlQueryFactory"/>
+        <UML:Class xmi.id="class_SparqlQuery" name="SparqlQuery"/>
+        <UML:Class xmi.id="class_SparqlSelectQuery" name="SparqlSelectQuery"/>
+        <UML:Class xmi.id="class_SparqlASKQuery" name="SparqlASKQuery"/>
+        <UML:Class xmi.id="class_SparqlDescribeQuery" name="SparqlDescribeQuery"/>
+        <UML:Class xmi.id="class_SparqlConstructQuery" name="SparqlConstructQuery"/>
+        <UML:Class xmi.id="class_SparqlQueryBuilderFactory" name="SparqlQueryBuilderFactory"/>
+        <UML:Class xmi.id="class_SparqlQueryBuilder" name="SparqlQueryBuilder"/>
+        <UML:Class xmi.id="class_User" name="User"/>
+        
+        <!-- Interface Definitionen -->
+        <UML:Interface xmi.id="interface_SparqlQueryParser" name="SparqlQueryParser"/>
+        <UML:Interface xmi.id="interface_SimpleSparqlQueryParser" name="SimpleSparqlQueryParser"/>
+        <UML:Interface xmi.id="interface_BasicGraphPattern" name="BasicGraphPattern"/>
+        <UML:Interface xmi.id="interface_SimpleBasicGraphPattern" name="SimpleBasicGraphPattern"/>
+        <UML:Interface xmi.id="interface_SparqlService" name="SparqlService"/>
+        <UML:Interface xmi.id="interface_SimpleSparqlService" name="SimpleSparqlService"/>
+
+        <!-- Generalisierung zwischen QueryPlanBuilder und seinen spezifischen Ausprägungen -->
+        <UML:Generalization xmi.id="gen_SQLQueryPlanBuilder" child="class_SQLQueryPlanBuilder" parent="class_QueryPlanBuilder"/>
+        <UML:Generalization xmi.id="gen_SPARQLQueryPlanBuilder" child="class_SPARQLQueryPlanBuilder" parent="class_QueryPlanBuilder"/>
+
+        <!-- Generalisierung zwischen SparqlQuery und seinen spezifischen Ausprägungen -->
+        <UML:Generalization xmi.id="gen_SparqlSelect" child="class_SparqlSelectQuery" parent="class_SparqlQuery"/>
+        <UML:Generalization xmi.id="gen_SparqlASK" child="class_SparqlASKQuery" parent="class_SparqlQuery"/>
+        <UML:Generalization xmi.id="gen_SparqlDescribe" child="class_SparqlDescribeQuery" parent="class_SparqlQuery"/>
+        <UML:Generalization xmi.id="gen_SparqlConstruct" child="class_SparqlConstructQuery" parent="class_SparqlQuery"/>
+
+        <!-- Implementierungen zwischen Interfacen und Klassen -->
+        <UML:Generalization xmi.id="gen_SimpleSparqlQueryParser" child="interface_SimpleSparqlQueryParser" parent="interface_SparqlQueryParser"/>
+        <UML:Generalization xmi.id="gen_SimpleBasicGraphPattern" child="interface_SimpleBasicGraphPattern" parent="interface_BasicGraphPattern"/>
+        <UML:Generalization xmi.id="gen_SimpleSparqlService" child="interface_SimpleSparqlService" parent="interface_SparqlService"/>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_SparqlQueryFactory_SparqlQuery">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_SparqlQueryFactory" type="class_SparqlQueryFactory" name="sparqlQueryFactory"/>
+            <UML:AssociationEnd xmi.id="assoc_SparqlQuery" type="class_SparqlQuery" name="sparqlQuery"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_QueryBuilderFactory_Builder">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_QueryBuilderFactory" type="class_SparqlQueryBuilderFactory" name="sparqlQueryBuilderFactory"/>
+            <UML:AssociationEnd xmi.id="assoc_Builder" type="class_SparqlQueryBuilder" name="sparqlQueryBuilder"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

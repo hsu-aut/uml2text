@@ -1,0 +1,149 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_Language" name="Language" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Language_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Language_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Word" name="Word" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Word_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Word_value" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Translation" name="Translation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Translation_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Translation_createdAt" name="createdAt" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="class_DateTime"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DateTime" name="DateTime" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Article" name="Article" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Article_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Article_value" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_WordType" name="WordType" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Learning" name="Learning" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Translation_Word">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Translation" type="class_Translation" name="translation" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Word" type="class_Word" name="word" visibility="public" aggregation="aggregate" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Word_Language">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Word" type="class_Word" name="word" visibility="public" aggregation="aggregate" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Language" type="class_Language" name="language" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Translation_User">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Translation" type="class_Translation" name="translation" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_User" type="class_User" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Article_Language">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Article" type="class_Article" name="article" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Language" type="class_Language" name="language" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Word_Article">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Word" type="class_Word" name="word" visibility="public" aggregation="aggregate" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Article" type="class_Article" name="article" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Word_WordType">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Word" type="class_Word" name="word" visibility="public" aggregation="aggregate" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_WordType" type="class_WordType" name="wordType" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes -->
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="useCaseView" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Actor xmi.id="actor_student" name="student"/>
+            <UML:UseCase xmi.id="usecase_system" name="system"/>
+            <UML:UseCase xmi.id="usecase_showsReminder" name="shows reminder"/>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_student_showsReminder">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_student" type="actor_student" name="student" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_showsReminder_1" type="usecase_showsReminder" name="shows reminder" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_system_showsReminder">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_system" type="usecase_system" name="system" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_showsReminder_2" type="usecase_showsReminder" name="shows reminder" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Component View -->
+        <UML:Package xmi.id="componentView" name="Component View">
+        </UML:Package>
+        
+        <!-- Deployment View -->
+        <UML:Package xmi.id="deploymentView" name="Deployment View">
+        </UML:Package>
+        
+        <!-- Entity Relationship Model -->
+        <UML:Package xmi.id="entityRelationshipModel" name="Entity Relationship Model">
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

@@ -1,0 +1,130 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="xmi.1" name="testing">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="xmi.2">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="xmi.3" name="NameIf">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="xmi.4" name="doSomething" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+            <UML:Interface xmi.id="xmi.12"/>
+            <UML:Class xmi.id="xmi.8" name="Name">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="xmi.9" name="execute" visibility="public"/>
+              </UML:Classifier.feature>
+              <UML:Generalization>
+                <UML:Class xmi.idref="xmi.3"/>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="xmi.14"/>
+            <UML:Class xmi.id="xmi.16" name="Little">
+              <UML:Classifier.feature>
+                <UML:StateMachine xmi.id="xmi.18" name="LittleStateMachine"/>
+              </UML:Classifier.feature>
+              <UML:Generalization>
+                <UML:Class xmi.idref="xmi.60"/>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="xmi.40" name="Bit of" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:ActivityGraph xmi.id="xmi.42" name="Bit ofActivityGraph"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="xmi.58" name="Everything">
+              <UML:Comment>Yes!</UML:Comment>
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="xmi.40"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="xmi.60" name="A"/>
+            <UML:Class xmi.id="xmi.61" name="Simple">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="xmi.62" name="attr1" visibility="private"/>
+                <UML:Attribute xmi.id="xmi.63" name="attr2" visibility="private"/>
+                <UML:Operation xmi.id="xmi.64" name="perform" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="xmi.82" name="Model">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr1" name="attribute1" visibility="private"/>
+                <UML:Operation xmi.id="op1" name="operation1" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="xmi.97" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="xmi.99" name="util">
+              <UML:Namespace.ownedElement>
+                <UML:Interface xmi.id="xmi.67" name="Iterator"/>
+                <UML:Interface xmi.id="xmi.71" name="Collection"/>
+                <UML:Class xmi.id="xmi.64" name="Vector"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Package xmi.id="xmi.100" name="lang">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="xmi.74" name="Object"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Association xmi.id="xmi.53" name="Little-BitOf">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="xmi.16" type="Little" aggregation="composite" navigability="navigable"/>
+            <UML:AssociationEnd xmi.idref="xmi.40" type="Bit of" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="xmi.75" name="Simple-A">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="xmi.61" type="Simple" aggregation="none"/>
+            <UML:AssociationEnd xmi.idref="xmi.60" type="A" aggregation="aggregate"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:UseCase xmi.id="xmi.102" name="UC1">
+          <UML:Extend extend="xmi.104"/>
+          <UML:Include include="xmi.108"/>
+        </UML:UseCase>
+        
+        <UML:UseCase xmi.id="xmi.108" name="UC2">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:UseCase xmi.idref="xmi.102"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Include include="xmi.102"/>
+        </UML:UseCase>
+
+        <UML:Collaboration xmi.id="xmi.117">
+          <UML:Interaction xmi.id="xmi.196" name="Interaction1">
+            <UML:Message xmi.id="msg1" name="1 happening first"/>
+            <UML:Message xmi.id="msg2" name="2 happening then"/>
+          </UML:Interaction>
+        </UML:Collaboration>
+        
+        <UML:Actor xmi.id="xmi.101" name="John Wayne">
+          <UML:AssociationEnd xmi.id="assocEnd1" type="UC1"/>
+        </UML:Actor>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

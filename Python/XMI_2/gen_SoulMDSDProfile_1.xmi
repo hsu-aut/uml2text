@@ -1,0 +1,208 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MDSD" name="MDSD">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket: mdsd -->
+        <UML:Package xmi.id="package_mdsd" name="mdsd">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Paket: domain -->
+            <UML:Package xmi.id="package_domain" name="domain">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Definition von Stereotypen innerhalb des Pakets domain -->
+                <UML:Stereotype xmi.id="stereotype_entity" name="entity"/>
+                <UML:Stereotype xmi.id="stereotype_factory" name="factory"/>
+                <UML:Stereotype xmi.id="stereotype_repository" name="repository"/>
+                <UML:Stereotype xmi.id="stereotype_value" name="value"/>
+                <UML:Stereotype xmi.id="stereotype_aggregate_root" name="aggregate root"/>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Paket: tmp -->
+            <UML:Package xmi.id="package_tmp" name="tmp">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Klasse: AnEntity -->
+                <UML:Class xmi.id="class_AnEntity" name="AnEntity" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+                    <UML:Attribute xmi.id="attr_count" name="count" visibility="private"/>
+                    <UML:Operation xmi.id="op_printName" name="printName" visibility="public"/>
+                    <UML:Operation xmi.id="op_getAnotherEntityList" name="getAnotherEntityList" visibility="public">
+                      <UML:Parameter xmi.id="return_getAnotherEntityList" name="return" kind="return" type="List&lt;AnotherEntity&gt;"/>
+                    </UML:Operation>
+                  </UML:Namespace.ownedElement>
+                  <UML:Classifier.stereotype>
+                    <UML:Stereotype xmi.idref="stereotype_entity"/>
+                    <UML:Stereotype xmi.idref="stereotype_aggregate_root"/>
+                  </UML:Classifier.stereotype>
+                </UML:Class>
+
+                <!-- Klasse: AnAspect -->
+                <UML:Class xmi.id="class_AnAspect" name="AnAspect" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="attr_anAttr" name="anAttr" visibility="private"/>
+                    <UML:Operation xmi.id="op_aPointCut" name="aPointCut" visibility="public"/>
+                    <UML:Operation xmi.id="op_anAdvice" name="anAdvice" visibility="public"/>
+                    <UML:Operation xmi.id="op_aMethod" name="aMethod" visibility="public"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- Klasse: AFactory -->
+                <UML:Class xmi.id="class_AFactory" name="AFactory" visibility="public" isAbstract="false">
+                  <UML:Classifier.stereotype>
+                    <UML:Stereotype xmi.idref="stereotype_factory"/>
+                  </UML:Classifier.stereotype>
+                </UML:Class>
+
+                <!-- Klasse: AnotherEntity -->
+                <UML:Class xmi.id="class_AnotherEntity" name="AnotherEntity" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="attr_bestBefore" name="bestBefore" visibility="private"/>
+                  </UML:Namespace.ownedElement>
+                  <UML:Classifier.stereotype>
+                    <UML:Stereotype xmi.idref="stereotype_entity"/>
+                  </UML:Classifier.stereotype>
+                </UML:Class>
+
+                <!-- Klasse: AValue -->
+                <UML:Class xmi.id="class_AValue" name="AValue" visibility="public" isAbstract="false">
+                  <UML:Classifier.stereotype>
+                    <UML:Stereotype xmi.idref="stereotype_value"/>
+                  </UML:Classifier.stereotype>
+                </UML:Class>
+
+                <!-- Klasse: ARepository -->
+                <UML:Class xmi.id="class_ARepository" name="ARepository" visibility="public" isAbstract="false">
+                  <UML:Classifier.stereotype>
+                    <UML:Stereotype xmi.idref="stereotype_repository"/>
+                  </UML:Classifier.stereotype>
+                </UML:Class>
+
+                <!-- Klasse: AView -->
+                <UML:Class xmi.id="class_AView" name="AView" visibility="public" isAbstract="false">
+                  <UML:Classifier.stereotype>
+                    <UML:Stereotype xmi.idref="stereotype_view"/>
+                  </UML:Classifier.stereotype>
+                </UML:Class>
+
+                <!-- Klasse: AController -->
+                <UML:Class xmi.id="class_AController" name="AController" visibility="public" isAbstract="false">
+                </UML:Class>
+
+                <!-- Klasse: AModel -->
+                <UML:Class xmi.id="class_AModel" name="AModel" visibility="public" isAbstract="false">
+                </UML:Class>
+
+                <!-- Klasse: AWebService -->
+                <UML:Class xmi.id="class_AWebService" name="AWebService" visibility="public" isAbstract="false">
+                </UML:Class>
+
+                <!-- Klasse: AWsResponse -->
+                <UML:Class xmi.id="class_AWsResponse" name="AWsResponse" visibility="public" isAbstract="false">
+                </UML:Class>
+
+                <!-- Klasse: AWsRequest -->
+                <UML:Class xmi.id="class_AWsRequest" name="AWsRequest" visibility="public" isAbstract="false">
+                </UML:Class>
+
+                <!-- Klasse: AService -->
+                <UML:Class xmi.id="class_AService" name="AService" visibility="public" isAbstract="false">
+                </UML:Class>
+
+                <!-- Assoziationen -->
+                <UML:Association xmi.id="assoc_AnEntity_AnotherEntity">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_AnEntity" type="class_AnEntity"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_AnotherEntity" type="class_AnotherEntity"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_ARepository_AnEntity">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_ARepository" type="class_ARepository"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_AnEntity_Rep" type="class_AnEntity"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_AValue_AnEntity">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_AValue" type="class_AValue"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_AnEntity_Val" type="class_AnEntity"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                
+                <UML:Association xmi.id="assoc_Xxx_Yyy">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Xxx" type="class_Xxx"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Yyy" type="class_Yyy"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket: application -->
+        <UML:Package xmi.id="package_application" name="application">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_ws_endpoint" name="ws endpoint"/>
+            <UML:Stereotype xmi.id="stereotype_ws_response" name="ws response"/>
+            <UML:Stereotype xmi.id="stereotype_ws_request" name="ws request"/>
+            <UML:Stereotype xmi.id="stereotype_ws_type" name="ws type"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket: common -->
+        <UML:Package xmi.id="package_common" name="common">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_component" name="component"/>
+            <UML:Stereotype xmi.id="stereotype_service" name="service"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket: presentation -->
+        <UML:Package xmi.id="package_presentation" name="presentation">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_view" name="view"/>
+            <UML:Stereotype xmi.id="stereotype_model" name="model"/>
+            <UML:Stereotype xmi.id="stereotype_controller" name="controller"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket: aop -->
+        <UML:Package xmi.id="package_aop" name="aop">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_pointcut" name="pointcut"/>
+            <UML:Stereotype xmi.id="stereotype_advice" name="advice"/>
+            <UML:Stereotype xmi.id="stereotype_intertype" name="intertype"/>
+            <UML:Stereotype xmi.id="stereotype_aspect" name="aspect"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket: infrastructure -->
+        <UML:Package xmi.id="package_infrastructure" name="infrastructure">
+          <UML:Namespace.ownedElement>
+            <UML:Enumeration xmi.id="enum_TransactionPropagation" name="TransactionPropagation"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

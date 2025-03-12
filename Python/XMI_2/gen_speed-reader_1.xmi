@@ -1,0 +1,111 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package for logical view -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="type_int" name="int"/>
+                <UML:DataType xmi.id="type_char" name="char"/>
+                <UML:DataType xmi.id="type_bool" name="bool"/>
+                <UML:DataType xmi.id="type_float" name="float"/>
+                <UML:DataType xmi.id="type_double" name="double"/>
+                <UML:DataType xmi.id="type_short" name="short"/>
+                <UML:DataType xmi.id="type_long" name="long"/>
+                <UML:DataType xmi.id="type_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="type_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="type_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="type_string" name="string"/>
+                <UML:Class xmi.id="type_QEventPointer" name="QEvent*"/>
+                <UML:Class xmi.id="type_UiMainWindowPointer" name="Ui::MainWindow*"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- RandomString Class -->
+            <UML:Class xmi.id="class_RandomString" name="RandomString" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_m_stringLength" name="m_stringLength" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="type_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_m_randomString" name="m_randomString" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_QString"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_generateString" name="generateString" visibility="public"/>
+                <UML:Operation xmi.id="op_setStringLength" name="setStringLength" visibility="public"/>
+                <UML:Operation xmi.id="op_getStringLength" name="getStringLength" visibility="public"/>
+                <UML:Operation xmi.id="op_numCorrectChars" name="numCorrectChars" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- QString Class -->
+            <UML:Class xmi.id="class_QString" name="QString" visibility="public" isAbstract="false"/>
+
+            <!-- MainWindow Class -->
+            <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_QMainWindow"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_m_expInterval" name="m_expInterval" visibility="private"/>
+                <UML:Attribute xmi.id="attr_m_randStr" name="m_randStr" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_RandomString"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_m_trials" name="m_trials" visibility="private"/>
+                <UML:Attribute xmi.id="attr_m_correctChars" name="m_correctChars" visibility="private"/>
+                <UML:Attribute xmi.id="attr_m_totTrials" name="m_totTrials" visibility="private"/>
+                <UML:Attribute xmi.id="attr_m_totCorrectChars" name="m_totCorrectChars" visibility="private"/>
+                <UML:Operation xmi.id="op_dtor_MainWindow" name="~MainWindow" visibility="public"/>
+                <UML:Operation xmi.id="op_on_nextButton_clicked" name="on_nextButton_clicked" visibility="public"/>
+                <UML:Operation xmi.id="op_on_responseString_returnPressed" name="on_responseString_returnPressed" visibility="public"/>
+                <UML:Operation xmi.id="op_on_startButton_clicked" name="on_startButton_clicked" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- QMainWindow Class -->
+            <UML:Class xmi.id="class_QMainWindow" name="QMainWindow" visibility="public" isAbstract="false"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Ui Package -->
+        <UML:Package xmi.id="package_Ui" name="Ui">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_UiMainWindow" name="MainWindow" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_MainWindow_UiMainWindow" name="MainWindow-UiMainWindow">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MainWindow" type="class_MainWindow" name="mainWindow" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UiMainWindow" type="class_UiMainWindow" name="uiMainWindow" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

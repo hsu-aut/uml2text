@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Unbenannt" name="Unbenannt">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Phone" name="Phone" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_number" name="number" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_owner" name="owner" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_outCall" name="outCall" visibility="public">
+              <UML:Parameter xmi.id="param_number" name="number" kind="in" type="class_String"/>
+              <UML:Parameter xmi.id="return_none" name="return" kind="return" type="void"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_OutCall" name="OutCall" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_time" name="time" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_date" name="date" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_makeCall" name="makeCall" visibility="public">
+              <UML:Parameter xmi.id="param_makeCall_number" name="number" kind="in" type="class_String"/>
+              <UML:Parameter xmi.id="return_makeCall" name="return" kind="return" type="void"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_setDate" name="setDate" visibility="public">
+              <UML:Parameter xmi.id="param_setDate_date" name="date" kind="in" type="double"/>
+              <UML:Parameter xmi.id="return_setDate" name="return" kind="return" type="void"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_setTime" name="setTime" visibility="public">
+              <UML:Parameter xmi.id="param_setTime_time" name="time" kind="in" type="double"/>
+              <UML:Parameter xmi.id="return_setTime" name="return" kind="return" type="void"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_makes" name="makes">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Phone" type="class_Phone" name="phone" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_OutCall" type="class_OutCall" name="outCall" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Package xmi.id="pkg_java" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="pkg_lang" name="lang">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_String" name="String" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Package xmi.id="pkg_util" name="util">
+              <UML:Namespace.ownedElement>
+                <UML:Interface xmi.id="interface_Iterator" name="Iterator" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="void" name="void"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

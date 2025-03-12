@@ -1,0 +1,104 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AudioSystem" name="AudioSystem">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_sendMessage_Tuner" name="sendMessageTuner" visibility="public">
+              <UML:Parameter xmi.id="param_sendMessage_Tuner_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_sendMessage_CDPlayer" name="sendMessageCDPlayer" visibility="public">
+              <UML:Parameter xmi.id="param_sendMessage_CDPlayer_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Amplifier" name="Amplifier" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_receiveMessage" name="receiveMessage" visibility="public">
+              <UML:Parameter xmi.id="param_receiveMessage_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_sendMessage_Aux" name="sendMessageAux" visibility="public">
+              <UML:Parameter xmi.id="param_sendMessage_Aux_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_sendMessage_Tuner" name="sendMessageTuner" visibility="public">
+              <UML:Parameter xmi.id="param_sendMessage_Tuner_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_sendMessage_CDPlayer" name="sendMessageCDPlayer" visibility="public">
+              <UML:Parameter xmi.id="param_sendMessage_CDPlayer_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Aux" name="Aux" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_receiveMessage" name="receiveMessage" visibility="public">
+              <UML:Parameter xmi.id="param_receiveMessage_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Tuner" name="Tuner" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_receiveMessage" name="receiveMessage" visibility="public">
+              <UML:Parameter xmi.id="param_receiveMessage_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_tuneIn" name="tuneIn" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CDPlayer" name="CDPlayer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_receiveMessage" name="receiveMessage" visibility="public">
+              <UML:Parameter xmi.id="param_receiveMessage_message" name="message" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_load" name="load" visibility="public"/>
+            <UML:Operation xmi.id="op_play" name="play" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_User_Amplifier_Tuner">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_User_Amplifier" type="class_User" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier" type="class_Amplifier" name="amplifier" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Amplifier_Aux">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_Aux_Amplifier" type="class_Amplifier" name="amplifier" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Aux" type="class_Aux" name="aux" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Amplifier_Tuner">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_Tuner_Amplifier" type="class_Amplifier" name="amplifier" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Tuner" type="class_Tuner" name="tuner" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Amplifier_CDPlayer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_CDPlayer_Amplifier" type="class_Amplifier" name="amplifier" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CDPlayer" type="class_CDPlayer" name="cdPlayer" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

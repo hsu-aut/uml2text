@@ -1,0 +1,118 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Modelo UML">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes -->
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Klasse TPet -->
+            <UML:Class xmi.id="aARctiRDUDDq" name="TPet">
+              <UML:Attribute xmi.id="tp_name" name="name" type="QString"/>
+              <UML:Attribute xmi.id="tp_uuid" name="uuid" type="QString"/>
+              <UML:Attribute xmi.id="tp_type" name="type" type="int"/>
+              <UML:Attribute xmi.id="tp_statusFullness" name="statusFullness" type="float"/>
+              <UML:Attribute xmi.id="tp_statusHappyness" name="statusHappyness" type="float"/>
+              <UML:Attribute xmi.id="tp_age" name="age" type="long"/>
+            </UML:Class>
+
+            <!-- Klasse QString -->
+            <UML:Class xmi.id="Bqyupv7wt4w5" name="QString"/>
+
+            <!-- Klasse TPetWorld -->
+            <UML:Class xmi.id="lgR9xz8E1gWP" name="TPetWorld">
+              <UML:Attribute xmi.id="twp_backgroundIndex" name="backgroundIndex" type="int"/>
+              <UML:Attribute xmi.id="twp_hasPoop" name="hasPoop" type="bool"/>
+            </UML:Class>
+
+            <!-- Klasse TPetGraphics -->
+            <UML:Class xmi.id="AGAAxn8dZKJy" name="TPetGraphics">
+              <UML:Operation xmi.id="tpg_getSpriteFile" name="getSpriteFile">
+                <UML:Parameter xmi.id="tpg_ret_getSpriteFile" name="return" kind="return" type="string"/>
+              </UML:Operation>
+              <UML:Operation xmi.id="tpg_getSpriteOffset" name="getSpriteOffset"/>
+            </UML:Class>
+
+            <!-- Klasse TSimulationStepper -->
+            <UML:Class xmi.id="biRN1PgmGTj9" name="TSimulationStepper">
+              <UML:Attribute xmi.id="tss_live" name="live" type="bool"/>
+              <UML:Operation xmi.id="tss_step" name="step"/>
+            </UML:Class>
+
+            <!-- Klasse TGameRoot -->
+            <UML:Class xmi.id="1dVsT96qgC0E" name="TGameRoot">
+              <UML:Attribute xmi.id="tgr_currentPet" name="curentPet" type="TPet *"/>
+              <UML:Attribute xmi.id="tgr_simulationRunning" name="simulationRunning" type="bool"/>
+            </UML:Class>
+
+            <!-- Klasse Qml UI -->
+            <UML:Class xmi.id="M8IbhOJU5AEe" name="Qml UI"/>
+
+            <!-- Assoziationen -->
+            <UML:Association xmi.id="assoc_TSimulationStepper_TPet" name="Simulation-Pet">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assoc_end1" type="biRN1PgmGTj9"/>
+                <UML:AssociationEnd xmi.id="assoc_end2" type="aARctiRDUDDq"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_TSimulationStepper_TPetWorld" name="Simulation-World">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assoc_end3" type="biRN1PgmGTj9"/>
+                <UML:AssociationEnd xmi.id="assoc_end4" type="lgR9xz8E1gWP"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_TPetGraphics_TPet" name="Graphics-Pet">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assoc_end5" type="AGAAxn8dZKJy"/>
+                <UML:AssociationEnd xmi.id="assoc_end6" type="aARctiRDUDDq"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Aggregation xmi.id="agg_TGameRoot_TSimulationStepper" name="Root-Simulation">
+              <UML:Aggregation.connection>
+                <UML:AssociationEnd xmi.id="agg_end1" type="1dVsT96qgC0E"/>
+                <UML:AssociationEnd xmi.id="agg_end2" type="biRN1PgmGTj9" aggregation="composite"/>
+              </UML:Aggregation.connection>
+            </UML:Aggregation>
+
+            <UML:Association xmi.id="assoc_QmlUI_Other" name="UI-Classes">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assoc_end7" type="M8IbhOJU5AEe"/>
+                <UML:AssociationEnd xmi.id="assoc_end8" type="1dVsT96qgC0E"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

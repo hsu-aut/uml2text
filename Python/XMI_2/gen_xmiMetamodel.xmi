@@ -1,0 +1,137 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_modeloSemTitulo" name="modeloSemTitulo">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_xmi" name="xmi" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_metamodel" name="metamodel" visibility="public">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_XMI" name="XMI" visibility="public">
+                  <UML:Attribute xmi.id="attr_version" name="version" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_xmlns" name="xmlns" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_timeStamp" name="timeStamp" visibility="private"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_XMIHeader" name="XMIHeader" visibility="public"/>
+                
+                <UML:Class xmi.id="class_XMIDocumentation" name="XMIDocumentation" visibility="public">
+                  <UML:Attribute xmi.id="attr_exporter" name="exporter" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_exporterVersion" name="exporterVersion" visibility="private"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_XMIMetamodel" name="XMIMetamodel" visibility="public">
+                  <UML:Attribute xmi.id="attr_xmiName" name="xmiName" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_xmiVersion" name="xmiVersion" visibility="private"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_UMLPackage" name="UMLPackage" visibility="public"/>
+
+                <UML:Class xmi.id="class_UMLModel" name="UMLModel" visibility="public">
+                  <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isSpecification" name="isSpecification" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isRoot" name="isRoot" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isLeaf" name="isLeaf" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isAbstract" name="isAbstract" visibility="private"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_UMLClass" name="UMLClass" visibility="public">
+                  <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_visibility" name="visibility" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isSpecification" name="isSpecification" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isRoot" name="isRoot" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isLeaf" name="isLeaf" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isAbstract" name="isAbstract" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_isActive" name="isActive" visibility="private"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_UMLAttribute" name="UMLAttribute" visibility="public"/>
+
+                <UML:Class xmi.id="class_UMLCassifierFeature" name="UMLCassifierFeature" visibility="public"/>
+
+                <UML:Class xmi.id="class_UMLStructuralFeatureMulticiply" name="UMLStructuralFeatureMulticiply" visibility="public"/>
+
+                <UML:Class xmi.id="class_UMLMultiplicity" name="UMLMultiplicity" visibility="public"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Association xmi.id="assoc_XMI_XMIContent">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_XMI_XMIContent_XMI" type="class_XMI" name="xmi" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XMI_XMIContent_XMIContent" type="class_UMLPackage" name="content" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_XMIHeader_XMI">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_XMIHeader_XMI_XMIHeader" type="class_XMIHeader" name="xmiHeader" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XMIHeader_XMI_XMI" type="class_XMI" name="xmi" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_XMIDocumentation_XMIHeader">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_XMIDocumentation_XMIHeader_XMIDocumentation" type="class_XMIDocumentation" name="documentation" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XMIDocumentation_XMIHeader_XMIHeader" type="class_XMIHeader" name="header" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_XMIMetamodel_XMIHeader">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_XMIMetamodel_XMIHeader_XMIMetamodel" type="class_XMIMetamodel" name="metamodel" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XMIMetamodel_XMIHeader_XMIHeader" type="class_XMIHeader" name="header" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_UMLPackage_UMLModel">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UMLPackage_UMLModel_UMLPackage" type="class_UMLPackage" name="packages" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UMLPackage_UMLModel_UMLModel" type="class_UMLModel" name="models" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_UMLModel_UMLClass">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UMLModel_UMLClass_UMLModel" type="class_UMLModel" name="model" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UMLModel_UMLClass_UMLClass" type="class_UMLClass" name="classes" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_UMLCassifierFeature_UMLAttribute">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UMLCassifierFeature_UMLAttribute_UMLCassifierFeature" type="class_UMLCassifierFeature" name="classifierFeature" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UMLCassifierFeature_UMLAttribute_UMLAttribute" type="class_UMLAttribute" name="attributes" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_UMLStructuralFeatureMulticiply_UMLMultiplicity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UMLStructuralFeatureMulticiply_UMLMultiplicity_UMLStructuralFeatureMulticiply" type="class_UMLStructuralFeatureMulticiply" name="structuralFeatureMultiplicities" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UMLStructuralFeatureMulticiply_UMLMultiplicity_UMLMultiplicity" type="class_UMLMultiplicity" name="multiplicity" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Class xmi.id="class_UMLAssociation" name="UMLAssociation" visibility="public"/>
+        <UML:Class xmi.id="class_UMLOperation" name="UMLOperation" visibility="public"/>
+        <UML:Class xmi.id="class_UMLParameter" name="UMLParameter" visibility="public"/>
+        <UML:Class xmi.id="class_UMLStereotype" name="UMLStereotype" visibility="public"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

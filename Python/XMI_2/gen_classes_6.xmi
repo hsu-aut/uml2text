@@ -1,0 +1,77 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Pakets "Datatypes" -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="7Jy4ujD7zzzw" name="int"/>
+            <UML:DataType xmi.id="N8Xf9IhSsZPp" name="char"/>
+            <UML:DataType xmi.id="WduHiDDn7xyD" name="bool"/>
+            <UML:DataType xmi.id="yApwYA25pCLW" name="float"/>
+            <UML:DataType xmi.id="D500pWdklJvw" name="double"/>
+            <UML:DataType xmi.id="3r3GmzQbvwlv" name="short"/>
+            <UML:DataType xmi.id="Y5K3iV8iVwC6" name="long"/>
+            <UML:DataType xmi.id="vPZpSchVqTUE" name="unsigned int"/>
+            <UML:DataType xmi.id="N8lI7HOPK4uR" name="unsigned short"/>
+            <UML:DataType xmi.id="uT1prYcJ9Joz" name="unsigned long"/>
+            <UML:DataType xmi.id="GCkdKVtQlHp5" name="string"/>
+            <UML:DataType xmi.id="GGUaMIUP1qIz" name="undef"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition der Klasse "Widget" -->
+        <UML:Class xmi.id="class_Widget" name="Widget" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_children" name="children" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="GGUaMIUP1qIz"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "UiRenderer" -->
+        <UML:Class xmi.id="class_UiRenderer" name="UiRenderer" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_render" name="render" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "IoProcessor" -->
+        <UML:Class xmi.id="class_IoProcessor" name="IoProcessor" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "EventConverter" -->
+        <UML:Class xmi.id="class_EventConverter" name="EventConverter" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_convertEvent" name="convertEvent" visibility="public" isAbstract="true">
+              <UML:Parameter xmi.id="param_event" name="event" kind="in">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_void_pointer"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "void *" -->
+        <UML:Class xmi.id="class_void_pointer" name="void *" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "UI" -->
+        <UML:Class xmi.id="class_UI" name="UI" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

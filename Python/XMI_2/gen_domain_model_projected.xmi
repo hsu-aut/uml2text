@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Stereotypes -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_enum" name="enum"/>
+        <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_logical_view" name="Logical View">
+          
+          <!-- Package "Datatypes" -->
+          <UML:Package xmi.id="package_datatypes" name="Datatypes">
+            <UML:Namespace.ownedElement>
+              <UML:DataType xmi.id="datatype_int" name="int"/>
+              <UML:DataType xmi.id="datatype_char" name="char"/>
+              <UML:DataType xmi.id="datatype_bool" name="bool"/>
+              <UML:DataType xmi.id="datatype_float" name="float"/>
+              <UML:DataType xmi.id="datatype_double" name="double"/>
+              <UML:DataType xmi.id="datatype_short" name="short"/>
+              <UML:DataType xmi.id="datatype_long" name="long"/>
+              <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+              <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+              <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+              <UML:DataType xmi.id="datatype_string" name="string"/>
+              <UML:DataType xmi.id="datatype_undef" name="undef"/>
+              <UML:DataType xmi.id="datatype_datetime" name="datetime"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+          
+          <!-- Classes -->
+          <UML:Class xmi.id="class_User" name="User" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_user_login" name="login" type="datatype_string" visibility="public"/>
+              <UML:Attribute xmi.id="attr_user_password" name="password" type="datatype_string" visibility="public"/>
+              <UML:Attribute xmi.id="attr_user_profile" name="profile" type="datatype_undef" visibility="public"/>
+              <UML:Attribute xmi.id="attr_user_created" name="created" type="datatype_datetime" visibility="public"/>
+              <UML:Attribute xmi.id="attr_user_updated" name="updated" type="datatype_datetime" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Content" name="Content" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_content_title" name="title" type="datatype_string" visibility="public"/>
+              <UML:Attribute xmi.id="attr_content_body" name="body" type="datatype_string" visibility="public"/>
+              <UML:Attribute xmi.id="attr_content_summary" name="summary" type="datatype_string" visibility="public"/>
+              <UML:Attribute xmi.id="attr_content_created_on" name="created_on" type="datatype_datetime" visibility="public"/>
+              <UML:Attribute xmi.id="attr_content_updated_on" name="updated_on" type="datatype_datetime" visibility="public"/>
+              <UML:Attribute xmi.id="attr_content_published" name="published" type="datatype_bool" visibility="public"/>
+              <UML:Attribute xmi.id="attr_content_hidden" name="hidden" type="datatype_bool" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Article" name="Article" visibility="public">
+            <UML:Generalization xmi.id="gen_content_article" parent="class_Content"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Media" name="Media" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_media_filename" name="filename" type="datatype_string" visibility="public"/>
+            </UML:Namespace.ownedElement>
+            <UML:Generalization xmi.id="gen_content_media" parent="class_Content"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Photo" name="Photo" visibility="public">
+            <UML:Generalization xmi.id="gen_media_photo" parent="class_Media"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Video" name="Video" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_video_processing_status" name="processing_status" type="datatype_int" visibility="public"/>
+            </UML:Namespace.ownedElement>
+            <UML:Generalization xmi.id="gen_media_video" parent="class_Media"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Audio" name="Audio" visibility="public">
+            <UML:Generalization xmi.id="gen_media_audio" parent="class_Media"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_FileUpload" name="FileUpload" visibility="public">
+            <UML:Generalization xmi.id="gen_media_fileupload" parent="class_Media"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Event" name="Event" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_event_date" name="date" type="datatype_datetime" visibility="public"/>
+              <UML:Attribute xmi.id="attr_event_related_articles" name="related_articles" type="class_Article" visibility="public"/>
+              <UML:Attribute xmi.id="attr_event_place" name="place" type="datatype_string" visibility="public"/>
+            </UML:Namespace.ownedElement>
+            <UML:Generalization xmi.id="gen_content_event" parent="class_Content"/>
+            <UML:Generalization xmi.id="gen_post_event" parent="class_Post"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Tag" name="Tag" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_tag_tag" name="tag" type="datatype_string" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_ContentTag" name="ContentTag" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_contentTag_tag" name="tag" type="class_Tag" visibility="public"/>
+              <UML:Attribute xmi.id="attr_contentTag_content" name="content" type="class_Content" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Page" name="Page" visibility="public">
+            <UML:Generalization xmi.id="gen_content_page" parent="class_Content"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Link" name="Link" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_link_uri" name="uri" type="datatype_string" visibility="public"/>
+              <UML:Attribute xmi.id="attr_link_title" name="title" type="datatype_string" visibility="public"/>
+              <UML:Attribute xmi.id="attr_link_created" name="created" type="datatype_datetime" visibility="public"/>
+              <UML:Attribute xmi.id="attr_link_updated" name="updated" type="datatype_datetime" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_CollectiveAssociation" name="CollectiveAssociation" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_collectiveAssociation_collective" name="collective" type="class_Content" visibility="public"/>
+              <UML:Attribute xmi.id="attr_collectiveAssociation_content" name="content" type="class_Content" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_PlaceTag" name="PlaceTag" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_placeTag_place" name="place" type="class_Tag" visibility="public"/>
+              <UML:Attribute xmi.id="attr_placeTag_content" name="content" type="class_Content" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Collective" name="Collective" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_collective_name" name="name" type="datatype_string" visibility="public"/>
+              <UML:Attribute xmi.id="attr_collective_summary" name="summary" type="datatype_string" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_CollectiveMembership" name="CollectiveMembership" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_collectiveMembership_user" name="user" type="class_User" visibility="public"/>
+              <UML:Attribute xmi.id="attr_collectiveMembership_collective" name="collective" type="class_Collective" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_PostMediaLinkage" name="PostMediaLinkage" visibility="public">
+            <UML:Namespace.ownedElement>
+              <UML:Attribute xmi.id="attr_postMediaLinkage_media" name="media" type="class_Media" visibility="public"/>
+              <UML:Attribute xmi.id="attr_postMediaLinkage_post" name="post" type="class_Post" visibility="public"/>
+              <UML:Attribute xmi.id="attr_postMediaLinkage_type" name="type" type="datatype_string" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Post" name="Post" visibility="public">
+            <UML:Generalization xmi.id="gen_content_post" parent="class_Content"/>
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_Tutorial" name="Tutorial" visibility="public">
+            <UML:Generalization xmi.id="gen_post_tutorial" parent="class_Post"/>
+          </UML:Class>
+          
+          <!-- Associations -->
+          <UML:Association xmi.id="assoc_Content_Tag">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_content" type="class_Content" name="content" visibility="public" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_tag" type="class_Tag" name="tag" visibility="public" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+          
+          <UML:Association xmi.id="assoc_User_CollectiveMembership">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_user" type="class_User" name="user" visibility="public" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_collectiveMembership" type="class_CollectiveMembership" name="collectiveMembership" visibility="public" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+          
+          <UML:Association xmi.id="assoc_PostMedia_Link">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_postMedia" type="class_Post" name="post" visibility="public" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_mediaLink" type="class_Media" name="media" visibility="public" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

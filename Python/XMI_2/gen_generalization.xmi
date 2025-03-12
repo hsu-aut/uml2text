@@ -1,0 +1,56 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="2023-11-24">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_3" name="model 3">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_java" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_lang" name="lang">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_void" name="void"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="package_refmodels" name="refmodels" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_generalisation" name="generalisation">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_AbstractClass" name="AbstractClass" visibility="public" isAbstract="true">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="operation_test_AbstractClass" name="test" visibility="public" isAbstract="true" ownerScope="instance">
+                      <UML:Parameter xmi.id="param_test_AbstractClass_return" name="return" kind="return" type="datatype_void"/>
+                    </UML:Operation>
+                    <UML:Attribute xmi.id="attribute_test_AbstractClass" name="test" visibility="private" changeability="changeable">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="datatype_int"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Class xmi.id="class_ConcreteClass" name="ConcreteClass" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_concrete_abstract" parent="class_AbstractClass" child="class_ConcreteClass"/>
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="operation_test_ConcreteClass" name="test" visibility="public" ownerScope="instance">
+                      <UML:Parameter xmi.id="param_test_ConcreteClass_return" name="return" kind="return" type="datatype_void"/>
+                    </UML:Operation>
+                  </UML:Classifier.feature>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

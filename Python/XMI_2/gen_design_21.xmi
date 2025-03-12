@@ -1,0 +1,163 @@
+```xml
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' >
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Custom UML Exporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Modelo_UML" name="Modelo UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package for DataTypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <!-- Basic Data types -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition of Classes -->
+        
+        <!-- Class Builder -->
+        <UML:Class xmi.id="class_Builder" name="Builder" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_build_path" name="build_path" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Abstract Class FileGenerator -->
+        <UML:Class xmi.id="class_FileGenerator" name="FileGenerator" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_activate" name="activate" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Class RulesGenerator -->
+        <UML:Class xmi.id="class_RulesGenerator" name="RulesGenerator" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_RulesGenerator"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class PostInstallGenerator -->
+        <UML:Class xmi.id="class_PostInstallGenerator" name="PostInstallGenerator" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_PostInstallGenerator"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Class PreRemoveGenerator -->
+        <UML:Class xmi.id="class_PreRemoveGenerator" name="PreRemoveGenerator" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_PreRemoveGenerator"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class ControlGenerator -->
+        <UML:Class xmi.id="class_ControlGenerator" name="ControlGenerator" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ControlGenerator"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Class PartGenerator -->
+        <UML:Class xmi.id="class_PartGenerator" name="PartGenerator" visibility="public">
+        </UML:Class>
+
+        <!-- Class DivertPart -->
+        <UML:Class xmi.id="class_DivertPart" name="DivertPart" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_DivertPart"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class AlternativesPart -->
+        <UML:Class xmi.id="class_AlternativesPart" name="AlternativesPart" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AlternativesPart"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Associations -->
+        
+        <UML:Association xmi.id="assoc_Builder_FileGenerator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Builder" type="class_Builder" name="Builder" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FileGenerator" type="class_FileGenerator" name="FileGenerator" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PostInstall_PartGenerator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PostInstall" type="class_PostInstallGenerator" name="PostInstallGenerator" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PartGenerator1" type="class_PartGenerator" name="PartGenerator" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_PreRemove_PartGenerator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PreRemove" type="class_PreRemoveGenerator" name="PreRemoveGenerator" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PartGenerator2" type="class_PartGenerator" name="PartGenerator" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Builder_PartGenerator_Undefined">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Builder2" type="class_Builder" name="Productor" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PartGenerator3" type="class_PartGenerator" name="Consumidor" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+      
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

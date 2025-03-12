@@ -1,0 +1,83 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DigitalClock" name="DigitalClock">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Clock" name="Clock" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_hours" name="hours" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_minutes" name="minutes" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_seconds" name="seconds" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Clock" name="Clock" visibility="public"/>
+            <UML:Operation xmi.id="op_inc" name="inc" visibility="public"/>
+            <UML:Operation xmi.id="op_modeButton" name="modeButton" visibility="public"/>
+            <UML:Operation xmi.id="op_dec" name="dec" visibility="public"/>
+            <UML:Operation xmi.id="op_ClockDestructor" name="~Clock" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_QWidget"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DigitalDisplay" name="DigitalDisplay" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_time" name="time" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_show" name="show" visibility="public"/>
+            <UML:Operation xmi.id="op_paintEvent" name="paintEvent" visibility="public"/>
+            <UML:Operation xmi.id="op_DigitalDisplay" name="DigitalDisplay" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_QFrame"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Clock_DigitalDisplay">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Clock_DigitalDisplay_Clock" type="class_Clock" name="clock" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Clock_DigitalDisplay_DigitalDisplay" type="class_DigitalDisplay" name="digitalDisplay" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Class xmi.id="class_QWidget" name="QWidget" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_QFrame" name="QFrame" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_QPushButton" name="QPushButton" visibility="public" isAbstract="false"/>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

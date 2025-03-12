@@ -1,0 +1,154 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AbstractDomain" name="AbstractDomainModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_AbstractDomainObject" name="AbstractDomainObject" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Gene" name="Gene" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Gene"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractDomainObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_symbol" name="symbol" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_clusterId" name="clusterId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Annotation" name="Annotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Annotation"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractDomainObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_value" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Source" name="Source" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Source"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractDomainObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name_source" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Term" name="Term" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Term"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractDomainObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_value_term" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_level" name="level" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Term_ParentChild">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Term_Parent" type="class_Term" name="parent" visibility="public" aggregation="none" multiplicity="0..1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Term_Child" type="class_Term" name="children" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Term_AncestorsDescendants">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Term_Ancestors" type="class_Term" name="ancestors" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Term_Descendants" type="class_Term" name="descendants" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Term_Genes">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Term_Genes_Term" type="class_Term" name="terms" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Term_Genes_Gene" type="class_Gene" name="genes" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Gene_Annotations">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Gene_Annotation_Gene" type="class_Gene" name="gene" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Gene_Annotation_Annotation" type="class_Annotation" name="annotations" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Annotation_Source">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Annotation_Source_Annotation" type="class_Annotation" name="annotations" visibility="public" aggregation="none" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Annotation_Source_Source" type="class_Source" name="source" visibility="public" aggregation="none" multiplicity="1..1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

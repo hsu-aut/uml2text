@@ -1,0 +1,242 @@
+```xml
+<?xml version='1.0' encoding='UTF-8' ?>
+<XMI xmi.version='1.2' xmlns:UML='org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name='UML' xmi.version='1.4'/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id='model_untitledModel' name='untitledModel'>
+      <UML:Namespace.ownedElement>
+
+        <!-- Anonymous Class with an Attribute -->
+        <UML:Class xmi.id='class_Anonymous' name=''>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_newAttr' name='newAttr' visibility='private'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- WindowImp Interface -->
+        <UML:Interface xmi.id='interface_WindowImp' name='WindowImp'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='operation_Draw' name='Draw' visibility='public'/>
+            <UML:Operation xmi.id='operation_Initialize' name='Initialize' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Android::Point Class with Attributes -->
+        <UML:Class xmi.id='class_AndroidPoint' name='Android::Point'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_x' name='x' visibility='public'/>
+            <UML:Attribute xmi.id='attr_y' name='y' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Curve Class with Operations and Attributes -->
+        <UML:Class xmi.id='class_Curve' name='Curve'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='operation_draw' name='draw' visibility='public'/>
+            <UML:Attribute xmi.id='attr_id' name='static UUID id' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DrawnShape Class as Subclass of Curve -->
+        <UML:Class xmi.id='class_DrawnShape' name='DrawnShape'>
+          <UML:Generalization xmi.id='gen_DrawnShape' parent='class_Curve'/>
+        </UML:Class>
+
+        <!-- FixedShape Class as Subclass of Curve -->
+        <UML:Class xmi.id='class_FixedShape' name='FixedShape'>
+          <UML:Generalization xmi.id='gen_FixedShape' parent='class_Curve'/>
+        </UML:Class>
+
+        <!-- BlackBoard Class with Association -->
+        <UML:Class xmi.id='class_BlackBoard' name='BlackBoard'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_components' name='components[]' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Drawable Class with Attribute -->
+        <UML:Class xmi.id='class_Drawable' name='Drawable'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_id_Drawable' name='static UUID id' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DrawableContext Class with Attributes and Associations -->
+        <UML:Class xmi.id='class_DrawableContext' name='DrawableContext'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_rootnode' name='rootnode' visibility='public'/>
+            <UML:Attribute xmi.id='attr_curnode' name='curnode' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DrawableContextNode Class with Attributes -->
+        <UML:Class xmi.id='class_DrawableContextNode' name='DrawableContextNode'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_id_Node' name='id:UUID' visibility='public'/>
+            <UML:Attribute xmi.id='attr_coordinate' name='coordinate' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- BBView Class with Attributes and Operations -->
+        <UML:Class xmi.id='class_BBView' name='BBView'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_Windows' name='Windows' visibility='public'/>
+            <UML:Attribute xmi.id='attr_drawables' name='drawables[]' visibility='public'/>
+            <UML:Operation xmi.id='operation_update' name='update' visibility='public'/>
+            <UML:Operation xmi.id='operation_onDraw' name='onDraw' visibility='public'/>
+            <UML:Operation xmi.id='operation_onMouseEvent' name='onMouseEvent' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- BBController Class with Attributes and Operations -->
+        <UML:Class xmi.id='class_BBController' name='BBController'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_drawablestore' name='drawablestore' visibility='public'/>
+            <UML:Operation xmi.id='operation_actionPerformed' name='actionPerformed' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- BBModel Class with Attributes and Operations -->
+        <UML:Class xmi.id='class_BBModel' name='BBModel'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_context' name='context' visibility='public'/>
+            <UML:Operation xmi.id='operation_changeValue' name='changeValue' visibility='public'/>
+            <UML:Operation xmi.id='operation_BBModel' name='BBModel' visibility='public'/>
+            <UML:Operation xmi.id='operation_getModel' name='getModel' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Point Class with Attributes and Operations -->
+        <UML:Class xmi.id='class_Point' name='Point'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_id_Point' name='static UUID id' visibility='public'/>
+            <UML:Operation xmi.id='operation_draw_Point' name='draw' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Color Class with Attributes -->
+        <UML:Class xmi.id='class_Color' name='Color'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_b' name='b' visibility='public'/>
+            <UML:Attribute xmi.id='attr_r' name='r' visibility='public'/>
+            <UML:Attribute xmi.id='attr_g' name='g' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- View Class with Attributes and Operations -->
+        <UML:Class xmi.id='class_View' name='View'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_Controller' name='Controller' visibility='public'/>
+            <UML:Operation xmi.id='operation_addController' name='addController' visibility='public'/>
+            <UML:Operation xmi.id='operation_update_View' name='update' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Command Interface with Operations -->
+        <UML:Interface xmi.id='interface_Command' name='Command'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='operation_addReciever' name='addReciever' visibility='public'/>
+            <UML:Operation xmi.id='operation_undo' name='undo' visibility='public'/>
+            <UML:Operation xmi.id='operation_execute_Command' name='execute' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Pallette Class -->
+        <UML:Class xmi.id='class_pallette' name='pallette'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_size_pallette' name='size' visibility='public'/>
+            <UML:Attribute xmi.id='attr_color_pallette' name='color' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- PalletteImp Class -->
+        <UML:Class xmi.id='class_palletteImp' name='palletteImp'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_size_palletteImp' name='size' visibility='public'/>
+            <UML:Attribute xmi.id='attr_color_palletteImp' name='color' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- MenuView Class -->
+        <UML:Class xmi.id='class_MenuView' name='MenuView'>
+          <UML:Generalization xmi.id='gen_MenuView' parent='class_View'/>
+        </UML:Class>
+
+        <!-- SizeCommand Class -->
+        <UML:Class xmi.id='class_SizeCommand' name='SizeCommand'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_presize' name='presize' visibility='public'/>
+            <UML:Attribute xmi.id='attr_aftersize' name='aftersize' visibility='public'/>
+            <UML:Operation xmi.id='operation_execute_SizeCommand' name='execute' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- CommandFactory Class -->
+        <UML:Class xmi.id='class_CommandFactory' name='CommandFactory'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_commands' name='commands[]' visibility='public'/>
+            <UML:Operation xmi.id='operation_newSizeCommand' name='newSizeCommand' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DrawCommand Class -->
+        <UML:Class xmi.id='class_DrawCommand' name='DrawCommand'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id='attr_redolist' name='redolist[]' visibility='public'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- EraseCommand Class -->
+        <UML:Class xmi.id='class_EraseCommand' name='EraseCommand'/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id='assoc_AnonymousClass_UndefinedClass'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id='assocEnd_AnonymousClass' type='class_Anonymous' visibility='public' aggregation='none'/>
+            <UML:AssociationEnd xmi.id='assocEnd_UndefinedClass'/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id='assoc_AndroidPoint_Curve'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id='assocEnd_AndroidPoint' type='class_AndroidPoint' visibility='public' aggregation='none'/>
+            <UML:AssociationEnd xmi.id='assocEnd_Curve' type='class_Curve'/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id='assoc_BlackBoard_Drawable'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id='assocEnd_BlackBoard' type='class_BlackBoard' visibility='public' aggregation='none'/>
+            <UML:AssociationEnd xmi.id='assocEnd_Drawable' type='class_Drawable'/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id='assoc_DrawableContext_DrawableContextNode'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id='assocEnd_DrawableContext' type='class_DrawableContext' visibility='public' aggregation='none'/>
+            <UML:AssociationEnd xmi.id='assocEnd_DrawableContextNode' type='class_DrawableContextNode'/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id='assoc_DrawableContextNode_Point'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id='assocEnd_DrawableContextNode' type='class_DrawableContextNode' visibility='public' aggregation='none'/>
+            <UML:AssociationEnd xmi.id='assocEnd_Point' type='class_Point'/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Data types -->
+        <UML:DataType xmi.id='UUID' name='UUID'/>
+        <UML:DataType xmi.id='void' name='void'/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

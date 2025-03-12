@@ -1,0 +1,90 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_unbenanntesModell" name="unbenanntesModell">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_SPDIF" name="SPDIF" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_SPDIF_Output" child="class_SPDIF" parent="interface_Output">
+            <UML:Dependency.stereotype>
+              <UML:Stereotype name="realize"/>
+            </UML:Dependency.stereotype>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Analog" name="Analog" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Analog_Output" child="class_Analog" parent="interface_Output">
+            <UML:Dependency.stereotype>
+              <UML:Stereotype name="realize"/>
+            </UML:Dependency.stereotype>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Auxilary" name="Auxilary" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Auxilary_Input" child="class_Auxilary" parent="interface_Input">
+            <UML:Dependency.stereotype>
+              <UML:Stereotype name="realize"/>
+            </UML:Dependency.stereotype>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Amplifier" name="Amplifier" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_volume" name="volume" visibility="private"/>
+            <UML:Operation xmi.id="op_switchOn" name="switchOn" visibility="public"/>
+            <UML:Operation xmi.id="op_setVolume" name="setVolume" visibility="public"/>
+            <UML:Operation xmi.id="op_switchOff" name="switchOff" visibility="public"/>
+            <UML:Operation xmi.id="op_selectInput" name="selectInput" visibility="public">
+              <UML:Parameter xmi.id="param_Input" name="input" kind="in" type="interface_Input"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_selectOutput" name="selectOutput" visibility="public">
+              <UML:Parameter xmi.id="param_Output" name="output" kind="in" type="interface_Output"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="interface_Output" name="Output" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_activate" name="activate" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_Input" name="Input" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_activate_input" name="activate" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Enumeration xmi.id="enum_AmplifierState" name="AmplifierState" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="enum_on" name="on"/>
+            <UML:EnumerationLiteral xmi.id="enum_off" name="off"/>
+            <UML:EnumerationLiteral xmi.id="enum_mute" name="mute"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        
+        <UML:Association xmi.id="assoc_Amplifier_Input" name="hasInput">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_Input_Amplifier" type="class_Amplifier" name="amplifier" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_Input_Input" type="interface_Input" name="input" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Amplifier_Output" name="hasOutput">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_Output_Amplifier" type="class_Amplifier" name="amplifier" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_Output_Output" type="interface_Output" name="output" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,92 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+                <UML:DataType xmi.id="charPointer" name="char*"/>
+                <UML:DataType xmi.id="TableSchemaPointer" name="KexiDB::TableSchema*"/>
+                <UML:DataType xmi.id="FieldPointer" name="Field*"/>
+                <UML:DataType xmi.id="QHashQStringQString" name="QHash<QString,QString>"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="xbXBase" name="xbXBase" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_DbfList" name="DbfList" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="xbDbf"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_AddDbfToDbfList" name="AddDbfToDbfList" visibility="public"/>
+                <UML:Operation xmi.id="op_GetDbfPtr" name="GetDbfPtr" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class xmi.id="xbDbf" name="xbDbf" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_MdxList" name="MdxList" visibility="private"/>
+                <UML:Attribute xmi.id="attr_NdxList" name="NdxList" visibility="private"/>
+                <UML:Attribute xmi.id="attr_DatabaseName" name="DatabaseName" visibility="private"/>
+                <UML:Operation xmi.id="op_OpenDatabase" name="OpenDatabase" visibility="public"/>
+                <UML:Operation xmi.id="op_FieldCount" name="FieldCount" visibility="public"/>
+                <UML:Operation xmi.id="op_GetFieldName" name="GetFieldName" visibility="public"/>
+                <UML:Operation xmi.id="op_GetFieldType" name="GetFieldType" visibility="public"/>
+                <UML:Operation xmi.id="op_GetDbfName" name="GetDbfName" visibility="public"/>
+              </UML:Namespace.ownedElement>
+              <UML:Dependency xmi.id="dependency_DbSchema" client="xbDbf" supplier="xbSchema"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="xbIndex" name="xbIndex" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="xbString" name="xbString" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="xbSchema" name="xbSchema" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_FieldName" name="FieldName" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Type" name="Type" visibility="private"/>
+                <UML:Attribute xmi.id="attr_FieldLen" name="FieldLen" visibility="private"/>
+                <UML:Attribute xmi.id="attr_NoOfDec" name="NoOfDec" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="xBaseMigrate" name="xBaseMigrate" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_drv_copyTable" name="drv_copyTable" visibility="public"/>
+                <UML:Operation xmi.id="op_drv_readTableSchema" name="drv_readTableSchema" visibility="public"/>
+                <UML:Operation xmi.id="op_drv_connect" name="drv_connect" visibility="public"/>
+                <UML:Operation xmi.id="op_drv_disconnect" name="drv_disconnect" visibility="public"/>
+              </UML:Namespace.ownedElement>
+              <UML:Generalization xmi.id="gen_xBaseMigrate_xbXBase" child="xBaseMigrate" parent="xbXBase"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="Controller" name="Controller" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

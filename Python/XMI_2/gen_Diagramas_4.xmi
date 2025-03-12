@@ -1,0 +1,109 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="Modelo UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View Definition -->
+        <UML:Package xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Component View Definition -->
+        <UML:Package xmi.id="component_view" name="Component View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Component xmi.id="component_DataListener" name="DataListener">
+              <UML:Dependency supplier="component_SGBD"/>
+            </UML:Component>
+            
+            <UML:Component xmi.id="component_SGBD" name="SGBD"/>
+            
+            <UML:Component xmi.id="component_Sensor" name="Sensor"/>
+            
+            <UML:Component xmi.id="component_DataProcess" name="DataProcess">
+              <UML:Dependency supplier="component_DataListener"/>
+            </UML:Component>
+            
+            <UML:Component xmi.id="component_WebService" name="WebService">
+              <UML:Dependency supplier="component_DataListener"/>
+            </UML:Component>
+            
+            <!-- Association between DataProcess and Sensor -->
+            <UML:Association xmi.id="assoc_DataProcess_Sensor1">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_DataProcess_Sensor1_DataProcess" type="component_DataProcess" name="dataProcess" visibility="public" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_DataProcess_Sensor1_Sensor" type="component_Sensor" name="sensor" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_DataProcess_Sensor2">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_DataProcess_Sensor2_DataProcess" type="component_DataProcess" name="dataProcess" visibility="public" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_DataProcess_Sensor2_Sensor" type="component_Sensor" name="sensor" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Deployment View Definition -->
+        <UML:Package xmi.id="deployment_view" name="Deployment View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Node xmi.id="node_Arduino" name="Arduíno">
+              <UML:Namespace.ownedElement>
+                <UML:Association xmi.id="assoc_Arduíno_RaspberryPi">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Arduíno_RaspberryPi_Arduino" type="node_Arduino" name="arduíno" visibility="public" aggregation="none" multiplicity="1"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Arduíno_RaspberryPi_RaspberryPi" type="node_RaspberryPi" name="raspberryPi" visibility="public" aggregation="none" multiplicity="1"/>
+                  </UML:Association.connection>
+                </UML:Association>
+              </UML:Namespace.ownedElement>
+            </UML:Node>
+            
+            <UML:Node xmi.id="node_RaspberryPi" name="Raspberry Pi">
+              <UML:Namespace.ownedElement>
+                <UML:Artifact xmi.id="artifact_WebService" name="WebService" deployedElement="component_WebService"/>
+              </UML:Namespace.ownedElement>
+            </UML:Node>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Use Case View Definition - Empty -->
+        <UML:Package xmi.id="use_case_view" name="Use Case View"/>
+        
+        <!-- Entity Relationship Model Definition - Empty -->
+        <UML:Package xmi.id="entity_relationship_model" name="Entity Relationship Model"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

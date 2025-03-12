@@ -1,0 +1,140 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML-Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="p1" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="p2" name="freekick">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Package xmi.id="p3" name="server">
+                  <UML:Namespace.ownedElement>
+                    
+                    <UML:Class xmi.id="6iZkVoFBeSA1" name="Rules" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_mRulesState" name="mRulesState" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="boost::shared_ptr&lt;RulesState>"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_mDispatcher" name="mDispatcher" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="boost::shared_ptr&lt;Dispatcher>"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    
+                    <UML:Class xmi.id="edJepl4sRPJu" name="Physics" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_mPause" name="mPause" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="bool"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_mNewPhysicsEvents" name="mNewPhysicsEvents" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="std::vector&lt;PhysicsEvent>"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_mPhysicsEngine" name="mPhysicsEngine" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:Class xmi.idref="PhysicsEngine"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_mPhysicsState" name="mPhysicsState" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:Class xmi.idref="PhysicsState"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    
+                    <UML:Class xmi.id="mgDWDiHrJYT8" name="Dispatcher" visibility="public" isAbstract="false"/>
+                    
+                    <UML:Class xmi.id="IXyhxHb1x8lS" name="Console" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_mPhysics" name="mPhysics" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="boost::shared_ptr&lt;Physics>"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_mRules" name="mRules" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="boost::shared_ptr&lt;Rules>"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_mConnectionListener" name="mConnectionListener" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="boost::shared_ptr&lt;ConnectionListener>"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+
+                    <UML:Class xmi.id="3fLTTgPhgpEV" name="ConnectionListener" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_io_service" name="io_service" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:Class xmi.idref="io_service"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    
+                    <UML:Class xmi.id="gqFzPMYClYUl" name="ClientEventListener" visibility="public" isAbstract="false"/>
+                    
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+                <UML:Package xmi.id="p4" name="network">
+                  <!-- Content for network package can be added here -->
+                </UML:Package>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Package xmi.id="p5" name="boost">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="Xqt7HqFgAq4v" name="shared_ptr" visibility="public" isAbstract="false"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Class xmi.id="3ZZAVDI9B5Ax" name="io_service" visibility="public" isAbstract="false"/>
+
+        <!-- Define DataTypes -->
+        <UML:DataType xmi.id="DataType_int" name="int"/>
+        <UML:DataType xmi.id="DataType_char" name="char"/>
+        <UML:DataType xmi.id="DataType_bool" name="bool"/>
+        <UML:DataType xmi.id="DataType_float" name="float"/>
+        <UML:DataType xmi.id="DataType_double" name="double"/>
+        <UML:DataType xmi.id="DataType_short" name="short"/>
+        <UML:DataType xmi.id="DataType_long" name="long"/>
+        <UML:DataType xmi.id="DataType_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="DataType_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="DataType_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="DataType_string" name="string"/>
+        <UML:DataType xmi.id="DataType_std_vector_PhysicsEvent" name="std::vector&lt;PhysicsEvent>"/>
+        <UML:DataType xmi.id="DataType_boost_shared_ptr" name="boost::shared_ptr&lt;...>"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

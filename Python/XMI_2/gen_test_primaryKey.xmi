@@ -1,0 +1,58 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="MX_EAID_C3B1EF3A_204D_4b81_B8BF_F74AC48C134F" name="Domain Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="EAID_A9ED5C58_31AF_4c58_8E23_8D76AD085353" name="Parent" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Pk" name="Pk" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+            <UML:Attribute xmi.id="attr_Pk2" name="Pk2" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+            <UML:Attribute xmi.id="attr_Name" name="Name" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+            <UML:Attribute xmi.id="attr_Pk3" name="Pk3" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_D799C43D_557C_4d0d_AD5C_7FA80E66AC78" name="Child" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_childId" name="childId" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+            <UML:Attribute xmi.id="attr_NameChild" name="Name" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+          </UML:Classifier.feature>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="EAID_D799C43D_557C_4d0d_AD5C_7FA80E66AC78"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="EAID_A9ED5C58_31AF_4c58_8E23_8D76AD085353"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_C0C50602_8765_4484_914F_DEA48925DDEF" name="Associated" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_assId" name="assId" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+            <UML:Attribute xmi.id="attr_assName" name="assName" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+            <UML:Attribute xmi.id="attr_intId" name="intId" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_ass_child" name="ass-child" visibility="public" isSpecification="false">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Child" type="EAID_D799C43D_557C_4d0d_AD5C_7FA80E66AC78" name="source" visibility="public" aggregation="none" isNavigable="true"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Associated" type="EAID_C0C50602_8765_4484_914F_DEA48925DDEF" name="destination" visibility="public" aggregation="none" isNavigable="false"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

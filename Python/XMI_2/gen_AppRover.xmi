@@ -1,0 +1,121 @@
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<XMI xmi.version='1.2' xmlns:UML='org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name='UML' xmi.version='1.4'/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id='model_PackageManagementSystem' name='PackageManagementSystem'>
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id='class_InstallEntry' name='InstallEntry' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_AddInstalledDirectory' name='AddInstalledDirectory'/>
+            <UML:Operation xmi.id='op_AddInstalledFile' name='AddInstalledFile'/>
+            <UML:Operation xmi.id='op_GetErrorMessage' name='GetErrorMessage'/>
+            <UML:Attribute xmi.id='attr_mErrorMessage' name='mErrorMessage'/>
+            <UML:Attribute xmi.id='attr_mInstalledDirectories' name='mInstalledDirectories'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_Repository' name='Repository' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_AddPackage' name='AddPackage'/>
+            <UML:Operation xmi.id='op_FindMostCurrentPackage' name='FindMostCurrentPackage'/>
+            <UML:Operation xmi.id='op_GetDirectory' name='GetDirectory'/>
+            <UML:Attribute xmi.id='attr_mDirectory' name='mDirectory'/>
+            <UML:Attribute xmi.id='attr_mPackages' name='mPackages'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_Interpreter' name='Interpreter' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_Interpret' name='Interpret'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_InstallLog' name='InstallLog' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_AddEntry' name='AddEntry'/>
+            <UML:Operation xmi.id='op_DeleteEntry' name='DeleteEntry'/>
+            <UML:Operation xmi.id='op_FindEntry' name='FindEntry'/>
+            <UML:Attribute xmi.id='attr_mInstallEntries' name='mInstallEntries'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_Fetcher' name='Fetcher' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_Fetch' name='Fetch'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_ConfigMgr' name='ConfigMgr' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_AddRepositoryDirectory' name='AddRepositoryDirectory'/>
+            <UML:Operation xmi.id='op_GetInstallLogFilename' name='GetInstallLogFilename'/>
+            <UML:Operation xmi.id='op_GetNumRepositories' name='GetNumRepositories'/>
+            <UML:Attribute xmi.id='attr_mCfgFilename' name='mCfgFilename'/>
+            <UML:Attribute xmi.id='attr_mInstallLogFilename' name='mInstallLogFilename'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_AppRover' name='AppRover' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_AddNewPackage' name='AddNewPackage'/>
+            <UML:Operation xmi.id='op_AddNewRepository' name='AddNewRepository'/>
+            <UML:Operation xmi.id='op_Build' name='Build'/>
+            <UML:Operation xmi.id='op_BuildPackage' name='BuildPackage'/>
+            <UML:Attribute xmi.id='attr_mConfig' name='mConfig'/>
+            <UML:Attribute xmi.id='attr_mInstallLog' name='mInstallLog'/>
+            <UML:Attribute xmi.id='attr_mPackageList' name='mPackageList'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_Package' name='Package' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_AddBuildInstruction' name='AddBuildInstruction'/>
+            <UML:Operation xmi.id='op_AddConfigureInstruction' name='AddConfigureInstruction'/>
+            <UML:Operation xmi.id='op_AddDependency' name='AddDependency'/>
+            <UML:Attribute xmi.id='attr_mBuildInstructions' name='mBuildInstructions'/>
+            <UML:Attribute xmi.id='attr_mConfigureInstructions' name='mConfigureInstructions'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_InstructionSequence' name='InstructionSequence' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_Assign' name='='/>
+            <UML:Operation xmi.id='op_AddInstruction' name='AddInstruction'/>
+            <UML:Operation xmi.id='op_Clear' name='Clear'/>
+            <UML:Attribute xmi.id='attr_mInstructions' name='mInstructions'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_PackageIndex' name='PackageIndex' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_AddPackage' name='AddPackage'/>
+            <UML:Operation xmi.id='op_ContainsRevision' name='ContainsRevision'/>
+            <UML:Operation xmi.id='op_GetMostCurrentPackage' name='GetMostCurrentPackage'/>
+            <UML:Attribute xmi.id='attr_mBaseLocation' name='mBaseLocation'/>
+            <UML:Attribute xmi.id='attr_mLoadedPackages' name='mLoadedPackages'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id='class_PackageDependency' name='PackageDependency' visibility='public' isAbstract='false'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id='op_GetName' name='GetName'/>
+            <UML:Operation xmi.id='op_IsSatisfiedBy' name='IsSatisfiedBy'/>
+            <UML:Operation xmi.id='op_Load' name='Load'/>
+            <UML:Attribute xmi.id='attr_mPackageName' name='mPackageName'/>
+            <UML:Attribute xmi.id='attr_mRevision' name='mRevision'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

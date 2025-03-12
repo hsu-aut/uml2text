@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der primitiven Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        
+        <!-- Definition der Klasse CO -->
+        <UML:Class xmi.id="class_CO" name="CO" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_direccionIp" name="direccion_ip" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pollDelay" name="poll_delay" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse UC -->
+        <UML:Class xmi.id="class_UC" name="UC" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_numero" name="numero" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse DI -->
+        <UML:Class xmi.id="class_DI" name="DI" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse AI -->
+        <UML:Class xmi.id="class_AI" name="AI" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse EV -->
+        <UML:Class xmi.id="class_EV" name="EV" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse SV -->
+        <UML:Class xmi.id="class_SV" name="SV" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_valor" name="valor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziation UC zu SV -->
+        <UML:Association xmi.id="assoc_UC_SV">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_SV_UC" type="class_UC" name="uc" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_SV_SV" type="class_SV" name="sv" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation UC zu CO -->
+        <UML:Association xmi.id="assoc_UC_CO">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_CO_UC" type="class_UC" name="uc" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_CO_CO" type="class_CO" name="co" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation UC zu DI -->
+        <UML:Association xmi.id="assoc_UC_DI">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_DI_UC" type="class_UC" name="uc" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_DI_DI" type="class_DI" name="di" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation UC zu AI -->
+        <UML:Association xmi.id="assoc_UC_AI">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_AI_UC" type="class_UC" name="uc" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_AI_AI" type="class_AI" name="ai" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation UC zu EV -->
+        <UML:Association xmi.id="assoc_UC_EV">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_EV_UC" type="class_UC" name="uc" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UC_EV_EV" type="class_EV" name="ev" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

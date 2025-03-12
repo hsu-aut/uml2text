@@ -1,0 +1,117 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_Int" name="int"/>
+                <UML:DataType xmi.id="datatype_Char" name="char"/>
+                <UML:DataType xmi.id="datatype_Bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_Float" name="float"/>
+                <UML:DataType xmi.id="datatype_Double" name="double"/>
+                <UML:DataType xmi.id="datatype_Short" name="short"/>
+                <UML:DataType xmi.id="datatype_Long" name="long"/>
+                <UML:DataType xmi.id="datatype_UnsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_UnsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_UnsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_String" name="string"/>
+                <UML:DataType xmi.id="datatype_Undef" name="undef"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Iteration1" name="iteration1">
+              <UML:Namespace.ownedElement>
+                <UML:UseCase xmi.id="usecase_Authentication" name="Authentication"/>
+                <UML:Actor xmi.id="actor_User" name="User"/>
+                <UML:UseCase xmi.id="usecase_FinancialPeriodEntry" name="Financial Period Entry"/>
+                <UML:UseCase xmi.id="usecase_CostcenterDefinition" name="Costcenter Definition"/>
+                <UML:UseCase xmi.id="usecase_AccountheadDefinition" name="Accounthead Definition"/>
+                <UML:UseCase xmi.id="usecase_VoucherTypeCreation" name="Voucher Type Creation"/>
+                <UML:UseCase xmi.id="usecase_VoucherEntry" name="Voucher Entry"/>
+                <UML:UseCase xmi.id="usecase_Ledger" name="Ledger"/>
+                <UML:UseCase xmi.id="usecase_TrialBalance" name="Trial Balance"/>
+                <UML:UseCase xmi.id="usecase_PLAccount" name="P & L Account"/>
+                <UML:UseCase xmi.id="usecase_BalanceSheet" name="Balance Sheet"/>
+                <!-- Associations -->
+                <UML:Association xmi.id="assoc_User_FinancialPeriodEntry">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_FinancialPeriodEntry" type="usecase_FinancialPeriodEntry" name="financialPeriodEntry" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_User_CostcenterDefinition">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_UserCostcenterDefinition_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_UserCostcenterDefinition_CostcenterDefinition" type="usecase_CostcenterDefinition" name="costcenterDefinition" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_User_AccountheadDefinition">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_AccountheadDefinition" type="usecase_AccountheadDefinition" name="accountheadDefinition" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_User_VoucherTypeCreation">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_VoucherTypeCreation" type="usecase_VoucherTypeCreation" name="voucherTypeCreation" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_User_VoucherEntry">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_VoucherEntry" type="usecase_VoucherEntry" name="voucherEntry" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_User_Ledger">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Ledger" type="usecase_Ledger" name="ledger" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_User_TrialBalance">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_TrialBalance" type="usecase_TrialBalance" name="trialBalance" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_User_PLAccount">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_PLAccount" type="usecase_PLAccount" name="plAccount" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_User_BalanceSheet">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_BalanceSheet" type="usecase_BalanceSheet" name="balanceSheet" visibility="public"/>
+                  </UML:Association.connection>
+                </UML:Association>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

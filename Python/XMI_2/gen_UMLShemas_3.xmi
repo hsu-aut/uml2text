@@ -1,0 +1,70 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Arbaro" name="Arbaro">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Model" name="arbaro.modeler.Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ParamManager" name="ParamManager" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_TreeModelGenerator" name="arbaro.TreeModelGenerator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TreeGenerator" name="arbaro.TreeGenerator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TreeModel" name="arbaro.TreeModel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_MeshObjViewer" name="MeshObjViewer" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_ParamEditor" name="ParamEditor" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_arbaro_cmd" name="arbaro_cmd" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_arbaro_gui" name="arbaro_gui" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_Transformations" name="Transformations" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_3DFormatWriter" name="3DFormatWriter" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_ExportDlg" name="arbaro.ExportDlg" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_ParamFileDlg" name="arbaro.ParamFileDlg" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_TreeModeler" name="arbaro.TreeModeler" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_Modeler" name="arbaro.Modeler" visibility="public" isAbstract="false" isComponent="true"/>
+        <UML:Class xmi.id="class_ModelerGUI" name="arbaro.ModelerGUI" visibility="public" isAbstract="false" isComponent="true"/>
+
+        <UML:Interface xmi.id="interface_3DFormatWriter" name="_3DFormatWriter" visibility="public"/>
+        <UML:Interface xmi.id="interface_Model" name="Model" visibility="public"/>
+        <UML:Interface xmi.id="interface_ParamPersistence" name="ParamPersistence" visibility="public"/>
+        <UML:Interface xmi.id="interface_Params" name="Params" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeGenerator" name="TreeGenerator" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeTraversal" name="TreeTraversal" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeExporter" name="TreeExporter" visibility="public"/>
+
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+
+        <UML:UseCase xmi.id="usecase_use_Arbaro_GUI" name="use Arbaro GUI"/>
+        <UML:UseCase xmi.id="usecase_edit_Trees" name="edit Trees"/>
+        <UML:UseCase xmi.id="usecase_export_Trees" name="export Trees"/>
+        <UML:UseCase xmi.id="usecase_load_Param_file" name="load Param file"/>
+        <UML:UseCase xmi.id="usecase_change_Params" name="change Params"/>
+        <UML:UseCase xmi.id="usecase_save_Param_file" name="save Param file"/>
+        <UML:UseCase xmi.id="usecase_make_Tree" name="make Tree"/>
+
+        <UML:Association xmi.id="assoc_Tree_Generator_Interaction">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Model_ParamManager" type="class_Model" name="Model" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ParamManager_Model" type="class_ParamManager" name="ParamManager" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Dependency xmi.id="dependency_TreeGeneration">
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="class_TreeModelGenerator"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Class xmi.idref="class_ParamManager"/>
+            <UML:Interface xmi.idref="interface_TreeGenerator"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

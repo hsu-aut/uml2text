@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+
+        <!-- Klasse HttpRequestMessage -->
+        <UML:Class xmi.id="class_HttpRequestMessage" name="HttpRequestMessage" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse Stream -->
+        <UML:Class xmi.id="class_Stream" name="Stream" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse HttpContent -->
+        <UML:Class xmi.id="class_HttpContent" name="HttpContent" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse TransportContext -->
+        <UML:Class xmi.id="class_TransportContext" name="TransportContext" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Interface ILogger -->
+        <UML:Interface xmi.id="interface_ILogger" name="ILogger" visibility="public" isAbstract="false">
+        </UML:Interface>
+
+        <!-- Interface IDatabase -->
+        <UML:Interface xmi.id="interface_IDatabase" name="IDatabase" visibility="public" isAbstract="false">
+        </UML:Interface>
+
+        <!-- Interface IPublisher -->
+        <UML:Interface xmi.id="interface_IPublisher" name="IPublisher" visibility="public" isAbstract="false">
+        </UML:Interface>
+
+        <!-- Klasse Logger -->
+        <UML:Class xmi.id="class_Logger" name="Logger" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse RoomsModel -->
+        <UML:Class xmi.id="class_RoomsModel" name="RoomsModel" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse RoomController -->
+        <UML:Class xmi.id="class_RoomController" name="RoomController" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Package Logging -->
+        <UML:Package xmi.id="package_Logging" name="Logging">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.idref="interface_ILogger"/>
+            <UML:Class xmi.idref="class_Logger"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package Models -->
+        <UML:Package xmi.id="package_Models" name="Models">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.idref="class_RoomsModel"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package Communication -->
+        <UML:Package xmi.id="package_Communication" name="Communication">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.idref="interface_IPublisher"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package Controllers -->
+        <UML:Package xmi.id="package_Controllers" name="Controllers">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.idref="class_RoomController"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Assoziation IndexModel - RoomsModel -->
+        <UML:Association xmi.id="assoc_IndexModel_RoomsModel" name="indexModel-roomsModel" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_IndexModel" type="class_IndexModel" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_RoomsModel" type="class_RoomsModel" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_DictionaryStringHashSetString" name="Dictionary&lt;string, HashSet&lt;string&gt;&gt;"/>
+        <UML:DataType xmi.id="datatype_ListString" name="List&lt;string&gt;"/>
+        <UML:DataType xmi.id="datatype_IHtmlString" name="IHtmlString"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,81 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Interface xmi.id="interface_IComponent" name="IComponent" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_displaySelectedPhotoTags" name="displaySelectedPhotoTags" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class_FBAdapter_FacebookService" name="FBAdapter:FacebookService" visibility="public" isAbstract="false">
+          <UML:Dependency xmi.id="dependency_to_IComponent" supplier="interface_IComponent"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_Login_noParam" name="Login" visibility="public"/>
+            <UML:Operation xmi.id="operation_Login_withParam" name="Login" visibility="public">
+              <UML:Parameter xmi.id="param_Login" name="param" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SingletonT" name="Singleton<T>" visibility="private" isAbstract="false">
+          <UML:TemplateParameter>
+            <UML:Parameter name="T"/>
+          </UML:TemplateParameter>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_T" name="T" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="T"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="operation_GetInstance" name="GetInstance" visibility="public"/>
+            <UML:Attribute xmi.id="attr_s_Instance" name="s_Instance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SingletonT"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <UML:AssociationEnd xmi.id="assocEnd_FBAdapter_User" type="class_FBAdapter_FacebookService" name="fbService" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FacebookAlbum" name="FacebookAlbum" visibility="public" isAbstract="false">
+          <UML:Dependency xmi.id="dependency_to_Singleton" supplier="class_SingletonT"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_Album" name="m_Album" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_User" name="m_User" visibility="private"/>
+            <UML:Operation xmi.id="operation_displaySelectedAlbumsPhotos" name="displaySelectedAlbumsPhotos" visibility="public"/>
+            <UML:Operation xmi.id="operation_displaySelectedAlbumsTags" name="displaySelectedAlbumsTags" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_FBAdapter" name="FBAdapter" visibility="private"/>
+            <UML:Attribute xmi.id="attr_FacebookUser" name="FacebookUser" visibility="private"/>
+            <UML:Attribute xmi.id="attr_FacebookUserFriend" name="FacebookUserFriend" visibility="private"/>
+            <UML:Attribute xmi.id="attr_FacebookAlbum" name="FacebookAlbum" visibility="private"/>
+            <UML:Operation xmi.id="operation_loginAndInit" name="loginAndInit" visibility="public"/>
+            <UML:Operation xmi.id="operation_buttonLogin_Click" name="buttonLogin_Click" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- More classes and necessary relations... -->
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

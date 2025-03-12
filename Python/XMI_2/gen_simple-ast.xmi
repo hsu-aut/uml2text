@@ -1,0 +1,110 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ASTModel" name="ASTModel">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_ast_node" name="ast-node%" visibility="public" isAbstract="false"/>
+
+        
+        <UML:Class xmi.id="class_statement" name="statement%" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_ast_node"/>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_expr_stmt" name="expr-stmt%" visibility="public" isAbstract="false">
+          <UML:Generalization general="class_statement"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_expression" name="expression" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_expression"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_binary" name="binary%" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_lhs" name="lhs" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_expression"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_rhs" name="rhs" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_expression"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_op" name="op" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_symbol"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_expression" name="expression%" visibility="public" isAbstract="false"/>
+
+        
+        <UML:Class xmi.id="class_identifier" name="identifier%" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_literal" name="literal%" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_value" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_number"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_symbol" name="symbol" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_value_symbol" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_number" name="number" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_value_number" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

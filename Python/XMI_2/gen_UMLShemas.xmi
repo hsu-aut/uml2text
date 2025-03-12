@@ -1,0 +1,148 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Arbaro" name="Arbaro">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ParamManager" name="ParamManager" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_TreeModelGenerator" name="TreeModelGenerator" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_TreeGenerator" name="TreeGenerator" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_TreeModel" name="TreeModel" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_MeshObjViewer" name="MeshObjViewer" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ParamEditor" name="ParamEditor" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_arbaro_cmd" name="arbaro_cmd" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_arbaro_gui" name="arbaro_gui" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Transformations" name="Transformations" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_3DFormatWriter" name="3DFormatWriter" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ExportDlg" name="ExportDlg" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ParamFileDlg" name="ParamFileDlg" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_TreeModeler" name="TreeModeler" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Modeler" name="Modeler" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ModelerGUI" name="ModelerGUI" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Workplace" name="Workplace" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+
+        <UML:Interface xmi.id="interface_3DFormatWriter" name="3DFormatWriter" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_exportModel" name="exportModel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_Model" name="Model" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_getLayers" name="getLayers" visibility="public"/>
+            <UML:Operation xmi.id="operation_getVertices" name="getVertices" visibility="public"/>
+            <UML:Operation xmi.id="operation_getNormals" name="getNormals" visibility="public"/>
+            <UML:Operation xmi.id="operation_getFaces" name="getFaces" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_ParamPersistence" name="ParamPersistence" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_toXML" name="toXML" visibility="public"/>
+            <UML:Operation xmi.id="operation_fromXML" name="fromXML" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_Params" name="Params" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_getLevelParams" name="getLevelParams" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_ModelGenerator" name="ModelGenerator" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_makeModel" name="makeModel" visibility="public"/>
+            <UML:Operation xmi.id="operation_getModel" name="getModel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_ParamFileDlg" name="ParamFileDlg" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_readParams" name="readParams" visibility="public"/>
+            <UML:Operation xmi.id="operation_saveParams" name="saveParams" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_ExportDlg" name="ExportDlg" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_exportModel" name="exportModel" visibility="public"/>
+            <UML:Operation xmi.id="operation_renderModel" name="renderModel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class_TreeExporterImpl" name="TreeExporterImpl" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_TreeExporterConfig"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TreeModelGeneratorImpl" name="TreeModelGeneratorImpl" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ModelGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_TreeGenerator_Tree" name="TreeGenerator-Tree">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TreeGenerator_TreeGenerator" type="class_TreeGenerator" name="treeGenerator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TreeGenerator_Tree" type="class_TreeModel" name="tree" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Transformations_Model" name="Transformations-Model">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Transformations_Transformations" type="class_Transformations" name="transformations" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Transformations_Model" type="class_Model" name="model" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ParamEditor_Params" name="ParamEditor-Params">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ParamEditor_ParamEditor" type="class_ParamEditor" name="paramEditor" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ParamEditor_Params" type="interface_Params" name="params" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Config_arbaro_Config" name="Config-arbaro.Config">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_arbaroConfig_Config" type="class_arbaro" name="arbaroConfig" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_arbaroConfig_Params" type="class_TreeGenerator" name="config" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

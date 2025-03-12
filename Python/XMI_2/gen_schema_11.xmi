@@ -1,0 +1,111 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TemplateShirt" name="TemplateShirt">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_TemplateShirt" name="Template Shirt" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_VariantShirt" name="Variant Shirt" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_VariantShirtRedXL" name="Variant Shirt Red XL" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_size" name="size" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_color" name="color" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FabricRed" name="Fabric Red" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_color_fabric" name="color" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ButtonGrey20mm" name="Button Grey 20mm" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_color_button" name="color" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_diameter" name="diameter" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GenericBOMForShirt" name="(Generic) BOM for Shirt" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_GenericBOMForFabric" name="(Generic) BOM for Fabric" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_GenericBOMForButton" name="(Generic) BOM for Button" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_PhantomBOMForShirtRedXL" name="Phantom BOM for Shirt Red XL" visibility="public" isAbstract="false"/>
+
+        <UML:Generalization xmi.id="gen_TemplateShirt_VariantShirt" general="class_TemplateShirt" specific="class_VariantShirt"/>
+        <UML:Generalization xmi.id="gen_VariantShirt_VariantShirtRedXL" general="class_VariantShirt" specific="class_VariantShirtRedXL"/>
+        
+        <UML:Association xmi.id="assoc_TemplateShirt_VariantShirt">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TemplateShirt" type="class_TemplateShirt" name="templateShirt" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_VariantShirt" type="class_VariantShirt" name="variantShirt" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PhantomBOM_VariantShirtRedXL">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PhantomBOM" type="class_PhantomBOMForShirtRedXL" name="phantomBOM" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_VariantShirtRedXL" type="class_VariantShirtRedXL" name="variantShirtRedXL" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_GenericBOM_PhantomBOM">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_GenericBOM" type="class_GenericBOMForShirt" name="genericBOM" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PhantomBOM_Shirt" type="class_PhantomBOMForShirtRedXL" name="phantomBOMShirt" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_GenericBOM_FabricRed">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_GenericBOM_Fabric" type="class_GenericBOMForFabric" name="genericBOMFabric" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FabricRed" type="class_FabricRed" name="fabricRed" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_GenericBOM_ButtonGrey">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_GenericBOM_Button" type="class_GenericBOMForButton" name="genericBOMButton" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ButtonGrey" type="class_ButtonGrey20mm" name="buttonGrey" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

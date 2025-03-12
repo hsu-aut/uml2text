@@ -1,0 +1,129 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AcademicStructure" name="AcademicStructure">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="pack_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_int" name="int" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Degree Program -->
+        <UML:Class xmi.id="class_degreeprogram" name="degreeprogram" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dp_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_dp_uid" name="uid" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="class_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Field -->
+        <UML:Class xmi.id="class_field" name="field" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_fld_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fld_degreeprogram" name="degreeprogram" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_text"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fld_uid" name="uid" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="class_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Module -->
+        <UML:Class xmi.id="class_module" name="module" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mod_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mod_degreeprogram" name="degreeprogram" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mod_field" name="field" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mod_uid" name="uid" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Lecture -->
+        <UML:Class xmi.id="class_lecture" name="lecture" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_lect_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_lect_uid" name="uid" visibility="private"/>
+            <UML:Attribute xmi.id="attr_lect_module" name="module" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Exam -->
+        <UML:Class xmi.id="class_exam" name="exam" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_exam_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_number" name="number" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_term" name="term" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_lecture" name="lecture" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_year" name="year" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_exactdate" name="exactdate" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_lecturer" name="lecturer" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_approved" name="approved" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_file" name="file" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_material" name="material" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_quality" name="quality" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_examtype" name="examtype" visibility="private"/>
+            <UML:Attribute xmi.id="attr_exam_uid" name="uid" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Lecturer -->
+        <UML:Class xmi.id="class_lecturer" name="lecturer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_lectr_firstname" name="firstname" visibility="private"/>
+            <UML:Attribute xmi.id="attr_lectr_lastname" name="lastname" visibility="private"/>
+            <UML:Attribute xmi.id="attr_lectr_uid" name="uid" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_degreeprogram_field">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_degreeprogram" type="class_degreeprogram" name="degreeprogram" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_field" type="class_field" name="field" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_degreeprogram_module">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_degreeprogram_module" type="class_degreeprogram" name="degreeprogram" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_module" type="class_module" name="module" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Data Types -->
+        <UML:DataType xmi.id="datatype_varchar" name="varchar"/>
+        <UML:DataType xmi.id="datatype_text" name="text"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

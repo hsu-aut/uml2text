@@ -1,0 +1,67 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        <!-- Classes -->
+        <UML:Class xmi.id="class_Test" name="Test" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_TestMethod" name="TestMethod" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_TestCase" name="TestCase" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base class=xmi.idref="class_Test"/>
+            <UML:Generalization.base class=xmi.idref="class_TestMethod"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_TestSuite" name="TestSuite" visibility="public" isAbstract="true"/>
+
+        <!-- File Hierarchy -->
+        <UML:Class xmi.id="class_File" name="File" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_RegularFile" name="RegularFile" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base class=xmi.idref="class_File"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_SourceFile" name="SourceFile" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base class=xmi.idref="class_File"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_HeaderFile" name="HeaderFile" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base class=xmi.idref="class_File"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Annotation Hierarchy -->
+        <UML:Class xmi.id="class_Annotation" name="Annotation" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_DirectAnnotation" name="DirectAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base class=xmi.idref="class_Annotation"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_MetaAnnotation" name="MetaAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base class=xmi.idref="class_Annotation"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_annotatedWith" name="annotatedWith">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_A_BeforeClass" type="class_A_BeforeClass" role="beforeClass"/>
+            <UML:AssociationEnd xmi.id="assocEnd_BeforeClass" type="class_BeforeClass"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

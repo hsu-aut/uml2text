@@ -1,0 +1,85 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_RestaurantSystem" name="RestaurantSystem">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition of Datatypes Package -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition of Actors and Use Cases in Use Case View -->
+        <UML:UseCase xmi.id="usecase_OrderFood" name="Order Food"/>
+        <UML:UseCase xmi.id="usecase_OrderWine" name="Order Wine"/>
+        <UML:UseCase xmi.id="usecase_ServeFood" name="Serve Food"/>
+        <UML:UseCase xmi.id="usecase_ServeWine" name="Serve Wine"/>
+        <UML:UseCase xmi.id="usecase_CookFood" name="Cook Food"/>
+        <UML:UseCase xmi.id="usecase_EatFood" name="Eat Food"/>
+        <UML:UseCase xmi.id="usecase_DrinkWine" name="Drink Wine"/>
+        <UML:UseCase xmi.id="usecase_PayForFood" name="Pay for Food"/>
+        <UML:UseCase xmi.id="usecase_PayForWine" name="Pay for Wine"/>
+        
+        <!-- Actors -->
+        <UML:Actor xmi.id="actor_Waiter" name="Waiter"/>
+        <UML:Actor xmi.id="actor_Client" name="Client"/>
+        <UML:Actor xmi.id="actor_Chef" name="Chef"/>
+        <UML:Actor xmi.id="actor_Cashier" name="Cashier"/>
+
+        <!-- Associations Between Use Cases and Actors -->
+        
+        <UML:Association xmi.id="assoc_Waiter_OrderFood">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Waiter" type="actor_Waiter" name="waiter" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_OrderFood" type="usecase_OrderFood" name="orderFood" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Waiter_ServeFood">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Waiter" type="actor_Waiter" name="waiter" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ServeFood" type="usecase_ServeFood" name="serveFood" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Client_OrderFood_EatFood_PayForFood">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Client" type="actor_Client" name="client" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_OrderFood" type="usecase_OrderFood" name="orderFood" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EatFood" type="usecase_EatFood" name="eatFood" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PayForFood" type="usecase_PayForFood" name="payForFood" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Cashier_PayForFood">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Cashier" type="actor_Cashier" name="cashier" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PayForFood" type="usecase_PayForFood" name="payForFood" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

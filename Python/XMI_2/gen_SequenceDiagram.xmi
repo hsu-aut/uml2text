@@ -1,0 +1,41 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Custom Exporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Zusammenarbeit -->
+        <UML:Collaboration xmi.id="collab_unattached" name="unattachedCollaboration" visibility="public">
+          <UML:Collaboration.participant>
+            <UML:ClassifierRole xmi.id="role_User" name="User" base="User" multiplicity="1"/>
+            <UML:ClassifierRole xmi.id="role_Amplifier" name="Amplifier" base="Amplifier" multiplicity="1"/>
+            <UML:ClassifierRole xmi.id="role_Aux" name="Aux" base="Aux" multiplicity="1"/>
+            <UML:ClassifierRole xmi.id="role_Analog" name="Analog" base="Analog" multiplicity="1"/>
+            <UML:ClassifierRole xmi.id="role_Spdif" name="Spdif" base="Spdif" multiplicity="1"/>
+          </UML:Collaboration.participant>
+          
+          <!-- Nachrichten zwischen den Rollen -->
+          <UML:Collaboration.interaction>
+            <UML:Interaction xmi.id="interaction_1">
+              <UML:Message xmi.id="msg_switchOn" sender="role_User" receiver="role_Amplifier" name="switchOn"/>
+              <UML:Message xmi.id="msg_setMute" sender="role_User" receiver="role_Amplifier" name="setMute"/>
+              <UML:Message xmi.id="msg_setVolume" sender="role_User" receiver="role_Amplifier" name="setVolume"/>
+              <UML:Message xmi.id="msg_selectOutput" sender="role_User" receiver="role_Amplifier" name="selectOutput"/>
+              <UML:Message xmi.id="msg_activateAux" sender="role_Amplifier" receiver="role_Aux" name="activate(true)"/>
+              <UML:Message xmi.id="msg_activateAnalog" sender="role_Amplifier" receiver="role_Analog" name="activate(true)"/>
+              <UML:Message xmi.id="msg_activateSpdif" sender="role_Amplifier" receiver="role_Spdif" name="activate(false)"/>
+            </UML:Interaction>
+          </UML:Collaboration.interaction>
+        </UML:Collaboration>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

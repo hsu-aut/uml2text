@@ -1,0 +1,151 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Robot" name="Robot" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_direction" name="direction" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_avancer" name="avancer" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_tourner" name="tourner" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_saisir" name="saisir" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Position" name="Position" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_setPosition" name="setPosition" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_getPosition" name="getPosition" visibility="public" isQuery="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Obstacle" name="Obstacle" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_hauteur" name="hauteur" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Objet" name="Objet" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_poids" name="poids" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EtatRobot" name="EtatRobot" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_EtatAVide" name="EtatAVide" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EtatRobot"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EtatFaceObstacle" name="EtatFaceObstacle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EtatRobot"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EtatEnCharge" name="EtatEnCharge" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EtatRobot"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EtatFige" name="EtatFige" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EtatRobot"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EtatEnRoute" name="EtatEnRoute" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EtatRobot"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EtatAVideFaceObstacle" name="EtatAVideFaceObstacle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EtatAVide"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EtatEnChargeFaceObstacle" name="EtatEnChargeFaceObstacle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EtatEnCharge"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Robot_Position">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Robot_Position_Robot" type="class_Robot" name="robot" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Robot_Position_Position" type="class_Position" name="position" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Robot_Obstacle">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Robot_Obstacle_Robot" type="class_Robot" name="robot" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Robot_Obstacle_Obstacle" type="class_Obstacle" name="obstacle" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Robot_Objet">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Robot_Objet_Robot" type="class_Robot" name="robot" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Robot_Objet_Objet" type="class_Objet" name="objet" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

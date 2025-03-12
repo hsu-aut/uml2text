@@ -1,0 +1,127 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Conceptual Bereich -->
+        
+        <UML:Package xmi.id="LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes -->
+            <UML:Class xmi.id="Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Primitives -->
+            <UML:Class xmi.id="EScM6hkt8TdD" name="Primitive" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="Composite"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <!-- Composites -->
+            <UML:Class xmi.id="PtmmUTNjwx30" name="Composite" visibility="public" isAbstract="true">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="ConcreteComponent"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <!-- AbstractVerificationTool -->
+            <UML:Class xmi.id="VL9DJ7FCq00u" name="AbstractVerificationTool" visibility="public" isAbstract="true">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="ConcreteVerificationTool"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <!-- ConcreteVerificationTool -->
+            <UML:Class xmi.id="s2wlgl8NIhMr" name="ConcreteVerificationTool" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <!-- Methods can be detailed here -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Configuration -->
+            <UML:Class xmi.id="WKeWkDaVdJeQ" name="Configuration" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <!-- Attributes and Operations -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Board -->
+            <UML:Class xmi.id="M95Od9hnbf5B" name="Board" visibility="public" isAbstract="false">
+            </UML:Class>
+            
+            <!-- Application -->
+            <UML:Class xmi.id="d7jwtbkFRS15" name="Application" visibility="public" isAbstract="false">
+            </UML:Class>
+            
+            <!-- NoC -->
+            <UML:Class xmi.id="z5ikO460Bpu2" name="NoC" visibility="public" isAbstract="false">
+            </UML:Class>
+            
+            <!-- VTController -->
+            <UML:Class xmi.id="nPKyZOEhwzOF" name="VTController" visibility="public" isAbstract="false">
+            </UML:Class>
+            
+            <!-- Patterns: Observer -->
+            <UML:Class xmi.id="AxD3CRHiRddX" name="Observer" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="0O4J9pQJmbMx" name="Subject" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="7PDOV8bVWfmf" name="ConcreteSubject" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="5D3QJdjQ3upW" name="ConcreteObserver" visibility="public" isAbstract="false"/>
+            
+            <!-- I/O Processes -->
+            <UML:Class xmi.id="T5D3mQzf9n0B" name="AbstractComponent" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="06LPug3LlEMW" name="LineIn" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="jlGo7Oq5U9SM" name="LineOut" visibility="public" isAbstract="false"/>
+            
+            <!-- Components -->
+            <UML:Class xmi.id="Cqi8Ool7sw5u" name="ComponentInstance" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="ENl00tdiltGN" name="ConcreteComponent" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Use Case View -->
+        <UML:Package xmi.id="UseCaseView" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <UML:Actor xmi.id="nM4pr7dOsTMg" name="Researcher" visibility="public"/>
+            <UML:UseCase xmi.id="define_new_component" name="Define New Component"/>
+            <UML:UseCase xmi.id="edit_component" name="Edit Component"/>
+            <UML:UseCase xmi.id="remove_component" name="Remove Component"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Component View -->
+        <UML:Package xmi.id="ComponentView" name="Component View">
+          <UML:Namespace.ownedElement>
+            <UML:Component xmi.id="K6v8l1xLJIJx" name="primitive"/>
+            <UML:Component xmi.id="UQid3DULJNU2" name="NoCDiagram"/>
+            <UML:Component xmi.id="t1WVqAdIbKvc" name="primitive-instance"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

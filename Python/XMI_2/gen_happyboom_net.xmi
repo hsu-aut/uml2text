@@ -1,0 +1,260 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="network_communication_model" name="NetworkCommunicationModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- BaseIO Class -->
+        <UML:Class xmi.id="11" name="BaseIO" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_is_ready" name="is_ready" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_connect" name="connect"/>
+            <UML:Operation xmi.id="op_disconnect" name="disconnect"/>
+            <UML:Operation xmi.id="op_disconnectClient" name="disconnectClient"/>
+            <UML:Operation xmi.id="op_send" name="send"/>
+            <UML:Operation xmi.id="op_receive" name="receive"/>
+            <UML:Operation xmi.id="op_live" name="live"/>
+            <UML:Operation xmi.id="op_stop" name="stop"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Packet Class -->
+        <UML:Class xmi.id="17" name="Packet" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_data" name="data" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_pack" name="pack"/>
+            <UML:Operation xmi.id="op_unpack" name="unpack"/>
+            <UML:Operation xmi.id="op_isValid" name="isValid"/>
+            <UML:Operation xmi.id="op_toString" name="__str__"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- IO_TCP Class -->
+        <UML:Class xmi.id="27" name="IO_TCP" visibility="public">
+          <UML:Generalization xmi.id="gen_IO_TCP_BaseIO" parent="11"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_clients_tcp" name="clients" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Void"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_sendBinary_tcp" name="sendBinary"/>
+            <UML:Operation xmi.id="op_clientLostConnection_tcp" name="clientLostConnection"/>
+            <UML:Operation xmi.id="op_lostConnection_tcp" name="lostConnection"/>
+            <UML:Operation xmi.id="op_isRunning_tcp" name="isRunning"/>
+          </UML:Namespace.ownedElement>
+          <UML:Association xmi.id="assoc_IO_TCP_NetworkServerWaiter">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_IO_TCP" type="27" name="IO_TCP"/>
+              <UML:AssociationEnd xmi.id="assocEnd_NetworkServerWaiter" type="31" name="NetworkServerWaiter"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+        <!-- IO_UDP Class -->
+        <UML:Class xmi.id="29" name="IO_UDP" visibility="public">
+          <UML:Generalization xmi.id="gen_IO_UDP_BaseIO" parent="11"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_clients_udp" name="clients" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Void"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_max_clients_udp" name="max_clients" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_disconnectClient_udp" name="disconnectClient"/>
+            <UML:Operation xmi.id="op_sendBinary_udp" name="sendBinary"/>
+            <UML:Operation xmi.id="op_clientLostConnection_udp" name="clientLostConnection"/>
+            <UML:Operation xmi.id="op_lostConnection_udp" name="lostConnection"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- NetworkServerWaiter Class -->
+        <UML:Class xmi.id="31" name="NetworkServerWaiter" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nb_clients" name="nb_clients" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_max_clients_waiter" name="max_clients" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_host_waiter" name="host" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_port_waiter" name="port" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_listening" name="listening" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_runThread" name="runThread"/>
+            <UML:Operation xmi.id="op_clientConnect" name="clientConnect"/>
+            <UML:Operation xmi.id="op_clientDisconnect" name="clientDisconnect"/>
+            <UML:Operation xmi.id="op_waitClient" name="waitClient"/>
+            <UML:Operation xmi.id="op_start" name="start"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- TCP_Client Class -->
+        <UML:Class xmi.id="33" name="TCP_Client" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_receiveNonBlocking" name="receiveNonBlocking"/>
+            <UML:Operation xmi.id="op_receiveBlocking" name="receiveBlocking"/>
+            <UML:Operation xmi.id="op_sendBinary_client_tcp" name="sendBinary"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- UDP_Pinger Class -->
+        <UML:Class xmi.id="35" name="UDP_Pinger" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_processPong" name="processPong"/>
+            <UML:Operation xmi.id="op_sendPing" name="sendPing"/>
+            <UML:Operation xmi.id="op_pingTimeout" name="pingTimeout"/>
+            <UML:Operation xmi.id="op_live_pinger" name="live"/>
+            <UML:Operation xmi.id="op_processPing" name="processPing"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- UDP_Ping Class -->
+        <UML:Class xmi.id="77" name="UDP_Ping" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_creation" name="creation" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_id_ping" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_timeout_ping" name="timeout" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getPacket" name="getPacket"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- UDP_Client Class -->
+        <UML:Class xmi.id="80" name="UDP_Client" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_alreadyReceived" name="alreadyReceived"/>
+            <UML:Operation xmi.id="op_receivePacket" name="receivePacket"/>
+            <UML:Operation xmi.id="op_processPing_udp" name="processPing"/>
+            <UML:Operation xmi.id="op_processPong_udp" name="processPong"/>
+            <UML:Operation xmi.id="op_processAck" name="processAck"/>
+            <UML:Operation xmi.id="op_needAck" name="needAck"/>
+            <UML:Operation xmi.id="op_sendBinary_udp_client" name="sendBinary"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- IO_Client Class -->
+        <UML:Class xmi.id="134" name="IO_Client" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_connected" name="connected" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name_client" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Short"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_addr" name="addr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Void"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_host_client" name="host" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_port_client" name="port" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_send_client" name="send"/>
+            <UML:Operation xmi.id="op_disconnect_client" name="disconnect"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Associations and Dependencies -->
+        <UML:Association xmi.id="assoc_IO_TCP_IO_Client_T">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_IO_TCP_to_Client" type="27" name="IO_TCP"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Client_to_IO_TCP" type="134" name="IO_Client"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_IO_UDP_IO_Client_U">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_IO_UDP_to_Client" type="29" name="IO_UDP"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Client_to_IO_UDP" type="134" name="IO_Client"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_TCP_Client_IO_TCP">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TCP_Client" type="33" name="TCP_Client"/>
+            <UML:AssociationEnd xmi.id="assocEnd_IO_TCP_Client" type="27" name="IO_TCP"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_UDP_Client_IO_UDP">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UDP_Client" type="80" name="UDP_Client"/>
+            <UML:AssociationEnd xmi.id="assocEnd_IO_UDP_Client" type="29" name="IO_UDP"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Data Types -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="Void" name="Void"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Short" name="Short"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

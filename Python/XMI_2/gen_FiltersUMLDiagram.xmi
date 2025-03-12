@@ -1,0 +1,103 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_FilterSoftware" name="FilterSoftware">
+      <UML:Namespace.ownedElement>
+
+        <!-- Class FilterV2 -->
+        <UML:Class xmi.id="class_FilterV2" name="FilterV2" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_arguments" name="arguments" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_FilterArgument"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_begin" name="begin" visibility="public"/>
+            <UML:Operation xmi.id="op_end" name="end" visibility="public"/>
+            <UML:Operation xmi.id="op_getNbArguments" name="getNbArguments" visibility="public"/>
+            <UML:Operation xmi.id="op_getArgument" name="getArgument" visibility="public"/>
+            <UML:Operation xmi.id="op_addArgument" name="addArgument" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class FilterArgument -->
+        <UML:Class xmi.id="class_FilterArgument" name="FilterArgument" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="_name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_type" name="_type" visibility="private"/>
+            <UML:Attribute xmi.id="attr_minValue" name="_minValue" visibility="private"/>
+            <UML:Attribute xmi.id="attr_maxValue" name="_maxValue" visibility="private"/>
+            <UML:Attribute xmi.id="attr_defaultValue" name="_defaultValue" visibility="private"/>
+            <UML:Attribute xmi.id="attr_domainDefinition" name="_domainDefinition" visibility="private"/>
+            <UML:Operation xmi.id="op_constructor" name="FilterArgument" visibility="public"/>
+            <UML:Operation xmi.id="op_getName" name="getName" visibility="public"/>
+            <UML:Operation xmi.id="op_setName" name="setName" visibility="public"/>
+            <UML:Operation xmi.id="op_getValue" name="getValue" visibility="public"/>
+            <UML:Operation xmi.id="op_setValue" name="setValue" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Filter2D -->
+        <UML:Class xmi.id="class_Filter2D" name="Filter2D" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Filter2D_FilterV2" parent="class_FilterV2"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Constructor2D" name="Filter2D" visibility="public"/>
+            <UML:Operation xmi.id="op_apply2D" name="apply" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class GaussianFilter2D -->
+        <UML:Class xmi.id="class_GaussianFilter2D" name="GaussianFilter2D" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_GaussianFilter2D_Filter2D" parent="class_Filter2D"/>
+        </UML:Class>
+
+        <!-- Class Filter3D -->
+        <UML:Class xmi.id="class_Filter3D" name="Filter3D" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Filter3D_FilterV2" parent="class_FilterV2"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Constructor3D" name="Filter3D" visibility="public"/>
+            <UML:Operation xmi.id="op_apply3D" name="apply" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class FilterWindow -->
+        <UML:Class xmi.id="class_FilterWindow" name="FilterWindow" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_FilterWindow_QWidget" parent="class_QWidget"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_filter" name="_filter" visibility="private"/>
+            <UML:Attribute xmi.id="attr_acceptButton" name="_accept_button" visibility="private"/>
+            <UML:Attribute xmi.id="attr_cancelButton" name="_cancel_button" visibility="private"/>
+            <UML:Operation xmi.id="op_addArgument" name="addArgument" visibility="public"/>
+            <UML:Operation xmi.id="op_addBaseArgument" name="addBaseArgument" visibility="public"/>
+            <UML:Operation xmi.id="op_accept" name="accept" visibility="public"/>
+            <UML:Operation xmi.id="op_cancel" name="cancel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Enumeration name="BUTTONS_MODE" visibility="public">
+            <UML:EnumerationLiteral name="APPLY"/>
+            <UML:EnumerationLiteral name="OK_CANCEL"/>
+            <UML:EnumerationLiteral name="NONE"/>
+          </UML:Enumeration>
+        </UML:Class>
+
+        <!-- Class QWidget -->
+        <UML:Class xmi.id="class_QWidget" name="QWidget" visibility="public" isAbstract="false"/>
+
+        <!-- Additional Classes without explicit relations -->
+        <UML:Class xmi.id="class_QPushButton" name="QPushButton" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_QGridLayout" name="QGridLayout" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Examen" name="Examen" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Image3d" name="Image3d" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

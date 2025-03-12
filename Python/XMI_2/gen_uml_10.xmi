@@ -1,0 +1,154 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model (m1)">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_spiderel" name="spiderel" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_init" name="init" visibility="public"/>
+                <UML:Operation xmi.id="op_test" name="test" visibility="public"/>
+                <UML:Operation xmi.id="op_crawl" name="crawl" visibility="public"/>
+                <UML:Operation xmi.id="op_add_error" name="add_error" visibility="public"/>
+                <UML:Operation xmi.id="op_get_config" name="get_config" visibility="public"/>
+                <UML:Operation xmi.id="op_finish" name="finish" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Config" name="Config" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_get" name="get" visibility="public"/>
+                <UML:Operation xmi.id="op_construct_config" name="__construct" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Error" name="Error" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_add_error" name="add" visibility="public"/>
+                <UML:Operation xmi.id="op_exit_error" name="_exit" visibility="public"/>
+                <UML:Operation xmi.id="op_return_error" name="_return" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_HttpRequest" name="HttpRequest" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_content" name="content" visibility="public"/>
+                <UML:Attribute xmi.id="attr_status" name="status" visibility="public"/>
+                <UML:Operation xmi.id="op_get_request" name="get" visibility="public"/>
+                <UML:Operation xmi.id="op_validate_request" name="_validate" visibility="public"/>
+                <UML:Operation xmi.id="op_get_headers" name="_get_headers" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Page" name="Page" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_strip_html_tags" name="strip_html_tags" visibility="public"/>
+                <UML:Operation xmi.id="op_construct_page" name="__construct" visibility="public"/>
+                <UML:Operation xmi.id="op_get_url" name="get_url" visibility="public"/>
+                <UML:Operation xmi.id="op_get_links" name="get_links" visibility="public"/>
+                <UML:Operation xmi.id="op_filter_links" name="filter_links" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Queue" name="Queue" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_is_queue" name="_is" visibility="public"/>
+                <UML:Operation xmi.id="op_add_queue" name="add" visibility="public"/>
+                <UML:Operation xmi.id="op_get_next" name="get_next" visibility="public"/>
+                <UML:Operation xmi.id="op_add_array" name="add_array" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Robots" name="Robots" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_rules" name="rules" visibility="public"/>
+                <UML:Operation xmi.id="op_construct_robots" name="__construct" visibility="public"/>
+                <UML:Operation xmi.id="op_create_rules" name="create_rules" visibility="public"/>
+                <UML:Operation xmi.id="op_is_allowed" name="isAllowed" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_spiderel_Config">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_spiderel" type="class_spiderel"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Config" type="class_Config"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_spiderel_Error">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_spiderel" type="class_spiderel"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Error" type="class_Error"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_spiderel_Robots">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_spiderel" type="class_spiderel"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Robots" type="class_Robots"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_spiderel_Page">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_spiderel" type="class_spiderel"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Page" type="class_Page"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Page_HttpRequest">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Page" type="class_Page"/>
+                <UML:AssociationEnd xmi.id="assocEnd_HttpRequest" type="class_HttpRequest"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Robots_HttpRequest">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Robots" type="class_Robots"/>
+                <UML:AssociationEnd xmi.id="assocEnd_HttpRequest" type="class_HttpRequest"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_spiderel_Queue">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_spiderel" type="class_spiderel"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Queue" type="class_Queue"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

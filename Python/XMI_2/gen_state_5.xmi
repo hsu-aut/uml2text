@@ -1,0 +1,69 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_1" name="model 1">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="Class_1" name="Class_1" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:StateMachine xmi.id="StateMachine_1" name="StateMachine_1" visibility="public" isSpecification="false">
+              <UML:StateMachine.top>
+                <UML:CompositeState xmi.id="region_generated_CompositeState" name="region_generated_CompositeState" isConcurrent="false" isRegion="true">
+                  <UML:CompositeState.subvertex>
+                    <UML:Pseudostate xmi.id="Start" kind="initial"/>
+                    <UML:SimpleState xmi.id="Input1" name="Input1">
+                      <UML:SimpleState.outgoing>
+                        <UML:Transition xmi.id="Transition_forward" name="forward" source="Input1" target="Input2"/>
+                        <UML:Transition xmi.id="Transition_external" name="extern" source="Input1" target="Orthogonal_State_1"/>
+                      </UML:SimpleState.outgoing>
+                      <UML:SimpleState.incoming>
+                        <UML:Transition xmi.id="Transition_start" name="start" source="Start" target="Input1"/>
+                        <UML:Transition xmi.id="Transition_back" name="back" source="Input2" target="Input1"/>
+                      </UML:SimpleState.incoming>
+                    </UML:SimpleState>
+                    <UML:FinalState xmi.id="End" name="End">
+                      <UML:FinalState.incoming>
+                        <UML:Transition xmi.id="Transition_finish" name="finish" source="Input1" target="End"/>
+                      </UML:FinalState.incoming>
+                    </UML:FinalState>
+                    <UML:SimpleState xmi.id="Input2" name="Input2">
+                      <UML:SimpleState.outgoing>
+                        <UML:Transition xmi.id="Transition_finish_Input2" name="finish" source="Input2" target="End"/>
+                        <UML:Transition xmi.id="Transition_back_Input2" name="back" source="Input2" target="Input1"/>
+                        <UML:Transition xmi.id="Transition_check_Input2" name="check" source="Input2" target="Input2"/>
+                      </UML:SimpleState.outgoing>
+                      <UML:SimpleState.incoming>
+                        <UML:Transition xmi.id="Transition_forward_Input2" name="forward" source="Input1" target="Input2"/>
+                        <UML:Transition xmi.id="Transition_check_Input2_Incoming" name="check" source="Input2" target="Input2"/>
+                      </UML:SimpleState.incoming>
+                    </UML:SimpleState>
+                    <UML:CompositeState xmi.id="Orthogonal_State_1" name="Orthogonal_State_1" isConcurrent="true">
+                      <UML:CompositeState.region>
+                        <UML:Region xmi.id="Region_1" name="Region_1"/>
+                        <UML:Region xmi.id="Region_2" name="Region_2"/>
+                      </UML:CompositeState.region>
+                    </UML:CompositeState>
+                    <UML:SubmachineState xmi.id="Submachine_State_1" name="Submachine_State_1" submachine="State_Machine_1"/>
+                  </UML:CompositeState.subvertex>
+                </UML:CompositeState>
+              </UML:StateMachine.top>
+            </UML:StateMachine>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:StateMachine xmi.id="State_Machine_1" name="State_Machine_1" visibility="public" isSpecification="false">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="Region_3" name="Region_3" isConcurrent="false" isRegion="true"/>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

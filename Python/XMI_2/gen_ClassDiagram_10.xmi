@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UnnamedModel" name="UnnamedModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Submission" name="Submission" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_authors" name="authors" visibility="public" multiplicity="0..*" />
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_KindOfState"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_accepted" name="accepted" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_KindOfRecommendation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_rank" name="rank" visibility="public"/>
+            <UML:Operation xmi.id="op_notify" name="notify" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ReviewForm" name="ReviewForm" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_recommendation" name="recommendation" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_KindOfRecommendation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_relevance" name="relevance" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_writingStyle" name="writingStyle" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_technicalQuality" name="technicalQuality" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_commentsToPC" name="commentsToPC" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Enumeration xmi.id="enum_KindOfState" name="KindOfState">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="literal_Submitted" name="submitted"/>
+            <UML:EnumerationLiteral xmi.id="literal_Assigned" name="assigned"/>
+            <UML:EnumerationLiteral xmi.id="literal_Reviewed" name="reviewed"/>
+            <UML:EnumerationLiteral xmi.id="literal_Notified" name="notified"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_KindOfRecommendation" name="KindOfRecommendation">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="literal_Accept" name="accept"/>
+            <UML:EnumerationLiteral xmi.id="literal_WeakAccept" name="weakAccept"/>
+            <UML:EnumerationLiteral xmi.id="literal_Neutral" name="neutral"/>
+            <UML:EnumerationLiteral xmi.id="literal_WeakReject" name="weakReject"/>
+            <UML:EnumerationLiteral xmi.id="literal_Reject" name="reject"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+
+        <UML:Association xmi.id="assoc_HasReviewForm" name="hasReviewForm">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Submission" type="class_Submission" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ReviewForm" type="class_ReviewForm" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

@@ -1,0 +1,264 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_HRManagement" name="HRManagement">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="datatype_varchar" name="varchar"/>
+        <UML:DataType xmi.id="datatype_tinyint" name="tinyint"/>
+        <UML:DataType xmi.id="datatype_smallint" name="smallint"/>
+        <UML:DataType xmi.id="datatype_mediumint" name="mediumint"/>
+        <UML:DataType xmi.id="datatype_bigint" name="bigint"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_decimal" name="decimal"/>
+        <UML:DataType xmi.id="datatype_date" name="date"/>
+        <UML:DataType xmi.id="datatype_datetime" name="datetime"/>
+        <UML:DataType xmi.id="datatype_time" name="time"/>
+        <UML:DataType xmi.id="datatype_timestamp" name="timestamp"/>
+        <UML:DataType xmi.id="datatype_year" name="year"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_tinyblob" name="tinyblob"/>
+        <UML:DataType xmi.id="datatype_blob" name="blob"/>
+        <UML:DataType xmi.id="datatype_mediumblob" name="mediumblob"/>
+        <UML:DataType xmi.id="datatype_longblob" name="longblob"/>
+        <UML:DataType xmi.id="datatype_tinytext" name="tinytext"/>
+        <UML:DataType xmi.id="datatype_text" name="text"/>
+        <UML:DataType xmi.id="datatype_mediumtext" name="mediumtext"/>
+        <UML:DataType xmi.id="datatype_longtext" name="longtext"/>
+        <UML:DataType xmi.id="datatype_enum" name="enum"/>
+        <UML:DataType xmi.id="datatype_set" name="set"/>
+
+        <!-- Definition der Klasse "hs_hr_leave" -->
+        <UML:Class xmi.id="class_hs_hr_leave" name="hs_hr_leave" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_leave_id" name="leave_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_date" name="leave_date" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_length_hours" name="leave_length_hours" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_length_days" name="leave_length_days" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_status" name="leave_status" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_enum"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_comments" name="leave_comments" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_text"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_request_id" name="leave_request_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_type_id" name="leave_type_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_employee_id" name="employee_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_start_time" name="start_time" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_time"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_end_time" name="end_time" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_time"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "hs_hr_leavetype" -->
+        <UML:Class xmi.id="class_hs_hr_leavetype" name="hs_hr_leavetype" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_leave_type_id" name="leave_type_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_type_name" name="leave_type_name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_available_flag" name="available_flag" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_tinyint"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "hs_hr_leave_requests" -->
+        <UML:Class xmi.id="class_hs_hr_leave_requests" name="hs_hr_leave_requests" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_leave_request_id" name="leave_request_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_type_id" name="leave_type_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_type_name" name="leave_type_name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_date_applied" name="date_applied" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_employee_id" name="employee_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "hs_hr_employee_leave_quota" -->
+        <UML:Class xmi.id="class_hs_hr_employee_leave_quota" name="hs_hr_employee_leave_quota" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_year" name="year" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_year"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leave_type_id" name="leave_type_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_employee_id" name="employee_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_no_of_days_allotted" name="no_of_days_allotted" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "hs_hr_workshift" -->
+        <UML:Class xmi.id="class_hs_hr_workshift" name="hs_hr_workshift" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_workshift_id" name="workshift_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_hours_per_day" name="hours_per_day" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "hs_hr_employee_workshift" -->
+        <UML:Class xmi.id="class_hs_hr_employee_workshift" name="hs_hr_employee_workshift" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_workshift_id" name="workshift_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_emp_number" name="emp_number" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "hs_hr_employee" -->
+        <UML:Class xmi.id="class_hs_hr_employee" name="hs_hr_employee" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_emp_number" name="emp_number" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_leave_leave_requests">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_leave_leave_requests_leave" type="class_hs_hr_leave" name="leave" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_leave_leave_requests_leave_requests" type="class_hs_hr_leave_requests" name="leave_requests" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_leave_requests_leavetype">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_leave_requests_leavetype_leave_requests" type="class_hs_hr_leave_requests" name="leave_requests" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_leave_requests_leavetype_leavetype" type="class_hs_hr_leavetype" name="leavetype" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_workshift_employee_workshift">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_workshift_employee_workshift_workshift" type="class_hs_hr_workshift" name="workshift" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_workshift_employee_workshift_employee_workshift" type="class_hs_hr_employee_workshift" name="employee_workshift" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_employee_employee_workshift">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_employee_employee_workshift_employee" type="class_hs_hr_employee" name="employee" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_employee_employee_workshift_employee_workshift" type="class_hs_hr_employee_workshift" name="employee_workshift" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

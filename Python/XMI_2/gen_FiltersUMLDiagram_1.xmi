@@ -1,0 +1,114 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Packages "Stereotypes" -->
+        <UML:Package xmi.id="package_Stereotypes" name="Stereotypes">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+            <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+            <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+            <UML:Stereotype xmi.id="stereotype_enum" name="enum"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition des "Logical View" -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition des Packages "Datatypes" -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_FilterArgumentPtr" name="FilterArgument*"/>
+                <UML:DataType xmi.id="datatype_std_map" name="std::map<std::string, FilterArgument*>"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Definition der Klasse "FilterV2" als Basisklasse -->
+            <UML:Class xmi.id="class_FilterV2" name="FilterV2" visibility="public" isAbstract="true"/>
+            
+            <!-- Definition der Klasse "Filter3D" -->
+            <UML:Class xmi.id="class_Filter3D" name="Filter3D" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:General xmi.idref="class_FilterV2"/>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="constructor_Filter3D" name="Filter3D" stereotype="stereotype_constructor"/>
+                <UML:Operation xmi.id="operation_apply_3D" name="apply" visibility="public" isAbstract="true">
+                  <UML:Parameter xmi.id="param_Examen" name="Examen" kind="in" type="Examen&"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Definition der Klasse "Filter2D" -->
+            <UML:Class xmi.id="class_Filter2D" name="Filter2D" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:General xmi.idref="class_FilterV2"/>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_apply_2D" name="apply" visibility="public" isAbstract="true">
+                  <UML:Parameter xmi.id="param_Image" name="Image" kind="in" type="Image"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Definition der Klasse "GaussianFilter2D" -->
+            <UML:Class xmi.id="class_GaussianFilter2D" name="GaussianFilter2D" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:General xmi.idref="class_Filter2D"/>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_apply_Gaussian" name="apply" visibility="public">
+                  <UML:Parameter xmi.id="param_GaussianImage" name="Image" kind="in" type="Image"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Definition der Klasse "FilterArgument" -->
+            <UML:Class xmi.id="class_FilterArgument" name="FilterArgument" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="_name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_char"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_type" name="_type" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_char"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_minValue" name="_minValue" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation_getName" name="getName" visibility="public">
+                  <UML:Parameter xmi.id="return_getName" name="return" kind="return" type="char*"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="operation_setValue" name="setValue" visibility="public">
+                  <UML:Parameter xmi.id="param_setValue" name="value" kind="in" type="int"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

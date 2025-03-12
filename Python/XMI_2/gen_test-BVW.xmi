@@ -1,0 +1,116 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klassen  -->
+        <UML:Class xmi.id="class_TopLeft" name="TopLeft" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_BottomRight" name="BottomRight" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_BottomLeft" name="BottomLeft" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TopRight" name="TopRight" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Alpha" name="Alpha" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Bravo" name="Bravo" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Charlie" name="Charlie" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Delta" name="Delta" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Echo" name="Echo" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ClassA" name="Class A" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ClassB" name="ClassB" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+
+        <!-- Definition der Beziehungen -->
+        <UML:Association xmi.id="assoc_BottomLeft_TopLeft">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BottomLeft" type="class_BottomLeft" name="BottomLeft" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TopLeft_BottomLeft" type="class_TopLeft" name="TopLeft" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_TopLeft_TopRight">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TopLeft_TopRight" type="class_TopLeft" name="TopLeft" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TopRight" type="class_TopRight" name="TopRight" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_TopRight_BottomRight">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TopRight_BottomRight" type="class_TopRight" name="TopRight" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_BottomRight" type="class_BottomRight" name="BottomRight" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_BottomRight_BottomLeft">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BottomRight_BottomLeft" type="class_BottomRight" name="BottomRight" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_BottomLeft_BottomRight" type="class_BottomLeft" name="BottomLeft" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_TopLeft_Alpha">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TopLeft_Alpha" type="class_TopLeft" name="TopLeft" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Alpha" type="class_Alpha" name="Alpha" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Alpha_Bravo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Alpha_Bravo" type="class_Alpha" name="Alpha" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Bravo" type="class_Bravo" name="Bravo" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Bravo_Charlie">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Bravo_Charlie" type="class_Bravo" name="Bravo" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Charlie" type="class_Charlie" name="Charlie" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Charlie_Delta">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Charlie_Delta" type="class_Charlie" name="Charlie" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Delta" type="class_Delta" name="Delta" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Delta_Echo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Delta_Echo" type="class_Delta" name="Delta" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Echo" type="class_Echo" name="Echo" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_ClassA_ClassB">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ClassA_ClassB" type="class_ClassA" name="ClassA" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ClassB" type="class_ClassB" name="ClassB" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,164 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BTree" name="BTreeModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_BTree" name="BTree" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_insert" name="insert" visibility="public"/>
+            <UML:Operation xmi.id="op_erase" name="erase" visibility="public"/>
+            <UML:Operation xmi.id="op_find" name="find" visibility="public"/>
+            <UML:Operation xmi.id="op_lower_bound" name="lower_bound" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_me" name="me" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_size" name="size" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_node_find" name="find" visibility="public"/>
+            <UML:Operation xmi.id="op_node_lower_bound" name="lower_bound" visibility="public"/>
+            <UML:Operation xmi.id="op_node_insert" name="insert" visibility="public"/>
+            <UML:Operation xmi.id="op_node_erase" name="erase" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Leaf" name="Leaf" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_pred" name="pred" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_succ" name="succ" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leaf_size" name="size" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_leaf_find" name="find" visibility="public"/>
+            <UML:Operation xmi.id="op_increment" name="increment" visibility="public"/>
+            <UML:Operation xmi.id="op_decrement" name="decrement" visibility="public"/>
+            <UML:Operation xmi.id="op_leaf_insert" name="insert" visibility="public"/>
+            <UML:Operation xmi.id="op_leaf_erase" name="erase" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_NodeCache" name="NodeCache" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_nodes" name="nodes" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="Array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_BID2int" name="BID2int" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="Map"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pager" name="pager" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="Pager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_freeNodes" name="freeNodes" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="List"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getNode" name="getNode" visibility="public"/>
+            <UML:Operation xmi.id="op_getNewNode" name="getNewNode" visibility="public"/>
+            <UML:Operation xmi.id="op_deleteLeaf" name="deleteLeaf" visibility="public"/>
+            <UML:Operation xmi.id="op_fixNode" name="fixNode" visibility="public"/>
+            <UML:Operation xmi.id="op_unfixNode" name="unfixNode" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_LeafCache" name="LeafCache" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getLeaf" name="getLeaf" visibility="public"/>
+            <UML:Operation xmi.id="op_prefetch" name="prefetch" visibility="public"/>
+            <UML:Operation xmi.id="op_getNewLeaf" name="getNewLeaf" visibility="public"/>
+            <UML:Operation xmi.id="op_deleteLeaf" name="deleteLeaf" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_RootNode" name="RootNode" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_root_insert" name="insert" visibility="public"/>
+            <UML:Operation xmi.id="op_root_erase" name="erase" visibility="public"/>
+            <UML:Operation xmi.id="op_root_find" name="find" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_IteratorMap" name="IteratorMap" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_register" name="register" visibility="public"/>
+            <UML:Operation xmi.id="op_unregister" name="unregister" visibility="public"/>
+            <UML:Operation xmi.id="op_it_map_find" name="find" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Iterator" name="Iterator" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_iterator_constructor" name="Iterator" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Splitter" name="Splitter" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_k" name="k" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Key"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_b" name="b" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Array" name="Array" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Map" name="Map" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Pager" name="Pager" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_List" name="List" visibility="public" isAbstract="false"/>
+        
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="BID" name="BID"/>
+        <UML:DataType xmi.id="Key" name="Key"/>
+
+        <!-- Define Associations and Aggregations if required as per structure-->
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

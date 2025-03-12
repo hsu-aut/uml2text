@@ -1,0 +1,147 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+        <UML:Stereotype xmi.id="stereotype_enum" name="enum"/>
+        <UML:Stereotype xmi.id="stereotype_friend" name="friend"/>
+        <UML:Stereotype xmi.id="stereotype_virtual" name="virtual"/>
+        <!-- Additional unnamed stereotypes -->
+        <UML:Stereotype xmi.id="stereotype_3" name="3"/>
+        <UML:Stereotype xmi.id="stereotype_14" name="14"/>
+        <UML:Stereotype xmi.id="stereotype_39" name="39"/>
+
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_constQDateRef" name="const QDate&amp;"/>
+                <UML:DataType xmi.id="datatype_ostreamRef" name="ostream&amp;"/>
+                <UML:DataType xmi.id="datatype_istreamRef" name="istream&amp;"/>
+                <UML:DataType xmi.id="datatype_QWidgetPtr" name="QWidget*"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_Customer" name="Customer" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_address" name="address" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_city" name="city" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_birthdate" name="birthdate" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="datatype_constQDateRef"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+
+                <UML:Operation xmi.id="op_setName" name="setName" visibility="public">
+                  <UML:Parameter name="newName" type="datatype_string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_setAddress" name="setAddress" visibility="public">
+                  <UML:Parameter name="newAddress" type="datatype_string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_setCity" name="setCity" visibility="public">
+                  <UML:Parameter name="newCity" type="datatype_string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_setBirthdate" name="setBirthdate" visibility="public">
+                  <UML:Parameter name="newBirthdate" type="datatype_constQDateRef"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getName" name="getName" visibility="public" isQuery="true">
+                  <UML:Parameter xmi.id="op_getName_return" kind="return" type="datatype_string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getAddress" name="getAddress" visibility="public" isQuery="true">
+                  <UML:Parameter xmi.id="op_getAddress_return" kind="return" type="datatype_string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getCity" name="getCity" visibility="public" isQuery="true">
+                  <UML:Parameter xmi.id="op_getCity_return" kind="return" type="datatype_string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getBirthdate" name="getBirthdate" visibility="public" isQuery="true">
+                  <UML:Parameter xmi.id="op_getBirthdate_return" kind="return" type="datatype_constQDateRef"/>
+                </UML:Operation>
+
+                <UML:Operation xmi.id="op_exportXML" name="exportXML" visibility="public">
+                  <UML:Parameter xmi.id="op_exportXML_return" kind="return" type="datatype_void"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_importXML" name="importXML" visibility="public">
+                  <UML:Parameter xmi.id="op_importXML_return" kind="return" type="datatype_void"/>
+                </UML:Operation>
+
+                <UML:Operation xmi.id="op_friendOperatorInput" name="friend operator>>" visibility="public">
+                  <UML:Parameter name="stream" type="datatype_istreamRef"/>
+                  <UML:Parameter name="customer" type="class_Customer"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_friendOperatorOutput" name="friend operator<<" visibility="public">
+                  <UML:Parameter name="stream" type="datatype_ostreamRef"/>
+                  <UML:Parameter name="customer" type="class_Customer"/>
+                </UML:Operation>
+
+                <UML:Operation xmi.id="op_createWidget" name="createWidget" visibility="public">
+                  <UML:Parameter xmi.id="op_createWidget_return" kind="return" type="datatype_QWidgetPtr"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getWidget" name="getWidget" visibility="public">
+                  <UML:Parameter xmi.id="op_getWidget_return" kind="return" type="datatype_QWidgetPtr"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="QString" name="QString" visibility="public"/>
+
+            <UML:Class xmi.id="void" name="void" visibility="public"/>
+
+            <UML:Class xmi.id="QDate" name="QDate" visibility="public"/>
+
+            <UML:Class xmi.id="ostream" name="ostream" visibility="public"/>
+
+            <UML:Class xmi.id="istream" name="istream" visibility="public"/>
+
+            <UML:Class xmi.id="QWidget" name="QWidget" visibility="public"/>
+
+            <UML:Class xmi.id="cJnhbIjH1Xh1" name="cJnhbIjH1Xh1" visibility="public"/>
+
+            <UML:Class xmi.id="M0LUYqAv6jVx" name="M0LUYqAv6jVx" visibility="public"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

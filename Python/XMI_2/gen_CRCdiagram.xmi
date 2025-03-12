@@ -1,0 +1,71 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_PhysicalSimulation" name="PhysicalSimulation">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_FizEngine" name="FizEngine" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_step" name="step" visibility="public">
+              <UML:Parameter xmi.id="param_currentState" name="currentState" kind="in" type="List&lt;FizObject*>"/>
+              <UML:Parameter xmi.id="param_dt" name="dt" kind="in" type="double"/>
+              <UML:Parameter xmi.id="param_nextState" name="nextState" kind="out" type="List&lt;FizObject*>"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FizObject" name="FizObject" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attributes" name="attributes" visibility="private" type="Map&lt;string, double>"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FizForce" name="FizForce" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_formula" name="formula" visibility="private" type="FizFormula"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FizFormula" name="FizFormula" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_MainLoop" name="MainLoop" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ButtonPanel" name="ButtonPanel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DrawPanel" name="DrawPanel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TabPanel" name="TabPanel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ForceList" name="ForceList" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ObjectList" name="ObjectList" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PropertyList" name="PropertyList" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Data" name="Data" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_fizObjects" name="fizObjects" visibility="private" type="List&lt;FizObject*>"/>
+            <UML:Attribute xmi.id="attr_fizForces" name="fizForces" visibility="private" type="List&lt;FizForce*>"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:DataType xmi.id="String" name="string"/>
+        <UML:DataType xmi.id="Double" name="double"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,92 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DependencyMatrixProfile" name="DependencyMatrixProfile">
+      <UML:Namespace.ownedElement>
+
+        <!-- Enumerations -->
+        <UML:Enumeration xmi.id="enum_TextDirection" name="TextDirection" visibility="public">
+          <UML:Enumeration.literal name="Vertical"/>
+          <UML:Enumeration.literal name="Horizontal"/>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_RelationOption" name="RelationOption" visibility="public">
+          <UML:Enumeration.literal name="All"/>
+          <UML:Enumeration.literal name="With relations"/>
+          <UML:Enumeration.literal name="Without relations"/>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_Direction" name="Direction" visibility="public">
+          <UML:Enumeration.literal name="Row to column"/>
+          <UML:Enumeration.literal name="Column to row"/>
+          <UML:Enumeration.literal name="Both"/>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_OwnerDisplayMode" name="OwnerDisplayMode" visibility="public">
+          <UML:Enumeration.literal name="Complete tree"/>
+          <UML:Enumeration.literal name="Hidden"/>
+          <UML:Enumeration.literal name="Full qualified name"/>
+          <UML:Enumeration.literal name="Compact tree"/>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_SortingMode" name="SortingMode" visibility="public">
+          <UML:Enumeration.literal name="Ascending"/>
+          <UML:Enumeration.literal name="Descending"/>
+          <UML:Enumeration.literal name="Custom"/>
+        </UML:Enumeration>
+
+        <!-- CustomizationOfDependencyMatrix Class -->
+        <UML:Class xmi.id="class_CustomizationOfDependencyMatrix" name="CustomizationOfDependencyMatrix" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_row" name="Row" visibility="private"/>
+            <UML:Attribute xmi.id="attr_column" name="Column" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DependencyMatrix Stereotype -->
+        <UML:Stereotype xmi.id="stereotype_DependencyMatrix" name="DependencyMatrix" baseClass="Class">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_columnTextDirection" name="columnTextDirection" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_TextDirection"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_columnOwnerDisplayMode" name="columnOwnerDisplayMode" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_OwnerDisplayMode"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_showInnerDependencies" name="showInnerDependencies" visibility="private" type="Boolean"/>
+          </UML:Namespace.ownedElement>
+        </UML:Stereotype>
+
+        <!-- MatrixFilter Stereotype -->
+        <UML:Stereotype xmi.id="stereotype_MatrixFilter" name="MatrixFilter" baseClass="Class">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rowElementType" name="rowElementType" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_rowScope" name="rowScope" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_removedRowElements" name="removedRowElements" visibility="private" type="List&lt;Element&gt;"/>
+          </UML:Namespace.ownedElement>
+        </UML:Stereotype>
+
+        <!-- Extensions -->
+        <UML:Association xmi.id="assoc_CustomizationOfDependencyMatrix_DependencyMatrix" name="Customization-Dependency" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_CustomizationOfDependencyMatrix_DependencyMatrix_Customization" type="class_CustomizationOfDependencyMatrix" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="end_CustomizationOfDependencyMatrix_DependencyMatrix_DependencyMatrix" type="stereotype_DependencyMatrix" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

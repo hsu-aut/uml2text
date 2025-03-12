@@ -1,0 +1,99 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ClinicalPathology" name="ClinicalPathology">
+      <UML:Namespace.ownedElement>
+
+        <!-- Generalisation Root -->
+        <UML:Class xmi.id="SpecimenBaseSolidTissuePathologyAnnotation" name="SpecimenBaseSolidTissuePathologyAnnotation" visibility="public" isAbstract="true"/>
+        
+        <!-- Organ Specific Annotations -->
+        <UML:Class xmi.id="BreastSpecimenPathologyAnnotation" name="BreastSpecimenPathologyAnnotation" visibility="public">
+          <UML:Generalization xmi.idref="SpecimenBaseSolidTissuePathologyAnnotation"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="CNSSpecimenPathologyAnnotation" name="CNSSpecimenPathologyAnnotation" visibility="public">
+          <UML:Generalization xmi.idref="SpecimenBaseSolidTissuePathologyAnnotation"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="ColorectalSpecimenPathologyAnnotation" name="ColorectalSpecimenPathologyAnnotation" visibility="public">
+          <UML:Generalization xmi.idref="SpecimenBaseSolidTissuePathologyAnnotation"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="KidneySpecimenPathologyAnnotation" name="KidneySpecimenPathologyAnnotation" visibility="public">
+          <UML:Generalization xmi.idref="SpecimenBaseSolidTissuePathologyAnnotation"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="MelanomaSpecimenPathologyAnnotation" name="MelanomaSpecimenPathologyAnnotation" visibility="public">
+          <UML:Generalization xmi.idref="SpecimenBaseSolidTissuePathologyAnnotation"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="PancreasSpecimenPathologyAnnotation" name="PancreasSpecimenPathologyAnnotation" visibility="public">
+          <UML:Generalization xmi.idref="SpecimenBaseSolidTissuePathologyAnnotation"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="ProstateSpecimenPathologyAnnotation" name="ProstateSpecimenPathologyAnnotation" visibility="public">
+          <UML:Generalization xmi.idref="SpecimenBaseSolidTissuePathologyAnnotation"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="LungSpecimenPathologyAnnotation" name="LungSpecimenPathologyAnnotation" visibility="public">
+          <UML:Generalization xmi.idref="SpecimenBaseSolidTissuePathologyAnnotation"/>
+        </UML:Class>
+
+        <!-- Score Definitions -->
+        <UML:Class xmi.id="SpecimenNottinghamHistologicScore" name="SpecimenNottinghamHistologicScore" visibility="public"/>
+        
+        <UML:Class xmi.id="SpecimenGleasonScore" name="SpecimenGleasonScore" visibility="public"/>
+        
+        <UML:Class xmi.id="ProstateSpecimenGleasonScore" name="ProstateSpecimenGleasonScore" visibility="public"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="Assoc_SpecimenHistologicType_SpecimenHistologicVariantType">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecimenHistologicType" type="SpecimenHistologicType" name="SpecimenHistologicType" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecimenHistologicVariantType" type="SpecimenHistologicVariantType" name="SpecimenHistologicVariantType" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="Assoc_AdditionalFinding_SpecimenBaseSolidTissuePathologyAnnotation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AdditionalFinding" type="AdditionalFinding" name="AdditionalFinding" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecimenBaseSolidTissuePathologyAnnotation" type="SpecimenBaseSolidTissuePathologyAnnotation" name="SpecimenBaseSolidTissuePathologyAnnotation" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="Assoc_SpecimenInvasion_SpecimenBaseSolidTissuePathologyAnnotation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecimenInvasion" type="SpecimenInvasion" name="SpecimenInvasion" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecimenBaseSolidTissuePathologyAnnotation" type="SpecimenBaseSolidTissuePathologyAnnotation" name="SpecimenBaseSolidTissuePathologyAnnotation" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Example Association -->
+        <UML:Association xmi.id="Assoc_BreastSpecimenPathologyAnnotation_SpecimenNottinghamHistologicScore">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BreastSpecimenPathologyAnnotation" type="BreastSpecimenPathologyAnnotation" name="BreastSpecimenPathologyAnnotation" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecimenNottinghamHistologicScore" type="SpecimenNottinghamHistologicScore" name="SpecimenNottinghamHistologicScore" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="Assoc_ProstateSpecimenPathologyAnnotation_SpecimenGleasonScore">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ProstateSpecimenPathologyAnnotation" type="ProstateSpecimenPathologyAnnotation" name="ProstateSpecimenPathologyAnnotation" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecimenGleasonScore" type="SpecimenGleasonScore" name="SpecimenGleasonScore" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

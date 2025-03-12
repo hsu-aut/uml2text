@@ -1,0 +1,122 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UMLModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package for Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dataype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- URLGrabber Interface -->
+        <UML:Interface xmi.id="interface_URLGrabber" name="URLGrabber" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_grabURL" name="grabURL" visibility="public"/>
+            <UML:Operation xmi.id="operation_getURL" name="getURL" visibility="public"/>
+            <UML:Operation xmi.id="operation_setURL" name="setURL" visibility="public"/>
+            <UML:Operation xmi.id="operation_getSource" name="getSource" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- AbstractURLGrabber Abstract Class -->
+        <UML:Class xmi.id="abstractClass_AbstractURLGrabber" name="AbstractURLGrabber" visibility="public" isAbstract="true">
+          <UML:Generalization xsi.type="UML:Generalization" xmi.idref="interface_URLGrabber"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attribute_source" name="source" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_url" name="url" visibility="private"/>
+            <UML:Operation xmi.id="operation_grabURL_Abstract" name="grabURL" visibility="public"/>
+            <UML:Operation xmi.id="operation_getURL_Abstract" name="getURL" visibility="public"/>
+            <UML:Operation xmi.id="operation_setURL_Abstract" name="setURL" visibility="public"/>
+            <UML:Operation xmi.id="operation_getSource_Abstract" name="getSource" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Concrete Implementations of URLGrabber -->
+        <UML:Class xmi.id="class_WgetURLGrabber" name="WgetURLGrabber" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.idref="abstractClass_AbstractURLGrabber"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TestURLGrabber" name="TestURLGrabber" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.idref="abstractClass_AbstractURLGrabber"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_JSURLGrabber" name="JSURLGrabber" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.idref="abstractClass_AbstractURLGrabber"/>
+        </UML:Class>
+
+        <!-- MarkupLangParser Interface -->
+        <UML:Interface xmi.id="interface_MarkupLangParser" name="MarkupLangParser" visibility="public">
+        </UML:Interface>
+
+        <!-- AbstractMarkupLangParser Abstract Class -->
+        <UML:Class xmi.id="abstractClass_AbstractMarkupLangParser" name="AbstractMarkupLangParser" visibility="public" isAbstract="true">
+          <UML:Generalization xmi.idref="interface_MarkupLangParser"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attribute_url_ML" name="url" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_source_ML" name="source" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_rootNode" name="rootNode" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_logger" name="logger" visibility="private"/>
+            <UML:Operation xmi.id="operation_parse" name="parse" visibility="public"/>
+            <UML:Operation xmi.id="operation_downloadSource" name="downloadSource" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ShneeParser Class -->
+        <UML:Class xmi.id="class_ShneeParser" name="ShneeParser" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.idref="abstractClass_AbstractMarkupLangParser"/>
+        </UML:Class>
+
+        <!-- Node Interface -->
+        <UML:Interface xmi.id="interface_Node" name="Node" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_parent" name="parent" visibility="public"/>
+            <UML:Operation xmi.id="operation_children" name="children" visibility="public"/>
+            <UML:Operation xmi.id="operation_css" name="css" visibility="public"/>
+            <UML:Operation xmi.id="operation_xpath" name="xpath" visibility="public"/>
+            <UML:Operation xmi.id="operation_isRootNode" name="isRootNode" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- AbstractNode Abstract Class -->
+        <UML:Class xmi.id="abstractClass_AbstractNode" name="AbstractNode" visibility="public" isAbstract="true">
+          <UML:Generalization xmi.idref="interface_Node"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attribute_parentNode" name="parentNode" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_childrenNodes" name="childrenNodes" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- BitysNode Class -->
+        <UML:Class xmi.id="class_BitysNode" name="BitysNode" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.idref="abstractClass_AbstractNode"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attribute_node" name="node" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Element Class -->
+        <UML:Class xmi.id="class_Element" name="Element" visibility="public" isAbstract="false">
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

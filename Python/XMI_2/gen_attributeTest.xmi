@@ -1,0 +1,70 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_de.Schema" name="de.Schema">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_MyGraphClass" name="MyGraphClass" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ParentVC" name="ParentVC" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ChildVC1" name="ChildVC1" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ParentVC"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_anAttribute1" name="anAttribute" visibility="public">
+              <UML:Multiplicity>
+                <UML:Multiplicity.range>
+                  <UML:MultiplicityRange lower="1" upper="1"/>
+                </UML:Multiplicity.range>
+              </UML:Multiplicity>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ChildVC2" name="ChildVC2" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ParentVC"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_anAttribute2" name="anAttribute" visibility="public">
+              <UML:Multiplicity>
+                <UML:Multiplicity.range>
+                  <UML:MultiplicityRange lower="1" upper="1"/>
+                </UML:Multiplicity.range>
+              </UML:Multiplicity>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GrandChildVC" name="GrandChildVC" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ChildVC1"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ChildVC2"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

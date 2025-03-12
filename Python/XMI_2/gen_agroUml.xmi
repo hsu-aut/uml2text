@@ -1,0 +1,156 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_unbenanntesModell" name="unbenanntesModell">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Paket: de.juwimm.test -->
+        <UML:Package xmi.id="package_de_juwimm_test" name="de.juwimm.test">
+          <UML:Namespace.ownedElement>
+
+            <!-- Klasse: Adresse -->
+            <UML:Class xmi.id="class_Adresse" name="Adresse" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse: Person -->
+            <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_age" name="age" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_birth" name="birth" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse: Auto -->
+            <UML:Class xmi.id="class_Auto" name="Auto" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_marke" name="marke" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse: Buch -->
+            <UML:Class xmi.id="class_Buch" name="Buch" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse: Page -->
+            <UML:Class xmi.id="class_Page" name="Page" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_number" name="number" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse: EmailService -->
+            <UML:Class xmi.id="class_EmailService" name="EmailService" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_messageSource" name="messageSource" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_sendMail" name="sendMail" visibility="public" isAbstract="false">
+                  <UML:Parameter xmi.id="param_content" name="content" kind="in">
+                    <UML:Parameter.type>
+                      <UML:DataType xmi.idref="String"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                  <UML:Parameter xmi.id="param_void" name="return" kind="return">
+                    <UML:Parameter.type>
+                      <UML:DataType xmi.idref="void"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Paket: java.util -->
+        <UML:Package xmi.id="package_java_util" name="java.util">
+          <UML:Namespace.ownedElement>
+            <!-- Klasse: Date -->
+            <UML:Class xmi.id="class_Date" name="Date" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_has_Person_Adresse" name="has">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_has_Person" type="class_Person" name="person" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_has_Adresse" type="class_Adresse" name="adresse" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_posses_Person_Auto" name="posses">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_posses_Person" type="class_Person" name="person" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_posses_Auto" type="class_Auto" name="auto" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_isAuthorOf_Person_Buch" name="isAuthorOf">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_isAuthorOf_Person" type="class_Person" name="author" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_isAuthorOf_Buch" type="class_Buch" name="buch" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_consistsOf_Buch_Page" name="consistsOf">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_consistsOf_Buch" type="class_Buch" name="buch" visibility="public" aggregation="composite" multiplicity="1" />
+            <UML:AssociationEnd xmi.id="assocEnd_consistsOf_Page" type="class_Page" name="page" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="void" name="void"/>
+      
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

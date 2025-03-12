@@ -1,0 +1,222 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+    <XMI.header>
+        <XMI.documentation>
+            <XMI.exporter>ArgoUML</XMI.exporter>
+            <XMI.exporterVersion>0.34</XMI.exporterVersion>
+        </XMI.documentation>
+        <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+    </XMI.header>
+    <XMI.content>
+        <UML:Model xmi.id="model_GrumlSchema" name="GrumlSchema">
+            <UML:Namespace.ownedElement>
+                <!-- Package PrimitiveTypes -->
+                <UML:Package xmi.id="package_PrimitiveTypes" name="PrimitiveTypes">
+                    <UML:Namespace.ownedElement>
+                        <UML:PrimitiveType xmi.id="type_SetString" name="Set&lt;String>"/>
+                        <UML:PrimitiveType xmi.id="type_ListString" name="List&lt;String>"/>
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+                <!-- Class SchemaGraph -->
+                <UML:Class xmi.id="class_SchemaGraph" name="SchemaGraph" visibility="public" isAbstract="false">
+                    <UML:ModelElement.stereotype>
+                        <UML:Stereotype xmi.id="stereotype_graphclass" name="graphclass"/>
+                    </UML:ModelElement.stereotype>
+                </UML:Class>
+
+                <!-- Package structure -->
+                <UML:Package xmi.id="package_structure" name="structure">
+                    <UML:Namespace.ownedElement>
+                        
+                        <!-- Class NamedElement -->
+                        <UML:Class xmi.id="class_NamedElement" name="NamedElement" isAbstract="true">
+                            <UML:Namespace.ownedElement>
+                                <UML:Attribute xmi.id="attr_qualifiedName" name="qualifiedName" visibility="private"/>
+                                <UML:Attribute xmi.id="attr_comment" name="comment" visibility="private"/>
+                            </UML:Namespace.ownedElement>
+                        </UML:Class>
+                        
+                        <!-- Class Comment -->
+                        <UML:Class xmi.id="class_Comment" name="Comment">
+                            <UML:Namespace.ownedElement>
+                                <UML:Attribute xmi.id="attr_text" name="text" visibility="private"/>
+                            </UML:Namespace.ownedElement>
+                        </UML:Class>
+                        
+                        <!-- Enumeration IncidenceDirection -->
+                        <UML:Enumeration xmi.id="enum_IncidenceDirection" name="IncidenceDirection">
+                            <UML:Enumeration.literal>
+                                <UML:EnumerationLiteral xmi.id="enum_IncidenceDirection_IN" name="IN"/>
+                                <UML:EnumerationLiteral xmi.id="enum_IncidenceDirection_OUT" name="OUT"/>
+                            </UML:Enumeration.literal>
+                        </UML:Enumeration>
+                        
+                        <!-- Enumeration AggregationKind -->
+                        <UML:Enumeration xmi.id="enum_AggregationKind" name="AggregationKind">
+                            <UML:Enumeration.literal>
+                                <UML:EnumerationLiteral xmi.id="enum_AggregationKind_NONE" name="NONE"/>
+                                <UML:EnumerationLiteral xmi.id="enum_AggregationKind_SHARED" name="SHARED"/>
+                                <UML:EnumerationLiteral xmi.id="enum_AggregationKind_COMPOSITE" name="COMPOSITE"/>
+                            </UML:Enumeration.literal>
+                        </UML:Enumeration>
+
+                        <!-- Class IncidenceClass -->
+                        <UML:Class xmi.id="class_IncidenceClass" name="IncidenceClass">
+                            <UML:Namespace.ownedElement>
+                                <UML:Attribute xmi.id="attr_aggregation" name="aggregation" type="enum_AggregationKind"/>
+                                <UML:Attribute xmi.id="attr_min" name="min" visibility="private"/>
+                                <UML:Attribute xmi.id="attr_max" name="max" visibility="private"/>
+                                <UML:Attribute xmi.id="attr_roleName" name="roleName" visibility="private"/>
+                                <UML:Attribute xmi.id="attr_direction" name="direction" type="enum_IncidenceDirection"/>
+                            </UML:Namespace.ownedElement>
+                        </UML:Class>
+
+                        <!-- Class VertexClass -->
+                        <UML:Class xmi.id="class_VertexClass" name="VertexClass">
+                            <UML:Generalization>
+                                <UML:Generalization.child>
+                                    <UML:Class xmi.idref="class_VertexClass"/>
+                                </UML:Generalization.child>
+                            </UML:Generalization>
+                        </UML:Class>
+
+                        <!-- Class Schema -->
+                        <UML:Class xmi.id="class_Schema" name="Schema">
+                            <UML:Namespace.ownedElement>
+                                <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+                                <UML:Attribute xmi.id="attr_packagePrefix" name="packagePrefix" visibility="private"/>
+                            </UML:Namespace.ownedElement>
+                        </UML:Class>
+
+                        <!-- Class Package -->
+                        <UML:Class xmi.id="class_Package" name="Package">
+                            <UML:Generalization>
+                                <UML:Generalization.child>
+                                    <UML:Class xmi.idref="class_Package"/>
+                                </UML:Generalization.child>
+                            </UML:Generalization>
+                        </UML:Class>
+                        
+                        <!-- Class EdgeClass -->
+                        <UML:Class xmi.id="class_EdgeClass" name="EdgeClass" isAbstract="true">
+                            <UML:Generalization>
+                                <UML:Generalization.child>
+                                    <UML:Class xmi.idref="class_EdgeClass"/>
+                                </UML:Generalization.child>
+                            </UML:Generalization>
+                        </UML:Class>
+                        
+                        <!-- Class GraphClass -->
+                        <UML:Class xmi.id="class_GraphClass" name="GraphClass">
+                            <UML:Generalization>
+                                <UML:Generalization.child>
+                                    <UML:Class xmi.idref="class_AttributedElementClass"/>
+                                </UML:Generalization.child>
+                            </UML:Generalization>
+                        </UML:Class>
+
+                        <!-- Class GraphElementClass -->
+                        <UML:Class xmi.id="class_GraphElementClass" name="GraphElementClass" isAbstract="true">
+                            <UML:Generalization>
+                                <UML:Generalization.child>
+                                    <UML:Class xmi.idref="class_GraphElementClass"/>
+                                </UML:Generalization.child>
+                            </UML:Generalization>
+                        </UML:Class>
+
+                        <!-- Class AttributedElementClass -->
+                        <UML:Class xmi.id="class_AttributedElementClass" name="AttributedElementClass" isAbstract="true">
+                            <UML:Attribute xmi.id="attr_isAbstract" name="isAbstract" visibility="private"/>
+                        </UML:Class>
+
+                        <!-- Class Attribute -->
+                        <UML:Class xmi.id="class_Attribute" name="Attribute">
+                            <UML:Namespace.ownedElement>
+                                <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+                                <UML:Attribute xmi.id="attr_defaultValue" name="defaultValue" visibility="private"/>
+                            </UML:Namespace.ownedElement>
+                        </UML:Class>
+
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+
+                <!-- Package domains -->
+                <UML:Package xmi.id="package_domains" name="domains">
+                    <UML:Namespace.ownedElement>
+
+                        <!-- Class BasicDomain -->
+                        <UML:Class xmi.id="class_BasicDomain" name="BasicDomain" isAbstract="true"/>
+
+                        <!-- Other Domain Classes -->
+                        <UML:Class xmi.id="class_SetDomain" name="SetDomain"/>
+                        <UML:Class xmi.id="class_StringDomain" name="StringDomain"/>
+                        <UML:Class xmi.id="class_RecordDomain" name="RecordDomain"/>
+                        <UML:Class xmi.id="class_IntegerDomain" name="IntegerDomain"/>
+                        <UML:Class xmi.id="class_ListDomain" name="ListDomain"/>
+                        <UML:Class xmi.id="class_LongDomain" name="LongDomain"/>
+                        <UML:Class xmi.id="class_MapDomain" name="MapDomain"/>
+                        <UML:Class xmi.id="class_EnumDomain" name="EnumDomain"/>
+                        <UML:Class xmi.id="class_DoubleDomain" name="DoubleDomain"/>
+                        <UML:Class xmi.id="class_BooleanDomain" name="BooleanDomain"/>
+                        <UML:Class xmi.id="class_CollectionDomain" name="CollectionDomain"/>
+
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+                <!-- Associations -->
+                <UML:Association xmi.id="assoc_Annotates" name="Annotates" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_NamedElement" type="class_NamedElement"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_Comment" type="class_Comment"/>
+                    </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_EndAt" name="EndsAt" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_IncidenceClass" type="class_IncidenceClass"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_VertexClass" type="class_VertexClass"/>
+                    </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_SpecializesEdgeClass" name="SpecializesEdgeClass" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_GraphElementClass" type="class_GraphElementClass"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_EdgeClass" type="class_EdgeClass"/>
+                    </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_SpecializesVertexClass" name="SpecializesVertexClass" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_VertexClass" type="class_VertexClass"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_AttributedElementClass" type="class_AttributedElementClass"/>
+                    </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_HasDomain" name="HasDomain" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_Attribute" type="class_Attribute"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_BasicDomain" type="class_BasicDomain"/>
+                    </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_HasBaseDomain" name="HasBaseDomain" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_CollectionDomain" type="class_CollectionDomain"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_BasicDomain" type="class_BasicDomain"/>
+                    </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_HasRecordDomainComponent" name="HasRecordDomainComponent" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_RecordDomain" type="class_RecordDomain"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_BasicDomain" type="class_BasicDomain"/>
+                    </UML:Association.connection>
+                </UML:Association>
+
+            </UML:Namespace.ownedElement>
+        </UML:Model>
+    </XMI.content>
+</XMI>
+```

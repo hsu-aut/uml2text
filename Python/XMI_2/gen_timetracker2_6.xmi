@@ -1,0 +1,127 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TimeTracker" name="TimeTracker">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_username" name="username" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_password" name="password" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_email" name="email" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_isActive" name="isActive" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_creationDate" name="creationDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Timecard -->
+        <UML:Class xmi.id="class_Timecard" name="Timecard" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_status" name="status" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TimecardStatus"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_startDate" name="startDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_comments" name="comments" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="operation_addTimeAllocation" name="addTimeAllocation" visibility="public">
+              <!-- No parameters defined as the original text doesn't specify any -->
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_findByCriteria" name="findByCriteria" visibility="public">
+              <!-- No parameters defined as the original text doesn't specify any -->
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Task -->
+        <UML:Class xmi.id="class_Task" name="Task" visibility="public" isAbstract="false">
+          <!-- No attributes or operations defined as the original text doesn't specify any -->
+        </UML:Class>
+
+        <!-- Definition der Klasse TimeAllocation -->
+        <UML:Class xmi.id="class_TimeAllocation" name="TimeAllocation" visibility="public" isAbstract="false">
+          <!-- No attributes or operations defined as the original text doesn't specify any -->
+        </UML:Class>
+
+        <!-- Definition der Klasse TimecardStatus -->
+        <UML:Class xmi.id="class_TimecardStatus" name="TimecardStatus" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_draft" name="draft" visibility="private"/>
+            <UML:Attribute xmi.id="attr_submitted" name="submitted" visibility="private"/>
+            <UML:Attribute xmi.id="attr_approved" name="approved" visibility="private"/>
+            <UML:Attribute xmi.id="attr_rejected" name="rejected" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_User_UserRole">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_User_UserRole_User" type="class_User" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_User_UserRole_UserRole" type="class_UserRole" name="userRole" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Timecard_TimeAllocation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Timecard_TimeAllocation_Timecard" type="class_Timecard" name="timecard" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Timecard_TimeAllocation_TimeAllocation" type="class_TimeAllocation" name="timeAllocation" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Task_TimeAllocation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Task_TimeAllocation_Task" type="class_Task" name="task" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Task_TimeAllocation_TimeAllocation" type="class_TimeAllocation" name="timeAllocation" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Definieren von UserRole-Klasse, da sie im Text als Teil der Beziehung mit User erwähnt wurde -->
+        <UML:Class xmi.id="class_UserRole" name="UserRole" visibility="public" isAbstract="false">
+          <!-- No attributes or operations defined as the original text doesn't specify any -->
+        </UML:Class>
+
+        <!-- Definition von Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

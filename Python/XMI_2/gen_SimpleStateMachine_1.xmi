@@ -1,0 +1,58 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:StateMachine xmi.id="stateMachine_SimpleStateMachine" name="Simple State Machine" visibility="public">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="compositeState_Top" name="top" visibility="public" isConcurrent="false">
+              <UML:CompositeState.subvertex>
+                <UML:SimpleState xmi.id="state_Init" name="Init" visibility="public">
+                  <UML:State.outgoing>
+                    <UML:Transition xmi.id="transition_Start" name="start" visibility="public">
+                      <UML:Transition.source>
+                        <UML:SimpleState xmi.idref="state_Init"/>
+                      </UML:Transition.source>
+                      <UML:Transition.target>
+                        <UML:SimpleState xmi.idref="state_Process"/>
+                      </UML:Transition.target>
+                    </UML:Transition>
+                  </UML:State.outgoing>
+                </UML:SimpleState>
+                <UML:SimpleState xmi.id="state_Process" name="Process" visibility="public">
+                  <UML:State.incoming>
+                    <UML:Transition xmi.idref="transition_Start"/>
+                  </UML:State.incoming>
+                  <UML:State.outgoing>
+                    <UML:Transition xmi.id="transition_EndProcess" name="end process" visibility="public">
+                      <UML:Transition.source>
+                        <UML:SimpleState xmi.idref="state_Process"/>
+                      </UML:Transition.source>
+                      <UML:Transition.target>
+                        <UML:SimpleState xmi.idref="state_Finish"/>
+                      </UML:Transition.target>
+                    </UML:Transition>
+                  </UML:State.outgoing>
+                </UML:SimpleState>
+                <UML:SimpleState xmi.id="state_Finish" name="Finish" visibility="public">
+                  <UML:State.incoming>
+                    <UML:Transition xmi.idref="transition_EndProcess"/>
+                  </UML:State.incoming>
+                </UML:SimpleState>
+              </UML:CompositeState.subvertex>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

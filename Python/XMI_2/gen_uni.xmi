@@ -1,0 +1,103 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_uni" name="uni">
+      <UML:Namespace.ownedElement>
+        <!-- Use Case View -->
+        <UML:UseCase xmi.id="useCase_Lecture" name="Lecture" visibility="public" isAbstract="false"/>
+        
+        <UML:UseCase xmi.id="useCase_Examination" name="Examination" visibility="public" isAbstract="false"/>
+        
+        <UML:UseCase xmi.id="useCase_HardExamination" name="Hard Examination" visibility="public" isAbstract="false"/>
+        
+        <UML:Generalization xmi.id="gen_Examination_HardExamination" parent="useCase_Examination" child="useCase_HardExamination"/>
+        
+        <UML:Association xmi.id="assoc_Lecture_Examination" name="depends on">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="useCase_Lecture" aggregation="none" xmi.id="assocEnd_Lecture"/>
+            <UML:AssociationEnd type="useCase_Examination" aggregation="none" xmi.id="assocEnd_Examination"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Actor xmi.id="actor_Professor" name="Professor" visibility="public" isAbstract="false"/>
+
+        <!-- Logical View -->
+        <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_age" name="age" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Operation xmi.id="op_setAddress" name="setAddress" visibility="public">
+            <UML:Parameter kind="in" type="class_Address" name="Address"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Professor" name="Professor" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Student" name="Student" visibility="public" isAbstract="false"/>
+
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+
+        <UML:Generalization parent="class_Person" child="class_Professor" xmi.id="gen_Person_Professor"/>
+        <UML:Generalization parent="class_Person" child="class_Student" xmi.id="gen_Person_Student"/>
+        
+        <UML:Class xmi.id="class_Address" name="Address" visibility="public"/>
+        <UML:Class xmi.id="class_Money" name="Money" visibility="public"/>
+        <UML:Class xmi.id="class_Faculty" name="Faculty" visibility="public"/>
+        <UML:Class xmi.id="class_University" name="University" visibility="public"/>
+        
+        <UML:AssociationClass xmi.id="assoc_Period" name="Period" visibility="public">
+          <UML:Attribute xmi.id="attr_from" name="from" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="Date"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_to" name="to" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="Date"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:AssociationClass>
+        
+        <UML:Interface xmi.id="interface_Mentor" name="Mentor" visibility="public"/>
+        <UML:Abstraction xmi.id="abstraction_Professor_Mentor" supplier="interface_Mentor" client="class_Professor"/>
+
+        <!-- Templates and Constraints Package -->
+        <UML:Class xmi.id="class_SuperClass" name="SuperClass" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SubClass" name="SubClass" visibility="public" isAbstract="false"/>
+        
+        <UML:Generalization parent="class_SuperClass" child="class_SubClass" xmi.id="gen_SuperClass_SubClass"/>
+        
+        <UML:Class xmi.id="class_OtherClass" name="OtherClass" visibility="public"/>
+        <UML:Class xmi.id="class_SomeClass" name="SomeClass" visibility="public"/>
+        
+        <UML:Interface xmi.id="interface_Template" name="Interface" visibility="public"/>
+        
+        <!-- Relationships and Abstractions -->
+        <UML:Dependency xmi.id="dep_Usage" name="Usage"/>
+        <UML:Dependency xmi.id="dep_Abstraction" name="Abstraction"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

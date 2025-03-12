@@ -1,0 +1,86 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="pkg_java" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="pkg_lang" name="lang"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="pkg_classes" name="classes">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_A" name="A" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_Base"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_B" name="B" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_Base"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Base" name="Base" visibility="public" isAbstract="false">
+              <UML:Dependency>
+                <UML:Dependency.client>
+                  <UML:Interface xmi.idref="interface_Interface"/>
+                </UML:Dependency.client>
+              </UML:Dependency>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_C" name="C" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_B"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Interface xmi.id="interface_Interface" name="Interface" visibility="public">
+              <UML:Abstraction>
+                <UML:Abstraction.supplier>
+                  <UML:Class xmi.idref="class_Base"/>
+                </UML:Abstraction.supplier>
+              </UML:Abstraction>
+            </UML:Interface>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="pkg_simplediagram" name="simplediagram">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_SimpleDiagram" name="SimpleDiagram" visibility="public" isAbstract="false">
+              <UML:Operation xmi.id="op_main" name="main" visibility="public"/>
+              <UML:Dependency>
+                <UML:Dependency.supplier>
+                  <UML:Class xmi.idref="class_C"/>
+                </UML:Dependency.supplier>
+              </UML:Dependency>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

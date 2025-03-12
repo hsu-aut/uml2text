@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="MX_EAID_41A24B9A_160A_437c_99AD_24AC1E39F867" name="Logical Model" visibility="public" isAbstract="false">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package: java -->
+        <UML:Package xmi.id="EAPK_2D3775AE_11D7_4a90_A5EB_B0993DDD0007" name="java" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Additional elements can be included here -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: lang -->
+        <UML:Package xmi.id="EAPK_AC9779EB_C2B7_448b_9F15_B3A451E6FEF6" name="lang" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Class: Float -->
+            <UML:Class xmi.id="lang_Float" name="Float" visibility="public" isAbstract="false"/>
+
+            <!-- Class: Double -->
+            <UML:Class xmi.id="lang_Double" name="Double" visibility="public" isAbstract="false"/>
+
+            <!-- Class: Long -->
+            <UML:Class xmi.id="lang_Long" name="Long" visibility="public" isAbstract="false"/>
+
+            <!-- Class: Integer -->
+            <UML:Class xmi.id="lang_Integer" name="Integer" visibility="public" isAbstract="false"/>
+
+            <!-- Class: Boolean -->
+            <UML:Class xmi.id="lang_Boolean" name="Boolean" visibility="public" isAbstract="false"/>
+
+            <!-- Class: String -->
+            <UML:Class xmi.id="lang_String" name="String" visibility="public" isAbstract="false"/>
+
+            <!-- Class: ByteArray -->
+            <UML:Class xmi.id="lang_ByteArray" name="ByteArray" visibility="public" isAbstract="false"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: util -->
+        <UML:Package xmi.id="EAPK_8DD45CFC_A377_43c0_A336_4986786B54CF" name="util" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Class: Date -->
+            <UML:Class xmi.id="util_Date" name="Date" visibility="public" isAbstract="false"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: BMI -->
+        <UML:Package xmi.id="EAPK_A4FB6EBE_2456_4f7a_8655_8A3652B231DC" name="BMI" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Class: Annotations -->
+            <UML:Class xmi.id="BMI_Annotations" name="Annotations" visibility="public" isAbstract="false"/>
+
+            <!-- Class: PhysicalExam -->
+            <UML:Class xmi.id="BMI_PhysicalExam" name="PhysicalExam" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+
+                <!-- Attribute: bmi -->
+                <UML:Attribute xmi.id="BMI_PhysicalExam_bmi" name="bmi" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="lang_Float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+
+                <!-- Attribute: height -->
+                <UML:Attribute xmi.id="BMI_PhysicalExam_height" name="height" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="lang_Float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+
+                <!-- Attribute: weight -->
+                <UML:Attribute xmi.id="BMI_PhysicalExam_weight" name="weight" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="lang_Float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+
+                <!-- Attribute: startDate -->
+                <UML:Attribute xmi.id="BMI_PhysicalExam_startDate" name="startDate" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="util_Date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+
+                <!-- Attribute: endDate -->
+                <UML:Attribute xmi.id="BMI_PhysicalExam_endDate" name="endDate" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="util_Date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+
+                <!-- Attribute: duration -->
+                <UML:Attribute xmi.id="BMI_PhysicalExam_duration" name="duration" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="lang_Long"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Association: physicalExamInformation -->
+        <UML:Association xmi.id="BMI_Association_physicalExamInformation" name="physicalExamInformation" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="BMI_Association_physicalExamInformation_end1" type="BMI_Annotations" name="annotations" visibility="none" multiplicity="0..1"/>
+            <UML:AssociationEnd xmi.id="BMI_Association_physicalExamInformation_end2" type="BMI_PhysicalExam" name="physicalExam" visibility="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

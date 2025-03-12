@@ -1,0 +1,81 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_RadiosityRenderer" name="RadiosityRenderer" visibility="public" isAbstract="false">
+              <UML:Operation xmi.id="op_compute" name="compute" visibility="public" isAbstract="false">
+              </UML:Operation>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_PatchCache" name="PatchCache" visibility="public" isAbstract="false">
+              <UML:Operation xmi.id="op_totalRadiosity" name="totalRadiosity" visibility="public" isAbstract="false">
+                <UML:Parameter xmi.id="param_destPatch" name="destPatch" kind="in" type="int"/>
+              </UML:Operation>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_PatchCacheLine" name="PatchCacheLine" visibility="public" isAbstract="false">
+              <UML:Operation xmi.id="op_addPatch" name="addPatch" visibility="public" isAbstract="false">
+                <UML:Parameter xmi.id="param_destPatch" name="destPatch" kind="in" type="int"/>
+                <UML:Parameter xmi.id="param_formFactor" name="formFactor" kind="in" type="float"/>
+              </UML:Operation>
+              <UML:Operation xmi.id="op_totalRadiosity" name="totalRadiosity" visibility="public" isAbstract="false">
+              </UML:Operation>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_FormFactorEngine" name="FormFactorEngine" visibility="public" isAbstract="false">
+              <UML:Operation xmi.id="op_fillCacheLine" name="fillCacheLine" visibility="public" isAbstract="false">
+                <UML:Parameter xmi.id="param_destPatch" name="destPatch" kind="in" type="int"/>
+                <UML:Parameter xmi.id="param_cacheLine" name="cacheLine" kind="in" type="PatchCacheLine*"/>
+              </UML:Operation>
+            </UML:Class>
+            
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            
+            <UML:Association xmi.id="assoc_RadiosityRenderer_PatchCache" name="RadiosityRenderer-PatchCache">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_RadiosityRenderer" type="class_RadiosityRenderer" aggregation="composite" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_PatchCache" type="class_PatchCache" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_PatchCache_FormFactorEngine" name="PatchCache-FormFactorEngine">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_PatchCache_FE" type="class_PatchCache" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_FormFactorEngine_PC" type="class_FormFactorEngine" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_PatchCache_PatchCacheLine" name="PatchCache-PatchCacheLine">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_PatchCacheLine" type="class_PatchCacheLine" aggregation="composite" multiplicity="*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_PatchCache_PCL" type="class_PatchCache" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_PatchCacheLine_FormFactorEngine" name="PatchCacheLine-FormFactorEngine">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_PatchCacheLine_FE" type="class_PatchCacheLine" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_FormFactorEngine" type="class_FormFactorEngine" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

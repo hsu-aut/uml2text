@@ -1,0 +1,70 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "Submission" -->
+        <UML:Class xmi.id="class_Submission" name="Submission" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private" multiplicity="1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_keywords" name="keywords" visibility="private" multiplicity="1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_verifyAssignmentConstraints" name="verifyAssignmentConstraints" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_verifyAssignmentConstraints_return" name="constraintsOK" kind="return" type="Boolean"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_assignToPCMember" name="assignToPCMember" visibility="public" isQuery="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "PCMember" -->
+        <UML:Class xmi.id="class_PCMember" name="PCMember" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private" multiplicity="1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_topics" name="topics" visibility="private" multiplicity="*">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_verifyAssignmentsLimits" name="verifyAssignmentsLimits" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_verifyAssignmentsLimits_return" name="limitsOK" kind="return" type="Boolean"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Assoziation "hasSubmission" -->
+        <UML:Association xmi.id="assoc_hasSubmission" name="hasSubmission" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PCMember" type="class_PCMember" name="submissions" visibility="public" multiplicity="0..3"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Submission" type="class_Submission" name="PCMembers" visibility="public" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

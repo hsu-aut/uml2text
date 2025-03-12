@@ -1,0 +1,88 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package containing class Abba -->
+        <UML:Package xmi.id="Pkg_oCz9Aqmgw4pE" name="Pkg">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="Abba_KsgRf69OFlel" name="Abba" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class definitions -->
+        <UML:Class xmi.id="Babba_0g4mQ27unpV5" name="Babba" visibility="public"/>
+
+        <UML:Class xmi.id="Cabba_5DpdTHoTxqEN" name="Cabba" visibility="public"/>
+
+        <UML:Class xmi.id="Dabba_VAkq344hEnQ8" name="Dabba" visibility="public">
+          <UML:Generalization xmi.idref="implements_from_D_to_E"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="Ebba_HDG0LihoRDkc" name="Ebba" visibility="public"/>
+        
+        <UML:Class xmi.id="Fabba_qG9y31v1pSIN" name="Fabba" visibility="public"/>
+
+        <UML:Class xmi.id="Gabba_D0V8qj5ew2n4" name="Gabba" visibility="public"/>
+
+        <!-- Associations and relationships -->
+        <UML:Association xmi.id="assoc_between_A_and_B">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Abba_Babba_A" type="Abba_KsgRf69OFlel" name="Abba" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Abba_Babba_B" type="Babba_0g4mQ27unpV5" name="Babba" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="directional_assoc_from_B_to_C">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Babba_Cabba_B" type="Babba_0g4mQ27unpV5" name="Babba" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Babba_Cabba_C" type="Cabba_5DpdTHoTxqEN" name="Cabba" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Dependency xmi.id="dependency_from_C_to_D">
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="Cabba_5DpdTHoTxqEN"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Class xmi.idref="Dabba_VAkq344hEnQ8"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+        <UML:Generalization xmi.id="implements_from_D_to_E">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="Dabba_VAkq344hEnQ8"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="Ebba_HDG0LihoRDkc"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Association xmi.id="composition_from_E_to_F">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Ebba_Fabba_E" type="Ebba_HDG0LihoRDkc" name="Ebba" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Ebba_Fabba_F" type="Fabba_qG9y31v1pSIN" name="Fabba" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="aggregation_from_F_to_G">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Fabba_Gabba_F" type="Fabba_qG9y31v1pSIN" name="Fabba" visibility="public" aggregation="aggregate"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Fabba_Gabba_G" type="Gabba_D0V8qj5ew2n4" name="Gabba" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

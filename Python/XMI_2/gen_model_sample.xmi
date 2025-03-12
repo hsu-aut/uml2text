@@ -1,0 +1,76 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UntitledModel" name="UntitledModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse HelloWorld -->
+        <UML:Class xmi.id="class_HelloWorld" name="HelloWorld" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_newAttr" name="newAttr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_Int"/>
+              </UML:StructuralFeature.type>
+              <UML:Attribute.initialValue>
+                <UML:Expression xmi.id="expr_newAttrInit" body="19"/>
+              </UML:Attribute.initialValue>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_newOperation" name="newOperation" visibility="public">
+              <!-- Methodenimplementierung für die Operation -->
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition des Datentyps Int -->
+        <UML:DataType xmi.id="datatype_Int" name="Int"/>
+
+        <!-- Definition der Schnittstelle MyInterface -->
+        <UML:Interface xmi.id="interface_MyInterface" name="MyInterface" visibility="public">
+        </UML:Interface>
+
+        <!-- Definition der Assoziationsklasse MyAssociationClass -->
+        <UML:AssociationClass xmi.id="assocClass_MyAssociationClass" name="MyAssociationClass" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MyAssociationClass_1" type="class_Unnamed1" name="unnamed1" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MyAssociationClass_2" type="class_HelloWorld" name="helloWorld" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:AssociationClass>
+
+        <!-- Definition der unbenannten Klassen -->
+        <UML:Class xmi.id="class_Unnamed1" name="Unnamed1" visibility="package">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Unnamed2"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Unnamed2" name="Unnamed2" visibility="package">
+        </UML:Class>
+
+        <!-- Definition der UseCases -->
+        <UML:UseCase xmi.id="useCase_1" name="UseCase1" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_2" name="UseCase2" visibility="public">
+          <UML:Include xmi.id="include_1" name="include1" addition="useCase_1"/>
+        </UML:UseCase>
+
+        <!-- Definition der Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_implementation" name="implementation"/>
+        <UML:Stereotype xmi.id="stereotype_realize" name="realize"/>
+        <UML:Stereotype xmi.id="stereotype_appliedProfile" name="appliedProfile"/>
+        <UML:Stereotype xmi.id="stereotype_thread" name="thread"/>
+        <UML:Stereotype xmi.id="stereotype_auxiliary" name="auxiliary"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

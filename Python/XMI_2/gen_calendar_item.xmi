@@ -1,0 +1,130 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_M1" name="Модель UML">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="dt_int" name="int"/>
+                <UML:DataType xmi.id="dt_char" name="char"/>
+                <UML:DataType xmi.id="dt_bool" name="bool"/>
+                <UML:DataType xmi.id="dt_float" name="float"/>
+                <UML:DataType xmi.id="dt_double" name="double"/>
+                <UML:DataType xmi.id="dt_short" name="short"/>
+                <UML:DataType xmi.id="dt_long" name="long"/>
+                <UML:DataType xmi.id="dt_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="dt_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="dt_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="dt_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- calendar_item_type Enumeration -->
+            <UML:Enumeration xmi.id="enum_calendarItemType" name="calendar_item_type">
+              <UML:Enumeration.literal name="DAY_REGULAR"/>
+              <UML:Enumeration.literal name="DAY_HOLIDAY"/>
+              <UML:Enumeration.literal name="DAY_VACATION"/>
+              <UML:Enumeration.literal name="NOTHING"/>
+              <UML:Enumeration.literal name="HEADER_DAY"/>
+              <UML:Enumeration.literal name="HEADER_MONTH"/>
+            </UML:Enumeration>
+
+            <!-- Abstract calendar_item Class -->
+            <UML:Class xmi.id="class_calendarItem" name="calendar_item" abstract="true">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_type" name="_type">
+                  <UML:StructuralFeature.type>
+                    <UML:Enumeration xmi.idref="enum_calendarItemType"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_text" name="_text" initialValue=""/>
+                <UML:Attribute xmi.id="attr_date" name="_date">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_painter" name="painter" abstract="true">
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return">
+                    <UML:Parameter.type>
+                      <UML:Class xmi.idref="class_calendarItemPainter"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Derived calendar_item classes -->
+            <UML:Class xmi.id="class_calendarItemDay" name="calendar_item_day" abstract="false">
+              <UML:Generalization parent="class_calendarItem"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemHoliday" name="calendar_item_holiday" abstract="false">
+              <UML:Generalization parent="class_calendarItem"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemVacation" name="calendar_item_vacation" abstract="false">
+              <UML:Generalization parent="class_calendarItem"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemNothing" name="calendar_item_nothing" abstract="false">
+              <UML:Generalization parent="class_calendarItem"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemHeaderDay" name="calendar_item_header_day" abstract="false">
+              <UML:Generalization parent="class_calendarItem"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemHeaderMonth" name="calendar_item_header_month" abstract="false">
+              <UML:Generalization parent="class_calendarItem"/>
+            </UML:Class>
+
+            <!-- date Class -->
+            <UML:Class xmi.id="class_date" name="date"/>
+
+            <!-- Abstract calendar_item_painter Class -->
+            <UML:Class xmi.id="class_calendarItemPainter" name="calendar_item_painter" abstract="true">
+              <UML:Operation xmi.id="op_paint" name="paint" abstract="false"/>
+            </UML:Class>
+
+            <!-- Derived calendar_item_painter classes -->
+            <UML:Class xmi.id="class_calendarItemPainterDay" name="calendar_item_painter_day" abstract="false">
+              <UML:Generalization parent="class_calendarItemPainter"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemPainterHoliday" name="calendar_item_painter_holiday" abstract="false">
+              <UML:Generalization parent="class_calendarItemPainter"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemPainterVacation" name="calendar_item_painter_vacation" abstract="false">
+              <UML:Generalization parent="class_calendarItemPainter"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemPainterNothing" name="calendar_item_painter_nothing" abstract="false">
+              <UML:Generalization parent="class_calendarItemPainter"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemPainterHeaderDay" name="calendar_item_painter_header_day" abstract="false">
+              <UML:Generalization parent="class_calendarItemPainter"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_calendarItemPainterHeaderMonth" name="calendar_item_painter_header_month" abstract="false">
+              <UML:Generalization parent="class_calendarItemPainter"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Other Model Views -->
+        <UML:Package xmi.id="pkg_UseCaseView" name="Use Case View"/>
+        <UML:Package xmi.id="pkg_ComponentView" name="Component View"/>
+        <UML:Package xmi.id="pkg_DeploymentView" name="Deployment View"/>
+        <UML:Package xmi.id="pkg_EntityRelationshipModel" name="Entity Relationship Model"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,131 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="Модел на UML">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition des Pakets Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_ComputingInt" name="ComputingInt"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse CommandAndControll -->
+        <UML:Class xmi.id="class_CommandAndControll" name="CommandAndControll" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_ListOfComputingEntities" name="ListOfComputingEntities" visibility="private" />
+          <UML:Attribute xmi.id="attr_ListOfBestGenesValues" name="ListOfBestGenesValues" visibility="private" />
+          <UML:Operation xmi.id="op_setBestGene" name="setBestGene" visibility="public" />
+          <UML:Operation xmi.id="op_generateGenes" name="generateGenes" visibility="public" />
+        </UML:Class>
+
+        <!-- Definition der Klasse ComputingEntity -->
+        <UML:Class xmi.id="class_ComputingEntity" name="ComputingEntity" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_Gene" name="Gene" visibility="private" />
+          <UML:Attribute xmi.id="attr_toCompute" name="toCompute" visibility="private" />
+          <UML:Operation xmi.id="op_SetGene" name="SetGene" visibility="public" />
+          <UML:Operation xmi.id="op_compute" name="compute" visibility="public" />
+          <UML:Operation xmi.id="op_checkGene" name="checkGene" visibility="public" />
+          <UML:Operation xmi.id="op_mainLoop" name="mainLoop" visibility="public" />
+          <UML:Operation xmi.id="op_startComputing" name="startComputing" visibility="public" />
+          <UML:Operation xmi.id="op_stopComputing" name="stopComputing" visibility="public" />
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Classifier xmi.idref="class_ComputingEntity"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ComputingInterface"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition des Interface ComputingInterface -->
+        <UML:Interface xmi.id="interface_ComputingInterface" name="ComputingInterface" visibility="public">
+          <UML:Operation xmi.id="op_compute_Interface" name="compute" visibility="public" />
+          <UML:Operation xmi.id="op_SetGene_Interface" name="SetGene" visibility="public" />
+          <UML:Operation xmi.id="op_checkGene_Interface" name="checkGene" visibility="public" />
+          <UML:Operation xmi.id="op_mainLoop_Interface" name="mainLoop" visibility="public" />
+          <UML:Operation xmi.id="op_startComputing_Interface" name="startComputing" visibility="public" />
+          <UML:Operation xmi.id="op_stopComputing_Interface" name="stopComputing" visibility="public" />
+        </UML:Interface>
+
+        <!-- Definition der Klasse BasiGene -->
+        <UML:Class xmi.id="class_BasiGene" name="BasiGene" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_ListOfElements" name="ListOfElements" visibility="private" />
+          <UML:Operation xmi.id="op_mutate" name="mutate" visibility="public" />
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Classifier xmi.idref="class_BasiGene"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_Gene"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse AndElement -->
+        <UML:Class xmi.id="class_AndElement" name="AndElement" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_id_AndElement" name="id" visibility="private" />
+          <UML:Attribute xmi.id="attr_ListOfInputs_AndElement" name="ListOfInputs" visibility="private" />
+          <UML:Attribute xmi.id="attr_output_AndElement" name="output" visibility="private" />
+        </UML:Class>
+
+        <!-- Definition der Klasse OrElement -->
+        <UML:Class xmi.id="class_OrElement" name="OrElement" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_id_OrElement" name="id" visibility="private" />
+          <UML:Attribute xmi.id="attr_ListOfInputs_OrElement" name="ListOfInputs" visibility="private" />
+          <UML:Attribute xmi.id="attr_output_OrElement" name="output" visibility="private" />
+        </UML:Class>
+
+        <!-- Definition der Klasse NotElement -->
+        <UML:Class xmi.id="class_NotElement" name="NotElement" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_id_NotElement" name="id" visibility="private" />
+          <UML:Attribute xmi.id="attr_ListOfInputs_NotElement" name="ListOfInputs" visibility="private" />
+          <UML:Attribute xmi.id="attr_output_NotElement" name="output" visibility="private" />
+        </UML:Class>
+
+        <!-- Definition des Interface ElementInterface -->
+        <UML:Interface xmi.id="interface_ElementInterface" name="ElementInterface" visibility="public">
+          <UML:Operation xmi.id="op_compute_ElementInterface" name="compute" visibility="public" />
+          <UML:Operation xmi.id="op_addElementOutput_ElementInterface" name="addElementOutput" visibility="public" />
+          <UML:Operation xmi.id="op_removeElement_ElementInterface" name="removeElement" visibility="public" />
+          <UML:Operation xmi.id="op_getOutput_ElementInterface" name="getOutput" visibility="public" />
+        </UML:Interface>
+
+        <!-- Definition des Interface Gene -->
+        <UML:Interface xmi.id="interface_Gene" name="Gene" visibility="public">
+          <UML:Operation xmi.id="op_mutate_Interface" name="mutate" visibility="public" />
+        </UML:Interface>
+
+        <!-- Assoziation zwischen CommandAndControll und ComputingEntity -->
+        <UML:Association xmi.id="assoc_CommandAndControll_ComputingEntity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_CommandAndControll" type="class_CommandAndControll" name="commandAndControll" visibility="public" aggregation="none" />
+            <UML:AssociationEnd xmi.id="assocEnd_ComputingEntity" type="class_ComputingEntity" name="computingEntity" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

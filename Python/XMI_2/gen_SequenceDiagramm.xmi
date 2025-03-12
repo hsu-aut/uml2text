@@ -1,0 +1,113 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Stereotypes" name="Stereotypes" visibility="public" isAbstract="false"/>
+        
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Stereotype>
+        <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Interfaces -->
+            <UML:Interface xmi.id="interface_GKA" name="GKA" visibility="public" isAbstract="false">
+              <UML:Feature>
+                <UML:Operation xmi.id="op_newSecurityGroup" name="newSecurityGroup" visibility="public" isAbstract="false">
+                  <UML:Parameter name="input" type="string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_joinGroup" name="joinGroup" visibility="public" isAbstract="false">
+                  <UML:Parameter name="groupId" type="int"/>
+                  <UML:Parameter name="memberId" type="int"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_agreeOnKey" name="agreeOnKey" visibility="public" isAbstract="false">
+                  <UML:Parameter name="key" type="string"/>
+                </UML:Operation>
+              </UML:Feature>
+            </UML:Interface>
+
+            <UML:Interface xmi.id="interface_MulticastGroup" name="MulticastGroup" visibility="public" isAbstract="false">
+              <UML:Feature>
+                <UML:Operation xmi.id="op_announceService" name="announceService" visibility="public" isAbstract="false">
+                  <UML:Parameter name="service" type="string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_announceServiceInSecurityGroup" name="announceServiceInSecurityGroup" visibility="public" isAbstract="false">
+                  <UML:Parameter name="groupId" type="int"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_findService" name="findService" visibility="public" isAbstract="false">
+                  <UML:Parameter name="query" type="string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_findServiceInSecurityGroup" name="findServiceInSecurityGroup" visibility="public" isAbstract="false">
+                  <UML:Parameter name="groupId" type="int"/>
+                </UML:Operation>
+              </UML:Feature>
+            </UML:Interface>
+
+            <UML:Class xmi.id="class_UA" name="UA" visibility="public" isAbstract="false"/>
+
+            <UML:Class xmi.id="class_Advertiser" name="Advertiser" visibility="public" isAbstract="false">
+              <UML:Feature>
+                <UML:Operation xmi.id="op_announceServiceAdv" name="announceService" visibility="public" isAbstract="false">
+                  <UML:Parameter name="aServiceURL" type="string"/>
+                  <UML:Parameter name="aKeyPair" type="KeyPair"/>
+                </UML:Operation>
+              </UML:Feature>
+            </UML:Class>
+
+            <UML:Interface xmi.id="interface_Address" name="Address" visibility="public" isAbstract="false"/>
+            <UML:Interface xmi.id="interface_KeyPair" name="KeyPair" visibility="public" isAbstract="false"/>
+            <UML:Interface xmi.id="interface_PrivateKey" name="PrivateKey" visibility="public" isAbstract="false"/>
+
+            <UML:Interface xmi.id="interface_Locator" name="Locator" visibility="public" isAbstract="false">
+              <UML:Feature>
+                <UML:Operation xmi.id="op_findServiceLocator" name="findService" visibility="public" isAbstract="false">
+                  <UML:Parameter name="serviceId" type="int"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_receiveResult" name="receiveResult" visibility="public" isAbstract="false"/>
+                <UML:Operation xmi.id="op_receiveKey" name="receiveKey" visibility="public" isAbstract="false"/>
+                <UML:Operation xmi.id="op_receiveResultFromSecurityGroup" name="receiveResultFromSecurityGroup" visibility="public" isAbstract="false">
+                  <UML:Parameter name="groupId" type="int"/>
+                </UML:Operation>
+              </UML:Feature>
+            </UML:Interface>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Additional Models -->
+        <UML:Package xmi.id="pkg_UseCaseView" name="Use Case View"/>
+        <UML:Package xmi.id="pkg_ComponentView" name="Component View"/>
+        <UML:Package xmi.id="pkg_DeploymentView" name="Deployment View"/>
+        <UML:Package xmi.id="pkg_EntityRelationshipModel" name="Entity Relationship Model"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

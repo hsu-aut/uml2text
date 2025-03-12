@@ -1,0 +1,123 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Pipeline" name="PipelineModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_PipelineRequest" name="PipelineRequest" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_HttpRequest" name="HttpRequest" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_BlogInfo" name="BlogInfo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getHttpRequest" name="getHttpRequest" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getBlogInfo" name="getBlogInfo" visibility="public" isQuery="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PipelineResult" name="PipelineResult" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_isValid" name="isValid" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_errorCode" name="errorCode" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_isValid" name="isValid" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getErrorCode" name="getErrorCode" visibility="public" isQuery="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Pipeline" name="Pipeline" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_filters" name="filters" visibility="private"/>
+            <UML:Operation xmi.id="op_process" name="process" visibility="public"/>
+            <UML:Operation xmi.id="op_isValid" name="isValid" visibility="public"/>
+            <UML:Operation xmi.id="op_getResult" name="getResult" visibility="public">
+              <UML:Parameter xmi.id="param_result_return" name="return" kind="return" type="PipelineResult"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_constructor" name="Pipeline">
+              <UML:Parameter xmi.id="param_HttpRequest" name="HttpRequest" kind="in" type="Integer"/>
+              <UML:Parameter xmi.id="param_BlogInfo" name="BlogInfo" kind="in" type="Integer"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PipelineFilter" name="PipelineFilter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_httpRequest" name="httpRequest" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_blogInfo" name="blogInfo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_filter" name="filter" visibility="public"/>
+            <UML:Operation xmi.id="op_constructor" name="PipelineFilter">
+              <UML:Parameter xmi.id="param_request" name="PipelineRequest" kind="in" type="PipelineRequest"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HostsBlacklist" name="HostsBlacklist" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_HostsWhitelist" name="HostsWhitelist" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ContentFilter" name="ContentFilter" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="assoc_Pipeline_PipelineFilter">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Pipeline_PipelineFilter_Pipeline" type="class_Pipeline" name="pipeline" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Pipeline_PipelineFilter_PipelineFilter" type="class_PipelineFilter" name="pipelineFilter" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PipelineFilter_HostsBlacklist">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PipelineFilter_HostsBlacklist_PipelineFilter" type="class_PipelineFilter" name="pipelineFilter" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PipelineFilter_HostsBlacklist_HostsBlacklist" type="class_HostsBlacklist" name="hostsBlacklist" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PipelineFilter_HostsWhitelist">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PipelineFilter_HostsWhitelist_PipelineFilter" type="class_PipelineFilter" name="pipelineFilter" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PipelineFilter_HostsWhitelist_HostsWhitelist" type="class_HostsWhitelist" name="hostsWhitelist" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PipelineFilter_ContentFilter">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PipelineFilter_ContentFilter_PipelineFilter" type="class_PipelineFilter" name="pipelineFilter" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PipelineFilter_ContentFilter_ContentFilter" type="class_ContentFilter" name="contentFilter" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

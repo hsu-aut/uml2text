@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <!-- Definition des Modells untitledModel -->
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Aktivitätsgraphen -->
+        <UML:ActivityGraph xmi.id="activityGraph1" name="ActivityGraph">
+          <UML:StateMachine.top>
+            
+            <!-- Definition des CompositeState -->
+            <UML:CompositeState xmi.id="topState" name="Top-CompositeState">
+              <UML:Subvertex>
+                
+                <!-- Definition des Initialzustands -->
+                <UML:Pseudostate xmi.id="initialState" kind="initial"/>
+                
+                <!-- Definition des CallState -->
+                <UML:CallState xmi.id="callState" name="CallState"/>
+                
+                <!-- Definition der Junction -->
+                <UML:Pseudostate xmi.id="junctionState" kind="junction"/>
+                
+                <!-- Definition des Objektflusszustands -->
+                <UML:ObjectFlowState xmi.id="objectFlowState" name="ObjectFlowState"/>
+                
+                <!-- Definition des Finalzustands -->
+                <UML:FinalState xmi.id="finalState" name="FinalState"/>
+
+              </UML:Subvertex>
+            </UML:CompositeState>
+
+          </UML:StateMachine.top>
+          
+          <!-- Definition der Transitionen -->
+          <UML:StateMachine.transitions>
+            <UML:Transition xmi.id="transition1" source="initialState" target="callState"/>
+            <UML:Transition xmi.id="transition2" source="callState" target="junctionState"/>
+            <UML:Transition xmi.id="transition3" source="junctionState" target="objectFlowState"/>
+            <UML:Transition xmi.id="transition4" source="objectFlowState" target="finalState"/>
+            <UML:Transition xmi.id="transition5" source="junctionState" target="finalState"/>
+          </UML:StateMachine.transitions>
+
+        </UML:ActivityGraph>
+
+        <!-- Definition der Kollaboration -->
+        <UML:Collaboration xmi.id="collaboration1" name="Collaboration">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition von ClassifierRole -->
+            <UML:ClassifierRole xmi.id="classifierRole1" name="ClassifierRole" base="class_Class" multiplicity="1..1"/>
+            
+            <!-- Definition von AssociationRole -->
+            <UML:AssociationRole xmi.id="associationRole1">
+              <UML:AssociationEndRole type="classifierRole1"/>
+            </UML:AssociationRole>
+            
+            <!-- Definition der Interaktion -->
+            <UML:Interaction xmi.id="interaction1" name="Interaction">
+              <UML:Message xmi.id="message1" name="Message1" sender="classifierRole1" receiver="classifierRole1" action="create"/>
+              <UML:Message xmi.id="message2" name="Message2" sender="classifierRole1" receiver="classifierRole1" action="call"/>
+              <UML:Message xmi.id="message3" name="Message3" sender="classifierRole1" receiver="classifierRole1" action="return"/>
+            </UML:Interaction>
+
+          </UML:Namespace.ownedElement>
+        </UML:Collaboration>
+
+        <!-- Definition der Klasse Class mit Zustandsautomaten -->
+        <UML:Class xmi.id="class_Class" name="Class">
+          <UML:Classifier.feature>
+            <!-- Definition der Zustände im Zustandsautomaten -->
+            <UML:StateMachine xmi.id="stateMachine1">
+              <UML:State xmi.id="state1" name="State1">
+                <UML:Transition xmi.id="stateTransition1" target="state2" action="create"/>
+              </UML:State>
+              <UML:State xmi.id="state2" name="State2">
+                <UML:Transition xmi.id="stateTransition2" target="state3" action="call"/>
+              </UML:State>
+              <UML:State xmi.id="state3" name="State3">
+                <UML:Transition xmi.id="stateTransition3" action="return"/>
+              </UML:State>
+            </UML:StateMachine>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

@@ -1,0 +1,66 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Enterprise Architect</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_XSDataExecVideo" name="XSDataExecVideo">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse EARootClass -->
+        <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+
+        <!-- Definition des Pakets XSDataExecVideo -->
+        <UML:Package xmi.id="package_XSDataExecVideo" name="XSDataExecVideo" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition der Klasse XSDataInputExecVideo -->
+            <UML:Class xmi.id="class_XSDataInputExecVideo" name="XSDataInputExecVideo" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_inputImagePath" name="inputImagePath" visibility="public" type="XSDataFile"/>
+                <UML:Attribute xmi.id="attr_outputPath" name="outputPath" visibility="public" type="XSDataFile"/>
+                <UML:Attribute xmi.id="attr_videoBitRate" name="videoBitRate" visibility="public" type="XSDataInteger"/>
+                <UML:Attribute xmi.id="attr_videoCodec" name="videoCodec" visibility="public" type="XSDataString"/>
+                <UML:Attribute xmi.id="attr_videoFPS" name="videoFPS" visibility="public" type="XSDataFloat"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse XSDataResultExecVideo -->
+            <UML:Class xmi.id="class_XSDataResultExecVideo" name="XSDataResultExecVideo" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_videoCodec_result" name="videoCodec" visibility="public" type="XSDataString"/>
+                <UML:Attribute xmi.id="attr_videoPath" name="videoPath" visibility="public" type="XSDataFile"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Generalisierung XSDataInputExecVideo extends XSDataInput -->
+            <UML:Generalization xmi.id="gen_XSDataInputExecVideo" child="class_XSDataInputExecVideo" parent="class_XSDataInput"/>
+
+            <!-- Generalisierung XSDataResultExecVideo extends XSDataResult -->
+            <UML:Generalization xmi.id="gen_XSDataResultExecVideo" child="class_XSDataResultExecVideo" parent="class_XSDataResult"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse XSDataInput -->
+        <UML:Class xmi.id="class_XSDataInput" name="XSDataInput" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse XSDataResult -->
+        <UML:Class xmi.id="class_XSDataResult" name="XSDataResult" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="XSDataFile" name="XSDataFile"/>
+        <UML:DataType xmi.id="XSDataInteger" name="XSDataInteger"/>
+        <UML:DataType xmi.id="XSDataString" name="XSDataString"/>
+        <UML:DataType xmi.id="XSDataFloat" name="XSDataFloat"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

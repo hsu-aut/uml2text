@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_XSDataDiffractionCTv1" name="XSDataDiffractionCTv1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Klasse XSDataResult -->
+        <UML:Class xmi.id="class_XSDataResult" name="XSDataResult" visibility="public" isAbstract="true"/>
+        
+        <!-- Klasse XSDataInput -->
+        <UML:Class xmi.id="class_XSDataInput" name="XSDataInput" visibility="public" isAbstract="true"/>
+
+        <!-- Klasse XSDataDiffractionCTImage -->
+        <UML:Class xmi.id="class_XSDataDiffractionCTImage" name="XSDataDiffractionCTImage" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_array_element_size_1" name="_array_element_size_1" visibility="private"/>
+            <UML:Attribute xmi.id="attr_array_element_size_2" name="_array_element_size_2" visibility="private"/>
+            <UML:Attribute xmi.id="attr_diffrn_detector_element_center_1" name="_diffrn_detector_element_center_1" visibility="private"/>
+            <UML:Attribute xmi.id="attr_diffrn_detector_element_center_2" name="_diffrn_detector_element_center_2" visibility="private"/>
+            <UML:Attribute xmi.id="attr_file_correction_image_dark_current" name="_file_correction_image_dark_current" visibility="private"/>
+            <UML:Attribute xmi.id="attr_file_correction_image_flat_field" name="_file_correction_image_flat_field" visibility="private"/>
+            <UML:Attribute xmi.id="attr_file_correction_image_mask" name="_file_correction_image_mask" visibility="private"/>
+            <UML:Attribute xmi.id="attr_file_correction_spline_spatial_distortion" name="_file_correction_spline_spatial_distortion" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pd_instr_special_details_tilt_angle" name="_pd_instr_special_details_tilt_angle" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pd_instr_special_details_tilt_rotation" name="_pd_instr_special_details_tilt_rotation" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse XSDataDiffractionCTInstrument -->
+        <UML:Class xmi.id="class_XSDataDiffractionCTInstrument" name="XSDataDiffractionCTInstrument" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_diffrn_radiation_wavelength" name="_diffrn_radiation_wavelength" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pd_instr_dist_spec_detc" name="_pd_instr_dist_spec_detc" visibility="private"/>
+            <!-- Additional attributes for instrument specifications can be added here -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDataResultDiffractionCT -->
+        <UML:Class xmi.id="class_XSDataResultDiffractionCT" name="XSDataResultDiffractionCT" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Classifier xmi.idref="class_XSDataResult"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_integratedIntensities" name="integratedIntensities" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sinogramFile" name="sinogramFile" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDataResultReadHeader -->
+        <UML:Class xmi.id="class_XSDataResultReadHeader" name="XSDataResultReadHeader" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Classifier xmi.idref="class_XSDataResult"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dictionary" name="dictionary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataDictionary"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDataResultPowderIntegration -->
+        <UML:Class xmi.id="class_XSDataResultPowderIntegration" name="XSDataResultPowderIntegration" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Classifier xmi.idref="class_XSDataResult"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_integratedIntensities" name="integratedIntensities" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDataInputWriteSinogram -->
+        <UML:Class xmi.id="class_XSDataInputWriteSinogram" name="XSDataInputWriteSinogram" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Classifier xmi.idref="class_XSDataInput"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_integratedIntensities" name="integratedIntensities" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sinogramDirectory" name="sinogramDirectory" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sinogramFileNamePrefix" name="sinogramFileNamePrefix" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDataInputReadHeader -->
+        <UML:Class xmi.id="class_XSDataInputReadHeader" name="XSDataInputReadHeader" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Classifier xmi.idref="class_XSDataInput"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_inputFile" name="inputFile" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDataResultWriteSinogram -->
+        <UML:Class xmi.id="class_XSDataResultWriteSinogram" name="XSDataResultWriteSinogram" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_sinogramFile" name="sinogramFile" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDataInputDiffractionCT -->
+        <UML:Class xmi.id="class_XSDataInputDiffractionCT" name="XSDataInputDiffractionCT" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_destinationDirectory" name="destinationDirectory" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_image" name="image" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sinogramFileNamePrefix" name="sinogramFileNamePrefix" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_powderDiffractionSubdirectory" name="powderDiffractionSubdirectory" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_powderDiffractionFormat" name="powderDiffractionFormat" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_overrideImageParam" name="overrideImageParam" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataDiffractionCTImage"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_overrideScanParam" name="overrideScanParam" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataDiffractionCTInstrument"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse XSDataInputPowderIntegration -->
+        <UML:Class xmi.id="class_XSDataInputPowderIntegration" name="XSDataInputPowderIntegration" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Classifier xmi.idref="class_XSDataInput"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_destinationDir" name="destinationDir" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_imageFile" name="imageFile" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_imageParameters" name="imageParameters" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataDiffractionCTImage"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_instrumentParameters" name="instrumentParameters" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataDiffractionCTInstrument"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Datentypen -->
+        <UML:Class xmi.id="class_XSDataFile" name="XSDataFile" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_XSDataString" name="XSDataString" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_XSDataDictionary" name="XSDataDictionary" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_XSDataWavelength" name="XSDataWavelength" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_XSDataLength" name="XSDataLength" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_XSDataAngle" name="XSDataAngle" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

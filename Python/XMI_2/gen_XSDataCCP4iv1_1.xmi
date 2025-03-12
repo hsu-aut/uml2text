@@ -1,0 +1,81 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_XSDataCCP4i" name="XSDataCCP4i Class Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_XSDataResultCCP4i" name="XSDataResultCCP4i" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_listOfOutputFiles" name="listOfOutputFiles" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="dataType_XSDataString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_XSDataInputCCP4i" name="XSDataInputCCP4i" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dataFile" name="dataFile" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="dataType_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_diffractionPlan" name="diffractionPlan" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="dataType_XSDataDiffractionPlan"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_experimentalCondition" name="experimentalCondition" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="dataType_XSDataExperimentalCondition"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sample" name="sample" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="dataType_XSDataSampleCrystalMM"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_XSDataCCP4iDataSet" name="XSDataCCP4iDataSet" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_imageFile" name="imageFile" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="dataType_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_XSDataInputCCP4i_XSDataCCP4iDataSet">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_XSDataInputCCP4i" type="class_XSDataInputCCP4i" name="dataSet" visibility="public" aggregation="none" isNavigable="false" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XSDataCCP4iDataSet" type="class_XSDataCCP4iDataSet" name="" visibility="public" aggregation="none" isNavigable="true" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Comment xmi.id="comment_XSDataResultCCP4i" annotates="class_XSDataResultCCP4i" body="Die Klasse XSDataResultCCP4i repräsentiert das Resultat eines Prozesses mit einem Verweis auf die Datei XSDataString für listOfOutputFiles."/>
+        <UML:Comment xmi.id="comment_XSDataCCP4iDataSet" annotates="class_XSDataCCP4iDataSet" body="Die Klasse XSDataCCP4iDataSet beschreibt eine Sammlung von Dateipfaden, die zu Referenzbildern führen."/>
+        <UML:Comment xmi.id="comment_XSDataInputCCP4i" annotates="class_XSDataInputCCP4i" body="XSDataInputCCP4i enthält Eingabedaten für ein wissenschaftliches Experiment wie Beugungspläne und experimentelle Bedingungen."/>
+
+        <UML:DataType xmi.id="dataType_XSDataString" name="XSDataString"/>
+        <UML:DataType xmi.id="dataType_XSDataFile" name="XSDataFile"/>
+        <UML:DataType xmi.id="dataType_XSDataDiffractionPlan" name="XSDataDiffractionPlan"/>
+        <UML:DataType xmi.id="dataType_XSDataExperimentalCondition" name="XSDataExperimentalCondition"/>
+        <UML:DataType xmi.id="dataType_XSDataSampleCrystalMM" name="XSDataSampleCrystalMM"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

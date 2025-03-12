@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_testing" name="testing">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Schnittstelle "NameIf" -->
+        <UML:Interface xmi.id="interface_NameIf" name="NameIf" visibility="public">
+          <UML:Feature>
+            <UML:Operation xmi.id="operation_NameIf_someOperation" name="someOperation" visibility="public" isAbstract="true"/>
+          </UML:Feature>
+        </UML:Interface>
+
+        <!-- Definition der Klasse "Name" -->
+        <UML:Class xmi.id="class_Name" name="Name" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_NameIf"/>
+          </UML:Generalization>
+          <UML:Feature>
+            <UML:Operation xmi.id="operation_Name_someOperation" name="someOperation" visibility="public"/>
+          </UML:Feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Little" -->
+        <UML:Class xmi.id="class_Little" name="Little" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_A"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "Bit of" -->
+        <UML:Class xmi.id="class_Bit_of" name="Bit of" visibility="public" isAbstract="true">
+          <UML:StateMachine>
+            <UML:ActivityGraph xmi.id="activity_Bit_ofActivityGraph"/>
+          </UML:StateMachine>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Everything" -->
+        <UML:Class xmi.id="class_Everything" name="Everything" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_Bit_of"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Simple" -->
+        <UML:Class xmi.id="class_Simple" name="Simple" visibility="public">
+          <UML:Feature>
+            <UML:Attribute xmi.id="attr_Simple_attribute" name="attribute" visibility="public"/>
+            <UML:Operation xmi.id="operation_Simple_operation" name="operation" visibility="public">
+              <UML:Parameter xmi.id="param_Simple_param" name="param" type="String"/>
+            </UML:Operation>
+          </UML:Feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Model" -->
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public">
+          <UML:Feature>
+            <UML:Attribute xmi.id="attr_Model_privateAttribute" name="privateAttribute" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Model_publicAttribute" name="publicAttribute" visibility="public"/>
+            <UML:Operation xmi.id="operation_Model_privateOperation" name="privateOperation" visibility="private"/>
+            <UML:Operation xmi.id="operation_Model_publicOperation" name="publicOperation" visibility="public"/>
+          </UML:Feature>
+        </UML:Class>
+
+        <!-- Komposition zwischen "Little" und "Bit of" -->
+        <UML:Association xmi.id="assoc_Little_Bit_of">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Little" type="class_Little" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Bit_of" type="class_Bit_of" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Aggregation zwischen "Simple" und "A" -->
+        <UML:Association xmi.id="assoc_Simple_A">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Simple" type="class_Simple" aggregation="shared" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_A" type="class_A" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Dummy Class A to represent as part of relations -->
+        <UML:Class xmi.id="class_A" name="A" visibility="public"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

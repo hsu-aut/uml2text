@@ -1,0 +1,112 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MyGraphClass" name="MyGraphClass">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "A" -->
+        <UML:Class xmi.id="class_A" name="A" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "O" -->
+        <UML:Class xmi.id="class_O" name="O" visibility="public" isAbstract="false"/>
+        
+        <!-- Assoziationen zwischen A und O -->
+        <UML:Association xmi.id="assoc_A2O" name="A2O">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_A2O_end1" type="class_A" name="A" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assoc_A2O_end2" type="class_O" name="O" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_O2A" name="O2A">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_O2A_end1" type="class_O" name="O" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assoc_O2A_end2" type="class_A" name="A" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_A2O_WithNavA2O" name="A2O_WithNavA2O">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_A2O_WithNavA2O_end1" type="class_A" name="A" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="assoc_A2O_WithNavA2O_end2" type="class_O" name="O" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_A2O_WithNavO2A" name="A2O_WithNavO2A">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_A2O_WithNavO2A_end1" type="class_A" name="A" visibility="public" aggregation="none" isNavigable="true"/>
+            <UML:AssociationEnd xmi.id="assoc_A2O_WithNavO2A_end2" type="class_O" name="O" visibility="public" aggregation="none" isNavigable="false"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_O2A_WithNavO2A" name="O2A_WithNavO2A">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_O2A_WithNavO2A_end1" type="class_O" name="O" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="assoc_O2A_WithNavO2A_end2" type="class_A" name="A" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_O2A_WithNavA2O" name="O2A_WithNavA2O">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_O2A_WithNavA2O_end1" type="class_O" name="O" visibility="public" aggregation="none" isNavigable="true"/>
+            <UML:AssociationEnd xmi.id="assoc_O2A_WithNavA2O_end2" type="class_A" name="A" visibility="public" aggregation="none" isNavigable="false"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Nicht-navigierbare Assoziationen -->
+        <UML:Association xmi.id="assoc_A2O_WithoutNav" name="A2O_WithoutNav">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_A2O_WithoutNav_end1" type="class_A" name="A" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="assoc_A2O_WithoutNav_end2" type="class_O" name="O" visibility="public" aggregation="none" isNavigable="false"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_O2A_WithoutNav" name="O2A_WithoutNav">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_O2A_WithoutNav_end1" type="class_O" name="O" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="assoc_O2A_WithoutNav_end2" type="class_A" name="A" visibility="public" aggregation="none" isNavigable="false"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziationsklassen -->
+        <UML:AssociationClass xmi.id="class_AC_A2O" name="AC_A2O">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_AC_A2O_end1" type="class_A" name="A" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="class_AC_A2O_end2" type="class_O" name="O" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:AssociationClass>
+
+        <UML:AssociationClass xmi.id="class_AC_O2A" name="AC_O2A">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_AC_O2A_end1" type="class_O" name="O" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="class_AC_O2A_end2" type="class_A" name="A" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:AssociationClass>
+
+        <UML:AssociationClass xmi.id="class_AC_A2O_WithNavA2O" name="AC_A2O_WithNavA2O">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_AC_A2O_WithNavA2O_end1" type="class_A" name="A" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="class_AC_A2O_WithNavA2O_end2" type="class_O" name="O" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:AssociationClass>
+
+        <UML:AssociationClass xmi.id="class_AC_O2A_WithNavO2A" name="AC_O2A_WithNavO2A">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_AC_O2A_WithNavO2A_end1" type="class_O" name="O" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="class_AC_O2A_WithNavO2A_end2" type="class_A" name="A" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:AssociationClass>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

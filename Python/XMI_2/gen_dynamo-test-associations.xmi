@@ -1,0 +1,132 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DynamoTest" name="DynamoTest">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_Gen" name="Gen">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Tests" name="Tests">
+              <UML:Namespace.ownedElement>
+
+                <!-- Enumeration Test_Import_Enum -->
+                <UML:Enumeration xmi.id="enum_Test_Import_Enum" name="Test_Import_Enum">
+                  <UML:EnumerationLiteral xmi.id="literal_REd" name="RED"/>
+                  <UML:EnumerationLiteral xmi.id="literal_BLUE" name="BLUE"/>
+                  <UML:EnumerationLiteral xmi.id="literal_GREEN" name="GREEN"/>
+                </UML:Enumeration>
+
+                <!-- Class Table_A -->
+                <UML:Class xmi.id="class_Table_A" name="Table_A" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="attr_table_id" name="table_id" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="String"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="String"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="Integer"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_enum" name="enum" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:Enumeration xmi.idref="enum_Test_Import_Enum"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- Class Table_B -->
+                <UML:Class xmi.id="class_Table_B" name="Table_B" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="String"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- Class Table_C -->
+                <UML:Class xmi.id="class_Table_C" name="Table_C" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="String"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_my_version" name="my_version" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="String"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- Class Table_D -->
+                <UML:Class xmi.id="class_Table_D" name="Table_D" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="attr_key" name="key" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="String"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- Association link between Table_B and Table_A -->
+                <UML:Association xmi.id="assoc_link_Table_B_Table_A" name="link" visibility="public">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Table_B_to_Table_A" type="class_Table_B" name="table_B" visibility="public" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Table_A_to_Table_B" type="class_Table_A" name="table_A" visibility="public" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+                <!-- Association property between Table_C and Table_A -->
+                <UML:Association xmi.id="assoc_property_Table_C_Table_A" name="property" visibility="public">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Table_C_to_Table_A" type="class_Table_C" name="table_C" visibility="public" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Table_A_to_Table_C" type="class_Table_A" name="table_A" visibility="public" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+                <!-- Unnamed association between Table_C and Table_B -->
+                <UML:Association xmi.id="assoc_Table_C_Table_B" visibility="public">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Table_C" type="class_Table_C" name="table_C" visibility="public" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Table_B" type="class_Table_B" name="table_B" visibility="public" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+                <!-- Association is-described-by between Table_D and Table_A -->
+                <UML:Association xmi.id="assoc_is_described_by_Table_D_Table_A" name="is-described-by" visibility="public">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Table_D_to_Table_A" type="class_Table_D" name="table_D" visibility="public" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Table_A_to_Table_D" type="class_Table_A" name="table_A" visibility="public" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

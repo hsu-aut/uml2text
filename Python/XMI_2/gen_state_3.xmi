@@ -1,0 +1,98 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ContentFlow" name="ContentFlow">
+      <UML:Namespace.ownedElement>
+        
+        <!-- definition of CallEvent -->
+        <UML:CallEvent xmi.id="event_fail" name="fail"/>
+        <UML:CallEvent xmi.id="event_finish" name="finish"/>
+        <UML:CallEvent xmi.id="event_manageDocuments" name="manageDocuments"/>
+        <UML:CallEvent xmi.id="event_manageDocumentSpecs" name="manageDocumentSpecs"/>
+        <UML:CallEvent xmi.id="event_logout" name="logout"/>
+        <UML:CallEvent xmi.id="event_success" name="success"/>
+        
+        <!-- Flows Package -->
+        <UML:Package xmi.id="package_flows" name="flows">
+          
+          <!-- Main Flow -->
+          <UML:StateMachine xmi.id="machine_mainFlow" name="main-flow">
+            <UML:StateMachine.top>
+              <UML:CompositeState xmi.id="state_mainFlow_top">
+                <UML:CompositeState.subvertex>
+                  <UML:Pseudostate xmi.id="state_mainFlow_start" kind="initial"/>
+                  <UML:SimpleState xmi.id="state_mainFlow_login" name="login">
+                    <UML:SimpleState.stereotype>
+                      <UML:Stereotype name="view state"/>
+                    </UML:SimpleState.stereotype>
+                  </UML:SimpleState>
+                  <UML:SimpleState xmi.id="state_mainFlow_menu" name="menu"/>
+                  <UML:SubmachineState xmi.id="state_mainFlow_document" name="document"/>
+                  <UML:SubmachineState xmi.id="state_mainFlow_documentspec" name="documentspec"/>
+                  <UML:FinalState xmi.id="state_mainFlow_end" name="end"/>
+                  <UML:SimpleState xmi.id="state_mainFlow_logout" name="logout"/>
+                </UML:CompositeState.subvertex>
+              </UML:CompositeState>
+            </UML:StateMachine.top>
+          </UML:StateMachine>
+
+          <!-- Document Flow -->
+          <UML:StateMachine xmi.id="machine_documentFlow" name="document-flow">
+            <UML:StateMachine.top>
+              <UML:CompositeState xmi.id="state_documentFlow_top">
+                <UML:CompositeState.subvertex>
+                  <UML:Pseudostate xmi.id="state_documentFlow_start" kind="initial"/>
+                  <UML:SimpleState xmi.id="state_documentFlow_showDocumentList" name="showDocumentList"/>
+                  <UML:SimpleState xmi.id="state_documentFlow_showDocument" name="showDocument"/>
+                  <UML:SimpleState xmi.id="state_documentFlow_editDocument" name="editDocument"/>
+                  <UML:FinalState xmi.id="state_documentFlow_finish" name="finish"/>
+                </UML:CompositeState.subvertex>
+              </UML:CompositeState>
+            </UML:StateMachine.top>
+          </UML:StateMachine>
+
+          <!-- DocumentSpec Flow -->
+          <UML:StateMachine xmi.id="machine_documentspecFlow" name="documentspec-flow">
+            <UML:StateMachine.top>
+              <UML:CompositeState xmi.id="state_documentspecFlow_top">
+                <UML:CompositeState.subvertex>
+                  <UML:Pseudostate xmi.id="state_documentspecFlow_start" kind="initial"/>
+                  <UML:SimpleState xmi.id="state_documentspecFlow_showDocumentSpecs" name="showDocumentSpecs"/>
+                  <UML:FinalState xmi.id="state_documentspecFlow_finish" name="finish"/>
+                </UML:CompositeState.subvertex>
+              </UML:CompositeState>
+            </UML:StateMachine.top>
+          </UML:StateMachine>
+          
+        </UML:Package>
+
+        <!-- Java Package -->
+        <UML:Package xmi.id="package_Java" name="Java">
+          <UML:Class xmi.id="class_Integer" name="Integer"/>
+          <UML:Class xmi.id="class_Long" name="Long"/>
+          <UML:Class xmi.id="class_Object" name="Object"/>
+          <UML:Class xmi.id="class_Short" name="Short"/>
+          <UML:Class xmi.id="class_String" name="String"/>
+          <UML:Interface xmi.id="interface_Iterator" name="Iterator"/>
+          <UML:Interface xmi.id="interface_List" name="List"/>
+          <UML:Interface xmi.id="interface_Set" name="Set"/>
+        </UML:Package>
+
+        <!-- Data Types -->
+        <UML:DataType xmi.id="dataType_Integer" name="Integer"/>
+        <UML:DataType xmi.id="dataType_Long" name="Long"/>
+        <UML:DataType xmi.id="dataType_Short" name="Short"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

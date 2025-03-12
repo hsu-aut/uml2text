@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GameDomain" name="GameDomain">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_char" name="char" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_float" name="float" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_double" name="double" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_short" name="short" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_long" name="long" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_unsignedint" name="unsigned int" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_unsignedshort" name="unsigned short" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_unsignedlong" name="unsigned long" stereotype="datatype"/>
+        <UML:DataType xmi.id="datatype_string" name="string" stereotype="datatype"/>
+        
+        <!-- Definition der Klasse GLOB -->
+        <UML:Class xmi.id="class_GLOB" name="GLOB" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Entity Player -->
+        <UML:Class xmi.id="entity_player" name="player" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_player_id" name="_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_player_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Entity Level -->
+        <UML:Class xmi.id="entity_level" name="level" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_level_id" name="_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_level_level" name="level" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_level_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_level_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_level_bombs" name="bombs" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Entity Game -->
+        <UML:Class xmi.id="entity_game" name="game" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_game_id" name="_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_game_gameplayer" name="gameplayer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="entity_player"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_game_gamelevel" name="gamelevel" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="entity_level"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_game_time" name="time" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_game_date" name="date" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_game_replay" name="replay" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Assoziation: played by -->
+        <UML:Association xmi.id="assoc_played_by">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_played_by_game" type="entity_game" name="game" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_played_by_player" type="entity_player" name="player" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation: played on -->
+        <UML:Association xmi.id="assoc_played_on">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_played_on_game" type="entity_game" name="game" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_played_on_level" type="entity_level" name="level" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

@@ -1,0 +1,92 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SoftwareArchitecture" name="SoftwareArchitecture">
+      <UML:Namespace.ownedElement>
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="LogicalView">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_EntitySystem" name="EntitySystem">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_Entity" name="Entity" visibility="public">
+                </UML:Class>
+                <UML:Class xmi.id="class_StaticEntity" name="StaticEntity" visibility="public">
+                  <UML:Generalization xmi.id="gen_StaticEntity_Entity" parent="class_Entity"/>
+                </UML:Class>
+                <UML:Class xmi.id="class_DynamicEntity" name="DynamicEntity" visibility="public">
+                  <UML:Generalization xmi.id="gen_DynamicEntity_Entity" parent="class_Entity"/>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="package_Network" name="network">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_IP_Connection" name="IP_Connection" visibility="public">
+                  <UML:Attribute xmi.id="attr_ip_address" name="ip_address" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_port" name="port" visibility="private"/>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="package_Person" name="Person">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_Human" name="Human" visibility="public">
+                  <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_skincolor" name="skincolor" visibility="private"/>
+                  <UML:Attribute xmi.id="attr_haircolor" name="haircolor" visibility="private"/>
+                  <UML:Generalization xmi.id="gen_Human_Class1" parent="class_Class1"/>
+                  <UML:Generalization xmi.id="gen_Human_Class2" parent="class_Class2"/>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_Time" name="Time" visibility="public"/>
+            <UML:Class xmi.id="class_Color" name="Color" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_Vector3" name="Vector3"/>
+            <UML:DataType xmi.id="datatype_String" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Generalization Relationships -->
+        <UML:Generalization xmi.id="gen_DynamicEntity_Entity" parent="class_Entity"/>
+        <UML:Generalization xmi.id="gen_StaticEntity_Entity" parent="class_Entity"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_Entity_Color">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_Color_Entity" type="class_Entity" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_Color_Color" type="class_Color" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Entity_Vector3">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_Vector3_Entity" type="class_Entity" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity_Vector3_Vector3" type="datatype_Vector3" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

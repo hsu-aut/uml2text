@@ -1,0 +1,321 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_RefactoringModel" name="RefactoringModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse BaseRefactorClass -->
+        <UML:Class xmi.id="class_BaseRefactorClass" name="BaseRefactorClass" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_baseAttri1" name="m_baseAttri1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_baseAttri2" name="m_baseAttri2" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_baseOp1" name="baseOp1" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse RefactorClass -->
+        <UML:Class xmi.id="class_RefactorClass" name="RefactorClass" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_RefactorClass"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_BaseRefactorClass"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attri1" name="m_attri1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_attri2" name="m_attri2" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_attri3" name="m_attri3" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_op1" name="op1" visibility="public"/>
+            <UML:Operation xmi.id="op_op2" name="op2" visibility="public">
+              <UML:Parameter xmi.id="op2_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Bool"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse SubRefactorClass -->
+        <UML:Class xmi.id="class_SubRefactorClass" name="SubRefactorClass" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_SubRefactorClass"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_RefactorClass"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_subAttri1" name="m_subAttri1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_subAttri2" name="m_subAttri2" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_subOp1" name="subOp1" visibility="public">
+              <UML:Parameter xmi.id="subOp1_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Float"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_subOp2" name="subOp2" visibility="public">
+              <UML:Parameter xmi.id="subOp2_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Bool"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ClassA1 -->
+        <UML:Class xmi.id="class_ClassA1" name="ClassA1" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attriA11" name="m_attriA11" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_opA11" name="opA11" visibility="public">
+              <UML:Parameter xmi.id="opA11_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Bool"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ClassA2 -->
+        <UML:Class xmi.id="class_ClassA2" name="ClassA2" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attriA21" name="m_attriA21" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_opA21" name="opA21" visibility="public">
+              <UML:Parameter xmi.id="opA21_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_opA22" name="opA22" visibility="public">
+              <UML:Parameter xmi.id="opA22_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_opA23" name="opA23" visibility="public">
+              <UML:Parameter xmi.id="opA23_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ClassB -->
+        <UML:Class xmi.id="class_ClassB" name="ClassB" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ClassB"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ClassA1"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ClassB"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ClassA2"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attriB1" name="m_attriB1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_attriB2" name="m_attriB2" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_opB1" name="opB1" visibility="public">
+              <UML:Parameter xmi.id="opB1_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Long"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ClassC1 -->
+        <UML:Class xmi.id="class_ClassC1" name="ClassC1" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ClassC1"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ClassB"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attriC11" name="m_attriC11" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Short"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_opC11" name="opC11" visibility="public">
+              <UML:Parameter xmi.id="opC11_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Short"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ClassD -->
+        <UML:Class xmi.id="class_ClassD" name="ClassD" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ClassD"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ClassC1"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attriD1" name="m_attriD1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_opD1" name="opD1" visibility="public">
+              <UML:Parameter xmi.id="opD1_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Double"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ClassC2 -->
+        <UML:Class xmi.id="class_ClassC2" name="ClassC2" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attriC21" name="m_attriC21" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_opC21" name="opC21" visibility="public">
+              <UML:Parameter xmi.id="opC21_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="Char"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ClassE -->
+        <UML:Class xmi.id="class_ClassE" name="ClassE" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ClassE"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ClassD"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ClassE"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ClassC2"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attriE1" name="m_attriE1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_opE1" name="opE1" visibility="public">
+              <UML:Parameter xmi.id="opE1_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_opE2" name="opE2" visibility="public">
+              <UML:Parameter xmi.id="opE2_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="Bool" name="Bool"/>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Long" name="Long"/>
+        <UML:DataType xmi.id="Int" name="Int"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+        <UML:DataType xmi.id="Short" name="Short"/>
+        <UML:DataType xmi.id="Double" name="Double"/>
+        <UML:DataType xmi.id="Char" name="Char"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

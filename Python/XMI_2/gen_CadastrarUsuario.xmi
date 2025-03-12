@@ -1,0 +1,76 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View with Datatypes -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            
+            <!-- Placeholder for Class Diagram -->
+            <UML:Class xmi.id="class_LogicalClassDiagram" name="ClassDiagram"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View (Cadastrar Usuário)">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Actor xmi.id="actor_Bibliotecario" name="Bibliotecário"/>
+            <UML:Actor xmi.id="actor_NovoUsuario" name="Novo Usuário"/>
+            <UML:UseCase xmi.id="use_case_CadastrarUsuario" name="Cadastrar Usuário"/>
+            
+            <!-- Associations in Use Case View -->
+            <UML:Association xmi.id="assoc_Bibliotecario_NovoUsuario">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_NovoUsuario" type="actor_NovoUsuario" name="NovoUsuário" aggregation="none" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Bibliotecario" type="actor_Bibliotecario" name="Bibliotecário" aggregation="none" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Bibliotecario_CadastrarUsuario">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_CadastrarUsuario" type="use_case_CadastrarUsuario" name="CadastrarUsuário" aggregation="none" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Bibliotecario_Cadastrar" type="actor_Bibliotecario" name="Bibliotecário" aggregation="none" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Component View -->
+        <UML:Package xmi.id="package_ComponentView" name="Component View"/>
+
+        <!-- Deployment View -->
+        <UML:Package xmi.id="package_DeploymentView" name="Deployment View"/>
+        
+        <!-- Entity Relationship Model -->
+        <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

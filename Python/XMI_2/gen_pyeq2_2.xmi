@@ -1,0 +1,138 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Main" name="MainModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- DataCache Class -->
+        <UML:Class xmi.id="class_DataCache" name="DataCache" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_allDataCacheDictionary" name="allDataCacheDictionary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dict"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_reducedDataCacheDictionary" name="reducedDataCacheDictionary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dict"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_GenerateReducedRawData" name="GenerateReducedRawData" visibility="public"/>
+            <UML:Operation xmi.id="op_FindOrCreateCache_CommonCode" name="FindOrCreateCache_CommonCode" visibility="public"/>
+            <UML:Operation xmi.id="op_FindOrCreateReducedDataCache" name="FindOrCreateReducedDataCache" visibility="public"/>
+            <UML:Operation xmi.id="op_FindOrCreateAllDataCache" name="FindOrCreateAllDataCache" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- OutputSourceCodeService Class -->
+        <UML:Class xmi.id="class_OutputSourceCodeService" name="OutputSourceCodeService" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Operation definitions for various code conversions -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- SolverService Class -->
+        <UML:Class xmi.id="class_SolverService" name="SolverService" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_SolveUsingLinear" name="SolveUsingLinear" visibility="public"/>
+            <UML:Operation xmi.id="op_SolveUsingSimplex" name="SolveUsingSimplex" visibility="public"/>
+            <UML:Operation xmi.id="op_SolveUsingDE" name="SolveUsingDE" visibility="public"/>
+            <UML:Operation xmi.id="op_SolveUsingLevenbergMarquardt" name="SolveUsingLevenbergMarquardt" visibility="public"/>
+            <UML:Operation xmi.id="op_SolveUsingSpline" name="SolveUsingSpline" visibility="public"/>
+            <UML:Operation xmi.id="op_SolveUsingODR" name="SolveUsingODR" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DataConverterService Class -->
+        <UML:Class xmi.id="class_DataConverterService" name="DataConverterService" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ConvertASCII" name="ConvertASCII" visibility="public"/>
+            <UML:Operation xmi.id="op_ConvertNumpyArrays" name="ConvertNumpyArrays" visibility="public"/>
+            <UML:Operation xmi.id="op_ConvertPythonSequences" name="ConvertPythonSequences" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- IModel Class -->
+        <UML:Class xmi.id="interface_IModel" name="IModel" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <!-- Methods for calculation, error analysis, source code generation, etc -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Spline Class -->
+        <UML:Class xmi.id="class_Spline" name="Spline" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_xOrder" name="xOrder" visibility="private"/>
+            <UML:Attribute xmi.id="attr_yOrder" name="yOrder" visibility="private"/>
+            <UML:Attribute xmi.id="attr_smoothingFactor" name="smoothingFactor" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- UserDefinedFunction Class -->
+        <UML:Class xmi.id="class_UserDefinedFunction" name="UserDefinedFunction" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_functionDictionary" name="functionDictionary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dict"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_constantsDictionary" name="constantsDictionary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dict"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_GetTokensFromTupleParsingHelper" name="GetTokensFromTupleParsingHelper" visibility="public"/>
+            <UML:Operation xmi.id="op_ParseAndCompileUserFunctionString" name="ParseAndCompileUserFunctionString" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Other classes -->
+        <UML:Class xmi.id="class_UserSelectablePolyfunctional" name="UserSelectablePolyfunctional" visibility="public"/>
+        <UML:Class xmi.id="class_UserSelectablePolynomial" name="UserSelectablePolynomial" visibility="public"/>
+        <UML:Class xmi.id="class_UserSelectablePolyrational" name="UserSelectablePolyrational" visibility="public"/>
+
+        <!-- IExtendedVersionHandler Class -->
+        <UML:Class xmi.id="interface_IExtendedVersionHandler" name="IExtendedVersionHandler" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <!-- Methods for HTML display, name, coefficients, and source code handling -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Associations and Aggregations -->
+        <UML:Association xmi.id="assoc_IModel_DataCache">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_IModel_DataCache_IModel" type="interface_IModel"/>
+            <UML:AssociationEnd xmi.id="assocEnd_IModel_DataCache_DataCache" type="class_DataCache" aggregation="aggregate"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_IModel_SolverService">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_IModel_SolverService_IModel" type="interface_IModel"/>
+            <UML:AssociationEnd xmi.id="assocEnd_IModel_SolverService_SolverService" type="class_SolverService" aggregation="aggregate"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_IModel_DataConverterService">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_IModel_DataConverterService_IModel" type="interface_IModel"/>
+            <UML:AssociationEnd xmi.id="assocEnd_IModel_DataConverterService_DataConverterService" type="class_DataConverterService" aggregation="aggregate"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Data types -->
+        <UML:DataType xmi.id="dict" name="dict"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    
+    <!-- Data Package -->
+    <UML:Package xmi.id="package_Data" name="Data">
+      
+      <!-- Datatype Package -->
+      <UML:Package xmi.id="package_Datatype" name="Datatype">
+        
+        <!-- Definition von Datentypen -->
+        <UML:DataType xmi.id="datatype_StringArray" name="String[]"/>
+        <UML:DataType xmi.id="datatype_doubleArray" name="double[]"/>
+        <UML:DataType xmi.id="datatype_Integer" name="Integer">
+          <UML:Generalization xmi.id="gen_Integer_int" parent="datatype_int"/>
+        </UML:DataType>
+        <UML:DataType xmi.id="datatype_DateTime" name="DateTime">
+          <UML:Generalization xmi.id="gen_DateTime_Date" parent="datatype_Date"/>
+        </UML:DataType>
+        <UML:DataType xmi.id="datatype_Date" name="Date"/>
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+      </UML:Package>
+
+      <!-- TreeNode Class Definition -->
+      <UML:Class xmi.id="class_TreeNode" name="TreeNode" visibility="public">
+        <UML:ModelElement.taggedValue>
+          <UML:TaggedValue tag="documentation" value="Diese Klasse repräsentiert ein Knotenelement in einer hierarchischen Datenstruktur."/>
+        </UML:ModelElement.taggedValue>
+      </UML:Class>
+    </UML:Package> 
+
+    <!-- Org andromda.profile Package -->
+    <UML:Package xmi.id="package_OrgAndromdaProfile" name="OrgAndromdaProfile">
+    
+      <!-- Webservice Package -->
+      <UML:Package xmi.id="package_Webservice" name="Webservice">
+          <UML:Enumeration xmi.id="enum_WebServiceStyle" name="WebServiceStyle"/>
+          <UML:Enumeration xmi.id="enum_WebServiceProvider" name="WebServiceProvider"/>
+          <UML:Stereotype xmi.id="stereo_TagDefinitions" name="@andromda.webservice.use"/>
+      </UML:Package>
+
+      <!-- Service Package -->
+      <UML:Package xmi.id="package_Service" name="Service">
+          <UML:Stereotype xmi.id="stereo_Service" name="Service"/>
+          <UML:Stereotype xmi.id="stereo_ServiceRef" name="ServiceRef"/>
+          <UML:Enumeration xmi.id="enum_EjbTransactionType" name="EjbTransactionType"/>
+          <UML:Enumeration xmi.id="enum_SpringTransactionType" name="SpringTransactionType"/>
+      </UML:Package>
+
+      <!-- Process Package -->
+      <UML:Package xmi.id="package_Process" name="Process">
+          <UML:Stereotype xmi.id="stereo_NodeLeave" name="Node Leave"/>
+          <UML:Stereotype xmi.id="stereo_BusinessProcess" name="Business Process"/>
+          <UML:Stereotype xmi.id="stereo_Timer" name="Timer"/>
+      </UML:Package>
+
+      <!-- Presentation Package -->
+      <UML:Package xmi.id="package_Presentation" name="Presentation">
+          <UML:Enumeration xmi.id="enum_WebActionFormScope" name="WebActionFormScope"/>
+          <UML:Enumeration xmi.id="enum_WebFieldType" name="WebFieldType"/>
+          <UML:Enumeration xmi.id="enum_WebActionType" name="WebActionType"/>
+          <UML:Stereotype xmi.id="stereo_FrontEndApplication" name="FrontEndApplication"/>
+          <UML:Stereotype xmi.id="stereo_FrontEndView" name="FrontEndView"/>
+          <UML:Stereotype xmi.id="stereo_FrontEndSessionObject" name="FrontEndSessionObject"/>
+      </UML:Package>
+    
+    </UML:Package>
+
+    <!-- Persistence Package -->
+    <UML:Package xmi.id="package_Persistence" name="Persistence">
+
+      <!-- Manageable Package -->
+      <UML:Package xmi.id="package_Manageable" name="Manageable">
+        <UML:Stereotype xmi.id="stereo_Manageable" name="Manageable"/>
+      </UML:Package>
+
+      <UML:Stereotype xmi.id="stereo_Entity" name="Entity"/>
+      <UML:Stereotype xmi.id="stereo_HibernateCascade" name="HibernateCascade"/>
+      <UML:Stereotype xmi.id="stereo_EJBCollectionType" name="EJBCollectionType"/>
+    </UML:Package>
+
+    <!-- Meta Package -->
+    <UML:Package xmi.id="package_Meta" name="Meta">
+      <UML:Stereotype xmi.id="stereo_metaclass" name="metaclass"/>
+      <UML:Stereotype xmi.id="stereo_metafacade" name="metafacade"/>
+    </UML:Package>
+
+    <!-- JSON/XML/Persistence Stereotypes -->
+    <UML:Stereotype xmi.id="stereo_XmlSchemaType" name="XmlSchemaType"/>
+    <UML:Stereotype xmi.id="stereo_XmlAttribute" name="XmlAttribute"/>
+
+  </XMI.content>
+</XMI>
+```

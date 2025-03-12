@@ -1,0 +1,115 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_java" name="java">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_lang" name="lang">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_Comparable" name="Comparable">
+              <UML:Operation xmi.id="operation_compareTo" name="compareTo" visibility="public"/>
+            </UML:Interface>
+            <UML:Interface xmi.id="interface_Cloneable" name="Cloneable"/>
+            <UML:Class xmi.id="class_Boolean" name="Boolean" visibility="public"/>
+            <UML:Class xmi.id="class_Character" name="Character" visibility="public"/>
+            <UML:Class xmi.id="class_String" name="String" visibility="public"/>
+            <UML:Enumeration xmi.id="enum_ThreadState" name="Thread.State"/>
+            <UML:DataType xmi.id="datatype_Deprecated" name="Deprecated"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_util" name="util">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_Collection" name="Collection"/>
+            <UML:Interface xmi.id="interface_Iterator" name="Iterator"/>
+            <UML:Interface xmi.id="interface_List" name="List"/>
+            <UML:Interface xmi.id="interface_Map" name="Map"/>
+            <UML:Interface xmi.id="interface_Queue" name="Queue"/>
+            <UML:Interface xmi.id="interface_Set" name="Set"/>
+
+            <UML:Class xmi.id="class_ArrayList" name="ArrayList" visibility="public"/>
+            <UML:Class xmi.id="class_Date" name="Date" visibility="public"/>
+            <UML:Class xmi.id="class_HashMap" name="HashMap" visibility="public"/>
+            <UML:Class xmi.id="class_HashSet" name="HashSet" visibility="public"/>
+            <UML:Class xmi.id="class_Random" name="Random" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_Random" name="Random" visibility="public"/>
+                <UML:Operation xmi.id="operation_next" name="next" visibility="public"/>
+                <UML:Operation xmi.id="operation_nextBoolean" name="nextBoolean" visibility="public"/>
+                <UML:Operation xmi.id="operation_nextBytes" name="nextBytes" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+
+          <UML:Package xmi.id="package_regex" name="regex">
+            <UML:Namespace.ownedElement>
+              <UML:Interface xmi.id="interface_MatchResult" name="MatchResult"/>
+              <UML:Class xmi.id="class_Matcher" name="Matcher" visibility="public"/>
+              <UML:Class xmi.id="class_Pattern" name="Pattern" visibility="public"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_mDrive" name="mDrive">
+          <UML:Namespace.ownedElement>
+            <UML:Actor xmi.id="actor_Passenger" name="Passenger"/>
+            <UML:Actor xmi.id="actor_Driver" name="Driver"/>
+            <UML:UseCase xmi.id="usecase_SearchPostedRoutes" name="Search posted routes">
+              <UML:Association xmi.id="assoc_SearchPostedRoutes_Passenger">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_SearchPostedRoutes_Passenger" type="actor_Passenger"/>
+                  <UML:AssociationEnd xmi.id="assocEnd_SearchPostedRoutes_UseCase" type="usecase_SearchPostedRoutes"/>
+                </UML:Association.connection>
+              </UML:Association>
+              <UML:Association xmi.id="assoc_SearchPostedRoutes_Driver">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_SearchPostedRoutes_Driver" type="actor_Driver"/>
+                  <UML:AssociationEnd xmi.id="assocEnd_SearchPostedRoutes_UseCase" type="usecase_SearchPostedRoutes"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:UseCase>
+
+            <UML:UseCase xmi.id="usecase_PostDesiredRoute" name="Post desired route">
+              <UML:Association xmi.id="assoc_PostDesiredRoute_Passenger">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_PostDesiredRoute_Passenger" type="actor_Passenger"/>
+                  <UML:AssociationEnd xmi.id="assocEnd_PostDesiredRoute_UseCase" type="usecase_PostDesiredRoute"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:UseCase>
+
+            <UML:UseCase xmi.id="usecase_SetupAutomaticFiltering" name="Set up automatic filtering">
+              <UML:Dependency supplier="usecase_SetupAutomaticFiltering" client="usecase_PostDesiredRoute"/>
+            </UML:UseCase>
+
+            <UML:UseCase xmi.id="usecase_AcceptBestProposal" name="Accept best proposal from Driver">
+              <UML:Dependency supplier="usecase_AcceptBestProposal" client="usecase_SearchPostedRoutes"/>
+            </UML:UseCase>
+
+            <UML:UseCase xmi.id="usecase_ReplyWithProposal" name="Reply with proposal">
+              <UML:Dependency supplier="usecase_ReplyWithProposal" client="usecase_AcceptBestProposal"/>
+            </UML:UseCase>
+
+            <UML:UseCase xmi.id="usecase_ChatWithDriver" name="Chat with Driver">
+              <UML:Dependency supplier="usecase_ChatWithDriver" client="usecase_ReplyWithProposal"/>
+            </UML:UseCase>
+
+            <UML:UseCase xmi.id="usecase_ManualSearch" name="Manual search">
+              <UML:Dependency supplier="usecase_ManualSearch" client="usecase_SearchPostedRoutes"/>
+            </UML:UseCase>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

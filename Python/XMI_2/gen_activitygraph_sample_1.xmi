@@ -1,0 +1,85 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:ActivityGraph xmi.id="activityGraph_1" name="ActivityGraph">
+          <UML:StateMachine.context>
+            <UML:Package xmi.id="package_1"/>
+          </UML:StateMachine.context>
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="compositeState_1" name="top">
+              <UML:CompositeState.subvertex>
+                <UML:Pseudostate xmi.id="pseudostate_initial" kind="initial"/>
+                <UML:ActionState xmi.id="actionState_1" name="ActionState"/>
+                <UML:Pseudostate xmi.id="pseudostate_junction" kind="junction"/>
+                <UML:CallState xmi.id="callState_1" name="CallState"/>
+                <UML:ObjectFlowState xmi.id="objectFlowState_1" name="ObjectFlowState"/>
+                <UML:FinalState xmi.id="finalState_1" name="FinalState"/>
+              </UML:CompositeState.subvertex>
+              <UML:CompositeState.internalTransition>
+                <UML:Transition xmi.id="transition_initial_to_action" name="transition_initial_to_action">
+                  <UML:Transition.source>
+                    <UML:StateVertex xmi.idref="pseudostate_initial"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:StateVertex xmi.idref="actionState_1"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+                <UML:Transition xmi.id="transition_action_to_junction" name="transition_action_to_junction">
+                  <UML:Transition.source>
+                    <UML:StateVertex xmi.idref="actionState_1"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:StateVertex xmi.idref="pseudostate_junction"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+                <UML:Transition xmi.id="transition_junction_to_call" name="transition_junction_to_call">
+                  <UML:Transition.source>
+                    <UML:StateVertex xmi.idref="pseudostate_junction"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:StateVertex xmi.idref="callState_1"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+                <UML:Transition xmi.id="transition_junction_to_final" name="transition_junction_to_final">
+                  <UML:Transition.source>
+                    <UML:StateVertex xmi.idref="pseudostate_junction"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:StateVertex xmi.idref="finalState_1"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+                <UML:Transition xmi.id="transition_call_to_objectFlow" name="transition_call_to_objectFlow">
+                  <UML:Transition.source>
+                    <UML:StateVertex xmi.idref="callState_1"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:StateVertex xmi.idref="objectFlowState_1"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+                <UML:Transition xmi.id="transition_objectFlow_to_final" name="transition_objectFlow_to_final">
+                  <UML:Transition.source>
+                    <UML:StateVertex xmi.idref="objectFlowState_1"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:StateVertex xmi.idref="finalState_1"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+              </UML:CompositeState.internalTransition>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:ActivityGraph>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

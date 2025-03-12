@@ -1,0 +1,65 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModeloSemTitulo" name="ModeloSemTitulo">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Client" -->
+        <UML:Class xmi.id="class_Client" name="Client" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Receiver" -->
+        <UML:Class xmi.id="class_Receiver" name="Receiver" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Invoker" -->
+        <UML:Class xmi.id="class_Invoker" name="Invoker" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "ConcreteCommand" -->
+        <UML:Class xmi.id="class_ConcreteCommand" name="ConcreteCommand" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition des Interface "Command" -->
+        <UML:Interface xmi.id="interface_Command" name="Command" visibility="public"/>
+        
+        <!-- Assoziation zwischen Client und Receiver -->
+        <UML:Association xmi.id="assoc_Client_Receiver">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Client_Receiver_Client" type="class_Client" name="client" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Client_Receiver_Receiver" type="class_Receiver" name="receiver" visibility="public" aggregation="none" navigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation zwischen ConcreteCommand und Receiver -->
+        <UML:Association xmi.id="assoc_ConcreteCommand_Receiver">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ConcreteCommand_Receiver_ConcreteCommand" type="class_ConcreteCommand" name="concreteCommand" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ConcreteCommand_Receiver_Receiver" type="class_Receiver" name="receiver" visibility="public" aggregation="none" navigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation zwischen Invoker und Command -->
+        <UML:Association xmi.id="assoc_Invoker_Command">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Invoker_Command_Invoker" type="class_Invoker" name="invoker" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Invoker_Command_Command" type="interface_Command" name="command" visibility="public" aggregation="none" navigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Realisierungsbeziehung zwischen ConcreteCommand und Command -->
+        <UML:Dependency xmi.id="dependency_ConcreteCommand_Command" client="class_ConcreteCommand" supplier="interface_Command">
+          <UML:Dependency.stereotype>
+            <UML:Stereotype xmi.id="stereotype_realize" name="realize"/>
+          </UML:Dependency.stereotype>
+        </UML:Dependency>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

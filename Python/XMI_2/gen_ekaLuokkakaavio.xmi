@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Custom Tool</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Stereotype xmi.id="st1" name="folder"/>
+        <UML:Stereotype xmi.id="st2" name="datatype"/>
+        <UML:Stereotype xmi.id="st3" name="interface"/>
+        
+        <UML:Package xmi.id="pkg1" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt1" name="int"/>
+            <UML:DataType xmi.id="dt2" name="char"/>
+            <UML:DataType xmi.id="dt3" name="bool"/>
+            <UML:DataType xmi.id="dt4" name="float"/>
+            <UML:DataType xmi.id="dt5" name="double"/>
+            <UML:DataType xmi.id="dt6" name="short"/>
+            <UML:DataType xmi.id="dt7" name="long"/>
+            <UML:DataType xmi.id="dt8" name="unsigned int"/>
+            <UML:DataType xmi.id="dt9" name="unsigned short"/>
+            <UML:DataType xmi.id="dt10" name="unsigned long"/>
+            <UML:DataType xmi.id="dt11" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Class xmi.id="class_Oppilas" name="Oppilas">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Oppilas_nimi" name="nimi" type="dt11"/>
+            <UML:Attribute xmi.id="attr_Oppilas_taso" name="taso" type="dt1"/>
+            <UML:Operation xmi.id="op_Oppilas_pelaa" name="pelaa"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Opettaja" name="Opettaja"/>
+
+        <UML:Class xmi.id="class_Alapeli" name="Alapeli">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Alapeli_pelityyppi" name="pelityyppi" type="dt11"/>
+            <UML:Attribute xmi.id="attr_Alapeli_vaikeustaso" name="vaikeustaso" type="dt1"/>
+            <UML:Operation xmi.id="op_Alapeli_teeTehtava" name="teeTehtava"/>
+            <UML:Operation xmi.id="op_Alapeli_kirjaaPisteet" name="kirjaaPisteet"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Tehtava" name="Tehtava">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Tehtava_kysymys" name="kysymys" type="dt11"/>
+            <UML:Attribute xmi.id="attr_Tehtava_oikeaVastaus" name="oikea vastaus" type="dt11"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Historia" name="Historia"/>
+
+        <UML:Class xmi.id="class_yhteenlaskuPeli" name="yhteenlaskuPeli">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_yhteenlaskuPeli_tehtavat" name="tehtavat" type="ArrayList<class_Tehtava>" visibility="private"/>
+            <UML:Operation xmi.id="op_yhteenlaskuPeli_pelaaPeli" name="pelaaPeli" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Peli2" name="Peli2"/>
+        <UML:Class xmi.id="class_Peli3" name="Peli3"/>
+
+        <UML:Interface xmi.id="interface_Alapelit" name="Alapelit"/>
+
+        <UML:Dependency xmi.id="dep1" client="class_Oppilas" supplier="class_Alapeli">
+          <UML:Dependency.stereotype>
+            <UML:Stereotype xmi.idref="pelaa"/>
+          </UML:Dependency.stereotype>
+        </UML:Dependency>
+
+        <UML:Dependency xmi.id="dep2" client="class_Opettaja" supplier="class_Historia">
+          <UML:Dependency.stereotype>
+            <UML:Stereotype xmi.idref="seuraa_edistystä"/>
+          </UML:Dependency.stereotype>
+        </UML:Dependency>
+
+        <UML:Abstraction xmi.id="abstraction1" supplier="interface_Alapelit" client="class_yhteenlaskuPeli"/>
+        <UML:Abstraction xmi.id="abstraction2" supplier="interface_Alapelit" client="class_Peli2"/>
+        <UML:Abstraction xmi.id="abstraction3" supplier="interface_Alapelit" client="class_Peli3"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

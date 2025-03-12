@@ -1,0 +1,122 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="Oct 22 18:40:26 CEST 2023">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model" isSpecification="false">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="p1" name="Logical View" isSpecification="false">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="datatypes" name="Datatypes" isSpecification="false">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Use Case View -->
+        <UML:Package xmi.id="p2" name="Use Case View" isSpecification="false">
+          <UML:Namespace.ownedElement>
+            <!-- Actor Definition -->
+            <UML:Actor xmi.id="actor_usuario" name="Usuario" visibility="public"/>
+
+            <!-- Use Case Definitions -->
+            <UML:UseCase xmi.id="uc1" name="Login" visibility="public"/>
+            <UML:UseCase xmi.id="uc2" name="Agenda (salas)" visibility="public"/>
+            <UML:UseCase xmi.id="uc3" name="Programar cirugia" visibility="public"/>
+            <UML:UseCase xmi.id="uc4" name="Salas" visibility="public"/>
+            <UML:UseCase xmi.id="uc5" name="C diferidas" visibility="public"/>
+            <UML:UseCase xmi.id="uc6" name="Programadas" visibility="public"/>
+            <UML:UseCase xmi.id="uc7" name="Diferir" visibility="public"/>
+            <UML:UseCase xmi.id="uc8" name="Transoperatorio" visibility="public"/>
+            <UML:UseCase xmi.id="uc9" name="Realizadas" visibility="public"/>
+            <UML:UseCase xmi.id="uc10" name="Editar" visibility="public"/>
+
+            <!-- Use Case Associations -->
+            <UML:Association xmi.id="a1">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a1_end1" type="actor_usuario" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a1_end2" type="uc1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="a2">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a2_end1" type="uc1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a2_end2" type="uc2" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="a3">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a3_end1" type="uc1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a3_end2" type="uc3" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="a4">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a4_end1" type="uc1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a4_end2" type="uc4" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="a5">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a5_end1" type="uc1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a5_end2" type="uc5" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="a6">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a6_end1" type="uc6" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a6_end2" type="uc7" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="a7">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a7_end1" type="uc6" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a7_end2" type="uc10" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="a8">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a8_end1" type="uc2" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a8_end2" type="uc8" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="a9">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="a9_end1" type="uc2" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="a9_end2" type="uc9" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Placeholder Packages -->
+        <UML:Package xmi.id="p3" name="Component View" isSpecification="false"/>
+        <UML:Package xmi.id="p4" name="Deployment View" isSpecification="false"/>
+        <UML:Package xmi.id="p5" name="Entity Relationship Model" isSpecification="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

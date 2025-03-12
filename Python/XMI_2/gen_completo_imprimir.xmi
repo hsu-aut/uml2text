@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SystemActors" name="SystemActors">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        
+        <!-- Definition der Akteure -->
+        <UML:Actor xmi.id="actor_pda" name="pda" visibility="public"/>
+        <UML:Actor xmi.id="actor_host" name="host" visibility="public"/>
+        <UML:Actor xmi.id="actor_servidor" name="servidor" visibility="public"/>
+        <UML:Actor xmi.id="actor_medico" name="medico" visibility="public"/>
+        <UML:Actor xmi.id="actor_impresora" name="impresora" visibility="public"/>
+        
+        <!-- Definition der Operationen -->
+        <!-- Einzelne Operationen werden in ihrer jeweiligen Klasse spezifiziert -->
+        <UML:Operation xmi.id="operation_listaAntenas" name="listaAntenas" visibility="public" isSpecification="false">
+          <UML:Parameter xmi.id="param_ip" name="ip" kind="in" type="datatype_string"/>
+        </UML:Operation>
+        
+        <UML:Operation xmi.id="operation_entrar" name="entrar" visibility="public" isSpecification="false">
+          <UML:Parameter xmi.id="param_clave" name="clave" kind="in" type="datatype_string"/>
+        </UML:Operation>
+        
+        <UML:Operation xmi.id="operation_imprimir" name="imprimir" visibility="public" isSpecification="false">
+          <UML:Parameter xmi.id="param_documento" name="documento" kind="in" type="datatype_string"/>
+        </UML:Operation>
+        
+        <UML:Operation xmi.id="operation_triangula" name="triangula" visibility="public" isSpecification="false">
+          <UML:Parameter xmi.id="param_antena1" name="antena1" kind="in" type="datatype_string"/>
+          <UML:Parameter xmi.id="param_antena2" name="antena2" kind="in" type="datatype_string"/>
+          <UML:Parameter xmi.id="param_antena3" name="antena3" kind="in" type="datatype_string"/>
+          <UML:Parameter xmi.id="param_antena4" name="antena4" kind="in" type="datatype_string"/>
+        </UML:Operation>
+        
+        <UML:Operation xmi.id="operation_medirDistancia" name="medirDistancia" visibility="public" isSpecification="false"/>
+        
+        <!-- Definition von Notizen -->
+        <UML:Comment xmi.id="note_validateUser" name="Validierung von Benutzern"/>
+        <UML:Comment xmi.id="note_documentInfo" name="Informationen zu Dokumenten"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

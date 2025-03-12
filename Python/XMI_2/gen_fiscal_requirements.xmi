@@ -1,0 +1,112 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Pakets "Logical View" -->
+        <UML:Package xmi.id="logical_view" name="Logical View" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          
+            <!-- Definition des Unterpakets "Datatypes" -->
+            <UML:Package xmi.id="datatypes" name="Datatypes" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des Pakets "Use Case View" -->
+        <UML:Package xmi.id="use_case_view" name="Use Case View" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+        
+        <!-- Definition des Pakets "Component View" -->
+        <UML:Package xmi.id="component_view" name="Component View" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+
+        <!-- Definition des Pakets "Deployment View" -->
+        <UML:Package xmi.id="deployment_view" name="Deployment View" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+
+        <!-- Definition des Pakets "Entity Relationship Model" -->
+        <UML:Package xmi.id="entity_relationship_model" name="Entity Relationship Model" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+
+        <!-- Definition des Activities für das Activity Diagram -->
+        <UML:Activity xmi.id="activity_diagram" name="activity diagram" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+          <UML:Activity.graph>
+            <UML:ActivityGraph xmi.id="activity_graph">
+              <UML:State xmi.id="button_check_vat" name="button_check_vat" visibility="public"/>
+              <UML:State xmi.id="message_error" name="Message Error!!!" visibility="public"/>
+              <UML:State xmi.id="vat_check_vies" name="vat_check_vies" visibility="public"/>
+              <UML:State xmi.id="vies_vat_check" name="vies_vat_check" visibility="public"/>
+              <UML:State xmi.id="simple_vat_check" name="simple_vat_check" visibility="public"/>
+              <UML:State xmi.id="update_rif" name="update_rif" visibility="public"/>
+              <!-- Transitions -->
+              <UML:Transition xmi.id="transition_1">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="button_check_vat"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="message_error"/>
+                </UML:Transition.target>
+              </UML:Transition>
+              <UML:Transition xmi.id="transition_2">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="button_check_vat"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="vat_check_vies"/>
+                </UML:Transition.target>
+              </UML:Transition>
+              <UML:Transition xmi.id="transition_3">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="vat_check_vies"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="vies_vat_check"/>
+                </UML:Transition.target>
+                <UML:Guard xmi.id="guard_1" name="rc.check_vies = True"/>
+              </UML:Transition>
+              <UML:Transition xmi.id="transition_4">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="vat_check_vies"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="simple_vat_check"/>
+                </UML:Transition.target>
+                <UML:Guard xmi.id="guard_2" name="rc.check_vies = False"/>
+              </UML:Transition>
+              <UML:Transition xmi.id="transition_5">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="vies_vat_check"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="update_rif"/>
+                </UML:Transition.target>
+              </UML:Transition>
+            </UML:ActivityGraph>
+          </UML:Activity.graph>
+        </UML:Activity>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,145 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MedischInformedConsent" name="MedischInformedConsentModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Wurzelklasse EARootClass -->
+        <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse MedischInformedConsent -->
+        <UML:Class xmi.id="class_MedischInformedConsent" name="MedischInformedConsent" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_consentItems" name="consentItems" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ConsentItem"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_zorgverlener" name="zorgverlener" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Zorgverlener"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ondertekenaar" name="ondertekenaar" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Ondertekenaar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Zorgverlener -->
+        <UML:Class xmi.id="class_Zorgverlener" name="Zorgverlener" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse Ondertekenaar -->
+        <UML:Class xmi.id="class_Ondertekenaar" name="Ondertekenaar" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ondertekenaarName" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ondertekenaarBirthdate" name="birthDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ConsentItem -->
+        <UML:Class xmi.id="class_ConsentItem" name="ConsentItem" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse InformatieGegeven (abstrakt) -->
+        <UML:Class xmi.id="class_InformatieGegeven" name="InformatieGegeven" visibility="public" isAbstract="true" stereotype="data"/>
+
+        <!-- Definition der Klasse Leeftijdsgroep -->
+        <UML:Class xmi.id="class_Leeftijdsgroep" name="Leeftijdsgroep" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_kindTotEnMet12jaar" name="KindTotEnMet12jaar" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_kindVan13totEnMet15jaar" name="KindVan13totEnMet15jaar" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_volwassene" name="Volwassene" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_oudere" name="Oudere" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Wilsbekwaam -->
+        <UML:Class xmi.id="class_Wilsbekwaam" name="Wilsbekwaam" visibility="public" isAbstract="false" stereotype="state"/>
+
+        <!-- Definition der Klasse ToestemmingVoor (abstrakt) -->
+        <UML:Class xmi.id="class_ToestemmingVoor" name="ToestemmingVoor" visibility="public" isAbstract="true" stereotype="data"/>
+
+        <!-- Definition der Klasse Toestemmingsvorm -->
+        <UML:Class xmi.id="class_Toestemmingsvorm" name="Toestemmingsvorm" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_CD"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_geenToestemming" name="GeenToestemming" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_explicitToestemming" name="ExplicieteToestemming" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_intrekking" name="Intrekking" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse RelatieTotDePatient -->
+        <UML:Class xmi.id="class_RelatieTotDePatient" name="RelatieTotDePatient" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Versienummer -->
+        <UML:Class xmi.id="class_Versienummer" name="Versienummer" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Naam -->
+        <UML:Class xmi.id="class_Naam" name="Naam" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Bewijslast -->
+        <UML:Class xmi.id="class_Bewijslast" name="Bewijslast" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse CD -->
+        <UML:Class xmi.id="class_CD" name="CD" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der DataType -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

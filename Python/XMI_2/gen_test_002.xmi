@@ -1,0 +1,121 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Test" name="Test">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_myaddon" name="myaddon" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_person" name="person" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_person_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_email" name="email" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_email_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_document" name="document" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_document_number" name="number" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_document_tipo" name="tipo" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Enumeration xmi.idref="enum_tipo_documento"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_emaillist" name="emaillist" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_emaillist_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_estudios" name="estudios" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_estudios_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Enumeration xmi.id="enum_tipo_documento" name="tipo_documento">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="enum_literal_dni" name="dni"/>
+                <UML:EnumerationLiteral xmi.id="enum_literal_cuit" name="cuit"/>
+                <UML:EnumerationLiteral xmi.id="enum_literal_passport" name="passport"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+
+            <UML:Association xmi.id="assoc_person_email" name="person_email">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_person_email_person" type="class_person" name="person" aggregation="composite" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_person_email_email" type="class_email" name="email" aggregation="composite" multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_person_document" name="person_document">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_person_document_person" type="class_person" name="person" aggregation="composite" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_person_document_document" type="class_document" name="document" aggregation="composite" multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_person_emaillist" name="person_emaillist">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_person_emaillist_person" type="class_person" name="person" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_person_emaillist_emaillist" type="class_emaillist" name="emaillist" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_person_person" name="person_person">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_person_person1" type="class_person" name="es_conocido_por" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_person_person2" type="class_person" name="conoce_a" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_person_estudios" name="person_estudios">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_person_estudios_person" type="class_person" name="person" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_person_estudios_estudios" type="class_estudios" name="estudios" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:DataType xmi.id="String" name="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

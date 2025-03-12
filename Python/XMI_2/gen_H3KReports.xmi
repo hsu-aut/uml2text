@@ -1,0 +1,219 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ReportsSystem" name="ReportsSystem">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "TReportsManager" -->
+        <UML:Class xmi.id="class_TReportsManager" name="TReportsManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attribute -->
+            <UML:Attribute xmi.id="attr_VariableDataList" name="VariableDataList" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TVariableData"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ptr_Instance" name="ptr_Instance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TReportsManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_TimeData" name="TimeData" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TTimeData"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_AnnualTimesteps" name="AnnualTimesteps" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TTimestepData"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+
+            <UML:Attribute xmi.id="attr_MonthlyTimesteps" name="MonthlyTimesteps" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TTimestepData"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+
+            <!-- Operationen -->
+            <UML:Operation xmi.id="op_Instance" name="Instance" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_Update" name="Update" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_AddReports" name="AddReports" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_Report" name="Report" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_OutputSummery" name="OutputSummery" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_OutputXMLSummery" name="OutputXMLSummery" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_ScanReportConfigurationFile" name="ScanReportConfigurationFile" visibility="public" isQuery="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "TVariableData" -->
+        <UML:Class xmi.id="class_TVariableData" name="TVariableData" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attribute -->
+            <UML:Attribute xmi.id="attr_Annual" name="Annual" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Monthly" name="Monthly" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Daily" name="Daily" visibility="private"/>
+            <UML:Attribute xmi.id="attr_UserDefined" name="UserDefined" visibility="private"/>
+
+            <!-- Operationen -->
+            <UML:Operation xmi.id="op_UpdateDaily" name="UpdateDaily" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_UpdateMonthly" name="UpdateMonthly" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_UpdateAnnual" name="UpdateAnnual" visibility="public" isQuery="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "TTimestepData" -->
+        <UML:Class xmi.id="class_TTimestepData" name="TTimestepData" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attribute -->
+            <UML:Attribute xmi.id="attr_dValue" name="dValue" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bActive" name="bActive" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "TTimeData" -->
+        <UML:Class xmi.id="class_TTimeData" name="TTimeData" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attribute -->
+            <UML:Attribute xmi.id="attr_imonth" name="imonth" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_iday" name="iday" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_iTimestep" name="iTimestep" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fHour" name="fHour" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "TBinnedData" -->
+        <UML:Class xmi.id="class_TBinnedData" name="TBinnedData" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attribute -->
+            <UML:Attribute xmi.id="attr_iActiveTimesteps" name="iActiveTimesteps" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_dMaxValue" name="dMaxValue" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_dMinValue" name="dMinValue" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fActiveAverage" name="fActiveAverage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bSum" name="bSum" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "TReportSwitches" -->
+        <UML:Class xmi.id="class_TReportSwitches" name="TReportSwitches" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attribute -->
+            <UML:Attribute xmi.id="attr_bSum" name="bSum" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bActiveAverage" name="bActiveAverage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bTotalAverage" name="bTotalAverage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bMaxandMin" name="bMaxandMin" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "TPLRData" -->
+        <UML:Class xmi.id="class_TPLRData" name="TPLRData" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attribute -->
+            <UML:Attribute xmi.id="attr_dPLRDenominator" name="dPLRDenominator" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_PLRData" name="PLRData" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TVariableData"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Assoziationen -->
+        <UML:Association xmi.id="assoc_TReportsManager_TVariableData">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TReportsManager_TVariableData_TReportsManager" type="class_TReportsManager" name="TReportsManager" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TReportsManager_TVariableData_TVariableData" type="class_TVariableData" name="TVariableData" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_TReportsManager_TTimestepData">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TReportsManager_TTimestepData_TReportsManager" type="class_TReportsManager" name="TReportsManager" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TReportsManager_TTimestepData_TTimestepData" type="class_TTimestepData" name="TTimestepData" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_TReportsManager_TTimeData">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TReportsManager_TTimeData_TReportsManager" type="class_TReportsManager" name="TReportsManager" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TReportsManager_TTimeData_TTimeData" type="class_TTimeData" name="TTimeData" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

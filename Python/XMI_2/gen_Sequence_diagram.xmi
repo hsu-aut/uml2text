@@ -1,0 +1,180 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_Domain" name="Domain" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_nodes" name="nodes" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_elements" name="elements" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_boundaries" name="boundaries" visibility="private" changeability="changeable"/>
+                <UML:Operation xmi.id="op_read_mesh_file" name="read_mesh_file" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_read_bc_file" name="read_bc_file" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+              <UML:Namespace.ownedElement>
+                <UML:Association xmi.id="assoc_Domain_Nodes">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Domain_Nodes_Domain" type="class_Domain" name="domain" visibility="public" aggregation="none" multiplicity="1"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Domain_Nodes_Nodes" type="class_Nodes" name="nodes" visibility="public" aggregation="none" multiplicity="0..*"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_Domain_Elements">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Domain_Elements_Domain" type="class_Domain" name="domain" visibility="public" aggregation="none" multiplicity="1"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Domain_Elements_Elements" type="class_Elements" name="elements" visibility="public" aggregation="none" multiplicity="0..*"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_Domain_Boundaries">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Domain_Boundaries_Domain" type="class_Domain" name="domain" visibility="public" aggregation="none" multiplicity="1"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Domain_Boundaries_Boundaries" type="class_Boundaries" name="boundaries" visibility="public" aggregation="none" multiplicity="0..*"/>
+                  </UML:Association.connection>
+                </UML:Association>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Nodes" name="Nodes" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_nodes_n" name="n" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_coords" name="coords" visibility="private" changeability="changeable"/>
+                <UML:Operation xmi.id="op_add_node" name="add" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Elements" name="Elements" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_lines" name="lines" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_n_lines" name="n_lines" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_triangles" name="triangles" visibility="private" changeability="changeable"/>
+                <UML:Operation xmi.id="op_add_element" name="add" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Boundaries" name="Boundaries" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_dirichlet" name="dirichlet" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_newman" name="newman" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_bloch_periodic" name="bloch_periodic" visibility="private" changeability="changeable"/>
+                <UML:Operation xmi.id="op_add_boundary" name="add" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Triangles" name="Triangles" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_el_set" name="el_set" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_n_elements" name="n_elements" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_order" name="order" visibility="private" changeability="changeable"/>
+                <UML:Operation xmi.id="op_extract_el_points" name="extract_el_points" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_extract_el_lines" name="extract_el_lines" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_calc_area" name="calc_area" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_build_local_stiffness" name="build_local_stiffness" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_local_mass_matrix" name="local_mass_matrix" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+              <UML:Generalization xmi.id="gen_Triangles_Elements" parent="class_Elements"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Squares_Paralelograms" name="Squares - Paralelograms" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_el_set" name="el_set" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_n_elements" name="n_elements" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_order" name="order" visibility="private" changeability="changeable"/>
+              </UML:Classifier.feature>
+              <UML:Generalization xmi.id="gen_Squares_Paralelograms_Elements" parent="class_Elements"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Simulation" name="Simulation" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_sim_type" name="sim_type" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_time_dependency" name="time_dependency" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_dimension" name="dimension" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_Domain" name="Domain" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_bc_type" name="bc_type" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_body_parameter" name="body_parameter" visibility="private" changeability="changeable"/>
+                <UML:Operation xmi.id="op_read_solver_input" name="read_solver_input" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="assoc_Simulation_Domain">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_Simulation_Domain_Simulation" type="class_Simulation" name="simulation" visibility="public" aggregation="none" multiplicity="1"/>
+                  <UML:AssociationEnd xmi.id="assocEnd_Simulation_Domain_Domain" type="class_Domain" name="domain" visibility="public" aggregation="none" multiplicity="1"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Solver" name="Solver" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_solution" name="solution" visibility="private" changeability="changeable"/>
+                <UML:Operation xmi.id="op_solve" name="solve" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_build_solution" name="build_solution" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_solve_stationary" name="solve_stationary" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_solve_spectral" name="solve_spectral" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_solve_bloch" name="solve_bloch" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="assoc_Solver_Interpreter">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_Solver_Interpreter_Solver" type="class_Solver" name="solver" visibility="public" aggregation="none" multiplicity="1"/>
+                  <UML:AssociationEnd xmi.id="assocEnd_Solver_Interpreter_Interpreter" type="class_Interpreter" name="interpreter" visibility="public" aggregation="none" multiplicity="0..1"/>
+                </UML:Association.connection>
+              </UML:Association>
+              <UML:Association xmi.id="assoc_Solver_Post_Pro">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_Solver_Post_Pro_Solver" type="class_Solver" name="solver" visibility="public" aggregation="none" multiplicity="1"/>
+                  <UML:AssociationEnd xmi.id="assocEnd_Solver_Post_Pro_Post_Pro" type="class_Post_Pro" name="post_pro" visibility="public" aggregation="none" multiplicity="0..1"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Interpreter" name="Interpreter" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_sys_of_eq" name="sys_of_eq" visibility="private" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_something_to_solve" name="something_to_solve" visibility="private" changeability="changeable"/>
+                <UML:Operation xmi.id="op_assemble_sys_of_eq" name="assemble_sys_of_eq" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_build_QM_dirichlet_eq" name="build_QM_dirichlet_eq" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_build_static_EM_eq" name="build_static_EM_eq" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_build_harmonic_EM_eq" name="build_harmonic_EM_eq" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_build_EM_bloch_eq" name="build_EM_bloch_eq" visibility="public" isQuery="false"/>
+                <UML:Operation xmi.id="op_global_stiffness_matrix" name="global_stiffness_matrix" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Post_Pro" name="Post_Pro" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_understand_and_save_to_vtk" name="understand_and_save_to_vtk" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+            
+            <UML:DataType xmi.id="datatype_dict" name="dict"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" stereotype="stereotype_datatype">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,435 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <!-- Definition des Modells -->
+    <UML:Model xmi.id="model_StockManagement" name="StockManagement">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "stock" -->
+        <UML:Class xmi.id="class_stock" name="stock" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_stock_idstock" name="idstock" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_stock_codalmacen" name="codalmacen" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_stock_nombre" name="nombre" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_stock_referencia" name="referencia" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_stock_cantidad" name="cantidad" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "empresa" -->
+        <UML:Class xmi.id="class_empresa" name="empresa" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Other attributes can be added here -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "facturas" -->
+        <UML:Class xmi.id="class_facturas" name="facturas" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Other attributes can be added here -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "paises" -->
+        <UML:Class xmi.id="class_paises" name="paises" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_paises_codpais" name="codpais" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "lineasregstocks" -->
+        <UML:Class xmi.id="class_lineasregstocks" name="lineasregstocks" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_lineasregstocks_id" name="id" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lineasregstocks_idstock" name="idstock" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lineasregstocks_fecha" name="fecha" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lineasregstocks_cantidadini" name="cantidadini" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lineasregstocks_cantidadfin" name="cantidadfin" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lineasregstocks_motivo" name="motivo" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "almacenes" -->
+        <UML:Class xmi.id="class_almacenes" name="almacenes" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_almacenes_codalmacen" name="codalmacen" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_almacenes_nombre" name="nombre" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_almacenes_direccion" name="direccion" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_almacenes_codpostal" name="codpostal" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_almacenes_apartado" name="apartado" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_almacenes_poblacion" name="poblacion" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_almacenes_provincia" name="provincia" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_almacenes_codpais" name="codpais" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_paises"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_almacenes_telefono" name="telefono" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "articulos" -->
+        <UML:Class xmi.id="class_articulos" name="articulos" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_articulos_referencia" name="referencia" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_descripcion" name="descripcion" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_pvp" name="pvp" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_codimpuesto" name="codimpuesto" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_impuestos"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_codfamilia" name="codfamilia" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_familias"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_codbarras" name="codbarras" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_costepromedio" name="costepromedio" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_stockmax" name="stockmax" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_stockmin" name="stockmin" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_stockfis" name="stockfis" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_costemedio" name="costemedio" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulos_controlstock" name="controlstock" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "articulosagen" -->
+        <UML:Class xmi.id="class_articulosagen" name="articulosagen" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_articulosagen_id" name="id" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosagen_referencia" name="referencia" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_articulos"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosagen_codagente" name="codagente" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_agentes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosagen_nombre" name="nombre" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosagen_tipocomision" name="tipocomision" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosagen_comision" name="comision" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "articuloscli" -->
+        <UML:Class xmi.id="class_articuloscli" name="articuloscli" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_articuloscli_id" name="id" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articuloscli_referencia" name="referencia" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_articulos"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articuloscli_codcliente" name="codcliente" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_clientes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articuloscli_nombre" name="nombre" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articuloscli_pvp" name="pvp" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articuloscli_usartarifa" name="usartarifa" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articuloscli_codtarifa" name="codtarifa" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_tarifas"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "articulosprov" -->
+        <UML:Class xmi.id="class_articulosprov" name="articulosprov" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_articulosprov_id" name="id" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosprov_referencia" name="referencia" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_articulos"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosprov_codproveedor" name="codproveedor" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_proveedores"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosprov_nombre" name="nombre" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosprov_coste" name="coste" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosprov_coddivisa" name="coddivisa" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_divisas"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_articulosprov_refproveedor" name="refproveedor" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "impuestos" -->
+        <UML:Class xmi.id="class_impuestos" name="impuestos" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_impuestos_codimpuesto" name="codimpuesto" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "familias" -->
+        <UML:Class xmi.id="class_familias" name="familias" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_familias_codfamilia" name="codfamilia" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_familias_descripcion" name="descripcion" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "agentes" -->
+        <UML:Class xmi.id="class_agentes" name="agentes" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_agentes_codagente" name="codagente" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "tarifas" -->
+        <UML:Class xmi.id="class_tarifas" name="tarifas" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_tarifas_codtarifa" name="codtarifa" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "clientes" -->
+        <UML:Class xmi.id="class_clientes" name="clientes" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_clientes_codcliente" name="codcliente" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "proveedores" -->
+        <UML:Class xmi.id="class_proveedores" name="proveedores" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_proveedores_codproveedor" name="codproveedor" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "divisas" -->
+        <UML:Class xmi.id="class_divisas" name="divisas" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_divisas_coddivisa" name="coddivisa" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition vom Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Double" name="Double"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

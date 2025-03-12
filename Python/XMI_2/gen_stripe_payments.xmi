@@ -1,0 +1,144 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML" visibility="public" isAbstract="false">
+      
+      <!-- Logical View -->
+      <UML:Package xmi.id="package_LogicalView" name="Logical View">
+        
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Class xmi.id="class_int" name="int" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_char" name="char" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_bool" name="bool" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_float" name="float" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_double" name="double" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_short" name="short" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_long" name="long" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_unsigned_int" name="unsigned int" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_unsigned_short" name="unsigned short" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_unsigned_long" name="unsigned long" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_string" name="string" visibility="public" isAbstract="false"/>
+        </UML:Package>
+        
+      </UML:Package>
+
+      <!-- Use Case View -->
+      <UML:Package xmi.id="package_UseCaseView" name="Use Case View">
+        
+        <UML:UseCase xmi.id="useCase_choseAPlan" name="chose a plan"/>
+        <UML:UseCase xmi.id="useCase_subscribeToPlan" name="subscribe to plan"/>
+        <UML:UseCase xmi.id="useCase_unsubscribeFromPlan" name="unsubscribe from plan"/>
+        <UML:UseCase xmi.id="useCase_recurringPaymentSucceeded" name="recurring_payment_succeeded"/>
+        <UML:UseCase xmi.id="useCase_subscriptionFinalPaymentAttemptFailed" name="subscription_final_payment_attempt_failed"/>
+        <UML:UseCase xmi.id="useCase_upgradeCompany" name="upgrade_company"/>
+        <UML:UseCase xmi.id="useCase_listenPayments" name="listen_payments"/>
+        <UML:UseCase xmi.id="useCase_reviewFailedPayments" name="review_failed_payments"/>
+        <UML:UseCase xmi.id="useCase_findCanceledSubscriptions" name="[1] find canceled subscriptions"/>
+        <UML:UseCase xmi.id="useCase_findOutdatedPayments" name="[1] find outdated payments"/>
+        <UML:UseCase xmi.id="useCase_notifyBuyers" name="[2] Notify buyers"/>
+        <UML:UseCase xmi.id="useCase_downgradeCompany" name="[3] downgrade company"/>
+        
+        <UML:Actor xmi.id="actor_BugKickUser" name="BugKick User"/>
+        <UML:Actor xmi.id="actor_StripeCustomer" name="Stripe Customer"/>
+        <UML:Actor xmi.id="actor_WebHooksHandler" name="WebHooksHandler"/>
+        <UML:Actor xmi.id="actor_BugKick" name="BugKick"/>
+        <UML:Actor xmi.id="actor_PaymentsInspector" name="Payments Inspector"/>
+
+        <UML:Association xmi.id="assoc_BugKickUser_choseAPlan">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BugKickUser" type="actor_BugKickUser" name="BugKick User" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_choseAPlan" type="useCase_choseAPlan" name="chose a plan" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_BugKickUser_subscribeToPlan">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BugKickUser" type="actor_BugKickUser" name="BugKick User" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_subscribeToPlan" type="useCase_subscribeToPlan" name="subscribe to plan" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_BugKickUser_unsubscribeFromPlan">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BugKickUser" type="actor_BugKickUser" name="BugKick User" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_unsubscribeFromPlan" type="useCase_unsubscribeFromPlan" name="unsubscribe from plan" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_WebHooksHandler_recurringPaymentSucceeded">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_WebHooksHandler" type="actor_WebHooksHandler" name="WebHooksHandler" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_recurringPaymentSucceeded" type="useCase_recurringPaymentSucceeded" name="recurring_payment_succeeded" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_WebHooksHandler_subscriptionFinalPaymentAttemptFailed">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_WebHooksHandler" type="actor_WebHooksHandler" name="WebHooksHandler" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_subscriptionFinalPaymentAttemptFailed" type="useCase_subscriptionFinalPaymentAttemptFailed" name="subscription_final_payment_attempt_failed" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_BugKick_upgradeCompany">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BugKick" type="actor_BugKick" name="BugKick" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_upgradeCompany" type="useCase_upgradeCompany" name="upgrade_company" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_BugKick_listenPayments">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BugKick" type="actor_BugKick" name="BugKick" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_listenPayments" type="useCase_listenPayments" name="listen_payments" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_BugKick_reviewFailedPayments">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BugKick" type="actor_BugKick" name="BugKick" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_reviewFailedPayments" type="useCase_reviewFailedPayments" name="review_failed_payments" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PaymentsInspector_findCanceledSubscriptions">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PaymentsInspector" type="actor_PaymentsInspector" name="Payments Inspector" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_findCanceledSubscriptions" type="useCase_findCanceledSubscriptions" name="[1] find canceled subscriptions" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PaymentsInspector_findOutdatedPayments">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PaymentsInspector" type="actor_PaymentsInspector" name="Payments Inspector" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_findOutdatedPayments" type="useCase_findOutdatedPayments" name="[1] find outdated payments" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PaymentsInspector_notifyBuyers">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PaymentsInspector" type="actor_PaymentsInspector" name="Payments Inspector" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_notifyBuyers" type="useCase_notifyBuyers" name="[2] Notify buyers" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PaymentsInspector_downgradeCompany">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PaymentsInspector" type="actor_PaymentsInspector" name="Payments Inspector" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_downgradeCompany" type="useCase_downgradeCompany" name="[3] downgrade company" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Package>
+      
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,83 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Model_Package_Description_Profile" name="Model_Package_Description_Profile">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_ModelPackageDescription" name="ModelPackageDescription" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mpdVersionID" name="mpdVersionID" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mpdClassCode" name="mpdClassCode" visibility="private"/>
+            <!-- Additional attributes and rules are represented similarly --> 
+          </UML:Namespace.ownedElement>
+          <!-- Extension of UML Component goes here -->
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ModelPackageDescriptionRelationship" name="ModelPackageDescriptionRelationship" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_relationshipCode" name="relationshipCode" visibility="private"/>
+            <UML:Attribute xmi.id="attr_descriptionText" name="descriptionText" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ModelPackageDescriptionFileSet" name="ModelPackageDescriptionFileSet" visibility="public" isAbstract="false">
+          <!-- Attributes and UML Component Extension -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ModelPackageDescriptionFile" name="ModelPackageDescriptionFile" visibility="public" isAbstract="false">
+          <!-- Attributes go here -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_POCType" name="POCType" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Contact attributes like phone numbers and email addresses -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Enumeration PurposeCode -->
+        <UML:Enumeration xmi.id="enum_PurposeCode" name="PurposeCode" visibility="public">
+          <!-- Enumeration attributes -->
+        </UML:Enumeration>
+        
+        <!-- Enumeration NatureCode -->
+        <UML:Enumeration xmi.id="enum_NatureCode" name="NatureCode" visibility="public">
+          <!-- Enumeration attributes -->
+        </UML:Enumeration>
+
+        <!-- Enumeration RelationshipCode -->
+        <UML:Enumeration xmi.id="enum_RelationshipCode" name="RelationshipCode" visibility="public">
+          <!-- Enumeration attributes -->
+        </UML:Enumeration>
+
+        <!-- Enumeration ModelPackageDescriptionClassCode -->
+        <UML:Enumeration xmi.id="enum_ModelPackageDescriptionClassCode" name="ModelPackageDescriptionClassCode" visibility="public">
+          <!-- Enumeration attributes -->
+        </UML:Enumeration>
+
+        <!-- Enumeration ChangeCodeSimpleType -->
+        <UML:Enumeration xmi.id="enum_ChangeCodeSimpleType" name="ChangeCodeSimpleType" visibility="public">
+          <!-- Enumeration attributes -->
+        </UML:Enumeration>
+
+        <!-- Associations and Relationships -->
+        <!-- For example, linking ModelPackageDescription to ModelPackageDescriptionFileSet -->
+        <UML:Association xmi.id="assoc_Description_FileSet" name="description-fileset" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Description_FileSet_Description" type="class_ModelPackageDescription" name="description" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Description_FileSet_FileSet" type="class_ModelPackageDescriptionFileSet" name="fileset" visibility="public" aggregation="composite" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

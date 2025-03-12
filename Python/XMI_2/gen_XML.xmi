@@ -1,0 +1,174 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ECommerce" name="ECommerce">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_product" name="product" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_product_id" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="attr_product_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_product_description" name="description" visibility="private"/>
+            <UML:Attribute xmi.id="attr_product_meta_description" name="meta_description" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_user" name="user" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_user_id" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="attr_user_email" name="email" visibility="private"/>
+            <UML:Attribute xmi.id="attr_user_encrypted_password" name="encrypted_password" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_taxon" name="taxon" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_taxon_position" name="position" visibility="private"/>
+            <UML:Attribute xmi.id="attr_taxon_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_taxon_created_at" name="created_at" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_order" name="order" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_adress" name="adress" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_shipping_method" name="shipping_method" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_shipment" name="shipment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_promotion" name="promotion" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_product_property" name="product_property" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_payment" name="payment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_payment_method" name="payment_method" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_static_page" name="static_page" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_variant" name="variant" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_inventory_unit" name="inventory_unit" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_line_item" name="line_item" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_stock_item" name="stock_item" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_option_type" name="option_type" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_image" name="image" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_role" name="role" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_permission" name="permission" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        <UML:Class xmi.id="class_option_value" name="option_value" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_user_role">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_user_role_user" type="class_user" name="user" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_user_role_role" type="class_role" name="role" visibility="public" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_order_adress">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_order_adress_order" type="class_order" name="order" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_order_adress_bill_address" type="class_adress" name="bill_address" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_order_user">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_order_user_order" type="class_order" name="order" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_order_user_user" type="class_user" name="user" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_product_product_property">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_product_product_property_product" type="class_product" name="product" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_product_product_property_product_property" type="class_product_property" name="product_property" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_payment_payment_method">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_payment_payment_method_payment" type="class_payment" name="payment" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_payment_payment_method_payment_method" type="class_payment_method" name="payment_method" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_variant_product">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_variant_product_variant" type="class_variant" name="variant" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_variant_product_product" type="class_product" name="product" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_inventory_unit_variant">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_inventory_unit_variant_inventory_unit" type="class_inventory_unit" name="inventory_unit" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_inventory_unit_variant_variant" type="class_variant" name="variant" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_line_item_order">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_line_item_order_line_item" type="class_line_item" name="line_item" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_line_item_order_order" type="class_order" name="order" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_stock_item_variant">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_stock_item_variant_stock_item" type="class_stock_item" name="stock_item" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_stock_item_variant_variant" type="class_variant" name="variant" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_option_type_variant">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_option_type_variant_option_type" type="class_option_type" name="option_type" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_option_type_variant_variant" type="class_variant" name="variant" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_image_product">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_image_product_image" type="class_image" name="image" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_image_product_product" type="class_product" name="product" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_role_permission">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_role_permission_role" type="class_role" name="role" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_role_permission_permission" type="class_permission" name="permission" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_option_value_option_type">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_option_value_option_type_option_value" type="class_option_value" name="option_value" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_option_value_option_type_option_type" type="class_option_type" name="option_type" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

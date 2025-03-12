@@ -1,0 +1,115 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model m1">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_Instruction" name="Instruction" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_getCommunicationKey" name="getCommunicationKey" visibility="public">
+                  <UML:Parameter xmi.id="param_getCommunicationKey_return" name="return" kind="return" type="class_String"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getPosition" name="getPosition" visibility="public"/>
+                <UML:Operation xmi.id="op_getData" name="getData" visibility="public">
+                  <UML:Parameter xmi.id="param_getData_return" name="return" kind="return" type="class_Object"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getObjectType" name="getObjectType" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Object" name="Object" visibility="public"/>
+
+            <UML:Class xmi.id="class_String" name="String" visibility="public"/>
+            
+            <UML:Class xmi.id="class_Number" name="Number" visibility="public"/>
+
+            <UML:Class xmi.id="class_InstructionClient" name="InstructionClient" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_getCommunicationKey_IC" name="getCommunicationKey" visibility="public">
+                  <UML:Parameter xmi.id="param_getCommunicationKey_IC_return" name="return" kind="return" type="class_String"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_join" name="join" visibility="public"/>
+                <UML:Operation xmi.id="op_updateMyUserDetails" name="updateMyUserDetails" visibility="public"/>
+                <UML:Operation xmi.id="op_send" name="send" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_InstructionClient_Ape" name="InstructionClient_Ape" visibility="public">
+              <UML:Generalization xmi.id="gen_IC_Ape" parent="class_InstructionClient"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_InstructionClient_JustMe" name="InstructionClient_JustMe" visibility="public">
+              <UML:Generalization xmi.id="gen_IC_JustMe" parent="class_InstructionClient"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_InstructionQueue" name="InstructionQueue" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_add" name="add" visibility="public">
+                  <UML:Parameter xmi.id="param_add_instr" name="instruction" kind="in" type="class_Instruction"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getNextForProcessing" name="getNextForProcessing" visibility="public"/>
+                <UML:Operation xmi.id="op_getPosition_queue" name="getPosition" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_InstructionEventProcessor" name="InstructionEventProcessor" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_bind" name="bind" visibility="public">
+                  <UML:Parameter xmi.id="param_bind_func" name="function" kind="in" type="class_Function"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Function" name="Function" visibility="public"/>
+
+            <UML:Class xmi.id="class_InstructionControl" name="InstructionControl" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_setClient" name="setClient" visibility="public"/>
+                <UML:Operation xmi.id="op_pause" name="pause" visibility="public"/>
+                <UML:Operation xmi.id="op_resume" name="resume" visibility="public"/>
+                <UML:Operation xmi.id="op_bind_InstrCtrl" name="bind" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_Instruction_Queue" name="instruction-queue">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_Instruction" type="class_Instruction"/>
+                <UML:AssociationEnd xmi.id="end_Queue" type="class_InstructionQueue"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_InstrCtrl_Event" name="instructionControl-event">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_InstrCtrl" type="class_InstructionControl"/>
+                <UML:AssociationEnd xmi.id="end_EventProc" type="class_InstructionEventProcessor"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,82 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_audio" name="audio">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="stateMachine_audio" name="StateMachine" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+          <UML:StateMachine.context>
+            <UML:Class xmi.idref="model_audio"/>
+          </UML:StateMachine.context>
+          <UML:CompositeState xmi.id="compositeState_top" name="top" visibility="public" isSpecification="false" isRoot="true" isLeaf="false" isAbstract="false">
+            <UML:State.substate>
+              <UML:State xmi.id="state_on" name="on" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:State xmi.id="state_off" name="off" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:State xmi.id="state_mute" name="mute" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Pseudostate xmi.id="pseudostate_start" name="start" visibility="public" isSpecification="false" kind="initial"/>
+              <UML:FinalState xmi.id="finalState_end" name="end" visibility="public" isSpecification="false"/>
+            </UML:State.substate>
+          </UML:CompositeState>
+          <UML:StateMachine.transitions>
+            <UML:Transition xmi.id="transition_onoff" name="onoff" visibility="public" isSpecification="false">
+              <UML:Transition.source>
+                <UML:State xmi.idref="state_on"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:State xmi.idref="state_off"/>
+              </UML:Transition.target>
+            </UML:Transition>
+            <UML:Transition xmi.id="transition_offon" name="offon" visibility="public" isSpecification="false">
+              <UML:Transition.source>
+                <UML:State xmi.idref="state_off"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:State xmi.idref="state_on"/>
+              </UML:Transition.target>
+            </UML:Transition>
+            <UML:Transition xmi.id="transition_onmute" name="onmute" visibility="public" isSpecification="false">
+              <UML:Transition.source>
+                <UML:State xmi.idref="state_on"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:State xmi.idref="state_mute"/>
+              </UML:Transition.target>
+            </UML:Transition>
+            <UML:Transition xmi.id="transition_muteon" name="muteon" visibility="public" isSpecification="false">
+              <UML:Transition.source>
+                <UML:State xmi.idref="state_mute"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:State xmi.idref="state_on"/>
+              </UML:Transition.target>
+            </UML:Transition>
+            <UML:Transition xmi.id="transition_startoff" name="startoff" visibility="public" isSpecification="false">
+              <UML:Transition.source>
+                <UML:Pseudostate xmi.idref="pseudostate_start"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:State xmi.idref="state_off"/>
+              </UML:Transition.target>
+            </UML:Transition>
+            <UML:Transition xmi.id="transition_offend" name="offend" visibility="public" isSpecification="false">
+              <UML:Transition.source>
+                <UML:State xmi.idref="state_off"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:FinalState xmi.idref="finalState_end"/>
+              </UML:Transition.target>
+            </UML:Transition>
+          </UML:StateMachine.transitions>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

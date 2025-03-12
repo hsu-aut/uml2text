@@ -1,0 +1,75 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UntitledModel" name="UntitledModel">
+      <UML:Namespace.ownedElement>
+      
+        <UML:Package xmi.id="package_1" name="Package_1">
+          <UML:Namespace.ownedElement>
+            <!-- Classes A1 to A100 -->
+            <UML:Class xmi.id="class_A1" name="A1" visibility="public"/>
+            <UML:Class xmi.id="class_A2" name="A2" visibility="public"/>
+            <!-- Additional classes (A3 to A99) would be here -->
+            <UML:Class xmi.id="class_A100" name="A100" visibility="public"/>
+            
+            <!-- Associations A1 - A2, A2 - A3, ..., A99 - A100 -->
+            <UML:Association xmi.id="assoc_A1_A2">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_A1_A2_A1" type="class_A1" multiplicity="1..1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_A1_A2_A2" type="class_A2" multiplicity="1..1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <!-- Additional associations (A2 - A3) etc. would be here -->
+            <UML:Association xmi.id="assoc_A99_A100">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_A99_A100_A99" type="class_A99" multiplicity="1..1" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_A99_A100_A100" type="class_A100" multiplicity="1..1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Association A100 - A1 -->
+            <UML:Association xmi.id="assoc_A100_A1">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_A100_A1_A100" type="class_A100" multiplicity="2" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_A100_A1_A1" type="class_A1" multiplicity="1..1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_java" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="type_boolean" name="boolean"/>
+            <UML:DataType xmi.id="type_int" name="int"/>
+            <UML:Class xmi.id="class_String" name="String">
+              <UML:Generalization>
+                <UML:Class xmi.idref="lang"/>
+              </UML:Generalization>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Enumeration xmi.id="enum_OclState" name="OclState" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_equals" name="equals" visibility="public">
+              <UML:Parameter xmi.id="param_return_equals" name="return" kind="return" type="Primitive a12"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_notEquals" name="notEquals" visibility="public">
+              <UML:Parameter xmi.id="param_return_notEquals" name="return" kind="return" type="Primitive a12"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

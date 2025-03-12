@@ -1,0 +1,79 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:StateMachine xmi.id="stateMachine_AgencyAgent" name="AgencyAgent state">
+              <UML:StateMachine.top>
+                <UML:CompositeState xmi.id="compositeState_top" name="Top">
+                  <UML:Subvertices>
+                    <UML:Pseudostate xmi.id="state_not_initiated" name="not_initiated" kind="initial"/>
+                    <UML:State xmi.id="state_initiating" name="initiating"/>
+                    <UML:State xmi.id="state_initiated" name="initiated"/>
+                    <UML:State xmi.id="state_starting_up" name="starting_up"/>
+                    <UML:State xmi.id="state_ready" name="ready"/>
+                    <UML:State xmi.id="state_terminating" name="terminating"/>
+                    <UML:FinalState xmi.id="state_terminated" name="terminated"/>
+                    <UML:State xmi.id="state_disconnected" name="disconnected"/>
+                  </UML:Subvertices>
+                  <UML:Transition>
+                    <UML:Transition xmi.id="trans_initiate" source="state_not_initiated" target="state_initiating">
+                      <UML:Trigger>
+                        <UML:CallEvent xmi.id="call_initiate" name="call IAgent.initiate()"/>
+                      </UML:Trigger>
+                    </UML:Transition>
+                    <UML:Transition xmi.id="trans_initiate_complete" source="state_initiating" target="state_initiated"/>
+                    <UML:Transition xmi.id="trans_startup" source="state_initiated" target="state_starting_up">
+                      <UML:Trigger>
+                        <UML:CallEvent xmi.id="call_startup" name="call IAgent.startup()"/>
+                      </UML:Trigger>
+                    </UML:Transition>
+                    <UML:Transition xmi.id="trans_startup_complete" source="state_starting_up" target="state_ready"/>
+                    <UML:Transition xmi.id="trans_ready_termination" source="state_ready" target="state_terminating"/>
+                    <UML:Transition xmi.id="trans_ready_disconnected" source="state_ready" target="state_disconnected"/>
+                    <UML:Transition xmi.id="trans_awaiting_reconnection" source="state_disconnected" target="state_ready">
+                      <UML:Effect>
+                        <UML:CallEvent xmi.id="call_reconnect" name="run IAgent.on_reconnect()"/>
+                      </UML:Effect>
+                    </UML:Transition>
+                    <UML:Transition xmi.id="trans_terminated" source="state_terminating" target="state_terminated"/>
+                  </UML:Transition>
+                </UML:CompositeState>
+              </UML:StateMachine.top>
+            </UML:StateMachine>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

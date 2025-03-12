@@ -1,0 +1,128 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Umbrello UML Modeller</XMI.exporter>
+      <XMI.exporterVersion>2.30</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AnimatableSystem" name="AnimatableSystem">
+      <UML:Namespace.ownedElement>
+
+        <!-- Animation Hierarchy -->
+        <UML:Class xmi.id="class_Animation" name="Animation" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_Keyframe" name="Keyframe" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_TransformKeyframe" name="TransformKeyframe" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Keyframe"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_VertexMorphKeyframe" name="VertexMorphKeyframe" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Keyframe"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_PoseKeyframe" name="PoseKeyframe" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Keyframe"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_GenericKeyframe" name="GenericKeyframe" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Keyframe"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_NodeAnimationTrack" name="NodeAnimationTrack" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Animation"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Mesh Hierarchy -->
+        <UML:Class xmi.id="class_Mesh" name="Mesh" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_SkeletalMesh" name="SkeletalMesh" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Mesh"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_MorphMesh" name="MorphMesh" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Mesh"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_MeshAlgorithm" name="MeshAlgorithm" visibility="public" isAbstract="true">
+          <UML:Operation xmi.id="op_ApplyLoopSubdivision" name="ApplyLoopSubdivision" visibility="public" isAbstract="true"/>
+        </UML:Class>
+
+        <!-- Node Hierarchy -->
+        <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_position" name="position" visibility="private"/>
+          <UML:Attribute xmi.id="attr_scale" name="scale" visibility="private"/>
+          <UML:Attribute xmi.id="attr_orientation" name="orientation" visibility="private"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_SceneNode" name="SceneNode" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Node"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Skeleton System -->
+        <UML:Class xmi.id="class_Skeleton" name="Skeleton" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Bone" name="Bone" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Node"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Serialization Interface -->
+        <UML:Interface xmi.id="interface_XMLSerializer" name="XMLSerializer" visibility="public">
+          <UML:Operation xmi.id="op_Serialize" name="Serialize" visibility="public"/>
+          <UML:Operation xmi.id="op_Unserialize" name="Unserialize" visibility="public"/>
+          <UML:Operation xmi.id="op_GetVersion" name="GetVersion" visibility="public"/>
+          <UML:Operation xmi.id="op_GetType" name="GetType" visibility="public"/>
+        </UML:Interface>
+
+        <!-- Renderable and Visual Classes -->
+        <UML:Interface xmi.id="interface_Renderable" name="Renderable" visibility="public"/>
+        <UML:Class xmi.id="class_Material" name="Material" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_MaterialReference" name="MaterialReference" visibility="public" isAbstract="false"/>
+
+        <!-- Geometrical elements -->
+        <UML:Class xmi.id="class_Face" name="Face" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_smoothing" name="smoothing" visibility="private"/>
+          <UML:Attribute xmi.id="attr_owner" name="owner" visibility="private"/>
+          <UML:Attribute xmi.id="attr_normal" name="normal" visibility="private"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_Edge" name="Edge" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Vertex" name="Vertex" visibility="public" isAbstract="false"/>
+
+        <!-- Buffermanagement -->
+        <UML:Class xmi.id="class_PixelBuffer" name="PixelBuffer" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

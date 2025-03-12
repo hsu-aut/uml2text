@@ -1,0 +1,183 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Yali" name="Yali">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "YaliBuild" -->
+        <UML:Class xmi.id="class_YaliBuild" name="YaliBuild" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_build"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_add_gettext_support" name="add_gettext_support" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="op_add_gettext_support_return" name="return" kind="return" type="string"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_compile_ui" name="compile_ui" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="op_compile_ui_return" name="return" kind="return" type="string"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_YaliBuild_run" name="run" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="op_YaliBuild_run_return" name="return" kind="return" type="string"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "YaliClean" -->
+        <UML:Class xmi.id="class_YaliClean" name="YaliClean" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_YaliClean_run" name="run" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="op_YaliClean_run_return" name="return" kind="return" type="string"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "FileSystem" und deren Implementierungen -->
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_format" name="format" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_setLabel" name="setLabel" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_Ext3FileSystem" name="Ext3FileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_ReiserFileSystem" name="ReiserFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_XFSFileSystem" name="XFSFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_SwapFileSystem" name="SwapFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_NTFSFileSystem" name="NTFSFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_FatFileSystem" name="FatFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Exception" und der abgeleiteten Klassen -->
+        <UML:Class xmi.id="class_Exception" name="Exception" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_YaliExceptionInfo" name="YaliExceptionInfo" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Exception"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_RequestException" name="RequestException" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Exception"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Partition" -->
+        <UML:Class xmi.id="class_Partition" name="Partition" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_resize" name="resize" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_mount" name="mount" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_unmount" name="unmount" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "FreeSpace" -->
+        <UML:Class xmi.id="class_FreeSpace" name="FreeSpace" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_allocate" name="allocate" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "PartitionType" und der Spezialisierungen -->
+        <UML:Class xmi.id="class_PartitionType" name="PartitionType" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_RootPartitionType" name="RootPartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_HomePartitionType" name="HomePartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_SwapPartitionType" name="SwapPartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UserFunctions" -->
+        <UML:Class xmi.id="class_UserFunctions" name="UserFunctions" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_isUserNameValid" name="isUserNameValid" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="op_isUserNameValid_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_doesUserExist" name="doesUserExist" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="op_doesUserExist_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Assoziation zwischen Widget und YaliMain -->
+        <UML:Association xmi.id="assoc_Widget_YaliMain">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Widget_YaliMain_Widget" type="class_Widget" name="widget" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Widget_YaliMain_YaliMain" type="class_YaliMain" name="yaliMain" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Runner und Device -->
+        <UML:Association xmi.id="assoc_Runner_Device">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Runner_Device_Runner" type="class_Runner" name="runner" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Runner_Device_Device" type="class_Device" name="device" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,103 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- BasePlugin Class -->
+        <UML:Class xmi.id="class_BasePlugin" name="BasePlugin" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Operations and Features can be defined here -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- CLIToolInterface Class -->
+        <UML:Class xmi.id="class_CLIToolInterface" name="CLIToolInterface" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Operations such as command management-->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ProjectItem Class -->
+        <UML:Class xmi.id="class_ProjectItem" name="ProjectItem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mPlugin" name="mPlugin" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <!-- More attributes can be included -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ProjectPlugin Class -->
+        <UML:Class xmi.id="class_ProjectPlugin" name="ProjectPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_BasePlugin"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- CompilerPlugin Class -->
+        <UML:Class xmi.id="class_CompilerPlugin" name="CompilerPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_BasePlugin"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CLIToolInterface"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- BuilderPlugin Class -->
+        <UML:Class xmi.id="class_BuilderPlugin" name="BuilderPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_BasePlugin"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CLIToolInterface"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- ProjectsModel Class -->
+        <UML:Class xmi.id="class_ProjectsModel" name="ProjectsModel" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_QStandardItemModel"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- ProjectsProxy Class -->
+        <UML:Class xmi.id="class_ProjectsProxy" name="ProjectsProxy" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_QSortFilterProxyModel"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Various Qt Components -->
+        <UML:Class xmi.id="class_QStandardItemModel" name="QStandardItemModel"/>
+        <UML:Class xmi.id="class_QSortFilterProxyModel" name="QSortFilterProxyModel"/>
+        <UML:Class xmi.id="class_QWidget" name="QWidget"/>
+        <UML:Class xmi.id="class_QSettings" name="QSettings"/>
+        <UML:Class xmi.id="class_QVariant" name="QVariant"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

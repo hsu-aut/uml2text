@@ -1,0 +1,92 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_DataTypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_String" name="String"/>
+            <UML:DataType xmi.id="datatype_Integer" name="Integer"/>
+            <UML:DataType xmi.id="datatype_Boolean" name="Boolean"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_EnhancementEngine" name="Enhancement Engine" visibility="public" isAbstract="false" />
+        
+        <UML:Class xmi.id="class_EnhancementResultEntry" name="EnhancementResultEntry" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Entity" name="Entity" visibility="public" isAbstract="false"/>
+
+        <UML:Interface xmi.id="iface_Serializable" name="Serializable" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_EngineViewModel" name="EngineViewModel" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_EngineViewModel"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="iface_Serializable"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class_WiringVariablesInitiator" name="WiringVariablesInitiator" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_IntroPageInit" name="IntroPageInit" visibility="public" isAbstract="false"/>
+
+        <UML:Interface xmi.id="iface_RESTAPI" name="REST-API" visibility="public"/>
+        
+        <UML:Interface xmi.id="iface_Benutzer" name="Benutzer" visibility="public"/>
+
+        <UML:Interface xmi.id="iface_Bing" name="Bing" visibility="public"/>
+
+        <UML:Interface xmi.id="iface_EntityExtractionService" name="EntityExtractionService" visibility="public"/>
+        
+        <UML:Interface xmi.id="iface_EvaluationSessionService" name="EvaluationSessionService" visibility="public"/>
+
+        <UML:Interface xmi.id="iface_AvailableQueriesService" name="AvailableQueriesService" visibility="public"/>
+
+        <UML:Interface xmi.id="iface_EngineRatingService" name="EngineRatingService" visibility="public"/>
+
+        <UML:Interface xmi.id="iface_FeedbackService" name="FeedbackService" visibility="public"/>
+
+        <UML:Interface xmi.id="iface_QueryLogService" name="QueryLogService" visibility="public"/>
+
+        <UML:Interface xmi.id="iface_MongoDbClient" name="MongoDbClient" visibility="public"/>
+
+        <UML:Component xmi.id="component_Evaluierungsseite" name="Evaluierungsseite" visibility="public"/>
+        
+        <UML:Component xmi.id="component_Stanbol" name="Stanbol" visibility="public"/>
+
+        <UML:Component xmi.id="component_BingAPI" name="BingAPI" visibility="public">
+          <UML:Dependency>
+            <UML:Dependency.client>
+              <UML:Component xmi.idref="component_BingAPI"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Interface xmi.idref="iface_Bing"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+        </UML:Component>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

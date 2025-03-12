@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModèleUML" name="Modèle UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatypes -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:DataType xmi.id="datatype_void" name="void"/>
+        
+        <!-- KDE::Plasma::Engine -->
+        <UML:Package xmi.id="package_KDE_Plasma_Engine" name="KDE::Plasma::Engine"/>
+        
+        <!-- KDE::Hardware -->
+        <UML:Package xmi.id="package_KDE_Hardware" name="KDE::Hardware"/>
+        
+        <!-- KDE::Hardware::Backends -->
+        <UML:Package xmi.id="package_KDE_Hardware_Backends" name="KDE::Hardware::Backends"/>
+        
+        <!-- KDE::Plasma::Applets -->
+        <UML:Package xmi.id="package_KDE_Plasma_Applets" name="KDE::Plasma::Applets"/>
+        
+        <!-- KDE::Hardware::Widgets -->
+        <UML:Package xmi.id="package_KDE_Hardware_Widgets" name="KDE::Hardware::Widgets"/>
+        
+        <!-- Solid -->
+        <UML:Package xmi.id="package_Solid" name="Solid">
+          <UML:Namespace.ownedElement>
+            <!-- Device -->
+            <UML:Class xmi.id="class_Device" name="Device" visibility="public" isAbstract="true">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Capability" />
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- DeviceCache -->
+            <UML:Class xmi.id="class_DeviceCache" name="DeviceCache" visibility="public" isAbstract="false"/>
+
+            <!-- DeviceManager -->
+            <UML:Class xmi.id="class_DeviceManager" name="DeviceManager" visibility="public" isAbstract="false">
+              <UML:AssociationEnd xmi.id="assoc_DeviceManager_DeviceCache" type="class_DeviceCache" name="deviceCache" aggregation="composite"/>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Solid::Ifaces -->
+        <UML:Package xmi.id="package_Solid_Ifaces" name="Solid::Ifaces">
+          <UML:Namespace.ownedElement>
+            <!-- Capability -->
+            <UML:Class xmi.id="class_Capability" name="Capability" visibility="public" isAbstract="true"/>
+            
+            <!-- Derived classes -->
+            <UML:Class xmi.id="class_AcAdaptor" name="AcAdaptor" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Capability" />
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_Battery" name="Battery" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Capability" />
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_NetworkDevice" name="NetworkDevice" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Capability" />
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_Volume" name="Volume" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Capability" />
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_Wireless" name="Wireless" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Capability" />
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

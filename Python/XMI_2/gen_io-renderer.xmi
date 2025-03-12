@@ -1,0 +1,122 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- DataTypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Class: singleton -->
+            <UML:Class xmi.id="class_singleton" name="singleton" isAbstract="true" visibility="public"/>
+
+            <!-- Class: ioInterface -->
+            <UML:Class xmi.id="class_ioInterface" name="ioInterface" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_singleton"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_flush" name="flush" visibility="public"/>
+                <UML:Operation xmi.id="operation_initWindow" name="initWindow" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class: sdlIo -->
+            <UML:Class xmi.id="class_sdlIo" name="sdlIo" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_ioInterface"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Class: renderer -->
+            <UML:Class xmi.id="class_renderer" name="renderer" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_singleton"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attribute_world" name="world" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_world"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation_setFlushCallback" name="setFlushCallback" visibility="public"/>
+                <UML:Operation xmi.id="operation_setWindowInit" name="setWindowInit" visibility="public"/>
+                <UML:Operation xmi.id="operation_renderLoop" name="renderLoop" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class: rendererGL -->
+            <UML:Class xmi.id="class_rendererGL" name="rendererGL" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_renderer"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Class: world -->
+            <UML:Class xmi.id="class_world" name="world" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_singleton"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <!-- Association: ioInterface to renderer -->
+            <UML:Association xmi.id="assoc_ioInterface_renderer">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_ioInterface_renderer_ioInterface" type="class_ioInterface" name="ioInterface" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_ioInterface_renderer_renderer" type="class_renderer" name="renderer" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Additional Empty Views -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View"/>
+        <UML:Package xmi.id="package_ComponentView" name="Component View"/>
+        <UML:Package xmi.id="package_DeploymentView" name="Deployment View"/>
+        <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model"/>
+        
+        <!-- Stereotypes -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

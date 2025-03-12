@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_data" name="data" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_x" name="x" visibility="private" isSpecification="false"/>
+                <UML:Attribute xmi.id="attr_y" name="y" visibility="private" isSpecification="false"/>
+                <UML:AssociationEnd xmi.id="assocEnd_y_unc" type="uncertainty" name="y_unc" visibility="private"/>
+                <UML:AssociationEnd xmi.id="assocEnd_x_unc" type="uncertainty" name="x_unc" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_request" name="request" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_quantity" name="quantity" visibility="private" isSpecification="false">
+                  <UML:StructuralFeature.type>
+                    <UML:Enumeration xmi.idref="enum_quantities"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_algorithm" name="algorithm" visibility="private" isSpecification="false"/>
+                <UML:Attribute xmi.id="attr_calculate_uncertainty" name="calculate uncertainty" visibility="private" isSpecification="false">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="bool"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_uncertainty" name="uncertainty" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_value" name="value" visibility="private" isSpecification="false"/>
+                <UML:Attribute xmi.id="attr_distribution" name="distribution" visibility="private" isSpecification="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_algorithm" name="algorithm" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_script_file_name" name="script file name" visibility="private" isSpecification="false">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="char"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_returns_quantities" name="returns quantities" visibility="private" isSpecification="false">
+                  <UML:StructuralFeature.type>
+                    <UML:Enumeration xmi.idref="enum_quantities"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_result" name="result" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:AssociationEnd xmi.id="assocEnd_quantity_value" type="quantities" name="quantity value" visibility="private"/>
+                <UML:AssociationEnd xmi.id="assocEnd_quantity_uncertainty" type="uncertainty" name="quantity uncertainty" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Enumeration xmi.id="enum_quantities" name="quantities" visibility="public">
+              <UML:Enumeration.literal>
+                <UML:Literal name="frequency"/>
+                <UML:Literal name="amplitude"/>
+                <UML:Literal name="phase"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="useCaseView" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <UML:Actor xmi.id="actor_user" name="user" visibility="public"/>
+            <UML:Actor xmi.id="actor_sw" name="sw" visibility="public"/>
+
+            <UML:UseCase xmi.id="useCase_measuresData" name="measures data" visibility="public"/>
+            <UML:UseCase xmi.id="useCase_requestsQuantity" name="requests quantity" visibility="public"/>
+            <UML:UseCase xmi.id="useCase_checksIfExistAlgorithm" name="checks if exist algorithm for required quantity" visibility="public"/>
+            <UML:UseCase xmi.id="useCase_returnsRequiredQuantity" name="returns required quantity" visibility="public"/>
+
+            <UML:Association xmi.id="assoc_user_measuresData">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_user" type="actor_user" name="user"/>
+                <UML:AssociationEnd xmi.id="assocEnd_measuresData" type="useCase_measuresData" name="measures data"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_user_requestsQuantity">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_userRequests" type="actor_user" name="user"/>
+                <UML:AssociationEnd xmi.id="assocEnd_requestsQuantity" type="useCase_requestsQuantity" name="requests quantity"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_sw_checksAlgorithm">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_sw" type="actor_sw" name="sw"/>
+                <UML:AssociationEnd xmi.id="assocEnd_checksAlgorithm" type="useCase_checksIfExistAlgorithm" name="checks if exist algorithm for required quantity"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_sw_returnsQuantity">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_swReturns" type="actor_sw" name="sw"/>
+                <UML:AssociationEnd xmi.id="assocEnd_returnsQuantity" type="useCase_returnsRequiredQuantity" name="returns required quantity"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Generalization xmi.id="gen_measures_requests">
+              <UML:Generalization.child>
+                <UML:UseCase xmi.idref="useCase_measuresData"/>
+              </UML:Generalization.child>
+              <UML:Generalization.parent>
+                <UML:UseCase xmi.idref="useCase_requestsQuantity"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+
+            <UML:Generalization xmi.id="gen_requests_checks">
+              <UML:Generalization.child>
+                <UML:UseCase xmi.idref="useCase_requestsQuantity"/>
+              </UML:Generalization.child>
+              <UML:Generalization.parent>
+                <UML:UseCase xmi.idref="useCase_checksIfExistAlgorithm"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="char" name="char"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

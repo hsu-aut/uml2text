@@ -1,0 +1,70 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLProject.1" name="UMLProject.1">
+      <UML:Namespace.ownedElement>
+      
+        <UML:Model xmi.id="model_StarUmlSampleModel" name="StarUmlSampleModel">
+          <UML:Namespace.ownedElement>
+          
+            <UML:Class xmi.id="class_Order" name="Order" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_OrderID" name="OrderID" visibility="private"/>
+                <UML:Attribute xmi.id="attr_OrderDate" name="OrderDate" visibility="private"/>
+                <UML:Attribute xmi.id="attr_CustomerName" name="CustomerName" visibility="private"/>
+              </UML:Classifier.feature>
+              <UML:Stereotype name="table"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_OrderDetail" name="OrderDetail" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_OrderDetailID" name="OrderDetailID" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Quantity" name="Quantity" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Price" name="Price" visibility="private"/>
+                <UML:Attribute xmi.id="attr_ArticleDescription" name="ArticleDescription" visibility="private"/>
+              </UML:Classifier.feature>
+              <UML:Stereotype name="table"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_OrderReport" name="OrderReport" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_CustomerName_Report" name="CustomerName" visibility="private"/>
+                <UML:Attribute xmi.id="attr_ProfitPerYear" name="ProfitPerYear" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Year" name="Year" visibility="private"/>
+              </UML:Classifier.feature>
+              <UML:Stereotype name="view"/>
+              <UML:TemplateParameter parameterType="Table" defaultValue="vwOrderReport"/>
+            </UML:Class>
+            
+            <UML:Generalization xmi.id="generalization_Order_OrderDetail" parent="class_Order" child="class_OrderDetail" name="d1_1"/>
+            
+            <UML:Association xmi.id="assoc_Order_Self_Aggregate">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_OrderSelf1" type="class_Order" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_OrderSelf2" type="class_Order" aggregation="aggregate"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_OrderDetail_Order">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_OrderDetail_Order1" type="class_OrderDetail" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_OrderDetail_Order2" type="class_Order" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

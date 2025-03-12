@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NIEM_Common_Profile" name="NIEM_Common_Profile">
+      <UML:Namespace.ownedElement>
+
+        <!-- Stereotype Definitions -->
+        
+        <UML:Stereotype xmi.id="stereotype_Documentation" name="Documentation" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_MetadataType" name="MetadataType" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_ObjectType" name="ObjectType" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_MetadataApplication" name="MetadataApplication" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_Restriction" name="Restriction" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_References" name="References" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_ValueRestriction" name="ValueRestriction" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_AugmentationApplication" name="AugmentationApplication" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_Choice" name="Choice" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_Union" name="Union" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_Namespace" name="Namespace" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_AugmentationType" name="AugmentationType" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_UnionOf" name="UnionOf" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_Application" name="Application" visibility="public"/>
+
+        <!-- Class Definitions -->
+        
+        <UML:Class xmi.id="class_NIEMType" name="NIEMType" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_AdapterType" name="AdapterType" visibility="public">
+          <UML:Generalization xmi.id="generalize_AdapterType" parent="class_NIEMType"/>
+        </UML:Class>
+
+        <!-- Example of Use of Stereotypes -->
+        
+        <UML:Class xmi.id="class_ExampleObjectType" name="ExampleObjectType" visibility="public">
+          <UML:Stereotype xmi.idref="stereotype_ObjectType"/>
+          <UML:Generalization xmi.id="generalize_ExampleObjectType" parent="class_NIEMType"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ExampleMetadataType" name="ExampleMetadataType" visibility="public">
+          <UML:Stereotype xmi.idref="stereotype_MetadataType"/>
+          <UML:Generalization xmi.id="generalize_ExampleMetadataType" parent="class_NIEMType"/>
+        </UML:Class>
+
+        <!-- Associations -->
+
+        <UML:Association xmi.id="assoc_ExampleAssociation">
+          <UML:Stereotype xmi.idref="stereotype_References"/>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ExampleAssociation_Type1" type="class_ExampleObjectType" name="type1" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ExampleAssociation_Type2" type="class_ExampleMetadataType" name="type2" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

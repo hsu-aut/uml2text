@@ -1,0 +1,150 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Model">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="LogicalView" name="Logical View" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+                <UML:DataType xmi.id="PixelArray" name="Pixel[][]"/>
+                <UML:DataType xmi.id="FloatPointer" name="float*"/>
+                <UML:DataType xmi.id="FloatPointerArray" name="float*[][]"/>
+                <UML:DataType xmi.id="FloatArray" name="float[][]"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="Terrain" name="Terrain">
+              <UML:Attribute xmi.id="cellCenters" name="cellCenters" type="FloatArray"/>
+              <UML:Attribute xmi.id="tile_count_x" name="tile_count_x" type="int"/>
+              <UML:Attribute xmi.id="tile_count_y" name="tile_count_y" type="int"/>
+              <UML:Attribute xmi.id="tile_len_x" name="tile_len_x" type="float"/>
+              <UML:Attribute xmi.id="tile_len_y" name="tile_len_y" type="float"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="Model" name="Model">
+              <UML:Attribute xmi.id="scale" name="scale" type="float"/>
+              <UML:Attribute xmi.id="position" name="position" type="FloatPointer"/>
+              <UML:Attribute xmi.id="rotationAngleX" name="rotationAngleX" type="float"/>
+              <UML:Attribute xmi.id="rotationAngleY" name="rotationAngleY" type="float"/>
+              <UML:Attribute xmi.id="rotationAngleZ" name="rotationAngleZ" type="float"/>
+              <UML:Operation xmi.id="loadCoordinates" name="loadCoordinates"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="Piece" name="Piece">
+              <UML:Attribute xmi.id="animationState" name="animationState" type="int"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="Obstacle" name="Obstacle"/>
+            <UML:Class xmi.id="Actor" name="Actor"/>
+            <UML:Class xmi.id="Equipment" name="Equipment"/>
+            <UML:Class xmi.id="ARMinisControl" name="ARMinisControl"/>
+            <UML:Class xmi.id="ARMinisView" name="ARMinisView">
+              <UML:Operation xmi.id="show" name="show"/>
+              <UML:Operation xmi.id="animate" name="animate">
+                <UML:Parameter xmi.id="animationType0" name="animationType" type="int" defaultValue="0"/>
+              </UML:Operation>
+            </UML:Class>
+            
+            <UML:Class xmi.id="ARMinisGLArea" name="ARMinisGLArea"/>
+            <UML:Class xmi.id="VideoGLArea" name="VideoGLArea"/>
+            <UML:Class xmi.id="PiecesGLArea" name="PiecesGLArea"/>
+            <UML:Class xmi.id="PiecesWidget" name="PiecesWidget"/>
+            
+            <UML:Class xmi.id="EquipDialog" name="EquipDialog"/>
+            <UML:Class xmi.id="EquipGLArea" name="EquipGLArea"/>
+            <UML:Class xmi.id="ColorDialog" name="ColorDialog"/>
+            <UML:Class xmi.id="ColorGLArea" name="ColorGLArea"/>
+            <UML:Class xmi.id="SkeletalObj" name="SkeletalObj"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Generalization xmi.id="gen_Terrain_Model" parent="Model" child="Terrain"/>
+        <UML:Generalization xmi.id="gen_Actor_Piece" parent="Piece" child="Actor"/>
+        <UML:Generalization xmi.id="gen_Obstacle_Piece" parent="Piece" child="Obstacle"/>
+        <UML:Generalization xmi.id="gen_PiecesGLArea_ARMinisGLArea" parent="ARMinisGLArea" child="PiecesGLArea"/>
+        <UML:Generalization xmi.id="gen_VideoGLArea_ARMinisGLArea" parent="ARMinisGLArea" child="VideoGLArea"/>
+        <UML:Generalization xmi.id="gen_EquipGLArea_ARMinisGLArea" parent="ARMinisGLArea" child="EquipGLArea"/>
+        <UML:Generalization xmi.id="gen_ColorGLArea_ARMinisGLArea" parent="ARMinisGLArea" child="ColorGLArea"/>
+
+        <UML:Association xmi.id="assoc_ARMinisView_Model">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_ARMinisView_Model_end1" type="ARMinisView"/>
+            <UML:AssociationEnd xmi.id="assoc_ARMinisView_Model_end2" type="Model"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ARMinisControl_Model">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_ARMinisControl_Model_end1" type="ARMinisControl"/>
+            <UML:AssociationEnd xmi.id="assoc_ARMinisControl_Model_end2" type="Model"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_VideoWidget_VideoGLArea">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_VideoWidget_VideoGLArea_end1" type="VideoWidget"/>
+            <UML:AssociationEnd xmi.id="assoc_VideoWidget_VideoGLArea_end2" type="VideoGLArea"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PiecesWidget_PiecesGLArea">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_PiecesWidget_PiecesGLArea_end1" type="PiecesWidget"/>
+            <UML:AssociationEnd xmi.id="assoc_PiecesWidget_PiecesGLArea_end2" type="PiecesGLArea"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_EquipDialog_EquipGLArea">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_EquipDialog_EquipGLArea_end1" type="EquipDialog"/>
+            <UML:AssociationEnd xmi.id="assoc_EquipDialog_EquipGLArea_end2" type="EquipGLArea"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ColorDialog_ColorGLArea">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_ColorDialog_ColorGLArea_end1" type="ColorDialog"/>
+            <UML:AssociationEnd xmi.id="assoc_ColorDialog_ColorGLArea_end2" type="ColorGLArea"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Actor_Equipment">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_Actor_Equipment_end1" type="Actor"/>
+            <UML:AssociationEnd xmi.id="assoc_Actor_Equipment_end2" type="Equipment"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Equipment_Actor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_Equipment_Actor_end1" type="Equipment"/>
+            <UML:AssociationEnd xmi.id="assoc_Equipment_Actor_end2" type="Actor"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

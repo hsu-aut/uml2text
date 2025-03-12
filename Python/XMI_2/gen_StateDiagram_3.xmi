@@ -1,0 +1,78 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_cms" name="cms">
+      <UML:Namespace.ownedElement>
+        <UML:StateMachine xmi.id="machine_cms" name="cms">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="state_top" name="top">
+              <UML:CompositeState.subvertex>
+                <UML:CompositeState xmi.id="state_submission" name="Submission">
+                  <UML:CompositeState.subvertex>
+                    <UML:SimpleState xmi.id="state_submitted" name="submitted"/>
+                    <UML:SimpleState xmi.id="state_assigned" name="assigned"/>
+                    <UML:SimpleState xmi.id="state_reviewed" name="reviewed"/>
+                    <UML:SimpleState xmi.id="state_notified" name="notified"/>
+                    <UML:FinalState xmi.id="state_endsubmission" name="endsubmission"/>
+                  </UML:CompositeState.subvertex>
+                </UML:CompositeState>
+              </UML:CompositeState.subvertex>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+          <UML:StateMachine.transitions>
+            <UML:Transition xmi.id="transition_assign" name="assign">
+              <UML:Transition.source>
+                <UML:SimpleState xmi.idref="state_submitted"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:SimpleState xmi.idref="state_assigned"/>
+              </UML:Transition.target>
+              <UML:Transition.trigger>
+                <UML:SignalEvent xmi.id="signal_event_assign" name="assign"/>
+              </UML:Transition.trigger>
+            </UML:Transition>
+            <UML:Transition xmi.id="transition_review" name="review">
+              <UML:Transition.source>
+                <UML:SimpleState xmi.idref="state_assigned"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:SimpleState xmi.idref="state_reviewed"/>
+              </UML:Transition.target>
+              <UML:Transition.trigger>
+                <UML:SignalEvent xmi.id="signal_event_review" name="review"/>
+              </UML:Transition.trigger>
+            </UML:Transition>
+            <UML:Transition xmi.id="transition_notify" name="notify">
+              <UML:Transition.source>
+                <UML:SimpleState xmi.idref="state_reviewed"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:SimpleState xmi.idref="state_notified"/>
+              </UML:Transition.target>
+              <UML:Transition.trigger>
+                <UML:SignalEvent xmi.id="signal_event_notify" name="notify"/>
+              </UML:Transition.trigger>
+            </UML:Transition>
+            <UML:Transition xmi.id="transition_endsubmission" name="endsubmission">
+              <UML:Transition.source>
+                <UML:SimpleState xmi.idref="state_notified"/>
+              </UML:Transition.source>
+              <UML:Transition.target>
+                <UML:FinalState xmi.idref="state_endsubmission"/>
+              </UML:Transition.target>
+            </UML:Transition>
+          </UML:StateMachine.transitions>
+        </UML:StateMachine>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

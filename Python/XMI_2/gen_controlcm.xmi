@@ -1,0 +1,73 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Model UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Pakets Datatypes -->
+        <UML:Package xmi.id="Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="DataTypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Klassendefinitionen -->
+            <UML:Class xmi.id="YsUwVilpMCWO" name="Message" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_Message_Header" parent="bmU5IFRXczhs"/>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="Message_Header" name="header" visibility="private" aggregation="composite">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="bmU5IFRXczhs"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="Message_Body" name="body" visibility="private" aggregation="composite">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="WwUYindIVMJn"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class xmi.id="z5sW5zQ9ybVk" name="Socket" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="bmU5IFRXczhs" name="Header" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="WwUYindIVMJn" name="Body" visibility="public" isAbstract="false"/>
+          
+            <!-- Assoziationen -->
+            <UML:Association xmi.id="V4Bff6MBWyAd" name="association_Message_Socket">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assoc_End_Message" type="z5sW5zQ9ybVk" aggregation="none" multiplicity="1" navigable="false"/>
+                <UML:AssociationEnd xmi.id="assoc_End_Socket" type="YsUwVilpMCWO" aggregation="none" multiplicity="0..n"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

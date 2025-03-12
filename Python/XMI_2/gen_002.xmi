@@ -1,0 +1,81 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_littleware" name="littleware">
+      <UML:Namespace.ownedElement>
+        <!-- Package littleware.asset -->
+        <UML:Package xmi.id="pkg_littleware_asset" name="littleware.asset">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_Asset" name="Asset" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_getName" name="getName" visibility="public">
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="String"/>
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Interface>
+            <UML:Interface xmi.id="interface_AssetIterator" name="AssetIterator" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_next" name="next" visibility="public">
+                  <UML:Dependency>
+                    <UML:Client xmi.idref="interface_Asset"/>
+                  </UML:Dependency>
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="Asset"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="operation_hasNext" name="hasNext" visibility="public">
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="Boolean"/>
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Interface>
+            <UML:Interface xmi.id="interface_AssetSearchManager" name="AssetSearchManager" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_buildIterator" name="buildIterator" visibility="public">
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="AssetIterator"/>
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Interface>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package littleware.apps.tracker -->
+        <UML:Package xmi.id="pkg_littleware_apps_tracker" name="littleware.apps.tracker">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_Queue" name="Queue" visibility="public">
+              <UML:Generalization>
+                <UML:Parent xmi.idref="parent_UndefinedInterface"/>
+              </UML:Generalization>
+            </UML:Interface>
+            <UML:Interface xmi.id="interface_Task" name="Task" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_getQueue" name="getQueue" visibility="public">
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="Queue"/>
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Interface>
+            <UML:Interface xmi.id="interface_TaskManager" name="TaskManager" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_addTaskToQueue" name="addTaskToQueue" visibility="public">
+                  <UML:Parameter xmi.id="param_task" name="task" kind="in" type="Task"/>
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Interface>
+            <UML:Association xmi.id="assoc_Queue_Task" name="queue-task">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Queue_Task_Queue" type="interface_Queue" name="queue" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Queue_Task_Task" type="interface_Task" name="task" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

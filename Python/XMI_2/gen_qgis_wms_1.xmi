@@ -1,0 +1,80 @@
+```xml
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_WMS" name="WMS_Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klassen -->
+        
+        <UML:Class xmi.id="class_QgsWMSServer" name="QgsWMSServer" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_QgsWMSServer_ctor" name="QgsWmsServer"/>
+            <UML:Operation xmi.id="op_getCapabilities" name="getCapabilities"/>
+            <UML:Operation xmi.id="op_getMap" name="getMap"/>
+            <UML:Operation xmi.id="op_getFeatureInfo" name="getFeatureInfo"/>
+            <UML:Operation xmi.id="op_getLegendGraphics" name="getLegendGraphics"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgsSLDParser" name="QgsSLDParser" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_mXmlDoc" name="mXmlDoc"/>
+            <UML:Attribute xmi.id="attr_mScaleDenominator" name="mScaleDenominator"/>
+            <UML:Attribute xmi.id="attr_mFallbackSLDParser" name="mFallbackSLDParser*"/>
+            <UML:Operation xmi.id="op_QgsSLDParser_ctor" name="QgsSLDParser"/>
+            <UML:Operation xmi.id="op_mapLayerFromStyle" name="mapLayerFromStyle"/>
+            <UML:Operation xmi.id="op_legendForMapLayer" name="legendForMapLayer"/>
+            <UML:Operation xmi.id="op_layersAndStylesCapabilities" name="layersAndStylesCapabilities"/>
+            <UML:Operation xmi.id="op_layersAndStyles" name="layersAndStyles"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_QgsWMSRequestHandler" name="QgsWMSRequestHandler" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_parseInput" name="parseInput"/>
+            <UML:Operation xmi.id="op_sendGetMapResponse" name="sendGetMapResponse"/>
+            <UML:Operation xmi.id="op_sendGetCapabilitiesResponse" name="sendGetCapabilitiesResponse"/>
+            <UML:Operation xmi.id="op_sendServiceException" name="sendServiceException"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgsGetRequestHandler" name="QgsGetRequestHandler" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_QgsPostRequestHandler" name="QgsPostRequestHandler" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_QgsCommandLineAppRequestHandler" name="QgsCommandLineAppRequestHandler" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_QgsSOAPRequestHandler" name="QgsSOAPRequestHandler" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_QString" name="QString" visibility="public"/>
+        <UML:Class xmi.id="class_QgsMapLayer" name="QgsMapLayer" visibility="public"/>
+        <UML:Class xmi.id="class_QDomNode" name="QDomNode" visibility="public"/>
+        <UML:Class xmi.id="class_QDomDocument" name="QDomDocument" visibility="public"/>
+        <UML:Class xmi.id="class_QgsLayerInfo" name="QgsLayerInfo" visibility="public"/>
+        
+        <!-- Generalisierungen -->
+        
+        <UML:Generalization xmi.id="gen_QgsWMSRequestHandler_QgsGetRequestHandler" child="class_QgsGetRequestHandler" parent="class_QgsWMSRequestHandler"/>
+        <UML:Generalization xmi.id="gen_QgsWMSRequestHandler_QgsPostRequestHandler" child="class_QgsPostRequestHandler" parent="class_QgsWMSRequestHandler"/>
+        <UML:Generalization xmi.id="gen_QgsWMSRequestHandler_QgsCommandLineAppRequestHandler" child="class_QgsCommandLineAppRequestHandler" parent="class_QgsWMSRequestHandler"/>
+        <UML:Generalization xmi.id="gen_QgsWMSRequestHandler_QgsSOAPRequestHandler" child="class_QgsSOAPRequestHandler" parent="class_QgsWMSRequestHandler"/>
+        
+        <!-- Assoziationen -->
+
+        <UML:Association xmi.id="assoc_QgsWMSServer_QgsSLDParser">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_QgsWMSServer_QgsSLDParser_server" type="class_QgsWMSServer"/>
+            <UML:AssociationEnd xmi.id="assocEnd_QgsWMSServer_QgsSLDParser_parser" type="class_QgsSLDParser"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

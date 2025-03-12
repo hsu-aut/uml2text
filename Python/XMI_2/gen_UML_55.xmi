@@ -1,0 +1,132 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Stereotype xmi.id="folder" name="folder"/>
+        <UML:Stereotype xmi.id="datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="class-or-package" name="class-or-package"/>
+        <UML:Stereotype xmi.id="typedef" name="typedef"/>
+        
+        <UML:Package xmi.id="pkg_DataTypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt_int" name="int"/>
+            <UML:DataType xmi.id="dt_char" name="char"/>
+            <UML:DataType xmi.id="dt_bool" name="bool"/>
+            <UML:DataType xmi.id="dt_float" name="float"/>
+            <UML:DataType xmi.id="dt_double" name="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="kJKmMuehQJAB" name="Client" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="Runnable"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_play" name="play" visibility="private"/>
+            <UML:Attribute xmi.id="attr_player" name="player" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="UIEStipJBf8E"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_socket" name="socket" visibility="private"/>
+            <UML:Attribute xmi.id="attr_queue" name="queue" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="SYeBp0L6vJwy"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="zzkcP6hHXV1K" name="Server" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="Runnable"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_io_service" name="io_service" visibility="private"/>
+            <UML:Attribute xmi.id="attr_acceptor" name="acceptor" visibility="private"/>
+            <UML:Attribute xmi.id="attr_socket" name="socket" visibility="private"/>
+            <UML:Attribute xmi.id="attr_queue" name="queue" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="SYeBp0L6vJwy"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="jzVrRq1SQZFs" name="Runner" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement/>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="kJKmMuehQJAB"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="zzkcP6hHXV1K"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="UIEStipJBf8E"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="UIEStipJBf8E" name="Player" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="Runnable"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_play" name="play" visibility="public"/>
+            <UML:Operation xmi.id="op_openFile" name="openFile" visibility="public"/>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="aTHb94gcQhWT" name="Logger" visibility="public" isAbstract="false" isSingleton="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getInstance" name="getInstance" visibility="public"/>
+            <UML:Attribute xmi.id="attr_counter" name="counter_" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="SYeBp0L6vJwy" name="StreamQueue" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.id="assoc_StreamQueue_Stream" type="Stream" name="stream" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Association xmi.id="assoc_Client_Player" name="client-player" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Client" type="kJKmMuehQJAB" name="client" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Player" type="UIEStipJBf8E" name="player" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_StreamQueue_Stream" name="streamqueue-stream" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_StreamQueue" type="SYeBp0L6vJwy" name="streamqueue" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Stream" type="Stream" name="stream" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Class xmi.id="Runnable" name="Runnable" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="Stream" name="Stream" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

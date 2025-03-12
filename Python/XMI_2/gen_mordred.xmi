@@ -1,0 +1,126 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="Logical View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- ContinuousLineshape Class -->
+            <UML:Class xmi.id="VSeJnP1eiK6O" name="ContinuousLineshape" isAbstract="true" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_call" name="__call__" visibility="public"/>
+                <UML:Operation xmi.id="op_reduction" name="reduction" visibility="public">
+                  <UML:Parameter xmi.id="param_reduction" name="return" kind="return" type="double"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_oxidation" name="oxidation" visibility="public">
+                  <UML:Parameter xmi.id="param_oxidation" name="return" kind="return" type="double"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- ClassicalLineshape Class -->
+            <UML:Class xmi.id="CNpPRcOvOz4V" name="ClassicalLineshape" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="VSeJnP1eiK6O"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_k_occupied" name="k_occupied" visibility="public" type="double"/>
+                <UML:Attribute xmi.id="attr_k_unoccupied" name="k_unoccupied" visibility="public" type="double"/>
+                <UML:Attribute xmi.id="attr_energy_level" name="Energy level" visibility="public" type="double"/>
+                <UML:Attribute xmi.id="attr_q_shift" name="Q_shift" visibility="public" type="double"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- OverlapBasedLineshape Class -->
+            <UML:Class xmi.id="BlHyslFnc8dh" name="OverlapBasedLineshape" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="VSeJnP1eiK6O"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_smearing_width" name="smearing width" visibility="public" type="double"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- OverlapCalculator Class -->
+            <UML:Class xmi.id="XtXx5oaEnyCb" name="OverlapCalculator" visibility="public" isAbstract="true"/>
+
+            <!-- NumericalOverlapCalculator Class -->
+            <UML:Class xmi.id="ZBRlW4nX4CiM" name="NumericalOverlapCalculator" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="XtXx5oaEnyCb"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- RateCalculator4State Class -->
+            <UML:Class xmi.id="060CExkkrpCK" name="RateCalculator4State" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_primary_transitions" name="primary charge transitions" visibility="public"/>
+                <UML:Attribute xmi.id="attr_secondary_transitions" name="secondary charge transitions" visibility="public"/>
+                <UML:Attribute xmi.id="attr_barrier_primary_secondary" name="barrier primary to secondary" visibility="public"/>
+                <UML:Attribute xmi.id="attr_barrier_secondary_primary" name="barrier secondary to primary" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Experiment Classes -->
+            <UML:Class xmi.id="ZPDO0yyUd9iF" name="MSMExperiment" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_permanent_component" name="permanent component" visibility="public"/>
+                <UML:Attribute xmi.id="attr_recoverable_component" name="recoverable component" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="iIv86MG4SEHf" name="DynamicTDDSExperiment" visibility="public"/>
+            <UML:Class xmi.id="91N0oaKLxVkx" name="MSMPDefect" visibility="public"/>
+
+            <!-- Electronic Matrix Elements -->
+            <UML:Class xmi.id="suKIg8VGBwFW" name="ElectronicMatrixElement" visibility="public"/>
+            <UML:Class xmi.id="vWyiTOElTU7S" name="ElectronicMatrixElementReader" visibility="public"/>
+            <UML:Class xmi.id="LyrC1rntj79O" name="VSPElectronicMatrixElement" visibility="public"/>
+            <UML:Class xmi.id="FceQYtuSNqAo" name="SHEElectronicMatrixElement" visibility="public"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Stereotypes -->
+        <UML:Stereotype xmi.id="folder" name="folder"/>
+        <UML:Stereotype xmi.id="datatype" name="datatype"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

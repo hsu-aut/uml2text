@@ -1,0 +1,63 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4" />
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <!-- Komponenten Definition -->
+        <UML:Component xmi.id="component_AdminComponent" name="AdminComponent" visibility="public" isAbstract="false"/>
+        <UML:Component xmi.id="component_AuthenticationComponent" name="AuthenticationComponent" visibility="public" isAbstract="false">
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="component_AdminComponent"/>
+          </UML:Dependency.client>
+        </UML:Component>
+        <UML:Component xmi.id="component_Tomcat" name="Tomcat" visibility="public" isAbstract="false"/>
+        <UML:Component xmi.id="component_ApacheHTTPD" name="Apache HTTPD" visibility="public" isAbstract="false"/>
+        <UML:Component xmi.id="component_AdminWeb" name="AdminWeb" visibility="public" isAbstract="false"/>
+        
+        <!-- Dependency -->
+        <UML:Dependency xmi.id="dependency_Authentication_Admin" client="component_AuthenticationComponent" supplier="component_AdminComponent"/>
+
+        <!-- Knoten Definition -->
+        <UML:Node xmi.id="node_Appserver" name="Appserver" visibility="public" isAbstract="false">
+          <UML:Node.nestedNode>
+            <UML:ComponentInstance xmi.id="componentInstance_Tomcat" name="tomcat" classifier="component_Tomcat"/>
+          </UML:Node.nestedNode>
+        </UML:Node>
+        <UML:Node xmi.id="node_Webserver" name="Webserver" visibility="public" isAbstract="false">
+          <UML:Node.nestedNode>
+            <UML:ComponentInstance xmi.id="componentInstance_ApacheHTTPD" name="apacheHTTPD" classifier="component_ApacheHTTPD"/>
+          </UML:Node.nestedNode>
+        </UML:Node>
+
+        <!-- Knoteninstanz Definition -->
+        <UML:NodeInstance xmi.id="nodeInstance_lzebrappp02" name="lzebrappp02" visibility="public" classifier="node_Appserver"/>
+        <UML:NodeInstance xmi.id="nodeInstance_lzebrappp01" name="lzebrappp01" visibility="public" classifier="node_Webserver"/>
+
+        <!-- Verbindungen -->
+        <UML:Association xmi.id="association_AJP_Association" name="AJP" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="associationEnd_Appserver" type="node_Appserver" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="associationEnd_Webserver" type="node_Webserver" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Link xmi.id="link_Cluster_Link" name="Cluster" visibility="public">
+          <UML:Link.connection>
+            <UML:AssociationEnd xmi.id="associationEnd_link_lzebrappp02" type="nodeInstance_lzebrappp02" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="associationEnd_link_lzebrappp01" type="nodeInstance_lzebrappp01" aggregation="none"/>
+          </UML:Link.connection>
+        </UML:Link>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

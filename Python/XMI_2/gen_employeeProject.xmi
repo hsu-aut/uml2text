@@ -1,0 +1,115 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Root" name="Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ADDRESS" name="Adresse" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ID" name="ID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="NUMBER"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ZIP" name="ZIP" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="VARCHAR2"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_PK_ADDRESS" name="PK_ADDRESS" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_PersonID" name="ID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="NUMBER"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Name" name="Name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="VARCHAR2"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PROJECT" name="Projekt" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ProjectID" name="ID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="NUMBER"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ProjectName" name="NAME" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="VARCHAR2"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_PK_PROJECT" name="PK_PROJECT" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EMPLOYEE" name="Angestellter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_EmployeeID" name="ID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="NUMBER"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_EmployeeName" name="NAME" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="VARCHAR2"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EMPLOYEE_PROJECT" name="EMPLOYEE_PROJECT" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_EmployeeIDInProject" name="EMPLOYEE_ID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="NUMBER"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ProjectIDInEmployee" name="PROJECT_ID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="NUMBER"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Person_Address">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Person" type="class_Person" name="livesAt" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Address" type="class_ADDRESS" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Employee_Project">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Employee" type="class_EMPLOYEE" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Project" type="class_PROJECT" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="NUMBER" name="NUMBER"/>
+        <UML:DataType xmi.id="VARCHAR2" name="VARCHAR2"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

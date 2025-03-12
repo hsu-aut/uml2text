@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModelChecking" name="ModelChecking">
+      <UML:Namespace.ownedElement>
+        <UML:StateMachine xmi.id="stateMachine_StateChart" name="StateChart">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="compositeState_Top" name="top">
+              <UML:CompositeState.subvertex>
+                <UML:Pseudostate xmi.id="initial_Top" kind="initial"/>
+                <UML:SimpleState xmi.id="simpleState_PageHome" name="page-Home">
+                  <UML:SimpleState.outgoing>
+                    <UML:Transition xmi.id="transition_HomeToLogin">
+                      <UML:Transition.trigger>
+                        <UML:SignalEvent xmi.id="signal_LinkMailCenter" name="link-MailCenter"/>
+                      </UML:Transition.trigger>
+                      <UML:Transition.target>
+                        <UML:State xmi.idref="compositeState_PageMailCenter"/>
+                      </UML:Transition.target>
+                    </UML:Transition>
+                    <UML:Transition xmi.id="transition_HomeToMailCenter">
+                      <UML:Transition.trigger>
+                        <UML:SignalEvent xmi.id="signal_CallLoginCheck" name="call-LoginCheck"/>
+                      </UML:Transition.trigger>
+                      <UML:Transition.target>
+                        <UML:State xmi.idref="simpleState_PageLogin"/>
+                      </UML:Transition.target>
+                    </UML:Transition>
+                  </UML:SimpleState.outgoing>
+                </UML:SimpleState>
+                <UML:SimpleState xmi.id="simpleState_PageLogin" name="page-Login">
+                  <UML:SimpleState.outgoing>
+                    <UML:Transition xmi.id="transition_LoginToHome">
+                      <UML:Transition.target>
+                        <UML:State xmi.idref="simpleState_PageHome"/>
+                      </UML:Transition.target>
+                    </UML:Transition>
+                  </UML:SimpleState.outgoing>
+                </UML:SimpleState>
+                <UML:CompositeState xmi.id="compositeState_PageMailCenter" name="page-MailCenter">
+                  <UML:CompositeState.subvertex>
+                    <UML:Pseudostate xmi.id="initial_MailCenter" kind="initial"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter0" name="MailCenter0">
+                      <UML:SimpleState.outgoing>
+                        <UML:Transition xmi.id="transition_MailCenter0To1">
+                          <UML:Transition.trigger>
+                            <UML:SignalEvent xmi.id="signal_AjaxWrite" name="ajax-Write"/>
+                          </UML:Transition.trigger>
+                          <UML:Transition.target>
+                            <UML:State xmi.idref="simpleState_MailCenter1"/>
+                          </UML:Transition.target>
+                        </UML:Transition>
+                      </UML:SimpleState.outgoing>
+                    </UML:SimpleState>
+                    <!-- MailCenter1 bis MailCenter9 Stub. For illustrative purposes -->
+                    <UML:SimpleState xmi.id="simpleState_MailCenter1" name="MailCenter1"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter2" name="MailCenter2"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter3" name="MailCenter3"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter4" name="MailCenter4"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter5" name="MailCenter5"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter6" name="MailCenter6"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter7" name="MailCenter7"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter8" name="MailCenter8"/>
+                    <UML:SimpleState xmi.id="simpleState_MailCenter9" name="MailCenter9"/>
+                  </UML:CompositeState.subvertex>
+                </UML:CompositeState>
+                <UML:SimpleState xmi.id="simpleState_PageUserCenter" name="page-UserCenter">
+                  <UML:SimpleState.incoming>
+                    <UML:Transition xmi.id="transition_MailCenterToUserCenter">
+                      <UML:Transition.trigger>
+                        <UML:SignalEvent xmi.id="signal_LinkUserCenter" name="link-UserCenter"/>
+                      </UML:Transition.trigger>
+                      <UML:Transition.source>
+                        <UML:State xmi.idref="compositeState_PageMailCenter"/>
+                      </UML:Transition.source>
+                    </UML:Transition>
+                  </UML:SimpleState.incoming>
+                </UML:SimpleState>
+              </UML:CompositeState.subvertex>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

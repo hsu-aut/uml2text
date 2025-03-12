@@ -1,0 +1,63 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model" visibility="public">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View Package -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public" stereotype="folder">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public" stereotype="folder">
+              <UML:Namespace.ownedElement>
+                <!-- Example of possible DataTypes -->
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Use Case View Package -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View" visibility="public" stereotype="folder">
+          <UML:Namespace.ownedElement>
+            <!-- Actors -->
+            <UML:Actor xmi.id="actor_opettaja" name="opettaja" visibility="public"/>
+            <UML:Actor xmi.id="actor_oppilas" name="oppilas" visibility="public"/>
+            <UML:Actor xmi.id="actor_järjestelmä" name="järjestelmä" visibility="public"/>
+            
+            <!-- Use Cases -->
+            <UML:UseCase xmi.id="usecase_kurssin_luonti" name="kurssin luonti" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_opettajan_luonti" name="opettajan luonti" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_kurssin_valinta" name="kurssin valinta" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_kirjautuminen" name="kirjautuminen" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_tiedoston_lataus" name="tiedoston lataus" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_tiedoston_talletus" name="tiedoston talletus" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_työaiheiden_katselu" name="kurssin työaiheiden katselu" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_työaiheiden_antaminen" name="kurssin työaiheiden antaminen" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_oppilaan_luonti" name="oppilaan luonti" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_uuden_salasana_luonti" name="uuden oppilaan kirjautumissalasanan luonti" visibility="public"/>
+            
+            <!-- Example Associations between Actors and Use Cases -->
+            <UML:Association xmi.id="assoc_opettaja_kurssin_luonti">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_opettaja" type="actor_opettaja" name="opettaja" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_kurssin_luonti" type="usecase_kurssin_luonti" name="kurssin luonti" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

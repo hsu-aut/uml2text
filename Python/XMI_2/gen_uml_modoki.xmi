@@ -1,0 +1,67 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Schnittstelle "new_interface" -->
+        <UML:Interface xmi.id="interface_new_interface" name="new_interface" visibility="public"/>
+
+        <!-- Definition der Basisklasse "ilist" -->
+        <UML:Class xmi.id="class_ilist" name="ilist" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_lemma_snoc_length" name="lemma_snoc_length" visibility="public"/>
+            <UML:Operation xmi.id="op_lemma_append_length" name="lemma_append_length" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der abgeleiteten Klasse "gflist" -->
+        <UML:Class xmi.id="class_gflist" name="gflist" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_gflist_ilist" parent="class_ilist"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_gflist_length" name="gflist_length" visibility="public"/>
+            <UML:Operation xmi.id="op_gflist_snoc" name="gflist_snoc" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der abgeleiteten Klasse "gflist_vt" -->
+        <UML:Class xmi.id="class_gflist_vt" name="gflist_vt" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_gflist_vt_ilist" parent="class_ilist"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_gflist_vt_length" name="gflist_vt_length" visibility="public"/>
+            <UML:Operation xmi.id="op_gflist_vt_snoc" name="gflist_vt_snoc" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der abgeleiteten Klasse "gfarray" -->
+        <UML:Class xmi.id="class_gfarray" name="gfarray" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_gfarray_ilist" parent="class_ilist"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_gfarray_v_split" name="gfarray_v_split" visibility="public"/>
+            <UML:Operation xmi.id="op_gfarray_get_at" name="gfarray_get_at" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Paket für Datentypen -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

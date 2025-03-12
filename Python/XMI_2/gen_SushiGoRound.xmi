@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_array" name="array"/>
+                <UML:DataType xmi.id="datatype_tuple" name="tuple"/>
+                <UML:DataType xmi.id="datatype_dict" name="dict"/>
+                <UML:DataType xmi.id="datatype_object" name="object"/>
+                <UML:DataType xmi.id="datatype_set" name="set"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="class_Sushi" name="Sushi" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Sushi_contents" name="contents" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Ingredient"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                
+                <UML:Operation xmi.id="op_Sushi_make" name="make" visibility="public"/>
+                <UML:Operation xmi.id="op_Sushi_order" name="order" visibility="public"/>
+                <UML:Operation xmi.id="op_Sushi_identify" name="identify" visibility="public">
+                  <UML:Parameter xmi.id="param_identify_colorcode" name="colorcode" kind="in" type="datatype_int"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Ingredient" name="Ingredient" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Ingredient_cost" name="cost" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_Ingredient_quantity" name="quantity" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_short"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                
+                <UML:Operation xmi.id="op_Ingredient_buy" name="buy" visibility="public">
+                  <UML:Parameter xmi.id="return_Ingredient" name="return" kind="return" type="class_Ingredient"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Client" name="Client" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Client_order" name="order" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Sushi"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_Client_mood" name="mood" visibility="private" type="datatype_int"/>
+                <UML:Attribute xmi.id="attr_Client_isWait" name="isWait" visibility="private" type="datatype_bool" initialValue="true"/>
+                
+                <UML:Operation xmi.id="op_Client_come" name="come" visibility="public"/>
+                <UML:Operation xmi.id="op_Client_leave" name="leave" visibility="public"/>
+                <UML:Operation xmi.id="op_Client_eat" name="eat" visibility="public"/>
+                <UML:Operation xmi.id="op_Client_angry" name="angry" visibility="public"/>
+                <UML:Operation xmi.id="op_Client_soft" name="soft" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Telephone" name="Telephone" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Telephone_menu" name="menu" visibility="private"/>
+                
+                <UML:Operation xmi.id="op_Telephone_order" name="order" visibility="public">
+                  <UML:Parameter xmi.id="return_Telephone" name="return" kind="return" type="class_Ingredient"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Cord" name="Cord" visibility="public"/>
+            
+            <UML:Class xmi.id="class_NewClass" name="New_Class" visibility="public"/>
+            
+            <UML:Association xmi.id="assoc_Sushi_Ingredient">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Sushi_Ingredient_Sushi" type="class_Sushi" name="sushi" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Sushi_Ingredient_Ingredient" type="class_Ingredient" name="ingredient" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Client_Sushi">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Client_Sushi_Client" type="class_Client" name="client" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Client_Sushi_Sushi" type="class_Sushi" name="sushi" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

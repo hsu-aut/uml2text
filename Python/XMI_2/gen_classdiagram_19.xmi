@@ -1,0 +1,106 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <!-- Add DataType entries for array variants if needed -->
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="package_nip" name="nip">
+              <UML:Namespace.ownedElement>
+
+                <UML:Class xmi.id="class_variable" name="variable" visibility="public" isAbstract="false">
+                  <UML:Attribute xmi.id="attr_VAR_TEXT_LENGTH" name="VAR_TEXT_LENGTH" visibility="public" initialValue="40" type="datatype_int"/>
+                  <!-- Include other integer-based attributes -->
+                  <UML:Operation xmi.id="op_new_variable" name="new_variable" visibility="public"/>
+                  <UML:Operation xmi.id="op_copy_variable" name="copy_variable" visibility="public"/>
+                  <UML:Operation xmi.id="op_mark_variable" name="mark_variable" visibility="public"/>
+                  <!-- Include other operations as described -->
+                </UML:Class>
+
+                <UML:Class xmi.id="class_string" name="string" visibility="public" isAbstract="false">
+                  <UML:Operation xmi.id="op_split" name="split" visibility="public"/>
+                  <UML:Operation xmi.id="op_tokenise" name="tokenise" visibility="public"/>
+                  <!-- Include other operations related to word and token count -->
+                </UML:Class>
+
+                <UML:Class xmi.id="class_double_list" name="double_list" visibility="public" isAbstract="false">
+                  <UML:Attribute xmi.id="attr_length" name="length" visibility="public" type="datatype_int"/>
+                  <UML:Attribute xmi.id="attr_first" name="first" visibility="public" type="class_double_link"/>
+                  <UML:Attribute xmi.id="attr_last" name="last" visibility="public" type="class_double_link"/>
+                  <UML:Operation xmi.id="op_append_double" name="append_double" visibility="public"/>
+                  <UML:Operation xmi.id="op_prepend_double" name="prepend_double" visibility="public"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_double_link" name="double_link" visibility="public" isAbstract="false">
+                  <UML:Attribute xmi.id="attr_fwd" name="fwd" visibility="public" type="class_double_link"/>
+                  <UML:Attribute xmi.id="attr_bwd" name="bwd" visibility="public" type="class_double_link"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_string_link" name="string_link" visibility="public" isAbstract="false">
+                  <UML:Attribute xmi.id="attr_fwd" name="fwd" visibility="public" type="class_string_link"/>
+                  <UML:Attribute xmi.id="attr_bwd" name="bwd" visibility="public" type="class_string_link"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_string_list" name="string_list" visibility="public" isAbstract="false">
+                  <UML:Attribute xmi.id="attr_length" name="length" visibility="public" type="datatype_int"/>
+                  <UML:Attribute xmi.id="attr_first" name="first" visibility="public" type="class_string_link"/>
+                  <UML:Attribute xmi.id="attr_last" name="last" visibility="public" type="class_string_link"/>
+                  <!-- Include operations similar to double_list if any exist -->
+                </UML:Class>
+
+                <UML:Class xmi.id="class_potential" name="potential" visibility="public" isAbstract="false">
+                  <!-- Include attributes regarding the size of the data -->
+                  <!-- Include methods for normalization and aggregation -->
+                </UML:Class>
+
+                <UML:Class xmi.id="class_clique" name="clique" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_sepset" name="sepset" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_potential_list" name="potential_list" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_graph" name="graph" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_heap" name="heap" visibility="public" isAbstract="false"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Association xmi.id="association_variable_variable">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_variable_previous" type="class_variable" name="previous" aggregation="none" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_variable_next" type="class_variable" name="next" aggregation="none" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+      
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

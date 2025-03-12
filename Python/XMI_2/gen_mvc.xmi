@@ -1,0 +1,104 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModelUML" name="Model UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Kontroler" -->
+        <UML:Class xmi.id="class_Kontroler" name="Kontroler" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_raportuj" name="raportuj" visibility="public"/>
+            <UML:Operation xmi.id="op_zaloguj" name="zaloguj" visibility="public"/>
+            <UML:Operation xmi.id="op_wyloguj" name="wyloguj" visibility="public"/>
+            <UML:Operation xmi.id="op_zarzadzajPracownikami" name="zarzadzajPracownikami" visibility="public"/>
+            <UML:Operation xmi.id="op_zarzadzajProjektami" name="zarzadzajProjektami" visibility="public"/>
+            <UML:Operation xmi.id="op_zarzadzajZadaniami" name="zarzadzajZadaniami" visibility="public"/>
+            <UML:Operation xmi.id="op_zarzadzajLogami" name="zarzadzajLogami" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Widok" -->
+        <UML:Class xmi.id="class_Widok" name="Widok" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_otworz" name="otworz" visibility="public"/>
+            <UML:Operation xmi.id="op_zamknij" name="zamknij" visibility="public"/>
+            <UML:Operation xmi.id="op_odswiez" name="odswiez" visibility="public"/>
+            <UML:Operation xmi.id="op_pobierzDane" name="pobierzDane" visibility="public"/>
+            <UML:Operation xmi.id="op_wyswietl" name="wyswietl" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Kontroler"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Model" -->
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Hier ließen sich weitere Operationen und Details betreffend Projekte, Aufgaben, etc. anlegen -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Zadanie" -->
+        <UML:Class xmi.id="class_Zadanie" name="Zadanie" visibility="public" isAbstract="false">
+          <!-- Spezifizierte Details sind ausgelassen -->
+        </UML:Class>
+        
+        <!-- Definition der Klasse "zadanie" -->
+        <UML:Class xmi.id="class_zadanie" name="zadanie" visibility="public" isAbstract="false">
+          <!-- Spezifizierte Details sind ausgelassen -->
+        </UML:Class>
+
+        <!-- Definition der Klasse "Prawo" -->
+        <UML:Class xmi.id="class_Prawo" name="Prawo" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_nowyAtrybut" name="nowy_atrybut" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Projekt" -->
+        <UML:Class xmi.id="class_Projekt" name="Projekt" visibility="public" isAbstract="false">
+          <!-- Spezifizierte Details sind ausgelassen -->
+        </UML:Class>
+
+        <!-- Definition der Klasse "WniosekUrlopowy" -->
+        <UML:Class xmi.id="class_WniosekUrlopowy" name="WniosekUrlopowy" visibility="public" isAbstract="false">
+          <!-- Spezifizierte Details sind ausgelassen -->
+        </UML:Class>
+
+        <!-- Asssoziationen werden hier definiert -->
+        <UML:Association xmi.id="assoc_Kontroler_Widok_Model" name="association_Kontroler_Widok_Model" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler" type="class_Kontroler" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Widok" type="class_Widok" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Model" type="class_Model" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datentypen-Paket -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="type_int" name="int"/>
+            <UML:DataType xmi.id="type_char" name="char"/>
+            <UML:DataType xmi.id="type_bool" name="bool"/>
+            <UML:DataType xmi.id="type_float" name="float"/>
+            <UML:DataType xmi.id="type_double" name="double"/>
+            <UML:DataType xmi.id="type_short" name="short"/>
+            <UML:DataType xmi.id="type_long" name="long"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

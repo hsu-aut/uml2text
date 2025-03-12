@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="currentTimestamp">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Polytope Collection -->
+            <UML:Class xmi.id="polytopeCollection" name="PolytopeCollection" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="attachFaces" name="attachFacesToCollection"/>
+                <UML:Operation xmi.id="attachCells" name="attachCellsToCollection"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Polytope Grid -->
+            <UML:Class xmi.id="polytopeGrid" name="PolytopeGrid" isAbstract="true">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="polytopeCollection"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Polytope Array -->
+            <UML:Class xmi.id="polytopeArray" name="PolytopeArray" isAbstract="true">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="polytopeCollection"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Face Grid -->
+            <UML:Class xmi.id="faceGrid" name="FaceGrid" isAbstract="true"/>
+
+            <!-- Face Array -->
+            <UML:Class xmi.id="faceArray" name="FaceArray" isAbstract="true"/>
+
+            <!-- Cell Array -->
+            <UML:Class xmi.id="cellArray" name="CellArray" isAbstract="true"/>
+
+            <!-- Interfaces -->
+            <UML:Interface xmi.id="faceCollection" name="FaceCollection">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="faceOperations" name="faceOperation"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+
+            <UML:Interface xmi.id="cellCollection" name="CellCollection">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="cellOperations" name="cellOperation"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+            
+            <!-- Complexes -->
+            <UML:Class xmi.id="polytopeComplex" name="PolytopeComplex" isAbstract="true"/>
+
+            <UML:Class xmi.id="faceComplex" name="FaceComplex" isAbstract="true"/>
+
+            <UML:Class xmi.id="cellComplex" name="CellComplex" isAbstract="true"/>
+
+            <!-- Factories -->
+            <UML:Class xmi.id="faceArrayFactory" name="ConcreteFaceArrayFactory" isAbstract="false"/>
+            
+            <UML:Class xmi.id="cellGridFactory" name="ConcreteCellGridFactory" isAbstract="false"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_Polytope_Face">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Polytope_Face_PolytopeArray" type="polytopeArray" name="polytopeArray" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Polytope_Face_FaceArray" type="faceArray" name="faceArray" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

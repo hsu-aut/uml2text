@@ -1,0 +1,83 @@
+```xml
+<?xml version = "1.0" encoding = "UTF-8"?>
+<XMI xmi.version = "1.2" xmlns:UML = "org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_QgisPluginArchitecture" name="QgisPluginArchitecture">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_QgisPlugin" name="QgisPlugin" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_QgisPlugin_description" name="description" visibility="public" isSpecification="false" isQuery="true"/>
+            <UML:Operation xmi.id="op_QgisPlugin_name" name="name" visibility="public" isSpecification="false" isQuery="true"/>
+            <UML:Operation xmi.id="op_QgisPlugin_version" name="version" visibility="public" isSpecification="false" isQuery="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgisApp" name="QgisApp" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Details nicht spezifiziert -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgisTestPlugin" name="QgisTestPlugin" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_QgisTestPlugin"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_QgisPlugin"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_QgisTestPlugin_pDescription" name="pDescription" visibility="private"/>
+            <UML:Attribute xmi.id="attr_QgisTestPlugin_pName" name="pName" visibility="private"/>
+            <UML:Attribute xmi.id="attr_QgisTestPlugin_pVersion" name="pVersion" visibility="private"/>
+            <UML:Attribute xmi.id="attr_QgisTestPlugin_qI" name="qI" visibility="private" type="class_QgisIface"/>
+            <UML:Attribute xmi.id="attr_QgisTestPlugin_qgisMainWindow" name="qgisMainWindow" visibility="private" type="class_QMainWindow"/>
+            <UML:Operation xmi.id="op_QgisTestPlugin_description" name="description" visibility="public" isSpecification="false" isQuery="true"/>
+            <UML:Operation xmi.id="op_QgisTestPlugin_name" name="name" visibility="public" isSpecification="false" isQuery="true"/>
+            <UML:Operation xmi.id="op_QgisTestPlugin_version" name="version" visibility="public" isSpecification="false" isQuery="true"/>
+            <UML:Operation xmi.id="op_QgisTestPlugin_Destructor" name="~QgisTestPlugin" visibility="public" isSpecification="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgisInterface" name="QgisInterface" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_QgisInterface_QgisInterface" name="QgisInterface" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisInterface_getInt" name="getInt" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisInterface_zoomActiveLayer" name="zoomActiveLayer" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisInterface_zoomFull" name="zoomFull" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisInterface_zoomPrevious" name="zoomPrevious" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisInterface_Destructor" name="~QgisInterface" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgisIface" name="QgisIface" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_QgisIface_qgis" name="qgis" visibility="private" type="class_QgisApp"/>
+            <UML:Operation xmi.id="op_QgisIface_getInt" name="getInt" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisIface_zoomActiveLayer" name="zoomActiveLayer" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisIface_zoomFull" name="zoomFull" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisIface_zoomPrevious" name="zoomPrevious" visibility="public"/>
+            <UML:Operation xmi.id="op_QgisIface_Destructor" name="~QgisIface" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QMainWindow" name="QMainWindow" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Details nicht spezifiziert -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

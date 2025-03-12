@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Quitanda" name="Quitanda">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="type_int" name="int"/>
+            <UML:DataType xmi.id="type_char" name="char"/>
+            <UML:DataType xmi.id="type_bool" name="bool"/>
+            <UML:DataType xmi.id="type_float" name="float"/>
+            <UML:DataType xmi.id="type_double" name="double"/>
+            <UML:DataType xmi.id="type_short" name="short"/>
+            <UML:DataType xmi.id="type_long" name="long"/>
+            <UML:DataType xmi.id="type_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="type_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="type_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="type_string" name="string"/>
+            <UML:DataType xmi.id="type_dollar" name="$"/>
+            <UML:DataType xmi.id="type_at" name="@"/>
+            <UML:DataType xmi.id="type_percent" name="%"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Quitanda Package -->
+        <UML:Package xmi.id="pkg_Quitanda" name="Quitanda">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Class Promocao -->
+            <UML:Class xmi.id="class_Promocao" name="Promocao" visibility="public" isAbstract="false"/>
+            
+            <!-- Class User -->
+            <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+            
+            <!-- Class Mercadoria -->
+            <UML:Class xmi.id="class_Mercadoria" name="Mercadoria" visibility="public" isAbstract="false"/>
+            
+            <!-- Class Stack -->
+            <UML:Class xmi.id="class_Stack" name="Stack" visibility="public" isAbstract="false"/>
+            
+            <!-- Class Fornecedor -->
+            <UML:Class xmi.id="class_Fornecedor" name="Fornecedor" visibility="public" isAbstract="false"/>
+            
+            <!-- Class Cesta -->
+            <UML:Class xmi.id="class_Cesta" name="Cesta" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_cliente" name="cliente" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Cliente"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_manageMercadorias" name="manageMercadorias" visibility="public">
+                  <UML:Parameter xmi.id="param_m" name="mercadoria" kind="in" type="class_Mercadoria"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Class Conta -->
+            <UML:Class xmi.id="class_Conta" name="Conta" visibility="public" isAbstract="false"/>
+            
+            <!-- Class Entrega -->
+            <UML:Class xmi.id="class_Entrega" name="Entrega" visibility="public" isAbstract="false"/>
+            
+            <!-- Class Cliente -->
+            <UML:Class xmi.id="class_Cliente" name="Cliente" visibility="public" isAbstract="false"/>
+            
+            <!-- Class Caixa -->
+            <UML:Class xmi.id="class_Caixa" name="Caixa" visibility="public" isAbstract="false"/>
+            
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_Cesta_Mercadoria" name="cesta-mercadoria" visibility="public" isAbstract="false">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Cesta" type="class_Cesta" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Mercadoria" type="class_Mercadoria" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

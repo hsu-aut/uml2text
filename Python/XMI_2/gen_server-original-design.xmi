@@ -1,0 +1,109 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="Sun May 26 18:40:26 CEST 2013">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML-Model">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Logical View -->
+        <UML:Package xmi.id="logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes -->
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- boost -->
+            <UML:Package xmi.id="boost" name="boost">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="shared_ptr" name="shared_ptr"/>
+                <UML:Package xmi.id="posix_time" name="posix_time">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="ptime" name="ptime"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- messages -->
+            <UML:Package xmi.id="messages" name="messages">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="MovePlayerControlMessage" name="MovePlayerControlMessage"/>
+                <UML:Class xmi.id="InitialDataRequest" name="InitialDataRequest"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- addutil -->
+            <UML:Package xmi.id="addutil" name="addutil">
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- freekick package -->
+        <UML:Package xmi.id="freekick" name="freekick">
+          <UML:Namespace.ownedElement>
+            <!-- match -->
+            <UML:Package xmi.id="match" name="match">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="RulesState" name="RulesState"/>
+                
+                <!-- server -->
+                <UML:Package xmi.id="server" name="server">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="SetpointMap" name="SetpointMap" isSpecification="true"/>
+                    <UML:Class xmi.id="VelocityMap" name="VelocityMap" isSpecification="true"/>
+                    <UML:Class xmi.id="InputMonitor" name="InputMonitor">
+                      <UML:Classifier.feature>
+                        <!-- Attributes and operations here -->
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    <UML:Class xmi.id="PhysicsMessage" name="PhysicsMessage"/>
+                    <UML:Class xmi.id="PhysicsMessageList" name="PhysicsMessageList"/>
+                    
+                    <UML:Class xmi.id="Physics" name="Physics">
+                      <UML:Generalization xmi.id="gen_Physics_Reader" parent="Reader"/>
+                      <UML:Generalization xmi.id="gen_Physics_Publisher" parent="Publisher"/>
+                    </UML:Class>
+                    
+                    <UML:Class xmi.id="Rules" name="Rules">
+                      <UML:Generalization xmi.id="gen_Rules_Publisher" parent="addutil::Publisher<Rules>"/>
+                    </UML:Class>
+                    
+                    <UML:Class xmi.id="Dispatcher" name="Dispatcher">
+                      <!-- Inheritances from generalization -->
+                    </UML:Class>
+                    
+                    <UML:Class xmi.id="ServerManager" name="ServerManager">
+                      <UML:Generalization xmi.id="gen_ServerManager_Server" parent="Server"/>
+                    </UML:Class>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Dependencies -->
+        <UML:Dependency xmi.id="dep_Physics_InputMonitor" client="Physics" supplier="InputMonitor"/>
+        <UML:Dependency xmi.id="dep_ServerManager_match" client="ServerManager" supplier="match"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

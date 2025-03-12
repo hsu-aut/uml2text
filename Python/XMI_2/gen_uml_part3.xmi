@@ -1,0 +1,150 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MultimediaManagement" name="MultimediaManagement">
+      <UML:Namespace.ownedElement>
+
+        <!-- MultimediaAbstract class definition -->
+        <UML:Class xmi.id="class_MultimediaAbstract" name="MultimediaAbstract" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_file_dir" name="file_dir" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_index" name="index" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_isSelected" name="isSelected" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- SoundClip, Picture, Video classes -->
+        <UML:Class xmi.id="class_SoundClip" name="SoundClip" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_MultimediaAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Picture" name="Picture" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_MultimediaAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Video" name="Video" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_MultimediaAbstract"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Page class definition -->
+        <UML:Class xmi.id="class_Page" name="Page" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_page_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_author" name="author" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_multimedia" name="multimedia" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MultimediaAbstract"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Story class definition -->
+        <UML:Class xmi.id="class_Story" name="Story" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_story_title" name="title" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_story_author" name="author" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_root" name="root" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Page"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DbManager and DbHelper classes -->
+        <UML:Class xmi.id="class_DbManager" name="DbManager" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DbHelper" name="DbHelper" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_SQLiteOpenHelper"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_SQLiteOpenHelper" name="SQLiteOpenHelper" visibility="public" isAbstract="true"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_Page_MultimediaAbstract">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Page" type="class_Page" name="page" visibility="public" aggregation="composite" multiplicity="1">
+              <UML:Multiplicty>
+                <UML:Multiplicity.range>
+                  <UML:MultiplicityRange lower="1" upper="*"/>
+                </UML:Multiplicity.range>
+              </UML:Multiplicty>
+            </UML:AssociationEnd>
+            <UML:AssociationEnd xmi.id="assocEnd_MultimediaAbstract" type="class_MultimediaAbstract" name="multimedia" visibility="public" aggregation="none" multiplicity="*">
+              <UML:Multiplicty>
+                <UML:Multiplicity.range>
+                  <UML:MultiplicityRange lower="0" upper="*"/>
+                </UML:Multiplicity.range>
+              </UML:Multiplicty>
+            </UML:AssociationEnd>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

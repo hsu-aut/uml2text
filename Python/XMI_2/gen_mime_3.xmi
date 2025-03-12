@@ -1,0 +1,106 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MimeSystem" name="MimeSystem">
+      <UML:Namespace.ownedElement>
+        <!-- ThunarVfsMimeProvider Class -->
+        <UML:Class xmi.id="45" name="ThunarVfsMimeProvider" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_lookup_data" name="lookup_data" visibility="public" isAbstract="true">
+              <UML:Parameter xmi.id="op_lookup_data_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_lookup_literal" name="lookup_literal" visibility="public" isAbstract="true">
+              <UML:Parameter xmi.id="op_lookup_literal_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_lookup_suffix" name="lookup_suffix" visibility="public" isAbstract="true">
+              <UML:Parameter xmi.id="op_lookup_suffix_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_lookup_glob" name="lookup_glob" visibility="public" isAbstract="true">
+              <UML:Parameter xmi.id="op_lookup_glob_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_get_stop_characters" name="get_stop_characters" visibility="public" isAbstract="true">
+              <UML:Parameter xmi.id="op_get_stop_characters_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_get_max_buffer_extents" name="get_max_buffer_extents" visibility="public" isAbstract="true">
+              <UML:Parameter xmi.id="op_get_max_buffer_extents_param1" name="return" kind="return" type="2"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- ThunarVfsMimeCache Class -->
+        <UML:Class xmi.id="92" name="ThunarVfsMimeCache" visibility="public">
+          <UML:Generalization xmi.id="142" parent="45"/>
+        </UML:Class>
+        
+        <!-- ThunarVfsMimeLegacy Class -->
+        <UML:Class xmi.id="99" name="ThunarVfsMimeLegacy" visibility="public">
+          <UML:Generalization xmi.id="157" parent="45"/>
+        </UML:Class>
+
+        <!-- ThunarVfsMimeDatabase Class -->
+        <UML:Class xmi.id="196" name="ThunarVfsMimeDatabase" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_get_info" name="get_info" visibility="public">
+              <UML:Parameter xmi.id="op_get_info_param1" name="return" kind="return" type="204"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_get_info_for_data" name="get_info_for_data" visibility="public">
+              <UML:Parameter xmi.id="op_get_info_for_data_param1" name="return" kind="return" type="204"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_get_info_for_name" name="get_info_for_name" visibility="public">
+              <UML:Parameter xmi.id="op_get_info_for_name_param1" name="return" kind="return" type="204"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_get_info_for_file" name="get_info_for_file" visibility="public">
+              <UML:Parameter xmi.id="op_get_info_for_file_param1" name="return" kind="return" type="204"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ThunarVfsMimeInfo Class -->
+        <UML:Class xmi.id="204" name="ThunarVfsMimeInfo" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_get_comment" name="get_comment" visibility="public">
+              <UML:Parameter xmi.id="op_get_comment_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_get_name" name="get_name" visibility="public">
+              <UML:Parameter xmi.id="op_get_name_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_get_media" name="get_media" visibility="public">
+              <UML:Parameter xmi.id="op_get_media_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_get_subtype" name="get_subtype" visibility="public">
+              <UML:Parameter xmi.id="op_get_subtype_param1" name="return" kind="return" type="10"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="453" name="DatabaseProviderAssociation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end1_database_provider" type="196" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end2_database_provider" type="45" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="544" name="DatabaseMimeInfoAssociation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end1_database_info" type="196" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end2_database_info" type="204" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Data Types -->
+        <UML:DataType xmi.id="10" name="string"/>
+        <UML:DataType xmi.id="2" name="int"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

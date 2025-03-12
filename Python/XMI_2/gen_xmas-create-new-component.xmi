@@ -1,0 +1,121 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+          
+            <!-- Datatypes -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_undef" name="undef"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Classes -->
+            <UML:Class xmi.id="class_Project" name="Project" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_network" name="network" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_Network"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Network" name="Network" visibility="public" isAbstract="false">
+              <UML:Stereotype name="QObject"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_XMASComponent" name="XMASComponent" visibility="public" isAbstract="false">
+              <UML:Operation xmi.id="op_addExtension" name="addExtension" visibility="public"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_PositionComponentExtension" name="PositionComponentExtension" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_PositionExtension_Extension" parent="class_XMASComponentExtension"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_XMASComponentExtension" name="XMASComponentExtension" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <!-- Enumerations -->
+            <UML:Enumeration xmi.id="enum_Orientation" name="Orientation">
+              <UML:EnumerationLiteral name="North"/>
+              <UML:EnumerationLiteral name="East"/>
+              <UML:EnumerationLiteral name="South"/>
+              <UML:EnumerationLiteral name="West"/>
+            </UML:Enumeration>
+
+            <UML:Class xmi.id="class_Port" name="Port" visibility="public" isAbstract="false">
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_UI" name="UI" visibility="public" isAbstract="false">
+              <UML:Operation xmi.id="op_addComponent" name="addComponent" visibility="public">
+                <UML:TemplateParameter name="T"/>
+              </UML:Operation>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_DesignerController" name="DesignerController" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_Project_Network">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Project_Network" type="class_Project" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Network_Project" type="class_Network" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Network_XMASComponent">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Network_XMASComponent" type="class_Network" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_XMASComponent_Network" type="class_XMASComponent" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_XMASComponent_XMASComponentExtension">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Component_Extension" type="class_XMASComponent" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Extension_Component" type="class_XMASComponentExtension" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_UI_Project">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_UI_Project" type="class_UI" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Project_UI" type="class_Project" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Port_XMASComponent">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Port_Component" type="class_Port" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Component_Port" type="class_XMASComponent" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

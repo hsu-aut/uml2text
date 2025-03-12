@@ -1,0 +1,82 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Custom UML Exporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ValidationProfile" name="ValidationProfile">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Klasse für ValidationProfile -->
+        <UML:Class xmi.id="class_ValidationProfile" name="ValidationProfile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_base_Package" name="base_Package" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Package"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse für ValidationRule -->
+        <UML:Class xmi.id="class_ValidationRule" name="ValidationRule" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_base_Constraint" name="base_Constraint" visibility="private"/>
+            <UML:Attribute xmi.id="attr_abbreviation" name="abbreviation" visibility="private"/>
+            <UML:Attribute xmi.id="attr_errorMessage" name="errorMessage" visibility="private"/>
+            <UML:Attribute xmi.id="attr_severity" name="severity" visibility="private"/>
+            <UML:Attribute xmi.id="attr_implementation" name="implementation" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klassen für verschiedene Icons -->
+        <UML:Class xmi.id="class_DebugIcon" name="DebugIcon" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ErrorIcon" name="ErrorIcon" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_InfoIcon" name="InfoIcon" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_WarningIcon" name="WarningIcon" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_FatalIcon" name="FatalIcon" visibility="public" isAbstract="false"/>
+        
+        <!-- HighlightColor Attribut -->
+        <UML:Attribute xmi.id="attr_highlightColor" name="highlightColor" visibility="private"/>
+
+        <!-- Primitive Datentypen -->
+        <UML:DataType xmi.id="datatype_OCL_Real" name="$OCL_Real"/>
+        <UML:DataType xmi.id="datatype_OCL_String" name="$OCL_String"/>
+        <UML:DataType xmi.id="datatype_OCL_Boolean" name="$OCL_Boolean"/>
+        <UML:DataType xmi.id="datatype_OCL_Integer" name="$OCL_Integer"/>
+
+        <!-- OCL Library Klassen -->
+        <UML:Class xmi.id="class_Set" name="Set" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Bag" name="Bag" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Sequence" name="Sequence" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Collection" name="Collection" visibility="public" isAbstract="false"/>
+
+        <!-- Packages -->
+        <UML:Package xmi.id="package_Spelling" name="Spelling" visibility="public"/>
+        <UML:Package xmi.id="package_RuleValidationSuite" name="Rule Validation Suite" visibility="public"/>
+        <UML:Package xmi.id="package_ProjectIntegrity" name="Project Integrity" visibility="public"/>
+
+        <!-- Validierungsregeln -->
+        <UML:Class xmi.id="class_NoTypeForParameter" name="No Type for Parameter" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SpotOnDecision" name="Spot on decision" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_NamelessOperation" name="Nameless Operation" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_NoClassifierForInstance" name="No Classifier for Instance" visibility="public" isAbstract="false"/>
+        
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_ValidationProfile_Package" name="ValidationProfile-Package">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidationProfile" type="class_ValidationProfile" name="ValidationProfile" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Package" type="class_Package" name="Package" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

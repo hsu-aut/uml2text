@@ -1,0 +1,168 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_OSMSchema" name="de.uni_koblenz.jgstreetmap.osmschema.OsmSchema">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "OsmGraph" -->
+        <UML:Class xmi.id="class_OsmGraph" name="OsmGraph" visibility="public" isAbstract="false"/>
+
+        <!-- Definition des Pakets "map" -->
+        <UML:Package xmi.id="package_map" name="map">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition der abstrakten Klasse "OsmPrimitive" -->
+            <UML:Class xmi.id="class_OsmPrimitive" name="OsmPrimitive" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_osmId" name="osmId" visibility="private"/>
+                <UML:Attribute xmi.id="attr_tags" name="tags" visibility="private" type="Map&lt;String, String&gt;"/>
+                <UML:Attribute xmi.id="attr_timeStamp" name="timeStamp" visibility="private" type="Long"/>
+                <UML:Attribute xmi.id="attr_user" name="user" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Definition der Klasse "Node" -->
+            <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_OsmPrimitive"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_longitude" name="longitude" visibility="private" type="Double"/>
+                <UML:Attribute xmi.id="attr_latitude" name="latitude" visibility="private" type="Double"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Way" -->
+            <UML:Class xmi.id="class_Way" name="Way" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_OsmPrimitive"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_closed" name="closed" visibility="private" type="Boolean"/>
+                <UML:Attribute xmi.id="attr_wayType" name="wayType" visibility="private"/>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="assoc_Way_Node" visibility="public" isSpecification="false">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_Way_Node" type="class_Node" visibility="public" aggregation="shared"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Area" -->
+            <UML:Class xmi.id="class_Area" name="Area" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Way"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Relation" -->
+            <UML:Class xmi.id="class_Relation" name="Relation" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_OsmPrimitive"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des Pakets "routing" -->
+        <UML:Package xmi.id="package_routing" name="routing">
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition der Klasse "Segment" -->
+            <UML:Class xmi.id="class_Segment" name="Segment" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_oneway" name="oneway" visibility="private" type="Boolean"/>
+                <UML:Attribute xmi.id="attr_wayType" name="wayType" visibility="private"/>
+                <UML:Attribute xmi.id="attr_length" name="length" visibility="private" type="Double"/>
+                <UML:Attribute xmi.id="attr_wayId" name="wayId" visibility="private" type="Long"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Enumeration "SegmentType" -->
+            <UML:Enumeration xmi.id="enum_SegmentType" name="SegmentType">
+              <UML:Enumeration.literal name="NOWAY"/>
+              <UML:Enumeration.literal name="CYCLEWAY"/>
+              <UML:Enumeration.literal name="MOTORWAY"/>
+              <UML:Enumeration.literal name="WORMHOLE"/>
+            </UML:Enumeration>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des Pakets "kdtree" -->
+        <UML:Package xmi.id="package_kdtree" name="kdtree">
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition der Klasse "KDTree" -->
+            <UML:Class xmi.id="class_KDTree" name="KDTree" visibility="public" isAbstract="false"/>
+
+            <!-- Definition der abstrakten Klasse "Key" -->
+            <UML:Class xmi.id="class_Key" name="Key" visibility="public" isAbstract="true"/>
+            
+            <!-- Definition der Klasse "XKey" -->
+            <UML:Class xmi.id="class_XKey" name="XKey" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Key"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Definition der Klasse "YKey" -->
+            <UML:Class xmi.id="class_YKey" name="YKey" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Key"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Definition der Klasse "NodeSet" -->
+            <UML:Class xmi.id="class_NodeSet" name="NodeSet" visibility="public" isAbstract="false">
+              <UML:Association xmi.id="assoc_NodeSet_Key" visibility="public" isSpecification="false">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_NodeSet_Key" type="class_Key" visibility="public"/>
+                </UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Key_NodeSet" type="class_NodeSet" visibility="public">
+                  <UML:Multiplicity.range>
+                    <UML:MultiplicityRange xmi.id="mult_Key_NodeSet" lower="0" upper="*"/>
+                  </UML:Multiplicity.range>
+                </UML:AssociationEnd>
+              </UML:Association>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des Pakets "PrimitiveTypes" -->
+        <UML:Package xmi.id="package_PrimitiveTypes" name="PrimitiveTypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_Map" name="Map&lt;String, String&gt;" />
+            <UML:DataType xmi.id="datatype_Double" name="Double"/>
+            <UML:DataType xmi.id="datatype_Long" name="Long"/>
+            <UML:DataType xmi.id="datatype_Boolean" name="Boolean"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

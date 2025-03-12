@@ -1,0 +1,86 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_PersonHierarchy" name="PersonHierarchy">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Klasse "Person" -->
+        <UML:Class xmi.id="-64--88-2-104--4d44d954:129c2486928:-8000:0000000000000866" name="Person" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getAge" name="getAge" visibility="public">
+              <UML:Parameter xmi.id="return_parameter" name="return" kind="return" type="Integer"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Nitpicker" mit Stereotypen -->
+        <UML:Class xmi.id="-64--88-2-104--4d44d954:129c2486928:-8000:0000000000000871" name="Nitpicker" visibility="public" isAbstract="false">
+          <UML:ModelElement.stereotype>
+            <UML:Stereotype xmi.id="st_GeekScientist" name="GeekScientist"/>
+            <UML:Stereotype xmi.id="st_Nerd" name="Nerd"/>
+          </UML:ModelElement.stereotype>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="-64--88-2-104--4d44d954:129c2486928:-8000:0000000000000871"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="-64--88-2-104--4d44d954:129c2486928:-8000:0000000000000866"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Smartass" mit Stereotyp -->
+        <UML:Class xmi.id="-64--88-2-104--4d44d954:129c2486928:-8000:0000000000000888" name="Smartass" visibility="public" isAbstract="false">
+          <UML:ModelElement.stereotype>
+            <UML:Stereotype xmi.id="st_GeekScientist_Smartass" name="GeekScientist"/>
+          </UML:ModelElement.stereotype>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="-64--88-2-104--4d44d954:129c2486928:-8000:0000000000000888"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="-64--88-2-104--4d44d954:129c2486928:-8000:0000000000000866"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "DogInHandbagCarrier" mit Stereotyp -->
+        <UML:Class xmi.id="-64--88-2-104--4d44d954:129c2486928:-8000:000000000000088A" name="DogInHandbagCarrier" visibility="public" isAbstract="false">
+          <UML:ModelElement.stereotype>
+            <UML:Stereotype xmi.id="st_DumbBlonde" name="DumbBlonde"/>
+          </UML:ModelElement.stereotype>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="-64--88-2-104--4d44d954:129c2486928:-8000:000000000000088A"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="-64--88-2-104--4d44d954:129c2486928:-8000:0000000000000866"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- DataType Definitionen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,112 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_Kontroler" name="Kontroler" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_raportuj" name="raportuj" visibility="public"/>
+            <UML:Operation xmi.id="operation_zaloguj" name="zaloguj" visibility="public"/>
+            <UML:Operation xmi.id="operation_wyloguj" name="wyloguj" visibility="public"/>
+            <UML:Operation xmi.id="operation_zarzadzajPracownikami" name="zarzadzajPracownikami" visibility="public"/>
+            <UML:Operation xmi.id="operation_zarzadzajProjektami" name="zarzadzajProjektami" visibility="public"/>
+            <UML:Operation xmi.id="operation_zarzadzajZadaniami" name="zarzadzajZadaniami" visibility="public"/>
+            <UML:Operation xmi.id="operation_zarzadzajLogami" name="zarzadzajLogami" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ZarzadzanieZadaniami" name="ZarzadzanieZadaniami" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_pobierzListeZadan" name="pobierzListeZadan" visibility="public"/>
+            <UML:Operation xmi.id="operation_dodajZadanie" name="dodajZadanie" visibility="public"/>
+            <UML:Operation xmi.id="operation_modyfikujZadanie" name="modyfikujZadanie" visibility="public"/>
+            <UML:Operation xmi.id="operation_usunZadanie" name="usunZadanie" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ZarzadzaniePracownikami" name="ZarzadzaniePracownikami" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_pobierzListePracownikow" name="pobierzListePracownikow" visibility="public"/>
+            <UML:Operation xmi.id="operation_dodajPracownika" name="dodajPracownika" visibility="public"/>
+            <UML:Operation xmi.id="operation_usunPracownika" name="usunPracownika" visibility="public"/>
+            <UML:Operation xmi.id="operation_modyfikujPracownika" name="modyfikujPracownika" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ZarzadzanieProjektami" name="ZarzadzanieProjektami" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_pobierzListeProjektow" name="pobierzListeProjektow" visibility="public"/>
+            <UML:Operation xmi.id="operation_dodajProjekt" name="dodajProjekt" visibility="public"/>
+            <UML:Operation xmi.id="operation_usunProjekt" name="usunProjekt" visibility="public"/>
+            <UML:Operation xmi.id="operation_modyfikujProjekt" name="modyfikujProjekt" visibility="public"/>
+            <UML:Operation xmi.id="operation_przydzielPracownika" name="przydzielPracownika" visibility="public"/>
+            <UML:Operation xmi.id="operation_raportuj" name="raportuj" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ZarzadzanieLogami" name="ZarzadzanieLogami" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_pobierzListeLogow" name="pobierzListeLogow" visibility="public"/>
+            <UML:Operation xmi.id="operation_dodajLoga" name="dodajLoga" visibility="public"/>
+            <UML:Operation xmi.id="operation_modyfikujLoga" name="modyfikujLoga" visibility="public"/>
+            <UML:Operation xmi.id="operation_usunLoga" name="usunLoga" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Kontroler_ZarzadzanieZadaniami" name="">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler_ZarzadzanieZadaniami_Kontroler" type="class_Kontroler" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler_ZarzadzanieZadaniami_ZarzadzanieZadaniami" type="class_ZarzadzanieZadaniami" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Kontroler_ZarzadzaniePracownikami" name="">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler_ZarzadzaniePracownikami_Kontroler" type="class_Kontroler" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler_ZarzadzaniePracownikami_ZarzadzaniePracownikami" type="class_ZarzadzaniePracownikami" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Kontroler_ZarzadzanieProjektami" name="">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler_ZarzadzanieProjektami_Kontroler" type="class_Kontroler" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler_ZarzadzanieProjektami_ZarzadzanieProjektami" type="class_ZarzadzanieProjektami" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Kontroler_ZarzadzanieLogami" name="">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler_ZarzadzanieLogami_Kontroler" type="class_Kontroler" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Kontroler_ZarzadzanieLogami_ZarzadzanieLogami" type="class_ZarzadzanieLogami" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

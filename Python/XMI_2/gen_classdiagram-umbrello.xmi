@@ -1,0 +1,125 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Cluedo" name="Cluedo">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Cluedo" name="Cluedo" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="assoc_board" name="board" visibility="private" aggregation="composite">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_Board"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+            <UML:Class xmi.id="class_Board" name="Board" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_boardTiles" name="boardTiles" visibility="private" aggregation="none">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_Tile"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+            <UML:Class xmi.id="class_Tile" name="Tile" visibility="public" isAbstract="true"/>
+            <UML:Class xmi.id="class_StartTile" name="StartTile" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.idref="class_Tile"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_IntrigueTile" name="IntrigueTile" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.idref="class_Tile"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Room" name="Room" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.idref="class_Tile"/>
+              <UML:Attribute xmi.id="assoc_weapons" name="weapons" visibility="private" aggregation="none">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_Weapon"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+            <UML:Class xmi.id="class_Weapon" name="Weapon" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Player" name="Player" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="assoc_cards" name="cards" visibility="private" aggregation="none">
+                <UML:StructuralFeature.type>
+                  <UML:Interface xmi.idref="interface_CardI"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+            <UML:Class xmi.id="class_Card" name="Card" visibility="public" isAbstract="true"/>
+            <UML:Class xmi.id="class_CharacterCard" name="CharacterCard" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.idref="class_Card"/>
+              <UML:Realization client="class_CharacterCard" supplier="interface_CardI"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_RoomCard" name="RoomCard" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.idref="class_Card"/>
+              <UML:Realization client="class_RoomCard" supplier="interface_CardI"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_WeaponCard" name="WeaponCard" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.idref="class_Card"/>
+              <UML:Realization client="class_WeaponCard" supplier="interface_CardI"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_CardTuple" name="CardTuple" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_player" name="player" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_Player"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_room" name="room" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_Room"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_weapon" name="weapon" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_Weapon"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+            <UML:Interface xmi.id="interface_UserInterface" name="UserInterface" visibility="public" isAbstract="true"/>
+            <UML:Class xmi.id="class_TextBased" name="TextBased" visibility="public" isAbstract="false">
+              <UML:Realization client="class_TextBased" supplier="interface_UserInterface"/>
+            </UML:Class>
+            <UML:Interface xmi.id="interface_TileI" name="TileI" visibility="public" isAbstract="true"/>
+            <UML:Class xmi.id="class_RegularTile" name="RegularTile" visibility="public" isAbstract="false">
+              <UML:Realization client="class_RegularTile" supplier="interface_TileI"/>
+            </UML:Class>
+            <UML:Interface xmi.id="interface_CardI" name="CardI" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="type_int" name="int"/>
+            <UML:DataType xmi.id="type_char" name="char"/>
+            <UML:DataType xmi.id="type_bool" name="bool"/>
+            <UML:DataType xmi.id="type_float" name="float"/>
+            <UML:DataType xmi.id="type_double" name="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Association xmi.id="assoc_Room_Weapon">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Room_Weapon_Room" type="class_Room" name="room" visibility="public" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Room_Weapon_Weapon" type="class_Weapon" name="weapon" visibility="public" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Board_Player">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Board_Player_Board" type="class_Board" name="board" visibility="public" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Board_Player_Player" type="class_Player" name="player" visibility="public" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Player_CardI">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Player_CardI_Player" type="class_Player" name="player" visibility="public" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Player_CardI_CardI" type="interface_CardI" name="cardI" visibility="public" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

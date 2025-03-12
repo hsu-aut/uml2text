@@ -1,0 +1,130 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BIOBANK" name="BIOBANK">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Address" name="Address" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_city" name="city" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_street" name="street" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_Biobank" name="Biobank" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dtype" name="dtype" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="DataType1"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ptype" name="ptype" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="PrimitiveType1"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_BiobankType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.isImplementedInterface>
+            <UML:Interface xmi.idref="interface_Identifiable"/>
+          </UML:Classifier.isImplementedInterface>
+        </UML:Class>
+
+        
+        <UML:Enumeration xmi.id="enum_BiobankType" name="BiobankType" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="literal_disease" name="disease"/>
+            <UML:EnumerationLiteral xmi.id="literal_population" name="population"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+
+        
+        <UML:Class xmi.id="class_Sample" name="Sample" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_quality" name="quality" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Quality"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.isImplementedInterface>
+            <UML:Interface xmi.idref="interface_Identifiable"/>
+          </UML:Classifier.isImplementedInterface>
+        </UML:Class>
+
+        
+        <UML:Interface xmi.id="interface_Identifiable" name="Identifiable" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_identifier" name="identifier" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_number" name="number" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        
+        <UML:Class xmi.id="class_Object1" name="Object1" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        
+        <UML:DataType xmi.id="DataType1" name="DataType1"/>
+        
+        <UML:DataType xmi.id="PrimitiveType1" name="PrimitiveType1"/>
+        
+        <UML:DataType xmi.id="Quality" name="Quality"/>
+        
+        <UML:Association xmi.id="assoc_Biobank_Address">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Biobank_Address_Biobank" type="class_Biobank" name="biobank" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Biobank_Address_Address" type="class_Address" name="address" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        
+        <UML:Association xmi.id="assoc_Biobank_Sample">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Biobank_Sample_Biobank" type="class_Biobank" name="biobank" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Biobank_Sample_Sample" type="class_Sample" name="sample" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

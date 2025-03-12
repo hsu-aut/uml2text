@@ -1,0 +1,181 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_escola" name="escola">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Package br -->
+        <UML:Package xmi.id="package_br" name="br">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Package br.escola -->
+            <UML:Package xmi.id="package_br_escola" name="escola">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Package br.escola.domain -->
+                <UML:Package xmi.id="package_domain" name="domain">
+                  <UML:Namespace.ownedElement>
+                    
+                    <!-- Class Pessoa -->
+                    <UML:Class xmi.id="class_Pessoa" name="Pessoa" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_nome" name="nome" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_dataNascimento" name="dataNascimento" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="Date"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_sexo" name="sexo" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="Char"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_cpf" name="cpf" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                    
+                    <!-- Class Aluno -->
+                    <UML:Class xmi.id="class_Aluno" name="Aluno" visibility="public" isAbstract="false">
+                      <UML:Generalization xmi.idref="generalization_Pessoa_Aluno"/>
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_matricula" name="matricula" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_ativo" name="ativo" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="Boolean"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Operation xmi.id="op_matricular" name="matricular" visibility="public"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                    
+                    <!-- Class Disciplina -->
+                    <UML:Class xmi.id="class_Disciplina" name="Disciplina" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_nome_disciplina" name="nome" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                    
+                    <!-- Class Professor -->
+                    <UML:Class xmi.id="class_Professor" name="Professor" visibility="public" isAbstract="false">
+                      <UML:Generalization xmi.idref="generalization_Pessoa_Professor"/>
+                      <UML:Namespace.ownedElement/>
+                    </UML:Class>
+                    
+                    <!-- Class Telefone -->
+                    <UML:Class xmi.id="class_Telefone" name="Telefone" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_tipo" name="tipo" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:Class xmi.idref="enum_TipoTelefone"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_ddd" name="ddd" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_numero" name="numero" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+                  
+                    <!-- Generalizations -->
+                    <UML:Generalization xmi.id="generalization_Pessoa_Aluno" parent="class_Pessoa" child="class_Aluno"/>
+                    <UML:Generalization xmi.id="generalization_Pessoa_Professor" parent="class_Pessoa" child="class_Professor"/>
+
+                    <!-- Associations -->
+                    <UML:Association xmi.id="assoc_aluno_disciplina" name="aluno_disciplina" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_Aluno_Disciplina_Aluno" type="class_Aluno" name="aluno" visibility="public" aggregation="none" multiplicity="1..*"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_Aluno_Disciplina_Disciplina" type="class_Disciplina" name="disciplina" visibility="public" aggregation="none" multiplicity="0..*"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                    <UML:Association xmi.id="assoc_professor_disciplina" name="professor_disciplina" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_Professor_Disciplina_Professor" type="class_Professor" name="professor" visibility="public" aggregation="none" multiplicity="1..*"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_Professor_Disciplina_Disciplina" type="class_Disciplina" name="disciplina" visibility="public" aggregation="none" multiplicity="0..*"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                    <UML:Association xmi.id="assoc_pessoa_telefone_comercial" name="pessoa_telefone_comercial" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_Pessoa_TelefoneComercial" type="class_Pessoa" name="pessoa" visibility="public" aggregation="none" multiplicity="0..1"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_Telefone_Comercial" type="class_Telefone" name="telefone_comercial" visibility="public" aggregation="none" multiplicity="0..1"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                    <UML:Association xmi.id="assoc_pessoa_telefone_residencial" name="pessoa_telefone_residencial" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_Pessoa_TelefoneResidencial" type="class_Pessoa" name="pessoa" visibility="public" aggregation="none" multiplicity="0..1"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_Telefone_Residencial" type="class_Telefone" name="telefone_residencial" visibility="public" aggregation="none" multiplicity="0..1"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                  
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+                <!-- Package br.escola.enumeration -->
+                <UML:Package xmi.id="package_enumeration" name="enumeration">
+                  <UML:Namespace.ownedElement>
+                    <UML:Enumeration xmi.id="enum_TipoTelefone" name="TipoTelefone">
+                      <!-- Enum literals would be defined here if specified -->
+                    </UML:Enumeration>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+
+                <!-- Package br.escola.view -->
+                <UML:Package xmi.id="package_view" name="view">
+                  <UML:Namespace.ownedElement>
+                    <UML:Activity xmi.id="activity_IncluirAlunoAD" name="IncluirAlunoAD">
+                      <UML:Partition>
+                        <UML:ActionState xmi.id="action_CarregarDados" name="Carregar Dados"/>
+                        <UML:ActionState xmi.id="action_DadosAluno" name="Dados do Aluno"/>
+                        <UML:ActionState xmi.id="action_Salvar" name="Salvar"/>
+                      </UML:Partition>
+                      <!-- Transitions between the ActionStates defined here would form a workflow -->
+                    </UML:Activity>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Data types -->
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="Char" name="Char"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+        <UML:DataType xmi.id="Long" name="Long"/>
+        <UML:DataType xmi.id="String" name="String"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

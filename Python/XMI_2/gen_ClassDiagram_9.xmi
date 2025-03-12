@@ -1,0 +1,96 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_unbenanntesModell" name="unbenanntesModell">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Schnittstelle "Input" -->
+        <UML:Interface xmi.id="interface_Input" name="Input" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Klasse "CDPlayer" -->
+        <UML:Class xmi.id="class_CDPlayer" name="CDPlayer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_play" name="play" visibility="public"/>
+            <UML:Operation xmi.id="operation_pause" name="pause" visibility="public"/>
+            <UML:Operation xmi.id="operation_stop" name="stop" visibility="public"/>
+            <UML:Operation xmi.id="operation_selectTrack" name="selectTrack" visibility="public">
+              <UML:Parameter xmi.id="param_trackNumber" name="trackNumber" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_eject" name="eject" visibility="public"/>
+            <UML:Operation xmi.id="operation_load" name="load" visibility="public"/>
+            <UML:Attribute xmi.id="attr_playerState" name="playerState" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_PlayerState"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="generalization_Input_CDPlayer" parent="interface_Input"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Tuner" -->
+        <UML:Class xmi.id="class_Tuner" name="Tuner" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_tuneIn" name="tuneIn" visibility="public">
+              <UML:Parameter xmi.id="param_frequency" name="frequency" kind="in" type="Float"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_search" name="search" visibility="public"/>
+            <UML:Attribute xmi.id="attr_tunerState" name="tunerState" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_TunerState"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="generalization_Input_Tuner" parent="interface_Input"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Amplifier" -->
+        <UML:Class xmi.id="class_Amplifier" name="Amplifier" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_radio" name="radio" visibility="public"/>
+            <UML:Operation xmi.id="operation_aux" name="aux" visibility="public"/>
+            <UML:Operation xmi.id="operation_cd" name="cd" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Enumeration "PlayerState" -->
+        <UML:Enumeration xmi.id="enum_PlayerState" name="PlayerState">
+          <UML:EnumLiteral name="play"/>
+          <UML:EnumLiteral name="stop"/>
+          <UML:EnumLiteral name="pause"/>
+          <UML:EnumLiteral name="ejected"/>
+        </UML:Enumeration>
+
+        <!-- Definition der Enumeration "TunerState" -->
+        <UML:Enumeration xmi.id="enum_TunerState" name="TunerState">
+          <UML:EnumLiteral name="tunedIn"/>
+          <UML:EnumLiteral name="searching"/>
+        </UML:Enumeration>
+
+        <!-- Definition der Enumeration "AmplifierState" -->
+        <UML:Enumeration xmi.id="enum_AmplifierState" name="AmplifierState">
+          <UML:EnumLiteral name="Radio"/>
+          <UML:EnumLiteral name="CD"/>
+          <UML:EnumLiteral name="Aux"/>
+        </UML:Enumeration>
+
+        <!-- Assoziation zwischen Amplifier und Input -->
+        <UML:Association xmi.id="association_hasInput">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_Input_Amplifier" type="class_Amplifier" name="amplifier" visibility="private" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Amplifier_Input_Input" type="interface_Input" name="input" visibility="private" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

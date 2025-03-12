@@ -1,0 +1,127 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AudioProcessingArchitecture" name="AudioProcessingArchitecture">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_DSPEngine" name="DSPEngine" visibility="public" isAbstract="false">
+          <UML:Stereotype name="Singleton"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_DSPEngine_process" name="process" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_DSPPath" name="DSPPath" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_DSPPath_input" name="input" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AudioBuffer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_DSPPath_modules" name="modules" visibility="private" >
+              <UML:Stereotype name="list&lt;&gt;"/>
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DSPModuleMap"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_DSPPath_chain" name="chain" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DSPModuleChain"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_DSPPath_process" name="process" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DSPModule" name="DSPModule" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_DSPModule_outputs" name="outputs" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DSPPathList"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_DSPModule_process" name="process" visibility="public" isAbstract="true">
+              <UML:Parameter name="input" type="AudioBuffer"/>
+              <UML:Parameter name="output" type="AudioBuffer"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AudioBuffer" name="AudioBuffer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_AudioBuffer_m_data" name="m_data" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_VectorFloat"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_AudioBuffer_m_type" name="m_type" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BFormatAudioBuffer" name="BFormatAudioBuffer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_AudioBuffer"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BasicAudioBuffer" name="BasicAudioBuffer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_AudioBuffer"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PVOCAudioBuffer" name="PVOCAudioBuffer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_AudioBuffer"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DSPModuleChain" name="DSPModuleChain" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_BussSendModule" name="BussSendModule" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DSPModule"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_BussSendModule_sendLevel" name="sendLevel" visibility="private">
+              <UML:Stereotype name="PVar"/>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_JackIO" name="JackIO" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_DSPPath_DSPModule">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DSPPath_DSPModule_DSPPath" type="class_DSPPath" name="deliver" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DSPPath_DSPModule_DSPModule" type="class_DSPModule" name="belong" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DSPEngine_DSPPath">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DSPEngine_DSPPath_DSPEngine" type="class_DSPEngine" name="part of" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DSPEngine_DSPPath_DSPPath" type="class_DSPPath" name="has a list of" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,199 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SocialNetwork" name="SocialNetwork">
+      <UML:Namespace.ownedElement>
+
+        <!-- User Class -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_subscribedGroups" name="subscribedGroups" visibility="private"/>
+            <UML:Attribute xmi.id="attr_likedPages" name="likedPages" visibility="private"/>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_email" name="email" visibility="private"/>
+            <UML:Operation xmi.id="op_sendFriendRequest" name="sendFriendRequest"/>
+            <UML:Operation xmi.id="op_addFriend" name="addFriend"/>
+            <UML:Operation xmi.id="op_signUp" name="signUp"/>
+            <UML:Operation xmi.id="op_getCurrentActiveUser" name="getCurrentActiveUser"/>
+            <UML:Operation xmi.id="op_login" name="login"/>
+            <UML:Operation xmi.id="op_logout" name="logout"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- NormalUser Class -->
+        <UML:Class xmi.id="class_NormalUser" name="NormalUser" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_NormalUser"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_User"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_checkCurrentFriendsCount" name="checkCurrentFriendsCount"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- PremiumUser Class -->
+        <UML:Class xmi.id="class_PremiumUser" name="PremiumUser" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_PremiumUser"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_User"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_creditCardNumber" name="creditCardNumber" visibility="private"/>
+            <UML:Operation xmi.id="op_payByCredit" name="payByCredit"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- GroupPrivacy Class -->
+        <UML:Class xmi.id="class_GroupPrivacy" name="GroupPrivacy" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_allowedUsers" name="allowedUsers" visibility="private"/>
+            <UML:Operation xmi.id="op_getAllowedMembers" name="getAllowedMembers"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- PublicPrivacy Class -->
+        <UML:Class xmi.id="class_PublicPrivacy" name="PublicPrivacy" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_PublicPrivacy"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GroupPrivacy"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- ClosedPrivacy Class -->
+        <UML:Class xmi.id="class_ClosedPrivacy" name="ClosedPrivacy" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ClosedPrivacy"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GroupPrivacy"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- IGroup Class -->
+        <UML:Interface xmi.id="interface_IGroup" name="IGroup" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_addMember" name="addMember"/>
+            <UML:Operation xmi.id="op_removeMember" name="removeMember"/>
+            <UML:Operation xmi.id="op_setRole" name="setRole"/>
+            <UML:Operation xmi.id="op_setPrivacy" name="setPrivacy"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Group Class -->
+        <UML:Class xmi.id="class_Group" name="Group" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Group"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_IGroup"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private"/>
+            <UML:Attribute xmi.id="attr_coverPicture" name="coverPicture" visibility="private"/>
+            <UML:Attribute xmi.id="attr_users" name="users" visibility="private" type="Map<IUser, Role>"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Message Class -->
+        <UML:Class xmi.id="class_Message" name="Message" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_sendMessage" name="sendMessage"/>
+            <UML:Operation xmi.id="op_addReceiver" name="addReceiver"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ChatMessage Class -->
+        <UML:Class xmi.id="class_ChatMessage" name="ChatMessage" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ChatMessage"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Message"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- GroupChatMessage Class -->
+        <UML:Class xmi.id="class_GroupChatMessage" name="GroupChatMessage" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_GroupChatMessage"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Message"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Post Class -->
+        <UML:Class xmi.id="class_Post" name="Post" visibility="public" isAbstract="true"/>
+
+        <!-- Page Class -->
+        <UML:Class xmi.id="class_Page" name="Page" visibility="public" isAbstract="false"/>
+
+        <!-- Timeline Class -->
+        <UML:Class xmi.id="class_Timeline" name="Timeline" visibility="public" isAbstract="false"/>
+
+        <!-- Hashtag Class -->
+        <UML:Class xmi.id="class_Hashtag" name="Hashtag" visibility="public" isAbstract="false"/>
+
+        <!-- UserModel Class -->
+        <UML:Class xmi.id="class_UserModel" name="UserModel" visibility="public" isAbstract="false"/>
+
+        <!-- PageModel Class -->
+        <UML:Class xmi.id="class_PageModel" name="PageModel" visibility="public" isAbstract="false"/>
+
+        <!-- GroupModel Class -->
+        <UML:Class xmi.id="class_GroupModel" name="GroupModel" visibility="public" isAbstract="false"/>
+
+        <!-- MessageModel Class -->
+        <UML:Class xmi.id="class_MessageModel" name="MessageModel" visibility="public" isAbstract="false"/>
+
+        <!-- PostModel Class -->
+        <UML:Class xmi.id="class_PostModel" name="PostModel" visibility="public" isAbstract="false"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_UserGroup">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UserGroup_User" type="class_User" name="user" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UserGroup_Group" type="class_Group" name="group" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_UserPost">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UserPost_User" type="class_User" name="user" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UserPost_Post" type="class_Post" name="post" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

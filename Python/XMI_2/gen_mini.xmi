@@ -1,0 +1,55 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="2023-10-10">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StructureModel" name="StructureModel">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_TheFirstClass" name="TheFirstClass" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_par1" name="par1" visibility="private" aggregation="none" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance" multiplicity="1..1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="external_DataType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="operation_o2" name="o2" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="operation_o2_return" name="return" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_TheSecondClass" name="TheSecondClass" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_par2" name="par2" visibility="private" aggregation="none" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance" multiplicity="1..1">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Interface xmi.id="interface_TheInterface" name="TheInterface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_o1" name="o1" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="operation_o1_return" name="return" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        <UML:Class xmi.id="class_int" name="int" visibility="public" isAbstract="false" />
+        <UML:Association xmi.id="association_secondClasses" name="secondClasses">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_TheFirstClass" name="firstClass" type="class_TheFirstClass" visibility="public" isNavigable="false" multiplicity="0..*" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_TheSecondClass" name="secondClass" type="class_TheSecondClass" visibility="public" isNavigable="true" multiplicity="0..*" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Abstraction xmi.id="abstraction_TheSecondClass_TheInterface" supplier="interface_TheInterface" client="class_TheSecondClass"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+    <UML:DataType xmi.id="external_DataType" name="DataType"/>
+  </XMI.content>
+</XMI>
+```

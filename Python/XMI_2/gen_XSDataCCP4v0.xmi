@@ -1,0 +1,113 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EARootClass" name="EARootClass">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_XSDataCCP4v0" name="XSDataCCP4v0"/>
+        
+        <!-- Definition der XSData-Klasse -->
+        <UML:Class xmi.id="class_XSData" name="XSData" isAbstract="true" visibility="public"/>
+
+        <!-- Definition der XSDataInput-Klasse -->
+        <UML:Class xmi.id="class_XSDataInput" name="XSDataInput" isAbstract="true" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XSData"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der XSDataResult-Klasse -->
+        <UML:Class xmi.id="class_XSDataResult" name="XSDataResult" isAbstract="true" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XSData"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der XSDataUnitCell-Klasse -->
+        <UML:Class xmi.id="class_XSDataUnitCell" name="XSDataUnitCell" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_a" name="a" visibility="private"/>
+            <UML:Attribute xmi.id="attr_b" name="b" visibility="private"/>
+            <UML:Attribute xmi.id="attr_c" name="c" visibility="private"/>
+            <UML:Attribute xmi.id="attr_alpha" name="alpha" visibility="private"/>
+            <UML:Attribute xmi.id="attr_beta" name="beta" visibility="private"/>
+            <UML:Attribute xmi.id="attr_gamma" name="gamma" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der XSDataSpaceGroup-Klasse -->
+        <UML:Class xmi.id="class_XSDataSpaceGroup" name="XSDataSpaceGroup" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_ITNumber" name="ITNumber" visibility="private"/>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_symmetryOperator" name="symmetryOperator" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der XSDataInputCopyUnitCellMTZtoPDB-Klasse -->
+        <UML:Class xmi.id="class_XSDataInputCopyUnitCellMTZtoPDB" name="XSDataInputCopyUnitCellMTZtoPDB" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XSDataInput"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_destinationPDBFile" name="destinationPDBFile" visibility="private"/>
+            <UML:Attribute xmi.id="attr_inputMTZFile" name="inputMTZFile" visibility="private"/>
+            <UML:Attribute xmi.id="attr_inputPDBFile" name="inputPDBFile" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der XSDataInputMTZDUMPUnitCellSpaceGroup-Klasse -->
+        <UML:Class xmi.id="class_XSDataInputMTZDUMPUnitCellSpaceGroup" name="XSDataInputMTZDUMPUnitCellSpaceGroup" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XSDataInput"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_inputMTZFile_2" name="inputMTZFile" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der XSDataResultCopyUnitCellMTZtoPDB-Klasse -->
+        <UML:Class xmi.id="class_XSDataResultCopyUnitCellMTZtoPDB" name="XSDataResultCopyUnitCellMTZtoPDB" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XSDataResult"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_outputPDBFile" name="outputPDBFile" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der XSDataResultMTZDUMPUnitCellSpaceGroup-Klasse -->
+        <UML:Class xmi.id="class_XSDataResultMTZDUMPUnitCellSpaceGroup" name="XSDataResultMTZDUMPUnitCellSpaceGroup" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XSDataResult"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_spaceGroup" name="spaceGroup" visibility="private"/>
+            <UML:Attribute xmi.id="attr_unitCell" name="unitCell" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

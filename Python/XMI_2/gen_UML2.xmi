@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SimulationSystem" name="SimulationSystem">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsignedInt"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsignedShort"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsignedLong"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_block" name="block"/>
+            <UML:DataType xmi.id="datatype_neuer_datentyp" name="neuer_datentyp"/>
+            <UML:DataType xmi.id="datatype_vector3d" name="vector3d"/>
+            <UML:DataType xmi.id="datatype_array_double" name="array_double"/>
+            <UML:DataType xmi.id="datatype_PÜ" name="*PÜ"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+
+        <!-- Definition der Klasse Sensor -->
+        <UML:Class xmi.id="class_Sensor" name="Sensor" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_p_size_x" name="p_size_x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_size_y" name="p_size_y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_size_z" name="p_size_z" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_pixels" name="p_pixels" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Pixel"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getPixel" name="getPixel" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_withinSensor" name="withinSensor" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_addPixel" name="addPixel" visibility="public"/>
+            <UML:Operation xmi.id="op_calculateNeighbours" name="calculateNeighbours" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Particle -->
+        <UML:Class xmi.id="class_Particle" name="Particle" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_p_energy" name="p_energy" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_position" name="p_position" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Vector3D"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_direction" name="p_direction" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Vector3D"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_move" name="move" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Vector3D -->
+        <UML:Class xmi.id="class_Vector3D" name="Vector3D" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_z" name="z" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_norm" name="norm" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Simulation -->
+        <UML:Class xmi.id="class_Simulation" name="Simulation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_p_sensor" name="p_sensor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Sensor"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_energies" name="p_energies" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_delta_position" name="p_delta_position" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_particle" name="p_particle" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Particle"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+            <UML:Operation xmi.id="op_printEnergies" name="printEnergies" visibility="public"/>
+            <UML:Operation xmi.id="op_printSensorProperties" name="printSensorProperties" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Pixel -->
+        <UML:Class xmi.id="class_Pixel" name="Pixel" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_p_position_x" name="p_position_x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_position_y" name="p_position_y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_size_x" name="p_size_x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_size_y" name="p_size_y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_energy" name="p_energy" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_p_neighbours" name="p_neighbours" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Pixel"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_addEnergy" name="addEnergy" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition des Interface EnergyDeposition -->
+        <UML:Interface xmi.id="interface_EnergyDeposition" name="EnergyDeposition" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getEnergyDeposition" name="getEnergyDeposition" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Assoziation zwischen Sensor und Pixel -->
+        <UML:Association xmi.id="assoc_Sensor_Pixel">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Sensor" type="class_Sensor" name="sensor" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Pixel" type="class_Pixel" name="pixel" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation zwischen Particle und Vector3D -->
+        <UML:Association xmi.id="assoc_Particle_Vector3D">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Particle_position" type="class_Particle" name="particle_position" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Vector3D_position" type="class_Vector3D" name="vector_position" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Particle_direction" type="class_Particle" name="particle_direction" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Vector3D_direction" type="class_Vector3D" name="vector_direction" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

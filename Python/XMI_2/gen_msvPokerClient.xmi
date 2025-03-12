@@ -1,0 +1,195 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse MsvEnvironment -->
+        <UML:Class xmi.id="class_MsvEnvironment" name="MsvEnvironment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_serviceHolder" name="serviceHolder" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ServiceHolder"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ServiceHolder -->
+        <UML:Class xmi.id="class_ServiceHolder" name="ServiceHolder" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_socketHolder" name="socketHolder" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SocketHolder"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_loginService" name="loginService" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LoginService"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_serverInfoService" name="serverInfoService" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ServerInforService"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_dataReaded" name="dataReaded" visibility="public">
+              <UML:Parameter xmi.id="param_message" name="message" kind="in">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_ServerMessage"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse SocketHolder -->
+        <UML:Class xmi.id="class_SocketHolder" name="SocketHolder" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_socket" name="socket" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="QTcpSocket"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_dataReaded" name="dataReaded" visibility="public"/>
+            <UML:Operation xmi.id="op_sendData" name="sendData" visibility="public">
+              <UML:Parameter xmi.id="param_data" name="data" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="QString"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse MsvServerMessage -->
+        <UML:Class xmi.id="class_MsvServerMessage" name="MsvServerMessage" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_authInfoModel" name="authInfoModel" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AuthInfoModel"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_serverInfoModel" name="serverInfoModel" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ServerInfoModel"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse AuthInfoModel -->
+        <UML:Class xmi.id="class_AuthInfoModel" name="AuthInfoModel" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der Klasse ServerInfoModel -->
+        <UML:Class xmi.id="class_ServerInfoModel" name="ServerInfoModel" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der Klasse AbstractMsvWidget -->
+        <UML:Class xmi.id="class_AbstractMsvWidget" name="AbstractMsvWidget" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_environment" name="environment" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MsvEnvironment"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse LoginService -->
+        <UML:Class xmi.id="class_LoginService" name="LoginService" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_socketHolderLS" name="socketHolder" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SocketHolder"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ServerInforService -->
+        <UML:Class xmi.id="class_ServerInforService" name="ServerInforService" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_socketHolderSIS" name="socketHolder" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SocketHolder"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse LoginWidget -->
+        <UML:Class xmi.id="class_LoginWidget" name="LoginWidget" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_msvEnvironmentLW" name="msvEnvironment" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MsvEnvironment"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_loginServiceLW" name="loginService" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LoginService"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_msvServerMessageLW" name="msvServerMessage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MsvServerMessage"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_login" name="login" visibility="public"/>
+            <UML:Operation xmi.id="op_loginSuccesful" name="loginSuccesful" visibility="public"/>
+            <UML:Operation xmi.id="op_loginFailed" name="loginFailed" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse TableChoseWidget -->
+        <UML:Class xmi.id="class_TableChoseWidget" name="TableChoseWidget" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_msvEnvironmentTCW" name="msvEnvironment" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MsvEnvironment"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_serverInfoServiceTCW" name="serverInfoService" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ServerInforService"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_messageTCW" name="message" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MsvServerMessage"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_choseTable" name="choseTable" visibility="public">
+              <UML:Parameter xmi.id="param_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ServerMessage -->
+        <UML:Class xmi.id="class_ServerMessage" name="ServerMessage" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="QString" name="QString"/>
+        <UML:DataType xmi.id="QTcpSocket" name="QTcpSocket"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

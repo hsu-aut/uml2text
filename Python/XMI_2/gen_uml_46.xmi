@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_int" name="int" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_char" name="char" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_bool" name="bool" visibility="public" isAbstract="false"/>
+                
+                <UML:Class xmi.id="class_QHash" name="QHash" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_QLinkedList" name="QLinkedList" visibility="public" isAbstract="false"/>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_ComplexNetwork" name="ComplexNetwork" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_current_node_id" name="current_node_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_nodes" name="nodes" visibility="private" type="class_QLinkedList"/>
+                <UML:Operation xmi.id="op_addNode" name="addNode" visibility="public"/>
+                <UML:Operation xmi.id="op_removeNode" name="removeNode" visibility="public"/>
+                <UML:Operation xmi.id="op_addEdge" name="addEdge" visibility="public"/>
+                <UML:Operation xmi.id="op_getNumNodes" name="getNumNodes" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_NodeIterator" name="NodeIterator" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_operator++" name="operator++" visibility="public"/>
+                <UML:Operation xmi.id="op_operator->" name="operator->" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_EdgeIterator" name="EdgeIterator" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_operator++" name="operator++" visibility="public"/>
+                <UML:Operation xmi.id="op_operator->" name="operator->" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_DatabaseReader" name="DatabaseReader" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_readNext" name="readNext" visibility="public" isAbstract="true"/>
+                <UML:Operation xmi.id="op_hasNext" name="hasNext" visibility="public" isAbstract="true"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_KFoldDatabaseReader" name="KFoldDatabaseReader" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_KFoldDatabaseReader" parent="class_DatabaseReader"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_SunDatabaseReader" name="SunDatabaseReader" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_SunDatabaseReader" parent="class_DatabaseReader"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_FeatureAbstract" name="FeatureAbstract" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_content" name="content" visibility="private"/>
+                <UML:Operation xmi.id="op_getContent" name="getContent" visibility="public" isAbstract="true"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_AreaFeature" name="AreaFeature" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_AreaFeature" parent="class_FeatureAbstract"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_LabelFeature" name="LabelFeature" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_LabelFeature" parent="class_FeatureAbstract"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_OrientationFeature" name="OrientationFeature" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_OrientationFeature" parent="class_FeatureAbstract"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Link" name="Link" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_time" name="time" visibility="private"/>
+                <UML:Attribute xmi.id="attr_weight" name="weight" visibility="private"/>
+                <UML:Operation xmi.id="op_modifyLink" name="modifyLink" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

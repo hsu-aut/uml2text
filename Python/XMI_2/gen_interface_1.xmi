@@ -1,0 +1,161 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomTool</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Fachklassen" name="Fachklassen">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_action_type" name="action_type" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_usable_on" name="usable_on" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_object_type_list"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_object" name="object" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_object_type"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_object_type" name="object_type" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_action" name="action" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_action_type"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_on_object" name="on_object" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_object"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_scenario" name="scenario" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_local_state" name="local_state" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Interface xmi.idref="interface_local_state_interface"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_UI" name="UI" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_user_interface"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_user_interface" name="user_interface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_scenario" name="scenario" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_scenario"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_is_possible" name="is_possible" visibility="public"/>
+            <UML:Operation xmi.id="op_set_accessible_zone" name="set_accessible_zone" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_zone" name="zone" visibility="public"/>
+        <UML:Class xmi.id="class_2DPoint" name="2DPoint" visibility="public"/>
+        <UML:Class xmi.id="class_local_state" name="local_state" visibility="public"/>
+        <UML:Class xmi.id="class_event" name="event" visibility="public"/>
+
+        <UML:Interface xmi.id="interface_allow_action" name="allow_action" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_is_possible" name="is_possible" visibility="public"/>
+            <UML:Operation xmi.id="op_set_accessible_zone" name="set_accessible_zone" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_perform_action" name="perform_action" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_move_character" name="move_character" visibility="public"/>
+            <UML:Operation xmi.id="op_do_action" name="do_action" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_local_state_interface" name="local_state_interface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_set_event" name="set_event" visibility="public"/>
+            <UML:Operation xmi.id="op_do_action" name="do_action" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_scenario_interface" name="scenario_interface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_trigger_event" name="trigger_event" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Association xmi.id="association_action_type_object_type" name="action_type-object_type" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_action_type" type="class_action_type" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_object_type" type="class_object_type" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="association_event_public_data" name="event-public_data" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_event" type="class_event" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_public_data" type="class_public_data" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="association_scenario_user_interface" name="scenario-user_interface" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_scenario" type="class_scenario" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_user_interface" type="class_user_interface" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="association_local_state_scenario_interface" name="local_state-scenario_interface" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_local_state" type="class_local_state" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_scenario_interface" type="interface_scenario_interface" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

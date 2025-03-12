@@ -1,0 +1,165 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TShirtSystem" name="TShirtSystem">
+      <UML:Namespace.ownedElement>
+        <!-- Klassendefinitionen -->
+
+        <!-- Klasse template shirt -->
+        <UML:Class xmi.id="class_template_shirt" name="template shirt" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse variant shirt red XL -->
+        <UML:Class xmi.id="class_variant_shirt_red_XL" name="variant shirt red XL" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_size" name="size/XL" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_characteristic"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_color" name="color/red" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_characteristic"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse variant shirt -->
+        <UML:Class xmi.id="class_variant_shirt" name="variant shirt" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse phantom BOM for shirt red XL -->
+        <UML:Class xmi.id="class_phantom_BOM_for_shirt_red_XL" name="phantom BOM for shirt red XL" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse (generic) BOM for shirt -->
+        <UML:Class xmi.id="class_generic_BOM_for_shirt" name="(generic) BOM for shirt" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse (generic) BOM for fabric -->
+        <UML:Class xmi.id="class_generic_BOM_for_fabric" name="(generic) BOM for fabric" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_red_fabric" name="red==red" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_variation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_XL_qty_fabric" name="XL==qty1.2" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_variation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse (generic) BOM for button -->
+        <UML:Class xmi.id="class_generic_BOM_for_button" name="(generic) BOM for button" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_red_button" name="red==grey" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_variation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_XL_qty_button" name="XL==qty7,diameter/20mm" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_variation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse fabric red -->
+        <UML:Class xmi.id="class_fabric_red" name="fabric red" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_color_red" name="color/red" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_characteristic"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse button grey 20mm -->
+        <UML:Class xmi.id="class_button_grey_20mm" name="button grey 20mm" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_color_grey" name="color/grey" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_characteristic"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_diameter_20mm" name="diameter/20mm" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_characteristic"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse variant fabric -->
+        <UML:Class xmi.id="class_variant_fabric" name="variant fabric" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse variant button -->
+        <UML:Class xmi.id="class_variant_button" name="variant button" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse characteristic -->
+        <UML:Class xmi.id="class_characteristic" name="characteristic" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Klasse variation -->
+        <UML:Class xmi.id="class_variation" name="variation" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Beziehungen -->
+
+        <!-- Generalisierung von variant shirt red XL zu template shirt -->
+        <UML:Generalization xmi.id="gen_variant_shirt_red_XL_to_template_shirt" child="class_variant_shirt_red_XL" parent="class_template_shirt"/>
+
+        <!-- Generalisierung von variant shirt zu template shirt -->
+        <UML:Generalization xmi.id="gen_variant_shirt_to_template_shirt" child="class_variant_shirt" parent="class_template_shirt"/>
+
+        <!-- Generalisierung von fabric red zu fabric -->
+        <UML:Generalization xmi.id="gen_fabric_red_to_fabric" child="class_fabric_red" parent="class_fabric"/>
+
+        <!-- Generalisierung von button grey 20mm zu button -->
+        <UML:Generalization xmi.id="gen_button_grey_20mm_to_button" child="class_button_grey_20mm" parent="class_button"/>
+
+        <!-- Generalisierung von variant fabric zu fabric -->
+        <UML:Generalization xmi.id="gen_variant_fabric_to_fabric" child="class_variant_fabric" parent="class_fabric"/>
+
+        <!-- Generalisierung von variant button zu button -->
+        <UML:Generalization xmi.id="gen_variant_button_to_button" child="class_variant_button" parent="class_button"/>
+
+        <!-- Assoziationen -->
+
+        <!-- Assoziation zwischen phantom BOM for shirt red XL und variant shirt red XL -->
+        <UML:Association xmi.id="assoc_phantom_BOM_variant_shirt_red_XL" name="Phantom BOM for Variant">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_phantom_BOM_shirt" type="class_phantom_BOM_for_shirt_red_XL" aggregation="composite" isNavigable="true"/>
+            <UML:AssociationEnd xmi.id="assocEnd_variant_shirt_red_XL" type="class_variant_shirt_red_XL" aggregation="aggregate" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen (generic) BOM for shirt und phantom BOM for shirt red XL -->
+        <UML:Association xmi.id="assoc_generic_BOM_phantom_BOM" name="Generic BOM Phantom">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_generic_BOM_shirt" type="class_generic_BOM_for_shirt" isNavigable="true"/>
+            <UML:AssociationEnd xmi.id="assocEnd_phantom_BOM_shirt" type="class_phantom_BOM_for_shirt_red_XL" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

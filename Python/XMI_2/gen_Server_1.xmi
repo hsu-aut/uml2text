@@ -1,0 +1,440 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- Definition of DataType (assuming basic types as separate data types for this model) -->
+        <UML:DataType xmi.id="datatypes" name="DataTypes"/>
+        
+        <!-- Definition of Source Class -->
+        <UML:Class xmi.id="class_Source" name="Source" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Name" name="Name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_schedule" name="schedule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_url" name="url" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lastChecksum" name="lastChecksum" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_download" name="download" visibility="public"/>
+            <UML:Operation xmi.id="op_check" name="check" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of UpdateManager Class -->
+        <UML:Class xmi.id="class_UpdateManager" name="UpdateManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_autoUpdate" name="autoUpdate" visibility="public"/>
+            <UML:Operation xmi.id="op_manualUpdate" name="manualUpdate" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of Update Class -->
+        <UML:Class xmi.id="class_Update" name="Update" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Date" name="Date" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_source" name="source" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Source"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of DBModel Class -->
+        <UML:Class xmi.id="class_DBModel" name="DBModel" visibility="public" isAbstract="true">
+        </UML:Class>
+        
+        <!-- Definition of Rule Class -->
+        <UML:Class xmi.id="class_Rule" name="Rule" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DBModel"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_SID" name="SID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_active" name="active" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_priority" name="priority" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_update" name="update" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of RuleRevision Class -->
+        <UML:Class xmi.id="class_RuleRevision" name="RuleRevision" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DBModel"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rev" name="rev" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_raw" name="raw" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_msg" name="msg" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_active" name="active" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of RuleSet Class -->
+        <UML:Class xmi.id="class_RuleSet" name="RuleSet" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DBModel"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_active" name="active" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_parent" name="parent" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DBModel"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of RuleClass -->
+        <UML:Class xmi.id="class_RuleClass" name="RuleClass" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DBModel"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_classtype" name="classtype" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_priority" name="priority" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of Sensor -->
+        <UML:Class xmi.id="class_Sensor" name="Sensor" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DBModel"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_parent" name="parent" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DBModel"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ruleSets" name="ruleSets" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_RuleSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_secret" name="secret" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_active" name="active" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of RuleModifier -->
+        <UML:Class xmi.id="class_RuleModifier" name="RuleModifier" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="ref_rule" name="rule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Rule"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_sensor" name="sensor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Sensor"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of Threshold -->
+        <UML:Class xmi.id="class_Threshold" name="Threshold" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="ref_rule" name="rule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Rule"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_sensor" name="sensor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Sensor"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_comment" name="comment" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_track" name="track" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_second" name="second" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of Suppress -->
+        <UML:Class xmi.id="class_Suppress" name="Suppress" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="ref_rule" name="rule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Rule"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_sensor" name="sensor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Sensor"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of SuppressAddresses -->
+        <UML:Class xmi.id="class_SuppressAddresses" name="SuppressAddresses" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ipAddress" name="ipAddress" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+         <!-- Definition of ObjectManager -->
+        <UML:Class xmi.id="class_ObjectManager" name="ObjectManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_create" name="create" visibility="public"/>
+            <UML:Operation xmi.id="op_get" name="get" visibility="public"/>
+            <UML:Operation xmi.id="op_all" name="all" visibility="public"/>
+            <UML:Operation xmi.id="op_filter" name="filter" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition of RuleReference and RuleReferenceType -->
+        <UML:Class xmi.id="class_RuleReference" name="RuleReference" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_url" name="url" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <!-- Reusing RuleReference for Type -->
+        <UML:Class xmi.id="class_RuleReferenceType" name="RuleReferenceType" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_url" name="url" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of UpdateFile and StaticFile -->
+        <UML:Class xmi.id="class_UpdateFile" name="UpdateFile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_checksum" name="checksum" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_StaticFile" name="StaticFile" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_UpdateFile"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_path" name="path" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of RPCManager -->
+        <UML:Class xmi.id="class_RPCManager" name="RPCManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_authenticate" name="authenticate" visibility="public"/>
+            <UML:Operation xmi.id="op_checkForUpdates" name="checkForUpdates" visibility="public"/>
+            <UML:Operation xmi.id="op_getList" name="getList" visibility="public"/>
+            <UML:Operation xmi.id="op_get" name="get" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of RPCSessions -->
+        <UML:Class xmi.id="class_RPCSessions" name="RPCSessions" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_sessionid" name="sessionid" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_time" name="time" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition of RuleChanges -->
+        <UML:Class xmi.id="class_RuleChanges" name="RuleChanges" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rule" name="rule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Rule"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_oldSet" name="oldSet" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_RuleSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_newSet" name="newSet" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_RuleSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_update" name="update" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Update"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_moved" name="moved" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatypes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

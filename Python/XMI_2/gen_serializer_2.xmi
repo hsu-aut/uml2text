@@ -1,0 +1,61 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_XMLProcessing" name="XMLProcessing">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_DataObject" name="DataObject" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_DataObject_QObject" parent="class_QObject"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_AbstractFactory" name="AbstractFactory" visibility="public" isAbstract="true">
+          <UML:Operation xmi.id="op_newObject" name="newObject" visibility="public" isAbstract="true"/>
+          <UML:Generalization xmi.id="gen_AbstractFactory_ObjectFactory" parent="class_AbstractFactory"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_DataObjectReader" name="DataObjectReader" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_DataObjectReader_QXmlDefaultHandler" parent="class_QXmlDefaultHandler"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Country" name="Country" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Country_DataObject" parent="class_DataObject"/>
+          <UML:Enumeration xmi.id="enum_CountryType" name="CountryType">
+            <UML:Enumeration.literal name="Undefined"/>
+            <UML:Enumeration.literal name="USA"/>
+            <UML:Enumeration.literal name="Canada"/>
+          </UML:Enumeration>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_PropsMap" name="PropsMap" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_PropsMap_DataObject" parent="class_DataObject"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ObjectFactory" name="ObjectFactory" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ObjectFactory_QObject" parent="class_QObject"/>
+          <UML:Generalization xmi.id="gen_ObjectFactory_AbstractFactory" parent="class_AbstractFactory"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_QXmlDefaultHandler" name="QXmlDefaultHandler" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_QXmlSimpleReader" name="QXmlSimpleReader" visibility="public" isAbstract="false"/>
+        
+        <UML:Interface xmi.id="interface_QXmlContentHandler" name="QXmlContentHandler" visibility="public">
+          <UML:Dependency xmi.id="dep_QXmlSimpleReader_QXmlContentHandler" client="class_QXmlSimpleReader" supplier="interface_QXmlContentHandler"/>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_QXmlReader" name="QXmlReader" visibility="public">
+          <UML:Dependency xmi.id="dep_QXmlSimpleReader_QXmlReader" client="class_QXmlSimpleReader" supplier="interface_QXmlReader"/>
+        </UML:Interface>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

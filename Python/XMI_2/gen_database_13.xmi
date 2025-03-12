@@ -1,0 +1,121 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GameSystem" name="GameSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "game" -->
+        <UML:Class xmi.id="uo1nmUklQ74g" name="game" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="game_id" name="id" visibility="private" />
+            <UML:Attribute xmi.id="game_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "game_hangman" -->
+        <UML:Class xmi.id="fQQznOIGlyXD" name="game_hangman" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="hangman_letters" name="letters" visibility="private" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "game_cross" -->
+        <UML:Class xmi.id="K70JpmN1XauY" name="game_cross" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="cross_rows" name="rows" visibility="private" />
+            <UML:Attribute xmi.id="cross_cols" name="cols" visibility="private" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "game_snakes" -->
+        <UML:Class xmi.id="xeZXGUC87CuU" name="game_snakes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="snakes_databaseid" name="snakesdatabaseid" visibility="private" />
+            <UML:Attribute xmi.id="snakes_position" name="position" visibility="private" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "game_sudoku" -->
+        <UML:Class xmi.id="VdN93rcdt4Y5" name="game_sudoku" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="sudoku_level" name="level" visibility="private" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "game_attempts" -->
+        <UML:Class xmi.id="hT0bMSUowtDs" name="game_attempts" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attempts_detail" name="detail" visibility="private" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "game_grades" -->
+        <UML:Class xmi.id="JiafhnKU4P11" name="game_grades" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="grades_detail" name="detail" visibility="private" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_game_hangman">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game_hangman_game" type="uo1nmUklQ74g" name="game" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_game_hangman_hangman" type="fQQznOIGlyXD" name="hangman" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_game_cross">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game_cross_game" type="uo1nmUklQ74g" name="game" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_game_cross_cross" type="K70JpmN1XauY" name="cross" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_game_snakes">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game_snakes_game" type="uo1nmUklQ74g" name="game" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_game_snakes_snakes" type="xeZXGUC87CuU" name="snakes" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_game_sudoku">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game_sudoku_game" type="uo1nmUklQ74g" name="game" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_game_sudoku_sudoku" type="VdN93rcdt4Y5" name="sudoku" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_game_attempts">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game_attempts_game" type="uo1nmUklQ74g" name="game" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_game_attempts_attempts" type="hT0bMSUowtDs" name="attempts" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_game_grades">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game_grades_game" type="uo1nmUklQ74g" name="game" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_game_grades_grades" type="JiafhnKU4P11" name="grades" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

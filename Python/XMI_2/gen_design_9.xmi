@@ -1,0 +1,99 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Modelo UML" visibility="public" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        <!-- DataTypes Package -->
+        <UML:Package xmi.id="8" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="int" name="int"/>
+            <UML:DataType xmi.id="char" name="char"/>
+            <UML:DataType xmi.id="bool" name="bool"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <UML:DataType xmi.id="short" name="short"/>
+            <UML:DataType xmi.id="long" name="long"/>
+            <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Classes Definitions -->
+        <UML:Class xmi.id="22" name="Builder" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="build_path" name="build_path" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="23" name="FileGenerator" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="activate" name="activate" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="24" name="RulesGenerator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="25" name="PostInstallGenerator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="26" name="PreRemoveGenerator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="43" name="PartGenerator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="44" name="string" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="48" name="DivertPart" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="49" name="AlternativesPart" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="79" name="ControlGenerator" visibility="public" isAbstract="false"/>
+
+        <!-- Generalizations -->
+        <UML:Generalization xmi.id="30" child="24" parent="23"/>
+        <UML:Generalization xmi.id="33" child="25" parent="23"/>
+        <UML:Generalization xmi.id="36" child="26" parent="23"/>
+        <UML:Generalization xmi.id="45" child="43" parent="44"/>
+        <UML:Generalization xmi.id="50" child="48" parent="43"/>
+        <UML:Generalization xmi.id="53" child="49" parent="43"/>
+        <UML:Generalization xmi.id="80" child="79" parent="23"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="40" name="" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_end_40_1" type="22" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assoc_end_40_2" type="23" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="62" name="" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_end_62_1" type="43" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assoc_end_62_2" type="25" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="65" name="" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_end_65_1" type="43" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assoc_end_65_2" type="26" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="70" name="obtiene datos" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_end_70_1" type="43" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assoc_end_70_2" type="22" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

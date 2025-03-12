@@ -1,0 +1,132 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NeuralNetwork" name="NeuralNetwork">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse Neuronio -->
+        <UML:Class xmi.id="zPXUN31W6otM" name="Neuronio" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_entradas" name="entradas" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="IHk1xqS98Jlj"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pesos" name="pesos" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="IHk1xqS98Jlj"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_saida" name="saida" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="wo347nnwf7cC"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tipo" name="tipo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="PDU3BqkXbQ4p"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_somatoria" name="somatoria" visibility="public"/>
+            <UML:Operation xmi.id="op_ativacao" name="ativacao" visibility="public"/>
+            <UML:Operation xmi.id="op_gradiente" name="gradiente" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Camada -->
+        <UML:Class xmi.id="h7uVfGJOli7T" name="Camada" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tipo" name="tipo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="PDU3BqkXbQ4p"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_neuronios" name="neuronios" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="zPXUN31W6otM"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tamanho" name="tamanho" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="ctW1OGXswcW6"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_entradas" name="entradas" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="IHk1xqS98Jlj"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_saidas" name="saidas" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="IHk1xqS98Jlj"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Rede -->
+        <UML:Class xmi.id="CIsedW8cvf4H" name="Rede" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_camadas" name="camadas" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="h7uVfGJOli7T"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bias" name="bias" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="wo347nnwf7cC"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_limite_epocas" name="limite_epocas" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="ctW1OGXswcW6"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_taxa_de_aprendizado" name="taxa_de_aprendizado" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="wo347nnwf7cC"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_treinamento" name="treinamento" visibility="public"/>
+            <UML:Operation xmi.id="op_execucao" name="execução" visibility="public"/>
+            <UML:Operation xmi.id="op_calculo_de_erros" name="calculo_de_erros" visibility="public"/>
+            <UML:Operation xmi.id="op_calculo_gradiente_saida" name="calculo_gradiente_saida" visibility="public"/>
+            <UML:Operation xmi.id="op_calculo_gradiente_ocultas" name="calculo_gradiente_ocultas" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziation zwischen Camada und Neuronio -->
+        <UML:Association xmi.id="assoc_Camada_Neuronio">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Camada" type="h7uVfGJOli7T" name="camada" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Neuronio" type="zPXUN31W6otM" name="neuronio" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Rede und Camada -->
+        <UML:Association xmi.id="assoc_Rede_Camada">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Rede" type="CIsedW8cvf4H" name="rede" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Camada2" type="h7uVfGJOli7T" name="camada" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition der Datenklassen -->
+        <UML:DataType xmi.id="IHk1xqS98Jlj" name="array"/>
+        <UML:DataType xmi.id="wo347nnwf7cC" name="float"/>
+        <UML:DataType xmi.id="PDU3BqkXbQ4p" name="simbol"/>
+        <UML:DataType xmi.id="ctW1OGXswcW6" name="integer"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

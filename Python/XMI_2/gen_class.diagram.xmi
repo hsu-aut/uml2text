@@ -1,0 +1,156 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_FileRenamer" name="FileRenamer">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_FileRenamer_Core" name="FileRenamer/Core" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_source_path" name="source_path" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_destination_path" name="destination_path" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_destination_prefix" name="destination_prefix" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_strategy" name="strategy" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_FileRenamer_StrategyInterface"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_report" name="report" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_FileRenamer_Report_ReportInterface"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_construct" name="__construct" visibility="public"/>
+            <UML:Operation xmi.id="op_setDestinationPath" name="setDestinationPath" visibility="public"/>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+            <UML:Operation xmi.id="op_setSourcePath" name="setSourcePath" visibility="public"/>
+            <UML:Operation xmi.id="op_getDestinationPath" name="getDestinationPath" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="class_FileRenamer_StrategyInterface" name="FileRenamer_StrategyInterface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_rename" name="rename" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="class_FileRenamer_Strategy_StrategyInterface" name="FileRenamer/Strategy/StrategyInterface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_setSoucePath" name="setSoucePath" visibility="public"/>
+            <UML:Operation xmi.id="op_setDestinationPath" name="setDestinationPath" visibility="public"/>
+            <UML:Operation xmi.id="op_setOriginalFileName" name="setOriginalFileName" visibility="public"/>
+            <UML:Operation xmi.id="op_rename" name="rename" visibility="public"/>
+            <UML:Operation xmi.id="op_setOriginalFileExtension" name="setOriginalFileExtension" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="class_FileRenamer_Strategy_AbstractStrategy" name="FileRenamer/Strategy/AbstractStrategy" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_rename_strategy" name="rename" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FileRenamer_Strategy_StrategyInterface"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FileRenamer_Strategy_Concrete" name="FileRenamer/Strategy/*Concrete" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getNewFileName" name="getNewFileName" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FileRenamer_Strategy_AbstractStrategy"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="class_FileRenamer_Report_ReportInterface" name="FileRenamer/Report/ReportInterface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_save" name="save" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="class_FileRenamer_Report_Csv" name="FileRenamer/Report/Csv" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_PATH" name="PATH" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_file" name="file" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_save_csv" name="save" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FileRenamer_Report_ReportInterface"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FileRenamer_Report" name="FileRenamer/Report" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_report_interface" name="implementations_of_ReportInterface" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FileRenamer_Console" name="FileRenamer/Console" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_options" name="options" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_strategies" name="strategies" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_FileRenamer_StrategyInterface"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FileRenamer_Exception" name="FileRenamer/Exception" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Exception"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FileRenamer_Autoload" name="FileRenamer_Autoload" visibility="public">
+          <UML:Operation xmi.id="op_autoload" name="spl_autoload" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Exception" name="Exception" visibility="public"/>
+
+        <UML:DataType xmi.id="String" name="String"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

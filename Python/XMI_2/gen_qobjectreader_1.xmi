@@ -1,0 +1,101 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- DataObject Class -->
+        <UML:Class xmi.id="2" name="DataObject" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="2"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="QObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <!-- Attributes and operations could be added here -->
+        </UML:Class>
+
+        <!-- AbstractFactory Interface -->
+        <UML:Interface xmi.id="3" name="AbstractFactory" visibility="public">
+          <!-- Operations could be added here -->
+        </UML:Interface>
+
+        <!-- QObjectReader Class -->
+        <UML:Class xmi.id="11" name="QObjectReader" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="11"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="QXmlDefaultHandler"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="11"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="QObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Country Class -->
+        <UML:Class xmi.id="53" name="Country" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="53"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="2"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- PropsMap Class -->
+        <UML:Class xmi.id="126" name="PropsMap" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="126"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="2"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- ObjectFactory Class -->
+        <UML:Class xmi.id="151" name="ObjectFactory" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="151"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="3"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Simple DataTypes -->
+        <UML:DataType xmi.id="5" name="QString" visibility="public"/>
+        <UML:DataType xmi.id="7" name="int" visibility="public"/>
+        <UML:DataType xmi.id="38" name="bool" visibility="public"/>
+
+        <!-- Container DataStructures -->
+        <UML:Class xmi.id="QQueue" name="QQueue" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="QStack" name="QStack" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="QMap" name="QMap" visibility="public" isAbstract="false"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

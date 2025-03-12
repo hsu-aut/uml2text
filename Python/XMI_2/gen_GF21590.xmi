@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EAModel" name="EA Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Pakets "Logical View" -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition der Klasse "EARootClass" -->
+            <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+            
+            <!-- Definition der Kollaboration "Collaboration" -->
+            <UML:Collaboration xmi.id="collaboration_LogicalView" name="Collaboration">
+              <UML:Collaboration.part>
+                <UML:ClassifierRole xmi.id="role_EARootClass" name="EARootClass" base="class_EARootClass"/>
+              </UML:Collaboration.part>
+            </UML:Collaboration>
+            
+            <!-- Definition des Unterpakets "test" -->
+            <UML:Package xmi.id="package_test" name="test">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Definition der Klasse "VD1" -->
+                <UML:Class xmi.id="class_VD1" name="VD1" visibility="public" isAbstract="false" isActive="false" isLeaf="false" isSpecification="false" stereotype="enumeration">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attribute_pv1" name="pv1" visibility="private" type="String" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <!-- Definition der Klasse "Class A" -->
+                <UML:Class xmi.id="class_A" name="Class A" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attribute_id" name="id" visibility="private" type="int" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <!-- Definition der Klasse "Class B" mit Generalisierung zu "Class A" -->
+                <UML:Class xmi.id="class_B" name="Class B" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="generalization_BA" parent="class_A" child="class_B"/>
+                </UML:Class>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

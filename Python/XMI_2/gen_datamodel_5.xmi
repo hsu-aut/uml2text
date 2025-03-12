@@ -1,0 +1,326 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_FacturaSystem" name="FacturaSystem">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_facturascli" name="facturascli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idfactura" name="idfactura" type="int"/>
+            <UML:Attribute xmi.id="attr_codigo" name="codigo" type="string"/>
+            <UML:Attribute xmi.id="attr_fecha" name="fecha" type="date"/>
+            <UML:Attribute xmi.id="attr_total" name="total" type="double"/>
+            <UML:Attribute xmi.id="attr_codcliente" name="codcliente" type="string"/>
+            <UML:Attribute xmi.id="attr_coddivisa" name="coddivisa" type="string"/>
+            <UML:Attribute xmi.id="attr_codserie" name="codserie" type="string"/>
+            <UML:Attribute xmi.id="attr_codpago" name="codpago" type="string"/>
+            <UML:Attribute xmi.id="attr_codagente" name="codagente" type="string"/>
+            <UML:Attribute xmi.id="attr_codalmacen" name="codalmacen" type="string"/>
+            <UML:Attribute xmi.id="attr_coddir" name="coddir" type="string"/>
+            <UML:Attribute xmi.id="attr_codpais" name="codpais" type="string"/>
+            <UML:Attribute xmi.id="attr_codejercicio" name="codejercicio" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_facturasprov" name="facturasprov" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idfactura_prov" name="idfactura" type="int"/>
+            <UML:Attribute xmi.id="attr_codigo_prov" name="codigo" type="string"/>
+            <UML:Attribute xmi.id="attr_fecha_prov" name="fecha" type="date"/>
+            <UML:Attribute xmi.id="attr_total_prov" name="total" type="double"/>
+            <UML:Attribute xmi.id="attr_codproveedor" name="codproveedor" type="string"/>
+            <UML:Attribute xmi.id="attr_coddivisa_prov" name="coddivisa" type="string"/>
+            <UML:Attribute xmi.id="attr_codejercicio_prov" name="codejercicio" type="string"/>
+            <UML:Attribute xmi.id="attr_codserie_prov" name="codserie" type="string"/>
+            <UML:Attribute xmi.id="attr_codpago_prov" name="codpago" type="string"/>
+            <UML:Attribute xmi.id="attr_codalmacen_prov" name="codalmacen" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineasfacturascli" name="lineasfacturascli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_cli" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idfactura_cli" name="idfactura" type="int"/>
+            <UML:Attribute xmi.id="attr_referencia_cli" name="referencia" type="string"/>
+            <UML:Attribute xmi.id="attr_pvpunitario_cli" name="pvpunitario" type="double"/>
+            <UML:Attribute xmi.id="attr_cantidad_cli" name="cantidad" type="double"/>
+            <UML:Attribute xmi.id="attr_pvptotal_cli" name="pvptotal" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_cli" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_dtolineal_cli" name="dtolineal" type="double"/>
+            <UML:Attribute xmi.id="attr_dtopor_cli" name="dtopor" type="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineasivafactcli" name="lineasivafactcli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_iva_cli" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idfactura_iva_cli" name="idfactura" type="int"/>
+            <UML:Attribute xmi.id="attr_neto_cli" name="neto" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_iva_cli" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_iva_cli" name="iva" type="double"/>
+            <UML:Attribute xmi.id="attr_totaliva_cli" name="totaliva" type="double"/>
+            <UML:Attribute xmi.id="attr_recargo_cli" name="recargo" type="double"/>
+            <UML:Attribute xmi.id="attr_totalrecargo_cli" name="totalrecargo" type="double"/>
+            <UML:Attribute xmi.id="attr_totallineas_cli" name="totallineas" type="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineasfacturasprov" name="lineasfacturasprov" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_prov" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idfactura_prov_linea" name="idfactura" type="int"/>
+            <UML:Attribute xmi.id="attr_referencia_prov" name="referencia" type="string"/>
+            <UML:Attribute xmi.id="attr_cantidad_prov" name="cantidad" type="double"/>
+            <UML:Attribute xmi.id="attr_pvpunitario_prov" name="pvpunitario" type="double"/>
+            <UML:Attribute xmi.id="attr_pvptotal_prov" name="pvptotal" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_prov" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_iva_prov" name="iva" type="double"/>
+            <UML:Attribute xmi.id="attr_recargo_prov" name="recargo" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineasivafactprov" name="lineasivafactprov" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_iva_prov" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idfactura_iva_prov" name="idfactura" type="int"/>
+            <UML:Attribute xmi.id="attr_neto_prov" name="neto" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_iva_prov" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_iva_prov_linea" name="iva" type="double"/>
+            <UML:Attribute xmi.id="attr_totaliva_prov" name="totaliva" type="double"/>
+            <UML:Attribute xmi.id="attr_recargo_iva_prov" name="recargo" type="double"/>
+            <UML:Attribute xmi.id="attr_totalrecargo_prov" name="totalrecargo" type="double"/>
+            <UML:Attribute xmi.id="attr_totallinea_prov" name="totallinea" type="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_albaranescli" name="albaranescli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idalbaran_cli" name="idalbaran" type="int"/>
+            <UML:Attribute xmi.id="attr_codigo_cli_albaran" name="codigo" type="string"/>
+            <UML:Attribute xmi.id="attr_fecha_cli_albaran" name="fecha" type="date"/>
+            <UML:Attribute xmi.id="attr_codcliente_cli_albaran" name="codcliente" type="string"/>
+            <UML:Attribute xmi.id="attr_coddivisa_cli_albaran" name="coddivisa" type="string"/>
+            <UML:Attribute xmi.id="attr_codserie_cli_albaran" name="codserie" type="string"/>
+            <UML:Attribute xmi.id="attr_codpago_cli_albaran" name="codpago" type="string"/>
+            <UML:Attribute xmi.id="attr_codagente_cli_albaran" name="codagente" type="string"/>
+            <UML:Attribute xmi.id="attr_codalmacen_cli_albaran" name="codalmacen" type="string"/>
+            <UML:Attribute xmi.id="attr_coddir_cli_albaran" name="coddir" type="string"/>
+            <UML:Attribute xmi.id="attr_codpais_cli_albaran" name="codpais" type="string"/>
+            <UML:Attribute xmi.id="attr_codejercicio_cli_albaran" name="codejercicio" type="string"/>
+            <UML:Attribute xmi.id="attr_idfactura_cli_albaran" name="idfactura" type="int"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_albaranesprov" name="albaranesprov" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idalbaran_prov" name="idalbaran" type="int"/>
+            <UML:Attribute xmi.id="attr_codigo_prov_albaran" name="codigo" type="string"/>
+            <UML:Attribute xmi.id="attr_fecha_prov_albaran" name="fecha" type="date"/>
+            <UML:Attribute xmi.id="attr_codproveedor_prov_albaran" name="codproveedor" type="string"/>
+            <UML:Attribute xmi.id="attr_coddivisa_prov_albaran" name="coddivisa" type="string"/>
+            <UML:Attribute xmi.id="attr_codpago_prov_albaran" name="codpago" type="string"/>
+            <UML:Attribute xmi.id="attr_codalmacen_prov_albaran" name="codalmacen" type="string"/>
+            <UML:Attribute xmi.id="attr_codejercicio_prov_albaran" name="codejercicio" type="string"/>
+            <UML:Attribute xmi.id="attr_codserie_prov_albaran" name="codserie" type="string"/>
+            <UML:Attribute xmi.id="attr_idfactura_prov_albaran" name="idfactura" type="int"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineasalbaranescli" name="lineasalbaranescli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_albaran_cli" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idalbaran_cli_linea" name="idalbaran" type="int"/>
+            <UML:Attribute xmi.id="attr_referencia_albaran_cli" name="referencia" type="string"/>
+            <UML:Attribute xmi.id="attr_idpedido_albaran_cli" name="idpedido" type="int"/>
+            <UML:Attribute xmi.id="attr_idlineapedido_albaran_cli" name="idlineapedido" type="int"/>
+            <UML:Attribute xmi.id="attr_pvpunitario_albaran_cli" name="pvpunitario" type="double"/>
+            <UML:Attribute xmi.id="attr_pvptotal_albaran_cli" name="pvptotal" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_albaran_cli" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_dtolineal_albaran_cli" name="dtolineal" type="double"/>
+            <UML:Attribute xmi.id="attr_dtop_albaran_cli" name="dtop" type="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineasalbaranesprov" name="lineasalbaranesprov" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_albaran_prov" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idalbaran_prov_linea" name="idalbaran" type="int"/>
+            <UML:Attribute xmi.id="attr_idlineapedido_albaran_prov" name="idlineapedido" type="int"/>
+            <UML:Attribute xmi.id="attr_referencia_albaran_prov" name="referencia" type="string"/>
+            <UML:Attribute xmi.id="attr_idpedido_albaran_prov" name="idpedido" type="int"/>
+            <UML:Attribute xmi.id="attr_pvpunitario_albaran_prov" name="pvpunitario" type="double"/>
+            <UML:Attribute xmi.id="attr_pvptotal_albaran_prov" name="pvptotal" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_albaran_prov" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_iva_albaran_prov" name="iva" type="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_pedidoscli" name="pedidoscli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idpedido_cli" name="idpedido" type="int"/>
+            <UML:Attribute xmi.id="attr_codigo_cli_pedido" name="codigo" type="string"/>
+            <UML:Attribute xmi.id="attr_codcliente_cli_pedido" name="codcliente" type="string"/>
+            <UML:Attribute xmi.id="attr_coddivisa_cli_pedido" name="coddivisa" type="string"/>
+            <UML:Attribute xmi.id="attr_codserie_cli_pedido" name="codserie" type="string"/>
+            <UML:Attribute xmi.id="attr_codpago_cli_pedido" name="codpago" type="string"/>
+            <UML:Attribute xmi.id="attr_codagente_cli_pedido" name="codagente" type="string"/>
+            <UML:Attribute xmi.id="attr_codalmacen_cli_pedido" name="codalmacen" type="string"/>
+            <UML:Attribute xmi.id="attr_coddir_cli_pedido" name="coddir" type="string"/>
+            <UML:Attribute xmi.id="attr_codpais_cli_pedido" name="codpais" type="string"/>
+            <UML:Attribute xmi.id="attr_codejercicio_cli_pedido" name="codejercicio" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_pedidosprov" name="pedidosprov" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idpedido_prov" name="idpedido" type="int"/>
+            <UML:Attribute xmi.id="attr_codigo_prov_pedido" name="codigo" type="string"/>
+            <UML:Attribute xmi.id="attr_fecha_prov_pedido" name="fecha" type="date"/>
+            <UML:Attribute xmi.id="attr_codproveedor_prov_pedido" name="codproveedor" type="string"/>
+            <UML:Attribute xmi.id="attr_coddivisa_prov_pedido" name="coddivisa" type="string"/>
+            <UML:Attribute xmi.id="attr_codpago_prov_pedido" name="codpago" type="string"/>
+            <UML:Attribute xmi.id="attr_codalmacen_prov_pedido" name="codalmacen" type="string"/>
+            <UML:Attribute xmi.id="attr_codejercicio_prov_pedido" name="codejercicio" type="string"/>
+            <UML:Attribute xmi.id="attr_codserie_prov_pedido" name="codserie" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineaspedidoscli" name="lineaspedidoscli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_pedido_cli" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idpedido_pedido_cli" name="idpedido" type="int"/>
+            <UML:Attribute xmi.id="attr_referencia_pedido_cli" name="referencia" type="string"/>
+            <UML:Attribute xmi.id="attr_pvpunitario_pedido_cli" name="pvpunitario" type="double"/>
+            <UML:Attribute xmi.id="attr_pvptotal_pedido_cli" name="pvptotal" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_pedido_cli" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_dtolineal_pedido_cli" name="dtolineal" type="double"/>
+            <UML:Attribute xmi.id="attr_dtopor_pedido_cli" name="dtopor" type="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineaspedidosprov" name="lineaspedidosprov" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_pedido_prov" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idpedido_pedido_prov" name="idpedido" type="int"/>
+            <UML:Attribute xmi.id="attr_referencia_pedido_prov" name="referencia" type="string"/>
+            <UML:Attribute xmi.id="attr_pvpunitario_pedido_prov" name="pvpunitario" type="double"/>
+            <UML:Attribute xmi.id="attr_pvptotal_pedido_prov" name="pvptotal" type="double"/>
+            <UML:Attribute xmi.id="attr_totalenalbaran_pedido_prov" name="totalenalbaran" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_pedido_prov" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_iva_pedido_prov" name="iva" type="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_presupuestoscli" name="presupuestoscli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idpresupuesto_cli" name="idpresupuesto" type="int"/>
+            <UML:Attribute xmi.id="attr_fecha_presupuesto_cli" name="fecha" type="date"/>
+            <UML:Attribute xmi.id="attr_codcliente_presupuesto_cli" name="codcliente" type="string"/>
+            <UML:Attribute xmi.id="attr_coddivisa_presupuesto_cli" name="coddivisa" type="string"/>
+            <UML:Attribute xmi.id="attr_codserie_presupuesto_cli" name="codserie" type="string"/>
+            <UML:Attribute xmi.id="attr_codpago_presupuesto_cli" name="codpago" type="string"/>
+            <UML:Attribute xmi.id="attr_codagente_presupuesto_cli" name="codagente" type="string"/>
+            <UML:Attribute xmi.id="attr_codalmacen_presupuesto_cli" name="codalmacen" type="string"/>
+            <UML:Attribute xmi.id="attr_coddir_presupuesto_cli" name="coddir" type="string"/>
+            <UML:Attribute xmi.id="attr_codpais_presupuesto_cli" name="codpais" type="string"/>
+            <UML:Attribute xmi.id="attr_codejercicio_presupuesto_cli" name="codejercicio" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_lineaspresupuestoscli" name="lineaspresupuestoscli" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idlinea_presupuesto_cli" name="idlinea" type="int"/>
+            <UML:Attribute xmi.id="attr_idpresupuesto_presupuesto_cli" name="idpresupuesto" type="int"/>
+            <UML:Attribute xmi.id="attr_referencia_presupuesto_cli" name="referencia" type="string"/>
+            <UML:Attribute xmi.id="attr_pvpunitario_presupuesto_cli" name="pvpunitario" type="double"/>
+            <UML:Attribute xmi.id="attr_pvptotal_presupuesto_cli" name="pvptotal" type="double"/>
+            <UML:Attribute xmi.id="attr_codimpuesto_presupuesto_cli" name="codimpuesto" type="string"/>
+            <UML:Attribute xmi.id="attr_dtolineal_presupuesto_cli" name="dtolineal" type="double"/>
+            <UML:Attribute xmi.id="attr_dtopor_presupuesto_cli" name="dtopor" type="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_huecos" name="huecos" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id_huecos" name="id" type="int"/>
+            <UML:Attribute xmi.id="attr_tipo_huecos" name="tipo" type="string"/>
+            <UML:Attribute xmi.id="attr_codserie_huecos" name="codserie" type="string"/>
+            <UML:Attribute xmi.id="attr_codejercicio_huecos" name="codejercicio" type="string"/>
+            <UML:Attribute xmi.id="attr_numero_huecos" name="numero" type="int"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_facturascli_lineasfacturascli">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_facturascli_lineasfacturascli_FacturasCli" type="class_facturascli" name="facturascli" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_facturascli_lineasfacturascli_LineasFacturasCli" type="class_lineasfacturascli" name="lineasfacturascli" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_facturascli_lineasivafactcli">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_facturascli_lineasivafactcli_FacturasCli" type="class_facturascli" name="facturascli" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_facturascli_lineasivafactcli_LineasIvaFactCli" type="class_lineasivafactcli" name="lineasivafactcli" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_facturasprov_lineasfacturasprov">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_facturasprov_lineasfacturasprov_FacturasProv" type="class_facturasprov" name="facturasprov" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_facturasprov_lineasfacturasprov_LineasFacturasProv" type="class_lineasfacturasprov" name="lineasfacturasprov" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_facturasprov_lineasivafactprov">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_facturasprov_lineasivafactprov_FacturasProv" type="class_facturasprov" name="facturasprov" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_facturasprov_lineasivafactprov_LineasIvaFactProv" type="class_lineasivafactprov" name="lineasivafactprov" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_albaranescli_lineasalbaranescli">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_albaranescli_lineasalbaranescli_AlbaranesCli" type="class_albaranescli" name="albaranescli" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_albaranescli_lineasalbaranescli_LineasAlbaranesCli" type="class_lineasalbaranescli" name="lineasalbaranescli" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_albaranesprov_lineasalbaranesprov">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_albaranesprov_lineasalbaranesprov_AlbaranesProv" type="class_albaranesprov" name="albaranesprov" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_albaranesprov_lineasalbaranesprov_LineasAlbaranesProv" type="class_lineasalbaranesprov" name="lineasalbaranesprov" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_pedidoscli_lineaspedidoscli">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_pedidoscli_lineaspedidoscli_PedidosCli" type="class_pedidoscli" name="pedidoscli" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_pedidoscli_lineaspedidoscli_LineasPedidosCli" type="class_lineaspedidoscli" name="lineaspedidoscli" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_pedidosprov_lineaspedidosprov">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_pedidosprov_lineaspedidosprov_PedidosProv" type="class_pedidosprov" name="pedidosprov" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_pedidosprov_lineaspedidosprov_LineasPedidosProv" type="class_lineaspedidosprov" name="lineaspedidosprov" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_presupuestoscli_lineaspresupuestoscli">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_presupuestoscli_lineaspresupuestoscli_PresupuestosCli" type="class_presupuestoscli" name="presupuestoscli" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_presupuestoscli_lineaspresupuestoscli_LineasPresupuestosCli" type="class_lineaspresupuestoscli" name="lineaspresupuestoscli" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

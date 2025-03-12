@@ -1,0 +1,74 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+      
+        <UML:Interface xmi.id="Interface1" name="Interface1" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="newOperation" name="newOperation" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="returnParam" name="return" kind="return" type="void"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+          <UML:ModelElement.taggedValue>
+            <UML:TaggedValue tagDefinition="documentation" value="Example Interface"/>
+          </UML:ModelElement.taggedValue>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class1" name="class1" visibility="public" isAbstract="false">
+          <UML:Generalization child="class2" parent="class1"/>
+          <UML:Realization xmi.id="realize_Interface1" client="class1" supplier="Interface1"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class2" name="class2" visibility="public" isAbstract="false">
+          <UML:Generalization child="class2" parent="class1"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class3" name="class3" visibility="public" isAbstract="false"/>
+
+        <UML:Package xmi.id="Package1" name="Package1">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="classX" name="classX" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="newAttr" name="newAttr" visibility="public" ownerScope="instance" changeability="changeable" multiplicity="1..1"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="classY" name="classY" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Association xmi.id="asso1" name="asso1" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="asso1_end1" type="class1" name="role1" isNavigable="true" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="asso1_end2" type="class2" name="role2" isNavigable="false"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="asso2" name="asso2" visibility="public" aggregation="aggregate">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="asso2_end1" type="class2" name="whole" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="asso2_end2" type="class3" name="part" isNavigable="false"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="asso3" name="asso3" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="asso3_end1" type="classX" isNavigable="true"/>
+            <UML:AssociationEnd xmi.id="asso3_end2" type="classY" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,270 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModèleUML" name="Modèle UML">
+      <UML:Namespace.ownedElement>
+
+        <!-- Entity Class and its Specializations -->
+        <UML:Class xmi.id="class_Entity" name="Entity" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_Item" name="Item" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Item"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Money" name="Money" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Money"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Item"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Heart" name="Heart" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Hit" name="Hit" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Hit"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Decor" name="Decor" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Decor"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_PlayerHit" name="PlayerHit" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_PlayerHit"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Hit"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Unit Class and its Specializations -->
+        <UML:Class xmi.id="class_Unit" name="Unit" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_Player" name="Player" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Player"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Unit"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Mob" name="Mob" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Mob"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Unit"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Animated" name="Animated" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Animated"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Unit"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- GUI Components -->
+        <UML:Class xmi.id="class_Control" name="Control" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_Label" name="Label" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Label"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Control"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Button" name="Button" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Button"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Control"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TextBox" name="TextBox" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_TextBox"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Control"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ProgressBar" name="ProgressBar" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ProgressBar"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Control"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Window" name="Window" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Inventory" name="Inventory" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Inventory"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Window"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_WinOption" name="WinOption" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_WinOption"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Window"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_WinPause" name="WinPause" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_WinPause"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Window"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Game and its Relationships -->
+        <UML:Class xmi.id="class_Game" name="Game" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ZoneContainer" name="ZoneContainer" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_Game_ZoneContainer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Game" type="class_Game" name="game" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ZoneContainer" type="class_ZoneContainer" name="zoneContainer" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Class xmi.id="class_ControlPanel" name="ControlPanel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ConfigParser" name="ConfigParser" visibility="public" isAbstract="false"/>
+
+        <!-- Zone Related Classes -->
+        <UML:Class xmi.id="class_Zone" name="Zone" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Tileset" name="Tileset" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_Zone_Tileset">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Zone" type="class_Zone" name="zone" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Tileset" type="class_Tileset" name="tileset" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- EntityFactory Relationships -->
+        <UML:Class xmi.id="class_EntityFactory" name="EntityFactory" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_EntityFactory_Zone">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_EntityFactory" type="class_EntityFactory" name="entityFactory" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Zone" type="class_Zone" name="zone" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_EntityFactory_Unit">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_EntityFactory_Unit" type="class_EntityFactory" name="entityFactory" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Unit" type="class_Unit" name="unit" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_EntityFactory_Decor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_EntityFactory_Decor" type="class_EntityFactory" name="entityFactory" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Decor" type="class_Decor" name="decor" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- MediaManager and Its Relationships -->
+        <UML:Class xmi.id="class_MediaManager" name="MediaManager" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_BitmapFont" name="BitmapFont" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_BitmapString" name="BitmapString" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_MediaManager_BitmapFont">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MediaManager" type="class_MediaManager" name="mediaManager" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_BitmapFont" type="class_BitmapFont" name="bitmapFont" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Additional associations -->
+        <UML:Class xmi.id="class_Equipment" name="Equipment" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_Equipment_Inventory">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Equipment" type="class_Equipment" name="equipment" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Inventory" type="class_Inventory" name="inventory" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Equipment_Mob">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Equipment_Mob" type="class_Equipment" name="equipment" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Mob" type="class_Mob" name="mob" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Class xmi.id="class_SoundSystem" name="SoundSystem" visibility="public" isAbstract="false"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

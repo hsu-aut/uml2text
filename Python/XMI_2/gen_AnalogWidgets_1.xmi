@@ -1,0 +1,140 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt_ChannelsRef" name="Channels &"/>
+            <UML:DataType xmi.id="dt_QPainterRef" name="QPainter &"/>
+            <UML:DataType xmi.id="dt_char" name="char"/>
+            <UML:DataType xmi.id="dt_bool" name="bool"/>
+            <UML:DataType xmi.id="dt_float" name="float"/>
+            <UML:DataType xmi.id="dt_double" name="double"/>
+            <UML:DataType xmi.id="dt_long" name="long"/>
+            <UML:DataType xmi.id="dt_short" name="short"/>
+            <UML:DataType xmi.id="dt_string" name="string"/>
+            <UML:DataType xmi.id="dt_void" name="void"/>
+            <UML:DataType xmi.id="dt_QWidgetPtr" name="QWidget*"/>
+            <UML:DataType xmi.id="dt_QPixmapPtr" name="QPixmap*"/>
+            <UML:DataType xmi.id="dt_QPaintEventPtr" name="QPaintEvent*"/>
+            <UML:DataType xmi.id="dt_ChannelPtr" name="Channel *"/>
+            <UML:DataType xmi.id="dt_ChartPainterPtr" name="ChartPainter *"/>
+            <UML:DataType xmi.id="dt_ChartPtr" name="Chart *"/>
+            <UML:DataType xmi.id="dt_ChartComponentPtr" name="ChartComponent *"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Classes in Logical View -->
+        <UML:Class xmi.id="class_std_vector" name="std::vector" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Iterator" name="Iterator" visibility="public" isAbstract="true">
+          <UML:Stereotype name="Adapter"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_iterator" name="iterator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_iterator"/>
+            <UML:Generalization.parent xmi.idref="class_Iterator"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QPen" name="QPen" visibility="public" isAbstract="false"/>
+
+        <!-- Abstract and Concrete Classes -->
+        <UML:Class xmi.id="class_AbstractMeter" name="AbstractMeter" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_ManoMeter" name="ManoMeter" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_ManoMeter"/>
+            <UML:Generalization.parent xmi.idref="class_AbstractMeter"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ThermoMeter" name="ThermoMeter" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_ThermoMeter"/>
+            <UML:Generalization.parent xmi.idref="class_AbstractMeter"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_WallClock" name="WallClock" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_WallClock"/>
+            <UML:Generalization.parent xmi.idref="class_AbstractMeter"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_WidgetWithBackground" name="WidgetWithBackground" visibility="public" isAbstract="true"/>
+
+        <!-- Associations and Generalizations -->
+        <UML:Class xmi.id="class_ChartDecorator" name="ChartDecorator" visibility="public" isAbstract="true">
+          <UML:Stereotype name="Decorator"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ScalesGridDecorator" name="ScalesGridDecorator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_ScalesGridDecorator"/>
+            <UML:Generalization.parent xmi.idref="class_ChartDecorator"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LegendDecorator" name="LegendDecorator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_LegendDecorator"/>
+            <UML:Generalization.parent xmi.idref="class_ChartDecorator"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LabelsDecorator" name="LabelsDecorator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_LabelsDecorator"/>
+            <UML:Generalization.parent xmi.idref="class_ChartDecorator"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GlassDecorator" name="GlassDecorator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_GlassDecorator"/>
+            <UML:Generalization.parent xmi.idref="class_ChartDecorator"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ChannelDecorator" name="ChannelDecorator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_ChannelDecorator"/>
+            <UML:Generalization.parent xmi.idref="class_ChartDecorator"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Packages and Stereotypes -->
+        <UML:Package xmi.id="pkg_AnalogWidgets" name="AnalogWidgets">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Chart" name="Chart" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_ManoMeter" name="ManoMeter" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="pkg_Qt" name="Qt">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_QColor" name="QColor" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_QFont" name="QFont" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_QPixmap" name="QPixmap" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

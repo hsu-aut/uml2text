@@ -1,0 +1,91 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="-64--88-2-3--2497aa54:11ebc32be17:-8000:000000000000147B" name="phone" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der StateMachine -->
+        <UML:StateMachine xmi.id="StateMachine_phone" name="phone" visibility="public" isSpecification="false">
+          <UML:StateMachine.context>
+            <UML:Model xmi.idref="-64--88-2-3--2497aa54:11ebc32be17:-8000:000000000000147B"/>
+          </UML:StateMachine.context>
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="CompositeState_top" name="top" visibility="public" isSpecification="false">
+              <UML:CompositeState.state>
+              
+                <!-- Initialer Zustand 'on' -->
+                <UML:Pseudostate xmi.id="Pseudostate_on" kind="initial">
+                  <UML:State.redirect xmi.idref="SimpleState_standby"/>
+                </UML:Pseudostate>
+                
+                <!-- Zustand 'standby' -->
+                <UML:SimpleState xmi.id="SimpleState_standby" name="standby" visibility="public" isSpecification="false"/>
+              
+                <!-- Zustand 'dialing' -->
+                <UML:SimpleState xmi.id="SimpleState_dialing" name="dialing" visibility="public" isSpecification="false"/>
+              
+                <!-- Zustand 'calling' -->
+                <UML:SimpleState xmi.id="SimpleState_calling" name="calling" visibility="public" isSpecification="false"/>
+              
+                <!-- Endzustand 'off' -->
+                <UML:FinalState xmi.id="FinalState_off" name="off" visibility="public" isSpecification="false"/>
+
+              </UML:CompositeState.state>
+              
+              <UML:CompositeState.transition>
+              
+                <!-- Übergänge -->
+                <UML:Transition xmi.id="Transition_turnOn" source="Pseudostate_on" target="SimpleState_standby">
+                  <UML:Transition.trigger>
+                    <UML:SignalEvent xmi.id="SignalEvent_turnOn" name="turnOn"/>
+                  </UML:Transition.trigger>
+                </UML:Transition>
+                
+                <UML:Transition xmi.id="Transition_turnOff" source="SimpleState_standby" target="FinalState_off">
+                  <UML:Transition.trigger>
+                    <UML:SignalEvent xmi.id="SignalEvent_turnOff" name="turnOff"/>
+                  </UML:Transition.trigger>
+                </UML:Transition>
+                
+                <UML:Transition xmi.id="Transition_dialing" source="SimpleState_standby" target="SimpleState_dialing">
+                  <UML:Transition.trigger>
+                    <UML:SignalEvent xmi.id="SignalEvent_dialing" name="dialing"/>
+                  </UML:Transition.trigger>
+                </UML:Transition>
+                
+                <UML:Transition xmi.id="Transition_busy" source="SimpleState_dialing" target="SimpleState_standby">
+                  <UML:Transition.trigger>
+                    <UML:SignalEvent xmi.id="SignalEvent_busy" name="isBusy"/>
+                  </UML:Transition.trigger>
+                </UML:Transition>
+                
+                <UML:Transition xmi.id="Transition_pickup" source="SimpleState_dialing" target="SimpleState_calling">
+                  <UML:Transition.trigger>
+                    <UML:SignalEvent xmi.id="SignalEvent_pickUp" name="pickUp"/>
+                  </UML:Transition.trigger>
+                </UML:Transition>
+                
+                <UML:Transition xmi.id="Transition_hangUp" source="SimpleState_calling" target="SimpleState_standby">
+                  <UML:Transition.trigger>
+                    <UML:SignalEvent xmi.id="SignalEvent_hangUp" name="hangUp"/>
+                  </UML:Transition.trigger>
+                </UML:Transition>
+              
+              </UML:CompositeState.transition>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,199 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model2" name="model2">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package domain -->
+        <UML:Package xmi.id="package_domain" name="domain">
+          <UML:Namespace.ownedElement>
+
+            <!-- Klasse AbstractDomainObject -->
+            <UML:Class xmi.id="class_AbstractDomainObject" name="AbstractDomainObject" visibility="public" isAbstract="true">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="java_Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse HierarchyNode -->
+            <UML:Class xmi.id="class_HierarchyNode" name="HierarchyNode" visibility="public" isAbstract="true">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_HierarchyNode"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_AbstractDomainObject"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_value" name="value" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="java_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_level" name="level" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="java_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse GeneFunctionTerm -->
+            <UML:Class xmi.id="class_GeneFunctionTerm" name="GeneFunctionTerm" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_GeneFunctionTerm"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_HierarchyNode"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Klasse Gene -->
+            <UML:Class xmi.id="class_Gene" name="Gene" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Gene"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_AbstractDomainObject"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="java_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_symbol" name="symbol" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="java_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_clusterId" name="clusterId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="java_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse Chromosome -->
+            <UML:Class xmi.id="class_Chromosome" name="Chromosome" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Chromosome"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_AbstractDomainObject"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="java_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Klasse Taxon -->
+            <UML:Class xmi.id="class_Taxon" name="Taxon" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Taxon"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_HierarchyNode"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Klasse Protein -->
+            <UML:Class xmi.id="class_Protein" name="Protein" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Protein"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_AbstractDomainObject"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="java_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Assoziationen -->
+            <UML:Association xmi.id="assoc_HierarchyNode_children">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_HierarchyNode_children" type="class_HierarchyNode" name="parent" visibility="public" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="end_HierarchyNode_children_child" type="class_HierarchyNode" name="children" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Gene_terms">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_Gene_terms_Gene" type="class_Gene" name="gene" visibility="public" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="end_Gene_terms_Term" type="class_GeneFunctionTerm" name="terms" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Gene_chromosome">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_Gene_chromosome_Gene" type="class_Gene" name="gene" visibility="public" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="end_Gene_chromosome_chromosome" type="class_Chromosome" name="chromosome" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Protein_taxons">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_Protein_taxons_Protein" type="class_Protein" name="protein" visibility="public" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="end_Protein_taxons_Taxon" type="class_Taxon" name="taxons" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Protein_genes">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_Protein_genes_Protein" type="class_Protein" name="protein" visibility="public" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="end_Protein_genes_Gene" type="class_Gene" name="genes" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package java -->
+        <UML:Package xmi.id="package_java" name="java">
+          <UML:Namespace.ownedElement>
+
+            <!-- Package lang -->
+            <UML:Package xmi.id="package_lang" name="lang">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="java_Integer" name="Integer"/>
+                <UML:DataType xmi.id="java_String" name="String"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

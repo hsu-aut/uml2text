@@ -1,0 +1,153 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Game" name="Game">
+      <UML:Namespace.ownedElement>
+
+        <!-- Class Joueur -->
+        <UML:Class xmi.id="class_Joueur" name="Joueur" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="short"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_nom" name="nom" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_construire" name="construire" visibility="public"/>
+            <UML:Operation xmi.id="op_depenserRessources" name="depenserRessources" visibility="public">
+              <UML:Parameter name="res" type="Ressource"/>
+              <UML:Parameter name="nombre" type="int"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_recevoirRessource" name="recevoirRessource" visibility="public">
+              <UML:Parameter name="type" type="Ressource"/>
+              <UML:Parameter name="nombre" type="int"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_echangerRessources" name="echangerRessources" visibility="public">
+              <UML:Parameter name="autre" type="Joueur"/>
+              <UML:Parameter name="ressource" type="Ressource"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Invention -->
+        <UML:Class xmi.id="class_Inventions" name="Inventions" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Nom" name="Nom" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Prerequis" name="Prerequis" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Objet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Carte -->
+        <UML:Class xmi.id="class_Carte" name="Carte" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Nom" name="Nom" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Description" name="Description" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Plateau -->
+        <UML:Class xmi.id="class_Plateau" name="Plateau" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_listeCases" name="listeCases" visibility="private"/>
+            <UML:Attribute xmi.id="attr_epoque" name="epoque" visibility="private" type="Epoque"/>
+            <UML:Operation xmi.id="op_recolterRessources" name="récolterRessources" visibility="public">
+              <UML:Parameter name="valeurDes" type="int"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_init" name="init" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Case -->
+        <UML:Class xmi.id="class_Case" name="Case" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_coord" name="coord" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_CoordPoint"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private" type="TypeCase"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class CoordPoint -->
+        <UML:Class xmi.id="class_CoordPoint" name="CoordPoint" visibility="public" isAbstract="false"/>
+
+        <!-- Class Jeu -->
+        <UML:Class xmi.id="class_Jeu" name="Jeu" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_lancerDes" name="lancerDes" visibility="public"/>
+            <UML:Operation xmi.id="op_InitiJeu" name="InitiJeu" visibility="public"/>
+            <UML:Operation xmi.id="op_tourJeu" name="tourJeu" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Arete -->
+        <UML:Class xmi.id="class_Arete" name="Arete" visibility="public" isAbstract="false"/>
+
+        <!-- Class Ville -->
+        <UML:Class xmi.id="class_Ville" name="Ville" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Constructionz"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class Village -->
+        <UML:Class xmi.id="class_Village" name="Village" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Constructionz"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_Joueur_Ressource" name="PossèdeRessources">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Joueur_Ressource_Joueur" type="class_Joueur" name="joueur" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Joueur_Ressource_Ressource" type="class_Ressource" name="ressource" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Enums -->
+        <UML:DataType xmi.id="Epoque" name="Epoque"/>
+        <UML:DataType xmi.id="TypeCase" name="TypeCase"/>
+        <UML:DataType xmi.id="Ressource" name="Ressource"/>
+        <UML:DataType xmi.id="Invention" name="Invention"/>
+        <UML:DataType xmi.id="Type_Point" name="Type_Point"/>
+        <UML:DataType xmi.id="Type_Arete" name="Type_Arete"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

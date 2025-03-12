@@ -1,0 +1,189 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_CMMNDI" name="CMMNDI">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_CMMNDI" name="CMMNDI" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_diagrams" name="diagrams" visibility="private" aggregation="composite">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_CMMNDiagram"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_styles" name="styles" visibility="private" aggregation="composite">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_CMMNStyle"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CMMNStyle" name="CMMNStyle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="abstract_DC_Style"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="attr_fillColor" name="fillColor" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="Color"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_strokeColor" name="strokeColor" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="Color"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_fontSize" name="fontSize" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="Integer"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_fontItalic" name="fontItalic" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="Boolean"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_fontBold" name="fontBold" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="Boolean"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_fontUnderline" name="fontUnderline" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="Boolean"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_fontStrikeThrough" name="fontStrikeThrough" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="Boolean"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CMMNDiagram" name="CMMNDiagram" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="abstract_DI_Diagram"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="attr_cmmnElementRef" name="cmmnElementRef" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_size" name="size" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_DC_Dimension"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_sharedStyle" name="sharedStyle" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_CMMNStyle"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_localStyle" name="localStyle" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_CMMNStyle"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_diagramElements" name="diagramElements" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_CMMNDiagramElement"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CMMNDiagramElement" name="CMMNDiagramElement" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="abstract_DI_DiagramElement"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="attr_cmmnElementRef" name="cmmnElementRef" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_sharedStyle" name="sharedStyle" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_CMMNStyle"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_localStyle" name="localStyle" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_CMMNStyle"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_label" name="label" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_DI_Label"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CMMNEdge" name="CMMNEdge" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="abstract_DI_Edge"/>
+            </UML:Generalization.parent>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_CMMNDiagramElement"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="attr_isStandardEventVisible" name="isStandardEventVisible" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="Boolean"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_sourceCMMNElementRef" name="sourceCMMNElementRef" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_targetCMMNElementRef" name="targetCMMNElementRef" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_cmmnElementRefEdge" name="cmmnElementRef" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.id="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CMMNShape" name="CMMNShape" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="abstract_DI_Shape"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="abstract_DC_Bounds" name="DC::Bounds" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_DC_Dimension" name="DC::Dimension" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DC_Point" name="DC::Point" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="abstract_DC_Style" name="DC::Style" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="abstract_DI_Diagram" name="DI::Diagram" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="abstract_DI_DiagramElement" name="DI::DiagramElement" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="abstract_DI_Edge" name="DI::Edge" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="abstract_DI_Shape" name="DI::Shape" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_DI_Label" name="DI::Label" visibility="public" isAbstract="false"/>
+
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="Color" name="Color"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="String" name="String"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

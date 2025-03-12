@@ -1,0 +1,300 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatypes package -->
+        <UML:Package xmi.id="p_Datatypes" name="Datatypes" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="d_int" name="int"/>
+            <UML:DataType xmi.id="d_char" name="char"/>
+            <UML:DataType xmi.id="d_bool" name="bool"/>
+            <UML:DataType xmi.id="d_float" name="float"/>
+            <UML:DataType xmi.id="d_double" name="double"/>
+            <UML:DataType xmi.id="d_short" name="short"/>
+            <UML:DataType xmi.id="d_long" name="long"/>
+            <UML:DataType xmi.id="d_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="d_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="d_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="d_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Buxon class -->
+        <UML:Class xmi.id="c_Buxon" name="Buxon" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_cache" name="cache" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="c_Cache"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="f_window" name="window" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="d_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_init" name="__init__"/>
+            <UML:Operation xmi.id="op_main" name="main"/>
+            <UML:Operation xmi.id="op_drawTree" name="drawTree"/>
+            <UML:Operation xmi.id="op_showPost" name="showPost"/>
+            <UML:Operation xmi.id="op_clean" name="clean"/>
+            <UML:Operation xmi.id="op_destroy" name="destroy"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Cache class -->
+        <UML:Class xmi.id="c_Cache" name="Cache" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_uri" name="uri" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="d_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="f_graph" name="graph" visibility="private"/>
+            <UML:Operation xmi.id="op_cache_init" name="__init__"/>
+            <UML:Operation xmi.id="op_loadMailingList" name="loadMailingList"/>
+            <UML:Operation xmi.id="op_loadAdditionalData" name="loadAdditionalData"/>
+            <UML:Operation xmi.id="op_query" name="query"/>
+            <UML:Operation xmi.id="op_getPost" name="getPost"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- CalendarWindow class -->
+        <UML:Class xmi.id="c_CalendarWindow" name="CalendarWindow" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_calWindow" name="window" visibility="private"/>
+            <UML:Attribute xmi.id="f_date" name="date" visibility="private"/>
+            <UML:Operation xmi.id="op_calWindow_init" name="__init__"/>
+            <UML:Operation xmi.id="op_getDate" name="getDate"/>
+            <UML:Operation xmi.id="op_selectDay" name="selectDay"/>
+            <UML:Operation xmi.id="op_destroy" name="destroy"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Charset class -->
+        <UML:Class xmi.id="c_Charset" name="Charset" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_charset" name="charset" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="d_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_charset_init" name="__init__"/>
+            <UML:Operation xmi.id="op_encode" name="encode">
+              <UML:Parameter name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="d_string"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- CommandLineUI class -->
+        <UML:Class xmi.id="c_CommandLineUI" name="CommandLineUI" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_cli_id" name="id" visibility="private"/>
+            <UML:Operation xmi.id="op_commandLine_init" name="__init__"/>
+            <UML:Operation xmi.id="op_usage" name="usage"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Configuration class -->
+        <UML:Class xmi.id="c_Configuration" name="Configuration" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_config" name="config" visibility="private"/>
+            <UML:Operation xmi.id="op_config_init" name="__init__"/>
+            <UML:Operation xmi.id="op_parse" name="parse"/>
+            <UML:Operation xmi.id="op_get" name="get"/>
+            <UML:Operation xmi.id="op_set" name="set"/>
+            <UML:Operation xmi.id="op_show" name="show"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Date class -->
+        <UML:Class xmi.id="c_Date" name="Date" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_date" name="date" visibility="private"/>
+            <UML:Operation xmi.id="op_date_init" name="__init__"/>
+            <UML:Operation xmi.id="op_get" name="get"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- FileDate class -->
+        <UML:Class xmi.id="c_FileDate" name="FileDate" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="c_Date"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_fileDate_date" name="date" visibility="private"/>
+            <UML:Attribute xmi.id="f_path" name="path" visibility="private"/>
+            <UML:Operation xmi.id="op_fileDate_init" name="__init__"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- FOAF class -->
+        <UML:Class xmi.id="c_FOAF" name="FOAF" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_foaf" name="foaf" visibility="private"/>
+            <UML:Attribute xmi.id="f_graph" name="graph" visibility="private"/>
+            <UML:Operation xmi.id="op_foaf_init" name="__init__"/>
+            <UML:Operation xmi.id="op_getFoaf" name="getFoaf"/>
+            <UML:Operation xmi.id="op_getGeoPosition" name="getGeoPosition"/>
+            <UML:Operation xmi.id="op_getPic" name="getPic"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- GtkUI class -->
+        <UML:Class xmi.id="c_GtkUI" name="GtkUI" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_gtkui_id" name="id" visibility="private"/>
+            <UML:Operation xmi.id="op_gtkui_init" name="__init__"/>
+            <UML:Operation xmi.id="op_usage" name="usage"/>
+            <UML:Operation xmi.id="op_alert" name="alert"/>
+            <UML:Operation xmi.id="op_destroyAlert" name="destroyAlert"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Index class -->
+        <UML:Class xmi.id="c_Index" name="Index" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_items" name="items" visibility="private"/>
+            <UML:Attribute xmi.id="f_config" name="config" visibility="private"/>
+            <UML:Operation xmi.id="op_index_init" name="__init__"/>
+            <UML:Operation xmi.id="op_add" name="add"/>
+            <UML:Operation xmi.id="op_get" name="get"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- KML class -->
+        <UML:Class xmi.id="c_KML" name="KML" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_kml_init" name="__init__"/>
+            <UML:Operation xmi.id="op_addPlace" name="addPlace"/>
+            <UML:Operation xmi.id="op_write" name="write"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- LoadProgressBar class -->
+        <UML:Class xmi.id="c_LoadProgressBar" name="LoadProgressBar" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_pb" name="pb" visibility="private"/>
+            <UML:Attribute xmi.id="f_loadProgressBar_window" name="window" visibility="private"/>
+            <UML:Operation xmi.id="op_loadProgressBar_init" name="__init__"/>
+            <UML:Operation xmi.id="op_progress" name="progress"/>
+            <UML:Operation xmi.id="op_loadProgressBar_destroy" name="destroy"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- MailDate class -->
+        <UML:Class xmi.id="c_MailDate" name="MailDate" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_mailDate_date" name="date" visibility="private"/>
+            <UML:Operation xmi.id="op_mailDate_init" name="__init__"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- MailingList class -->
+        <UML:Class xmi.id="c_MailingList" name="MailingList" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_mailingList_init" name="__init__"/>
+            <UML:Operation xmi.id="op_publish" name="publish"/>
+            <UML:Operation xmi.id="op_parse" name="parse"/>
+            <UML:Operation xmi.id="op_toRDF" name="toRDF"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Message class -->
+        <UML:Class xmi.id="c_Message" name="Message" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_message_id" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="f_messageId" name="messageId" visibility="private"/>
+            <!-- More attributes -->
+            <UML:Operation xmi.id="op_message_init" name="__init__"/>
+            <UML:Operation xmi.id="op_get" name="get*"/>
+            <UML:Operation xmi.id="op_set" name="set*"/>
+            <UML:Operation xmi.id="op_addChild" name="addChild"/>
+            <UML:Operation xmi.id="op_msg_toRDF" name="toRDF"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Place class -->
+        <UML:Class xmi.id="c_Place" name="Place" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_lat" name="lat" visibility="private"/>
+            <UML:Attribute xmi.id="f_lon" name="lon" visibility="private"/>
+            <UML:Attribute xmi.id="f_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="f_description" name="description" visibility="private"/>
+            <UML:Operation xmi.id="op_place_init" name="__init__"/>
+            <UML:Operation xmi.id="op_getName" name="getName"/>
+            <UML:Operation xmi.id="op_getDescription" name="getDescription"/>
+            <UML:Operation xmi.id="op_getCoordinates" name="getCoordinates"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Subscriber class -->
+        <UML:Class xmi.id="c_Subscriber" name="Subscriber" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_subscriber_init" name="__init__"/>
+            <UML:Operation xmi.id="op_get" name="get*"/>
+            <UML:Operation xmi.id="op_set" name="set*"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Subscribers class -->
+        <UML:Class xmi.id="c_Subscribers" name="Subscribers" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_subscribers_init" name="__init__"/>
+            <UML:Operation xmi.id="op_add" name="add"/>
+            <UML:Operation xmi.id="op_get" name="get"/>
+            <UML:Operation xmi.id="op_export" name="export"/>
+            <UML:Operation xmi.id="op_toRDF" name="toRDF"/>
+            <UML:Operation xmi.id="op_toKML" name="toKML"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- SWAML class -->
+        <UML:Class xmi.id="c_SWAML" name="SWAML" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_swaml_init" name="__init__"/>
+            <UML:Operation xmi.id="op_parseArgs" name="parseArgs"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- SwamlFoafEnricher class -->
+        <UML:Class xmi.id="c_SwamlFoafEnricher" name="SwamlFoafEnricher" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_graph" name="graph" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- SwamlKmlExporter class -->
+        <UML:Class xmi.id="c_SwamlKmlExporter" name="SwamlKmlExporter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_kmlexport_graph" name="graph" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- UI abstract class -->
+        <UML:Class xmi.id="c_UI" name="UI" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="f_ui_id" name="id" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,89 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Games" name="Games">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_game" name="game" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attributes of game -->
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_course" name="course" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <!-- ... Other Attributes ... -->
+            <UML:Attribute xmi.id="attr_attempts" name="attempts" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_game_hangman" name="game_hangman" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Attributes of game_hangman -->
+            <UML:Attribute xmi.id="attr_id_hangman" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <!-- ... Other Attributes ... -->
+            <UML:Attribute xmi.id="attr_iscorrect" name="iscorrect" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Other class definitions like game_cross, game_millionaire, game_sudoku, etc. -->
+
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_game_hangman">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game_hangman_game" type="class_game" name="game" visibility="public" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_game_hangman_game_hangman" type="class_game_hangman" name="game_hangman" visibility="public" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_game_attempts">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game_attempts_game" type="class_game" name="game" visibility="public" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_game_attempts_game_attempts" type="class_game_attempts" name="game_attempts" visibility="public" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Other association definitions for game_cross, game_millionaire, etc. -->
+        
+        <!-- Data Types -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="varchar" name="varchar"/>
+        <UML:DataType xmi.id="text" name="text"/>
+        <UML:DataType xmi.id="char" name="char"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,85 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NIEM_PIM_Profile" name="NIEM_PIM_Profile">
+      <UML:Namespace.ownedElement>
+        <!-- Importierte Profile -->
+        <UML:Package xmi.id="package_NIEM_Common_Profile" name="NIEM_Common_Profile"/>
+        <UML:Package xmi.id="package_UML_Metamodel_Reference" name="UML Metamodel Reference"/>
+        
+        <!-- Stereotyp Augments -->
+        <UML:Stereotype xmi.id="stereotype_Augments" name="Augments">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_base_Generalization" name="base_Generalization" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="UML:Generalization"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Stereotype>
+        
+        <!-- Stereotyp InformationModel -->
+        <UML:Stereotype xmi.id="stereotype_InformationModel" name="InformationModel">
+          <UML:Generalization xmi.id="gen_InformationModel_Namespace" parent="stereotype_Namespace"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_base_Package" name="base_Package" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="UML:Package"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_defaultPurpose" name="defaultPurpose" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_DefaultPurposeCode"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Stereotype>
+        
+        <!-- Stereotyp ReferenceName -->
+        <UML:Stereotype xmi.id="stereotype_ReferenceName" name="ReferenceName">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_NIEMName" name="NIEMName" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Stereotype>
+        
+        <!-- Stereotyp RoleOf -->
+        <UML:Stereotype xmi.id="stereotype_RoleOf" name="RoleOf"/>
+        
+        <!-- Stereotyp RolePlayedBy -->
+        <UML:Stereotype xmi.id="stereotype_RolePlayedBy" name="RolePlayedBy"/>
+        
+        <!-- Stereotyp Subsets -->
+        <UML:Stereotype xmi.id="stereotype_Subsets" name="Subsets">
+          <UML:Generalization xmi.id="gen_Subsets_References" parent="stereotype_References"/>
+        </UML:Stereotype>
+        
+        <!-- Enumeration DefaultPurposeCode -->
+        <UML:Enumeration xmi.id="enum_DefaultPurposeCode" name="DefaultPurposeCode">
+          <UML:Enumeration.literal>
+            <UML:Literal xmi.id="lit_subset" name="subset"/>
+            <UML:Literal xmi.id="lit_constraint" name="constraint"/>
+            <UML:Literal xmi.id="lit_exchange" name="exchange"/>
+            <UML:Literal xmi.id="lit_extension" name="extension"/>
+            <UML:Literal xmi.id="lit_incremental" name="incremental"/>
+            <UML:Literal xmi.id="lit_reference" name="reference"/>
+            <UML:Literal xmi.id="lit_replacement" name="replacement"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

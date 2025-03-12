@@ -1,0 +1,116 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StructureModel" name="StructureModel">
+      <UML:Namespace.ownedElement>
+        <UML:Interface xmi.id="interface_IObject" name="IObject" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_IObject_ToString" name="ToString" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IObject_GetType" name="GetType" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IObject_Equals" name="Equals" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IObject_Clone" name="Clone" visibility="public" isAbstract="true"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        <UML:Interface xmi.id="interface_IOperand" name="IOperand" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="interface_IOperand"/>
+            <UML:Generalization.parent xmi.idref="interface_IObject"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_IOperand_Add" name="Add" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IOperand_Substract" name="Substract" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IOperand_Multiply" name="Multiply" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IOperand_Divide" name="Divide" visibility="public" isAbstract="true"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        <UML:Interface xmi.id="interface_IType" name="IType" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_IType_get" name="get" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IType_set" name="set" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IType_getPrecision" name="getPrecision" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_IType_setPrecision" name="setPrecision" visibility="public" isAbstract="true"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        <UML:Class xmi.id="class_Int16" name="Int16" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_Int16"/>
+            <UML:Generalization.parent xmi.idref="interface_IOperand"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Int32" name="Int32" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_Int32"/>
+            <UML:Generalization.parent xmi.idref="interface_IOperand"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Float" name="Float" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_Float"/>
+            <UML:Generalization.parent xmi.idref="interface_IOperand"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Double" name="Double" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_Double"/>
+            <UML:Generalization.parent xmi.idref="interface_IOperand"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_FactoryTypes" name="FactoryTypes" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_FactoryTypes_loadDirectors" name="loadDirectors" visibility="public"/>
+            <UML:Operation xmi.id="op_FactoryTypes_cloneObject" name="cloneObject" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_LibLoader" name="LibLoader" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_LibLoader_loadLibraryDirectors" name="loadLibraryDirectors" visibility="public"/>
+            <UML:Operation xmi.id="op_LibLoader_getSymbol" name="getSymbol" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_VM" name="VM" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_VM_stack" name="_stack" visibility="private" type="stack<IObject *>" ownerScope="instance" changeability="changeable"/>
+            <UML:Operation xmi.id="op_VM_run" name="run" visibility="public"/>
+            <UML:Operation xmi.id="op_VM_getInstance" name="getInstance" visibility="public"/>
+            <UML:Operation xmi.id="op_VM_deleteInstance" name="deleteInstance" visibility="public"/>
+            <UML:Operation xmi.id="op_VM_getFactory" name="getFactory" visibility="public"/>
+            <UML:Operation xmi.id="op_VM_getStack" name="getStack" visibility="public"/>
+            <UML:Operation xmi.id="op_VM_push" name="push" visibility="public"/>
+            <UML:Operation xmi.id="op_VM_pop" name="pop" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_Parser" name="Parser" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_Parser_manageFiles" name="manageFiles" visibility="public"/>
+            <UML:Operation xmi.id="op_Parser_manageInstructions" name="manageInstructions" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_IIinstruction" name="IIinstruction" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_IIinstruction_execute" name="execute" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_Push" name="Push" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_Push"/>
+            <UML:Generalization.parent xmi.idref="class_IIinstruction"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_PrototypeInstruction" name="PrototypeInstruction" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_PrototypeInstruction_cloneInstruction" name="cloneInstruction" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

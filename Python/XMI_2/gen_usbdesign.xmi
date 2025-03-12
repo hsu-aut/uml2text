@@ -1,0 +1,191 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="USBModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Device" -->
+        <UML:Class xmi.id="Z39hj5qlA3zZ" name="Device" visibility="public" isAbstract="true"/>
+        
+        <!-- Definition der Klasse "Controller" -->
+        <UML:Class xmi.id="lj311DIuqsKD" name="Controller" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="lj311DIuqsKD"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Z39hj5qlA3zZ"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbController" -->
+        <UML:Class xmi.id="tauXlWYdAs7H" name="UsbController" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="tauXlWYdAs7H"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="lj311DIuqsKD"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbDevice" -->
+        <UML:Class xmi.id="Cm0x4P5nri37" name="UsbDevice" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="Cm0x4P5nri37"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Z39hj5qlA3zZ"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbHub" -->
+        <UML:Class xmi.id="F5BRvPJ74u9y" name="UsbHub" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="F5BRvPJ74u9y"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Cm0x4P5nri37"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbMouse" -->
+        <UML:Class xmi.id="s136FIxLUwIo" name="UsbMouse" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="s136FIxLUwIo"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Cm0x4P5nri37"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbKeyboard" -->
+        <UML:Class xmi.id="Y0ltULZMNcQa" name="UsbKeyboard" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="Y0ltULZMNcQa"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Cm0x4P5nri37"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbMultifunctionDevice" -->
+        <UML:Class xmi.id="lpGFg4Trjx5Y" name="UsbMultifunctionDevice" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="lpGFg4Trjx5Y"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Cm0x4P5nri37"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbMassStorage" -->
+        <UML:Class xmi.id="sOuNKA950PLe" name="UsbMassStorage" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="sOuNKA950PLe"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="BPZ1zdbrQbbB"/>
+            </UML:Generalization.parent>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Cm0x4P5nri37"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "UsbHumanInterface" -->
+        <UML:Class xmi.id="75n9nTCRD8vN" name="UsbHumanInterface" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="75n9nTCRD8vN"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Cm0x4P5nri37"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Disk" -->
+        <UML:Class xmi.id="BPZ1zdbrQbbB" name="Disk" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="BPZ1zdbrQbbB"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Z39hj5qlA3zZ"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbDisk" -->
+        <UML:Class xmi.id="jZJYEuz8uocB" name="UsbDisk" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="jZJYEuz8uocB"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="BPZ1zdbrQbbB"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "EhciController" -->
+        <UML:Class xmi.id="2W6yNetsPNR0" name="EhciController" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="L2YghsQwvbLr"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="F5BRvPJ74u9y"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "UsbHiSpeedHub" -->
+        <UML:Class xmi.id="L2YghsQwvbLr" name="UsbHiSpeedHub" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="L2YghsQwvbLr"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="F5BRvPJ74u9y"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>       
+        
+        <!-- Definition der Klasse "UsbBase" -->
+        <UML:Class xmi.id="2VOjwQFSIrUV" name="UsbBase" visibility="public" isAbstract="false"/>
+
+        <!-- Verschiedene primitive Datentypen -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="double" name="double"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,113 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket für die logische Ansicht und Basistypen -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Paket für Datentypen -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int" visibility="public"/>
+                <UML:DataType xmi.id="datatype_char" name="char" visibility="public"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View" visibility="public">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Akteure -->
+            <UML:Actor xmi.id="actor_applicant" name="applicant" visibility="public"/>
+            <UML:Actor xmi.id="actor_candidate" name="candidate" visibility="public">
+              <UML:Generalization xmi.id="gen_CandidateFromApplicant" child="actor_candidate" parent="actor_applicant"/>
+            </UML:Actor>
+            <UML:Actor xmi.id="actor_invigilator" name="invigilator" visibility="public"/>
+            <UML:Actor xmi.id="actor_TrainerOrg" name="Trainer Organization" visibility="public"/>
+            <UML:Actor xmi.id="actor_Certible" name="Certible" visibility="public"/>
+            <UML:Actor xmi.id="actor_SchemeOwner" name="Scheme owner" visibility="public"/>
+
+            <!-- Anwendungsfälle -->
+            <UML:UseCase xmi.id="useCase_cert" name="cert" visibility="public"/>
+            <UML:UseCase xmi.id="useCase_Apply" name="Apply" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_applicant"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_CheckPrerequisites" name="Check prerequisites" visibility="public">
+              <UML:Dependency xmi.id="dep_CheckPrereqToApply" client="useCase_CheckPrerequisites" supplier="useCase_Apply"/>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_TakeExam" name="Take exam" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_candidate"/>
+                <UML:Actor xmi.idref="actor_invigilator"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_RequestExamDate" name="Request exam date and place" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_TrainerOrg"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_CreateExam" name="Create exam" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_Certible"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_PublishExams" name="Publish scheduled examinations" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_Certible"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_TransferExamFiles" name="Transfer exam files" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_invigilator"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_EvaluateExam" name="Evaluate exam" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_Certible"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_CreateCertificates" name="Create certificates" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_Certible"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_CreateInvoice" name="Create Invoice" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_Certible"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_Reporting" name="Reporting" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_Certible"/>
+                <UML:Actor xmi.idref="actor_SchemeOwner"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_ViewTestResults" name="View test results" visibility="public">
+              <UML:UseCase.associatedActor>
+                <UML:Actor xmi.idref="actor_candidate"/>
+              </UML:UseCase.associatedActor>
+            </UML:UseCase>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,144 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SchemaGraph" name="SchemaGraph">
+      <UML:Namespace.ownedElement>
+
+        <UML:Enumeration xmi.id="enum_IncidenceDirection" name="IncidenceDirection" visibility="public" isAbstract="false">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_IN" name="IN"/>
+            <UML:EnumerationLiteral xmi.id="literal_OUT" name="OUT"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_AggregationKind" name="AggregationKind" visibility="public" isAbstract="false">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_NONE" name="NONE"/>
+            <UML:EnumerationLiteral xmi.id="literal_SHARED" name="SHARED"/>
+            <UML:EnumerationLiteral xmi.id="literal_COMPOSITE" name="COMPOSITE"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        
+        <UML:Class xmi.id="class_PrimitiveTypes" name="PrimitiveTypes" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_Set" name="Set&lt;String>"/>
+            <UML:DataType xmi.id="datatype_List" name="List&lt;String>"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_NamedElement" name="NamedElement" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_qualifiedName" name="qualifiedName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_comment" name="comment" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Comment"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Comment" name="Comment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_text" name="text" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_IncidenceClass" name="IncidenceClass" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_min" name="min" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_max" name="max" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_roleName" name="roleName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_aggregation" name="aggregation" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_AggregationKind"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_derivedDirection" name="derivedDirection" visibility="private" isDerived="true">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_IncidenceDirection"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_VertexClass" name="VertexClass" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_VertexClass_GraphElementClass" parent="class_GraphElementClass"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EdgeClass" name="EdgeClass" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_EdgeClass_GraphElementClass" parent="class_GraphElementClass"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GraphElementClass" name="GraphElementClass" visibility="public" isAbstract="true">
+          <UML:Generalization xmi.id="gen_GraphElementClass_AttributedElementClass" parent="class_AttributedElementClass"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AttributedElementClass" name="AttributedElementClass" visibility="public" isAbstract="true">
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_GraphClass" name="GraphClass" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Domain" name="Domain" visibility="public" isAbstract="true">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CollectionDomain" name="CollectionDomain" visibility="public" isAbstract="true">
+          <UML:Generalization xmi.id="gen_CollectionDomain_Domain" parent="class_Domain"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Attribute" name="Attribute" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_defaultValue" name="defaultValue" visibility="private" isDerived="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Package" name="Package" visibility="public" isAbstract="true">
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Annotates" name="Annotates">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Comment_NamedElement" type="class_Comment" name="comment" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_NamedElement_CommentedElement" type="class_NamedElement" name="commentedElement" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

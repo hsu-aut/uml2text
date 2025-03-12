@@ -1,0 +1,93 @@
+```xml
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id = "model_EAModel" name = "EA Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Study" -->
+        <UML:Class xmi.id = "class_Study" name = "Study" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+            <UML:Association xmi.id = "assoc_Study_Investigator">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id = "assocEnd_Study_Investigator_Study" type = "class_Study" name = "study" visibility = "public"/>
+                <UML:AssociationEnd xmi.id = "assocEnd_Study_Investigator_Investigator" type = "class_Investigator" name = "investigator" visibility = "public"/>
+              </UML:Association.connection>
+              <UML:TaggedValue tag = "name" value = "is_principal_investigator_of"/>
+            </UML:Association>
+            <UML:Association xmi.id = "assoc_Study_StudyProtocol">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id = "assocEnd_Study_StudyProtocol_Study" type = "class_Study" name = "study" visibility = "public"/>
+                <UML:AssociationEnd xmi.id = "assocEnd_Study_StudyProtocol_StudyProtocol" type = "class_StudyProtocol" name = "studyProtocol" visibility = "public"/>
+              </UML:Association.connection>
+              <UML:TaggedValue tag = "name" value = "has_study_protocol"/>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "StudyProtocol" -->
+        <UML:Class xmi.id = "class_StudyProtocol" name = "StudyProtocol" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = "attr_public_title" name = "public_title" visibility = "private"/>
+            <UML:Association xmi.id = "assoc_StudyProtocol_Outcome">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id = "assocEnd_StudyProtocol_Outcome_StudyProtocol" type = "class_StudyProtocol" name = "studyProtocol" visibility = "public"/>
+                <UML:AssociationEnd xmi.id = "assocEnd_StudyProtocol_Outcome_Outcome" type = "class_Outcome" name = "outcome" visibility = "public"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Outcome" -->
+        <UML:Class xmi.id = "class_Outcome" name = "Outcome" visibility = "public" isAbstract = "false">
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Investigator" -->
+        <UML:Class xmi.id = "class_Investigator" name = "Investigator" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = "attr_firstName" name = "FirstName" visibility = "private"/>
+            <UML:Attribute xmi.id = "attr_lastName" name = "LastName" visibility = "private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Subject" -->
+        <UML:Class xmi.id = "class_Subject" name = "Subject" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+            <UML:Association xmi.id = "assoc_Subject_Study">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id = "assocEnd_Subject_Study_Subject" type = "class_Subject" name = "subject" visibility = "public"/>
+                <UML:AssociationEnd xmi.id = "assocEnd_Subject_Study_Study" type = "class_Study" name = "study" visibility = "public"/>
+              </UML:Association.connection>
+              <UML:TaggedValue tag = "name" value = "study_subject"/>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Terminology_code" -->
+        <UML:Class xmi.id = "class_Terminology_code" name = "Terminology_code" visibility = "public" isAbstract = "false">
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Expression" -->
+        <UML:Class xmi.id = "class_Expression" name = "Expression" visibility = "public" isAbstract = "false">
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Statistical_analysis" -->
+        <UML:Class xmi.id = "class_Statistical_analysis" name = "Statistical_analysis" visibility = "public" isAbstract = "false">
+        </UML:Class>
+
+        <!-- Generalisierungen -->
+        <UML:Generalization xmi.id = "gen_Study_characteristic" parent = "Entity" child = "Study_characteristic"/>
+        <UML:Generalization xmi.id = "gen_Information_entity" parent = "Information_entity" child = "..."/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

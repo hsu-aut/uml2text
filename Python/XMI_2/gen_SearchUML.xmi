@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomUMLTool</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_QSearchWindow" name="QSearchWindow" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="interface_Observer"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FileSearcher" name="FileSearcher" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_StartSearch" name="StartSearch" visibility="public"/>
+            <UML:Operation xmi.id="op_GetNextFinded" name="GetNextFinded" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Association xmi.idref="assoc_FileSearcher_PlainTextExtractor"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_MultiPatternMatcher" name="MultiPatternMatcher" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_SetPatterns" name="SetPatterns" visibility="public"/>
+            <UML:Operation xmi.id="op_CheckText" name="CheckText" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Association xmi.idref="assoc_MultiPatternMatcher_PatternMatcher"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_PatternMatcher" name="PatternMatcher" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Observable"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Dependency supplier="class_Cz7yXkxI6jgR"/>
+          <UML:Dependency supplier="class_6PmyLGslKBhn"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_PlainTextDocument" name="PlainTextDocument" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_GetText" name="GetText" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_PlainTextExtractor" name="PlainTextExtractor" visibility="public" isAbstract="false">
+          <UML:Dependency supplier="class_q2LAlVhLQZ80"/>
+          <UML:Dependency supplier="class_Cz7yXkxI6jgR"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SearchFacade" name="SearchFacade" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_Start" name="Start" visibility="public"/>
+            <UML:Operation xmi.id="op_Stop" name="Stop" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Dependency supplier="class_PatternMatcher"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Observable" name="Observable" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_AddObserver" name="AddObserver" visibility="public"/>
+            <UML:Operation xmi.id="op_Notify" name="Notify" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FindFilesQueue_Singleton" name="FindedFilesQueue_Singleton" visibility="public" isAbstract="false">
+          <UML:Association xmi.idref="assoc_FindFilesQueue_Singleton_FileSearcher"/>
+          <UML:Association xmi.idref="assoc_FindFilesQueue_Singleton_mt_queue"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_mt_queue" name="mt_queue" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_queue"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_queue" name="queue" visibility="public" isAbstract="false"/>
+        
+        <UML:Interface xmi.id="interface_Observer" name="Observer" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_FileSearcher_PlainTextExtractor" name="FileSearcher_PlainTextExtractor">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_FileSearcher" multiplicity="1"/>
+            <UML:AssociationEnd type="class_PlainTextExtractor" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_MultiPatternMatcher_PatternMatcher" name="MultiPatternMatcher_PatternMatcher">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_MultiPatternMatcher" multiplicity="1"/>
+            <UML:AssociationEnd type="class_PatternMatcher" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_FindFilesQueue_Singleton_FileSearcher" name="FindFilesQueue_Singleton_FileSearcher">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_FindFilesQueue_Singleton" multiplicity="1"/>
+            <UML:AssociationEnd type="class_FileSearcher" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_FindFilesQueue_Singleton_mt_queue" name="FindFilesQueue_Singleton_mt_queue">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_FindFilesQueue_Singleton" multiplicity="1"/>
+            <UML:AssociationEnd type="class_mt_queue" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

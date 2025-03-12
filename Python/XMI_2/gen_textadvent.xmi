@@ -1,0 +1,100 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GameModel" name="GameModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "CGame" -->
+        <UML:Class xmi.id="class_CGame" name="CGame" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_CGame_constructor" name="CGame" visibility="public">
+              <UML:Parameter xmi.id="param_CGame_pFilename" name="pFilename" kind="in" type="char*"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_start" name="start" visibility="public"/>
+            <UML:Operation xmi.id="operation_CGame_destructor" name="{~CGame}" visibility="public"/>
+            <UML:Attribute xmi.id="attr_fin" name="fin" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="ifstream"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_Room" name="m_Room" visibility="private" aggregation="aggregate">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_CRoom"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "CRoom" -->
+        <UML:Class xmi.id="class_CRoom" name="CRoom" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_CRoom_constructor" name="CRoom" visibility="public">
+              <UML:Parameter xmi.id="param_CRoom_pfin" name="pfin" kind="in" type="ifstream&"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_readRoomInfo" name="readRoomInfo" visibility="public">
+              <UML:Parameter xmi.id="param_aRoom" name="aRoom" kind="in" type="string&"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_getCurrentRoom" name="getCurrentRoom" visibility="public"/>
+            <UML:Operation xmi.id="operation_getRoomNorth" name="getRoomNorth" visibility="public"/>
+            <UML:Operation xmi.id="operation_getRoomSouth" name="getRoomSouth" visibility="public"/>
+            <UML:Operation xmi.id="operation_getRoomWest" name="getRoomWest" visibility="public"/>
+            <UML:Operation xmi.id="operation_getRoomEast" name="getRoomEast" visibility="public"/>
+            <UML:Operation xmi.id="operation_moveto" name="moveto" visibility="public">
+              <UML:Parameter xmi.id="param_moveto_aRoom" name="aRoom" kind="in" type="string&"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_display" name="display" visibility="public"/>
+            <UML:Attribute xmi.id="attr_strCurrentRoom" name="strCurrentRoom" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_strRoomDescription" name="strRoomDescription" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_strRoomNorth" name="strRoomNorth" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_strRoomEast" name="strRoomEast" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_strRoomSouth" name="strRoomSouth" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_strRoomWest" name="strRoomWest" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fin" name="fin" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="ifstream&"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="ifstream" name="ifstream"/>
+        <UML:DataType xmi.id="string" name="string"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

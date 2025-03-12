@@ -1,0 +1,84 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TreeStructure" name="TreeStructure">
+      <UML:Namespace.ownedElement>
+
+        <!-- Datatypes -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        
+        <!-- Interfaces -->
+        <UML:Interface xmi.id="interface_TreeNode" name="TreeNode"/>
+        <UML:Interface xmi.id="interface_MutableTreeNode" name="MutableTreeNode">
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_TreeNode"/>
+          </UML:Generalization>
+        </UML:Interface>
+        <UML:Interface xmi.id="interface_TreeModel" name="TreeModel"/>
+        <UML:Interface xmi.id="interface_TreeCheckingModel" name="TreeCheckingModel"/>
+        <UML:Interface xmi.id="interface_TreeCellRenderer" name="TreeCellRenderer"/>
+        <UML:Interface xmi.id="interface_TreeSelectionModel" name="TreeSelectionModel"/>
+        <UML:Interface xmi.id="interface_CheckableTreeNode" name="CheckableTreeNode"/>
+        <UML:Interface xmi.id="interface_CheckBoxTreeCellRenderer" name="CheckBoxTreeCellRenderer"/>
+
+        <!-- Classes -->
+        <UML:Class xmi.id="class_DefaultMutableTreeNode" name="DefaultMutableTreeNode" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_MutableTreeNode"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DefaultTreeModel" name="DefaultTreeModel" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_TreeModel"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_JTree" name="JTree" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_CheckboxTree" name="CheckboxTree" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_JTree"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QuadristateCheckBox" name="QuadristateCheckBox" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_JCheckBox" name="JCheckBox" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_QuadristateButtonModel" name="QuadristateButtonModel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DefaultButtonModel" name="DefaultButtonModel" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_DefaultTreeSelectionModel" name="DefaultTreeSelectionModel" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_TreeSelectionModel"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DefaultTreeCellRenderer" name="DefaultTreeCellRenderer" visibility="public" isAbstract="false"/>
+
+        <!-- Specialized TreeCheckingMode Classes -->
+        <UML:Class xmi.id="class_SimpleTreeCheckingMode" name="SimpleTreeCheckingMode" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_FullRecursiveTreeCheckingMode" name="FullRecursiveTreeCheckingMode" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DownRecursiveTreeCheckingMode" name="DownRecursiveTreeCheckingMode" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_CheckedFullRecursiveTreeCheckingMode" name="CheckedFullRecursiveTreeCheckingMode" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

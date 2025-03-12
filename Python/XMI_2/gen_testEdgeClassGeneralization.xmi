@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ComplexModel" name="ComplexModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse MyGraphClass -->
+        <UML:Class xmi.id="class_MyGraphClass" name="MyGraphClass" visibility="public"/>
+
+        <!-- Definition der Klasse Aa -->
+        <UML:Class xmi.id="class_Aa" name="Aa" visibility="public"/>
+
+        <!-- Definition der Klasse Oa -->
+        <UML:Class xmi.id="class_Oa" name="Oa" visibility="public"/>
+
+        <!-- Definition der Klasse Ab -->
+        <UML:Class xmi.id="class_Ab" name="Ab" visibility="public"/>
+
+        <!-- Definition der Klasse Ob -->
+        <UML:Class xmi.id="class_Ob" name="Ob" visibility="public"/>
+
+        <!-- Definition der Super- und Sub-Klassen -->
+        <UML:Class xmi.id="class_SuperA" name="SuperA" visibility="public"/>
+        <UML:Class xmi.id="class_SubA" name="SubA" visibility="public"/>
+        <UML:Class xmi.id="class_SuperO" name="SuperO" visibility="public"/>
+        <UML:Class xmi.id="class_SubO" name="SubO" visibility="public"/>
+        <UML:Class xmi.id="class_SubAO" name="SubAO" visibility="public"/>
+        <UML:Class xmi.id="class_SuperAO" name="SuperAO" visibility="public"/>
+
+        <!-- Generalisierungen -->
+        <UML:Generalization xmi.id="gen_SubA_SuperA">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_SubA"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_SuperA"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="gen_SubO_SuperO">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_SubO"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_SuperO"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="gen_SubAO_SubA">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_SubAO"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_SubA"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="gen_SubAO_SubO">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_SubAO"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_SubO"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="gen_SuperAO_SuperA">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_SuperAO"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_SuperA"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="gen_SuperAO_SuperO">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_SuperAO"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_SuperO"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Aa_Oa">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Aa_Oa_Aa" type="class_Aa" name="Aa" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Aa_Oa_Oa" type="class_Oa" name="Oa" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Ab_Ob">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Ab_Ob_Ab" type="class_Ab" name="Ab" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Ab_Ob_Ob" type="class_Ob" name="Ob" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

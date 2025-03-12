@@ -1,0 +1,111 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_constCharPtr" name="const char*"/>
+            <UML:DataType xmi.id="datatype_constStringDataRef" name="const StringData&"/>
+            <UML:DataType xmi.id="datatype_constSStringRef" name="const SString&"/>
+            <UML:DataType xmi.id="datatype_SStringRef" name="SString&"/>
+            <UML:DataType xmi.id="datatype_stdOstreamRef" name="std::ostream&"/>
+            <UML:DataType xmi.id="datatype_QSharedDataPointer_StringData" name="QSharedDataPointer<StringData>"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Klasse QSharedData -->
+        <UML:Class xmi.id="class_QSharedData" name="QSharedData" visibility="public" isAbstract="false"/>
+
+        <!-- Klasse MyString (als Basisklasse für StringData) -->
+        <UML:Class xmi.id="class_MyString" name="MyString" visibility="public" isAbstract="false"/>
+        
+        <!-- Klasse StringData -->
+        <UML:Class xmi.id="class_StringData" name="StringData" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_StringData"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_QSharedData"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_StringData"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_MyString"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="constructor_StringData_constCharPtr" name="StringData" visibility="public">
+              <UML:Parameter name="value" kind="in" type="const char*"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="constructor_StringData_int" name="StringData" visibility="public">
+              <UML:Parameter name="value" kind="in" type="int"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="constructor_StringData_constStringDataRef" name="StringData" visibility="public">
+              <UML:Parameter name="value" kind="in" type="const StringData&"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klasse SString -->
+        <UML:Class xmi.id="class_SString" name="SString" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_m_d" name="m_d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_QSharedDataPointer_StringData"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="constructor_SString_int" name="SString" visibility="public">
+              <UML:Parameter name="value" kind="in" type="int"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="constructor_SString_constCharPtr" name="SString" visibility="public">
+              <UML:Parameter name="value" kind="in" type="const char*"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_operatorPlusEqual" name="operator +=" visibility="public">
+              <UML:Parameter name="value" kind="in" type="const SString&"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_length" name="length" visibility="public" isQuery="true">
+              <UML:Parameter name="return" kind="return" type="int"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klasse std::ostream (I/O-Operationen) -->
+        <UML:Class xmi.id="class_std_ostream" name="std::ostream" visibility="public" isAbstract="false"/>
+
+        <!-- Klasse qlonglong -->
+        <UML:Class xmi.id="class_qlonglong" name="qlonglong" visibility="public" isAbstract="false"/>
+
+        <!-- Klasse QSharedDataPointer -->
+        <UML:Class xmi.id="class_QSharedDataPointer" name="QSharedDataPointer" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

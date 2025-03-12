@@ -1,0 +1,72 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_arbaro" name="arbaro">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Hauptklassen -->
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ParamManager" name="ParamManager" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TreeModelGenerator" name="TreeModelGenerator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TreeGenerator" name="TreeGenerator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TreeModel" name="TreeModel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_MeshObjViewer" name="MeshObjViewer" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ParamEditor" name="ParamEditor" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_arbaro_cmd" name="arbaro_cmd" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_arbaro_gui" name="arbaro_gui" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Transformations" name="Transformations" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_3DFormatWriter" name="3DFormatWriter" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ExportDlg" name="ExportDlg" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ParamFileDlg" name="ParamFileDlg" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TreeModeler" name="TreeModeler" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Modeler" name="Modeler" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ModelerGUI" name="ModelerGUI" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TreeExporter" name="TreeExporter" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TreeModelGeneratorImpl" name="TreeModelGeneratorImpl" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_LeafGenerator" name="LeafGenerator" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Interfaces -->
+        <UML:Interface xmi.id="interface_3DFormatWriter" name="3DFormatWriter" visibility="public"/>
+        <UML:Interface xmi.id="interface_Model" name="Model" visibility="public">
+          <UML:Operation xmi.id="op_getLayers" name="getLayers" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="op_getVertices" name="getVertices" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+        <UML:Interface xmi.id="interface_ParamPersistence" name="ParamPersistence" visibility="public"/>
+        <UML:Interface xmi.id="interface_Params" name="Params" visibility="public"/>
+        <UML:Interface xmi.id="interface_ModelerConfig" name="ModelerConfig" visibility="public"/>
+        <UML:Interface xmi.id="interface_Leaf" name="Leaf" visibility="public">
+          <UML:Operation xmi.id="op_traverseTree" name="traverseTree" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+        <UML:Interface xmi.id="interface_Segment" name="Segment" visibility="public">
+          <UML:Operation xmi.id="op_traverseStem" name="traverseStem" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+        <UML:Interface xmi.id="interface_Stem" name="Stem" visibility="public"/>
+        <UML:Interface xmi.id="interface_Edge" name="Edge" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeExporterConfig" name="TreeExporterConfig" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeGenerator" name="TreeGenerator" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeGeneratorConfig" name="TreeGeneratorConfig" visibility="public"/>
+        <UML:Interface xmi.id="interface_Configurations" name="Configurations" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeModelerConfig" name="TreeModelerConfig" visibility="public"/>
+        <UML:Interface xmi.id="interface_TreeTraversal" name="TreeTraversal" visibility="public"/>
+        <UML:Interface xmi.id="interface_StemTraversal" name="StemTraversal" visibility="public"/>
+
+        <!-- Beispiel Assoziation -->
+        <UML:Association xmi.id="assoc_Model_ParamManager">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Model" type="class_Model" name="model" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ParamManager" type="class_ParamManager" name="paramManager" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,87 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NIEM_PSM_Profile" name="NIEM_PSM_Profile">
+      <UML:Namespace.ownedElement>
+        
+        <!-- XSDRepresentationRestriction -->
+        <UML:Class xmi.id="class_XSDRepresentationRestriction" name="XSDRepresentationRestriction" visibility="public" isAbstract="false" stereotype="Stereotype">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_whiteSpace" name="whiteSpace" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDWhiteSpaceCode"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDPropertyKindCode -->
+        <UML:Enumeration xmi.id="enum_XSDPropertyKindCode" name="XSDPropertyKindCode">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="lit_Element" name="Element"/>
+            <UML:EnumerationLiteral xmi.id="lit_Attribute" name="Attribute"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+
+        <!-- XSDProperty -->
+        <UML:Class xmi.id="class_XSDProperty" name="XSDProperty" visibility="public" isAbstract="false" stereotype="Stereotype"/>
+
+        <!-- XSDSimpleContent -->
+        <UML:Class xmi.id="class_XSDSimpleContent" name="XSDSimpleContent" visibility="public" isAbstract="false" stereotype="Stereotype"/>
+
+        <!-- XSDAnyProperty -->
+        <UML:Class xmi.id="class_XSDAnyProperty" name="XSDAnyProperty" visibility="public" isAbstract="false" stereotype="Stereotype"/>
+
+        <!-- SequenceID -->
+        <UML:Class xmi.id="class_SequenceID" name="SequenceID" visibility="public" isAbstract="false" stereotype="Stereotype">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_SequenceID_value" name="sequenceID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- XSDWhiteSpaceCode -->
+        <UML:Enumeration xmi.id="enum_XSDWhiteSpaceCode" name="XSDWhiteSpaceCode">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="lit_replace" name="replace"/>
+            <UML:EnumerationLiteral xmi.id="lit_collapse" name="collapse"/>
+            <UML:EnumerationLiteral xmi.id="lit_preserve" name="preserve"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+
+        <!-- XSDProcessContentsCode -->
+        <UML:Enumeration xmi.id="enum_XSDProcessContentsCode" name="XSDProcessContentsCode">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="lit_strict" name="strict"/>
+            <UML:EnumerationLiteral xmi.id="lit_lax" name="lax"/>
+            <UML:EnumerationLiteral xmi.id="lit_skip" name="skip"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+
+        <!-- XSDDeclaration -->
+        <UML:Class xmi.id="class_XSDDeclaration" name="XSDDeclaration" visibility="public" isAbstract="false" stereotype="Stereotype"/>
+      
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_XSDPropertyKindCode_XSDProperty" name="XSDPropertyKindCode-Property" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_XSDPropertyKindCode" type="enum_XSDPropertyKindCode" name="kind" visibility="public" aggregation="none" multiplicity="1..1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XSDProperty" type="class_XSDProperty" name="property" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

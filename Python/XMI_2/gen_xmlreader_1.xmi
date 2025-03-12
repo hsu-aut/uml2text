@@ -1,0 +1,65 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+      <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+      <UML:Stereotype xmi.id="stereotype_friend" name="friend"/>
+      <UML:Stereotype xmi.id="stereotype_virtual" name="virtual"/>
+      
+      <UML:DataType xmi.id="datatype_int" name="int"/>
+      <UML:DataType xmi.id="datatype_char" name="char"/>
+      <UML:DataType xmi.id="datatype_bool" name="bool"/>
+      <UML:DataType xmi.id="datatype_float" name="float"/>
+      <UML:DataType xmi.id="datatype_double" name="double"/>
+      <UML:DataType xmi.id="datatype_long" name="long"/>
+      <UML:DataType xmi.id="datatype_short" name="short"/>
+      <UML:DataType xmi.id="datatype_string" name="string"/>
+      
+      <UML:Class xmi.id="class_QXmlReader" name="QXmlReader" visibility="public" isAbstract="true">
+        <UML:Namespace.ownedElement>
+          <UML:Operation xmi.id="operation_parse" name="parse" visibility="public" isAbstract="true"/>
+        </UML:Namespace.ownedElement>
+      </UML:Class>
+      
+      <UML:Class xmi.id="class_QXmlSimpleReader" name="QXmlSimpleReader" visibility="public">
+      </UML:Class>
+      <UML:Generalization xmi.id="generalization_19" child="class_QXmlSimpleReader" parent="class_QXmlReader"/>
+
+      <UML:Class xmi.id="class_QXmlContentHandler" name="QXmlContentHandler" visibility="public" isAbstract="true">
+        <UML:Namespace.ownedElement>
+          <UML:Operation xmi.id="operation_startDocument" name="startDocument" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="operation_endDocument" name="endDocument" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="operation_startElement" name="startElement" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="operation_endElement" name="endElement" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="operation_characters" name="characters" visibility="public" isAbstract="true"/>
+        </UML:Namespace.ownedElement>
+      </UML:Class>
+
+      <UML:Class xmi.id="class_QXmlDefaultHandler" name="QXmlDefaultHandler" visibility="public">
+      </UML:Class>
+      <UML:Generalization xmi.id="generalization_25" child="class_QXmlDefaultHandler" parent="class_QXmlContentHandler"/>
+
+      <UML:Class xmi.id="class_MyHandler" name="MyHandler" visibility="public">
+      </UML:Class>
+      <UML:Generalization xmi.id="generalization_22" child="class_MyHandler" parent="class_QXmlDefaultHandler"/>
+
+      <UML:Association xmi.id="assoc_QXmlSimpleReader_QXmlContentHandler">
+        <UML:Association.connection>
+          <UML:AssociationEnd xmi.id="assocEnd_Reader_Handler_Reader" type="class_QXmlSimpleReader" name="simpleReader" visibility="public" aggregation="none"/>
+          <UML:AssociationEnd xmi.id="assocEnd_Reader_Handler_Handler" type="class_QXmlContentHandler" name="contentHandler" visibility="public" aggregation="aggregate"/>
+        </UML:Association.connection>
+      </UML:Association>
+
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

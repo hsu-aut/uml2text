@@ -1,0 +1,75 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NIEM_PIM_Profile" name="NIEM_PIM_Profile">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Augments" name="Augments" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Features of Augments might be defined here -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_InformationModel" name="InformationModel" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.classifier>
+              <UML:Class xmi.idref="namespace_NIEM_Common_Profile"/>
+            </UML:Generalization.classifier>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ReferenceName" name="ReferenceName" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_NIEMName" name="NIEMName" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RoleOf" name="RoleOf" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_IsReference" name="isReference" visibility="private" isSpecification="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RolePlayedBy" name="RolePlayedBy" visibility="public" isAbstract="false">
+          <!-- Define RolePlayedBy features if necessary -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Subsets" name="Subsets" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.classifier>
+              <UML:Class xmi.idref="stereotype_References_NIEM_Common_Profile"/>
+            </UML:Generalization.classifier>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Generalization xmi.id="gen_Augments" child="class_Augments">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_Generalization"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="gen_RolePlayedBy" child="class_RolePlayedBy">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_Generalization"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="gen_InformationModel" child="class_InformationModel">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="namespace_NIEM_Common_Profile"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

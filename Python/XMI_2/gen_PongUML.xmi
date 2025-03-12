@@ -1,0 +1,164 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+
+        <!-- Stereotypes -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LV" name="Logical View">
+
+          <!-- Datatypes Package -->
+          <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+            <UML:Namespace.ownedElement>
+              <UML:DataType xmi.id="datatype_int" name="int"/>
+              <UML:DataType xmi.id="datatype_char" name="char"/>
+              <UML:DataType xmi.id="datatype_bool" name="bool"/>
+              <UML:DataType xmi.id="datatype_float" name="float"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+
+          <!-- Classes -->
+          <UML:Class xmi.id="class_Pong" name="Pong" visibility="public" isAbstract="false">
+            <UML:Association xmi.id="assoc_Pong_Game" type="class_Game"/>
+            <UML:Association xmi.id="assoc_Pong_GUI" type="class_GUI"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_GUI" name="GUI" visibility="public" isAbstract="false" >
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_JPanel"/>
+            </UML:Generalization>
+            <UML:Association xmi.id="assoc_GUI_Pong" type="class_Pong"/>
+            <UML:Stereotype xmi.idref="stereotype_interface"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Game" name="Game" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_Runnable"/>
+            </UML:Generalization>
+            <UML:Association xmi.id="assoc_Game_Pong" type="class_Pong"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_GameObject" name="GameObject" visibility="public" isAbstract="false">
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private" type="datatype_double"/>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private" type="datatype_double"/>
+            <UML:Dependency xmi.id="dep_GameObject_Drawable" supplier="interface_Drawable"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Paddle" name="Paddle" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_GameObject"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Ball" name="Ball" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_GameObject"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Rectangle" name="Rectangle" visibility="public" isAbstract="false">
+            <UML:Association xmi.id="assoc_Rectangle_GameObject" type="class_GameObject"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Wall" name="Wall" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_GameObject"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Goal" name="Goal" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_GameObject"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Player1Paddle" name="Player1Paddle" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_Paddle"/>
+            </UML:Generalization>
+            <UML:Association xmi.id="assoc_Player1Paddle_KeyListener" type="class_KeyListener"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Player2Paddle" name="Player2Paddle" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_Paddle"/>
+            </UML:Generalization>
+            <UML:Association xmi.id="assoc_Player2Paddle_KeyListener" type="class_KeyListener"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_KeyListener" name="KeyListener" visibility="public" isAbstract="false">
+            <UML:Association xmi.id="assoc_KeyListener_Game" type="class_Game"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Bonus" name="Bonus" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_GameObject"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_MenuSelection" name="MenuSelection" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_GameObject"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_MenuText" name="MenuText" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_GameObject"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_Particle" name="Particle" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_GameObject"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_HumVsCompGame" name="HumVsCompGame" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_Game"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_HumVsHumGame" name="HumVsHumGame" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_Game"/>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="class_SkitsoGame" name="SkitsoGame" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Class xmi.idref="class_Game"/>
+            </UML:Generalization>
+          </UML:Class>
+
+        </UML:Package>
+
+        <!-- Interfaces -->
+        <UML:Interface xmi.id="interface_Drawable" name="Drawable" visibility="public"/>
+
+        <!-- Other Classes -->
+        <UML:Class xmi.id="class_JFrame" name="JFrame" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_JPanel" name="JPanel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Runnable" name="Runnable" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Thread" name="Thread" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_MainMenu" name="MainMenu" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

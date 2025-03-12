@@ -1,0 +1,63 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_unbenanntesModell" name="unbenanntesModell">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Kollaboration -->
+        <UML:Collaboration xmi.id="collaboration_unattachedCollaboration" name="unattachedCollaboration">
+          <UML:Collaboration.contents>
+            <!-- Definition der Rolle "user" -->
+            <UML:ClassifierRole xmi.id="role_user" name="user" multiplicity="1">
+              <UML:ClassifierRole.base>
+                <!-- Basis-Klasse für user -->
+              </UML:ClassifierRole.base>
+            </UML:ClassifierRole>
+
+            <!-- Definition der Rolle "submission" -->
+            <UML:ClassifierRole xmi.id="role_submission" name="submission" multiplicity="1">
+              <UML:ClassifierRole.base>
+                <!-- Basis-Klasse für submission -->
+              </UML:ClassifierRole.base>
+            </UML:ClassifierRole>
+
+            <!-- Definition der Assoziationsrolle -->
+            <UML:AssociationRole xmi.id="assoc_role_user_submission" name="user-submission">
+              <UML:AssociationRole.connection>
+                <UML:AssociationEndRole xmi.id="assoc_end_user" type="role_user"/>
+                <UML:AssociationEndRole xmi.id="assoc_end_submission" type="role_submission"/>
+              </UML:AssociationRole.connection>
+              
+              <!-- Definition der Nachricht "createSubmission" -->
+              <UML:Message xmi.id="message_createSubmission" name="createSubmission" sender="role_user" receiver="role_submission">
+                <UML:Message.action>
+                  <UML:CreateAction/>
+                </UML:Message.action>
+              </UML:Message>
+              
+              <!-- Definition der Nachricht "submit" -->
+              <UML:Message xmi.id="message_submit" name="submit" sender="role_submission" receiver="role_submission">
+                <UML:Message.action>
+                  <UML:CallAction/>
+                </UML:Message.action>
+                <UML:Message.predecessor>
+                  <UML:Message xmi.idref="message_createSubmission"/>
+                </UML:Message.predecessor>
+              </UML:Message>
+            </UML:AssociationRole>
+          </UML:Collaboration.contents>
+        </UML:Collaboration>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

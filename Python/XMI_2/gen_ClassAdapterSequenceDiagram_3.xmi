@@ -1,0 +1,71 @@
+```xml
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name = "UML" xmi.version = "1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id = 'Model_untitledModel' name = 'untitledModel'>
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Schnittstelle "ILoginable" -->
+        <UML:Interface xmi.id = 'interface_ILoginable' name = 'ILoginable' visibility = 'public'>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id = 'interface_ILoginable_operation_Login' name = 'Login' visibility = 'public'/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <!-- Definition der Klasse "FacebookService" -->
+        <UML:Class xmi.id = 'class_FacebookService' name = 'FacebookService' visibility = 'public'>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id = 'class_FacebookService_operation_Login' name = 'Login' visibility = 'public'>
+              <UML:Parameter xmi.id = 'class_FacebookService_operation_Login_param' name = 'params' kind = 'in'/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "User" -->
+        <UML:Class xmi.id = 'class_User' name = 'User' visibility = 'public'>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "FBAdapter" -->
+        <UML:Class xmi.id = 'class_FBAdapter' name = 'FBAdapter' visibility = 'public'>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id = 'class_FBAdapter_operation_Login' name = 'Login' visibility = 'public'/>
+            <UML:Operation xmi.id = 'class_FBAdapter_operation_LoginResult' name = 'LoginResult' visibility = 'public'/>
+            <UML:Attribute xmi.id = 'class_FBAdapter_attribute_LoggedInUser' name = 'LoggedInUser' visibility = 'private' type = 'class_User'/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "MainWindow" -->
+        <UML:Class xmi.id = 'class_MainWindow' name = 'MainWindow' visibility = 'public'>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id = 'class_MainWindow_attribute_m_FBAdapter' name = 'm_FBAdapter' visibility = 'private' type = 'class_FBAdapter'/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Realisierungsbeziehung von FBAdapter und ILoginable -->
+        <UML:Dependency xmi.id = 'dependency_FBAdapter_ILoginable' visibility = 'public' client = 'class_FBAdapter' supplier = 'interface_ILoginable'>
+          <UML:Stereotype name = 'realize'/>
+        </UML:Dependency>
+        
+        <!-- Generalisierungsbeziehung von FacebookService und FBAdapter -->
+        <UML:Generalization xmi.id = 'generalization_FacebookService_FBAdapter' child = 'class_FBAdapter' parent = 'class_FacebookService'/>
+        
+        <!-- Assoziation zwischen MainWindow und FBAdapter -->
+        <UML:Association xmi.id = 'association_MainWindow_FBAdapter'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = 'associationEnd_MainWindow_FBAdapter_MainWindow' type = 'class_MainWindow' name = 'mainWindow' visibility = 'public' aggregation = 'none'/>
+            <UML:AssociationEnd xmi.id = 'associationEnd_MainWindow_FBAdapter_FBAdapter' type = 'class_FBAdapter' name = 'fbAdapter' visibility = 'public' aggregation = 'none'/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

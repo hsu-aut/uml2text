@@ -1,0 +1,50 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der verschiedenen Pakete -->
+        <UML:Package xmi.id="package_ComponentView" name="Component View" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Datatype" name="datatype" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Profile" name="org.andromda.profile" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Service" name="service" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Webservice" name="webservice" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der verschiedenen Datentypen -->
+        <UML:DataType xmi.id="datatype_StringArray" name="String[]" visibility="public"/>
+        <UML:DataType xmi.id="datatype_doubleArray" name="double[]" visibility="public"/>
+        <UML:DataType xmi.id="datatype_Integer" name="Integer" visibility="public"/>
+        <UML:DataType xmi.id="datatype_DateTime" name="DateTime" visibility="public"/>
+        <UML:DataType xmi.id="datatype_Boolean" name="Boolean" visibility="public"/>
+
+        <!-- Definition der Generalisierungen -->
+        <UML:Generalization xmi.id="generalization_Integer" child="datatype_Integer" parent="datatype_int"/>
+        <UML:Generalization xmi.id="generalization_DateTime" child="datatype_DateTime" parent="datatype_Date"/>
+        
+        <!-- Definition der Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_WebService" name="WebService" visibility="public"/>
+        <UML:Stereotype xmi.id="stereotype_Service" name="Service" visibility="public"/>
+        <UML:Stereotype xmi.id="stereotype_XmlAttribute" name="XmlAttribute" visibility="public"/>
+        <UML:Stereotype xmi.id="stereotype_Criteria" name="Criteria" visibility="public"/>
+        <UML:Stereotype xmi.id="stereotype_Entity" name="Entity" visibility="public"/>
+
+        <!-- Definition der Tag-Definitionen -->
+        <UML:TaggedValue tag="andromda.webservice.use" value="true"/>
+        <UML:TaggedValue tag="andromda.presentation.web.action.type" value="form"/>
+
+        <!-- UML Kommentar zur Anmerkung -->
+        <UML:Comment xmi.id="comment_WebService" body="This is a stereotype for Web Services" annotatedElement="stereotype_WebService"/>
+        <UML:Comment xmi.id="comment_DataType" body="Data Type Definitions and Analysis" annotatedElement="datatype_Integer"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,99 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_uml" name="Model UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="pkg_logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="pkg_datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Class Definitions -->
+            <UML:Class xmi.id="class_reactor" name="Reactor" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_user" name="User" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_reactord" name="Reactord" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_plugin" name="Plugin" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_event_notice" name="EventNotice" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_transition" name="Transition" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_state" name="State" visibility="public" isAbstract="false"/>
+            
+            <!-- Action Class and its subclasses -->
+            <UML:Class xmi.id="class_action" name="Action" visibility="public" isAbstract="true"/>
+            <UML:Class xmi.id="class_command" name="Command" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_action_command" parent="class_action"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_none" name="None" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_action_none" parent="class_action"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_propagate" name="Propagate" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_action_propagate" parent="class_action"/>
+            </UML:Class>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_transition_event" name="Transition-EventNotice" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_transition_event_transition" type="class_transition" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_transition_event_eventNotice" type="class_event_notice" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_transition_self" name="Transition-Self" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_transition_self" type="class_transition" aggregation="aggregate"/>
+                <UML:AssociationEnd xmi.id="assocEnd_transition_self" type="class_transition" aggregation="aggregate"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_transition_state" name="Transition-State" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_transition_state_transition" type="class_transition" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_transition_state_state" type="class_state" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_user_state" name="User-State" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_user_state_user" type="class_user" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_user_state_state" type="class_state" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_state_self" name="State-Self" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_state_self" type="class_state" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_state_self" type="class_state" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,158 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AcademicStructure" name="AcademicStructure">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Klassendefinitionen -->
+        
+        <UML:Class xmi.id="class_Etudiant" name="Etudiant" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_etudiant" name="Id_etudiant" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Num_INE" name="Num_INE" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Nom_complet" name="Nom_complet" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Enseignant" name="Enseignant" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_enseignant" name="Id_enseignant" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Nom_complet" name="Nom_complet" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Cours" name="Cours" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Chapitre" name="Chapitre" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_Chapitre" name="Id_Chapitre" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Examen" name="Examen" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Feuille_d_exercice" name="Feuille_d_exercice" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_feuilleexo" name="Id_feuilleexo" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Exercice" name="Exercice" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_exercice" name="Id_exercice" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Reponse" name="Réponse" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_reponse" name="Id_reponse" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QCM" name="QCM" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_Question_QCM" name="Id_Question" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QRF" name="QRF" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_Question_QRF" name="Id_Question" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_L" name="L" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_Question_L" name="Id_Question" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_P" name="P" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_Question_P" name="Id_Question" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Correction_pairs" name="Correction_pairs" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_correcteur_pairs" name="Id_correcteur" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Correction_auto" name="Correction_auto" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_correcteur_auto" name="Id_correcteur" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Correction_enseign" name="Correction_enseign" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Id_correcteur_enseign" name="Id_correcteur" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Beziehungen -->
+        
+        <UML:Association xmi.id="assoc_Inscrit">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Etudiant_Cours" type="class_Etudiant" name="etudiant" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Cours_Etudiant" type="class_Cours" name="cours" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Enseigne">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Enseignant_Cours" type="class_Enseignant" name="enseignant" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Cours_Enseignant" type="class_Cours" name="cours" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Contient">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Cours_Chapitre" type="class_Cours" name="cours" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Chapitre_Cours" type="class_Chapitre" name="chapitre" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Passe">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Cours_Examen" type="class_Cours" name="cour" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Examen_Cours" type="class_Examen" name="examen" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Associer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Feuille_d_exercice_Chapitre" type="class_Feuille_d_exercice" name="feuille" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Chapitre_Feuille_d_exercice" type="class_Chapitre" name="chapitre" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Generalization xmi.id="gen_Exercice_L" parent="class_Exercice" child="class_L"/>
+        <UML:Generalization xmi.id="gen_Exercice_QCM" parent="class_Exercice" child="class_QCM"/>
+        <UML:Generalization xmi.id="gen_Exercice_QRF" parent="class_Exercice" child="class_QRF"/>
+        <UML:Generalization xmi.id="gen_Exercice_P" parent="class_Exercice" child="class_P"/>
+        
+        <UML:Generalization xmi.id="gen_Reponse_Correction_pairs" parent="class_Reponse" child="class_Correction_pairs"/>
+        <UML:Generalization xmi.id="gen_Reponse_Correction_auto" parent="class_Reponse" child="class_Correction_auto"/>
+        <UML:Generalization xmi.id="gen_Reponse_Correction_enseign" parent="class_Reponse" child="class_Correction_enseign"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

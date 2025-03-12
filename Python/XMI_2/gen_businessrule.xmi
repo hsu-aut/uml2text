@@ -1,0 +1,127 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket Datatypes -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Klasse BusinessRuleContext -->
+        <UML:Class xmi.id="class_BusinessRuleContext" name="BusinessRuleContext" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_setOrder" name="setOrder" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_setOrder_CustomerOrder" name="order" kind="in" type="CustomerOrder"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_setUser" name="setUser" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_setUser_User" name="user" kind="in" type="User"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klasse BusinessRuleAction -->
+        <UML:Class xmi.id="class_BusinessRuleAction" name="BusinessRuleAction" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_conditions" name="conditions" visibility="private" type="array"/>
+            <UML:Operation xmi.id="op_apply" name="apply" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_serialize" name="serialize" visibility="public" isQuery="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klasse BusinessRuleCondition -->
+        <UML:Class xmi.id="class_BusinessRuleCondition" name="BusinessRuleCondition" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_actions" name="actions" visibility="private" type="array"/>
+            <UML:Attribute xmi.id="attr_subConditions" name="subConditions" visibility="private" type="array"/>
+            <UML:Operation xmi.id="op_isApplicable" name="isApplicable" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getInstanceActions" name="getInstanceActions" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_serialize" name="serialize" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_createFromArray" name="createFromArray" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_createFromArray_Array" name="array" kind="in" type="array"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klasse BusinessRuleController -->
+        <UML:Class xmi.id="class_BusinessRuleController" name="BusinessRuleController" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_conditions_Controller" name="conditions" visibility="private" type="array"/>
+            <UML:Attribute xmi.id="attr_interfaces_Controller" name="interfaces" visibility="private" type="array"/>
+            <UML:Operation xmi.id="op_construct" name="__construct" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_apply_Controller" name="apply" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_loadConditions" name="loadConditions" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_serialize_Controller" name="serialize" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_loadAllConditions" name="loadAllConditions" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_saveSerializedConditions" name="saveSerializedConditions" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klasse CustomerOrder -->
+        <UML:Class xmi.id="class_CustomerOrder" name="CustomerOrder" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getBusinessRuleController_CustomerOrder" name="getBusinessRuleController" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_return_CustomerOrder" name="return" kind="return" type="BusinessRuleController"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_applyRuleActions" name="applyRuleActions" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Klasse User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+
+        <!-- Klasse SessionOrder -->
+        <UML:Class xmi.id="class_SessionOrder" name="SessionOrder" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getBusinessRuleController_SessionOrder" name="getBusinessRuleController" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="param_return_SessionOrder" name="return" kind="return" type="BusinessRuleController"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Klasse ActiveRecordModel -->
+        <UML:Class xmi.id="class_ActiveRecordModel" name="ActiveRecordModel" visibility="public" isAbstract="false"/>
+        
+        <!-- Klasse array -->
+        <UML:Class xmi.id="class_array" name="array" visibility="public" isAbstract="false"/>
+
+        <!-- Schnittstelle BusinessRuleCustomerOrderCondition -->
+        <UML:Interface xmi.id="interface_BusinessRuleCustomerOrderCondition" name="BusinessRuleCustomerOrderCondition" visibility="public"/>
+        
+        <!-- Schnittstelle BusinessRuleOrderedItemCondition -->
+        <UML:Interface xmi.id="interface_BusinessRuleOrderedItemCondition" name="BusinessRuleOrderedItemCondition" visibility="public"/>
+        
+        <!-- Schnittstelle BusinessRuleProductCondition -->
+        <UML:Interface xmi.id="interface_BusinessRuleProductCondition" name="BusinessRuleProductCondition" visibility="public"/>
+
+        <!-- Abhängigkeiten und Assoziationen -->
+        <UML:Dependency xmi.id="dep_Controller_Condition" client="class_BusinessRuleController" supplier="class_BusinessRuleCondition"/>
+        <UML:Dependency xmi.id="dep_Controller_Action" client="class_BusinessRuleController" supplier="class_BusinessRuleAction"/>
+        <UML:Dependency xmi.id="dep_Controller_Context" client="class_BusinessRuleController" supplier="class_BusinessRuleContext"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Root" name="Root">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_ComponentView" name="ComponentView">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Ngebatik" name="Ngebatik">
+              <UML:Namespace.ownedElement>
+
+                <UML:Class xmi.id="class_ViewModelBase" name="ViewModelBase" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_Helper" name="Helper" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_DelegateCommand" name="DelegateCommand" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_ViewBelajar" name="ViewBelajar" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_ViewHelp" name="ViewHelp" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_ViewInfo" name="ViewInfo" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_MainPage" name="MainPage" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_NyorekPage" name="NyorekPage" visibility="public" isAbstract="false"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="package_Common" name="Common">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_DelegateCommand_Common" name="DelegateCommand" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="generalization_ICommand" child="class_DelegateCommand_Common" parent="class_ICommand"/>
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="operation_execute" name="execute" visibility="public" isSpecification="false"/>
+                    <UML:Operation xmi.id="operation_canExecute" name="canExecute" visibility="public" isSpecification="false"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_ICommand" name="ICommand" visibility="public" isAbstract="true"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="package_PlayMyBatik" name="PlayMyBatik">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Package xmi.id="package_Kelas" name="Kelas">
+                  <UML:Namespace.ownedElement>
+                    
+                    <UML:Class xmi.id="class_getfilosofi" name="getfilosofi" visibility="public" isAbstract="false"/>
+                    <UML:Class xmi.id="class_getsoal" name="getsoal" visibility="public" isAbstract="false"/>
+
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="package_View_Model" name="View_Model">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_getFilosofiViewModel" name="getFilosofiViewModel" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_getsoalViewModel" name="getsoalViewModel" visibility="public" isAbstract="false"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_NgebatikSecondary" name="Ngebatik">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_Helper_Ngebatik" name="Helper" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Navigation" name="Navigation" visibility="public" isAbstract="false"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_PageRandomSoal" name="PageRandomSoal" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="generalization_PhoneApplicationPage" child="class_PageRandomSoal" parent="class_PhoneApplicationPage"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PhoneApplicationPage" name="PhoneApplicationPage" visibility="public" isAbstract="true"/>
+
+        <UML:Class xmi.id="class_App" name="App" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_appName" name="appName" visibility="private"/>
+            <UML:Operation xmi.id="operation_initialize" name="initialize" visibility="public"/>
+            <UML:Operation xmi.id="operation_shutdown" name="shutdown" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Dependency xmi.id="dependency_Ngebatik_Common" client="package_Ngebatik" supplier="package_Common"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

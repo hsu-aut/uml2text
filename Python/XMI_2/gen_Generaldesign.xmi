@@ -1,0 +1,129 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GameSimulation" name="GameSimulation">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Engine" name="Engine" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mousepic" name="_mousepic" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_OSL_IMAGE"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_backgroundpic" name="_backgroundpic" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_OSL_IMAGE"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_enemylist" name="_enemylist" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="List"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_drawImageXYWithZoom" name="drawImageXYWithZoom" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_updateViewport" name="updateViewport" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_OSL_IMAGE" name="OSL_IMAGE" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_OSL_CONTROLLER" name="OSL_CONTROLLER" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Canon" name="Canon" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Canon"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Towerbase"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_reloaddelay" name="_reloaddelay" visibility="private"/>
+            <UML:Attribute xmi.id="attr_angle" name="_angle" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Towerbase" name="Towerbase" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_enemylist_towerbase" name="_enemylist" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="List"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Event" name="Event" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_handleEvent" name="handleEvent" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Hit" name="Hit" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Hit"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Event"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Kill" name="Kill" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Kill"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Event"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:DataType xmi.id="enum_Gamestatus" name="Gamestatus">
+          <UML:EnumerationLiteral>
+            <UML:EnumerationLiteral.name>PLAYING</UML:EnumerationLiteral.name>
+          </UML:EnumerationLiteral>
+          <UML:EnumerationLiteral>
+            <UML:EnumerationLiteral.name>WON</UML:EnumerationLiteral.name>
+          </UML:EnumerationLiteral>
+          <UML:EnumerationLiteral>
+            <UML:EnumerationLiteral.name>LOST</UML:EnumerationLiteral.name>
+          </UML:EnumerationLiteral>
+        </UML:DataType>
+
+        <UML:Association xmi.id="assoc_Engine_OSL_IMAGE">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Engine_OSL_IMAGE_Engine" type="class_Engine" name="engine" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Engine_OSL_IMAGE_OSL_IMAGE" type="class_OSL_IMAGE" name="osl_image" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Engine_OSL_CONTROLLER">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Engine_OSL_CONTROLLER_Engine" type="class_Engine" name="engine" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Engine_OSL_CONTROLLER_OSL_CONTROLLER" type="class_OSL_CONTROLLER" name="osl_controller" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="List" name="List"/>
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

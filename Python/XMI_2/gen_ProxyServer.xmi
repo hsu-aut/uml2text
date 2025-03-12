@@ -1,0 +1,104 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Modell" name="UML Modell">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "ProxyServer" -->
+        <UML:Class xmi.id="class_ProxyServer" name="ProxyServer" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_m_serverPort" name="m_serverPort" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_startServer" name="startServer" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_ProxyServer_constructor" name="ProxyServer" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_SIGINTHandler" name="SIGINTHandler" visibility="private" isAbstract="false"/>
+            <UML:Operation xmi.id="op_InitSignalHandler" name="InitSignalHandler" visibility="private" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "SocketManager" -->
+        <UML:Class xmi.id="class_SocketManager" name="SocketManager" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_m_socket" name="m_socket" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_makeServerSocketQ" name="makeServerSocketQ" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_makeServerSocket" name="makeServerSocket" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_makeClientSocket" name="makeClientSocket" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_getSocket" name="getSocket" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_closeSocket" name="closeSocket" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "HTTPPack" -->
+        <UML:Class xmi.id="class_HTTPPack" name="HTTPPack" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_m_hostName" name="m_hostName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_pack" name="m_pack" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_valid" name="m_valid" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_hostPort" name="m_hostPort" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getHostName" name="getHostName" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_getPack" name="getPack" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_isValid" name="isValid" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_getHostPort" name="getHostPort" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_HTTPPack_constructor" name="HTTPPack" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "ThreadManager" -->
+        <UML:Class xmi.id="class_ThreadManager" name="ThreadManager" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_createNewProxyThread" name="createNewProxyThread" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_processRequset" name="processRequset" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_transBetSerAndCli" name="transBetSerAndCli" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Assoziation zwischen ProxyServer und SocketManager -->
+        <UML:Dependency xmi.id="dep_ProxyServer_SocketManager" client="class_ProxyServer" supplier="class_SocketManager"/>
+
+        <!-- Assoziation zwischen ProxyServer und ThreadManager -->
+        <UML:Dependency xmi.id="dep_ProxyServer_ThreadManager" client="class_ProxyServer" supplier="class_ThreadManager"/>
+
+        <!-- Abhängigkeit von ThreadManager von HTTPPack und SocketManager -->
+        <UML:Dependency xmi.id="dep_ThreadManager_HTTPPack" client="class_ThreadManager" supplier="class_HTTPPack"/>
+        <UML:Dependency xmi.id="dep_ThreadManager_SocketManager" client="class_ThreadManager" supplier="class_SocketManager"/>
+
+        <!-- Definition von primitiven Datentypen -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

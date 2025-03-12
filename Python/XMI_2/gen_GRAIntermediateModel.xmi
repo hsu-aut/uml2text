@@ -1,0 +1,126 @@
+```xml
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ServiceModel" name="ServiceModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse Data -->
+        <UML:Class xmi.id="class_Data" name="Data" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition des Pakets GRAUML -->
+        <UML:Package xmi.id="package_GRAUML" name="GRAUML" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition des Pakets GRAAnnotationModel -->
+            <UML:Package xmi.id="package_GRAAnnotationModel" name="GRAAnnotationModel" visibility="public">
+              <UML:Namespace.ownedElement>
+
+                <!-- Definition der Enumeration ExchangePattern -->
+                <UML:Enumeration xmi.id="enum_ExchangePattern" name="ExchangePattern" visibility="public">
+                  <UML:Enumeration.literal>
+                    <UML:EnumerationLiteral xmi.id="literal_fire-and-forget" name="fire-and-forget"/>
+                    <UML:EnumerationLiteral xmi.id="literal_request-reply" name="request-reply"/>
+                  </UML:Enumeration.literal>
+                </UML:Enumeration>
+
+                <!-- Definition der Klasse InteractionRequirements -->
+                <UML:Class xmi.id="class_InteractionRequirements" name="InteractionRequirements" visibility="public" isAbstract="false"/>
+
+                <!-- Definition der abstrakten Klasse GRAServiceAnnotationBase -->
+                <UML:Class xmi.id="class_GRAServiceAnnotationBase" name="GRAServiceAnnotationBase" visibility="public" isAbstract="true"/>
+
+                <!-- Definition der Klasse Participant -->
+                <UML:Class xmi.id="class_Participant" name="Participant" visibility="public" isAbstract="false"/>
+
+                <!-- Definition der Klasse Interface -->
+                <UML:Class xmi.id="class_Interface" name="Interface" visibility="public" isAbstract="false"/>
+
+                <!-- Definition der Klasse Service -->
+                <UML:Class xmi.id="class_Service" name="Service" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_port" name="Port" visibility="private"/>
+                    <UML:Attribute xmi.id="attr_sampleData" name="SampleData" visibility="private"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <!-- Definition der Klasse Operation -->
+                <UML:Class xmi.id="class_Operation" name="Operation" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_parameters" name="Parameters" visibility="private"/>
+                    <UML:Attribute xmi.id="attr_exchangePatterns" name="ExchangePatterns" visibility="private"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <!-- Definition der Klasse Message -->
+                <UML:Class xmi.id="class_Message" name="Message" visibility="public" isAbstract="false"/>
+
+                <!-- Definition der Klasse Port -->
+                <UML:Class xmi.id="class_Port" name="Port" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_uri" name="URI" visibility="private"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <!-- Definition der Klasse ServiceDescription -->
+                <UML:Class xmi.id="class_ServiceDescription" name="ServiceDescription" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_purpose" name="Purpose" visibility="private"/>
+                    <UML:Attribute xmi.id="attr_interactionPartners" name="InteractionPartners" visibility="private"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <!-- Definition der Klasse ServiceLevelAgreement -->
+                <UML:Class xmi.id="class_ServiceLevelAgreement" name="ServiceLevelAgreement" visibility="public" isAbstract="false"/>
+
+                <!-- Definition der Klasse Description -->
+                <UML:Class xmi.id="class_Description" name="Description" visibility="public" isAbstract="false"/>
+
+                <!-- Definition der Klasse Organization -->
+                <UML:Class xmi.id="class_Organization" name="Organization" visibility="public" isAbstract="false"/>
+
+                <!-- Definition der Klasse Person -->
+                <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="false"/>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des Pakets GRA_WSDL -->
+        <UML:Package xmi.id="package_GRA_WSDL" name="GRA_WSDL" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition der Klasse WSDLServiceInterface -->
+            <UML:Class xmi.id="class_WSDLServiceInterface" name="WSDLServiceInterface" visibility="public" isAbstract="false"/>
+
+            <!-- Definition der Klasse WSDLService -->
+            <UML:Class xmi.id="class_WSDLService" name="WSDLService" visibility="public" isAbstract="false"/>
+
+            <!-- Definition der Klasse WSDLPort -->
+            <UML:Class xmi.id="class_WSDLPort" name="WSDLPort" visibility="public" isAbstract="false"/>
+
+            <!-- Definition der Klasse WSDLOperation -->
+            <UML:Class xmi.id="class_WSDLOperation" name="WSDLOperation" visibility="public" isAbstract="false"/>
+
+            <!-- Definition der Klasse WSDLMessage -->
+            <UML:Class xmi.id="class_WSDLMessage" name="WSDLMessage" visibility="public" isAbstract="false"/>
+
+            <!-- Definition der Klasse WSDLParameter -->
+            <UML:Class xmi.id="class_WSDLParameter" name="WSDLParameter" visibility="public" isAbstract="false"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

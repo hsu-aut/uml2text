@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_PatientFiller" name="PatientFiller" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_fill" name="fill" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_fillUntil" name="fillUntil" visibility="public">
+                  <UML:Parameter xmi.id="param_label" name="label" kind="in" type="string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_setInput" name="setInput" visibility="public">
+                  <UML:Parameter xmi.id="param_input" name="input" kind="in" type="class_PatientFillerStep"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_registerSteps" name="registerSteps" visibility="public">
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_PatientFillerInput" name="PatientFillerInput" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_patient" name="patient" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Patient"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_addFile" name="addFile" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_removeFile" name="removeFile" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getFilesList" name="getFilesList" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_addLabel" name="addLabel" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_addLabelToSerie" name="addLabelToSerie" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getLabels" name="getLabels" visibility="public">
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_PatientFillerStep" name="PatientFillerStep" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_setInput_step" name="setInput" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getRequiredLabels" name="getRequiredLabels" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getPriority" name="getPriority" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_isCandidate" name="isCandidate" visibility="public">
+                </UML:Operation>
+                <UML:Operation xmi.id="op_fill_step" name="fill" visibility="public">
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Patient" name="Patient" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_PatientFiller_PatientFillerStep">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_PatientFiller" type="class_PatientFiller" name="patientFiller" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_PatientFillerStep" type="class_PatientFillerStep" name="patientFillerStep" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

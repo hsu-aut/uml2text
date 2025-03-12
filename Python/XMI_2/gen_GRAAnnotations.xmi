@@ -1,0 +1,188 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GRAUML" name="GRAUML">
+      <UML:Namespace.ownedElement>
+
+        <!-- Enumeration ExchangePattern -->
+        <UML:Enumeration xmi.id="enum_ExchangePattern" name="ExchangePattern">
+          <UML:ModelElement.elementType>
+            <UML:EnumerationLiteral xmi.id="literal_ExchangePattern_fire_and_forget" name="fire-and-forget"/>
+            <UML:EnumerationLiteral xmi.id="literal_ExchangePattern_request_reply" name="request-reply"/>
+            <UML:EnumerationLiteral xmi.id="literal_ExchangePattern_publish_subscribe" name="publish-subscribe"/>
+          </UML:ModelElement.elementType>
+        </UML:Enumeration>
+
+        <!-- Class InteractionRequirements -->
+        <UML:Class xmi.id="class_InteractionRequirements" name="InteractionRequirements" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_authentication" name="authentication" visibility="private"/>
+            <UML:Attribute xmi.id="attr_authorization" name="authorization" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Abstract Class GRAServiceAnnotationBase -->
+        <UML:Class xmi.id="class_GRAServiceAnnotationBase" name="GRAServiceAnnotationBase" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_template" name="template" visibility="private"/>
+            <UML:Attribute xmi.id="attr_flag" name="flag" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Participant -->
+        <UML:Class xmi.id="class_Participant" name="Participant" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_actor" name="actor" visibility="private"/>
+            <UML:Attribute xmi.id="attr_package" name="package" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Abstract Class Interface -->
+        <UML:Class xmi.id="class_Interface" name="Interface" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_operations" name="operations" visibility="private"/>
+            <UML:Attribute xmi.id="attr_messages" name="messages" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Service -->
+        <UML:Class xmi.id="class_Service" name="Service" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_component" name="component" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Operation -->
+        <UML:Class xmi.id="class_Operation" name="Operation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_parameters" name="parameters" visibility="private"/>
+            <UML:Attribute xmi.id="attr_messagePattern" name="messagePattern" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Parameter -->
+        <UML:Class xmi.id="class_Parameter" name="Parameter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_content" name="content" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Port -->
+        <UML:Class xmi.id="class_Port" name="Port" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_associatedInterfaces" name="associatedInterfaces" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class UseCase -->
+        <UML:Class xmi.id="class_UseCase" name="UseCase" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_realEffects" name="realEffects" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Agreement -->
+        <UML:Class xmi.id="class_Agreement" name="Agreement" visibility="public" isAbstract="false">
+          <!-- No attributes defined -->
+        </UML:Class>
+
+        <!-- Class Person -->
+        <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="false">
+          <!-- No attributes defined -->
+        </UML:Class>
+
+        <!-- Class SecurityClassification -->
+        <UML:Class xmi.id="class_SecurityClassification" name="SecurityClassification" visibility="public" isAbstract="false">
+          <!-- No attributes defined -->
+        </UML:Class>
+
+        <!-- Class ServiceCapability -->
+        <UML:Class xmi.id="class_ServiceCapability" name="ServiceCapability" visibility="public" isAbstract="false">
+          <!-- No attributes defined -->
+        </UML:Class>
+
+        <!-- Class ServiceDescription -->
+        <UML:Class xmi.id="class_ServiceDescription" name="ServiceDescription" visibility="public" isAbstract="false">
+          <!-- No attributes defined -->
+        </UML:Class>
+
+        <!-- Class ServiceLevelAgreement -->
+        <UML:Class xmi.id="class_ServiceLevelAgreement" name="ServiceLevelAgreement" visibility="public" isAbstract="false">
+          <!-- No attributes defined -->
+        </UML:Class>
+
+        <UML:Model xmi.id="model_GRAWsdl" name="GRAWsdl">
+          <UML:Namespace.ownedElement>
+
+            <!-- Class WSDLInterface -->
+            <UML:Class xmi.id="class_WSDLInterface" name="WSDLInterface" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_portType" name="portType" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class WSDLOperation -->
+            <UML:Class xmi.id="class_WSDLOperation" name="WSDLOperation" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_operationElement" name="operationElement" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class WSDLMessage -->
+            <UML:Class xmi.id="class_WSDLMessage" name="WSDLMessage" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_messageElement" name="messageElement" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class WSDLParameter -->
+            <UML:Class xmi.id="class_WSDLParameter" name="WSDLParameter" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_mimeTypes" name="mimeTypes" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+
+        <!-- Associations -->
+
+        <!-- Association between Service and ServiceDescription -->
+        <UML:Association xmi.id="assoc_Service_ServiceDescription" name="Service-ServiceDescription" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Service" name="service" type="class_Service"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ServiceDescription" name="serviceDescription" type="class_ServiceDescription"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between Service and ServiceLevelAgreement -->
+        <UML:Association xmi.id="assoc_Service_ServiceLevelAgreement" name="Service-ServiceLevelAgreement" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Service" name="service" type="class_Service"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ServiceLevelAgreement" name="serviceLevelAgreement" type="class_ServiceLevelAgreement"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Generalization WSDLMessage --> 
+        <UML:Generalization xmi.id="generalization_WSDLMessage_to_Message">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_WSDLMessage"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_Interface"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

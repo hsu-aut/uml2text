@@ -1,0 +1,110 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EARootClass" name="Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="EAPK_92A5E672_0DCE_475f_8ECF_C15969C443FE" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="Data Model" name="Data Model"/>
+            <UML:Package xmi.id="Logical Model" name="Logical Model"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Class xmi.id="EAID_45B3F273_33EF_45dd_B9CA_C4A14C6193CB" name="DataLocation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="compressionType" name="compressionType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="locationPort" name="locationPort" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="locationURL" name="locationURL" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="transportMechanismType" name="transportMechanismType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="EAID_2ECB9D56_4054_40ca_B499_3BE2512B7F51" name="Chunk" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="EAID_0875C5F7_51C9_44e6_89D1_3E1A8DA26BEB" name="Image" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="ImageDataItem"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_3033FEA4_2292_4897_8273_E5A07F083DA4" name="Channel" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="ImageDataItem"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_FFD68990_94AC_42b9_9838_50899F82AD99" name="Resolution" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="ImageDataItem"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_F610E155_9805_4488_BABB_C045D333EEF8" name="Tile" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="ImageDataItem"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_5DE2D524_F914_40db_9B84_71ECA011E7A6" name="TimeSeries" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="EAID_273D687B_0EEC_4169_9C4E_2C92C4C2C039" name="Metadata" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="assoc_Channel_Resolution">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Channel_Resolution_Channel" type="EAID_3033FEA4_2292_4897_8273_E5A07F083DA4" name="channel" visibility="public" />
+            <UML:AssociationEnd xmi.id="assocEnd_Channel_Resolution_Resolution" type="EAID_FFD68990_94AC_42b9_9838_50899F82AD99" name="resolution" visibility="public" />
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Volume_Image">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Volume_Image_Volume" type="EAID_4F3C9A6F_462F_491a_8441_5B033A8B5E20" name="volume" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Volume_Image_Image" type="EAID_0875C5F7_51C9_44e6_89D1_3E1A8DA26BEB" name="image" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

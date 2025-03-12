@@ -1,0 +1,116 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NIEM" name="NIEMModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- ModelPackageDescription Class -->
+        <UML:Class xmi.id="class_ModelPackageDescription" name="ModelPackageDescription" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mpdVersionID" name="mpdVersionID" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mpdBaseURI" name="mpdBaseURI" visibility="private"/>
+            <UML:Attribute xmi.id="attr_descriptionText" name="descriptionText" visibility="private"/>
+            <UML:Attribute xmi.id="attr_SecurityMarkingText" name="SecurityMarkingText" visibility="private"/>
+            <UML:Attribute xmi.id="ref_base_Component" name="base_Component" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="component"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_mpdClassCode" name="mpdClassCode" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_ModelPackageDescriptionClassCode"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- POCType Class -->
+        <UML:Class xmi.id="class_POCType" name="POCType" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_POCTelephone" name="POCTelephone" visibility="private"/>
+            <UML:Attribute xmi.id="attr_POCName" name="POCName" visibility="private"/>
+            <UML:Attribute xmi.id="attr_POCEmail" name="POCEmail" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ModelPackageDescriptionFile Class -->
+        <UML:Class xmi.id="class_ModelPackageDescriptionFile" name="ModelPackageDescriptionFile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_externalURI" name="externalURI" visibility="private"/>
+            <UML:Attribute xmi.id="attr_relativePathName" name="relativePathName" visibility="private"/>
+            <UML:Attribute xmi.id="attr_natureCode" name="natureCode" visibility="private"/>
+            <UML:Attribute xmi.id="attr_purposeCode" name="purposeCode" visibility="private"/>
+            <UML:Attribute xmi.id="ref_base_Usage" name="base_Usage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="usage"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ModelPackageDescriptionRelationship Class -->
+        <UML:Class xmi.id="class_ModelPackageDescriptionRelationship" name="ModelPackageDescriptionRelationship" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_descriptionText" name="descriptionText" visibility="private"/>
+            <UML:Attribute xmi.id="attr_relationshipCode" name="relationshipCode" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_RelationshipCode"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ModelPackageDescriptionFileSet Class -->
+        <UML:Class xmi.id="class_ModelPackageDescriptionFileSet" name="ModelPackageDescriptionFileSet" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_externalURI" name="externalURI" visibility="private"/>
+            <UML:Attribute xmi.id="attr_natureCode" name="natureCode" visibility="private"/>
+            <UML:Attribute xmi.id="attr_descriptionText" name="descriptionText" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Enumerations -->
+        <UML:Class xmi.id="enum_RelationshipCode" name="RelationshipCode" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="enum_RelationshipCode_updates" name="updates" visibility="public"/>
+            <UML:Attribute xmi.id="enum_RelationshipCode_conforms_to" name="conforms_to" visibility="public"/>
+            <UML:Attribute xmi.id="enum_RelationshipCode_version_of" name="version_of" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="enum_PurposeCode" name="PurposeCode" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="enum_PurposeCode_extension_schema_set" name="extension_schema_set" visibility="public"/>
+            <UML:Attribute xmi.id="enum_PurposeCode_reference_schema_set" name="reference_schema_set" visibility="public"/>
+            <UML:Attribute xmi.id="enum_PurposeCode_file" name="file" visibility="public"/>
+            <UML:Attribute xmi.id="enum_PurposeCode_catalog" name="catalog" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="enum_NatureCode" name="NatureCode" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="enum_NatureCode_type1" name="type1" visibility="public"/>
+            <UML:Attribute xmi.id="enum_NatureCode_type2" name="type2" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="enum_ModelPackageDescriptionClassCode" name="ModelPackageDescriptionClassCode" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="enum_ModelPackageDescriptionClassCode_class1" name="class1" visibility="public"/>
+            <UML:Attribute xmi.id="enum_ModelPackageDescriptionClassCode_class2" name="class2" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,59 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Enterprise Architect</XMI.exporter>
+      <XMI.exporterVersion>13.5</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BiologicalPathology" name="EA Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_DataModel" name="Data Model">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_SpecimenBaseSolidTissuePathologyAnnotation"
+                           name="SpecimenBaseSolidTissuePathologyAnnotation" visibility="public" isAbstract="true"/>
+
+                <UML:Class xmi.id="class_BreastSpecimenPathologyAnnotation"
+                           name="BreastSpecimenPathologyAnnotation" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_BreastSpecimen"
+                                      parent="class_SpecimenBaseSolidTissuePathologyAnnotation"/>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_CNSSpecimenPathologyAnnotation"
+                           name="CNSSpecimenPathologyAnnotation" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_CNSpecimen"
+                                      parent="class_SpecimenBaseSolidTissuePathologyAnnotation"/>
+                </UML:Class>
+
+                <UML:Association xmi.id="assoc_NottinghamHistologicScore"
+                                 name="NottinghamHistologicScore" visibility="public" isSpecification="false">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Breast_Annotation"
+                                        type="class_BreastSpecimenPathologyAnnotation" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_HistologicScore" type="class_BreastSpecimenNottinghamHistologicScore" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="package_LogicalModel" name="Logical Model">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_JavaPackage_lang_boolean" name="Boolean"
+                       visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_JavaPackage_lang_double" name="Double"
+                       visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

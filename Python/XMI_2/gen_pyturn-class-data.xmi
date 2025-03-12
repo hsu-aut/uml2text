@@ -1,0 +1,224 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="UML_Model_1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+        
+        <!-- Package "Datatypes" -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_array" name="array"/>
+            <UML:DataType xmi.id="datatype_tuple" name="tuple"/>
+            <UML:DataType xmi.id="datatype_dict" name="dict"/>
+            <UML:DataType xmi.id="datatype_object" name="object"/>
+            <UML:DataType xmi.id="datatype_set" name="set"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition der Klasse "game" -->
+        <UML:Class xmi.id="class_game" name="game" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_state"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_presentation" name="presentation" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_game_presentation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "battle_engine" -->
+        <UML:Class xmi.id="class_battle_engine" name="battle_engine" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_actions_dict" name="actions_dict" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_dict"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_handle_input" name="handle_input" visibility="public"/>
+            <UML:Operation xmi.id="op_requires_choice" name="requires_choice" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "state" -->
+        <UML:Class xmi.id="class_state" name="state" visibility="public" isAbstract="true"/>
+        
+        <!-- Definition der Klasse "game_state" -->
+        <UML:Class xmi.id="class_game_state" name="game_state" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_state"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "menu_state" -->
+        <UML:Class xmi.id="class_menu_state" name="menu_state" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_state"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "game_status" -->
+        <UML:Class xmi.id="class_game_status" name="game_status" visibility="public"/>
+        
+        <!-- Definition der Klasse "gameplay_variables" -->
+        <UML:Class xmi.id="class_gameplay_variables" name="gameplay_variables" visibility="public"/>
+        
+        <!-- Definition der Klasse "game_interface" -->
+        <UML:Class xmi.id="class_game_interface" name="game_interface" visibility="public" isAbstract="true"/>
+        
+        <!-- Definition der Klasse "game_gui" -->
+        <UML:Class xmi.id="class_game_gui" name="game_gui" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_game_interface"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "game_cli" -->
+        <UML:Class xmi.id="class_game_cli" name="game_cli" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_game_interface"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "game_presentation" -->
+        <UML:Class xmi.id="class_game_presentation" name="game_presentation" visibility="public" isAbstract="true"/>
+        
+        <!-- Definition der Klasse "gui_presentation" -->
+        <UML:Class xmi.id="class_gui_presentation" name="gui_presentation" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_game_presentation"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "cli_presentation" -->
+        <UML:Class xmi.id="class_cli_presentation" name="cli_presentation" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_game_presentation"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der abstrakten Klasse "Party" -->
+        <UML:Class xmi.id="class_Party" name="Party" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_members_list" name="members_list" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_active_member" name="active_member" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Character"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_observer_list" name="observer_list" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_create_character" name="create_character" visibility="public"/>
+            <UML:Operation xmi.id="op_add_member" name="add_member" visibility="public"/>
+            <UML:Operation xmi.id="op_remove_member" name="remove_member" visibility="public"/>
+            <UML:Operation xmi.id="op_get_active_member" name="get_active_member" visibility="public"/>
+            <UML:Operation xmi.id="op_attach" name="attach" visibility="public"/>
+            <UML:Operation xmi.id="op_detach" name="detach" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Character" -->
+        <UML:Class xmi.id="class_Character" name="Character" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attributes_dict" name="attributes_dict" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_dict"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_CHARACTER_COUNT" name="CHARACTER_COUNT" visibility="private" isStatic="true">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_observer_list_char" name="observer_list" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_add_attr" name="add_attr" visibility="public"/>
+            <UML:Operation xmi.id="op_remove_attr" name="remove_attr" visibility="public"/>
+            <UML:Operation xmi.id="op_incr_attr" name="incr_attr" visibility="public"/>
+            <UML:Operation xmi.id="op_decr_attr" name="decr_attr" visibility="public"/>
+            <UML:Operation xmi.id="op_mod_attr" name="mod_attr" visibility="public"/>
+            <UML:Operation xmi.id="op_attach_char" name="attach" visibility="public"/>
+            <UML:Operation xmi.id="op_detach_char" name="detach" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition des Interface "i_observer" -->
+        <UML:Interface xmi.id="interface_i_observer" name="i_observer" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_update" name="update" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <!-- Definition des Interface "i_subject" -->
+        <UML:Interface xmi.id="interface_i_subject" name="i_subject" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_notify" name="notify" visibility="public"/>
+            <UML:Operation xmi.id="op_attach_sub" name="attach" visibility="public"/>
+            <UML:Operation xmi.id="op_detach_sub" name="detach" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Beziehung zwischen "game" und "state" -->
+        <UML:Association xmi.id="assoc_game_state">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_game" type="class_game" name="game" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_state" type="class_state" name="state" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Beziehung zwischen "Party" und "Character" -->
+        <UML:Association xmi.id="assoc_Party_Character">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Party" type="class_Party" name="Party" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Character" type="class_Character" name="Character" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

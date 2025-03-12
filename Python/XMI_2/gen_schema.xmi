@@ -1,0 +1,306 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_seek_17_demo_development" name="seek_17_demo_development">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Klasse "activity_logs" -->
+        <UML:Class xmi.id="class_activity_logs" name="activity_logs" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="attr_action" name="action" visibility="private"/>
+          <UML:Attribute xmi.id="attr_format" name="format" visibility="private"/>
+          <UML:Attribute xmi.id="attr_activity_loggable_type" name="activity_loggable_type" visibility="private"/>
+          <UML:Attribute xmi.id="attr_activity_loggable_id" name="activity_loggable_id" visibility="private"/>
+          <UML:Attribute xmi.id="attr_culprit_type" name="culprit_type" visibility="private"/>
+          <UML:Attribute xmi.id="attr_culprit_id" name="culprit_id" visibility="private"/>
+          <UML:Attribute xmi.id="attr_referenced_type" name="referenced_type" visibility="private"/>
+          <UML:Attribute xmi.id="attr_referenced_id" name="referenced_id" visibility="private"/>
+          <UML:Attribute xmi.id="attr_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="attr_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="attr_http_referer" name="http_referer" visibility="private"/>
+          <UML:Attribute xmi.id="attr_user_agent" name="user_agent" visibility="private"/>
+          <UML:Attribute xmi.id="attr_data" name="data" visibility="private"/>
+          <UML:Attribute xmi.id="attr_controller_name" name="controller_name" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "annotation_attributes" -->
+        <UML:Class xmi.id="class_annotation_attributes" name="annotation_attributes" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="aa_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="aa_name" name="name" visibility="private"/>
+          <UML:Attribute xmi.id="aa_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="aa_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="aa_identifier" name="identifier" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "annotation_value_seeds" -->
+        <UML:Class xmi.id="class_annotation_value_seeds" name="annotation_value_seeds" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="avs_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="avs_attribute_id" name="attribute_id" visibility="private"/>
+          <UML:Attribute xmi.id="avs_old_value" name="old_value" visibility="private"/>
+          <UML:Attribute xmi.id="avs_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="avs_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="avs_value_type" name="value_type" visibility="private"/>
+          <UML:Attribute xmi.id="avs_value_id" name="value_id" visibility="private"/>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "annotation_versions" -->
+        <UML:Class xmi.id="class_annotation_versions" name="annotation_versions" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="av_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="av_annotation_id" name="annotation_id" visibility="private"/>
+          <UML:Attribute xmi.id="av_version" name="version" visibility="private"/>
+          <UML:Attribute xmi.id="av_version_creator_id" name="version_creator_id" visibility="private"/>
+          <UML:Attribute xmi.id="av_source_type" name="source_type" visibility="private"/>
+          <UML:Attribute xmi.id="av_source_id" name="source_id" visibility="private"/>
+          <UML:Attribute xmi.id="av_annotatable_type" name="annotatable_type" visibility="private"/>
+          <UML:Attribute xmi.id="av_annotatable_id" name="annotatable_id" visibility="private"/>
+          <UML:Attribute xmi.id="av_attribute_id" name="attribute_id" visibility="private"/>
+          <UML:Attribute xmi.id="av_old_value" name="old_value" visibility="private"/>
+          <UML:Attribute xmi.id="av_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="av_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="av_value_type" name="value_type" visibility="private"/>
+          <UML:Attribute xmi.id="av_value_id" name="value_id" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "annotations" -->
+        <UML:Class xmi.id="class_annotations" name="annotations" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="an_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="an_source_type" name="source_type" visibility="private"/>
+          <UML:Attribute xmi.id="an_source_id" name="source_id" visibility="private"/>
+          <UML:Attribute xmi.id="an_annotatable_type" name="annotatable_type" visibility="private"/>
+          <UML:Attribute xmi.id="an_annotatable_id" name="annotatable_id" visibility="private"/>
+          <UML:Attribute xmi.id="an_attribute_id" name="attribute_id" visibility="private"/>
+          <UML:Attribute xmi.id="an_old_value" name="old_value" visibility="private"/>
+          <UML:Attribute xmi.id="an_version" name="version" visibility="private"/>
+          <UML:Attribute xmi.id="an_version_creator_id" name="version_creator_id" visibility="private"/>
+          <UML:Attribute xmi.id="an_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="an_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="an_value_type" name="value_type" visibility="private"/>
+          <UML:Attribute xmi.id="an_value_id" name="value_id" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "assay_assets" -->
+        <UML:Class xmi.id="class_assay_assets" name="assay_assets" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="aa_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="aa_assay_id" name="assay_id" visibility="private"/>
+          <UML:Attribute xmi.id="aa_asset_id" name="asset_id" visibility="private"/>
+          <UML:Attribute xmi.id="aa_version" name="version" visibility="private"/>
+          <UML:Attribute xmi.id="aa_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="aa_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="aa_relationship_type_id" name="relationship_type_id" visibility="private"/>
+          <UML:Attribute xmi.id="aa_asset_type" name="asset_type" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "assay_auth_lookup" -->
+        <UML:Class xmi.id="class_assay_auth_lookup" name="assay_auth_lookup" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="aal_user_id" name="user_id" visibility="private"/>
+          <UML:Attribute xmi.id="aal_asset_id" name="asset_id" visibility="private"/>
+          <UML:Attribute xmi.id="aal_can_view" name="can_view" visibility="private"/>
+          <UML:Attribute xmi.id="aal_can_manage" name="can_manage" visibility="private"/>
+          <UML:Attribute xmi.id="aal_can_edit" name="can_edit" visibility="private"/>
+          <UML:Attribute xmi.id="aal_can_download" name="can_download" visibility="private"/>
+          <UML:Attribute xmi.id="aal_can_delete" name="can_delete" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "assay_organisms" -->
+        <UML:Class xmi.id="class_assay_organisms" name="assay_organisms" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="ao_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="ao_assay_id" name="assay_id" visibility="private"/>
+          <UML:Attribute xmi.id="ao_organism_id" name="organism_id" visibility="private"/>
+          <UML:Attribute xmi.id="ao_culture_growth_type_id" name="culture_growth_type_id" visibility="private"/>
+          <UML:Attribute xmi.id="ao_strain_id" name="strain_id" visibility="private"/>
+          <UML:Attribute xmi.id="ao_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="ao_updated_at" name="updated_at" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "assays" -->
+        <UML:Class xmi.id="class_assays" name="assays" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="ass_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="ass_title" name="title" visibility="private"/>
+          <UML:Attribute xmi.id="ass_assay_type_id" name="assay_type_id" visibility="private"/>
+          <UML:Attribute xmi.id="ass_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="ass_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="ass_technology_type_id" name="technology_type_id" visibility="private"/>
+          <UML:Attribute xmi.id="ass_study_id" name="study_id" visibility="private"/>
+          <UML:Attribute xmi.id="ass_owner_id" name="owner_id" visibility="private"/>
+          <UML:Attribute xmi.id="ass_first_letter" name="first_letter" visibility="private"/>
+          <UML:Attribute xmi.id="ass_assay_class_id" name="assay_class_id" visibility="private"/>
+          <UML:Attribute xmi.id="ass_uuid" name="uuid" visibility="private"/>
+          <UML:Attribute xmi.id="ass_policy_id" name="policy_id" visibility="private"/>
+          <UML:Attribute xmi.id="ass_institution_id" name="institution_id" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "attachments" -->
+        <UML:Class xmi.id="class_attachments" name="attachments" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="at_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="at_size" name="size" visibility="private"/>
+          <UML:Attribute xmi.id="at_height" name="height" visibility="private"/>
+          <UML:Attribute xmi.id="at_width" name="width" visibility="private"/>
+          <UML:Attribute xmi.id="at_parent_id" name="parent_id" visibility="private"/>
+          <UML:Attribute xmi.id="at_attachable_id" name="attachable_id" visibility="private"/>
+          <UML:Attribute xmi.id="at_position" name="position" visibility="private"/>
+          <UML:Attribute xmi.id="at_content_type" name="content_type" visibility="private"/>
+          <UML:Attribute xmi.id="at_filename" name="filename" visibility="private"/>
+          <UML:Attribute xmi.id="at_thumbnail" name="thumbnail" visibility="private"/>
+          <UML:Attribute xmi.id="at_attachable_type" name="attachable_type" visibility="private"/>
+          <UML:Attribute xmi.id="at_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="at_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="at_data_url" name="data_url" visibility="private"/>
+          <UML:Attribute xmi.id="at_original_filename" name="original_filename" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "assets" -->
+        <UML:Class xmi.id="class_assets" name="assets" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="as_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="as_project_id" name="project_id" visibility="private"/>
+          <UML:Attribute xmi.id="as_resource_type" name="resource_type" visibility="private"/>
+          <UML:Attribute xmi.id="as_resource_id" name="resource_id" visibility="private"/>
+          <UML:Attribute xmi.id="as_policy_id" name="policy_id" visibility="private"/>
+          <UML:Attribute xmi.id="as_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="as_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="as_last_used_at" name="last_used_at" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "institutions" -->
+        <UML:Class xmi.id="class_institutions" name="institutions" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="inst_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="inst_name" name="name" visibility="private"/>
+          <UML:Attribute xmi.id="inst_address" name="address" visibility="private"/>
+          <UML:Attribute xmi.id="inst_city" name="city" visibility="private"/>
+          <UML:Attribute xmi.id="inst_web_page" name="web_page" visibility="private"/>
+          <UML:Attribute xmi.id="inst_country" name="country" visibility="private"/>
+          <UML:Attribute xmi.id="inst_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="inst_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="inst_avatar_id" name="avatar_id" visibility="private"/>
+          <UML:Attribute xmi.id="inst_first_letter" name="first_letter" visibility="private"/>
+          <UML:Attribute xmi.id="inst_uuid" name="uuid" visibility="private"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "projects" -->
+        <UML:Class xmi.id="class_projects" name="projects" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="proj_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="proj_name" name="name" visibility="private"/>
+          <UML:Attribute xmi.id="proj_web_page" name="web_page" visibility="private"/>
+          <UML:Attribute xmi.id="proj_wiki_page" name="wiki_page" visibility="private"/>
+          <UML:Attribute xmi.id="proj_created_at" name="created_at" visibility="private"/>
+          <UML:Attribute xmi.id="proj_updated_at" name="updated_at" visibility="private"/>
+          <UML:Attribute xmi.id="proj_description" name="description" visibility="private"/>
+          <UML:Attribute xmi.id="proj_avatar_id" name="avatar_id" visibility="private"/>
+          <UML:Attribute xmi.id="proj_default_policy_id" name="default_policy_id" visibility="private"/>
+          <UML:Attribute xmi.id="proj_first_letter" name="first_letter" visibility="private"/>
+          <UML:Attribute xmi.id="proj_site_credentials" name="site_credentials" visibility="private"/>
+          <UML:Attribute xmi.id="proj_site_root_uri" name="site_root_uri" visibility="private"/>
+          <UML:Attribute xmi.id="proj_last_jerm_run" name="last_jerm_run" visibility="private"/>
+          <UML:Attribute xmi.id="proj_uuid" name="uuid" visibility="private"/>
+        </UML:Class>
+
+        <!-- Beziehungen -->
+        <UML:Association xmi.id="assoc_activity_logs_activity_loggables">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_activity_logs" type="class_activity_logs" name="activity_logs" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_activity_loggables" type="TBox_Class" name="activity_loggables" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_activity_logs_culprits">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_activity_logs" type="class_activity_logs" name="activity_logs" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_culprits" type="TBox_Class" name="culprits" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_activity_logs_referenced">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_activity_logs" type="class_activity_logs" name="activity_logs" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_referenced" type="TBox_Class" name="referenced" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_annotation_value_seeds_attributes">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_annotation_value_seeds" type="class_annotation_value_seeds" name="annotation_value_seeds" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_attributes" type="class_annotation_attributes" name="attributes" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_annotation_value_seeds_values">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_annotation_value_seeds" type="class_annotation_value_seeds" name="annotation_value_seeds" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_values" type="TBox_Class" name="values" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_annotation_versions_annotations">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_annotation_versions" type="class_annotation_versions" name="annotation_versions" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_annotations" type="class_annotations" name="annotations" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_assay_assets_assays">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_assay_assets" type="class_assay_assets" name="assay_assets" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_assays" type="class_assays" name="assays" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_assay_assets_assets">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_assay_assets" type="class_assay_assets" name="assay_assets" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_assets" type="class_assets" name="assets" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_assay_auth_lookup_users">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_assay_auth_lookup" type="class_assay_auth_lookup" name="assay_auth_lookup" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_users" type="TBox_Class" name="users" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_assay_organisms_assays">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_assay_organisms" type="class_assay_organisms" name="assay_organisms" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_assays" type="class_assays" name="assays" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_attachments_parents">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_attachments" type="class_attachments" name="attachments" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_parents" type="TBox_Class" name="parents" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_attachments_attachables">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_attachments" type="class_attachments" name="attachments" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_attachables" type="TBox_Class" name="attachables" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_assets_projects">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_assets" type="class_assets" name="assets" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_projects" type="class_projects" name="projects" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_assets_resources">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_assets" type="class_assets" name="assets" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_resources" type="TBox_Class" name="resources" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,41 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version='1.2' xmlns:UML='org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UntitledModel" name="UntitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:ActivityGraph xmi.id="activityGraph" name="ActivityGraph">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="top" name="Top" isConcurrent="false">
+              <UML:CompositeState.subvertex>
+                <UML:Pseudostate xmi.id="initialState" name="Initialzustand" kind="initial"/>
+                <UML:ActionState xmi.id="actionState" name="Aktionselement">
+                  <UML:StateMachine.transitions>
+                    <UML:Transition xmi.id="trans_initial_to_action" source="initialState" target="actionState"/>
+                  </UML:StateMachine.transitions>
+                </UML:ActionState>
+                <UML:Pseudostate xmi.id="junctionState" name="Verzweigungspunkt" kind="junction"/>
+                <UML:CallState xmi.id="callState" name="Aufrufzustand"/>
+                <UML:ObjectFlowState xmi.id="objectFlowState" name="Objektflusszustand"/>
+                <UML:FinalState xmi.id="finalState" name="Endzustand"/>
+                <UML:Transition xmi.id="trans_action_to_junction" source="actionState" target="junctionState"/>
+                <UML:Transition xmi.id="trans_junction_to_call" source="junctionState" target="callState"/>
+                <UML:Transition xmi.id="trans_call_to_objectFlow" source="callState" target="objectFlowState"/>
+                <UML:Transition xmi.id="trans_objectFlow_to_final" source="objectFlowState" target="finalState"/>
+                <UML:Transition xmi.id="trans_junction_to_final" source="junctionState" target="finalState"/>
+              </UML:CompositeState.subvertex>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:ActivityGraph>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

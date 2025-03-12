@@ -1,0 +1,95 @@
+```xml
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name = "UML" xmi.version = "1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id = "model_Logical_View" name = "Logical View">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Paket "Datatypes" -->
+        <UML:Package xmi.id = "package_Datatypes" name = "Datatypes" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id = "datatype_int" name = "int"/>
+            <UML:DataType xmi.id = "datatype_char" name = "char"/>
+            <UML:DataType xmi.id = "datatype_bool" name = "bool"/>
+            <UML:DataType xmi.id = "datatype_float" name = "float"/>
+            <UML:DataType xmi.id = "datatype_double" name = "double"/>
+            <UML:DataType xmi.id = "datatype_short" name = "short"/>
+            <UML:DataType xmi.id = "datatype_long" name = "long"/>
+            <UML:DataType xmi.id = "datatype_unsigned_int" name = "unsigned int"/>
+            <UML:DataType xmi.id = "datatype_unsigned_short" name = "unsigned short"/>
+            <UML:DataType xmi.id = "datatype_unsigned_long" name = "unsigned long"/>
+            <UML:DataType xmi.id = "datatype_string" name = "string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse "users_manager" -->
+        <UML:Class xmi.id = "class_users_manager" name = "users_manager" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = "attr_aggregates_user" name = "aggregatesUser" visibility = "private" aggregation = "composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref = "class_user"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "user" -->
+        <UML:Class xmi.id = "class_user" name = "user" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "database" -->
+        <UML:Class xmi.id = "class_database" name = "database" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "session" -->
+        <UML:Class xmi.id = "class_session" name = "session" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "acl" -->
+        <UML:Class xmi.id = "class_acl" name = "acl" visibility = "public" isAbstract = "false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziation zwischen user und database -->
+        <UML:Association xmi.id = "assoc_user_database">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_user_database_user" type = "class_user" name = "user" visibility = "public" aggregation = "none" multiplicity = "0..*" />
+            <UML:AssociationEnd xmi.id = "assocEnd_user_database_database" type = "class_database" name = "database" visibility = "public" aggregation = "none" multiplicity = "1" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen session und user -->
+        <UML:Association xmi.id = "assoc_session_user">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_session_user_session" type = "class_session" name = "session" visibility = "public" aggregation = "none" multiplicity = "0..*" />
+            <UML:AssociationEnd xmi.id = "assocEnd_session_user_user" type = "class_user" name = "user" visibility = "public" aggregation = "none" multiplicity = "1" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen acl und user -->
+        <UML:Association xmi.id = "assoc_acl_user">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_acl_user_acl" type = "class_acl" name = "acl" visibility = "public" aggregation = "none" multiplicity = "0..*" />
+            <UML:AssociationEnd xmi.id = "assocEnd_acl_user_user" type = "class_user" name = "user" visibility = "public" aggregation = "none" multiplicity = "1" />
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

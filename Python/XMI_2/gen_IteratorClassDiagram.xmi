@@ -1,0 +1,154 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_FacebookIntegration" name="FacebookIntegration">
+      <UML:Namespace.ownedElement>
+
+        <UML:Interface xmi.id="interface_IComponent" name="IComponent" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_displaySelectedPhotoTags" name="displaySelectedPhotoTags" visibility="private">
+              <UML:Parameter xmi.id="parameter_return_displaySelectedPhotoTags" name="return" kind="return"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class_FBAdapter_FacebookService" name="FBAdapter:FacebookService" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Login1" name="Login" visibility="public">
+              <UML:Parameter xmi.id="parameter_Login1_return" name="return" kind="return"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_Login2" name="Login" visibility="public">
+              <UML:Parameter xmi.id="parameter_param" name="params" kind="in"/>
+              <UML:Parameter xmi.id="parameter_Login2_return" name="return" kind="return"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+          <UML:Generalization>
+            <UML:Class xmi.idref="interface_IComponent"/>
+          </UML:Generalization>
+          <UML:Comment body="Login() calls Login(params)"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_User" name="User" visibility="public"/>
+
+        <UML:Class xmi.id="class_Singleton_T" name="Singleton&lt;T&gt;" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_FacebookAlbum" name="FacebookAlbum" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_m_Album" name="m_Album" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_m_User" name="m_User" visibility="private"/>
+          </UML:Classifier.feature>
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Singleton_T"/>
+            <UML:Class xmi.idref="interface_IComponent"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_FBAdapter" name="FBAdapter" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_FacebookUser" name="FacebookUser" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_FacebookUserFriend" name="FacebookUserFriend" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_FacebookAlbum" name="FacebookAlbum" visibility="private"/>
+            <UML:Operation xmi.id="operation_Initialize" name="Initialize" visibility="public"/>
+            <UML:Operation xmi.id="operation_Login" name="Login" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Album" name="Album" visibility="public"/>
+
+        <UML:Class xmi.id="class_Instance" name="Instance" visibility="public"/>
+
+        <UML:Class xmi.id="class_PictureBox" name="PictureBox" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Load" name="Load" visibility="private">
+            </UML:Operation>
+          </UML:Classifier.feature>
+          <UML:Comment body="Load operation description goes here."/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Panel" name="Panel"/>
+        <UML:Class xmi.id="class_ListBox" name="ListBox"/>
+        <UML:Class xmi.id="class_FolderBrowserDialog" name="FolderBrowserDialog"/>
+        <UML:Class xmi.id="class_ProgressBar" name="ProgressBar"/>
+        <UML:Class xmi.id="class_Hashtable" name="Hashtable"/>
+
+        <UML:Class xmi.id="class_AlbumsPhotosControler" name="AlbumsPhotosControler" visibility="public"/>
+
+        <UML:Class xmi.id="class_PictureBoxProxy" name="PictureBoxProxy" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_PictureBox"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Comparer" name="Comparer" isAbstract="true" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_ShouldSwap" name="ShouldSwap" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComparerASCAlbumsByPhotosCount" name="ComparerASCAlbumsByPhotosCount" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Comparer"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComparerDESCAlbumsByPhotosCount" name="ComparerDESCAlbumsByPhotosCount" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Comparer"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComparerASCFriendsByAge" name="ComparerASCFriendsByAge" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Comparer"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComparerDESCFriendsByAge" name="ComparerDESCFriendsByAge" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Comparer"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Sorter" name="Sorter" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_Comparer" name="Comparer" visibility="private"/>
+            <UML:Operation xmi.id="operation_Sort" name="Sort" visibility="public"/>
+            <UML:Operation xmi.id="operation_doSwap" name="doSwap" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AlbumPhotosAggregate" name="AlbumPhotosAggregate" visibility="public"/>
+        <UML:Class xmi.id="class_AlbumPhotosIterator" name="AlbumPhotosIterator" visibility="public"/>
+
+        <UML:Interface xmi.id="interface_IPictureBox" name="IPictureBox" visibility="public"/>
+        <UML:Interface xmi.id="interface_IAggregate" name="IAggregate" visibility="public"/>
+        <UML:Interface xmi.id="interface_IIterator" name="IIterator" visibility="public"/>
+
+        <UML:Class xmi.id="class_FacebookUser" name="FacebookUser" visibility="public"/>
+        <UML:Class xmi.id="class_object" name="object" visibility="public"/>
+        <UML:Class xmi.id="class_IEnumerable_object" name="IEnumerable&lt;object&gt;" visibility="public"/>
+
+        <UML:Class xmi.id="class_FacebookObjectCollection_Photo" name="FacebookObjectCollection&lt;Photo&gt;" visibility="public"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_FBAdapter_User">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_FBAdapter_" type="class_FBAdapter_FacebookService" name="FBAdapter" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_User" type="class_User" name="User" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

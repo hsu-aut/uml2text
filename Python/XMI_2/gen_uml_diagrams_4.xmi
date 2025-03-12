@@ -1,0 +1,115 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Network" name="Network">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_kademlia" name="kademlia">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_node_id" name="id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_node_buckets" name="_buckets" visibility="private"/>
+                <UML:Attribute xmi.id="attr_node_connection" name="_connection" visibility="private"/>
+                <UML:Attribute xmi.id="attr_node_dataStore" name="_dataStore" visibility="private"/>
+                <UML:Operation xmi.id="op_node_init" name="__init__" visibility="public"/>
+                <UML:Operation xmi.id="op_node_generateID" name="_generateID" visibility="private"/>
+                <UML:Operation xmi.id="op_node_lookupNode" name="_lookupNode" visibility="private"/>
+                <UML:Operation xmi.id="op_node_findNode" name="findNode" visibility="public"/>
+                <UML:Operation xmi.id="op_node_updateContacts" name="updateContacts" visibility="public"/>
+                <UML:Operation xmi.id="op_node_store" name="store" visibility="public"/>
+                <UML:Operation xmi.id="op_node_findValue" name="findValue" visibility="public"/>
+                <UML:Operation xmi.id="op_node_receiveData" name="receiveData" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_KBucket" name="KBucket" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_kbucket_contacts" name="_contacts" visibility="private"/>
+                <UML:Operation xmi.id="op_kbucket_addContact" name="addContact" visibility="public"/>
+                <UML:Operation xmi.id="op_kbucket_getContacts" name="getContacts" visibility="public"/>
+                <UML:Operation xmi.id="op_kbucket_removeContact" name="removeContact" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Contact" name="Contact" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_contact_id" name="id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_contact_address" name="address" visibility="private"/>
+                <UML:Attribute xmi.id="attr_contact_port" name="port" visibility="private"/>
+                <UML:Operation xmi.id="op_contact_init" name="__init__" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Protocol" name="Protocol" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_protocol_ping" name="ping" visibility="public"/>
+                <UML:Operation xmi.id="op_protocol_store" name="store" visibility="public"/>
+                <UML:Operation xmi.id="op_protocol_findNode" name="findNode" visibility="public"/>
+                <UML:Operation xmi.id="op_protocol_findValue" name="findValue" visibility="public"/>
+                <UML:Operation xmi.id="op_protocol_sendRPC" name="_sendRPC" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_DataStore" name="DataStore" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_datastore_setitem" name="__setitem__" visibility="public"/>
+                <UML:Operation xmi.id="op_datastore_getitem" name="__getitem__" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_Node_KBucket">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Node_KBucket_Node" type="class_Node" name="node" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Node_KBucket_KBucket" type="class_KBucket" name="kbucket" visibility="public" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Node_Protocol">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Node_Protocol_Node" type="class_Node" name="node" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Node_Protocol_Protocol" type="class_Protocol" name="protocol" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Node_Contact">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Node_Contact_Node" type="class_Node" name="node" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Node_Contact_Contact" type="class_Contact" name="contact" visibility="public" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_KBucket_Contact">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_KBucket_Contact_KBucket" type="class_KBucket" name="kbucket" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_KBucket_Contact_Contact" type="class_Contact" name="contact" visibility="public" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_twisted" name="twisted">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_twisted_internet" name="internet">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_DatagramProtocol" name="DatagramProtocol" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

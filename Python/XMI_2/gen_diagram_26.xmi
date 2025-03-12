@@ -1,0 +1,106 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_FileSystemManagement" name="FileSystemManagement">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Basisklasse "FileSystem" -->
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public" isAbstract="true"/>
+        
+        <!-- Definition der Klasse "Ext3FileSystem" -->
+        <UML:Class xmi.id="class_Ext3FileSystem" name="Ext3FileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "ReiserFileSystem" -->
+        <UML:Class xmi.id="class_ReiserFileSystem" name="ReiserFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "NTFSFileSystem" -->
+        <UML:Class xmi.id="class_NTFSFileSystem" name="NTFSFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Basisklasse "Partition" -->
+        <UML:Class xmi.id="class_Partition" name="Partition" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Klasse "FreeSpace" -->
+        <UML:Class xmi.id="class_FreeSpace" name="FreeSpace" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Partition"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Basisklasse "PartitionType" -->
+        <UML:Class xmi.id="class_PartitionType" name="PartitionType" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Klasse "RootPartitionType" -->
+        <UML:Class xmi.id="class_RootPartitionType" name="RootPartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "HomePartitionType" -->
+        <UML:Class xmi.id="class_HomePartitionType" name="HomePartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Basisklasse "PartRequest" -->
+        <UML:Class xmi.id="class_PartRequest" name="PartRequest" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Klasse "FormatRequest" -->
+        <UML:Class xmi.id="class_FormatRequest" name="FormatRequest" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartRequest"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "SwapFileRequest" -->
+        <UML:Class xmi.id="class_SwapFileRequest" name="SwapFileRequest" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartRequest"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "User" -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

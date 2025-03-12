@@ -1,0 +1,270 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Main" name="MainModel">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_FailedToConverge" name="FailedToConverge" visibility="public">
+          <UML:Operation xmi.id="op_FailedToConverge_what" name="what" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_MultiAngulation" name="MultiAngulation" visibility="public">
+          <UML:Attribute xmi.id="attr_MultiAngulation_mAngData" name="mAngData"/>
+          <UML:Attribute xmi.id="attr_MultiAngulation_mAngFunc" name="mAngFunc"/>
+          <UML:Attribute xmi.id="attr_MultiAngulation_mAngSort" name="mAngSort"/>
+          <UML:Attribute xmi.id="attr_MultiAngulation_mModeler" name="mModeler"/>
+          <UML:Operation xmi.id="op_MultiAngulation_GetAngulationFunction" name="GetAngulationFunction" visibility="public"/>
+          <UML:Operation xmi.id="op_MultiAngulation_GetPosition" name="GetPosition" visibility="public"/>
+          <UML:Operation xmi.id="op_MultiAngulation_MultiAngulation" name="MultiAngulation" visibility="public"/>
+          <UML:Operation xmi.id="op_MultiAngulation_Destroy" name="~MultiAngulation" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AngulationData" name="AngulationData" visibility="public">
+          <UML:Operation xmi.id="op_AngulationData_AngulationData" name="AngulationData" visibility="public"/>
+          <UML:Operation xmi.id="op_AngulationData_Destroy" name="~AngulationData" visibility="public"/>
+          <UML:Operation xmi.id="op_AngulationData_GetX" name="GetX" visibility="public"/>
+          <UML:Operation xmi.id="op_AngulationData_GetY" name="GetY" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ModelingError" name="ModelingError" visibility="public">
+          <UML:Attribute xmi.id="attr_ModelingError_msg" name="msg"/>
+          <UML:Operation xmi.id="op_ModelingError_ModelingError" name="ModelingError" visibility="public"/>
+          <UML:Operation xmi.id="op_ModelingError_what" name="what" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SingularMatrix" name="SingularMatrix" visibility="public">
+          <UML:Operation xmi.id="op_SingularMatrix_what" name="what" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_MultiLateration" name="MultiLateration" visibility="public">
+          <UML:Attribute xmi.id="attr_MultiLateration_mLatData" name="mLatData"/>
+          <UML:Attribute xmi.id="attr_MultiLateration_mLatFunc" name="mLatFunc"/>
+          <UML:Attribute xmi.id="attr_MultiLateration_mLatSort" name="mLatSort"/>
+          <UML:Attribute xmi.id="attr_MultiLateration_mModeler" name="mModeler"/>
+          <UML:Operation xmi.id="op_MultiLateration_GetLaterationFunction" name="GetLaterationFunction" visibility="public"/>
+          <UML:Operation xmi.id="op_MultiLateration_GetPosition" name="GetPosition" visibility="public"/>          
+          <UML:Operation xmi.id="op_MultiLateration_MultiLateration" name="MultiLateration" visibility="public"/>          
+          <UML:Operation xmi.id="op_MultiLateration_Destroy" name="~MultiLateration" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LaterationFunction" name="LaterationFunction" visibility="public">
+          <UML:Operation xmi.id="op_LaterationFunction_Evaluate" name="Evaluate" visibility="public"/>
+          <UML:Operation xmi.id="op_LaterationFunction_InitialiseParameters" name="InitialiseParameters" visibility="public"/>
+          <UML:Operation xmi.id="op_LaterationFunction_LaterationFunction" name="LaterationFunction" visibility="public"/>
+          <UML:Operation xmi.id="op_LaterationFunction_Destroy" name="~LaterationFunction" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_NonLinearModel" name="NonLinearModel" visibility="public">
+          <UML:Attribute xmi.id="attr_NonLinearModel_mAlpha" name="mAlpha"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mAlphadash" name="mAlphadash"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mBeta" name="mBeta"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mChiSq" name="mChiSq"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mDa" name="mDa"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mDataSize" name="mDataSize"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mFitData" name="mFitData"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mFitFunction" name="mFitFunction"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mLambda" name="mLambda"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mLastCall" name="mLastCall"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mNumParams" name="mNumParams"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mParams" name="mParams"/>
+          <UML:Attribute xmi.id="attr_NonLinearModel_mSingleDa" name="mSingleDa"/>
+          <UML:Operation xmi.id="op_NonLinearModel_ComputeSupportData" name="ComputeSupportData" visibility="public"/>
+          <UML:Operation xmi.id="op_NonLinearModel_Fit" name="Fit" visibility="public"/>
+          <UML:Operation xmi.id="op_NonLinearModel_GetStdErr" name="GetStdErr" visibility="public"/>
+          <UML:Operation xmi.id="op_NonLinearModel_NonLinearModel" name="NonLinearModel" visibility="public"/>
+          <UML:Operation xmi.id="op_NonLinearModel_Destroy" name="~NonLinearModel" visibility="public"/>
+          <UML:Operation xmi.id="op_NonLinearModel_SingleMarquardtIteration" name="SingleMarquardtIteration" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_InvalidData" name="InvalidData" visibility="public">
+          <UML:Operation xmi.id="op_InvalidData_what" name="what" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_IndexOutOfBounds" name="IndexOutOfBounds" visibility="public">
+          <UML:Operation xmi.id="op_IndexOutOfBounds_what" name="what" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FitFunction" name="FitFunction" visibility="public">
+          <UML:Attribute xmi.id="attr_FitFunction_mData" name="mData"/>
+          <UML:Attribute xmi.id="attr_FitFunction_mDeriv" name="mDeriv"/>
+          <UML:Attribute xmi.id="attr_FitFunction_mError" name="mError"/>
+          <UML:Attribute xmi.id="attr_FitFunction_mNumParams" name="mNumParams"/>
+          <UML:Attribute xmi.id="attr_FitFunction_mParams" name="mParams"/>
+          <UML:Operation xmi.id="op_FitFunction_CalculateResidual" name="CalculateResidual" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_Evaluate" name="Evaluate" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_FitFunction" name="FitFunction" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_Destroy" name="~FitFunction" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_GetCurrentDerivative" name="GetCurrentDerivative" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_GetError" name="GetError" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_GetNumParameters" name="GetNumParameters" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_GetParams" name="GetParams" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_InitialiseParameters" name="InitialiseParameters" visibility="public"/>
+          <UML:Operation xmi.id="op_FitFunction_SetError" name="SetError" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FitData" name="FitData" visibility="public">
+          <UML:Attribute xmi.id="attr_FitData_mNumFields" name="mNumFields"/>
+          <UML:Operation xmi.id="op_FitData_ActualIndex" name="ActualIndex" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_AddDatum" name="AddDatum" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_FitData" name="FitData" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_Destroy" name="~FitData" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_GetData" name="GetData" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_GetInputDataSize" name="GetInputDataSize" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_GetMeasurement" name="GetMeasurement" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_GetSigma" name="GetSigma" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_GetValidity" name="GetValidity" visibility="public"/>
+          <UML:Operation xmi.id="op_FitData_Invalidate" name="Invalidate" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TriAve" name="TriAve" visibility="public">
+          <UML:Attribute xmi.id="attr_TriAve_m_d" name="m_d"/>
+          <UML:Attribute xmi.id="attr_TriAve_m_number" name="m_number"/>
+          <UML:Attribute xmi.id="attr_TriAve_m_sigma" name="m_sigma"/>
+          <UML:Attribute xmi.id="attr_TriAve_m_x" name="m_x"/>
+          <UML:Attribute xmi.id="attr_TriAve_m_y" name="m_y"/>
+          <UML:Attribute xmi.id="attr_TriAve_m_z" name="m_z"/>
+          <UML:Operation xmi.id="op_TriAve_GetPosition" name="GetPosition" visibility="public"/>
+          <UML:Operation xmi.id="op_TriAve_TriAve" name="TriAve" visibility="public"/>
+          <UML:Operation xmi.id="op_TriAve_Destroy" name="~TriAve" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RANSAC" name="RANSAC" visibility="public">
+          <UML:Attribute xmi.id="attr_RANSAC_m_d" name="m_d"/>
+          <UML:Attribute xmi.id="attr_RANSAC_m_iteration_count" name="m_iteration_count"/>
+          <UML:Attribute xmi.id="attr_RANSAC_m_number" name="m_number"/>
+          <UML:Attribute xmi.id="attr_RANSAC_m_pfail" name="m_pfail"/>
+          <UML:Attribute xmi.id="attr_RANSAC_m_pgood" name="m_pgood"/>
+          <UML:Attribute xmi.id="attr_RANSAC_m_sigma" name="m_sigma"/>
+          <UML:Attribute xmi.id="attr_RANSAC_m_x" name="m_x"/>
+          <UML:Attribute xmi.id="attr_RANSAC_m_y" name="m_y"/>
+          <UML:Attribute xmi.id="attr_RANSAC_m_z" name="m_z"/>
+          <UML:Operation xmi.id="op_RANSAC_GetPosition" name="GetPosition" visibility="public"/>
+          <UML:Operation xmi.id="op_RANSAC_RANSAC" name="RANSAC" visibility="public"/>
+          <UML:Operation xmi.id="op_RANSAC_Destroy" name="~RANSAC" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GaussJordanEliminator" name="GaussJordanEliminator" visibility="public">
+          <UML:Operation xmi.id="op_GaussJordanEliminator_Eliminate" name="Eliminate" visibility="public"/>
+          <UML:Operation xmi.id="op_GaussJordanEliminator_GaussJordanEliminator" name="GaussJordanEliminator" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ResidualSorter" name="ResidualSorter" visibility="public">
+          <UML:Attribute xmi.id="attr_ResidualSorter_mData" name="mData"/>
+          <UML:Attribute xmi.id="attr_ResidualSorter_mFunc" name="mFunc"/>
+          <UML:Operation xmi.id="op_ResidualSorter_GetMaxResidualIndex" name="GetMaxResidualIndex" visibility="public"/>
+          <UML:Operation xmi.id="op_ResidualSorter_ResidualSorter" name="ResidualSorter" visibility="public"/>
+          <UML:Operation xmi.id="op_ResidualSorter_Destroy" name="~ResidualSorter" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MagnitudeSorter" name="MagnitudeSorter" visibility="public">
+          <UML:Operation xmi.id="op_MagnitudeSorter_GetMaxResidualIndex" name="GetMaxResidualIndex" visibility="public"/>
+          <UML:Operation xmi.id="op_MagnitudeSorter_MagnitudeSorter" name="MagnitudeSorter" visibility="public"/>
+          <UML:Operation xmi.id="op_MagnitudeSorter_Destroy" name="~MagnitudeSorter" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LaterationSorter" name="LaterationSorter" visibility="public">
+          <UML:Operation xmi.id="op_LaterationSorter_GetMaxResidualIndex" name="GetMaxResidualIndex" visibility="public"/>
+          <UML:Operation xmi.id="op_LaterationSorter_LaterationSorter" name="LaterationSorter" visibility="public"/>
+          <UML:Operation xmi.id="op_LaterationSorter_Destroy" name="~LaterationSorter" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_IterativeModeler" name="IterativeModeler" visibility="public">
+          <UML:Operation xmi.id="op_IterativeModeler_IterativeModeler" name="IterativeModeler" visibility="public"/>
+          <UML:Operation xmi.id="op_IterativeModeler_Model" name="Model" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MaxIterations" name="MaxIterations" visibility="public">
+          <UML:Operation xmi.id="op_MaxIterations_what" name="what" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ModelingFailure" name="ModelingFailure" visibility="public">
+          <UML:Operation xmi.id="op_ModelingFailure_what" name="what" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_NLMAPException" name="NLMAPException" visibility="public">
+          <UML:Operation xmi.id="op_NLMAPException_what" name="what" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FitFunctionException" name="FitFunctionException" visibility="public">
+          <UML:Operation xmi.id="op_FitFunctionException_what" name="what" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ResidualSorterException" name="ResidualSorterException" visibility="public">
+          <UML:Operation xmi.id="op_ResidualSorterException_what" name="what" visibility="public"/>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_MultiAngulation_IterativeModeler">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MultiAngulation_IterativeModeler_MultiAngulation" type="class_MultiAngulation" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MultiAngulation_IterativeModeler_IterativeModeler" type="class_IterativeModeler" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_MultiAngulation_AngulationFunction">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MultiAngulation_AngulationFunction_MultiAngulation" type="class_MultiAngulation" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MultiAngulation_AngulationFunction_AngulationFunction" type="class_FitFunction" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_MultiLateration_IterativeModeler">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MultiLateration_IterativeModeler_MultiLateration" type="class_MultiLateration" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MultiLateration_IterativeModeler_IterativeModeler" type="class_IterativeModeler" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_MultiLateration_LaterationFunction">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MultiLateration_LaterationFunction_MultiLateration" type="class_MultiLateration" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MultiLateration_LaterationFunction_LaterationFunction" type="class_LaterationFunction" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_NonLinearModel_FitFunction">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_NonLinearModel_FitFunction_NonLinearModel" type="class_NonLinearModel" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_NonLinearModel_FitFunction_FitFunction" type="class_FitFunction" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_NonLinearModel_FitData">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_NonLinearModel_FitData_NonLinearModel" type="class_NonLinearModel" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_NonLinearModel_FitData_FitData" type="class_FitData" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_NonLinearModel_GaussJordanEliminator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_NonLinearModel_GaussJordanEliminator_NonLinearModel" type="class_NonLinearModel" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_NonLinearModel_GaussJordanEliminator_GaussJordanEliminator" type="class_GaussJordanEliminator" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ResidualSorter_FitFunction">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ResidualSorter_FitFunction_ResidualSorter" type="class_ResidualSorter" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ResidualSorter_FitFunction_FitFunction" type="class_FitFunction" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ResidualSorter_FitData">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ResidualSorter_FitData_ResidualSorter" type="class_ResidualSorter" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ResidualSorter_FitData_FitData" type="class_FitData" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

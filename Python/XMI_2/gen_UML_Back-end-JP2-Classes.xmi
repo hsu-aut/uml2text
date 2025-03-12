@@ -1,0 +1,138 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Helioviewer" name="Helioviewer">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="r5iNOB8Edqxl" name="JP2Image" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_file" name="file" visibility="private"/>
+            <UML:Attribute xmi.id="attr_width" name="width" visibility="private"/>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="private"/>
+            <UML:Attribute xmi.id="attr_scale" name="scale" visibility="private"/>
+            <UML:Attribute xmi.id="attr_kdu_expand_cmd" name="kdu_expand_cmd" visibility="private"/>
+            <UML:Attribute xmi.id="attr_kdu_libs_dir" name="kdu_libs_dir" visibility="private"/>
+            <UML:Operation xmi.id="op_extractRegion" name="extractRegion" visibility="protected"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="K3vvTr0ZzCqz" name="SubFieldImage" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="r5iNOB8Edqxl"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_outputFile" name="outputFile" visibility="private"/>
+            <UML:Attribute xmi.id="attr_roi" name="roi" visibility="private"/>
+            <UML:Attribute xmi.id="attr_format" name="format" visibility="private"/>
+            <UML:Attribute xmi.id="attr_desiredScale" name="desiredScale" visibility="private"/>
+            <UML:Attribute xmi.id="attr_scaleFactor" name="scaleFactor" visibility="private"/>
+            <UML:Attribute xmi.id="attr_colorTable" name="colorTable" visibility="private"/>
+            <UML:Attribute xmi.id="attr_alphaMask" name="alphaMask" visibility="private"/>
+            <UML:Operation xmi.id="op_setPadding" name="setPadding" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="lQOFHRxcq6i2" name="Tile" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private"/>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tileSize" name="tileSize" visibility="private"/>
+            <UML:Operation xmi.id="op_getPixelCoordinates" name="getPixelCoordinates" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="jXzSqzbA2U5T" name="HelioviewerTile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_observatory" name="observatory" visibility="private"/>
+            <UML:Attribute xmi.id="attr_instrument" name="instrument" visibility="private"/>
+            <UML:Attribute xmi.id="attr_detector" name="detector" visibility="private"/>
+            <UML:Attribute xmi.id="attr_measurement" name="measurement" visibility="private"/>
+            <UML:Operation xmi.id="op_GetFilePath" name="getFilePath" visibility="public"/>
+            <UML:Operation xmi.id="op_CalculatePadding" name="calculatePadding" visibility="public"/>
+            <UML:Operation xmi.id="op_CalculateScaling" name="calculateScaling" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="675wDowwJvP9" name="CompositeImage" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_layers" name="layers" visibility="private"/>
+            <UML:Attribute xmi.id="attr_outputFile" name="outputFile" visibility="private"/>
+            <UML:Attribute xmi.id="attr_format" name="format" visibility="private"/>
+            <UML:Attribute xmi.id="attr_scale" name="scale" visibility="private"/>
+            <UML:Operation xmi.id="op_addWaterMark" name="addWaterMark" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="syHtTKMnMN8Z" name="Movie" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_frames" name="frames" visibility="private"/>
+            <UML:Attribute xmi.id="attr_format" name="format" visibility="private"/>
+            <UML:Attribute xmi.id="attr_frameRate" name="frameRate" visibility="private"/>
+            <UML:Attribute xmi.id="attr_maxFrames" name="maxFrames" visibility="private"/>
+            <UML:Attribute xmi.id="attr_width" name="width" visibility="private"/>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="private"/>
+            <UML:Attribute xmi.id="attr_aspectRatio" name="aspectRatio" visibility="private"/>
+            <UML:Attribute xmi.id="attr_scale" name="scale" visibility="private"/>
+            <UML:Operation xmi.id="op_setQuality" name="setQuality" visibility="public"/>
+            <UML:Operation xmi.id="op_addWaterMark" name="addWaterMark" visibility="public"/>
+            <UML:Operation xmi.id="op_createMovie" name="createMovie" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="M32LDqIxGeCV" name="HelioviewerScreenshot" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="zBIIRmLhiEZ9" name="HelioviewerMovie" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_layers" name="layers" visibility="private"/>
+            <UML:Attribute xmi.id="attr_timeStep" name="timeStep" visibility="private"/>
+            <UML:Operation xmi.id="op_getFileName" name="getFileName" visibility="public"/>
+            <UML:Operation xmi.id="op_buildMovieList" name="buildMovieList" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="y2IhgBt67wsB" name="HelioviewerCompositeImage" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="zIaIhThjOYwC" name="HelioviewerCompositeImageLayer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_observatory" name="observatory" visibility="private"/>
+            <UML:Attribute xmi.id="attr_instrument" name="instrument" visibility="private"/>
+            <UML:Attribute xmi.id="attr_detector" name="detector" visibility="private"/>
+            <UML:Attribute xmi.id="attr_measurement" name="measurement" visibility="private"/>
+            <UML:Attribute xmi.id="attr_date" name="date" visibility="private"/>
+            <UML:Operation xmi.id="op_getWaterMarkText" name="getWaterMarkText" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="qujPI6aKD3rd" name="Array" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="xrFoZh1FSHnn" name="CompositeImageLayer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="zIaIhThjOYwC"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:DataType xmi.id="6o3cDi83sow0" name="DateTime"/>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

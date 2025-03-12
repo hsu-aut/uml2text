@@ -1,0 +1,190 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_modeloSemTitulo" name="modeloSemTitulo">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package pt -->
+        <UML:Package xmi.id="package_pt" name="pt">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Package uminho -->
+            <UML:Package xmi.id="package_uminho" name="uminho">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Package xmi -->
+                <UML:Package xmi.id="package_xmi" name="xmi">
+                  <UML:Namespace.ownedElement>
+                    
+                    <!-- Definition der Klasse Class1 -->
+                    <UML:Class xmi.id="class_Class1" name="Class1" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        
+                        <UML:Attribute xmi.id="attr_id" name="id" visibility="public" changeability="changeable">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="int"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_name" name="name" visibility="public" changeability="changeable"/>
+                        
+                        <UML:Operation xmi.id="op_getName" name="getName" visibility="public">
+                          <UML:BehavioralFeature.parameter>
+                            <UML:Parameter xmi.id="param_getName_return" kind="return"/>
+                          </UML:BehavioralFeature.parameter>
+                        </UML:Operation>
+                        
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+
+                    <!-- Definition der Klasse Class 2 -->
+                    <UML:Class xmi.id="class_Class2" name="Class 2" visibility="public" isAbstract="false">
+                      <UML:Generalization>
+                        <UML:Generalization.child>
+                          <UML:Class xmi.idref="class_Class2"/>
+                        </UML:Generalization.child>
+                        <UML:Generalization.parent>
+                          <UML:Class xmi.idref="class_Element"/>
+                        </UML:Generalization.parent>
+                      </UML:Generalization>
+                      <UML:Namespace.ownedElement>
+                        
+                        <UML:Attribute xmi.id="attr_value" name="value" visibility="public">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="int"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        
+                        <UML:Attribute xmi.id="attr_newAttr" name="newAttr" visibility="public"/>
+                        
+                        <UML:Operation xmi.id="op_total" name="total" visibility="public">
+                          <UML:BehavioralFeature.parameter>
+                            <UML:Parameter xmi.id="param_total_return" kind="return">
+                              <UML:Parameter.type>
+                                <UML:DataType xmi.idref="int"/>
+                              </UML:Parameter.type>
+                            </UML:Parameter>
+                          </UML:BehavioralFeature.parameter>
+                        </UML:Operation>
+                        
+                        <UML:Operation xmi.id="op_test" name="test" visibility="public">
+                          <UML:BehavioralFeature.parameter>
+                            <UML:Parameter xmi.id="param_test_a" kind="in">
+                              <UML:Parameter.type>
+                                <UML:DataType xmi.idref="int"/>
+                              </UML:Parameter.type>
+                            </UML:Parameter>
+                            <UML:Parameter xmi.id="param_test_b" kind="in">
+                              <UML:Parameter.type>
+                                <UML:DataType xmi.idref="char"/>
+                              </UML:Parameter.type>
+                            </UML:Parameter>
+                          </UML:BehavioralFeature.parameter>
+                        </UML:Operation>
+                        
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+
+                    <!-- Definition der Klasse Element -->
+                    <UML:Class xmi.id="class_Element" name="Element" visibility="public" isAbstract="false">
+                      <UML:Generalization>
+                        <UML:Generalization.child>
+                          <UML:Class xmi.idref="class_Element"/>
+                        </UML:Generalization.child>
+                        <UML:Generalization.parent>
+                          <UML:Class xmi.idref="class_SimpleElement"/>
+                        </UML:Generalization.parent>
+                      </UML:Generalization>
+                      <UML:Namespace.ownedElement>
+                        
+                        <UML:Attribute xmi.id="attr_test" name="test" visibility="public"/>
+                        
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+
+                    <!-- Definition der Klasse SimpleElement -->
+                    <UML:Class xmi.id="class_SimpleElement" name="SimpleElement" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        
+                        <UML:Attribute xmi.id="attr_value" name="value" visibility="public">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="int"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        
+                        <UML:Dependency supplier="class_IElement"/>
+                        
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+
+                    <!-- Definition der Klasse Items -->
+                    <UML:Class xmi.id="class_Items" name="Items" visibility="public" isAbstract="false">
+                      <UML:Namespace.ownedElement>
+                        
+                        <UML:Attribute xmi.id="attr_price" name="price" visibility="public">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="double"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        
+                        <UML:Operation xmi.id="op_getPrice" name="getPrice" visibility="public">
+                          <UML:BehavioralFeature.parameter>
+                            <UML:Parameter xmi.id="param_getPrice_a" kind="in"/>
+                          </UML:BehavioralFeature.parameter>
+                        </UML:Operation>
+                        
+                      </UML:Namespace.ownedElement>
+                    </UML:Class>
+
+                    <!-- Definition der Schnittstelle IElement -->
+                    <UML:Interface xmi.id="class_IElement" name="IElement" visibility="public">
+                      <UML:Namespace.ownedElement>
+                        <UML:Operation xmi.id="op_IElement_getName" name="getName" visibility="public"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Interface>
+                    
+                    <!-- Assoziationen -->
+                    
+                    <!-- Assoziation between Class1 and Class 2 -->
+                    <UML:Association xmi.id="assoc1" name="Class1-Class2" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assoc1_end1" type="class_Class1" visibility="public" isNavigable="false"/>
+                        <UML:AssociationEnd xmi.id="assoc1_end2" type="class_Class2" visibility="public"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+
+                    <!-- Assoziation between Items and Class1 -->
+                    <UML:Association xmi.id="assoc2" name="Items-Class1" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assoc2_end1" type="class_Items" visibility="public"/>
+                        <UML:AssociationEnd xmi.id="assoc2_end2" type="class_Class1" visibility="public"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                    
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Primitive and Built-in Types -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="void" name="void"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

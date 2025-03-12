@@ -1,0 +1,74 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="eee_1045467100313_135436_1" name="Data">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="eee_1045467100313_365297_7" name="Component View"/>
+        <UML:Package xmi.id="_9_0_2_12ab03bf_1125323139546_169312_1" name="Data types"/>
+        <UML:Model xmi.id="_9_0_2_8980277_1148166596670_767998_0" name="TimeTracker">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="_9_0_2_8980277_1148166945702_566518_4" name="domain">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="_9_0_2_8980277_1148166945702_566518_4" name="User" visibility="public" isAbstract="false">
+                  <UML:TaggedValue tag="stereotype" value="Entity"/>
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="_9_0_2_8980277_1149642273971_883214_71" name="username" visibility="private"/>
+                    <UML:Attribute xmi.id="_9_0_2_8980277_1149642273971_883214_72" name="email" visibility="private"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Class xmi.id="_9_0_2_8980277_1149642273971_573140_43" name="TimecardStatus" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="_9_0_2_8980277_1149642273971_573140_44" name="Draft" visibility="public"/>
+                    <UML:Attribute xmi.id="_9_0_2_8980277_1149642273971_573140_45" name="Submitted" visibility="public"/>
+                    <UML:Attribute xmi.id="_9_0_2_8980277_1149642273971_573140_46" name="Approved" visibility="public"/>
+                    <UML:Attribute xmi.id="_9_0_2_8980277_1149642273971_573140_47" name="Rejected" visibility="public"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Class xmi.id="_9_0_2_8980277_1149642273971_402314_52" name="Task" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="_9_0_2_8980277_1149642273971_665184_54" name="TimeAllocation" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="_9_0_2_8980277_1149642273971_368646_61" name="Timecard" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+        
+        <UML:Association xmi.id="Association_User_Role">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="associationEndUserRole" type="_9_0_2_8980277_1148166945702_566518_4" name="user" visibility="public" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="Association_Timecard_TimeAllocation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="associationEndTimecard" type="_9_0_2_8980277_1149642273971_368646_61" name="timecard" visibility="public" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="associationEndTimeAllocation" type="_9_0_2_8980277_1149642273971_665184_54" name="timeAllocation" visibility="public" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="Association_Timecard_Status">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="associationEndTimecardStatus" type="_9_0_2_8980277_1149642273971_368646_61" name="timecard" visibility="public" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="associationEndTimecardStatusValue" type="_9_0_2_8980277_1149642273971_573140_43" name="status" visibility="public" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="Association_Task_TimeAllocation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="associationEndTask" type="_9_0_2_8980277_1149642273971_402314_52" name="task" visibility="public" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="associationEndTimeAllocationTask" type="_9_0_2_8980277_1149642273971_665184_54" name="timeAllocation" visibility="public" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+      
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

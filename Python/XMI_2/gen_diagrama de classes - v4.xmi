@@ -1,0 +1,131 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Definition des logischen Modells -->
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View" visibility="public" isAbstract="false">
+        </UML:Package>
+
+        <!-- Definition der Datentypen -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt_int" name="int"/>
+            <UML:DataType xmi.id="dt_char" name="char"/>
+            <UML:DataType xmi.id="dt_bool" name="bool"/>
+            <UML:DataType xmi.id="dt_float" name="float"/>
+            <UML:DataType xmi.id="dt_double" name="double"/>
+            <UML:DataType xmi.id="dt_StringArray" name="String[]"/>
+            <UML:DataType xmi.id="dt_Map" name="Map"/>
+            <UML:DataType xmi.id="dt_List" name="List"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse Usuario -->
+        <UML:Class xmi.id="class_Usuario" name="Usuario" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_idUsuario" name="idUsuario" visibility="private" type="dt_int"/>
+            <UML:Attribute xmi.id="attr_login" name="login" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_senha" name="senha" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_perfil" name="perfil" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Perfil"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_criarPerfil" name="criarPerfil" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_cadastrarCarona" name="cadastrarCarona" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_localizarCarona" name="localizarCarona" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Perfil -->
+        <UML:Class xmi.id="class_Perfil" name="Perfil" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_nome" name="nome" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_endereco" name="endereco" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_email" name="email" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_idPerfil" name="idPerfil" visibility="private" type="dt_int"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Sessao -->
+        <UML:Class xmi.id="class_Sessao" name="Sessao" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_idUser" name="idUser" visibility="private" type="dt_int"/>
+            <UML:Attribute xmi.id="attr_idSessao" name="idSessao" visibility="private" type="dt_int"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse SistemaCaronas -->
+        <UML:Class xmi.id="class_SistemaCaronas" name="SistemaCaronas" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_mapIdSessao" name="mapIdSessao" visibility="private" type="dt_Map"/>
+            <UML:Attribute xmi.id="attr_mapIdUsuario" name="mapIdUsuario" visibility="private" type="dt_Map"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Carona -->
+        <UML:Class xmi.id="class_Carona" name="Carona" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Classifier xmi.idref="class_Comparable"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_idCarona" name="idCarona" visibility="private" type="dt_int"/>
+            <UML:Attribute xmi.id="attr_origem" name="origem" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_destino" name="destino" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_hora" name="hora" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_vagas" name="vagas" visibility="private" type="dt_int"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse CaronaMunicipal -->
+        <UML:Class xmi.id="class_CaronaMunicipal" name="CaronaMunicipal" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Classifier xmi.idref="class_Carona"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse Solicitacao -->
+        <UML:Class xmi.id="class_Solicitacao" name="Solicitacao" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_origemCaronaSolicitacao" name="origemCaronaSolicitacao" visibility="private" type="dt_char"/>
+            <UML:Attribute xmi.id="attr_destinoCaronaSolicitacao" name="destinoCaronaSolicitacao" visibility="private" type="dt_char"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse GerenciadorDeDados -->
+        <UML:Class xmi.id="class_GerenciadorDeDados" name="GerenciadorDeDados" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Assoziationen -->
+
+        <!-- Aggregation zwischen Usuario und Perfil -->
+        <UML:Association xmi.id="assoc_Usuario_Perfil" name="usuario-perfil" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Usuario_Perfil_Usuario" type="class_Usuario" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Usuario_Perfil_Perfil" type="class_Perfil" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Verbindung zwischen Sessao und SistemaCaronas -->
+        <UML:Association xmi.id="assoc_Sessao_SistemaCaronas" name="sessao-sistemacaronas" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Sessao_SistemaCaronas_Sessao" type="class_Sessao" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Sessao_SistemaCaronas_SistemaCaronas" type="class_SistemaCaronas" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

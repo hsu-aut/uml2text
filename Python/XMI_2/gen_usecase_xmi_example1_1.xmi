@@ -1,0 +1,48 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_1" name="Model1">
+      <UML:Namespace.ownedElement>
+
+        <UML:Actor xmi.id="actor_1" name="Actor 1" visibility="public"/>
+        
+        <UML:Actor xmi.id="actor_2" name="Actor 2" visibility="public"/>
+        
+        <UML:UseCase xmi.id="usecase_registerForCourse" name="Register for Course" visibility="public"/>
+        
+        <UML:UseCase xmi.id="usecase_registerByMail" name="Register By Mail" visibility="public">
+          <UML:Extend>
+            <UML:Extend.extendedCase>
+              <UML:UseCase xmi.idref="usecase_registerForCourse"/>
+            </UML:Extend.extendedCase>
+          </UML:Extend>
+        </UML:UseCase>
+        
+        <UML:UseCase xmi.id="usecase_registerByPhone" name="Register By Phone" visibility="public">
+          <UML:Extend>
+            <UML:Extend.extendedCase>
+              <UML:UseCase xmi.idref="usecase_registerForCourse"/>
+            </UML:Extend.extendedCase>
+          </UML:Extend>
+        </UML:UseCase>
+        
+        <UML:Association xmi.id="assoc_actor2_registerForCourse">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_actor2" type="actor_2" name="actor2" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_registerForCourse" type="usecase_registerForCourse" name="registerForCourse" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

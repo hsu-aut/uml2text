@@ -1,0 +1,73 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StateMachineModel" name="StateMachineModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:StateMachine xmi.id="stateMachine_Main" name="MainStateMachine">
+          <UML:StateMachine.context>
+            <UML:Class xmi.id="context_Class" name="Context"/>
+          </UML:StateMachine.context>
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="compositeState_Top" name="top" isConcurrent="false" isRegion="false">
+              <UML:CompositeState.subvertex>
+              
+                <UML:Pseudostate xmi.id="pseudostate_Initial" name="initial" kind="initial">
+                  <UML:StateVertex.outgoing>
+                    <UML:Transition xmi.id="transition_Initial_to_SimpleState1" name="initialToSimpleState1" target="simpleState_1"/>
+                  </UML:StateVertex.outgoing>
+                </UML:Pseudostate>
+
+                <UML:SimpleState xmi.id="simpleState_1" name="SimpleState1">
+                  <UML:StateVertex.incoming>
+                    <UML:Transition xmi.idref="transition_Initial_to_SimpleState1"/>
+                  </UML:StateVertex.incoming>
+                  <UML:StateVertex.outgoing>
+                    <UML:Transition xmi.id="transition_SimpleState1_to_Junction" name="simpleState1ToJunction" target="pseudostate_Junction"/>
+                  </UML:StateVertex.outgoing>
+                </UML:SimpleState>
+
+                <UML:Pseudostate xmi.id="pseudostate_Junction" name="junction" kind="junction">
+                  <UML:StateVertex.incoming>
+                    <UML:Transition xmi.idref="transition_SimpleState1_to_Junction"/>
+                  </UML:StateVertex.incoming>
+                  <UML:StateVertex.outgoing>
+                    <UML:Transition xmi.id="transition_Junction_to_FinalState" name="junctionToFinalState" target="finalState"/>
+                    <UML:Transition xmi.id="transition_Junction_to_SimpleState2" name="junctionToSimpleState2" target="simpleState_2"/>
+                  </UML:StateVertex.outgoing>
+                </UML:Pseudostate>
+                
+                <UML:FinalState xmi.id="finalState" name="FinalState">
+                  <UML:StateVertex.incoming>
+                    <UML:Transition xmi.idref="transition_Junction_to_FinalState"/>
+                    <UML:Transition xmi.id="transition_SimpleState2_to_FinalState" name="simpleState2ToFinalState"/>
+                  </UML:StateVertex.incoming>
+                </UML:FinalState>
+
+                <UML:SimpleState xmi.id="simpleState_2" name="SimpleState2">
+                  <UML:StateVertex.incoming>
+                    <UML:Transition xmi.idref="transition_Junction_to_SimpleState2"/>
+                  </UML:StateVertex.incoming>
+                  <UML:StateVertex.outgoing>
+                    <UML:Transition xmi.id="transition_SimpleState2_to_FinalState" target="finalState"/>
+                  </UML:StateVertex.outgoing>
+                </UML:SimpleState>
+
+              </UML:CompositeState.subvertex>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

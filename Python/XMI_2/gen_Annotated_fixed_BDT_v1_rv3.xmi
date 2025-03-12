@@ -1,0 +1,161 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DataManagementSystem" name="DataManagementSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- EARootClass -->
+        <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+        
+        <!-- DataItem Class -->
+        <UML:Class xmi.id="class_DataItem" name="DataItem" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_identifier" name="identifier" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Base64DataItem Class -->
+        <UML:Class xmi.id="class_Base64DataItem" name="Base64DataItem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Base64DataItem" />
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DataItem" />
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- GridFTPDataItem Class -->
+        <UML:Class xmi.id="class_GridFTPDataItem" name="GridFTPDataItem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_GridFTPDataItem" />
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DataItem" />
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- FileSystemDataItem Class -->
+        <UML:Class xmi.id="class_FileSystemDataItem" name="FileSystemDataItem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FileSystemDataItem" />
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DataItem" />
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- BundledDataItem Class -->
+        <UML:Class xmi.id="class_BundledDataItem" name="BundledDataItem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_BundledDataItem" />
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DataItem" />
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_bundleItemCount" name="bundleItemCount" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bundleMechanismType" name="bundleMechanismType" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_targetBundleSize" name="targetBundleSize" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DataLocation Class -->
+        <UML:Class xmi.id="class_DataLocation" name="DataLocation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_compressionType" name="compressionType" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_locationPort" name="locationPort" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_locationURL" name="locationURL" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_transportMechanismType" name="transportMechanismType" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Metadata Class -->
+        <UML:Class xmi.id="class_Metadata" name="Metadata" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_value" name="value" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Association: DataItem - Metadata -->
+        <UML:Association xmi.id="assoc_DataItem_Metadata">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataItem_Metadata_DataItem" type="class_DataItem" name="dataItem" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DataItem_Metadata_Metadata" type="class_Metadata" name="metadata" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Association: DataLocation - Metadata -->
+        <UML:Association xmi.id="assoc_DataLocation_Metadata">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataLocation_Metadata_DataLocation" type="class_DataLocation" name="dataLocation" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DataLocation_Metadata_Metadata" type="class_Metadata" name="metadata" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Data Types -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

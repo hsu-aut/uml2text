@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AiSystem" name="AiSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definiere grundlegende Datentypen -->
+        <UML:DataType xmi.id="type_int" name="int"/>
+        <UML:DataType xmi.id="type_char" name="char"/>
+        <UML:DataType xmi.id="type_bool" name="bool"/>
+        <UML:DataType xmi.id="type_float" name="float"/>
+        <UML:DataType xmi.id="type_double" name="double"/>
+        <UML:DataType xmi.id="type_short" name="short"/>
+        <UML:DataType xmi.id="type_long" name="long"/>
+        <UML:DataType xmi.id="type_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="type_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="type_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="type_string" name="string"/>
+        
+        <!-- Definition der Klasse AiActor -->
+        <UML:Class xmi.id="class_AiActor" name="AiActor" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idleStates" name="idleStates" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="type_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_attackStates" name="attackStates" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="type_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_currentState" name="currentState" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="type_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_receiveEvent" name="receiveEvent" visibility="public" isSpecification="false">
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse AiStateComponent -->
+        <UML:Class xmi.id="class_AiStateComponent" name="AiStateComponent" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_notifyEvent" name="notifyEvent" visibility="public" isSpecification="false">
+            </UML:Operation>
+            <UML:Operation xmi.id="op_doThinkEvent" name="doThinkEvent" visibility="public" isSpecification="false">
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition des Typs "GDh9PUg6qzUH" -->
+        <UML:Class xmi.id="type_GDh9PUg6qzUH" name="GDh9PUg6qzUH" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Vererbungsbeziehung -->
+        <UML:Generalization xmi.id="gen_AiStateComponent_GDh9PUg6qzUH" parent="type_GDh9PUg6qzUH" child="class_AiStateComponent"/>
+        <UML:Generalization xmi.id="gen_GDh9PUg6qzUH_AiStateComponent" parent="class_AiStateComponent" child="type_GDh9PUg6qzUH"/>
+
+        <!-- Assoziation: AiActor -> AiStateComponent -->
+        <UML:Association xmi.id="assoc_notifyEvents" name="notify events" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Actor_AiStateComponent" type="class_AiActor" name="actor" multiplicity="1" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AiStateComponent_Actor" type="class_AiStateComponent" name="stateComponent" multiplicity="*" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Anonyme Assoziationen -->
+        <UML:Association xmi.id="assoc_AiActor_AiStateComponent_Anon">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AiActor_Anon_AiStateComponent" type="class_AiActor" multiplicity="1" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AiStateComponent_Anon_AiActor" type="class_AiStateComponent" multiplicity="*" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_AiActor_GDh9PUg6qzUH">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AiActor_GDh9PUg6qzUH_1" type="class_AiActor" multiplicity="1" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AiActor_GDh9PUg6qzUH_2" type="type_GDh9PUg6qzUH" multiplicity="*" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

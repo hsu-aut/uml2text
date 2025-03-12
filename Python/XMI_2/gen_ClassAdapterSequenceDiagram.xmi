@@ -1,0 +1,84 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Interface ILoginable -->
+        <UML:Interface xmi.id="interface_ILoginable" name="ILoginable" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_login" name="Login" visibility="public" isAbstract="true"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <!-- Class FacebookService -->
+        <UML:Class xmi.id="class_FacebookService" name="FacebookService" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_FacebookServiceLogin" name="Login" visibility="public" isAbstract="false" isQuery="false">
+              <UML:Parameter xmi.id="param_FacebookServiceLoginParams" name="params" kind="in" type="ParamsType"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <!-- User specifics are not detailed in the description -->
+        </UML:Class>
+
+        <!-- Class FBAdapter -->
+        <UML:Class xmi.id="class_FBAdapter" name="FBAdapter" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_LoggedInUser" name="LoggedInUser" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_User"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="operation_FBAdapterLogin" name="Login" visibility="public" isAbstract="false" isQuery="false"/>
+          </UML:Classifier.feature>
+          <UML:Generalization xmi.id="generalization_FBAdapter_ILoginable" parent="interface_ILoginable"/>
+          <UML:Association xmi.id="assoc_FBAdapter_FacebookService">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_FBAdapter" type="class_FBAdapter" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_FacebookService" type="class_FacebookService" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Class MainWindow -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_loginInterface" name="loginInterface" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Interface xmi.idref="interface_ILoginable"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Collaboration unattachedCollaboration -->
+        <UML:Collaboration xmi.id="collaboration_unattached" name="unattachedCollaboration">
+          <UML:Collaboration.interaction>
+            <UML:Interaction xmi.id="interaction_loginProcess">
+              <UML:Message xmi.id="message_clickLoginButton" name="Click Login Button" sender="class_MainWindow" receiver="class_FBAdapter"/>
+              <UML:Message xmi.id="message_sendLoginParams" name="send Login Params" sender="class_FBAdapter" receiver="class_FacebookService"/>
+              <UML:Message xmi.id="message_LoginResult" name="Login Result" sender="class_FacebookService" receiver="class_FBAdapter"/>
+            </UML:Interaction>
+          </UML:Collaboration.interaction>
+        </UML:Collaboration>
+
+        <!-- Data Types -->
+        <UML:DataType xmi.id="ParamsType" name="ParamsType"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,213 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+    <XMI.header>
+        <XMI.documentation>
+            <XMI.exporter>Custom Exporter</XMI.exporter>
+            <XMI.exporterVersion>1.0</XMI.exporterVersion>
+        </XMI.documentation>
+        <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+    </XMI.header>
+    <XMI.content>
+        <UML:Model xmi.id="model_BaumStruktur" name="BaumStruktur">
+            <UML:Namespace.ownedElement>
+                
+                <!-- Klassen und Interfaces -->
+                <UML:Class xmi.id="class_DefaultMutableTreeNode" name="DefaultMutableTreeNode" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_MutableTreeNode"/>
+                    </UML:Generalization>
+                </UML:Class>
+                <UML:Interface xmi.id="interface_MutableTreeNode" name="MutableTreeNode" visibility="public">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_TreeNode"/>
+                    </UML:Generalization>
+                </UML:Interface>
+                <UML:Interface xmi.id="interface_TreeNode" name="TreeNode" visibility="public"/>
+                
+                <UML:Class xmi.id="class_DefaultTreeModel" name="DefaultTreeModel" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_TreeModel"/>
+                    </UML:Generalization>
+                    <UML:AssociationEnd type="class_TreePath"/>
+                    <UML:AssociationEnd type="interface_MutableTreeNode"/>
+                    <UML:AssociationEnd type="interface_TreeNode"/>
+                </UML:Class>
+                <UML:Interface xmi.id="interface_TreeModel" name="TreeModel" visibility="public">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_DefaultTreeModel"/>
+                    </UML:Generalization>
+                </UML:Interface>
+                
+                <UML:Interface xmi.id="interface_TreeCellRenderer" name="TreeCellRenderer" visibility="public">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_DefaultTreeCellRenderer"/>
+                        <UML:Class xmi.idref="interface_CheckBoxTreeCellRenderer"/>
+                    </UML:Generalization>
+                </UML:Interface>
+                
+                <UML:Interface xmi.id="interface_TreeSelectionModel" name="TreeSelectionModel" visibility="public">
+                    <UML:Operation xmi.id="operation_getSelectionPaths" name="getSelectionPaths" visibility="public"/>
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_DefaultTreeSelectionModel"/>
+                    </UML:Generalization>
+                </UML:Interface>
+                
+                <UML:Class xmi.id="class_JTree" name="JTree" visibility="public" isAbstract="false">
+                    <UML:AssociationEnd type="interface_TreeNode"/>
+                    <UML:AssociationEnd type="interface_TreeModel"/>
+                    <UML:AssociationEnd type="interface_TreeCellRenderer"/>
+                    <UML:AssociationEnd type="interface_TreeSelectionModel"/>
+                    <UML:AssociationEnd type="class_DefaultMutableTreeNode"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_TreePath" name="TreePath" visibility="public" isAbstract="false">
+                    <UML:AssociationEnd type="interface_TreeModel"/>
+                    <UML:AssociationEnd type="interface_TreeSelectionModel"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_DefaultTreeSelectionModel" name="DefaultTreeSelectionModel" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_TreeSelectionModel"/>
+                    </UML:Generalization>
+                    <UML:AssociationEnd type="interface_TreeModel"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_DefaultTreeCellRenderer" name="DefaultTreeCellRenderer" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_TreeCellRenderer"/>
+                    </UML:Generalization>
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_JLabel"/>
+                    </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_CheckboxTree" name="CheckboxTree" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_JTree"/>
+                    </UML:Generalization>
+                    <UML:AssociationEnd type="interface_TreeCheckingModel"/>
+                    <UML:AssociationEnd type="class_DefaultCheckableTreeNode"/>
+                </UML:Class>
+                
+                <UML:Interface xmi.id="interface_TreeCheckingModel" name="TreeCheckingModel" visibility="public">
+                    <UML:Operation xmi.id="operation_getCheckedPaths" name="getCheckedPaths" visibility="public"/>
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_DefaultTreeCheckingModel"/>
+                    </UML:Generalization>
+                </UML:Interface>
+                
+                <UML:Interface xmi.id="interface_CheckableTreeNode" name="CheckableTreeNode" visibility="public">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_TreeNode"/>
+                    </UML:Generalization>
+                </UML:Interface>
+                
+                <UML:Interface xmi.id="interface_CheckBoxTreeCellRenderer" name="CheckBoxTreeCellRenderer" visibility="public">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_TreeCellRenderer"/>
+                    </UML:Generalization>
+                    <UML:AssociationEnd type="class_CheckboxTree"/>
+                </UML:Interface>
+                
+                <UML:Class xmi.id="class_DefaultCheckBoxTreeCellRenderer" name="DefaultCheckBoxTreeCellRenderer" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_CheckBoxTreeCellRenderer"/>
+                    </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_DefaultCheckBoxTreeModel" name="DefaultCheckBoxTreeModel" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_DefaultTreeModel"/>
+                    </UML:Generalization>
+                    <UML:AssociationEnd type="interface_CheckableTreeNode"/>
+                    <UML:AssociationEnd type="class_TreePath"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_DefaultCheckableTreeNode" name="DefaultCheckableTreeNode" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_DefaultMutableTreeNode"/>
+                        <UML:Class xmi.idref="interface_CheckableTreeNode"/>
+                    </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_DefaultTreeCheckingModel" name="DefaultTreeCheckingModel" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_TreeCheckingModel"/>
+                    </UML:Generalization>
+                    <UML:AssociationEnd type="class_DefaultCheckBoxTreeModel"/>
+                    <UML:AssociationEnd type="class_TreeCheckingMode"/>
+                    <UML:AssociationEnd type="interface_TreeModel"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_QuadristateCheckBox" name="QuadristateCheckBox" visibility="public" isAbstract="false">
+                    <UML:AssociationEnd type="class_QuadristateButtonModel"/>
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_JCheckBox"/>
+                    </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_JCheckBox" name="JCheckBox" visibility="public" isAbstract="false"/>
+                
+                <UML:Class xmi.id="class_JLabel" name="JLabel" visibility="public" isAbstract="false"/>
+                
+                <UML:Interface xmi.id="interface_ButtonModel" name="ButtonModel" visibility="public">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_DefaultButtonModel"/>
+                    </UML:Generalization>
+                </UML:Interface>
+                
+                <UML:Class xmi.id="class_DefaultButtonModel" name="DefaultButtonModel" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="interface_ButtonModel"/>
+                    </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_QuadristateButtonModel" name="QuadristateButtonModel" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_DefaultButtonModel"/>
+                    </UML:Generalization>
+                    <UML:AssociationEnd type="class_QuadristateCheckBox"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_AbstractButton" name="AbstractButton" visibility="public" isAbstract="true">
+                    <UML:Attribute xmi.id="attribute_buttonModel" name="buttonModel" visibility="private" type="interface_ButtonModel"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_JToggleButton" name="JToggleButton" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_AbstractButton"/>
+                    </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_SimpleTreeCheckingMode" name="SimpleTreeCheckingMode" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_TreeCheckingMode"/>
+                    </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_FullRecursiveTreeCheckingMode" name="FullRecursiveTreeCheckingMode" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_TreeCheckingMode"/>
+                    </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_DownRecursiveTreeCheckingMode" name="DownRecursiveTreeCheckingMode" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_TreeCheckingMode"/>
+                    </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_TreeCheckingMode" name="TreeCheckingMode" visibility="public" isAbstract="false"/>
+
+                <UML:Class xmi.id="class_CheckedFullRecursiveTreeCheckingMode" name="CheckedFullRecursiveTreeCheckingMode" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Class xmi.idref="class_TreeCheckingMode"/>
+                    </UML:Generalization>
+                </UML:Class>
+
+            </UML:Namespace.ownedElement>
+        </UML:Model>
+    </XMI.content>
+</XMI>
+```

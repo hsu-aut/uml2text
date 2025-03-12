@@ -1,0 +1,88 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_testing" name="testing">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_testing" name="testing">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Interface xmi.id="interface_NameIf" name="NameIf"/>
+            
+            <UML:Class xmi.id="class_Name" name="Name">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_Name" name="Operation"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Dependency xmi.id="dependency_Abstraction" name="Abstraction" client="class_Name" supplier="interface_NameIf" stereotype="realize"/>
+            
+            <UML:Class xmi.id="class_Little" name="Little">
+              <UML:Classifier.feature>
+                <UML:StateMachine xmi.id="stateMachine_LittleStateMachine" name="LittleStateMachine"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Bit_of" name="Bit of" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:ActivityGraph xmi.id="activityGraph_Bit_ofActivityGraph" name="Bit ofActivityGraph"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Everything" name="Everything"/>
+            
+            <UML:Class xmi.id="class_A" name="A"/>
+            
+            <UML:Generalization xmi.id="generalization_Little_A" parent="class_A" child="class_Little"/>
+            <UML:Generalization xmi.id="generalization_Everything_Bit_of" parent="class_Bit_of" child="class_Everything"/>
+            <UML:Generalization xmi.id="generalization_A_Bit_of" parent="class_Bit_of" child="class_A"/>
+            
+            <UML:Class xmi.id="class_Simple" name="Simple">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr1" name="attr1"/>
+                <UML:Attribute xmi.id="attr2" name="attr2"/>
+                <UML:Operation xmi.id="operation_Simple" name="Operation"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Model" name="Model">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Model_attr" name="attr"/>
+                <UML:Operation xmi.id="operation_Oper1" name="Oper1"/>
+                <UML:Operation xmi.id="operation_Oper2" name="Oper2"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:UseCase xmi.id="usecase_UC1" name="UC1">
+          <UML:ExtensionPoint xmi.id="extensionPoint_newEP" name="newEP"/>
+        </UML:UseCase>
+        
+        <UML:UseCase xmi.id="usecase_UC2" name="UC2"/>
+        
+        <UML:Extend xmi.id="extend_UC1_UC2" extendedCase="usecase_UC2" extension="usecase_UC1"/>
+        
+        <UML:Actor xmi.id="actor_John_Wayne" name="John Wayne"/>
+        
+        <UML:Association xmi.id="association_UseCase_Actor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="associationEnd_actor" type="actor_John_Wayne"/>
+            <UML:AssociationEnd xmi.id="associationEnd_usecase" type="usecase_UC1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

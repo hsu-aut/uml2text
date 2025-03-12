@@ -1,0 +1,214 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Datatype-Paket -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="datatype_int" name="int"/>
+            <UML:Class xmi.id="datatype_float" name="float"/>
+            <UML:Class xmi.id="datatype_bool" name="bool"/>
+            <UML:Class xmi.id="datatype_double" name="double"/>
+            <UML:Class xmi.id="datatype_string" name="string"/>
+            <UML:Class xmi.id="datatype_pair" name="std::pair&lt;int, int&gt;"/>
+            <UML:Class xmi.id="datatype_vector" name="std::vector&lt;Action *&gt;"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition der std-Paket -->
+        <UML:Package xmi.id="pkg_std" name="std">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_pair" name="pair"/>
+            <UML:Class xmi.id="class_vector" name="vector"/>
+            <UML:Class xmi.id="class_list" name="list"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition der Klasse Action -->
+        <UML:Class xmi.id="class_Action" name="Action" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_pair" name="pair" visibility="private"/>
+            <UML:Attribute xmi.id="attr_costDiff" name="costDiff" visibility="private"/>
+            <UML:Operation xmi.id="op_getCostDiff" name="getCostDiff"/>
+            <UML:Operation xmi.id="op_getPair" name="getPair"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Interval -->
+        <UML:Class xmi.id="class_Interval" name="Interval" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_minDistance" name="minDistance" visibility="private"/>
+            <UML:Attribute xmi.id="attr_maxDistance" name="maxDistance" visibility="private"/>
+            <UML:Attribute xmi.id="attr_actions" name="actions" visibility="private" type="datatype_vector"/>
+            <UML:Attribute xmi.id="attr_probability" name="probability" visibility="private"/>
+            <UML:Attribute xmi.id="attr_dimension" name="dimension" visibility="private"/>
+            <UML:Operation xmi.id="op_getMinDistance" name="getMinDistance"/>
+            <UML:Operation xmi.id="op_setMaxDistance" name="setMaxDistance"/>
+            <UML:Operation xmi.id="op_includes" name="includes"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse City -->
+        <UML:Class xmi.id="class_City" name="City" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="attr_x_i" name="x_i" visibility="private"/>
+            <UML:Attribute xmi.id="attr_y_i" name="y_i" visibility="private"/>
+            <UML:Attribute xmi.id="attr_x_f" name="x_f" visibility="private"/>
+            <UML:Attribute xmi.id="attr_y_f" name="y_f" visibility="private"/>
+            <UML:Operation xmi.id="op_getId" name="getId"/>
+            <UML:Operation xmi.id="op_getX_i" name="getX_i"/>
+            <UML:Operation xmi.id="op_getY_i" name="getY_i"/>
+            <UML:Operation xmi.id="op_getX_f" name="getX_f"/>
+            <UML:Operation xmi.id="op_getY_f" name="getY_f"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Problem -->
+        <UML:Class xmi.id="class_Problem" name="Problem" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_dimension" name="dimension" visibility="private"/>
+            <UML:Attribute xmi.id="attr_cities" name="cities" visibility="private" type="class_City"/>
+            <UML:Attribute xmi.id="attr_distanceMatrix" name="distanceMatrix" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Strategy -->
+        <UML:Class xmi.id="class_Strategy" name="Strategy" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_fit" name="fit" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_fitCost" name="fitCost" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_dimension" name="dimension" visibility="protected"/>
+            <UML:Operation xmi.id="op_applyStrategy" name="applyStrategy"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Relation -->
+        <UML:Class xmi.id="class_Relation" name="Relation" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_relate" name="relate"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Hookable -->
+        <UML:Class xmi.id="class_Hookable" name="Hookable" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_hook" name="hook"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Picker -->
+        <UML:Class xmi.id="class_Picker" name="Picker" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getPair" name="getPair"/>
+            <UML:Operation xmi.id="op_prepareContainers" name="prepareContainers"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse IntervalManager -->
+        <UML:Class xmi.id="class_IntervalManager" name="IntervalManager" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_intervals" name="intervals" visibility="private" type="class_Interval"/>
+            <UML:Attribute xmi.id="attr_strategy" name="strategy" visibility="private" type="class_Strategy"/>
+            <UML:Attribute xmi.id="attr_relation" name="relation" visibility="private" type="class_Relation"/>
+            <UML:Operation xmi.id="op_getIntervals" name="getIntervals"/>
+            <UML:Operation xmi.id="op_getStrategy" name="getStrategy"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Runner -->
+        <UML:Class xmi.id="class_Runner" name="Runner" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_startingPoint" name="startingPoint" visibility="private" type="class_StartingPoint"/>
+            <UML:Attribute xmi.id="attr_maxDepth" name="maxDepth" visibility="private"/>
+            <UML:Operation xmi.id="op_getMaxDepth" name="getMaxDepth"/>
+            <UML:Operation xmi.id="op_getResults" name="getResults"/>
+            <UML:Operation xmi.id="op_setSameStartingPoint" name="setSameStartingPoint"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse StartingPoint -->
+        <UML:Class xmi.id="class_StartingPoint" name="StartingPoint" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Attribute und Operationen hier -->
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse RunData -->
+        <UML:Class xmi.id="class_RunData" name="RunData" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Attribute und Operationen hier -->
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Insert -->
+        <UML:Class xmi.id="class_Insert" name="Insert" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Attribute und Operationen hier -->
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Swap -->
+        <UML:Class xmi.id="class_Swap" name="Swap" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Attribute und Operationen hier -->
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Reverse -->
+        <UML:Class xmi.id="class_Reverse" name="Reverse" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Attribute und Operationen hier -->
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse WorstFit -->
+        <UML:Class xmi.id="class_WorstFit" name="WorstFit" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Attribute und Operationen hier -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klassenerweiterungen -->
+        <UML:Generalization>
+          <UML:Generalization.child xmi.idref="class_Swap"/>
+          <UML:Generalization.parent xmi.idref="class_Relation"/>
+        </UML:Generalization>
+
+        <UML:Generalization>
+          <UML:Generalization.child xmi.idref="class_WorstFit"/>
+          <UML:Generalization.parent xmi.idref="class_Strategy"/>
+        </UML:Generalization>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Problem_City">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_Problem" aggregation="none"/>
+            <UML:AssociationEnd type="class_City" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_IntervalManager_Interval_Action">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_IntervalManager" aggregation="none"/>
+            <UML:AssociationEnd type="class_Interval" aggregation="none"/>
+            <UML:AssociationEnd type="class_Action" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

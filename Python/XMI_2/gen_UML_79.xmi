@@ -1,0 +1,189 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_VehicleManagement" name="VehicleManagement">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_Vehicle" name="Vehicle" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_kms" name="kms" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_date" name="date" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datetime"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_photoName" name="photoName" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_fuelCapacity" name="fuelCapacity" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_registration" name="registration" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Make" name="Make" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_makeName" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_FuelType" name="FuelType" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_fuelTypeName" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Fueling" name="Fueling" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_date" name="date" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datetime"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_kmsAtFueling" name="kmsAtFueling" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_quantity" name="quantity" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_cost" name="cost" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_GasStation" name="GasStation" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_gasStationName" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_location" name="location" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_FuelMonitor" name="FuelMonitor" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_getLowestFuelPrices" name="getLowestFuelPrices" visibility="private">
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="List&lt;Float&gt;"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getVehicles" name="getVehicles" visibility="private">
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="List&lt;Vehicle&gt;"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_addVehicle" name="addVehicle" visibility="private"/>
+                <UML:Operation xmi.id="op_removeVehicle" name="removeVehicle" visibility="private"/>
+                <UML:Operation xmi.id="op_changeVehicle" name="changeVehicle" visibility="private"/>
+                <UML:Operation xmi.id="op_getVehicleStats" name="getVehicleStats" visibility="private">
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="VehicleStats"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_addFueling" name="addFueling" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Association xmi.id="assoc_Vehicle_Model">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Vehicle_Model_Vehicle" type="class_Vehicle" name="vehicle" visibility="public" aggregation="none" multiplicity="*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Vehicle_Model_Model" type="class_Model" name="model" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Vehicle_Make">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Vehicle_Make_Vehicle" type="class_Vehicle" name="vehicle" visibility="public" aggregation="none" multiplicity="*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Vehicle_Make_Make" type="class_Make" name="make" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Vehicle_FuelType">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Vehicle_FuelType_Vehicle" type="class_Vehicle" name="vehicle" visibility="public" aggregation="none" multiplicity="*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Vehicle_FuelType_FuelType" type="class_FuelType" name="fuelType" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Fueling_Vehicle">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Fueling_Vehicle_Fueling" type="class_Fueling" name="fueling" visibility="public" aggregation="none" multiplicity="*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Fueling_Vehicle_Vehicle" type="class_Vehicle" name="vehicle" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Fueling_GasStation">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Fueling_GasStation_Fueling" type="class_Fueling" name="fueling" visibility="public" aggregation="none" multiplicity="*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Fueling_GasStation_GasStation" type="class_GasStation" name="gasStation" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Model_Make">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Model_Make_Model" type="class_Model" name="model" visibility="public" aggregation="none" multiplicity="*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Model_Make_Make" type="class_Make" name="make" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="datetime" name="datetime"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

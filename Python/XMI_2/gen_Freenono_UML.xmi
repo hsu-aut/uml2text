@@ -1,0 +1,144 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Manager" -->
+        <UML:Class xmi.id="class_Manager" name="Manager" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_currentSettings" name="currentSettings" visibility="private" type="Settings"/>
+            <UML:Attribute xmi.id="attr_eventHelper" name="eventHelper" visibility="private" type="GameEventHelper"/>
+            <UML:Attribute xmi.id="attr_currentGame" name="currentGame" visibility="private" type="Game"/>
+            <UML:Operation xmi.id="op_loadSettings" name="loadSettings" visibility="public"/>
+            <UML:Operation xmi.id="op_saveSettings" name="saveSettings" visibility="public"/>
+            <UML:Operation xmi.id="op_startSwingUI" name="startSwingUI" visibility="public"/>
+            <UML:Operation xmi.id="op_createGame" name="createGame" visibility="public"/>
+            <UML:Operation xmi.id="op_quitProgram" name="quitProgram" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Schnittstelle "GameManager" -->
+        <UML:Interface xmi.id="interface_GameManager" name="GameManager" visibility="public"/>
+
+        <!-- Definition der Klasse "Settings" -->
+        <UML:Class xmi.id="class_Settings" name="Settings" visibility="public"/>
+
+        <!-- Definition der Klasse "Game" -->
+        <UML:Class xmi.id="class_Game" name="Game" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_eventHelper" name="eventHelper" visibility="private" type="GameEventHelper"/>
+            <UML:Attribute xmi.id="attr_settings" name="settings" visibility="private" type="Settings"/>
+            <UML:Attribute xmi.id="attr_currentNonogram" name="currentNonogram" visibility="private" type="Nonogram"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "MainUI" -->
+        <UML:Class xmi.id="class_MainUI" name="MainUI" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_boardComponent" name="boardComponent" visibility="private" type="BoardPanel"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "GameModeFactory" -->
+        <UML:Class xmi.id="class_GameModeFactory" name="GameModeFactory" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getGameMode" name="getGameMode" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "GameEventHelper" -->
+        <UML:Class xmi.id="class_GameEventHelper" name="GameEventHelper" visibility="public"/>
+        
+        <!-- Definition der Klasse "Nonogram" -->
+        <UML:Class xmi.id="class_Nonogram" name="Nonogram" visibility="public"/>
+
+        <!-- Definition der Klasse "AudioProvider" -->
+        <UML:Class xmi.id="class_AudioProvider" name="AudioProvider" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_eventHelper_audio" name="eventHelper" visibility="private" type="GameEventHelper"/>
+            <UML:Attribute xmi.id="attr_settings_audio" name="settings" visibility="private" type="Settings"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "GameBoard" -->
+        <UML:Class xmi.id="class_GameBoard" name="GameBoard" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_nonogram" name="nonogram" visibility="private" type="Nonogram"/>
+            <UML:Attribute xmi.id="attr_field" name="field" visibility="private" type="Token[][]"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Enumeration "Token" -->
+        <UML:Enumeration xmi.id="enum_Token" name="Token">
+          <UML:Enumeration.literal xmi.id="literal_FREE" name="FREE"/>
+          <UML:Enumeration.literal xmi.id="literal_OCCUPIED" name="OCCUPIED"/>
+          <UML:Enumeration.literal xmi.id="literal_MARKED" name="MARKED"/>
+        </UML:Enumeration>
+
+        <!-- Definition der Klasse "GameMode" -->
+        <UML:Class xmi.id="class_GameMode" name="GameMode" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_isSolved" name="isSolved" visibility="public"/>
+            <UML:Operation xmi.id="op_isLost" name="isLost" visibility="public"/>
+            <UML:Operation xmi.id="op_solveGame" name="solveGame" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der abgeleiteten Klassen von "GameMode" -->
+        <UML:Class xmi.id="class_GameMode_CountTime" name="GameMode_CountTime" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GameMode"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GameMode_Penalty" name="GameMode_Penalty" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GameMode"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "HighscoreManager" -->
+        <UML:Class xmi.id="class_HighscoreManager" name="HighscoreManager" visibility="public"/>
+
+        <!-- Definition der Klasse "SimpleStatistics" -->
+        <UML:Class xmi.id="class_SimpleStatistics" name="SimpleStatistics" visibility="public"/>
+
+        <!-- Beziehungen zwischen den Klassen -->
+        <!-- Manager - GameManager Abhängigkeit -->
+        <UML:Dependency xmi.id="dep_Manager_GameManager">
+          <UML:Dependency.supplier>
+            <UML:Interface xmi.idref="interface_GameManager"/>
+          </UML:Dependency.supplier>
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="class_Manager"/>
+          </UML:Dependency.client>
+        </UML:Dependency>
+
+        <!-- GameBoard - Token Abhängigkeit -->
+        <UML:Dependency xmi.id="dep_GameBoard_Token">
+          <UML:Dependency.supplier>
+            <UML:Enumeration xmi.idref="enum_Token"/>
+          </UML:Dependency.supplier>
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="class_GameBoard"/>
+          </UML:Dependency.client>
+        </UML:Dependency>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

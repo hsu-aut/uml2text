@@ -1,0 +1,84 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        <UML:Model xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="datatypes_package" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Class xmi.id="class_TransTable" name="TransTable">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_loadFromFile" name="loadFromFile"/>
+                <UML:Operation xmi.id="op_loadFromStream" name="loadFromStream"/>
+                <UML:Operation xmi.id="op_initConstruction" name="initConstruction"/>
+                <UML:Operation xmi.id="op_storeTempState" name="storeTempState"/>
+                <UML:Operation xmi.id="op_finishConstruction" name="finishConstruction"/>
+                <UML:Operation xmi.id="op_walk" name="walk"/>
+                <UML:Operation xmi.id="op_walkStr" name="walkStr"/>
+                <UML:Operation xmi.id="op_walkPerfHash" name="walkPerfHash"/>
+                <UML:Operation xmi.id="op_getRoot" name="getRoot"/>
+                <UML:Operation xmi.id="op_isFinal" name="isFinal"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            <UML:Class xmi.id="class_Trie" name="Trie">
+              <UML:Generalization xmi.id="generalization_1" parent="class_TransTable"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_MinDic" name="MinDic">
+              <UML:Generalization xmi.id="generalization_2" parent="class_TransTable"/>
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_fileOperation" name="fileOperation"/>
+                <UML:Operation xmi.id="op_dataStreamOperation" name="dataStreamOperation"/>
+                <UML:Operation xmi.id="op_tokenManagement" name="tokenManagement"/>
+                <UML:Operation xmi.id="op_attributeLookup" name="attributeLookup"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            <UML:Class xmi.id="class_MinDicString" name="MinDicString">
+              <UML:Generalization xmi.id="generalization_3" parent="class_MinDic"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_ErrDic" name="ErrDic">
+              <UML:Generalization xmi.id="generalization_4" parent="class_MinDic"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_FILEPtr" name="FILE*"/>
+            <UML:Class xmi.id="class_intPtr" name="int*"/>
+            <UML:Class xmi.id="class_TempState" name="TempState">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_transitions" name="transitions_"/>
+                <UML:Attribute xmi.id="attr_susoString" name="susoString_"/>
+                <UML:Operation xmi.id="op_addTransition" name="addTransition"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            <UML:Class xmi.id="class_std_vector_Transition" name="std::vector<Transition>"/>
+            <UML:Class xmi.id="class_StateHash" name="StateHash"/>
+            <UML:Class xmi.id="class_Hash" name="Hash">
+              <UML:TemplateParameter>
+                <UML:Parameter type="charType_t"/>
+              </UML:TemplateParameter>
+            </UML:Class>
+            <UML:Class xmi.id="class_AnnType_tPtr" name="AnnType_t*"/>
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

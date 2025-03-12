@@ -1,0 +1,86 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Bank" -->
+        <UML:Class xmi.id="class_Bank" name="Bank" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_bank_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bank_depositOffers" name="depositOffers" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_List"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="oper_addOffer" name="addOffer" visibility="public" isAbstract="false">
+              <UML:Parameter kind="in" name="offer" type="class_DepositOffer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="oper_getOffers" name="getOffers" visibility="public" isAbstract="false">
+              <UML:Parameter kind="return" name="return" type="datatype_List"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "DepositOffer" -->
+        <UML:Class xmi.id="class_DepositOffer" name="DepositOffer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_period" name="period" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_rate" name="rate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_refillable" name="refillable" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bank" name="bank" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Bank"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="oper_getRate" name="getRate" visibility="public" isAbstract="false">
+              <UML:Parameter kind="return" name="return" type="datatype_double"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Enum "Currency" -->
+        <UML:Enumeration xmi.id="enum_Currency" name="Currency">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral name="UAH"/>
+            <UML:EnumerationLiteral name="USD"/>
+            <UML:EnumerationLiteral name="EUR"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+
+        <!-- Definition von DataTypes -->
+        <UML:DataType xmi.id="datatype_String" name="String"/>
+        <UML:DataType xmi.id="datatype_List" name="List"/>
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

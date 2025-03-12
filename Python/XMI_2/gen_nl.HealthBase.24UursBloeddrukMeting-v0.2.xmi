@@ -1,0 +1,58 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BloodPressureMeasurement" name="BloodPressureMeasurement">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_TijdsPeriode" name="TijdsPeriode" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Dag" name="Dag" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Nacht" name="Nacht" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="gen_TijdsPeriode_CD" general="class_CD" specific="class_TijdsPeriode"/>
+          <UML:Aggregation xmi.id="agg_TijdsPeriode_Gemiddelde" aggregate="class_TijdsPeriode" component="class_Gemiddelde"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LaagsteSystolische" name="LaagsteSystolische" visibility="public" isAbstract="false">
+          <UML:Aggregation xmi.id="agg_LaagsteSystolische_24uursBloedDrukmeeting" aggregate="class_LaagsteSystolische" component="class_24uursBloedDrukmeeting"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HoogsteSystolische" name="HoogsteSystolische" visibility="public" isAbstract="false">
+          <UML:Aggregation xmi.id="agg_HoogsteSystolische_24uursBloedDrukmeeting" aggregate="class_HoogsteSystolische" component="class_24uursBloedDrukmeeting"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GemiddeldeDiastolic" name="GemiddeldeDiastolic" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_GemiddeldeDiastolic_PQ" general="class_PQ" specific="class_GemiddeldeDiastolic"/>
+          <UML:Aggregation xmi.id="agg_GemiddeldeDiastolic_Gemiddelde" aggregate="class_GemiddeldeDiastolic" component="class_Gemiddelde"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GemiddeldeSystolic" name="GemiddeldeSystolic" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_GemiddeldeSystolic_PQ" general="class_PQ" specific="class_GemiddeldeSystolic"/>
+          <UML:Aggregation xmi.id="agg_GemiddeldeSystolic_Gemiddelde" aggregate="class_GemiddeldeSystolic" component="class_Gemiddelde"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BloeddrukMetingen" name="BloeddrukMetingen" visibility="public" isAbstract="false">
+          <UML:Aggregation xmi.id="agg_BloeddrukMetingen_24uursBloedDrukmeeting" aggregate="class_BloeddrukMetingen" component="class_24uursBloedDrukmeeting"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_24uursBloedDrukmeeting" name="24 uurs BloedDrukmeeting" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_StreefwaardeBloeddrukSystolisch" name="StreefwaardeBloeddrukSystolisch" visibility="public" isAbstract="false">
+          <UML:Aggregation xmi.id="agg_StreefwaardeBloeddrukSystolisch_Bloodpressure" aggregate="class_StreefwaardeBloeddrukSystolisch" component="class_Bloodpressure"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_StreefwaardeBloeddrukDiastolisch" name="StreefwaardeBloeddrukDiastolisch" visibility="public" isAbstract="false">
+          <UML:Aggregation xmi.id="agg_StreefwaardeBloeddrukDiastolisch_Bloodpressure" aggregate="class_StreefwaardeBloeddrukDiastolisch" component="class_Bloodpressure"/>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,108 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_XSDataMXCuBEv1_2" name="XSDataMXCuBEv1_2">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_XSDataResultMXCuBE" name="XSDataResultMXCuBE" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XSDataResultMXCuBE"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.id="class_XSDataResult" name="XSDataResult"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_characterisationExecutiveSummary" name="characterisationExecutiveSummary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_collectionPlan" name="collectionPlan" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataCollectionPlan"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_listOfOutputFiles" name="listOfOutputFiles" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_outputFileDictionary" name="outputFileDictionary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataDictionary"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_XSDataInputMXCuBE" name="XSDataInputMXCuBE" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XSDataInputMXCuBE"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.id="class_XSDataInput" name="XSDataInput"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dataCollectionId" name="dataCollectionId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataInteger"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_diffractionPlan" name="diffractionPlan" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataDiffractionPlan"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_experimentalCondition" name="experimentalCondition" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataExperimentalCondition"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_outputFileDirectory" name="outputFileDirectory" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sample" name="sample" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataSampleCrystalMM"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Association xmi.id="assoc_XSDataInputMXCuBE_XSDataMXCuBEDataSet">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_XSDataInputMXCuBE_XSDataMXCuBEDataSet_XSDataInputMXCuBE" type="class_XSDataInputMXCuBE" name="dataInput" visibility="public" aggregation="none" multiplicity="0..*"/>
+              <UML:AssociationEnd xmi.id="assocEnd_XSDataInputMXCuBE_XSDataMXCuBEDataSet_XSDataMXCuBEDataSet" type="class_XSDataMXCuBEDataSet" name="dataSet" visibility="public" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_XSDataMXCuBEDataSet" name="XSDataMXCuBEDataSet" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_imageFile" name="imageFile" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

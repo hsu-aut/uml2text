@@ -1,0 +1,94 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_PageTemplate" name="PageTemplate" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getTopPanel" name="get_top_panel" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="op_provideFeedback" name="provide_feedback" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="op_selectCurrency" name="select_currency" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="op_selectLanguage" name="select_language" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="op_saveMyList" name="save_my_list" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="op_getTravelerTips" name="get_traveler_tips" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="op_findDeals" name="find_deals" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="op_findLovelyPlaces" name="find_lovely_places" visibility="public" isSpecification="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Register" name="Register" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_LogIn" name="LogIn" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_loginAsUser" name="login_as_user" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="param_userName" name="user_name" kind="in" type="string"/>
+              <UML:Parameter xmi.id="param_userPassword" name="user_password" kind="in" type="string"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_loginFromFacebook" name="login_from_facebook" visibility="public" isSpecification="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FirstPage" name="FirstPage" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_FirstPage_PageTemplate" child="class_FirstPage" parent="class_PageTemplate"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_register" name="register" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="param_returnRegister" name="return" kind="return" type="class_Register"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_login" name="login" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="param_returnLogIn" name="return" kind="return" type="class_LogIn"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UserWorkSpace" name="UserWorkSpace" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_UserWorkSpace_PageTemplate" child="class_UserWorkSpace" parent="class_PageTemplate"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TestSetupTeardown" name="TestSetupTeardown" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_TestRunner" name="TestRunner" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_TestSuiteN" name="TestSuiteN" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_TestSuiteN_TestSetupTeardown" child="class_TestSuiteN" parent="class_TestSetupTeardown"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_WebDriverHelper" name="WebDriverHelper" visibility="public" isAbstract="false">
+          <UML:Association xmi.id="assoc_WebDriverHelper_PageTemplate" name="association">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_PageTemplate" type="class_PageTemplate" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_WebDriverHelper" type="class_WebDriverHelper" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DBHelper" name="DBHelper" visibility="public" isAbstract="false"/>
+
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_array" name="array"/>
+        <UML:DataType xmi.id="datatype_tuple" name="tuple"/>
+        <UML:DataType xmi.id="datatype_dict" name="dict"/>
+        <UML:DataType xmi.id="datatype_object" name="object"/>
+        <UML:DataType xmi.id="datatype_set" name="set"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,128 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BillingSystem" name="BillingSystem">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Invoice" name="Invoice" visibility="protected" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_invoiceID" name="id" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_invoiceNumber" name="invoiceNumber" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_invoiceDate" name="invoiceDate" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_comments" name="comments" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_currencyCode" name="currencyCode" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_terms" name="terms" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_dueDate" name="dueDate" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_subtotal" name="subtotal" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_totalAmount" name="totalAmount" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_purchaseOrderNumber" name="purchaseOrderNumber" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_salesOrderNumber" name="salesOrderNumber" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_orderedBy" name="orderedBy" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_attention" name="attention" visibility="protected"/>
+            <UML:Operation xmi.id="operation_save" name="save" visibility="protected">
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Account" name="Account" visibility="protected" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_accountID" name="id" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_accountNumber" name="accountNumber" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_accountName" name="accountName" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_accountBalance" name="accountBalance" visibility="protected"/>
+            <UML:Attribute xmi.id="attr_tierPricingLevel" name="tierPricingLevel" visibility="protected"/>
+          </UML:Namespace.ownedElement>
+          <UML:StateMachine>
+            <!-- Zustandsautomat-Details -->
+          </UML:StateMachine>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BillingEngine" name="BillingEngine" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="interface_IBillingEngine"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BillingService" name="BillingService" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_AccountProcessor" name="AccountProcessor" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="interface_IAccountProcessor"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_process" name="process" visibility="public"/>
+            <UML:Operation xmi.id="operation_fetchNewCharges" name="fetchNewCharges" visibility="public"/>
+            <UML:Operation xmi.id="operation_applyCharges" name="applyCharges" visibility="public"/>
+            <UML:Operation xmi.id="operation_applyAdjustments" name="applyAdjustments" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_InvoiceProcessor" name="InvoiceProcessor" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="interface_IInvoiceProcessor"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_process" name="process" visibility="public"/>
+            <UML:Operation xmi.id="operation_fetchNewCharges" name="fetchNewCharges" visibility="public"/>
+            <UML:Operation xmi.id="operation_applyCharges" name="applyCharges" visibility="public"/>
+            <UML:Operation xmi.id="operation_applyAdjustments" name="applyAdjustments" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BillingContext" name="BillingContext" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_BillingProfile" name="BillingProfile" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_LineItem" name="LineItem" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_CreditMemo" name="CreditMemo" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_DebitMemo" name="DebitMemo" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Client" name="Client" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Address" name="Address" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Email" name="Email" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Phone" name="Phone" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Product" name="Product" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Service" name="Service" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Tax" name="Tax" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_RegionTaxRate" name="RegionTaxRate" visibility="public" isAbstract="false"/>
+
+        <UML:Interface xmi.id="interface_IBillingEngine" name="IBillingEngine"/>
+
+        <UML:Interface xmi.id="interface_IAccountProcessor" name="IAccountProcessor"/>
+
+        <UML:Interface xmi.id="interface_IInvoiceProcessor" name="IInvoiceProcessor"/>
+
+        <UML:StateMachine xmi.id="statemachine_InvoiceStates" name="InvoiceStates">
+          <UML:Namespace.ownedElement>
+            <!-- State definitions for invoice: pending, void, overpaid -->
+          </UML:Namespace.ownedElement>
+        </UML:StateMachine>
+
+        <UML:StateMachine xmi.id="statemachine_AccountStates" name="AccountStates">
+          <UML:Namespace.ownedElement>
+            <!-- State definitions for account: open, closed, suspended, collections -->
+          </UML:Namespace.ownedElement>
+        </UML:StateMachine>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

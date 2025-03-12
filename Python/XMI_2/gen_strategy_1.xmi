@@ -1,0 +1,96 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Datatypes-Pakets -->
+        <UML:Package xmi.id="datatypes_package" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="XPvzJWGNfXlM" name="int"/>
+            <UML:DataType xmi.id="qo33TLly5b9E" name="char"/>
+            <UML:DataType xmi.id="gsg6Waa4yT1H" name="bool"/>
+            <UML:DataType xmi.id="0HefpN2dC5gf" name="float"/>
+            <UML:DataType xmi.id="QSbT1lghbKn6" name="double"/>
+            <UML:DataType xmi.id="sLAqo97mOjSB" name="short"/>
+            <UML:DataType xmi.id="5SpHVVuuvWLw" name="long"/>
+            <UML:DataType xmi.id="F1bqJOwCh42U" name="unsigned int"/>
+            <UML:DataType xmi.id="B8Gapilu8a9e" name="unsigned short"/>
+            <UML:DataType xmi.id="64W1YrwntVbC" name="unsigned long"/>
+            <UML:DataType xmi.id="sWMZYP3kXIKM" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse "composition" -->
+        <UML:Class xmi.id="composition_class" name="composition" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="fPHxO7AqAGfv" name="traverse" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition des Interface "compositor" -->
+        <UML:Interface xmi.id="6flxBN81rUaP" name="compositor" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="BfLoUNfYzRsk" name="compose" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Definition der Klasse "simplecompositor" -->
+        <UML:Class xmi.id="simplecompositor_class" name="simplecompositor" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="6tJupyH7wgC4" name="compose" visibility="public" isAbstract="false">
+              <UML:Parameter name="x" type="XPvzJWGNfXlM"/>
+              <UML:Parameter name="y" type="XPvzJWGNfXlM"/>
+              <UML:Parameter name="return" type="XPvzJWGNfXlM" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "texcompositor" -->
+        <UML:Class xmi.id="texcompositor_class" name="texcompositor" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="WMLAHH2RwLDO" name="compose" visibility="public" isAbstract="false">
+              <UML:Parameter name="x" type="0HefpN2dC5gf"/>
+              <UML:Parameter name="y" type="0HefpN2dC5gf"/>
+              <UML:Parameter name="return" type="0HefpN2dC5gf" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "arraycompositor" -->
+        <UML:Class xmi.id="arraycompositor_class" name="arraycompositor" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="tweKnNOggGVe" name="compose" visibility="public" isAbstract="false">
+              <UML:Parameter name="x" type="QSbT1lghbKn6"/>
+              <UML:Parameter name="y" type="QSbT1lghbKn6"/>
+              <UML:Parameter name="return" type="QSbT1lghbKn6" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Abstraktion - Beziehungen -->
+        <UML:Generalization xmi.id="gen_simplecompositor" child="simplecompositor_class" parent="6flxBN81rUaP"/>
+        <UML:Generalization xmi.id="gen_texcompositor" child="texcompositor_class" parent="6flxBN81rUaP"/>
+        <UML:Generalization xmi.id="gen_arraycompositor" child="arraycompositor_class" parent="6flxBN81rUaP"/>
+        
+        <!-- Aggregation - Beziehung -->
+        <UML:Association xmi.id="association_composition_compositor" name="composition-compositor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="association_composition_end" type="composition_class" aggregation="composite" multiplicity="1"/> 
+            <UML:AssociationEnd xmi.id="association_compositor_end" type="6flxBN81rUaP" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

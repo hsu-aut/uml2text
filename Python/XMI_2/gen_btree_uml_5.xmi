@@ -1,0 +1,97 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BTree" name="BTreeModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_BTree" name="BTree" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="private"/>
+            <UML:Operation xmi.id="op_insert" name="insert" visibility="public"/>
+            <UML:Operation xmi.id="op_erase" name="erase" visibility="public"/>
+            <UML:Operation xmi.id="op_find" name="find" visibility="public"/>
+            <UML:Operation xmi.id="op_lower_bound" name="lower_bound" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_me" name="me" visibility="private"/>
+            <UML:Attribute xmi.id="attr_size" name="size" visibility="private"/>
+            <UML:Operation xmi.id="op_insert_node" name="insert" visibility="public"/>
+            <UML:Operation xmi.id="op_erase_node" name="erase" visibility="public"/>
+            <UML:Operation xmi.id="op_find_node" name="find" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Leaf" name="Leaf" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_me_leaf" name="me" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pred" name="pred" visibility="private"/>
+            <UML:Attribute xmi.id="attr_succ" name="succ" visibility="private"/>
+            <UML:Attribute xmi.id="attr_size_leaf" name="size" visibility="private"/>
+            <UML:Operation xmi.id="op_insert_leaf" name="insert" visibility="public"/>
+            <UML:Operation xmi.id="op_erase_leaf" name="erase" visibility="public"/>
+            <UML:Operation xmi.id="op_find_leaf" name="find" visibility="public"/>
+            <UML:Operation xmi.id="op_increment" name="increment" visibility="public"/>
+            <UML:Operation xmi.id="op_decrement" name="decrement" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RootNode" name="RootNode" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_insert_root" name="insert" visibility="public"/>
+            <UML:Operation xmi.id="op_erase_root" name="erase" visibility="public"/>
+            <UML:Operation xmi.id="op_find_root" name="find" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_NodeCache" name="NodeCache" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_LeafCache" name="LeafCache" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Iterator" name="Iterator" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_IteratorMap" name="IteratorMap" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Splitter" name="Splitter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Key" name="k" visibility="private"/>
+            <UML:Attribute xmi.id="attr_BID" name="b" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_BTree_RootNode" name="BTreeRootNode">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BTree" type="class_BTree" name="btree" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_RootNode" type="class_RootNode" name="rootnode" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Node_Leaf" name="NodeLeaf">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Node" type="class_Node" name="node" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Leaf" type="class_Leaf" name="leaf" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_IteratorMap_Iterator" name="IteratorMapIterator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_IteratorMap" type="class_IteratorMap" name="iteratormap" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Iterator" type="class_Iterator" name="iterator" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,155 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Modèle UML">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="1102" name="Datatypes" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="1113" name="MediaSession" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="1113_op1" name="join" visibility="public" isAbstract="false" isQuery="false">
+              <UML:Parameter xmi.id="1113_join_param1" name="A" kind="in"/>
+              <UML:Parameter xmi.id="1113_join_param2" name="B" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="1113_op2" name="createMediaMixer" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="1113_op3" name="createNetworkConnection" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="1113_op4" name="createMediaGroup" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="1113_op5" name="createVoiceXmlDialog" visibility="public" isAbstract="false" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="1117" name="Joinable" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="1117_op1" name="join" visibility="public" isAbstract="true" isQuery="false">
+              <UML:Parameter xmi.id="1117_op1_param1" name="other" kind="in"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="1123" name="MediaMixer" visibility="public" isAbstract="true"/>
+        
+        <UML:Interface xmi.id="1278" name="NetworkConnection" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="1278_op1" name="addListener" visibility="public" isAbstract="true" isQuery="false">
+              <UML:Parameter xmi.id="1278_op1_param1" name="listener" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="1278_op2" name="modify" visibility="public" isAbstract="true" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="1402" name="MediaEventListener" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="1402_op1" name="onPlayerEvent" visibility="public" isAbstract="true" isQuery="false"/>
+            <UML:Operation xmi.id="1402_op2" name="onSignalDetectorEvent" visibility="public" isAbstract="true" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="1406" name="myResEventlistener" visibility="public" isAbstract="false"/>
+
+        <UML:Interface xmi.id="1467" name="MediaGroup" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="1467_op1" name="addListener" visibility="public" isAbstract="true" isQuery="false">
+              <UML:Parameter xmi.id="1467_op1_param1" name="listener" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="1467_op2" name="play" visibility="public" isAbstract="true" isQuery="false"/>
+            <UML:Operation xmi.id="1467_op3" name="receiveSignals" visibility="public" isAbstract="true" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="1511" name="CoreMailSession" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_1511_3431" parent="3431"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="1511_op1" name="initDialog" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="1511_op2" name="startDialog" visibility="public" isAbstract="false" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="1755" name="NetworkConnectionListener" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="1755_op1" name="onEvent" visibility="public" isAbstract="true" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="1759" name="myNetworkConnectionListener" visibility="public" isAbstract="false"/>
+
+        <UML:Interface xmi.id="2145" name="SipServlet" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="2145_op1" name="doInvite" visibility="public" isAbstract="true" isQuery="false"/>
+            <UML:Operation xmi.id="2145_op2" name="doAck" visibility="public" isAbstract="true" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="2234" name="VoiceMailServlet" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="2234_op1" name="doInvite" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="2234_op2" name="doAck" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="2234_op3" name="doBye" visibility="public" isAbstract="false" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="2415" name="AS" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="2415_op1" name="sendResponse" visibility="public" isAbstract="false" isQuery="false">
+              <UML:Parameter xmi.id="2415_op1_param1" name="code" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="3185" name="VxmlDialog" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="3185_op1" name="addListener" visibility="public" isAbstract="true" isQuery="false">
+              <UML:Parameter xmi.id="3185_op1_param1" name="listener" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="3185_op2" name="start" visibility="public" isAbstract="true" isQuery="false"/>
+            <UML:Operation xmi.id="3185_op3" name="prepare" visibility="public" isAbstract="true" isQuery="false"/>
+            <UML:Operation xmi.id="3185_op4" name="terminate" visibility="public" isAbstract="true" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="3191" name="VxmlDialogListener" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="3191_op1" name="onEvent" visibility="public" isAbstract="true" isQuery="false">
+              <UML:Parameter xmi.id="3191_op1_param1" name="ev_Prepared" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="3191_op2" name="onevent" visibility="public" isAbstract="true" isQuery="false">
+              <UML:Parameter xmi.id="3191_op2_param1" name="ev_Started" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="3191_op3" name="OnEvent" visibility="public" isAbstract="true" isQuery="false">
+              <UML:Parameter xmi.id="3191_op3_param1" name="ev_Exited" kind="in"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="3196" name="VoiceMailVxmlListener" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="3431" name="VoiceMailSession" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="3431_op1" name="init" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="3431_op2" name="initDialog" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="3431_op3" name="startDialog" visibility="public" isAbstract="false" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="3513" name="VxmlMailSession" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_3513_3431" parent="3431"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="3513_op1" name="initDialog" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="3513_op2" name="startDialog" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="3513_op3" name="terminateDialog" visibility="public" isAbstract="false" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="4334" name="Symbol" visibility="public" isAbstract="false"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

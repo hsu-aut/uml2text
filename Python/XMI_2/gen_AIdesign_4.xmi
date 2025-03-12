@@ -1,0 +1,96 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="FDu3o6u1ANkY" name="AiActor" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_idleStates" name="idleStates" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="UYELbwKtFKKJ"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_attackStates" name="attackStates" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="UYELbwKtFKKJ"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_currentState" name="currentState" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="UYELbwKtFKKJ"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_receiveEvent" name="receiveEvent" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            
+            <UML:Class xmi.id="UYELbwKtFKKJ" name="AiStateComponent" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_notifyEvent" name="notifyEvent" visibility="public"/>
+                <UML:Operation xmi.id="op_doThinkEvent" name="doThinkEvent" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            
+            <UML:Class xmi.id="GDh9PUg6qzUH" name="undef" visibility="public" isAbstract="true">
+            </UML:Class>
+
+            
+            <UML:Generalization xmi.id="gen_AiStateComponent" parent="GDh9PUg6qzUH" child="UYELbwKtFKKJ"/>
+            <UML:Generalization xmi.id="gen_undef" parent="UYELbwKtFKKJ" child="GDh9PUg6qzUH"/>
+
+            
+            <UML:Association xmi.id="assoc_AiActor_undef" name="Aggregation">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_AiActor" type="FDu3o6u1ANkY" name="AiActor" visibility="public" aggregation="composite" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_undef" type="GDh9PUg6qzUH" name="undef" visibility="public" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            
+            <UML:Association xmi.id="assoc_notifyEvents" name="notify events">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_AiActor_notify" type="FDu3o6u1ANkY" name="aiActor" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_AiStateComponent_notify" type="UYELbwKtFKKJ" name="aiStateComponent" visibility="public" aggregation="none" multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        
+        <UML:Package xmi.id="datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="int" name="int"/>
+            <UML:DataType xmi.id="char" name="char"/>
+            <UML:DataType xmi.id="bool" name="bool"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <UML:DataType xmi.id="short" name="short"/>
+            <UML:DataType xmi.id="long" name="long"/>
+            <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="string" name="string"/>
+            <UML:DataType xmi.id="undef" name="undef"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

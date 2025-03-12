@@ -1,0 +1,178 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DevQt" name="DevQt">
+      <UML:Namespace.ownedElement>
+
+        <!-- DevApp Class -->
+        <UML:Class xmi.id="class_DevApp" name="DevApp" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QApplication"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_gui" name="gui" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DevGUI"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_scr" name="scr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DevSplash"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_app" name="_app" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DevApp"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DevGUI Class -->
+        <UML:Class xmi.id="class_DevGUI" name="DevGUI" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QMainWindow"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_menus" name="menu" visibility="private"/>
+            <UML:Attribute xmi.id="attr_actionAdd" name="add" visibility="private"/>
+            <UML:Attribute xmi.id="attr_actionRem" name="rem" visibility="private"/>
+            <UML:Attribute xmi.id="attr_aNewFile" name="aNewFile" visibility="private"/>
+            <UML:Attribute xmi.id="attr_aOpen" name="aOpen" visibility="private"/>
+            <UML:Attribute xmi.id="attr_gDlg" name="gDlg" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fDlg" name="fDlg" visibility="private"/>
+            <UML:Attribute xmi.id="attr_aDlg" name="aDlg" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DevSplash Class -->
+        <UML:Class xmi.id="class_DevSplash" name="DevSplash" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QSplashScreen"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- DevSettings Class -->
+        <UML:Class xmi.id="class_DevSettings" name="DevSettings" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QSettings"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_recents" name="recents" visibility="private"/>
+            <UML:Attribute xmi.id="attr_dlg" name="dlg" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m" name="m" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DevSettingsDialog Class -->
+        <UML:Class xmi.id="class_DevSettingsDialog" name="DevSettingsDialog" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QDialog"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_settings" name="settings" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- AbstractFile Class -->
+        <UML:Class xmi.id="class_AbstractFile" name="AbstractFile" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QTreeWidgetItem"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- DevFile Class -->
+        <UML:Class xmi.id="class_DevFile" name="DevFile" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_AbstractFile"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- DevFolder Class -->
+        <UML:Class xmi.id="class_DevFolder" name="DevFolder" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_AbstractFile"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- DevProject Class -->
+        <UML:Class xmi.id="class_DevProject" name="DevProject" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_scope" name="DevScope" visibility="private"/>
+            <UML:Attribute xmi.id="attr_global" name="global" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- CoreEdit Class -->
+        <UML:Class xmi.id="class_CoreEdit" name="CoreEdit" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QTextEdit"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- EditorState Class -->
+        <UML:Class xmi.id="class_EditorState" name="EditorState" visibility="public" isAbstract="true"/>
+
+        <!-- NormalState Class -->
+        <UML:Class xmi.id="class_NormalState" name="NormalState" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_EditorState"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- PersistentState Class -->
+        <UML:Class xmi.id="class_PersistentState" name="PersistentState" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_EditorState"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- MultilineState Class -->
+        <UML:Class xmi.id="class_MultilineState" name="MultilineState" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_EditorState"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- C++Highlighter Class -->
+        <UML:Class xmi.id="class_CPlusPlusHighlighter" name="C++Highlighter" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QSyntaxHighlighter"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- DevHighlighter Class -->
+        <UML:Class xmi.id="class_DevHighlighter" name="DevHighlighter" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QSyntaxHighlighter"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- DevLineNumber Class -->
+        <UML:Class xmi.id="class_DevLineNumber" name="DevLineNumber" visibility="public" isAbstract="false"/>
+
+        <!-- DevOverviewPanel Class -->
+        <UML:Class xmi.id="class_DevOverviewPanel" name="DevOverviewPanel" visibility="public" isAbstract="false"/>
+
+        <!-- DevStandardPanel Class -->
+        <UML:Class xmi.id="class_DevStandardPanel" name="DevStandardPanel" visibility="public" isAbstract="false"/>
+
+        <!-- DevEditPanel Class -->
+        <UML:Class xmi.id="class_DevEditPanel" name="DevEditPanel" visibility="public" isAbstract="false"/>
+
+        <!-- DevConsole Class -->
+        <UML:Class xmi.id="class_DevConsole" name="DevConsole" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

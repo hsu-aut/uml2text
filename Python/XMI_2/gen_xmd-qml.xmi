@@ -1,0 +1,154 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Custom UML Exporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  
+  <XMI.content>
+    <UML:Model xmi.id="model_Example" name="ComponentModel">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Definition der Klasse XComponent -->
+        <UML:Class xmi.id="class_XComponent" name="XComponent" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Definition der Unterklasse composite -->
+        <UML:Class xmi.id="class_composite" name="composite" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_composite_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+        
+        <!-- Definition der Unterklasse fork -->
+        <UML:Class xmi.id="class_fork" name="fork" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_fork_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+      
+        <!-- Definition der Unterklasse queue -->
+        <UML:Class xmi.id="class_queue" name="queue" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_queue_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+        
+        <!-- Definition der Unterklasse sink -->
+        <UML:Class xmi.id="class_sink" name="sink" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_sink_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+        
+        <!-- Definition der Unterklasse source -->
+        <UML:Class xmi.id="class_source" name="source" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_source_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+
+        <!-- Definition der Unterklasse switch_ -->
+        <UML:Class xmi.id="class_switch" name="switch_" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_switch_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+        
+        <!-- Definition der Unterklasse join -->
+        <UML:Class xmi.id="class_join" name="join" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_join_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+        
+        <!-- Definition der Unterklasse merge -->
+        <UML:Class xmi.id="class_merge" name="merge" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_merge_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+
+        <!-- Definition der Unterklasse function -->
+        <UML:Class xmi.id="class_function" name="function" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_function_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+        
+        <!-- Definition der Unterklasse function_ -->
+        <UML:Class xmi.id="class_function_" name="function_" visibility="public" isAbstract="false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="gen_function_XComponent" parent="class_XComponent"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse XChannel -->
+        <UML:Class xmi.id="class_XChannel" name="XChannel" visibility="public" isAbstract="false">
+          <UML:Dependency xmi.id="dep_XChannel_channel_cpp" supplier="class_channel_cpp"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse XPort -->
+        <UML:Class xmi.id="class_XPort" name="XPort" visibility="public" isAbstract="false">
+          <UML:Dependency xmi.id="dep_XPort_port_cpp" supplier="class_port_cpp"/>
+          <UML:Association xmi.id="assoc_XPort_XComponent" name="component-port" visibility="public">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="end_XPort" type="class_XPort" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="end_XComponent" type="class_XComponent" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+        <!-- Definition der Klasse XNetwork -->
+        <UML:Class xmi.id="class_XNetwork" name="XNetwork" visibility="public" isAbstract="false">
+          <UML:Dependency xmi.id="dep_XNetwork_network_cpp" supplier="class_network_cpp"/>
+          <UML:Association xmi.id="assoc_XNetwork_XComponent" name="component-network" visibility="public">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="end_XNetwork" type="class_XNetwork" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="end_XComponent_network" type="class_XComponent" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+        <!-- Definition der Klasse mainwindow -->
+        <UML:Class xmi.id="class_mainwindow" name="mainwindow" visibility="public" isAbstract="false">
+          <UML:Association xmi.id="assoc_mainwindow_util" name="mainwindow-util" visibility="public">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="end_mainwindow" type="class_mainwindow" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="end_util" type="class_util" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+          <UML:Association xmi.id="assoc_mainwindow_datacontrol" name="mainwindow-datacontrol" visibility="public">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="end_mainwindow_control" type="class_mainwindow" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="end_datacontrol" type="class_datacontrol" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+        <!-- Definition der Klasse util -->
+        <UML:Class xmi.id="class_util" name="util" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse datacontrol -->
+        <UML:Class xmi.id="class_datacontrol" name="datacontrol" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse XConsole -->
+        <UML:Class xmi.id="class_XConsole" name="XConsole" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse XPlugin -->
+        <UML:Class xmi.id="class_XPlugin" name="XPlugin" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition von dateibezogenen Klassen -->
+        <UML:Class xmi.id="class_channel_cpp" name="channel.cpp" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_port_cpp" name="port.cpp" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_network_cpp" name="network.cpp" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

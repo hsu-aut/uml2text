@@ -1,0 +1,184 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GameDesign" name="GameDesign">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_Game" name="Game" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_game_state" name="state" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_State"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BattleEngine" name="BattleEngine" visibility="public" isAbstract="false" />
+
+        <UML:Class xmi.id="class_State" name="State" visibility="public" isAbstract="true" />
+
+        <UML:Class xmi.id="class_GameState" name="GameState" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_State"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MenuState" name="MenuState" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_State"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Party" name="Party" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_parties_characters" name="characters" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Character"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Character" name="Character" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_character_attributes" name="attributes" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Attribute"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Attribute" name="Attribute" visibility="public" />
+
+        <UML:Class xmi.id="class_GameStatus" name="GameStatus" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_game_status_parties" name="parties" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Party"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_game_status_curr_character" name="curr_character" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Character"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GameplayVariables" name="GameplayVariables" visibility="public" />
+
+        <UML:Class xmi.id="class_Result" name="Result" visibility="public" />
+
+        <UML:Class xmi.id="class_GameInterface" name="GameInterface" visibility="public" isAbstract="true" />
+
+        <UML:Class xmi.id="class_GameGUI" name="GameGUI" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GameInterface"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GameCLI" name="GameCLI" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GameInterface"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GamePresentation" name="GamePresentation" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_gui_presentation" name="gui_presentation" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_GUIPresentation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_cli_presentation" name="cli_presentation" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_CLIPresentation"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GUIPresentation" name="GUIPresentation" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GamePresentation"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CLIPresentation" name="CLIPresentation" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GamePresentation"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_IObserver" name="IObserver" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_update" name="update" visibility="public" isQuery="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_ISubject" name="ISubject" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_notify" name="notify" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_attach" name="attach" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_observer" name="observer" kind="in">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="interface_IObserver"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_detach" name="detach" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_observer_detach" name="observer" kind="in">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="interface_IObserver"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class_DBManager" name="DBManager" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="interface_IObserver"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Action" name="Action" visibility="public" />
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

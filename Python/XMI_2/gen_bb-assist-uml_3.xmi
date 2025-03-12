@@ -1,0 +1,395 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TechnicalDomain" name="TechnicalDomain">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Klasse `bb_device` -->
+        <UML:Class xmi.id="class_bb_device" name="bb_device" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Association xmi.id="assoc_bb_device_provider">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_bb_device_provider_device" type="class_bb_device" multiplicity="*" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_bb_device_provider_provider" type="class_provider" multiplicity="0..1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_bb_device_interface">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_bb_device_interface_device" type="class_bb_device" multiplicity="*" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_bb_device_interface_interface" type="class_interface" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Attribute xmi.id="attr_default_passwd" name="default_passwd" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_default_passwd"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse `provider` -->
+        <UML:Class xmi.id="class_provider" name="provider" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_provider_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_provider_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_provider_country" name="country" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse `conf_modes` -->
+        <UML:Class xmi.id="class_conf_modes" name="conf_modes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_conf_modes_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_conf_modes_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_get_all_conf_modes" name="get_all_conf_modes" visibility="public">
+              <UML:Parameter xmi.id="param_device_id" name="device" kind="in" type="Integer"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse `bb_device_types` -->
+        <UML:Class xmi.id="class_bb_device_types" name="bb_device_types" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_bb_device_types_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bb_device_types_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_get_all_device_types" name="get_all_device_types" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse `bb_device_conf` -->
+        <UML:Class xmi.id="class_bb_device_conf" name="bb_device_conf" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_bb_device_conf_bb_device" parent="class_bb_device" child="class_bb_device_conf"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse `firmware` -->
+        <UML:Class xmi.id="class_firmware" name="firmware" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_firmware_distributed" name="distributed" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_firmware_location" name="location" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_firmware_public_name" name="public_name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_firmware_comment" name="comment" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_firmware_internal_name" name="internal_name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse `dsl_router` -->
+        <UML:Class xmi.id="class_dsl_router" name="dsl_router" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dsl_router_has_console" name="has_console" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="gen_dsl_router_bb_device" parent="class_bb_device" child="class_dsl_router"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse `dsl_usb` -->
+        <UML:Class xmi.id="class_dsl_usb" name="dsl_usb" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dsl_usb_linux_driver" name="linux_driver" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="gen_dsl_usb_bb_device" parent="class_bb_device" child="class_dsl_usb"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse `druid` -->
+        <UML:Class xmi.id="class_druid" name="druid" visibility="public" isAbstract="false">
+          <!-- Aggregation with druidpage -->
+          <UML:Association xmi.id="assoc_druid_druidpage">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_druid_druidpage_druid" type="class_druid" multiplicity="1" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_druid_druidpage_druidpage" type="class_druidpage" multiplicity="*"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Definition der Klasse `druidpage` -->
+        <UML:Class xmi.id="class_druidpage" name="druidpage" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_druidpage_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_druidpage_logo" name="logo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_druidpage_color" name="color" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse `interface` -->
+        <UML:Class xmi.id="class_interface" name="interface" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_interface_hal_udi" name="hal_udi" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_interface_linux_device_file" name="linux_device_file" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_interface_type" name="type" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse `command` -->
+        <UML:Class xmi.id="class_command" name="command" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_command_nix_cmd" parent="class_command" child="class_nix_cmd"/>
+          <UML:Generalization xmi.id="gen_command_tty_cmd" parent="class_command" child="class_tty_cmd"/>
+          <UML:Generalization xmi.id="gen_command_net_cmd" parent="class_command" child="class_net_cmd"/>
+          <UML:Generalization xmi.id="gen_command_usb_cmd" parent="class_command" child="class_usb_cmd"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse `operation` -->
+        <UML:Class xmi.id="class_operation" name="operation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_operation_supported" name="supported" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_operation_ui_public" name="ui_public" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Association xmi.id="assoc_operation_firmware">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_operation_firmware_operation" type="class_operation" multiplicity="*" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_operation_firmware_firmware" type="class_firmware" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+          <UML:Association xmi.id="assoc_operation_provider">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_operation_provider_operation" type="class_operation" multiplicity="*" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_operation_provider_provider" type="class_provider" multiplicity="*"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Definition der Klasse `nix_cmd` -->
+        <UML:Class xmi.id="class_nix_cmd" name="nix_cmd" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nix_cmd_sudo" name="sudo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_nix_cmd_cmd" name="cmd" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="gen_nix_cmd_command" parent="class_command" child="class_nix_cmd"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse `tty_cmd` -->
+        <UML:Class xmi.id="class_tty_cmd" name="tty_cmd" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tty_cmd_cmd" name="cmd" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="gen_tty_cmd_command" parent="class_command" child="class_tty_cmd"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse `default_passwd` -->
+        <UML:Class xmi.id="class_default_passwd" name="default_passwd" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_default_passwd_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_default_passwd_passwd" name="passwd" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse `device_id` -->
+        <UML:Class xmi.id="class_device_id" name="device_id" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_device_id_vendor" name="vendor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Number"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_device_id_model" name="model" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Number"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_device_id_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="gen_device_id_dsl_usb" parent="class_dsl_usb" child="class_device_id"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse `param` -->
+        <UML:Class xmi.id="class_param" name="param" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_param_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_param_value" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Association xmi.id="assoc_bb_device_conf_param">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_bb_device_conf_param_conf" type="class_bb_device_conf" multiplicity="*" aggregation="composite"/>
+              <UML:AssociationEnd xmi.id="assocEnd_bb_device_conf_param_param" type="class_param" multiplicity="*"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Definition der Klasse `msg_error` -->
+        <UML:Class xmi.id="class_msg_error" name="msg_error" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_msg_error_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_msg_error_msg" name="msg" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse `tty_conf` -->
+        <UML:Class xmi.id="class_tty_conf" name="tty_conf" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tty_conf_baudrate" name="baudrate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Number"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tty_conf_bits" name="bits" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Number"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tty_conf_stopbits" name="stopbits" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Number"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tty_conf_parity" name="parity" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Association xmi.id="assoc_tty_conf_dsl_router">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_tty_conf_dsl_router_tty_conf" type="class_tty_conf" multiplicity="0..1" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_tty_conf_dsl_router_dsl_router" type="class_dsl_router" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Allgemeine Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="Number" name="Number"/>
+        <UML:DataType xmi.id="Char" name="Char"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

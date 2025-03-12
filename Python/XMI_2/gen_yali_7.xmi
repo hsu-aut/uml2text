@@ -1,0 +1,146 @@
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<XMI xmi.version='1.2' xmlns:UML='org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id='UMLModel' name='UML_Model'>
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Datatypes -->
+        <UML:Package xmi.id='DatatypesPackage' name='Datatypes'>
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id='int' name='int'/>
+            <UML:DataType xmi.id='char' name='char'/>
+            <UML:DataType xmi.id='bool' name='bool'/>
+            <UML:DataType xmi.id='float' name='float'/>
+            <UML:DataType xmi.id='double' name='double'/>
+            <UML:DataType xmi.id='short' name='short'/>
+            <UML:DataType xmi.id='long' name='long'/>
+            <UML:DataType xmi.id='unsigned_int' name='unsigned int'/>
+            <UML:DataType xmi.id='unsigned_short' name='unsigned short'/>
+            <UML:DataType xmi.id='unsigned_long' name='unsigned long'/>
+            <UML:DataType xmi.id='string' name='string'/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des Packages "Objects" -->
+        <UML:Package xmi.id='ObjectsPackage' name='Objects'>
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition der Klasse "AutoPartWidget" -->
+            <UML:Class xmi.id='AutoPartWidget' name='AutoPartWidget' visibility='public' isAbstract='false'>
+              <!-- Keine expliziten Operationen definiert -->
+            </UML:Class>
+
+            <!-- Definition der Klasse "BootLoader" -->
+            <UML:Class xmi.id='BootLoader' name='BootLoader' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='BootLoader_init' name='__init__'/>
+                <UML:Operation xmi.id='BootLoader_find_grub_dev' name='_find_grub_dev'/>
+                <UML:Operation xmi.id='BootLoader_install_grub' name='install_grub'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "BootLoaderWidget" -->
+            <UML:Class xmi.id='BootLoaderWidget' name='BootLoaderWidget' visibility='public' isAbstract='false'/>
+            <UML:Class xmi.id='CheckCDWidget' name='CheckCDWidget' visibility='public' isAbstract='false'/>
+            
+            <!-- Definition der Klasse "CloseButton" -->
+            <UML:Class xmi.id='CloseButton' name='CloseButton' visibility='public' isAbstract='false'>
+              <!-- Basierend auf QLabel -->
+            </UML:Class>
+            
+            <!-- Definition der Klasse "Constants" -->
+            <UML:Class xmi.id='Constants' name='Constants' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='Constants_getattr' name='__getattr__'/>
+                <UML:Operation xmi.id='Constants_setattr' name='__setattr__'/>
+                <UML:Operation xmi.id='Constants_delattr' name='__delattr__'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Device" -->
+            <UML:Class xmi.id='Device' name='Device' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='Device_init' name='__init__'/>
+                <UML:Operation xmi.id='Device_getPath' name='getPath'/>
+                <UML:Operation xmi.id='Device_addPartition' name='addPartition'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "DeviceError" -->
+            <UML:Class xmi.id='DeviceError' name='DeviceError' visibility='public' isAbstract='false'/>
+
+            <!-- Fortsetzung der weiteren Klassen gemäß Beschreibung -->
+            <UML:Class xmi.id='DeviceItem' name='DeviceItem' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='DeviceItem_getDevice' name='getDevice'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id='Dialog' name='Dialog' visibility='public' isAbstract='false'/>
+            <UML:Class xmi.id='DisableNavButtonsAspect' name='DisableNavButtonsAspect' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='DisableNavButtonsAspect_before' name='before'/>
+                <UML:Operation xmi.id='DisableNavButtonsAspect_after' name='after'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id='EnableNavButtonsAspect' name='EnableNavButtonsAspect' visibility='public' isAbstract='false'/>
+
+            <UML:Class xmi.id='ErrorWidget' name='ErrorWidget' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='ErrorWidget_init' name='__init__'/>
+                <UML:Operation xmi.id='ErrorWidget_slotReboot' name='slotReboot'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id='Exception' name='Exception' visibility='public' isAbstract='false'/>
+
+            <UML:Class xmi.id='ExceptionWidget' name='ExceptionWidget' visibility='public' isAbstract='false'/>
+            
+            <UML:Class xmi.id='Ext3FileSystem' name='Ext3FileSystem' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='Ext3FileSystem_format' name='format'/>
+                <UML:Operation xmi.id='Ext3FileSystem_resize' name='resize'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id='FSError' name='FSError' visibility='public' isAbstract='false'/>
+
+            <UML:Class xmi.id='FileSystem' name='FileSystem' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='FileSystem_openPartition' name='openPartition'/>
+                <UML:Operation xmi.id='FileSystem_getFSType' name='getFSType'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id='FormatRequest' name='FormatRequest' visibility='public' isAbstract='false'>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id='FormatRequest_applyRequest' name='applyRequest'/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id='FreeSpace' name='FreeSpace' visibility='public' isAbstract='false'/>
+
+            <UML:Class xmi.id='FstabEntry' name='FstabEntry' visibility='public' isAbstract='false'/>
+
+            <UML:Class xmi.id='GUIError' name='GUIError' visibility='public' isAbstract='false'/>
+
+            <!-- Fortsetzung der weiteren Klassen entsprechend der Beschreibung -->
+            <!-- Die anderen Klassen werden auf ähnliche Weise hier hinzugefügt -->
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

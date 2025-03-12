@@ -1,0 +1,104 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1_UML_Model">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="pkg_Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes -->
+            <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="type_int" name="int"/>
+                <UML:DataType xmi.id="type_char" name="char"/>
+                <UML:DataType xmi.id="type_bool" name="bool"/>
+                <UML:DataType xmi.id="type_float" name="float"/>
+                <UML:DataType xmi.id="type_double" name="double"/>
+                <UML:DataType xmi.id="type_short" name="short"/>
+                <UML:DataType xmi.id="type_long" name="long"/>
+                <UML:DataType xmi.id="type_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="type_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="type_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="type_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Dataset Class -->
+            <UML:Class xmi.id="class_Dataset" name="Dataset" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Association xmi.id="assoc_Dataset_Analysis">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Dataset_Analysis_Dataset" type="class_Dataset" name="dataset" visibility="public" aggregation="none" multiplicity="n"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Dataset_Analysis_Analysis" type="class_Analysis" name="analysis" visibility="public" aggregation="none" multiplicity="1"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_Dataset_Document">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Dataset_Document_Dataset" type="class_Dataset" name="dataset" visibility="public" aggregation="none" multiplicity="1"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Dataset_Document_Document" type="class_Document" name="document" visibility="public" aggregation="none" multiplicity="1"/>
+                  </UML:Association.connection>
+                </UML:Association>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Analysis Class -->
+            <UML:Class xmi.id="class_Analysis" name="Analysis" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Association xmi.id="assoc_Analysis_Topic">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Analysis_Topic_Analysis" type="class_Analysis" name="analysis" visibility="public" aggregation="composite" multiplicity="1"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Analysis_Topic_Topic" type="class_Topic" name="topic" visibility="public" aggregation="none" multiplicity="1"/>
+                  </UML:Association.connection>
+                </UML:Association>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Document Class -->
+            <UML:Class xmi.id="class_Document" name="Document" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Association xmi.id="assoc_Document_Word">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Document_Word_Document" type="class_Document" name="document" visibility="public" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Document_Word_Word" type="class_Word" name="word" visibility="public" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                <UML:Association xmi.id="assoc_Document_Topic">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Document_Topic_Document" type="class_Document" name="document" visibility="public" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Document_Topic_Topic" type="class_Topic" name="topic" visibility="public" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Topic Class -->
+            <UML:Class xmi.id="class_Topic" name="Topic" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Association xmi.id="assoc_Topic_Word">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Topic_Word_Topic" type="class_Topic" name="topic" visibility="public" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Topic_Word_Word" type="class_Word" name="word" visibility="public" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Word Class -->
+            <UML:Class xmi.id="class_Word" name="Word" visibility="public"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,140 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse EPOS -->
+        <UML:Class xmi.id="class_EPOS" name="EPOS" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_sendVars" name="sendVars" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="param_accelerometerData" name="accelerometerData" kind="in">
+                <UML:Classifier xmi.idref="class_Triple"/>
+              </UML:Parameter>
+              <UML:Parameter xmi.id="param_gyroscopeData" name="gyroscopeData" kind="in">
+                <UML:Classifier xmi.idref="class_Triple"/>
+              </UML:Parameter>
+              <UML:Parameter xmi.id="param_destination" name="destination" kind="in">
+                <UML:Classifier xmi.idref="class_Address"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Accelerometer -->
+        <UML:Class xmi.id="class_Accelerometer" name="Accelerometer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getVars" name="getVars" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="param_returnTriple" name="return" kind="return">
+                <UML:Classifier xmi.idref="class_Triple"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Gyroscope -->
+        <UML:Class xmi.id="class_Gyroscope" name="Gyroscope" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getVars" name="getVars" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="param_returnTriple" name="return" kind="return">
+                <UML:Classifier xmi.idref="class_Triple"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse EPOSMotor -->
+        <UML:Class xmi.id="class_EPOSMotor" name="EPOSMotor" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Triple -->
+        <UML:Class xmi.id="class_Triple" name="Triple" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Address -->
+        <UML:Class xmi.id="class_Address" name="Address" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse MotorEPOS -->
+        <UML:Class xmi.id="class_MotorEPOS" name="MotorEPOS" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_motorLoop" name="motorLoop" visibility="public" isSpecification="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Integer -->
+        <UML:Class xmi.id="class_Integer" name="Integer" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse PIDController -->
+        <UML:Class xmi.id="class_PIDController" name="PIDController" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_doPID" name="doPID" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="param_returnInteger" name="return" kind="return">
+                <UML:Classifier xmi.idref="class_Integer"/>
+              </UML:Parameter>
+              <UML:Parameter xmi.id="param_accelerometerData" name="accelerometerData" kind="in">
+                <UML:Classifier xmi.idref="class_Triple"/>
+              </UML:Parameter>
+              <UML:Parameter xmi.id="param_gyroscopeData" name="gyroscopeData" kind="in">
+                <UML:Classifier xmi.idref="class_Triple"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Motor -->
+        <UML:Class xmi.id="class_Motor" name="Motor" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_setThrust" name="setThrust" visibility="public" isSpecification="false">
+              <UML:Parameter xmi.id="param_thrust" name="thrust" kind="in">
+                <UML:Classifier xmi.idref="class_Integer"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse AccelerometerProxy -->
+        <UML:Class xmi.id="class_AccelerometerProxy" name="AccelerometerProxy" visibility="public" isAbstract="false"/>
+
+        <!-- Assoziation zwischen Accelerometer und EPOS -->
+        <UML:Association xmi.id="assoc_Accelerometer_EPOS">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Accelerometer" type="class_Accelerometer" name="accelerometer" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EPOS" type="class_EPOS" name="epos" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Gyroscope und EPOS -->
+        <UML:Association xmi.id="assoc_Gyroscope_EPOS">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Gyroscope" type="class_Gyroscope" name="gyroscope" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EPOS_2" type="class_EPOS" name="epos" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen MotorEPOS und PIDController -->
+        <UML:Association xmi.id="assoc_MotorEPOS_PIDController">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MotorEPOS" type="class_MotorEPOS" name="motorEPOS" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PIDController" type="class_PIDController" name="pidController" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen MotorEPOS und Motor -->
+        <UML:Association xmi.id="assoc_MotorEPOS_Motor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MotorEPOS_2" type="class_MotorEPOS" name="motorEPOS" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Motor" type="class_Motor" name="motor" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

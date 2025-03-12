@@ -1,0 +1,151 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GameUseCase" name="GameUseCase">
+      <UML:Namespace.ownedElement>
+
+        <!-- Akteure -->
+        <UML:Actor xmi.id="actor_Joueur" name="Joueur"/>
+        <UML:Actor xmi.id="actor_Administrateur" name="Administrateur"/>
+
+        <!-- Anwendungsfälle -->
+        <UML:UseCase xmi.id="uc_SeConnecterJoueur" name="Se connecter en tant que joueur">
+          <UML:ExtensionPoint name="newEP"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="uc_ModifierIP" name="Modifier l'ip du serveur"/>
+        <UML:UseCase xmi.id="uc_AttendreDebut" name="Attendre le début de la partie">
+          <UML:ExtensionPoint name="newEP"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="uc_RegarderListe" name="Regarder la liste des joueur se connectant"/>
+        <UML:UseCase xmi.id="uc_SeConnecterAdmin" name="Se connecter en tant qu'administrateur">
+          <UML:ExtensionPoint name="newEP"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="uc_ModifierParametres" name="Modifier les paramètres"/>
+        <UML:UseCase xmi.id="uc_AttendreJoueurs" name="Attendre que les joueurs se connectent"/>
+        <UML:UseCase xmi.id="uc_StoperPartie" name="Stoper la partie"/>
+        <UML:UseCase xmi.id="uc_InterromprePartie" name="Interrompre la partie"/>
+        <UML:UseCase xmi.id="uc_SeDeplacer" name="Se déplacer"/>
+        <UML:UseCase xmi.id="uc_PerdreZone" name="Perdre une zone"/>
+        <UML:UseCase xmi.id="uc_VoirScores" name="Voir les scores">
+          <UML:ExtensionPoint name="newEP"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="uc_SeDeconnecter" name="Se déconnecter"/>
+        <UML:UseCase xmi.id="uc_DiscuterPartie" name="Discuter de la partie"/>
+        <UML:UseCase xmi.id="uc_GagnerBattle" name="Gagner die Battle"/>
+        <UML:UseCase xmi.id="uc_PerdreBattle" name="Perdre die Battle"/>
+        <UML:UseCase xmi.id="uc_ConquerirZone" name="Conquérir la zone"/>
+
+        <!-- Assoziationen zwischen Akteuren und Anwendungsfällen -->
+        <UML:Association xmi.id="assoc_Joueur_EditerProfil">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Joueur" type="actor_Joueur"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EditerProfil" type="uc_SeConnecterJoueur"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Erweiterungen -->
+        <UML:Extend xmi.id="extend_ModifierIP">
+          <UML:Extend.base>
+            <UML:UseCase xmi.id="uc_SeConnecterJoueur"/>
+          </UML:Extend.base>
+          <UML:Extend.extension>
+            <UML:UseCase xmi.id="uc_ModifierIP"/>
+          </UML:Extend.extension>
+          <UML:Extend.extensionPoint>
+            <UML:ExtensionPoint xmi.id="uc_SeConnecterJoueur.newEP"/>
+          </UML:Extend.extensionPoint>
+        </UML:Extend>
+
+        <!-- Abhängigkeiten und Verbindungen -->
+        <UML:Include xmi.id="include_RegarderListe">
+          <UML:Include.base>
+            <UML:UseCase xmi.id="uc_AttendreDebut"/>
+          </UML:Include.base>
+          <UML:Include.addition>
+            <UML:UseCase xmi.id="uc_RegarderListe"/>
+          </UML:Include.addition>
+        </UML:Include>
+
+        <UML:Extend xmi.id="extend_ModifierParametres">
+          <UML:Extend.base>
+            <UML:UseCase xmi.id="uc_SeConnecterAdmin"/>
+          </UML:Extend.base>
+          <UML:Extend.extension>
+            <UML:UseCase xmi.id="uc_ModifierParametres"/>
+          </UML:Extend.extension>
+          <UML:Extend.extensionPoint>
+            <UML:ExtensionPoint xmi.id="uc_SeConnecterAdmin.newEP"/>
+          </UML:Extend.extensionPoint>
+        </UML:Extend>
+
+        <UML:Include xmi.id="include_SeDeplacer">
+          <UML:Include.base>
+            <UML:UseCase xmi.id="uc_AttendreDebut"/>
+          </UML:Include.base>
+          <UML:Include.addition>
+            <UML:UseCase xmi.id="uc_SeDeplacer"/>
+          </UML:Include.addition>
+        </UML:Include>
+
+        <UML:Extend xmi.id="extend_DiscuterPartie">
+          <UML:Extend.base>
+            <UML:UseCase xmi.id="uc_VoirScores"/>
+          </UML:Extend.base>
+          <UML:Extend.extension>
+            <UML:UseCase xmi.id="uc_DiscuterPartie"/>
+          </UML:Extend.extension>
+          <UML:Extend.extensionPoint>
+            <UML:ExtensionPoint xmi.id="uc_VoirScores.newEP"/>
+          </UML:Extend.extensionPoint>
+        </UML:Extend>
+
+        <UML:Include xmi.id="include_SeDeconnecter">
+          <UML:Include.base>
+            <UML:UseCase xmi.id="uc_VoirScores"/>
+          </UML:Include.base>
+          <UML:Include.addition>
+            <UML:UseCase xmi.id="uc_SeDeconnecter"/>
+          </UML:Include.addition>
+        </UML:Include>
+
+        <UML:Include xmi.id="include_ConquerirZone">
+          <UML:Include.base>
+            <UML:UseCase xmi.id="uc_SeDeplacer"/>
+          </UML:Include.base>
+          <UML:Include.addition>
+            <UML:UseCase xmi.id="uc_ConquerirZone"/>
+          </UML:Include.addition>
+        </UML:Include>
+
+        <!-- Nachfolgende Anwendungsfälle -->
+        <UML:Include xmi.id="include_GagnerBattle">
+          <UML:Include.base>
+            <UML:UseCase xmi.id="uc_ConquerirZone"/>
+          </UML:Include.base>
+          <UML:Include.addition>
+            <UML:UseCase xmi.id="uc_GagnerBattle"/>
+          </UML:Include.addition>
+        </UML:Include>
+
+        <UML:Include xmi.id="include_PerdreBattle">
+          <UML:Include.base>
+            <UML:UseCase xmi.id="uc_ConquerirZone"/>
+          </UML:Include.base>
+          <UML:Include.addition>
+            <UML:UseCase xmi.id="uc_PerdreBattle"/>
+          </UML:Include.addition>
+        </UML:Include>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

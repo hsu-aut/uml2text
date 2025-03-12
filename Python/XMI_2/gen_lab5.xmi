@@ -1,0 +1,140 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UniversityHierarchy" name="UniversityHierarchy">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Klasse University -->
+        <UML:Class xmi.id="class_University" name="University" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_universityName" name="UniversityName" visibility="private" isSpecification="false" multiplicity="1..1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_yearOfEst" name="YearOfEst" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_rank" name="Rank" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_dean" name="Dean" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_capacity" name="Capacity" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getName" name="getName" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getDean" name="getDean" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_setRank" name="setRank" visibility="public"/>
+            <UML:Operation xmi.id="op_setCapacity" name="setCapacity" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Department -->
+        <UML:Class xmi.id="class_Department" name="Department" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_universityNameDept" name="UniversityName" visibility="private" multiplicity="1..1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_branchName" name="BranchName" visibility="private" multiplicity="1..1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_branchID" name="BranchID" visibility="private" multiplicity="1..1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_HOD" name="HOD" visibility="private" multiplicity="1..1">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_studentCapacity" name="StudentCapacity" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_projectList" name="ProjectList" visibility="private" multiplicity="0..*">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_facultyList" name="FacultyList" visibility="private" multiplicity="0..*">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getBranch" name="getBranch" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getID" name="getID" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getHOD" name="getHOD" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_setStudentCapacity" name="setStudentCapacity" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Science -->
+        <UML:Class xmi.id="class_Science" name="Science" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Department"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_subDivision" name="subDivision" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Engineering -->
+        <UML:Class xmi.id="class_Engineering" name="Engineering" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Department"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_addProject" name="addProject" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Anonyme Generalisierungsklasse -->
+        <UML:Class xmi.id="class_Anon" visibility="public" isAbstract="true"/>
+        
+        <UML:Generalization>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_Anon"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_University"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

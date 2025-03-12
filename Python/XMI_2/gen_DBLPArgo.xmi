@@ -1,0 +1,202 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Publications" name="Publications">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_homePage" name="homePage" visibility="private"/>
+            <UML:Attribute xmi.id="attr_numPublications" name="numPublications" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_JournalIssue" name="JournalIssue" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_number" name="number" visibility="private"/>
+            <UML:Attribute xmi.id="attr_year" name="year" visibility="private"/>
+            <UML:Attribute xmi.id="attr_month" name="month" visibility="private"/>
+            <UML:Attribute xmi.id="attr_numPages" name="numPages" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_JournalVolume" name="JournalVolume" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_volume" name="volume" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:AssociationEnd xmi.id="assocEnd_JournalVolume_JournalIssue" name="journalIssue" type="class_JournalIssue" aggregation="composite"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Journal" name="Journal" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private"/>
+            <UML:Attribute xmi.id="attr_issn" name="issn" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:AssociationEnd xmi.id="assocEnd_Journal_JournalVolume" name="journalVolume" type="class_JournalVolume" aggregation="composite"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BookSection" name="BookSection" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private"/>
+            <UML:Attribute xmi.id="attr_order" name="order" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:AssociationEnd xmi.id="assocEnd_BookSection_BookChapter" name="bookChapter" type="class_BookChapter" aggregation="composite"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BookSeriesIssue" name="BookSeriesIssue" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_BookSeries" name="BookSeries" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:AssociationEnd xmi.id="assocEnd_BookSeries_BookSeriesIssue" name="bookSeriesIssue" type="class_BookSeriesIssue" aggregation="composite"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ConferenceEdition" name="ConferenceEdition" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private"/>
+            <UML:Attribute xmi.id="attr_year" name="year" visibility="private"/>
+            <UML:Attribute xmi.id="attr_city" name="city" visibility="private"/>
+            <UML:Attribute xmi.id="attr_country" name="country" visibility="private"/>
+            <UML:Attribute xmi.id="attr_homePage" name="homePage" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ConferenceSeries" name="ConferenceSeries" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_acronym" name="acronym" visibility="private"/>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:AssociationEnd xmi.id="assocEnd_ConferenceSeries_ConferenceEdition" name="conferenceEdition" type="class_ConferenceEdition" aggregation="composite"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Publication" name="Publication" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private"/>
+            <UML:Attribute xmi.id="attr_year" name="year" visibility="private"/>
+            <UML:Attribute xmi.id="attr_edition" name="edition" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AuthoredPublication" name="AuthoredPublication" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Publication"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EditedBook" name="EditedBook" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Publication"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Book"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="oper_edition" name="edition" visibility="public">
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Book" name="Book" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Publication"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_numPages" name="numPages" visibility="private"/>
+            <UML:Attribute xmi.id="attr_homePage" name="homePage" visibility="private"/>
+            <UML:Attribute xmi.id="attr_publisher" name="publisher" visibility="private"/>
+            <UML:Attribute xmi.id="attr_publicationYear" name="publicationYear" visibility="private"/>
+            <UML:Attribute xmi.id="attr_isbn" name="isbn" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AuthoredBook" name="AuthoredBook" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Book"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AuthoredPublication"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BookChapter" name="BookChapter" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AuthoredPublication"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_iniPage" name="iniPage" visibility="private"/>
+            <UML:Attribute xmi.id="attr_endPage" name="endPage" visibility="private"/>
+            <UML:Attribute xmi.id="attr_conferencePaper" name="conferencePaper" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_JournalPaper" name="JournalPaper" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AuthoredPublication"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_iniPage" name="iniPage" visibility="private"/>
+            <UML:Attribute xmi.id="attr_endPage" name="endPage" visibility="private"/>
+            <UML:Attribute xmi.id="attr_conferencePaper" name="conferencePaper" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_JournalSection" name="JournalSection" visibility="public" isAbstract="false">
+          <UML:AssociationEnd xmi.id="assocEnd_JournalSection_JournalPaper" name="journalPaper" type="class_JournalPaper" aggregation="composite"/>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Person_Publishes_Publication">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Person" type="class_Person" name="publishes" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Publication" type="class_Publication" name="publication" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Person_IsAuthorOf_AuthoredPublication">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Person_Author" type="class_Person" name="isAuthorOf" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AuthoredPublication" type="class_AuthoredPublication" name="authoredPublication" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Person_IsEditorOf_EditedBook">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Person_Editor" type="class_Person" name="isEditorOf" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EditedBook" type="class_EditedBook" name="editedBook" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_JournalSection_Aggregates_JournalPaper">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_JournalSection" type="class_JournalSection" name="aggregates" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_JournalPaper" type="class_JournalPaper" name="journalPaper" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

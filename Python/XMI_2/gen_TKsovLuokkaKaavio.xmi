@@ -1,0 +1,100 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket: Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Paket: Datatypes -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Klassen -->
+            <UML:Class xmi.id="class_Yllapitaja" name="Yllapitaja" visibility="public"/>
+            <UML:Class xmi.id="class_Oppilas" name="Oppilas" visibility="public"/>
+            <UML:Class xmi.id="class_Opettaja" name="Opettaja" visibility="public"/>
+            <UML:Class xmi.id="class_Kurssi" name="Kurssi" visibility="public"/>
+            <UML:Class xmi.id="class_Kurssityo" name="Kurssityö" visibility="public"/>
+
+            <!-- Assoziationen -->
+            <UML:Association xmi.id="assoc_Kurssi_Kurssityo" name="Unnamed Association">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Kurssi_Kurssityo_Kurssi" type="class_Kurssi" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Kurssi_Kurssityo_Kurssityo" type="class_Kurssityo"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Oppilas_Kurssi" name="Osallistuu">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Oppilas_Kurssi_Oppilas" type="class_Oppilas" multiplicity="1..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Oppilas_Kurssi_Kurssi" type="class_Kurssi" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Opettaja_Kurssi" name="Luo/Muuta/Poista">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Opettaja_Kurssi_Opettaja" type="class_Opettaja" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Opettaja_Kurssi_Kurssi" type="class_Kurssi" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Yllapitaja_Opettaja" name="Liitä ryhmään 'opettaja'">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Yllapitaja_Opettaja_Yllapitaja" type="class_Yllapitaja" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Yllapitaja_Opettaja_Opettaja" type="class_Opettaja" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Oppilas_Oppilas" name="Unnamed Association">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Oppilas_Oppilas_Oppilas1" type="class_Oppilas" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Oppilas_Oppilas_Oppilas2" type="class_Oppilas" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Opettaja_Kurssityo" name="Luo/Muuta/Poista">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Opettaja_Kurssityo_Opettaja" type="class_Opettaja" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Opettaja_Kurssityo_Kurssityo" type="class_Kurssityo" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Yllapitaja_Oppilas" name="blokkaa">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Yllapitaja_Oppilas_Yllapitaja" type="class_Yllapitaja" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Yllapitaja_Oppilas_Oppilas" type="class_Oppilas" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

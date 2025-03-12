@@ -1,0 +1,197 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_YaliSoftwareSystem" name="YaliSoftwareSystem">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definitionen der Klassen -->
+        <UML:Class xmi.id="class_YaliBuild" name="YaliBuild" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Build"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_YaliClean" name="YaliClean" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Clean"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_YaliUninstall" name="YaliUninstall" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Command"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der FileSystem Klassen -->
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Ext3FileSystem" name="Ext3FileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ReiserFileSystem" name="ReiserFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_XFSFileSystem" name="XFSFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SwapFileSystem" name="SwapFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_NTFSFileSystem" name="NTFSFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FatFileSystem" name="FatFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FileSystem"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Partition Typen Klassen -->
+        <UML:Class xmi.id="class_PartitionType" name="PartitionType" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_ArchivePartitionType" name="ArchivePartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_SwapPartitionType" name="SwapPartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_RootPartitionType" name="RootPartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_HomePartitionType" name="HomePartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartitionType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Partitionsanforderungen (Requests) Klassen -->
+        <UML:Class xmi.id="class_PartRequest" name="PartRequest" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_FormatRequest" name="FormatRequest" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartRequest"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MountRequest" name="MountRequest" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartRequest"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_SwapFileRequest" name="SwapFileRequest" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartRequest"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_LabelRequest" name="LabelRequest" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_PartRequest"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Exception und Fehler Klassen -->
+        <UML:Class xmi.id="class_Exception" name="Exception" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_YaliExceptionInfo" name="YaliExceptionInfo" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Exception"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_FSError" name="FSError" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Exception"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Andere Klassen -->
+        <UML:Class xmi.id="class_LogicalView" name="LogicalView" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_UserFunctions" name="UserFunctions" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Options" name="Options" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Device" name="Device" visibility="public" isAbstract="false"/>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="dataType_String" name="String"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,181 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AutoSave" name="AutoSave">
+      <UML:Namespace.ownedElement>
+        <!-- AutoSave Exceptions Hierarchy -->
+        <UML:Class xmi.id="class_std_runtime_error" name="std::runtime_error" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_AutoSaveException" name="AutoSaveException" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_std_runtime_error"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RegistryException" name="RegistryException" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AutoSaveException"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_OleException" name="OleException" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AutoSaveException"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CLIException" name="CLIException" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AutoSaveException"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <UML:Model xmi.id="model_Util" name="Util">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Shortcut" name="Shortcut" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ConnectedShortcut" name="ConnectedShortcut" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Shortcut"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_AutostartShortcut" name="AutostartShortcut" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_OleUtils" name="OleUtils" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_RegistryAccess" name="RegistryAccess" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_CommandLineParser" name="CommandLineParser" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_IconBitmap" name="IconBitmap" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_GdiUtils" name="GdiUtils" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_newAttr" name="newAttr" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <UML:Model xmi.id="model_Configuration" name="Configuration">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_MiscSettings" name="MiscSettings" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_AppConnection" name="AppConnection" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Matcher" name="Matcher" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Configuration" name="Configuration" visibility="public" isAbstract="false">
+          <UML:Aggregation>
+            <UML:Aggregation.connected>
+              <UML:Class xmi.idref="class_AppConnection"/>
+            </UML:Aggregation.connected>
+            <UML:Aggregation.connected>
+              <UML:Class xmi.idref="class_MiscSettings"/>
+            </UML:Aggregation.connected>
+            <UML:Aggregation.connected>
+              <UML:Class xmi.idref="class_Matcher"/>
+            </UML:Aggregation.connected>
+          </UML:Aggregation>
+        </UML:Class>
+        <!-- Dependency -->
+        <UML:Dependency client="class_MiscSettings" supplier="class_GdiUtils"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <UML:Model xmi.id="model_Uninstaller" name="Uninstaller">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_UninstallerShortcutsListTooltip" name="UninstallerShortcutsListTooltip" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_UninstallerShortcutsListbox" name="UninstallerShortcutsListbox" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Uninstaller" name="Uninstaller" visibility="public" isAbstract="false">
+          <UML:Aggregation>
+            <UML:Aggregation.connected>
+              <UML:Class xmi.idref="class_UninstallerShortcutsListbox"/>
+            </UML:Aggregation.connected>
+          </UML:Aggregation>
+        </UML:Class>
+        <UML:Class xmi.id="class_ShortcutsDisconnector" name="ShortcutsDisconnector" visibility="public" isAbstract="false"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <UML:Model xmi.id="model_ShortcutsDialog" name="ShortcutsDialog">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_DocumentIconFinder" name="DocumentIconFinder" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TemporaryShortcutFile" name="TemporaryShortcutFile" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ConnectedShortcut"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_ShortcutsDialog" name="ShortcutsDialog" visibility="public" isAbstract="false">
+          <UML:Association>
+            <UML:Association.connection>
+              <UML:AssociationEnd type="class_Application"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <UML:Model xmi.id="model_OptionsWindow" name="OptionsWindow">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_OptionsPageBase" name="OptionsPageBase" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_OptionsPageTarget" name="OptionsPageTarget" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_OptionsPageBase"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_OptionsPageMore" name="OptionsPageMore" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_OptionsPageBase"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_OptionsPageUninstall" name="OptionsPageUninstall" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_OptionsPageBase"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_OptionsWindow" name="OptionsWindow" visibility="public" isAbstract="false"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <UML:Model xmi.id="model_Application" name="Application">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Application" name="Application" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_BaseWindow" name="BaseWindow" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_NotifyIcon" name="NotifyIcon" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PeriodicSender" name="PeriodicSender" visibility="public" isAbstract="false">
+          <UML:Association>
+            <UML:Association.connection>
+              <UML:AssociationEnd type="class_Application"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <UML:Interface xmi.id="interface_IDropTarget" name="IDropTarget" visibility="public"/>
+    <UML:Interface xmi.id="interface_IShellLink" name="IShellLink" visibility="public"/>
+    <UML:Interface xmi.id="interface_IPersistFile" name="IPersistFile" visibility="public"/>
+    
+  </XMI.content>
+</XMI>
+```

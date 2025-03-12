@@ -1,0 +1,126 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Μοντέλο UML">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition grundlegender Datentypen -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="string" name="string"/>
+
+        <!-- Definition der Klasse Game -->
+        <UML:Class xmi.id="class_Game" name="Game" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_course" name="course" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <!-- Weitere Attribute hier -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition spezifischer Spieleklassen -->
+
+        <!-- game_hangman -->
+        <UML:Class xmi.id="class_game_hangman" name="game_hangman" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_hangman_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <!-- Weitere Attribute hier -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- game_cross -->
+        <UML:Class xmi.id="class_game_cross" name="game_cross" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_cross_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <!-- Weitere Attribute hier -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Weitere spezifische Spieleklassen ... -->
+
+        <!-- Definition der Support-Klassen -->
+
+        <!-- game_attempts -->
+        <UML:Class xmi.id="class_game_attempts" name="game_attempts" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attempts_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <!-- Weitere Attribute hier -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- game_course_input -->
+        <UML:Class xmi.id="class_game_course_input" name="game_course_input" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_course_input_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <!-- Weitere Attribute hier -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Allgemeine Assoziationen -->
+
+        <UML:Association xmi.id="assoc_game_hangman">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_game_hangman_Game" type="class_Game" name="game" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_game_hangman_hangman" type="class_game_hangman" name="hangman" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_game_cross">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_game_cross_Game" type="class_Game" name="game" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_game_cross_cross" type="class_game_cross" name="cross" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Weitere Assoziationen ... -->
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

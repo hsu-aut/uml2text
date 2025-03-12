@@ -1,0 +1,80 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_modeloSemNome" name="modeloSemNome">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Akteure -->
+        <UML:Actor xmi.id="actor_undefined" name="UndefinedActor" visibility="public" isAbstract="false"/>
+        <UML:Actor xmi.id="actor_Garcom" name="Garçom" visibility="public" isAbstract="false">
+          <UML:Generalization.child>
+            <UML:Generalization xmi.id="gen_Garcom" parent="actor_undefined" child="actor_Garcom"/>
+          </UML:Generalization.child>
+        </UML:Actor>
+        <UML:Actor xmi.id="actor_Cliente" name="Cliente" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Anwendungsfälle -->
+        <UML:UseCase xmi.id="usecase_abrirPedido" name="Abrir Pedido" visibility="public" isAbstract="false"/>
+        <UML:UseCase xmi.id="usecase_abrirPedido2" name="Abrir Pedido" visibility="public" isAbstract="false">
+          <UML:Extend.extension>
+            <UML:Extend xmi.id="extend_abrirPedido2_selecionarItem" location="newEP" extendedCase="usecase_selecionarItem"/>
+          </UML:Extend.extension>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="usecase_selecionarPedido" name="Selecionar Pedido" visibility="public" isAbstract="false"/>
+        <UML:UseCase xmi.id="usecase_selecionarItem" name="Selecionar Item" visibility="public" isAbstract="false">
+          <UML:Extend.extension>
+            <UML:Extend xmi.id="extend_selecionarItem_confirmarPedido" location="newEP" extendedCase="usecase_confirmarPedido"/>
+          </UML:Extend.extension>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="usecase_confirmarPedido" name="Confirmar Pedido" visibility="public" isAbstract="false"/>
+        <UML:UseCase xmi.id="usecase_finalizarPedido" name="Finalizar Pedido" visibility="public" isAbstract="false">
+          <UML:Include.addition>
+            <UML:Include xmi.id="include_finalizarPedido_efetuarPagamento" base="usecase_finalizarPedido" addition="usecase_efetuarPagamento"/>
+            <UML:Include xmi.id="include_finalizarPedido_relatorioDoPedido" base="usecase_finalizarPedido" addition="usecase_relatorioDoPedido"/>
+          </UML:Include.addition>
+          <UML:Extend.extension>
+            <UML:Extend xmi.id="extend_finalizarPedido_confirmarPedido" location="newEP" extendedCase="usecase_confirmarPedido"/>
+          </UML:Extend.extension>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="usecase_efetuarPagamento" name="Efetuar Pagamento" visibility="public" isAbstract="false"/>
+        <UML:UseCase xmi.id="usecase_relatorioDoPedido" name="Relatório do Pedido" visibility="public" isAbstract="false"/>
+        
+        <!-- Assoziationen zwischen Akteuren und Anwendungsfällen -->
+        <UML:Association xmi.id="assoc_Garcom_finalizarPedido" name="Garçom-FinalizarPedido" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Garcom" type="actor_Garcom" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_finalizarPedido" type="usecase_finalizarPedido" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Garcom_abrirPedido" name="Garçom-AbrirPedido" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Garcom2" type="actor_Garcom" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_abrirPedido" type="usecase_abrirPedido" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Garcom_selecionarItem" name="Garçom-SelecionarItem" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Garcom3" type="actor_Garcom" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_selecionarItem" type="usecase_selecionarItem" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Cliente_Garcom" name="Cliente-Garçom" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Cliente" type="actor_Cliente" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Garcom4" type="actor_Garcom" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

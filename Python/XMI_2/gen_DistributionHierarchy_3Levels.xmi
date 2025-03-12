@@ -1,0 +1,158 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="DistributionModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="D1" name="int"/>
+        <UML:DataType xmi.id="D2" name="char"/>
+        <UML:DataType xmi.id="D3" name="bool"/>
+        <UML:DataType xmi.id="D4" name="float"/>
+        <UML:DataType xmi.id="D5" name="double"/>
+        <UML:DataType xmi.id="D6" name="short"/>
+        <UML:DataType xmi.id="D7" name="long"/>
+        <UML:DataType xmi.id="D8" name="unsigned int"/>
+        <UML:DataType xmi.id="D9" name="unsigned short"/>
+        <UML:DataType xmi.id="D10" name="unsigned long"/>
+        <UML:DataType xmi.id="D11" name="string"/>
+
+        <!-- Definition der Interfaces -->
+        <UML:Interface xmi.id="KMIJehEmxMk7" name="TDistribution"/>
+        <UML:Interface xmi.id="7Yyvcpcw9tEn" name="TDiscreteDistribution"/>
+        <UML:Interface xmi.id="AEmaTofYMdUy" name="TContinuousDistribution"/>
+        <UML:Interface xmi.id="9c5v6eAEsupK" name="TMixedDistribution"/>
+
+        <!-- Definition der Klassen -->
+        <UML:Class xmi.id="p5O9CxyzkCTD" name="TDiscreteEvenDistribution" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="P0XJQ6KFAiMM" name="TPoissonDistribution" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="IAXD0H7NGcgg" name="TBinomialDistribution" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="XwwFFjiIjxlF" name="TContinuousEvenDistribution" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="WjZcYR64L3Ja" name="TGaussDistribution" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="Tzn55JHZ0q9Z" name="TChi2Distribution" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="d9Hu01eRyRW1" name="TStudentDistribution" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="lY8eYaR9ji3h" name="TExponentialDistribution" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="M6UjdyqsdcA6" name="TFooPriorityDistribution" visibility="public" isAbstract="false"/>
+
+        <!-- Beziehungen zwischen Interfaces und Klassen -->
+        <UML:Generalization xmi.id="G1">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="p5O9CxyzkCTD"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="7Yyvcpcw9tEn"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G2">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="P0XJQ6KFAiMM"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="7Yyvcpcw9tEn"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G3">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="IAXD0H7NGcgg"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="7Yyvcpcw9tEn"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G4">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="XwwFFjiIjxlF"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="AEmaTofYMdUy"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G5">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="WjZcYR64L3Ja"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="AEmaTofYMdUy"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G6">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="Tzn55JHZ0q9Z"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="AEmaTofYMdUy"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G7">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="d9Hu01eRyRW1"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="AEmaTofYMdUy"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G8">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="lY8eYaR9ji3h"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="AEmaTofYMdUy"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G9">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="M6UjdyqsdcA6"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="9c5v6eAEsupK"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G10">
+          <UML:Generalization.child>
+            <UML:Interface xmi.idref="7Yyvcpcw9tEn"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="KMIJehEmxMk7"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G11">
+          <UML:Generalization.child>
+            <UML:Interface xmi.idref="AEmaTofYMdUy"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="KMIJehEmxMk7"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="G12">
+          <UML:Generalization.child>
+            <UML:Interface xmi.idref="9c5v6eAEsupK"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Interface xmi.idref="KMIJehEmxMk7"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

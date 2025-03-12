@@ -1,0 +1,153 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Classes" name="Classes">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_DataObject" name="DataObject" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_readFrom" name="readFrom"/>
+            <UML:Operation xmi.id="op_writeTo" name="writeTo"/>
+            <UML:Operation xmi.id="op_adoptChildren" name="adoptChildren"/>
+            <UML:Operation xmi.id="op_equals" name="equals"/>
+            <UML:Operation xmi.id="op_operatorEquals" name="operator=="/>
+            <UML:Operation xmi.id="op_className" name="className"/>
+            <UML:Operation xmi.id="op_propertyNames" name="propertyNames"/>
+            <UML:Operation xmi.id="op_metaProperty" name="metaProperty"/>
+            <UML:Operation xmi.id="op_numProperties" name="numProperties"/>
+            <UML:Operation xmi.id="op_toString" name="toString"/>
+            <UML:Operation xmi.id="op_property" name="property"/>
+            <UML:Operation xmi.id="op_clone" name="clone"/>
+            <UML:Operation xmi.id="op_propertyChanged" name="propertyChanged"/>
+            <UML:Operation xmi.id="op_setProperty" name="setProperty"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_DataObject"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_QObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AbstractFactory" name="AbstractFactory" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_newObject" name="newObject"/>
+            <UML:Operation xmi.id="op_destructor" name="~AbstractFactory"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PropsMap" name="PropsMap" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_ValueMap" name="m_ValueMap" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_ClassName" name="m_ClassName" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_PropsMap"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DataObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DataObjectReader" name="DataObjectReader" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_Factory" name="m_Factory" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AbstractFactory"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_Current" name="m_Current" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_ObjectList" name="m_ObjectList" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_ParentStack" name="m_ParentStack" visibility="private"/>
+            <UML:Operation xmi.id="op_parse" name="parse"/>
+            <UML:Operation xmi.id="op_parseFile" name="parseFile"/>
+            <UML:Operation xmi.id="op_getRoot" name="getRoot"/>
+            <UML:Operation xmi.id="op_addCurrentToQueue" name="addCurrentToQueue"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_DataObjectReader"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_QXmlDefaultHandler"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Country" name="Country" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getCountryNames" name="getCountryNames"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Country"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DataObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Enumeration xmi.id="enum_CountryType" name="CountryType">
+            <UML:Enumeration.literal name="Undefined"/>
+            <UML:Enumeration.literal name="USA"/>
+            <UML:Enumeration.literal name="Canada"/>
+          </UML:Enumeration>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ObjectFactory" name="ObjectFactory" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_instance" name="instance"/>
+            <UML:Operation xmi.id="op_newAddress" name="newAddress"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ObjectFactory"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractFactory"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ObjectFactory"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_QObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QXmlDefaultHandler" name="QXmlDefaultHandler" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_QObject" name="QObject" visibility="public" isAbstract="false"/> 
+        
+        <UML:Association xmi.id="assoc_QXmlContentHandler_QXmlSimpleReader" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_contentHandler" type="class_QXmlContentHandler" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_simpleReader" type="class_QXmlSimpleReader" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="agg_DataObjectReader_AbstractFactory" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataObjectReader_Factory" type="class_DataObjectReader" name="m_Factory" visibility="private" aggregation="aggregate"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AbstractFactory" type="class_AbstractFactory" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,143 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SchedulingSystem" name="SchedulingSystem">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_EmploiDeTemps" name="EMPLOI DE TEMPS" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_my_date" name="my_date" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_my_matiere" name="my_matiere" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Matiere"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_my_salle" name="my_salle" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Salle"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Matiere" name="MATIERE" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nomMatiere" name="nomMatiere" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_duree" name="duree" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Date" name="DATE" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mois" name="mois" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_annee" name="annee" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_heure_debut" name="heure_debut" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Salle" name="SALLE" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Groupe" name="GROUPE" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Enseignant" name="ENSEIGNANT" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_EmploiEnseignant" name="EMPLOIE ENSEIGNANT" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EmploiDeTemps"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_my_enseignant" name="my_enseignant" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Enseignant"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EmploiGroupe" name="EMPLOI GROUPE" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_EmploiDeTemps"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_my_groupe" name="my_groupe" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Groupe"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Gestion" name="GESTION" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_liste_enseignant" name="liste_enseignant" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Enseignant"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_liste_groupes" name="liste_groupes" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Groupe"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_liste_salles" name="liste_salles" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Salle"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Standard Data Types -->
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+        <UML:DataType xmi.id="Char" name="Char"/>
+        <UML:DataType xmi.id="Double" name="Double"/>
+        <UML:DataType xmi.id="Short" name="Short"/>
+        <UML:DataType xmi.id="Long" name="Long"/>
+        <UML:DataType xmi.id="UnsignedInt" name="UnsignedInt"/>
+        <UML:DataType xmi.id="UnsignedShort" name="UnsignedShort"/>
+        <UML:DataType xmi.id="UnsignedLong" name="UnsignedLong"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

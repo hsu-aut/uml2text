@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Kentta" name="Kentta" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Kentta_constr" name="Kentta"/>
+            <UML:Operation xmi.id="op_Kentta_getLaatat" name="getLaatat"/>
+            <UML:Operation xmi.id="op_Kentta_getLaattoja" name="getLaattoja"/>
+            <UML:Operation xmi.id="op_Kentta_getVaikeus" name="getVaikeus"/>
+            <UML:Operation xmi.id="op_Kentta_getKaannot" name="getKaannot"/>
+            <UML:Operation xmi.id="op_Kentta_loytyi" name="loytyi"/>
+            <UML:Operation xmi.id="op_Kentta_getParit" name="getParit"/>
+            <UML:Operation xmi.id="op_Kentta_getKaannetyt" name="getKaannetyt"/>
+            <UML:Operation xmi.id="op_Kentta_lisaaKaannettyja" name="lisaaKaannettyja"/>
+            <UML:Operation xmi.id="op_Kentta_nollaaKaannetyt" name="nollaaKaannetyt"/>
+            <UML:Operation xmi.id="op_Kentta_lisaaKaantoja" name="lisaaKaantoja"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Laatta" name="Laatta" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Laatta_constr" name="Laatta"/>
+            <UML:Operation xmi.id="op_Laatta_loyda" name="loyda"/>
+            <UML:Operation xmi.id="op_Laatta_nayta" name="nayta"/>
+            <UML:Operation xmi.id="op_Laatta_piilota" name="piilota"/>
+            <UML:Operation xmi.id="op_Laatta_getTunniste" name="getTunniste"/>
+            <UML:Operation xmi.id="op_Laatta_getTila" name="getTila"/>
+            <UML:Operation xmi.id="op_Laatta_onkoLoydetty" name="onkoLoydetty"/>
+            <UML:Operation xmi.id="op_Laatta_setTunniste" name="setTunniste"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Operaatiot" name="Operaatiot" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Operaatiot_onkoPari" name="onkoPari"/>
+            <UML:Operation xmi.id="op_Operaatiot_voikoKaantaa" name="voikoKaantaa"/>
+            <UML:Operation xmi.id="op_Operaatiot_haeKaannettyPari" name="haeKaannettyPari"/>
+            <UML:Operation xmi.id="op_Operaatiot_kaannaLaatta" name="kaannaLaatta"/>
+            <UML:Operation xmi.id="op_Operaatiot_oliPari" name="oliPari"/>
+            <UML:Operation xmi.id="op_Operaatiot_eiOllutPari" name="eiOllutPari"/>
+            <UML:Operation xmi.id="op_Operaatiot_pisteetSailoon" name="pisteetSailoon"/>
+            <UML:Operation xmi.id="op_Operaatiot_pisteetSailosta" name="pisteetSailosta"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Gui" name="Gui" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Gui_constr" name="Gui"/>
+            <UML:Operation xmi.id="op_Gui_main" name="main"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Muistipeli" name="Muistipeli" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PisteSailo" name="PisteSailo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_PisteSailo_constr" name="PisteSailo"/>
+            <UML:Operation xmi.id="op_PisteSailo_getPisteet" name="getPisteet"/>
+            <UML:Operation xmi.id="op_PisteSailo_lisaaPisteet" name="lisaaPisteet"/>
+            <UML:Operation xmi.id="op_PisteSailo_lataaPistetiedosto" name="lataaPistetiedosto"/>
+            <UML:Operation xmi.id="op_PisteSailo_paivitaPistetiedosto" name="paivitaPistetiedosto"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HiScore" name="HiScore" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_HiScore_pisteet" name="pisteet" visibility="private"/>
+            <UML:Attribute xmi.id="attr_HiScore_nimi" name="nimi" visibility="private"/>
+            <UML:Operation xmi.id="op_HiScore_constr" name="HiScore"/>
+            <UML:Operation xmi.id="op_HiScore_getNimi" name="getNimi"/>
+            <UML:Operation xmi.id="op_HiScore_getPisteet" name="getPisteet"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Kentta_Laatta" name="Kentta-Laatta">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Kentta" type="class_Kentta" role="kentta" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Laatta" type="class_Laatta" role="laatta" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Gui_Muistipeli" name="Gui-Muistipeli">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Gui" type="class_Gui" role="gui" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Muistipeli" type="class_Muistipeli" role="muistipeli" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_PisteSailo_HiScore" name="PisteSailo-HiScore">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PisteSailo" type="class_PisteSailo" role="pistesailo" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_HiScore" type="class_HiScore" role="hiscore" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:DataType xmi.id="type_int" name="int"/>
+        <UML:DataType xmi.id="type_char" name="char"/>
+        <UML:DataType xmi.id="type_bool" name="bool"/>
+        <UML:DataType xmi.id="type_float" name="float"/>
+        <UML:DataType xmi.id="type_double" name="double"/>
+        <UML:DataType xmi.id="type_short" name="short"/>
+        <UML:DataType xmi.id="type_long" name="long"/>
+        <UML:DataType xmi.id="type_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="type_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="type_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="type_string" name="string"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

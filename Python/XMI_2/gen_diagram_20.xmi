@@ -1,0 +1,310 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_YaliBuildSystem" name="YaliBuildSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse YaliBuild -->
+        <UML:Class xmi.id="class_YaliBuild" name="YaliBuild" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_YaliBuild" parent="class_build"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_add_gettext_support" name="add_gettext_support" visibility="public"/>
+            <UML:Operation xmi.id="op_compile_ui" name="compile_ui" visibility="public"/>
+            <UML:Operation xmi.id="op_run_YaliBuild" name="run" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Basisklasse build -->
+        <UML:Class xmi.id="class_build" name="build" visibility="public" isAbstract="true"/>
+        
+        <!-- Definition der Klasse YaliClean -->
+        <UML:Class xmi.id="class_YaliClean" name="YaliClean" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_YaliClean" parent="class_clean"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_run_YaliClean" name="run" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Basisklasse clean -->
+        <UML:Class xmi.id="class_clean" name="clean" visibility="public" isAbstract="true"/>
+        
+        <!-- Definition der Klasse YaliUninstall -->
+        <UML:Class xmi.id="class_YaliUninstall" name="YaliUninstall" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_YaliUninstall" parent="class_Command"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_initialize_options" name="initialize_options" visibility="public"/>
+            <UML:Operation xmi.id="op_finalize_options" name="finalize_options" visibility="public"/>
+            <UML:Operation xmi.id="op_run_YaliUninstall" name="run" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Basisklasse Command -->
+        <UML:Class xmi.id="class_Command" name="Command" visibility="public" isAbstract="true"/>
+        
+        <!-- Definition der Klasse BootLoader -->
+        <UML:Class xmi.id="class_BootLoader" name="BootLoader" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op__find_grub_dev" name="_find_grub_dev" visibility="public"/>
+            <UML:Operation xmi.id="op__find_hd0" name="_find_hd0" visibility="public"/>
+            <UML:Operation xmi.id="op_write_grub_conf" name="write_grub_conf" visibility="public"/>
+            <UML:Operation xmi.id="op_grub_conf_append_win" name="grub_conf_append_win" visibility="public"/>
+            <UML:Operation xmi.id="op_install_grub" name="install_grub" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse _constant -->
+        <UML:Class xmi.id="class__constant" name="_constant" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___setattr__" name="__setattr__" visibility="public"/>
+            <UML:Operation xmi.id="op___delattr__" name="__delattr__" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          
+          <!-- Innere Klasse ConstError -->
+          <UML:Class xmi.id="class_ConstError" name="ConstError" visibility="public" isAbstract="false">
+            <UML:Generalization xmi.id="gen_ConstError" parent="class_TypeError"/>
+          </UML:Class>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Constants -->
+        <UML:Class xmi.id="class_Constants" name="Constants" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___getattr__" name="__getattr__" visibility="public"/>
+            <UML:Operation xmi.id="op___setattr__" name="__setattr__" visibility="public"/>
+            <UML:Operation xmi.id="op___delattr__" name="__delattr__" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse FileSystem -->
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__FS" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_openPartition" name="openPartition" visibility="public"/>
+            <UML:Operation xmi.id="op_name_FS" name="name" visibility="public"/>
+            <UML:Operation xmi.id="op_mountOptions" name="mountOptions" visibility="public"/>
+            <UML:Operation xmi.id="op_getFSType" name="getFSType" visibility="public"/>
+            <UML:Operation xmi.id="op_getLabel_FS" name="getLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_setLabel_FS" name="setLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_labelExists" name="labelExists" visibility="public"/>
+            <UML:Operation xmi.id="op_availableLabel" name="availableLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_readSupportedFilesystems" name="readSupportedFilesystems" visibility="public"/>
+            <UML:Operation xmi.id="op_isSupported" name="isSupported" visibility="public"/>
+            <UML:Operation xmi.id="op_preFormat" name="preFormat" visibility="public"/>
+            <UML:Operation xmi.id="op_setImplemented" name="setImplemented" visibility="public"/>
+            <UML:Operation xmi.id="op_isImplemented" name="isImplemented" visibility="public"/>
+            <UML:Operation xmi.id="op_setResizeable" name="setResizeable" visibility="public"/>
+            <UML:Operation xmi.id="op_isResizeable" name="isResizeable" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Ext3FileSystem Klasse -->
+        <UML:Class xmi.id="class_Ext3FileSystem" name="Ext3FileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Ext3FileSystem" parent="class_FileSystem"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__Ext3" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_format_Ext3" name="format" visibility="public"/>
+            <UML:Operation xmi.id="op_tune2fs" name="tune2fs" visibility="public"/>
+            <UML:Operation xmi.id="op_minResizeMB" name="minResizeMB" visibility="public"/>
+            <UML:Operation xmi.id="op_resize_Ext3" name="resize" visibility="public"/>
+            <UML:Operation xmi.id="op_getLabel_Ext3" name="getLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_setLabel_Ext3" name="setLabel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der ReiserFileSystem Klasse -->
+        <UML:Class xmi.id="class_ReiserFileSystem" name="ReiserFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ReiserFileSystem" parent="class_FileSystem"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__Reiser" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_format_Reiser" name="format" visibility="public"/>
+            <UML:Operation xmi.id="op_getLabel_Reiser" name="getLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_setLabel_Reiser" name="setLabel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der XFSFileSystem Klasse -->
+        <UML:Class xmi.id="class_XFSFileSystem" name="XFSFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_XFSFileSystem" parent="class_FileSystem"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__XFS" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_format_XFS" name="format" visibility="public"/>
+            <UML:Operation xmi.id="op_getLabel_XFS" name="getLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_setLabel_XFS" name="setLabel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der SwapFileSystem Klasse -->
+        <UML:Class xmi.id="class_SwapFileSystem" name="SwapFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_SwapFileSystem" parent="class_FileSystem"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__Swap" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_format_Swap" name="format" visibility="public"/>
+            <UML:Operation xmi.id="op_getLabel_Swap" name="getLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_setLabel_Swap" name="setLabel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der NTFSFileSystem Klasse -->
+        <UML:Class xmi.id="class_NTFSFileSystem" name="NTFSFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_NTFSFileSystem" parent="class_FileSystem"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__NTFS" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_check_resize" name="check_resize" visibility="public"/>
+            <UML:Operation xmi.id="op_resize_NTFS" name="resize" visibility="public"/>
+            <UML:Operation xmi.id="op_minResizeMB_NTFS" name="minResizeMB" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der FatFileSystem Klasse -->
+        <UML:Class xmi.id="class_FatFileSystem" name="FatFileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_FatFileSystem" parent="class_FileSystem"/>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__Fat" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_format_Fat" name="format" visibility="public"/>
+            <UML:Operation xmi.id="op_getLabel_Fat" name="getLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_setLabel_Fat" name="setLabel" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Partition -->
+        <UML:Class xmi.id="class_Partition" name="Partition" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__Partition" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_getFormatted" name="getFormatted" visibility="public"/>
+            <UML:Operation xmi.id="op_isFileSystemReady" name="isFileSystemReady" visibility="public"/>
+            <UML:Operation xmi.id="op_setFileSystemType" name="setFileSystemType" visibility="public"/>
+            <UML:Operation xmi.id="op_setPartedFlags" name="setPartedFlags" visibility="public"/>
+            <UML:Operation xmi.id="op_isLogical" name="isLogical" visibility="public"/>
+            <UML:Operation xmi.id="op_isExtended" name="isExtended" visibility="public"/>
+            <UML:Operation xmi.id="op_getFreeBytes" name="getFreeBytes" visibility="public"/>
+            <UML:Operation xmi.id="op_getFreeMB" name="getFreeMB" visibility="public"/>
+            <UML:Operation xmi.id="op_getType" name="getType" visibility="public"/>
+            <UML:Operation xmi.id="op_getPartition" name="getPartition" visibility="public"/>
+            <UML:Operation xmi.id="op_getDevice" name="getDevice" visibility="public"/>
+            <UML:Operation xmi.id="op_getDevicePath" name="getDevicePath" visibility="public"/>
+            <UML:Operation xmi.id="op_getPath" name="getPath" visibility="public"/>
+            <UML:Operation xmi.id="op_getName" name="getName" visibility="public"/>
+            <UML:Operation xmi.id="op_getMinor" name="getMinor" visibility="public"/>
+            <UML:Operation xmi.id="op_getFSName" name="getFSName" visibility="public"/>
+            <UML:Operation xmi.id="op_getFSLabel" name="getFSLabel" visibility="public"/>
+            <UML:Operation xmi.id="op_getStart" name="getStart" visibility="public"/>
+            <UML:Operation xmi.id="op_getEnd" name="getEnd" visibility="public"/>
+            <UML:Operation xmi.id="op_getBytes" name="getBytes" visibility="public"/>
+            <UML:Operation xmi.id="op_getMB" name="getMB" visibility="public"/>
+            <UML:Operation xmi.id="op_getGB" name="getGB" visibility="public"/>
+            <UML:Operation xmi.id="op_getSizeStr" name="getSizeStr" visibility="public"/>
+            <UML:Operation xmi.id="op___eq__Partition" name="__eq__" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der PartRequest Klasse -->
+        <UML:Class xmi.id="class_PartRequest" name="PartRequest" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__PartRequest" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_applyRequest" name="applyRequest" visibility="public"/>
+            <UML:Operation xmi.id="op_isApplied" name="isApplied" visibility="public"/>
+            <UML:Operation xmi.id="op_setPartition" name="setPartition" visibility="public"/>
+            <UML:Operation xmi.id="op_partition" name="partition" visibility="public"/>
+            <UML:Operation xmi.id="op_setRequestType" name="setRequestType" visibility="public"/>
+            <UML:Operation xmi.id="op_requestType" name="requestType" visibility="public"/>
+            <UML:Operation xmi.id="op_setPartitionType" name="setPartitionType" visibility="public"/>
+            <UML:Operation xmi.id="op_partitionType" name="partitionType" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der FormatRequest Klasse -->
+        <UML:Class xmi.id="class_FormatRequest" name="FormatRequest" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_FormatRequest" parent="class_PartRequest"/>
+        </UML:Class>
+        
+        <!-- Definition der MountRequest Klasse -->
+        <UML:Class xmi.id="class_MountRequest" name="MountRequest" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_MountRequest" parent="class_PartRequest"/>
+        </UML:Class>
+        
+        <!-- Definition der SwapFileRequest Klasse -->
+        <UML:Class xmi.id="class_SwapFileRequest" name="SwapFileRequest" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_SwapFileRequest" parent="class_PartRequest"/>
+        </UML:Class>
+        
+        <!-- Definition der LabelRequest Klasse -->
+        <UML:Class xmi.id="class_LabelRequest" name="LabelRequest" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_LabelRequest" parent="class_PartRequest"/>
+        </UML:Class>
+        
+        <!-- Definition der PartitionType Klasse -->
+        <UML:Class xmi.id="class_PartitionType" name="PartitionType" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der RootPartitionType Klasse -->
+        <UML:Class xmi.id="class_RootPartitionType" name="RootPartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_RootPartitionType" parent="class_PartitionType"/>
+        </UML:Class>
+        
+        <!-- Definition der HomePartitionType Klasse -->
+        <UML:Class xmi.id="class_HomePartitionType" name="HomePartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_HomePartitionType" parent="class_PartitionType"/>
+        </UML:Class>
+        
+        <!-- Definition der SwapPartitionType Klasse -->
+        <UML:Class xmi.id="class_SwapPartitionType" name="SwapPartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_SwapPartitionType" parent="class_PartitionType"/>
+        </UML:Class>
+        
+        <!-- Definition der ArchivePartitionType Klasse -->
+        <UML:Class xmi.id="class_ArchivePartitionType" name="ArchivePartitionType" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ArchivePartitionType" parent="class_PartitionType"/>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Device -->
+        <UML:Class xmi.id="class_Device" name="Device" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op___init__Device" name="__init__" visibility="public"/>
+            <UML:Operation xmi.id="op_update" name="update" visibility="public"/>
+            <UML:Operation xmi.id="op_primaryAvailable" name="primaryAvailable" visibility="public"/>
+            <UML:Operation xmi.id="op_getType_Device" name="getType" visibility="public"/>
+            <UML:Operation xmi.id="op_getTotalBytes" name="getTotalBytes" visibility="public"/>
+            <UML:Operation xmi.id="op_getTotalMB" name="getTotalMB" visibility="public"/>
+            <UML:Operation xmi.id="op_getTotalGB" name="getTotalGB" visibility="public"/>
+            <UML:Operation xmi.id="op_getSizeStr_Device" name="getSizeStr" visibility="public"/>
+            <UML:Operation xmi.id="op_getPath_Device" name="getPath" visibility="public"/>
+            <UML:Operation xmi.id="op_getName_Device" name="getName" visibility="public"/>
+            <UML:Operation xmi.id="op_getModel" name="getModel" visibility="public"/>
+            <UML:Operation xmi.id="op_getPartitions" name="getPartitions" visibility="public"/>
+            <UML:Operation xmi.id="op_getPartition_Device" name="getPartition" visibility="public"/>
+            <UML:Operation xmi.id="op_hasExtendedPartition" name="hasExtendedPartition" visibility="public"/>
+            <UML:Operation xmi.id="op_hasBootablePartition" name="hasBootablePartition" visibility="public"/>
+            <UML:Operation xmi.id="op_getExtendedPartition" name="getExtendedPartition" visibility="public"/>
+            <UML:Operation xmi.id="op_getPrimaryPartitions" name="getPrimaryPartitions" visibility="public"/>
+            <UML:Operation xmi.id="op_getLogicalPartitions" name="getLogicalPartitions" visibility="public"/>
+            <UML:Operation xmi.id="op_numberOfLogicalPartitions" name="numberOfLogicalPartitions" visibility="public"/>
+            <UML:Operation xmi.id="op_numberOfPrimaryPartitions" name="numberOfPrimaryPartitions" visibility="public"/>
+            <UML:Operation xmi.id="op_getOrderedPartitionList" name="getOrderedPartitionList" visibility="public"/>
+            <UML:Operation xmi.id="op_getFreeMB_Device" name="getFreeMB" visibility="public"/>
+            <UML:Operation xmi.id="op_getLargestContinuousFreeMB" name="getLargestContinuousFreeMB" visibility="public"/>
+            <UML:Operation xmi.id="op___getLargestFreePedPartition" name="__getLargestFreePedPartition" visibility="public"/>
+            <UML:Operation xmi.id="op___pedPartitionBytes" name="__pedPartitionBytes" visibility="public"/>
+            <UML:Operation xmi.id="op_addPartition" name="addPartition" visibility="public"/>
+            <UML:Operation xmi.id="op_addPartitionFromStart" name="addPartitionFromStart" visibility="public"/>
+            <UML:Operation xmi.id="op_addPartitionStartEnd" name="addPartitionStartEnd" visibility="public"/>
+            <UML:Operation xmi.id="op___addToPartitionsDict" name="__addToPartitionsDict" visibility="public"/>
+            <UML:Operation xmi.id="op_deletePartition" name="deletePartition" visibility="public"/>
+            <UML:Operation xmi.id="op_deleteAllPartitions" name="deleteAllPartitions" visibility="public"/>
+            <UML:Operation xmi.id="op_resizePartition" name="resizePartition" visibility="public"/>
+            <UML:Operation xmi.id="op_commit" name="commit" visibility="public"/>
+            <UML:Operation xmi.id="op_close" name="close" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

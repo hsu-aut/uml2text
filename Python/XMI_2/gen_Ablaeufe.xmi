@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>umbrello uml modeller</XMI.exporter>
+      <XMI.exporterVersion>1.5.8</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.3"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <!-- Definitionen von Datentypen -->
+              <UML:DataType xmi.id="datatype_int" name="int"/>
+              <UML:DataType xmi.id="datatype_char" name="char"/>
+              <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            </UML:Package>
+            <!-- Aktivitätendiagramm AutoDiscovery -->
+            <UML:Activity xmi.id="activity_AutoDiscovery" name="AutoDiscovery">
+              <UML:ActivityGraph>
+                <UML:StateMachine.context>
+                  <UML:Classifier xmi.idref="Logical View"/>
+                </UML:StateMachine.context>
+                <UML:StateMachine.top>
+                  <UML:CompositeState xmi.id="composite_AutoDiscovery" name="AutoDiscovery Composite">
+                    <UML:StateVertex>
+                      <UML:ActionState xmi.id="action_Init" name="Init"/>
+                      <UML:ActionState xmi.id="action_StartArpDiscovery" name="Start ARP Discovery"/>
+                      <UML:Decision xmi.id="decision_HostExploration" name="Host (n) exploration"/>
+                      <UML:ActionState xmi.id="action_MemorizeMonitoringServer" name="Memorize" entry="Is MonitoringServer"/>
+                      <UML:ActionState xmi.id="action_MemorizeSNMPEnabled" name="Memorize" entry="Is SNMP-enabled"/>
+                      <UML:ActionState xmi.id="action_SaveHostList" name="Save Host-List"/>
+                    </UML:StateVertex>
+                  </UML:CompositeState>
+                </UML:StateMachine.top>
+              </UML:ActivityGraph>
+            </UML:Activity>
+            <!-- Aktivitätendiagramm AlertSend -->
+            <UML:Activity xmi.id="activity_AlertSend" name="AlertSend">
+              <UML:ActivityGraph>
+                <UML:StateMachine.context>
+                  <UML:Classifier xmi.idref="Logical View"/>
+                </UML:StateMachine.context>
+                <UML:StateMachine.top>
+                  <UML:CompositeState xmi.id="composite_AlertSend" name="AlertSend Composite">
+                    <UML:StateVertex>
+                      <UML:Decision xmi.id="decision_IsActive" name="Is Active"/>
+                      <UML:ActionState xmi.id="action_SetActive" name="Set Active"/>
+                      <UML:ActionState xmi.id="action_MonitorService" name="Monitor Service"/>
+                      <UML:ActionState xmi.id="action_CheckDataFromHostX" name="Check Data from Host X"/>
+                      <UML:ActionState xmi.id="action_BroadcastOthers" name="Broadcast Others"/>
+                      <UML:SignalEvent xmi.id="signal_SendAlert" name="SEND ALERT"/>
+                    </UML:StateVertex>
+                  </UML:CompositeState>
+                </UML:StateMachine.top>
+              </UML:ActivityGraph>
+            </UML:Activity>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

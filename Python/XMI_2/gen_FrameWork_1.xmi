@@ -1,0 +1,90 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes -->
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Client Class -->
+            <UML:Class xmi.id="client" name="Client" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="logRead" name="LogRead" visibility="public"/>
+                <UML:Operation xmi.id="logSend" name="LogSend" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Server Class -->
+            <UML:Class xmi.id="server" name="Server" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="acceptRec" name="acceptRec" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_client_self" name="self-assoc">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_client_self_1" type="client"/>
+                <UML:AssociationEnd xmi.id="assocEnd_client_self_2" type="client"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_client_server" name="client-server">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_client" type="client"/>
+                <UML:AssociationEnd xmi.id="assocEnd_server" type="server"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Dependency -->
+            <UML:Dependency xmi.id="dep_client_server">
+              <UML:Dependency.client>
+                <UML:Class xmi.idref="client"/>
+              </UML:Dependency.client>
+              <UML:Dependency.supplier>
+                <UML:Class xmi.idref="server"/>
+              </UML:Dependency.supplier>
+            </UML:Dependency>
+
+            <!-- Enumeration LogRead -->
+            <UML:Enumeration xmi.id="logReadEnum" name="LogRead">
+              <UML:Enumeration.literal>
+                <!-- Enumeration literals can be added if defined -->
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

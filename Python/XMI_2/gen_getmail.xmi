@@ -1,0 +1,69 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GetMailSystem" name="GetMailSystem">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Blackboard" name="Blackboard" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_LearningAgent" name="LearningAgent" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_WhizBang" name="WhizBang" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_envNoise" name="envNoise" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_Fatboy" name="Fatboy" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_MicaBot" name="MicaBot" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_textFromUser" name="textFromUser" visibility="private"/>
+            <UML:Attribute xmi.id="attr_textForUser" name="textForUser" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_EmailAgent" name="EmailAgent" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_emailRequest" name="email_request" visibility="private"/>
+            <UML:Attribute xmi.id="attr_emailReply" name="email_reply" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_MicaBot_Blackboard" name="MicaBot-Blackboard" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MicaBot" type="class_MicaBot" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Blackboard" type="class_Blackboard" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_LearningAgent_Blackboard" name="LearningAgent-Blackboard" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_LearningAgent" type="class_LearningAgent" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Blackboard" type="class_Blackboard" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_WhizBang_Blackboard" name="WhizBang-Blackboard" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_WhizBang" type="class_WhizBang" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Blackboard" type="class_Blackboard" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_EmailAgent_Blackboard" name="EmailAgent-Blackboard" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_EmailAgent" type="class_EmailAgent" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Blackboard" type="class_Blackboard" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assuming the existence of specific attributes or methods indicating detailed interaction -->
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

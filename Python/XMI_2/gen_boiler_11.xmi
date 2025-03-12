@@ -1,0 +1,44 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse HMI -->
+        <UML:Class xmi.id="class_HMI" name="HMI" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_reg" name="reg" visibility="public" isAbstract="false" concurrency="sequential"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse IO -->
+        <UML:Class xmi.id="class_IO" name="IO" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse Adjust -->
+        <UML:Class xmi.id="class_Adjust" name="Adjust" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_featureMI" name="feature_MI" visibility="public" isAbstract="false" concurrency="sequential"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Assoziation zwischen IO und HMI -->
+        <UML:Association xmi.id="assoc_hasHMI" name="hasHMI" visibility="public" isSpecification="false">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_hasHMI_end1" type="class_IO" aggregation="none" multiplicity="1..1" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="assoc_hasHMI_end2" type="class_HMI" aggregation="none" multiplicity="1..1" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

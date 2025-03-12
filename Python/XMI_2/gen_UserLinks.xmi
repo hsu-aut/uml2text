@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package for Datatypes -->
+        <UML:Package xmi.id="package_datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="smkv10H3G7qj" name="int"/>
+            <UML:DataType xmi.id="fJAP9e9Vc3pB" name="char"/>
+            <UML:DataType xmi.id="g1etWiXNUFGU" name="bool"/>
+            <UML:DataType xmi.id="FXVTcLCHfNem" name="float"/>
+            <UML:DataType xmi.id="zoGZr5lW7NNb" name="double"/>
+            <UML:DataType xmi.id="6uwY9C2NiYqK" name="short"/>
+            <UML:DataType xmi.id="r1aUMEHJ0Vss" name="long"/>
+            <UML:DataType xmi.id="abMfzjF5dBdk" name="unsigned int"/>
+            <UML:DataType xmi.id="Me74AwM1vuWH" name="unsigned short"/>
+            <UML:DataType xmi.id="7la7EQxo2JS1" name="unsigned long"/>
+            <UML:DataType xmi.id="2h4dqfOCHTER" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class BotListCoreUsers -->
+        <UML:Class xmi.id="NZRITvZYe7gs" name="BotListCoreUsers" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="smkv10H3G7qj"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class BotListEntityLinks -->
+        <UML:Class xmi.id="Ydgav6Zxldbc" name="BotListEntityLinks" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="smkv10H3G7qj"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class BotListUserLinks -->
+        <UML:Class xmi.id="aOgMzHwGEgoe" name="BotListUserLinks" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_user_id" name="user_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="smkv10H3G7qj"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_link_id" name="link_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="smkv10H3G7qj"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Association BotListUserLinks to BotListCoreUsers -->
+        <UML:Association xmi.id="assoc_UserLinks_CoreUsers">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UserLinks_CoreUsers_UserLinks" type="aOgMzHwGEgoe" name="userLinks" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UserLinks_CoreUsers_CoreUsers" type="NZRITvZYe7gs" name="coreUsers" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association BotListUserLinks to BotListEntityLinks -->
+        <UML:Association xmi.id="assoc_UserLinks_EntityLinks">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UserLinks_EntityLinks_UserLinks" type="aOgMzHwGEgoe" name="userLinks" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UserLinks_EntityLinks_EntityLinks" type="Ydgav6Zxldbc" name="entityLinks" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Note -->
+        <UML:Comment xmi.id="note1" name="note" annotatedElement="assoc_UserLinks_CoreUsers assoc_UserLinks_EntityLinks">
+          <UML:Comment.body>User Links sind mit den Entity Links und der User Id assoziiert. Ein User kann mehrere Links (viele) haben.</UML:Comment.body>
+        </UML:Comment>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

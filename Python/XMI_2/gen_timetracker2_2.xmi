@@ -1,0 +1,135 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        <!-- Package Definitions -->
+        <UML:Package xmi.id="package_ComponentView" name="Component View"/>
+        <UML:Package xmi.id="package_DataTypes" name="Data types"/>
+        <UML:Package xmi.id="package_Domain" name="org.andromda.timetracker.domain"/>
+        
+        <!-- User Class -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_username" name="username" visibility="private"/>
+            <UML:Attribute xmi.id="attr_password" name="password" visibility="private"/>
+            <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="private"/>
+            <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="private"/>
+            <UML:Attribute xmi.id="attr_email" name="email" visibility="private"/>
+            <UML:Attribute xmi.id="attr_isActive" name="isActive" visibility="private"/>
+            <UML:Attribute xmi.id="attr_creationDate" name="creationDate" visibility="private"/>
+            <UML:Attribute xmi.id="attr_comment" name="comment" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- UserRole Class -->
+        <UML:Class xmi.id="class_UserRole" name="UserRole" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_role" name="role" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Timecard Class -->
+        <UML:Class xmi.id="class_Timecard" name="Timecard" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_status" name="status" visibility="private"/>
+            <UML:Attribute xmi.id="attr_startDate" name="startDate" visibility="private"/>
+            <UML:Attribute xmi.id="attr_comments" name="comments" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- TimecardStatus Class -->
+        <UML:Class xmi.id="class_TimecardStatus" name="TimecardStatus">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_draft" name="draft" visibility="private"/>
+            <UML:Attribute xmi.id="attr_submitted" name="submitted" visibility="private"/>
+            <UML:Attribute xmi.id="attr_approved" name="approved" visibility="private"/>
+            <UML:Attribute xmi.id="attr_rejected" name="rejected" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- TimeAllocation Class -->
+        <UML:Class xmi.id="class_TimeAllocation" name="TimeAllocation" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_timePeriod" name="timePeriod" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Task Class -->
+        <UML:Class xmi.id="class_Task" name="Task" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- TimePeriod Class -->
+        <UML:Class xmi.id="class_TimePeriod" name="TimePeriod" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_startTime" name="startTime" visibility="private"/>
+            <UML:Attribute xmi.id="attr_endTime" name="endTime" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Role Class -->
+        <UML:Class xmi.id="class_Role" name="Role" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_standardUser" name="standardUser" visibility="private"/>
+            <UML:Attribute xmi.id="attr_administrator" name="administrator" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- SecurityService Class -->
+        <UML:Class xmi.id="class_SecurityService" name="SecurityService" visibility="public" isAbstract="false"/>
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_User_UserRole">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_User_UserRole_User" type="class_User" name="user" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_User_UserRole_UserRole" type="class_UserRole" name="userRole" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Timecard_TimeAllocation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_Timecard_TimeAllocation_Timecard" type="class_Timecard" name="timecard" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_Timecard_TimeAllocation_TimeAllocation" type="class_TimeAllocation" name="timeAllocation" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_TimeAllocation_Task">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_TimeAllocation_Task_TimeAllocation" type="class_TimeAllocation" name="timeAllocation" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_TimeAllocation_Task_Task" type="class_Task" name="task" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Timecard_User">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_Timecard_User_Timecard" type="class_Timecard" name="timecard" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_Timecard_User_User" type="class_User" name="user" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Service Classes -->
+        <UML:Class xmi.id="class_UserService" name="UserService" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TimeTrackingService" name="TimeTrackingService" visibility="public" isAbstract="false"/>
+        
+        <!-- Value Object Classes -->
+        <UML:Class xmi.id="class_UserVO" name="UserVO" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_UserDetailsVO" name="UserDetailsVO" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_UserRoleVO" name="UserRoleVO" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TimecardSummaryVO" name="TimecardSummaryVO" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

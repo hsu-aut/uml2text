@@ -1,0 +1,77 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_Int" name="int"/>
+                <UML:DataType xmi.id="datatype_Char" name="char"/>
+                <UML:DataType xmi.id="datatype_Bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_Float" name="float"/>
+                <UML:DataType xmi.id="datatype_Double" name="double"/>
+                <UML:DataType xmi.id="datatype_Short" name="short"/>
+                <UML:DataType xmi.id="datatype_Long" name="long"/>
+                <UML:DataType xmi.id="datatype_UnsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_UnsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_UnsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_String" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_Report" name="Report" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_getCurrentVersion" name="getCurrentVersion" visibility="public"/>
+                <UML:Operation xmi.id="operation_setCurrentVersion" name="setCurrentVersion" visibility="public">
+                  <UML:Parameter xmi.id="parameter_version" name="version"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Package xmi.id="package_ReportView" name="ReportView"/>
+
+            <UML:Class xmi.id="class_ReportVersion" name="ReportVersion" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attribute_text" name="text" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_ReportService" name="ReportService" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_getVersions" name="getVersions" visibility="public"/>
+                <UML:Operation xmi.id="operation_saveText" name="saveText" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Association xmi.id="association_Report_ReportService" name="Report-Service">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_Report" type="class_Report"/>
+                <UML:AssociationEnd xmi.id="end_ReportService" type="class_ReportService"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="association_Report_ReportVersion" name="Report-Version">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_Report" type="class_Report"/>
+                <UML:AssociationEnd xmi.id="end_ReportVersion" type="class_ReportVersion"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

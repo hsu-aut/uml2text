@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EA_Model" name="EA Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="pkg_domain" name="gov.nih.nci.ncicb.cabio.domain">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_DomainObject" name="DomainObject" visibility="public" isAbstract="true"/>
+
+            <UML:Class xmi.id="class_Gene" name="Gene" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_DomainObject"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_Gene_refIdSeq" name="refIdSeq" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="java.lang.String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_Gene_symbol" name="symbol" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Sequence" name="Sequence" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_DomainObject"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Clones" name="Clones" visibility="public"/>
+
+            <UML:Class xmi.id="class_Target" name="Target" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_Target_preferredName" name="preferredName" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="java.lang.String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Agent" name="Agent" visibility="public"/>
+
+            <UML:Class xmi.id="class_ClinicalTrialProtocol" name="ClinicalTrialProtocol" visibility="public"/>
+
+            <UML:Association xmi.id="assoc_Gene_Target" name="gene-target" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Gene_Target_Gene" type="class_Gene" name="gene" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Gene_Target_Target" type="class_Target" name="target" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Sequence_Gene" name="sequence-gene" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Sequence_Gene_Sequence" type="class_Sequence" name="sequence" aggregation="none" multiplicity="1..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Sequence_Gene_Gene" type="class_Gene" name="gene" aggregation="none"  multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Clones_Sequence" name="clones-sequence" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Clones_Sequence_Clones" type="class_Clones" name="clone" aggregation="none" multiplicity="1..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Clones_Sequence_Sequence" type="class_Sequence" name="sequence" aggregation="none" multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Agent_Target" name="agent-target" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Agent_Target_Agent" type="class_Agent" name="agent" aggregation="none" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Agent_Target_Target" type="class_Target" name="target" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_ClinicalTrialProtocol_Agent" name="ctp-agent" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_ClinicalTrialProtocol_Agent_CTP" type="class_ClinicalTrialProtocol" name="ctp" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_ClinicalTrialProtocol_Agent_Agent" type="class_Agent" name="agent" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:DataType xmi.id="java.lang.String" name="java.lang.String"/>
+            <UML:DataType xmi.id="int" name="int"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

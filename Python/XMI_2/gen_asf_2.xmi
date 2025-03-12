@@ -1,0 +1,200 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SystemModel" name="SystemModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Queue Class -->
+        <UML:Class xmi.id="class_Queue" name="Queue" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_size" name="m_size" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_send" name="send" visibility="public">
+              <UML:Parameter xmi.id="op_send_param" name="m" type="Type" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_receive" name="receive" visibility="public">
+              <UML:Parameter xmi.id="op_receive_return" name="return" type="Type" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Dispatcher Class -->
+        <UML:Class xmi.id="class_Dispatcher" name="Dispatcher" visibility="public" isAbstract="false"/>
+
+        <!-- SecurityServer Class -->
+        <UML:Class xmi.id="class_SecurityServer" name="SecurityServer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_login" name="login" visibility="public">
+              <UML:Parameter xmi.id="op_login_username" name="username" type="String" kind="in"/>
+              <UML:Parameter xmi.id="op_login_password" name="password" type="String" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_canExecute" name="canExecute" visibility="public">
+              <UML:Parameter xmi.id="op_canExecute_transaction" name="job" type="Transaction" kind="in"/>
+              <UML:Parameter xmi.id="op_canExecute_session" name="session" type="SessionContext" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- TCPServer Class -->
+        <UML:Class xmi.id="class_TCPServer" name="TCPServer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_port" name="m_port" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_backlog" name="m_backlog" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_sender_count" name="m_sender_count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_receiver_count" name="m_receiver_count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_name" name="m_name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_start" name="start" visibility="public"/>
+            <UML:Operation xmi.id="op_shutdown" name="shutdown" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- SenderThread Class -->
+        <UML:Class xmi.id="class_SenderThread" name="SenderThread" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_run_sender" name="run" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ReceiverThread Class -->
+        <UML:Class xmi.id="class_ReceiverThread" name="ReceiverThread" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_run_receiver" name="run" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- List Class within ThreadSafe Package -->
+        <UML:Class xmi.id="class_List" name="List" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_insert" name="insert" visibility="public">
+              <UML:Parameter xmi.id="op_insert_param" name="m" type="Type" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_remove" name="remove" visibility="public">
+              <UML:Parameter xmi.id="op_remove_param" name="m" type="Type" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_find" name="find" visibility="public">
+              <UML:Parameter xmi.id="op_find_param" name="m" type="Type" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Arbeiter Class -->
+        <UML:Class xmi.id="class_Arbeiter" name="Arbeiter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_arbeite" name="arbeite" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Vorarbeiter Class -->
+        <UML:Class xmi.id="class_Vorarbeiter" name="Vorarbeiter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ladeArbeiter" name="ladeArbeiter" visibility="public">
+              <UML:Parameter xmi.id="op_ladeArbeiter_param" name="job" type="Transaktion" kind="in"/>
+              <UML:Parameter xmi.id="op_ladeArbeiter_return" name="return" type="Arbeiter" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Sitzung Class -->
+        <UML:Class xmi.id="class_Sitzung" name="Sitzung" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_IP" name="IP" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_socketfd" name="socketfd" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_user" name="user" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_request_buffer" name="request_buffer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_response_buffer" name="response_buffer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_current_transaction" name="current_transaction" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_transaction_data" name="transaction_data" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Map Class within ThreadSafe Package -->
+        <UML:Class xmi.id="class_Map" name="Map" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_operator[]" name="operator[]" visibility="public">
+              <UML:Parameter xmi.id="op_operator[]_param" name="key" type="KeyType" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_hasKey" name="hasKey" visibility="public">
+              <UML:Parameter xmi.id="op_hasKey_param" name="key" type="KeyType" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Data Types -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="Type" name="Type"/>
+        <UML:DataType xmi.id="Transaction" name="Transaction"/>
+        <UML:DataType xmi.id="SessionContext" name="SessionContext"/>
+        <UML:DataType xmi.id="Transaktion" name="Transaktion"/>
+        <UML:DataType xmi.id="Arbeiter" name="Arbeiter"/>
+        <UML:DataType xmi.id="KeyType" name="KeyType"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

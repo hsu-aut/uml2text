@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_RetornoBase" name="RetornoBase" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nomeArquivo" name="nomeArquivo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="ascii"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_aoProcessarLinha" name="aoProcessarLinha" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_setNomeArquivo" name="setNomeArquivo" visibility="public">
+              <UML:Parameter xmi.id="param_NomeArquivo" name="nomeArquivo" kind="in" type="ascii"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_setAoProcessarLinha" name="setAoProcessarLinha" visibility="public">
+              <UML:Parameter xmi.id="param_ProcessarLinha" name="aoProcessarLinha" kind="in" type="varchar"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RetornoCNAB240" name="RetornoCNAB240" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_RetornoBase"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_processarHeaderArquivo" name="processarHeaderArquivo" visibility="protected"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_RetornoCNAB400" name="RetornoCNAB400" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_RetornoBase"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RetornoBanco" name="RetornoBanco" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_retornoBase" name="retornoBase" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_RetornoBase"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

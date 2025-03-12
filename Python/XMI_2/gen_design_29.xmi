@@ -1,0 +1,114 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_Logical_View" name="Logical View" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          
+            <!-- Datatypes -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Class Check -->
+            <UML:Class xmi.id="class_Check" name="Check" visibility="public" isAbstract="true">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_Check" name="Check" visibility="public"/>
+                <UML:Operation xmi.id="operation_printExplanation" name="printExplanation" visibility="public"/>
+                <UML:Operation xmi.id="operation_run" name="run" visibility="public"/>
+                <UML:Operation xmi.id="operation_initCheckEngine" name="initCheckEngine" visibility="public"/>
+                <UML:Operation xmi.id="operation_parseArguments" name="parseArguments" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class CheckEngine -->
+            <UML:Class xmi.id="class_CheckEngine" name="CheckEngine" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_CheckEngine" name="CheckEngine" visibility="public"/>
+                <UML:Operation xmi.id="operation_process" name="process" visibility="public"/>
+                <UML:Operation xmi.id="operation_results" name="results" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Class ResultFormatter -->
+            <UML:Class xmi.id="class_ResultFormatter" name="ResultFormatter" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_printVerboseResult" name="printVerboseResult" visibility="public"/>
+                <UML:Operation xmi.id="operation_printNormalResult" name="printNormalResult" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class CheckEngine::Result -->
+            <UML:Class xmi.id="class_Result" name="Result" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_fileName" name="fileName" visibility="private" type="datatype_QString"/>
+                <UML:Attribute xmi.id="attr_line" name="line" visibility="private" type="datatype_int"/>
+                <UML:Attribute xmi.id="attr_message" name="message" visibility="private" type="datatype_QString"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Class QString -->
+            <UML:DataType xmi.id="datatype_QString" name="QString"/>
+            
+            <!-- Class QList<Result> -->
+            <UML:Class xmi.id="class_QList_Result" name="QList&lt;Result&gt;" visibility="public" isAbstract="false">
+              <!-- QList to store Result objects -->
+            </UML:Class>
+
+            <!-- Class DPointerCheck -->
+            <UML:Class xmi.id="class_DPointerCheck" name="DPointerCheck" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_DPointerCheck" name="DPointerCheck" visibility="public"/>
+                <UML:Operation xmi.id="operation_initCheckEngine_DP" name="initCheckEngine" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class DPointerCheckVisitor -->
+            <UML:Class xmi.id="class_DPointerCheckVisitor" name="DPointerCheckVisitor" visibility="public" isAbstract="false">
+              <!-- Interacts with Visitor interface -->
+            </UML:Class>
+
+            <!-- Interface Visitor -->
+            <UML:Interface xmi.id="interface_Visitor" name="Visitor" visibility="public">
+              <!-- Defines functions for Visitor operations -->
+            </UML:Interface>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_CheckEngine_Result" name="CheckEngine-Result" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_CheckEngine" type="class_CheckEngine" name="checkEngine" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Result" type="class_Result" name="result" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

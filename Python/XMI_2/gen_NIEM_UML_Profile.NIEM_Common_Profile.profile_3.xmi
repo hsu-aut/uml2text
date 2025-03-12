@@ -1,0 +1,77 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NIEM_Common_Profile" name="NIEM_Common_Profile">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Stereotype xmi.id="stereotype_Documentation" name="Documentation" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_MetadataType" name="MetadataType" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="stereotype_MetadataType"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="stereotype_NIEMType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Stereotype>
+
+        <UML:Stereotype xmi.id="stereotype_NIEMType" name="NIEMType" visibility="public" isAbstract="true"/>
+        
+        <UML:Stereotype xmi.id="stereotype_ObjectType" name="ObjectType" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_AssociationType" name="AssociationType" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_Restriction" name="Restriction" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_Union" name="Union" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_PropertyHolder" name="PropertyHolder" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_List" name="List" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_AdapterType" name="AdapterType" visibility="public"/>
+        
+        <UML:Stereotype xmi.id="stereotype_AugmentationType" name="AugmentationType" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="stereotype_AugmentationType"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="stereotype_NIEMType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Stereotype>
+
+        <UML:Dependency xmi.id="dependency_UnionOf" name="UnionOf">
+          <UML:Dependency.client>
+            <UML:Stereotype xmi.idref="stereotype_Union"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Stereotype xmi.idref="stereotype_PropertyHolder"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+        <UML:Dependency xmi.id="dependency_NIEMDocumentation" name="NIEMDocumentation">
+          <UML:Dependency.client>
+            <UML:Stereotype xmi.idref="stereotype_Documentation"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Stereotype xmi.idref="stereotype_ObjectType"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

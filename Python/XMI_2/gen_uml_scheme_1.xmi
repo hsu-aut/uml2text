@@ -1,0 +1,122 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DataVisualization" name="DataVisualization">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_array" name="array"/>
+            <UML:DataType xmi.id="datatype_tuple" name="tuple"/>
+            <UML:DataType xmi.id="datatype_dict" name="dict"/>
+            <UML:DataType xmi.id="datatype_object" name="object"/>
+            <UML:DataType xmi.id="datatype_set" name="set"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_Histogram" name="Histogram" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Histogram_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Histogram_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Histogram_dy" name="dy" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Histogram_z" name="z" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Histogram_type" name="type" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Histogram_saveToTxt" name="save_to_txt" visibility="public">
+              <UML:Parameter xmi.id="param_Histogram_fileName" name="file_name" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Experiment" name="Experiment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Experiment_d" name="d" visibility="public"/>
+            <UML:Operation xmi.id="op_Experiment_dl" name="dl" visibility="public"/>
+            <UML:Operation xmi.id="op_Experiment_dmm" name="dmm" visibility="public"/>
+            <UML:Operation xmi.id="op_Experiment_gx" name="gx" visibility="public"/>
+            <UML:Operation xmi.id="op_Experiment_gy" name="gy" visibility="public"/>
+            <UML:Operation xmi.id="op_Experiment_rebin" name="rebin" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HisFile" name="HisFile" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Plotter" name="Plotter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Plotter_plots" name="plots" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Histogram"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Plotter_plot1d" name="plot1d" visibility="public"/>
+            <UML:Operation xmi.id="op_Plotter_plot2d" name="plot2d" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Experiment_HisFile">
+           <UML:Association.connection>
+             <UML:AssociationEnd xmi.id="assocEnd_Experiment_HisFile_Experiment" type="class_Experiment" name="experiment" visibility="public" aggregation="composite"/>
+             <UML:AssociationEnd xmi.id="assocEnd_Experiment_HisFile_HisFile" type="class_HisFile" name="hisfile" visibility="public"/>
+           </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Experiment_Plotter">
+           <UML:Association.connection>
+             <UML:AssociationEnd xmi.id="assocEnd_Experiment_Plotter_Experiment" type="class_Experiment" name="experiment" visibility="public" aggregation="composite"/>
+             <UML:AssociationEnd xmi.id="assocEnd_Experiment_Plotter_Plotter" type="class_Plotter" name="plotter" visibility="public"/>
+           </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Experiment_Histogram">
+           <UML:Association.connection>
+             <UML:AssociationEnd xmi.id="assocEnd_Experiment_Histogram_Experiment" type="class_Experiment" name="experiment" visibility="public" aggregation="composite"/>
+             <UML:AssociationEnd xmi.id="assocEnd_Experiment_Histogram_Histogram" type="class_Histogram" name="histogram" visibility="public"/>
+           </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,128 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TermiteWorld" name="TermiteWorld">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "Piece" -->
+        <UML:Class xmi.id="class_Piece" name="Piece" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_checkWoodChip" name="checkWoodChip" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_checkTermite" name="checkTermite" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Termite" -->
+        <UML:Class xmi.id="class_Termite" name="Termite" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Termite_Piece" parent="class_Piece"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_species" name="species" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TermiteSpecies"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_differentiateTermites" name="differentiateTermites" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "TermiteSpecies" -->
+        <UML:Class xmi.id="class_TermiteSpecies" name="TermiteSpecies" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_woodsLiked" name="woodsLiked" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_WoodSpecies"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_species" name="species" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "WoodChip" -->
+        <UML:Class xmi.id="class_WoodChip" name="WoodChip" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_WoodChip_Piece" parent="class_Piece"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_species" name="species" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_WoodSpecies"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "WoodSpecies" -->
+        <UML:Class xmi.id="class_WoodSpecies" name="WoodSpecies" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "Board" -->
+        <UML:Class xmi.id="class_Board" name="Board" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_grid" name="grid" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Piece"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_manipulatePieces" name="manipulatePieces" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "World" -->
+        <UML:Class xmi.id="class_World" name="World" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_board" name="board" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Board"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_termiteSpecies" name="termiteSpecies" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TermiteSpecies"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_woodSpecies" name="woodSpecies" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_WoodSpecies"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_manageDependencies" name="manageDependencies" visibility="public"/>
+            <UML:Operation xmi.id="op_getInstance" name="getInstance" visibility="public" isStatic="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Termite_TermiteSpecies">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Termite_TermiteSpecies_Termite" type="class_Termite" name="termite" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Termite_TermiteSpecies_TermiteSpecies" type="class_TermiteSpecies" name="species" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_WoodChip_WoodSpecies">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_WoodChip_WoodSpecies_WoodChip" type="class_WoodChip" name="woodChip" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_WoodChip_WoodSpecies_WoodSpecies" type="class_WoodSpecies" name="species" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Board_Piece">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Board_Piece_Board" type="class_Board" name="board" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Board_Piece_Piece" type="class_Piece" name="piece" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

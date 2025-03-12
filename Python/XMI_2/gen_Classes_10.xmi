@@ -1,0 +1,259 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_RoboticControlSystem" name="RoboticControlSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Datatypes-Pakets -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_array" name="array"/>
+            <UML:DataType xmi.id="datatype_tuple" name="tuple"/>
+            <UML:DataType xmi.id="datatype_dict" name="dict"/>
+            <UML:DataType xmi.id="datatype_object" name="object"/>
+            <UML:DataType xmi.id="datatype_set" name="set"/>
+            <UML:DataType xmi.id="datatype_stream" name="stream"/>
+            <UML:DataType xmi.id="datatype_socket" name="socket"/>
+            <UML:DataType xmi.id="datatype_port" name="port"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der OdometryReport-Klasse -->
+        <UML:Class xmi.id="class_OdometryReport" name="OdometryReport" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_heading" name="heading" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition des algorithm-Pakets -->
+        <UML:Package xmi.id="pkg_algorithm" name="algorithm">
+          <UML:Namespace.ownedElement>
+            <!-- Definition der AbstractAlgorithm-Klasse -->
+            <UML:Class xmi.id="class_AbstractAlgorithm" name="AbstractAlgorithm" visibility="public" isAbstract="true">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_mapState" name="map_state" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_object"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_robot" name="robot" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_object"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_plan" name="plan" visibility="public"/>
+                <UML:Operation xmi.id="op_popNextPoint" name="pop_next_point" visibility="public"/>
+                <UML:Operation xmi.id="op_updateOccupancyGrid" name="update_occupancy_grid" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des model-Pakets -->
+        <UML:Package xmi.id="pkg_model" name="model">
+          <UML:Namespace.ownedElement>
+            <!-- Definition der Map-Klasse -->
+            <UML:Class xmi.id="class_Map" name="Map" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_gridSize" name="grid_size" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_cellSize" name="cell_size" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_goalX" name="goal_x" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_goalY" name="goal_y" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Definition der Robot-Klasse -->
+            <UML:Class xmi.id="class_Robot" name="Robot" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_heading" name="heading" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_width" name="width" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_length" name="length" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_goForward" name="go_forward" visibility="public"/>
+                <UML:Operation xmi.id="op_halt" name="halt" visibility="public"/>
+                <UML:Operation xmi.id="op_scan" name="scan" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des connection-Pakets -->
+        <UML:Package xmi.id="pkg_connection" name="connection">
+          <UML:Namespace.ownedElement>
+            <!-- Definition der Connection-Klasse -->
+            <UML:Class xmi.id="class_Connection" name="Connection" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_infile" name="infile" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_stream"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_outfile" name="outfile" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_stream"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Definition der BluetoothConnection-Klasse -->
+            <UML:Class xmi.id="class_BluetoothConnection" name="BluetoothConnection" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_addr" name="addr" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_port" name="port" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_port"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Definition der IPConnection-Klasse -->
+            <UML:Class xmi.id="class_IPConnection" name="IPConnection" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <!-- keine speziellen Attribute angegeben -->
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der ScanResult-Klasse -->
+        <UML:Class xmi.id="class_ScanResult" name="ScanResult" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_readings" name="readings" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der StateEvent-Klasse -->
+        <UML:Class xmi.id="class_StateEvent" name="StateEvent" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Planner-Klasse -->
+        <UML:Class xmi.id="class_Planner" name="Planner" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Class.generalization>
+            <UML:Generalization xmi.idref="class_AbstractAlgorithm"/>
+          </UML:Class.generalization>
+        </UML:Class>
+
+        <!-- Definition der Proxy-Klasse -->
+        <UML:Class xmi.id="class_Proxy" name="Proxy" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_listeners" name="listeners" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_connection" name="connection" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="class_Connection"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Robot_OdometryReport">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Robot_OdometryReport_Robot" type="class_Robot" name="robot" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Robot_OdometryReport_OdometryReport" type="class_OdometryReport" name="odometryReport" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Planner_Proxy">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Planner_Proxy_Planner" type="class_Planner" name="planner" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Planner_Proxy_Proxy" type="class_Proxy" name="proxy" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

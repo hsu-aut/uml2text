@@ -1,0 +1,85 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model" visibility="public" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:StateMachine xmi.id="stateMachine_PlayerStateDiagram" name="Player State Diagram">
+              <UML:Top>
+                <UML:State xmi.id="state_Empty" name="Empty">
+                  <UML:InternalTransition>
+                    <UML:Transition name="cd_detected" effect="store_cd_info" target="state_Stopped"/>
+                  </UML:InternalTransition>
+                </UML:State>
+                <UML:State xmi.id="state_Stopped" name="Stopped">
+                  <UML:InternalTransition>
+                    <UML:Transition name="play" effect="start_playback" target="state_Playing"/>
+                    <UML:Transition name="stop" effect="stop_and_open" target="state_Stopped"/>
+                    <UML:Transition name="open_close" effect="open_drawer" target="state_Open"/>
+                  </UML:InternalTransition>
+                </UML:State>
+                <UML:State xmi.id="state_Paused" name="Paused">
+                  <UML:InternalTransition>
+                    <UML:Transition name="end_pause" effect="resume_playback" target="state_Playing"/>
+                    <UML:Transition name="stop" effect="stop_playback" target="state_Stopped"/>
+                    <UML:Transition name="open_close" effect="stop_and_open" target="state_Open"/>
+                  </UML:InternalTransition>
+                </UML:State>
+                <UML:State xmi.id="state_Playing" name="Playing">
+                  <UML:InternalTransition>
+                    <UML:Transition name="pause" effect="pause_playback" target="state_Paused"/>
+                    <UML:Transition name="stop" effect="stop_playback" target="state_Stopped"/>
+                    <UML:Transition name="open_close" effect="open_drawer" target="state_Open"/>
+                  </UML:InternalTransition>
+                </UML:State>
+                <UML:State xmi.id="state_Open" name="Open">
+                  <UML:InternalTransition>
+                    <UML:Transition name="open_close" effect="close_drawer" target="state_Stopped"/>
+                  </UML:InternalTransition>
+                </UML:State>
+                <UML:Transition xmi.id="transition_initial" source="initial" target="state_Empty"/>
+              </UML:Top>
+            </UML:StateMachine>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View"/>
+        
+        <UML:Package xmi.id="package_ComponentView" name="Component View"/>
+        
+        <UML:Package xmi.id="package_DeploymentView" name="Deployment View"/>
+
+        <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

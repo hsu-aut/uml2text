@@ -1,0 +1,165 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AudioManagementSystem" name="AudioManagementSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket QalfAudio -->
+        <UML:Package xmi.id="package_QalfAudio" name="QalfAudio">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_QalfAudioController" name="QalfAudioController" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_audioBuffers" name="audioBuffers" visibility="private"/>
+                <UML:Attribute xmi.id="attr_audioChannels" name="audioChannels" visibility="private"/>
+                <UML:Attribute xmi.id="attr_audioRate" name="audioRate" visibility="private"/>
+                <UML:Attribute xmi.id="attr_audioFormat" name="audioFormat" visibility="private"/>
+                <UML:Attribute xmi.id="attr_volume" name="volume" visibility="private"/>
+                <UML:Attribute xmi.id="attr_path" name="path" visibility="private"/>
+                <UML:Attribute xmi.id="attr_bits" name="bits" visibility="private"/>
+                <UML:Attribute xmi.id="attr_done" name="done" visibility="private"/>
+                <UML:Attribute xmi.id="attr_music" name="music" visibility="private"/>
+                <UML:Attribute xmi.id="attr_position" name="position" visibility="private"/>
+                <UML:Attribute xmi.id="attr_isPlaying" name="isPlaying" visibility="private"/>
+                <UML:Operation xmi.id="operation_play" name="play" visibility="public"/>
+                <UML:Operation xmi.id="operation_pause" name="pause" visibility="public"/>
+                <UML:Operation xmi.id="operation_stop" name="stop" visibility="public"/>
+                <UML:Operation xmi.id="operation_setVolume" name="setVolume" visibility="public"/>
+                <UML:Operation xmi.id="operation_setPosition" name="setPosition" visibility="public"/>
+                <UML:Operation xmi.id="operation_setFile" name="setFile" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_QalfAudioPlaylist" name="QalfAudioPlaylist" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_next" name="next" visibility="public"/>
+                <UML:Operation xmi.id="operation_previous" name="previous" visibility="public"/>
+                <UML:Operation xmi.id="operation_songChanged" name="songChanged" visibility="public"/>
+                <UML:Operation xmi.id="operation_addSong" name="addSong" visibility="public"/>
+                <UML:Operation xmi.id="operation_removeSong" name="removeSong" visibility="public"/>
+                <UML:Operation xmi.id="operation_clear" name="clear" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_QalfAudioFile" name="QalfAudioFile" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="private"/>
+                <UML:Attribute xmi.id="attr_artists" name="artists" visibility="private"/>
+                <UML:Attribute xmi.id="attr_album" name="album" visibility="private"/>
+                <UML:Attribute xmi.id="attr_style" name="style" visibility="private"/>
+                <UML:Attribute xmi.id="attr_track" name="track" visibility="private"/>
+                <UML:Attribute xmi.id="attr_year" name="year" visibility="private"/>
+                <UML:Attribute xmi.id="attr_path" name="path" visibility="private"/>
+                <UML:Attribute xmi.id="attr_nbOfListen" name="nbOfListen" visibility="private"/>
+                <UML:Attribute xmi.id="attr_format" name="format" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket Qt -->
+        <UML:Package xmi.id="package_Qt" name="Qt">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_QString" name="QString" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_QLinkedList" name="QLinkedList" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_QList" name="QList" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_QQueue" name="QQueue" visibility="public" isAbstract="false"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket QalfJamendo -->
+        <UML:Package xmi.id="package_QalfJamendo" name="QalfJamendo">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_QalfJamendoArtist" name="QalfJamendoArtist" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_dbId" name="dbId" visibility="private"/>
+                <UML:Attribute xmi.id="attr_jamendoId" name="jamendoId" visibility="private"/>
+                <UML:Attribute xmi.id="attr_mbid" name="mbid" visibility="private"/>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_QalfJamendoAlbum" name="QalfJamendoAlbum" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_dbId" name="dbId" visibility="private"/>
+                <UML:Attribute xmi.id="attr_jamendoId" name="jamendoId" visibility="private"/>
+                <UML:Attribute xmi.id="attr_mbid" name="mbid" visibility="private"/>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+                <UML:Attribute xmi.id="attr_duration" name="duration" visibility="private"/>
+                <UML:Attribute xmi.id="attr_sizeMp3" name="sizeMp3" visibility="private"/>
+                <UML:Attribute xmi.id="attr_sizeOgg" name="sizeOgg" visibility="private"/>
+                <UML:Attribute xmi.id="attr_torrentPathMp3" name="torrentPathMp3" visibility="private"/>
+                <UML:Attribute xmi.id="attr_torrentPathOgg" name="torrentPathOgg" visibility="private"/>
+                <UML:Operation xmi.id="operation_downloadMp3" name="downloadMp3" visibility="public"/>
+                <UML:Operation xmi.id="operation_downloadOgg" name="downloadOgg" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_QalfJamendoSong" name="QalfJamendoSong" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_jamendoId" name="jamendoId" visibility="private"/>
+                <UML:Attribute xmi.id="attr_mbid" name="mbid" visibility="private"/>
+                <UML:Attribute xmi.id="attr_irateScore" name="irateScore" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket QalfDb -->
+        <UML:Package xmi.id="package_QalfDb" name="QalfDb">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_QalfDatabase" name="QalfDatabase" visibility="public" isAbstract="true"/>
+
+            <UML:Interface xmi.id="interface_QalfDataBaseObject" name="QalfDataBaseObject" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_select" name="select" visibility="public"/>
+                <UML:Operation xmi.id="operation_insert" name="insert" visibility="public"/>
+                <UML:Operation xmi.id="operation_delete" name="delete" visibility="public"/>
+                <UML:Operation xmi.id="operation_update" name="update" visibility="public"/>
+                <UML:Operation xmi.id="operation_selectAll" name="selectAll" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket QalfNetwork -->
+        <UML:Package xmi.id="package_QalfNetwork" name="QalfNetwork">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_QalfTorrentDownloader" name="QalfTorrentDownloader" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_downloadList" name="downloadList" visibility="private"/>
+                <UML:Attribute xmi.id="attr_urlOftorrentToAdd" name="urlOftorrentToAdd" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_QalfTorrentRssAggregator" name="QalfTorrentRssAggregator" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child xmi.idref="class_QalfTorrentRssAggregator"/>
+                <UML:Generalization.parent xmi.idref="class_QalfRssAggregator"/>
+              </UML:Generalization>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,109 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model name="Logical View">
+      <UML:Namespace.ownedElement>
+        <UML:Package name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType name="int"/>
+            <UML:DataType name="char"/>
+            <UML:DataType name="bool"/>
+            <UML:DataType name="float"/>
+            <UML:DataType name="double"/>
+            <UML:DataType name="string"/>
+            <!-- Weitere Datentypen hier definieren -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package name="std">
+          <UML:Namespace.ownedElement>
+            <UML:Class name="map"/>
+            <UML:Class name="fstream"/>
+            <UML:Class name="exception"/>
+            <UML:Class name="list"/>
+            <UML:Class name="stringstream"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class name="QFile"/>
+        <UML:Class name="QObject"/>
+        <UML:Class name="QPointer"/>
+        <UML:Class name="QFileInfo"/>
+        <UML:Class name="QTcpSocket"/>
+        <UML:Class name="QTcpServer"/>
+
+        <UML:Package name="DummyFTPServer">
+          <UML:Namespace.ownedElement>
+            <UML:Class name="ConfSection">
+              <UML:Classifier.feature>
+                <UML:Attribute name="name"/>
+                <UML:Attribute name="items"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class name="Configuration"/>
+            <UML:Class name="Core"/>
+            <UML:Class name="ErrorException">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="error_exception"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class name="ServerThread"/>
+            <UML:Class name="FTPServer"/>
+            <UML:Class name="WorkPath"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package name="AccountManager">
+          <UML:Namespace.ownedElement>
+            <UML:Class name="User">
+              <UML:Classifier.feature>
+                <UML:Attribute name="m_username"/>
+                <UML:Attribute name="m_password"/>
+                <UML:Attribute name="m_homeDirectory"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class name="UserList"/>
+            <UML:Enumeration name="PasswordType">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral name="PLAIN"/>
+                <UML:EnumerationLiteral name="MD5"/>
+                <UML:EnumerationLiteral name="SHA1"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Association xmi.id="assoc_Core_Configuration_UserList">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="Configuration" aggregation="none"/>
+            <UML:AssociationEnd type="Core" aggregation="none"/>
+            <UML:AssociationEnd type="UserList" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Generalization xmi.id="gen_FTPCommand">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="FTPCommand"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="FTPCommandLIST"/>
+            <UML:Class xmi.idref="FTPCommandRETR"/>
+            <UML:Class xmi.idref="FTPCommandSTOR"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

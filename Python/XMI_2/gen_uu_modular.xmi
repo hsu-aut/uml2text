@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_undef" name="undef"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Component View -->
+        <UML:Package xmi.id="package_componentView" name="Component View">
+          <UML:Namespace.ownedElement>
+            <!-- Common SDK -->
+            <UML:Component xmi.id="component_commonSDK" name="Common SDK" isSpecification="false">
+              <UML:Component.deployedElement>
+                <UML:Artifact xmi.id="artifact_net" name="net"/>
+                <UML:Artifact xmi.id="artifact_sqllite" name="sqllite"/>
+                <UML:Artifact xmi.id="artifact_encrypt_decrypt" name="encrypt/decrypt"/>
+                <UML:Artifact xmi.id="artifact_json" name="json"/>
+                <UML:Artifact xmi.id="artifact_channel" name="Channel"/>
+                <UML:Artifact xmi.id="artifact_util" name="util"/>
+                <UML:Artifact xmi.id="artifact_net_log" name="net log"/>
+                <UML:Artifact xmi.id="artifact_products" name="Products"/>
+                <UML:Artifact xmi.id="artifact_exception" name="exception"/>
+                <UML:Artifact xmi.id="artifact_mapsdk" name="mapsdk"/>
+                <UML:Artifact xmi.id="artifact_geometry" name="Geometry"/>
+                <UML:Artifact xmi.id="artifact_opengl" name="OpenGL/2D/3D"/>
+              </UML:Component.deployedElement>
+              <UML:Component.clientDependency>
+                <UML:Dependency xmi.id="dependency_logsdk_commonSDK" supplier="component_commonSDK" client="component_logsdk"/>
+                <UML:Dependency xmi.id="dependency_location_sdk_commonSDK" supplier="component_commonSDK" client="component_locationSdk"/>
+                <UML:Dependency xmi.id="dependency_uucorrection_commonSDK" supplier="component_commonSDK" client="component_uucorrection"/>
+                <UML:Dependency xmi.id="dependency_group_commonSDK" supplier="component_commonSDK" client="component_group"/>
+                <UML:Dependency xmi.id="dependency_hotel_commonSDK" supplier="component_commonSDK" client="component_hotel"/>
+                <UML:Dependency xmi.id="dependency_misc_commonSDK" supplier="component_commonSDK" client="component_misc"/>
+                <UML:Dependency xmi.id="dependency_mm_commonSDK" supplier="component_commonSDK" client="component_mm"/>
+                <UML:Dependency xmi.id="dependency_rg_commonSDK" supplier="component_commonSDK" client="component_rg"/>
+                <UML:Dependency xmi.id="dependency_poi_search_commonSDK" supplier="component_commonSDK" client="component_poiSearch"/>
+                <UML:Dependency xmi.id="dependency_uu_openID_commonSDK" supplier="component_commonSDK" client="component_uuOpenID"/>
+                <UML:Dependency xmi.id="dependency_im_commonSDK" supplier="component_commonSDK" client="component_im"/>
+                <UML:Dependency xmi.id="dependency_contact_commonSDK" supplier="component_commonSDK" client="component_contact"/>
+                <UML:Dependency xmi.id="dependency_uupan_commonSDK" supplier="component_commonSDK" client="component_uupan"/>
+                <UML:Dependency xmi.id="dependency_uureport_commonSDK" supplier="component_commonSDK" client="component_uureport"/>
+                <UML:Dependency xmi.id="dependency_uunote_commonSDK" supplier="component_commonSDK" client="component_uunote"/>
+                <UML:Dependency xmi.id="dependency_uumoment_commonSDK" supplier="component_commonSDK" client="component_uumoment"/>
+                <UML:Dependency xmi.id="dependency_umoods_commonSDK" supplier="component_commonSDK" client="component_umoods"/>
+                <UML:Dependency xmi.id="dependency_uuquestion_commonSDK" supplier="component_commonSDK" client="component_uuquestion"/>
+                <UML:Dependency xmi.id="dependency_view_commonSDK" supplier="component_commonSDK" client="component_view"/>
+              </UML:Component.clientDependency>
+            </UML:Component>
+            
+            <!-- Components with dependencies on Common SDK -->
+            <UML:Component xmi.id="component_logsdk" name="logsdk" isSpecification="false"/>
+            <UML:Component xmi.id="component_locationSdk" name="location sdk" isSpecification="false"/>
+            <UML:Component xmi.id="component_uucorrection" name="uucorrection" isSpecification="false"/>
+            <UML:Component xmi.id="component_group" name="group" isSpecification="false"/>
+            <UML:Component xmi.id="component_hotel" name="hotel" isSpecification="false"/>
+            <UML:Component xmi.id="component_misc" name="misc" isSpecification="false"/>
+            <UML:Component xmi.id="component_mm" name="MM" isSpecification="false"/>
+            <UML:Component xmi.id="component_rg" name="RG" isSpecification="false"/>
+            <UML:Component xmi.id="component_poiSearch" name="POI Search" isSpecification="false"/>
+            <UML:Component xmi.id="component_uuOpenID" name="UU OpenID" isSpecification="false"/>
+            <UML:Component xmi.id="component_im" name="IM" isSpecification="false"/>
+            <UML:Component xmi.id="component_contact" name="Contact" isSpecification="false"/>
+            <UML:Component xmi.id="component_uupan" name="UUPan" isSpecification="false"/>
+            <UML:Component xmi.id="component_uureport" name="UUReport" isSpecification="false"/>
+            <UML:Component xmi.id="component_uunote" name="UUNote" isSpecification="false"/>
+            <UML:Component xmi.id="component_uumoment" name="uumoment" isSpecification="false"/>
+            <UML:Component xmi.id="component_umoods" name="umoods" isSpecification="false"/>
+            <UML:Component xmi.id="component_uuquestion" name="uuquestion" isSpecification="false"/>
+            <UML:Component xmi.id="component_view" name="View" isSpecification="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

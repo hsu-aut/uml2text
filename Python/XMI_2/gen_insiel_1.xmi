@@ -1,0 +1,93 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_InsielCaseStudy" name="Insiel Case Study">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Klasse "Case Study" -->
+        <UML:Class xmi.id="class_CaseStudy" name="CaseStudy" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Insiel SoS" -->
+        <UML:Class xmi.id="class_InsielSoS" name="InsielSoS" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Aid" -->
+        <UML:Class xmi.id="class_Aid" name="Aid" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Enumeration "STATES" -->
+        <UML:Enumeration xmi.id="enum_STATES" name="STATES" visibility="public" isAbstract="false">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_DRIVING" name="DRIVING"/>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_PARKED" name="PARKED"/>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_BROKEN" name="BROKEN"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        
+        <!-- Definition der Klasse "ERU" -->
+        <UML:Class xmi.id="class_ERU" name="ERU" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "State Machine ERU" -->
+        <UML:Class xmi.id="class_StateMachineERU" name="StateMachineERU" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Acknowledge status change" -->
+        <UML:Class xmi.id="class_AcknowledgeStatusChange" name="AcknowledgeStatusChange" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Drive" name="Drive" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="operation_UpdateStatus" name="UpdateStatus" visibility="public" isSpecification="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Initiate Mission" -->
+        <UML:Class xmi.id="class_InitiateMission" name="InitiateMission" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_FindIdleERUs" name="FindIdleERUs" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="operation_AllocateIdleERU" name="AllocateIdleERU" visibility="public" isSpecification="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Case Study Process" -->
+        <UML:Class xmi.id="class_CaseStudyProcess" name="CaseStudyProcess" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Initiate Response" -->
+        <UML:Class xmi.id="class_InitiateResponse" name="InitiateResponse" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="generalization_CaseStudyProcess">
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_InitiateResponse"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_CaseStudyProcess"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Monitor Response" -->
+        <UML:Class xmi.id="class_MonitorResponse" name="MonitorResponse" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Process Call" -->
+        <UML:Class xmi.id="class_ProcessCall" name="ProcessCall" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_EnqueueCall" name="EnqueueCall" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="operation_RecordConversation" name="RecordConversation" visibility="public" isSpecification="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Locate Position" -->
+        <UML:Class xmi.id="class_LocatePosition" name="LocatePosition" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_GetToponym" name="GetToponym" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="operation_BrowseMap" name="BrowseMap" visibility="public" isSpecification="false"/>
+            <UML:Operation xmi.id="operation_LookupCoordinates" name="LookupCoordinates" visibility="public" isSpecification="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

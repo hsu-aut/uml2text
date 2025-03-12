@@ -1,0 +1,193 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Root" name="Root">
+      <UML:Namespace.ownedElement>
+        <!-- Component View Package (no additional details provided) -->
+        
+        <!-- bsheet Package -->
+        <UML:Package xmi.id="bsheet" name="bsheet">
+          <UML:Namespace.ownedElement>
+            
+            <!-- common Package -->
+            <UML:Package xmi.id="common" name="common">
+              <UML:Namespace.ownedElement>
+
+                <!-- date_value Class -->
+                <UML:Class xmi.id="U9b37955b-a253-4a53-b6e1-3acce6abe80b" name="date_value" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="date_value_date" name="date" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="date"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="date_value_value" name="value" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="double"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- dossier Package -->
+            <UML:Package xmi.id="dossier" name="dossier">
+              <UML:Namespace.ownedElement>
+
+                <!-- acquired_retired Class -->
+                <UML:Class xmi.id="U3fc143db-9b98-4c13-8b97-625e0e0b9834" name="acquired_retired" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="acquired_retired_acquired" name="acquired" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="date"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="acquired_retired_retired" name="retired" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="date"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- asset Class -->
+                <UML:Class xmi.id="U6fe8cf18-cfaa-4d27-b77a-b84875371913" name="asset" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="asset_b_s_item" name="b_s_item" visibility="protected" aggregation="composite">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="U9d95464b-d36a-4df0-b0f3-cf626ea1c413"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="asset_asset_type" name="asset_type" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="asset_type"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- b_s_item Class -->
+                <UML:Class xmi.id="U9d95464b-d36a-4df0-b0f3-cf626ea1c413" name="b_s_item" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="b_s_item_acquired_retired" name="acquired_retired" visibility="protected" aggregation="composite">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="U3fc143db-9b98-4c13-8b97-625e0e0b9834"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="b_s_item_account_name" name="account_name" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="string"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="b_s_item_descr" name="descr" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="string"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="b_s_item_quantity_history" name="quantity_history" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="list"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- liability Class -->
+                <UML:Class xmi.id="Ucc6c15f9-fe73-435c-bff7-047cdc5230fb" name="liability" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="liability_b_s_item" name="b_s_item" visibility="protected" aggregation="composite">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="U9d95464b-d36a-4df0-b0f3-cf626ea1c413"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="liability_liability_type" name="liability_type" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="liability_type"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- dossier Class -->
+                <UML:Class xmi.id="U6e30adc6-7448-4043-bc6e-e3a29741ec7c" name="dossier" visibility="public" isAbstract="false">
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="dossier_acquired_retired" name="acquired_retired" visibility="protected">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="U3fc143db-9b98-4c13-8b97-625e0e0b9834"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="dossier_asset_map" name="asset_map" visibility="protected" aggregation="composite">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="j_map"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="dossier_liability_map" name="liability_map" visibility="protected" aggregation="composite">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="j_map"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- lookup Package -->
+        <UML:Package xmi.id="lookup" name="lookup">
+          <UML:Namespace.ownedElement>
+
+            <!-- Enumerations -->
+            <UML:Enumeration xmi.id="asset_type" name="asset_type">
+              <UML:EnumerationLiteral name="investment"/>
+              <UML:EnumerationLiteral name="primary_residence"/>
+              <UML:EnumerationLiteral name="financial_instrument"/>
+              <!-- Additional enumeration literals -->
+            </UML:Enumeration>
+            
+            <UML:Enumeration xmi.id="liability_type" name="liability_type">
+              <UML:EnumerationLiteral name="mortgage"/>
+              <UML:EnumerationLiteral name="college_debt"/>
+              <UML:EnumerationLiteral name="credit_card_debt"/>
+              <!-- Additional enumeration literals -->
+            </UML:Enumeration>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Common Package -->
+        <UML:Package xmi.id="common_pack" name="Common Pack">
+          <UML:Namespace.ownedElement>
+
+            <!-- Data Types -->
+            <UML:DataType xmi.id="value" name="value"/>
+            <UML:DataType xmi.id="string" name="string"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <UML:DataType xmi.id="date" name="date"/>
+            
+            <!-- j_map Class -->
+            <UML:Class xmi.id="j_map" name="j_map" visibility="public" isAbstract="false"/>
+            
+            <!-- list Class -->
+            <UML:Class xmi.id="list" name="list" visibility="public" isAbstract="false"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

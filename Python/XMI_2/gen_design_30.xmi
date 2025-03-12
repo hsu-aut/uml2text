@@ -1,0 +1,110 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModeloUML" name="Modelo UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes -->
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Element -->
+            <UML:Class xmi.id="class_Element" name="Element" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <!-- Host, Router, Switch (Inheritance from Element) -->
+            <UML:Class xmi.id="class_Host" name="Host" visibility="public" isAbstract="false">
+              <UML:Generalization child="class_Host" parent="class_Element"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Router" name="Router" visibility="public" isAbstract="false">
+              <UML:Generalization child="class_Router" parent="class_Element"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Switch" name="Switch" visibility="public" isAbstract="false">
+              <UML:Generalization child="class_Switch" parent="class_Element"/>
+            </UML:Class>
+
+            <!-- Network -->
+            <UML:Class xmi.id="class_Network" name="Network" visibility="public" isAbstract="false">
+             <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_elements" name="elements" visibility="private" aggregation="composite">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Element"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- NetworkElement (Interface) -->
+            <UML:Interface xmi.id="interface_NetworkElement" name="NetworkElement" visibility="public">
+            </UML:Interface>
+
+            <!-- Link -->
+            <UML:Class xmi.id="class_Link" name="Link" visibility="public" isAbstract="false">
+              <UML:AssociationEnd xmi.id="assocEnd_Link_Network" type="class_Network" name="network" visibility="public" aggregation="none"/>
+            </UML:Class>
+
+            <!-- Connectable and Connector -->
+            <UML:Class xmi.id="class_Connectable" name="Connectable" visibility="public" isAbstract="false">
+            </UML:Class>
+            <UML:Class xmi.id="class_Connector" name="Connector" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <!-- Drawable -->
+            <UML:Class xmi.id="class_Drawable" name="Drawable" visibility="public" isAbstract="false">
+              <UML:AssociationEnd xmi.id="assocEnd_Drawable_Element" type="class_Element" name="element" visibility="public" aggregation="none"/>
+            </UML:Class>
+
+            <!-- Application -->
+            <UML:Class xmi.id="class_Application" name="Application" visibility="public" isAbstract="false">
+            </UML:Class>
+            <UML:Class xmi.id="class_DHCPClient" name="DHCPClient" visibility="public" isAbstract="false">
+              <UML:Generalization child="class_DHCPClient" parent="class_Application"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_DHCPServer" name="DHCPServer" visibility="public" isAbstract="false">
+              <UML:Generalization child="class_DHCPServer" parent="class_Application"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_DNSClient" name="DNSClient" visibility="public" isAbstract="false">
+              <UML:Generalization child="class_DNSClient" parent="class_Application"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_DNSServer" name="DNSServer" visibility="public" isAbstract="false">
+              <UML:Generalization child="class_DNSServer" parent="class_Application"/>
+            </UML:Class>
+
+            <!-- TrafficManager -->
+            <UML:Class xmi.id="class_TrafficManager" name="TrafficManager" visibility="public" isAbstract="false">
+              <UML:AssociationEnd xmi.id="assocEnd_TrafficManager_Connectable" type="class_Connectable" name="connectable" visibility="public" aggregation="none"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

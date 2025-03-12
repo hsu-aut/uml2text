@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DigitalClock" name="DigitalClock">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse Clock -->
+        <UML:Class xmi.id="class_Clock" name="Clock" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_hours" name="hours" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_minutes" name="minutes" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_seconds" name="seconds" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Clock" name="Clock" visibility="public"/>
+            <UML:Operation xmi.id="op_inc" name="inc" visibility="public"/>
+            <UML:Operation xmi.id="op_dec" name="dec" visibility="public"/>
+            <UML:Operation xmi.id="op_modeButton" name="modeButton" visibility="public"/>
+            <UML:Operation xmi.id="op_main" name="main" visibility="public">
+              <UML:Parameter xmi.id="op_param_main_args" name="args" kind="in" type="String[]"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_actionPerformed" name="actionPerformed" visibility="public">
+              <UML:Parameter xmi.id="op_param_actionPerformed_event" name="event" kind="in" type="ActionEvent"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse DigitalDisplay -->
+        <UML:Class xmi.id="class_DigitalDisplay" name="DigitalDisplay" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_time" name="time" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_H" name="H" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_M" name="M" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_S" name="S" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_DigitalDisplay" name="DigitalDisplay" visibility="public"/>
+            <UML:Operation xmi.id="op_paint" name="paint" visibility="public">
+              <UML:Parameter xmi.id="op_param_paint_graphics" name="graphics" kind="in" type="Graphics"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_display" name="display" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Clock_to_DigitalDisplay">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Clock" type="class_Clock" name="clock" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DigitalDisplay" type="class_DigitalDisplay" name="cDisplay" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Definitionen von Datentypen -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="ActionEvent" name="ActionEvent"/>
+        <UML:DataType xmi.id="Graphics" name="Graphics"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

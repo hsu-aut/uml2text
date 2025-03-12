@@ -1,0 +1,286 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse LockedDBShelf -->
+        <UML:Class xmi.id="class_LockedDBShelf" name="LockedDBShelf" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse InstallDB -->
+        <UML:Class xmi.id="class_InstallDB" name="InstallDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_InstallDB_d" name="d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LockedDBShelf"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_InstallDB_db" name="db" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LockedDBShelf"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse InstallInfo -->
+        <UML:Class xmi.id="class_InstallInfo" name="InstallInfo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_InstallInfo_state" name="state" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_InstallInfo_version" name="version" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_InstallInfo_release" name="release" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_InstallInfo_build" name="build" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_InstallInfo_distribution" name="distribution" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_InstallInfo_time" name="time" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse RepoDB -->
+        <UML:Class xmi.id="class_RepoDB" name="RepoDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_RepoDB_d" name="d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LockedDBShelf"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Repo -->
+        <UML:Class xmi.id="class_Repo" name="Repo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Repo_indexuri" name="indexuri" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse FilesDB -->
+        <UML:Class xmi.id="class_FilesDB" name="FilesDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_FilesDB_d" name="d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LockedDBShelf"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse FileInfo -->
+        <UML:Class xmi.id="class_FileInfo" name="FileInfo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_FileInfo_path" name="path" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_FileInfo_type" name="type" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_FileInfo_hash" name="hash" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_FileInfo_size" name="size" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_FileInfo_permanent" name="permanent" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ItemByRepo -->
+        <UML:Class xmi.id="class_ItemByRepo" name="ItemByRepo" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse ComponentDB -->
+        <UML:Class xmi.id="class_ComponentDB" name="ComponentDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ComponentDB_d" name="d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ItemByRepo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Component -->
+        <UML:Class xmi.id="class_Component" name="Component" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Component_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Component_localname" name="localname" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Component_summary" name="summary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Component_description" name="description" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse PackageDB -->
+        <UML:Class xmi.id="class_PackageDB" name="PackageDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_PackageDB_d" name="d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ItemByRepo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_PackageDB_dr" name="dr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ItemByRepo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Package -->
+        <UML:Class xmi.id="class_Package" name="Package" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Package_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Package_summary" name="summary" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Package_description" name="description" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Package_partof" name="partof" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Package_license" name="license" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse SourceDB -->
+        <UML:Class xmi.id="class_SourceDB" name="SourceDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_SourceDB_d" name="d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ItemByRepo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_SourceDB_dpkgtosrc" name="dpkgtosrc" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ItemByRepo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse SpecFile -->
+        <UML:Class xmi.id="class_SpecFile" name="SpecFile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_SpecFile_source" name="source" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Source"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Assoziationen -->
+        
+        <UML:Association xmi.id="assoc_RepoDB_Repo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_RepoDB" type="class_RepoDB" name="repoDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Repo" type="class_Repo" name="repo" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_FilesDB_FileInfo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_FilesDB" type="class_FilesDB" name="filesDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FileInfo" type="class_FileInfo" name="fileInfo" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ComponentDB_Component">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ComponentDB" type="class_ComponentDB" name="componentDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Component" type="class_Component" name="component" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PackageDB_Package">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PackageDB" type="class_PackageDB" name="packageDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Package" type="class_Package" name="package" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Long" name="Long"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

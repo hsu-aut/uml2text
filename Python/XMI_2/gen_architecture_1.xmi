@@ -1,0 +1,86 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Modell" name="UML-Modell">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_TabletDaemon" name="TabletDaemon" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_X11EventNotifier"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_X11EventNotifier" name="X11EventNotifier" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_TabletHandler" name="TabletHandler" visibility="public" isAbstract="false">
+              <UML:AssociationEnd type="class_DBusTabletService"/>
+              <UML:Dependency supplier="class_TabletDaemon"/>
+              <UML:AssociationEnd type="class_TabletFinder"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_DBusTabletService" name="DBusTabletService" visibility="public" isAbstract="false">
+              <UML:AssociationEnd type="class_TabletHandler"/>
+              <UML:Dependency supplier="class_TabletDaemon"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_TabletFinder" name="TabletFinder" visibility="public" isAbstract="false">
+              <UML:AssociationEnd type="class_X11TabletFinder"/>
+              <UML:AssociationEnd type="class_TabletDatabase"/>
+              <UML:Dependency supplier="class_TabletDaemon"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_TabletDatabase" name="TabletDatabase" visibility="public" isAbstract="false">
+              <UML:AssociationEnd type="class_TabletFinder"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_TabletBackend" name="TabletBackend" visibility="public" isAbstract="false">
+              <UML:AssociationEnd type="class_TabletHandler"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_ProfileManager" name="ProfileManager" visibility="public" isAbstract="false">
+              <UML:Aggregation class="class_TabletProfile"/>
+              <UML:Aggregation class="class_DeviceProfile"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_TabletProfile" name="TabletProfile" visibility="public" isAbstract="false">
+              <UML:Composition class="class_DeviceProfile"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_DeviceProfile" name="DeviceProfile" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_PropertyAdaptor" name="PropertyAdaptor" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_DeviceProperty" name="DeviceProperty" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Property" name="Property" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_Enum"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_PropertySet" name="PropertySet" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_Enum"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_Enum" name="Enum" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

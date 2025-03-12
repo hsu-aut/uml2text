@@ -1,0 +1,100 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NIEM_UML_Profile" name="NIEM_UML_Profile-NIEM_Common_Profile">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse NIEMType als abstrakter Stereotyp -->
+        <UML:Class xmi.id="class_NIEMType" name="NIEMType" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <!-- Definition weiterer Stereotypen als Subklassen von NIEMType -->
+        <UML:Class xmi.id="class_MetadataType" name="MetadataType" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_MetadataType"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_NIEMType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ObjectType" name="ObjectType" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ObjectType"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_NIEMType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AssociationType" name="AssociationType" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AssociationType"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_NIEMType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_AugmentationType" name="AugmentationType" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AugmentationType"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_NIEMType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AdapterType" name="AdapterType" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AdapterType"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_NIEMType"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Stereotypen Documentation, AugmentationApplication, MetadataApplication -->
+        <UML:Class xmi.id="class_Documentation" name="Documentation" visibility="public">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <!-- Extensionen zwischen UML-Klassen und spezifischen Typ-Stereotypen -->
+        <UML:Extension>
+          <UML:Extension.extendedElement>
+            <UML:Class xmi.idref="class_AugmentationType"/>
+          </UML:Extension.extendedElement>
+          <UML:Stereotype xmi.idref="class_AugmentationApplication"/>
+        </UML:Extension>
+        
+        <UML:Extension>
+          <UML:Extension.extendedElement>
+            <UML:Class xmi.idref="class_MetadataType"/>
+          </UML:Extension.extendedElement>
+          <UML:Stereotype xmi.idref="class_MetadataApplication"/>
+        </UML:Extension>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

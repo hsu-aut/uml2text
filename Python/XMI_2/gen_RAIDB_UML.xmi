@@ -1,0 +1,208 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModeloUML" name="Modelo UML">
+      <UML:Namespace.ownedElement>
+        <!-- Package: Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: raid -->
+        <UML:Package xmi.id="package_raid" name="raid" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Class: ARaid (7kEd2Uw1RY7e) -->
+            <UML:Class xmi.id="class_ARaid" name="ARaid" visibility="public" isAbstract="true"/>
+
+            <!-- Class: Raid0 -->
+            <UML:Class xmi.id="class_Raid0" name="Raid0" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_ARaid"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Class: Raid1 -->
+            <UML:Class xmi.id="class_Raid1" name="Raid1" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_ARaid"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Class: Raid5 -->
+            <UML:Class xmi.id="class_Raid5" name="Raid5" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_ARaid"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_computeParity" name="computeParity"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class: Disk -->
+            <UML:Class xmi.id="class_Disk" name="Disk" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_id" name="_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_size" name="_size" visibility="private"/>
+                <UML:Attribute xmi.id="attr_blockSize" name="_blockSize" visibility="private"/>
+                <UML:Operation xmi.id="op_write" name="write"/>
+                <UML:Operation xmi.id="op_read" name="read"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Class: RaidManager -->
+            <UML:Class xmi.id="class_RaidManager" name="RaidManager" visibility="public"/>
+
+            <!-- Interface: IRaid -->
+            <UML:Interface xmi.id="interface_IRaid" name="IRaid" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_IRaid_write" name="write"/>
+                <UML:Operation xmi.id="op_IRaid_read" name="read"/>
+                <UML:Operation xmi.id="op_IRaid_erase" name="erase"/>
+                <UML:Operation xmi.id="op_IRaid_modify" name="modify"/>
+                <UML:Operation xmi.id="op_IRaid_stripe" name="stripe"/>
+              </UML:Namespace.ownedElement>
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_Raid0"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_Raid1"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Interface>
+
+            <!-- Interface: IHotspare -->
+            <UML:Interface xmi.id="interface_IHotspare" name="IHotspare" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: dataStructure -->
+        <UML:Package xmi.id="package_dataStructure" name="dataStructure" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Class: DLL -->
+            <UML:Class xmi.id="class_DLL" name="DLL" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_headPtr" name="_headPtr" visibility="private"/>
+                <UML:Attribute xmi.id="attr_tailPtr" name="_tailPtr" visibility="private"/>
+                <UML:Attribute xmi.id="attr_size" name="_size" visibility="private"/>
+                <UML:Operation xmi.id="op_insertAtFront" name="insertAtFront"/>
+                <UML:Operation xmi.id="op_insertAtBack" name="insertAtBack"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class: DLLNode -->
+            <UML:Class xmi.id="class_DLLNode" name="DLLNode" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_prevPtr" name="_prevPtr" visibility="private"/>
+                <UML:Attribute xmi.id="attr_nextPtr" name="_nextPtr" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Interface: IN_aryTree -->
+            <UML:Interface xmi.id="interface_IN_aryTree" name="IN_aryTree" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_getRoot" name="getRoot"/>
+                <UML:Operation xmi.id="op_insertNodePtr" name="insertNodePtr"/>
+                <UML:Operation xmi.id="op_deleteNodePtr" name="deleteNodePtr"/>
+              </UML:Namespace.ownedElement>
+            </UML:Interface>
+
+            <!-- Interface: IN_aryNode -->
+            <UML:Interface xmi.id="interface_IN_aryNode" name="IN_aryNode" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_getData" name="getData"/>
+                <UML:Operation xmi.id="op_setData" name="setData"/>
+                <UML:Operation xmi.id="op_addChildPtr" name="addChildPtr"/>
+              </UML:Namespace.ownedElement>
+            </UML:Interface>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: fileHandling -->
+        <UML:Package xmi.id="package_fileHandling" name="fileHandling" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Interface: IRecordFile -->
+            <UML:Interface xmi.id="interface_IRecordFile" name="IRecordFile" visibility="public"/>
+
+            <!-- Interface: IMetadata -->
+            <UML:Interface xmi.id="interface_IMetadata" name="IMetadata" visibility="public"/>
+
+            <!-- Interface: IRecordDataType -->
+            <UML:Interface xmi.id="interface_IRecordDataType" name="IRecordDataType" visibility="public"/>
+
+            <!-- Class: RecordDataType -->
+            <UML:Class xmi.id="class_RecordDataType" name="RecordDataType" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="_name" visibility="private"/>
+                <UML:Attribute xmi.id="attr_data" name="_data" visibility="private"/>
+                <UML:Attribute xmi.id="attr_size" name="_size" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class: BTRecordFile -->
+            <UML:Class xmi.id="class_BTRecordFile" name="BTRecordFile" visibility="public"/>
+
+            <!-- Class: BTRecord -->
+            <UML:Class xmi.id="class_BTRecord" name="BTRecord" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: server-client -->
+        <UML:Package xmi.id="package_server_client" name="server-client" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Class: Server -->
+            <UML:Class xmi.id="class_Server" name="Server" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_ServerMaster"/>
+                </UML:Generalization.parent>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_ServerStorage"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Class: ServerMaster -->
+            <UML:Class xmi.id="class_ServerMaster" name="ServerMaster" visibility="public"/>
+
+            <!-- Class: ServerStorage -->
+            <UML:Class xmi.id="class_ServerStorage" name="ServerStorage" visibility="public"/>
+
+            <!-- Class: ThreadServer -->
+            <UML:Class xmi.id="class_ThreadServer" name="ThreadServer" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_run" name="run"/>
+                <UML:Operation xmi.id="op_readyRead" name="readyRead"/>
+                <UML:Operation xmi.id="op_disconnect" name="disconnect"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,162 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+      
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+          
+            <UML:Class xmi.id="class_Album" name="Album" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_Playlist"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_Album_init" name="__init__" visibility="public"/>
+                <UML:Operation xmi.id="op_Album_getArt" name="get_art" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Artist" name="Artist" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Artist_albums" name="albums" visibility="private" type="class_Album"/>
+                <UML:Operation xmi.id="op_Artist_init" name="__init__" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_LibraryViewModel" name="LibraryViewModel" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_LibVM_albums" name="albums" visibility="private" type="class_Album"/>
+                <UML:Operation xmi.id="op_LibVM_init" name="__init__" visibility="public"/>
+                <UML:Operation xmi.id="op_LibVM_addAny" name="add_any" visibility="public"/>
+                <UML:Operation xmi.id="op_LibVM_filtering" name="filtering" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Playlist" name="Playlist" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Playlist_songs" name="songs" visibility="private"/>
+                <UML:Operation xmi.id="op_Playlist_init" name="__init__" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_SongQueue" name="SongQueue" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_SQ_queue" name="queue" visibility="private"/>
+                <UML:Attribute xmi.id="attr_SQ_startFrom" name="start_from" visibility="private"/>
+                <UML:Attribute xmi.id="attr_SQ_at" name="at" visibility="private"/>
+                <UML:Operation xmi.id="op_SQ_init" name="__init__" visibility="public"/>
+                <UML:Operation xmi.id="op_SQ_nonzero" name="__nonzero__" visibility="public"/>
+                <UML:Operation xmi.id="op_SQ_len" name="__len__" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Player" name="Player" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_Player_init" name="__init__" visibility="public"/>
+                <UML:Operation xmi.id="op_Player_setItem" name="__setitem__" visibility="public"/>
+                <UML:Operation xmi.id="op_Player_getCount" name="get_count" visibility="public"/>
+                <UML:Operation xmi.id="op_Player_getCurrent" name="get_current" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_StatusViewModel" name="StatusViewModel" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_StatusVM_player" name="player" visibility="private" type="class_Player"/>
+                <UML:Operation xmi.id="op_StatusVM_init" name="__init__" visibility="public"/>
+                <UML:Operation xmi.id="op_StatusVM_update" name="update" visibility="public"/>
+                <UML:Operation xmi.id="op_StatusVM_updateTrackInfo" name="update_track_info" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_QWidget"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_MainWindow_init" name="__init__" visibility="public"/>
+                <UML:Operation xmi.id="op_MainWindow_changeView" name="change_view" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Nav" name="Nav" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_QWidget"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_Nav_init" name="__init__" visibility="public"/>
+                <UML:Operation xmi.id="op_Nav_setLibView" name="set_lib_view" visibility="public"/>
+                <UML:Operation xmi.id="op_Nav_changeArea" name="change_area" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_SettingsView" name="SettingsView" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_SettingsView_init" name="__init__" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Trackinfo" name="Trackinfo" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_QWidget"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_Trackinfo_init" name="__init__" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_QListAlbum" name="QListAlbum" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_QListWidgetItem" name="QListWidgetItem" visibility="public" isAbstract="false"/>
+
+            <UML:Association xmi.id="assoc_SongQueue_Player" name="songqueue-player" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_SongQueue" type="class_SongQueue" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Player" type="class_Player" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_LibraryViewModel_Album" name="libvm-album" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_LibraryViewModel" type="class_LibraryViewModel" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Album" type="class_Album" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_LibraryViewModel_Artist" name="libvm-artist" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_LibraryViewModel_A" type="class_LibraryViewModel" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Artist" type="class_Artist" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_StatusViewModel_Player" name="statusvm-player" visibility="public" aggregation="composite">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_StatusViewModel" type="class_StatusViewModel" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Player_SVM" type="class_Player" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+          
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

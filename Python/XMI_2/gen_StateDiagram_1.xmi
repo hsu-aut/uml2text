@@ -1,0 +1,174 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Audio" name="Audio">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Audio" name="audio" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_StateMachine" name="StateMachine 'audio'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_CompositeState_Top" name="CompositeState 'top'" visibility="public" isAbstract="false"/>
+
+        <!-- Definitions of SimpleStates -->
+        <UML:Class xmi.id="class_SimpleState_On" name="SimpleState 'on'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SimpleState_Mute" name="SimpleState 'mute'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SimpleState_Play" name="SimpleState 'play'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SimpleState_Pause" name="SimpleState 'pause'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SimpleState_Stop" name="SimpleState 'stop'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SimpleState_Ejected" name="SimpleState 'ejected'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SimpleState_Searching" name="SimpleState 'searching'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SimpleState_TunedIn" name="SimpleState 'tunedIn'" visibility="public" isAbstract="false"/>
+
+        <!-- Definitions of CompositeStates -->
+        <UML:Class xmi.id="class_CompositeState_CD" name="CompositeState 'CD'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_CompositeState_Radio" name="CompositeState 'Radio'" visibility="public" isAbstract="false"/>
+
+        <!-- Definitions of Pseudostates -->
+        <UML:Class xmi.id="class_Pseudostate_StartCD" name="Pseudostate 'startcd'" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Pseudostate_StartRadio" name="Pseudostate 'startradio'" visibility="public" isAbstract="false"/>
+
+        <!-- Transitions -->
+        <UML:Association xmi.id="transition_onradio" name="onradio" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_SimpleState_On"/>
+            <UML:AssociationEnd xmi.idref="class_CompositeState_Radio"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_oncd" name="oncd" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_SimpleState_On"/>
+            <UML:AssociationEnd xmi.idref="class_CompositeState_CD"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_radiooff" name="radiooff" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_CompositeState_Radio"/>
+            <UML:AssociationEnd xmi.idref="class_SimpleState_On"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_cdon" name="cdon" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_CompositeState_CD"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_On"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_muteradio" name="muteradio" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_SimpleState_Mute"/>
+            <UML:AssociationEnd xmi.idref="class_CompositeState_Radio"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_mutecd" name="mutecd" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_SimpleState_Mute"/>
+            <UML:AssociationEnd xmi.idref="class_CompositeState_CD"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_cdmute" name="cdmute" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_CompositeState_CD"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Mute"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_radiomute" name="radiomute" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_CompositeState_Radio"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Mute"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_startejected" name="startejected" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_Pseudostate_StartCD"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Ejected"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_startradio" name="startradio" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_Pseudostate_StartRadio"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_TunedIn"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_ejectedplay" name="ejectedplay" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Ejected"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Play"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_playpause" name="playpause" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Play"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Pause"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_playstop" name="playstop" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Play"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Stop"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_stoppause" name="stoppause" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Stop"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Pause"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_pauseplay" name="pauseplay" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Pause"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Play"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_pausestop" name="pausestop" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Pause"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Stop"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_stopplay" name="stopplay" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Stop"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Play"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_seeksearching" name="seeksearching" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_TunedIn"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Searching"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="transition_searchingtuned" name="searchingtuned" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="class_SimpleState_Searching"/>
+            <UML:AssociationEnd xmi.id="class_SimpleState_TunedIn"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

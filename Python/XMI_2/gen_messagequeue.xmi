@@ -1,0 +1,190 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="" visibility="public">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Socket" -->
+        <UML:Class xmi.id="class_17" name="Socket" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_fSd" name="fSd" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fDomain" name="fDomain" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fType" name="fType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fProtocol" name="fProtocol" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_isOpen" name="isOpen" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="op_isOpen_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "InetStreamSocket" -->
+        <UML:Class xmi.id="class_18" name="InetStreamSocket" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_open" name="open" visibility="public"/>
+            <UML:Operation xmi.id="op_close" name="close" visibility="public"/>
+            <UML:Operation xmi.id="op_isOpen" name="isOpen" visibility="public" isQuery="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "IOSocket" -->
+        <UML:Class xmi.id="class_19" name="IOSocket" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_read" name="read" visibility="public"/>
+            <UML:Operation xmi.id="op_write" name="write" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "ServerSocket" -->
+        <UML:Class xmi.id="class_20" name="ServerSocket" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_bind" name="bind" visibility="public"/>
+            <UML:Operation xmi.id="op_listen" name="listen" visibility="public"/>
+            <UML:Operation xmi.id="op_accept" name="accept" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "MessageQueueServer" -->
+        <UML:Class xmi.id="class_21" name="MessageQueueServer" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_read" name="read" visibility="public"/>
+            <UML:Operation xmi.id="op_write" name="write" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "MessageQueueClient" -->
+        <UML:Class xmi.id="class_22" name="MessageQueueClient" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_read" name="read" visibility="public"/>
+            <UML:Operation xmi.id="op_write" name="write" visibility="public"/>
+            <UML:Operation xmi.id="op_shutdown" name="shutdown" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "ClientSocket" -->
+        <UML:Class xmi.id="class_61" name="ClientSocket" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_connect" name="connect" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Generalisierung InetStreamSocket von Socket -->
+        <UML:Generalization xmi.id="gen_InetStreamSocket_Socket">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_17"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_18"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+        <!-- Generalisierung IOSocket von InetStreamSocket -->
+        <UML:Generalization xmi.id="gen_IOSocket_InetStreamSocket">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_18"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_19"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+        <!-- Generalisierung ServerSocket von InetStreamSocket -->
+        <UML:Generalization xmi.id="gen_ServerSocket_InetStreamSocket">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_18"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_20"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+        
+        <!-- Generalisierung ClientSocket von InetStreamSocket und IOSocket -->
+        <UML:Generalization xmi.id="gen_ClientSocket_InetStreamSocket">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_18"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_61"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+        <UML:Generalization xmi.id="gen_ClientSocket_IOSocket">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_19"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_61"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+        
+        <!-- Aggregation zwischen InetStreamSocket und ServerSocket -->
+        <UML:Association xmi.id="assoc_InetStreamSocket_ServerSocket">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_InetStreamSocket_ServerSocket_InetStreamSocket" type="class_18" name="inetStreamSocket" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_InetStreamSocket_ServerSocket_ServerSocket" type="class_20" name="serverSocket" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Aggregation zwischen InetStreamSocket und ClientSocket -->
+        <UML:Association xmi.id="assoc_InetStreamSocket_ClientSocket">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_InetStreamSocket_ClientSocket_InetStreamSocket" type="class_18" name="inetStreamSocket" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_InetStreamSocket_ClientSocket_ClientSocket" type="class_61" name="clientSocket" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Komposition zwischen MessageQueueServer und ServerSocket -->
+        <UML:Association xmi.id="comp_MessageQueueServer_ServerSocket" name="comp_MessageQueueServer_ServerSocket">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compEnd_MessageQueueServer_ServerSocket_MessageQueueServer" type="class_21" name="messageQueueServer" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compEnd_MessageQueueServer_ServerSocket_ServerSocket" type="class_20" name="serverSocket" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Komposition zwischen MessageQueueServer und IOSocket -->
+        <UML:Association xmi.id="comp_MessageQueueServer_IOSocket" name="comp_MessageQueueServer_IOSocket">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compEnd_MessageQueueServer_IOSocket_MessageQueueServer" type="class_21" name="messageQueueServer" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compEnd_MessageQueueServer_IOSocket_IOSocket" type="class_19" name="ioSocket" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Komposition zwischen MessageQueueClient und ClientSocket -->
+        <UML:Association xmi.id="comp_MessageQueueClient_ClientSocket" name="comp_MessageQueueClient_ClientSocket">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="compEnd_MessageQueueClient_ClientSocket_MessageQueueClient" type="class_22" name="messageQueueClient" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="compEnd_MessageQueueClient_ClientSocket_ClientSocket" type="class_61" name="clientSocket" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+    <!-- Definition der Datentypen -->
+    <UML:DataType xmi.id="int" name="int"/>
+    <UML:DataType xmi.id="bool" name="bool"/>
+  </XMI.content>
+</XMI>
+```

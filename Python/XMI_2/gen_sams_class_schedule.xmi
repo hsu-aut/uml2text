@@ -1,0 +1,75 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+      <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+      
+      <!-- Logical View with Datatypes -->
+      <UML:Package xmi.id="pkg_LogicalView" name="Logical View">
+        <UML:Namespace.ownedElement>
+          <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+            <UML:Namespace.ownedElement>
+              <UML:DataType xmi.id="E2actsHbQupm" name="int"/>
+              <UML:DataType xmi.id="zTIae9aWpOmY" name="char"/>
+              <UML:DataType xmi.id="7qROqfS2g0eZ" name="bool"/>
+              <UML:DataType xmi.id="suAHm03mTJK5" name="float"/>
+              <UML:DataType xmi.id="QsbFGMlMADi0" name="double"/>
+              <UML:DataType xmi.id="qA3WAf52ZEHM" name="short"/>
+              <UML:DataType xmi.id="EK6fbQj2JIFX" name="long"/>
+              <UML:DataType xmi.id="e1rmCXl2hmZp" name="unsigned int"/>
+              <UML:DataType xmi.id="Reqzs7J4QPi1" name="unsigned short"/>
+              <UML:DataType xmi.id="nR14jHcMGR6S" name="unsigned long"/>
+              <UML:DataType xmi.id="zrUgd3U3gI2W" name="string"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+        </UML:Namespace.ownedElement>
+      </UML:Package>
+
+      <!-- Use Case View -->
+      <UML:Package xmi.id="pkg_UseCaseView" name="Use Case View">
+        <UML:Namespace.ownedElement>
+          <UML:UseCase xmi.id="Kx1MUOf3CNKz" name="system"/>
+          <UML:UseCase xmi.id="q0nQNpa78Avs" name="shows scheduled classes"/>
+          <UML:Actor xmi.id="ka4zpLg9HfTj" name="student"/>
+          
+          <!-- Association between Use Cases and Actor -->
+          <UML:Association xmi.id="assoc_system_scheduledClasses" name="association_system_scheduledClasses">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_system" type="Kx1MUOf3CNKz" name="system" visibility="public" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_scheduledClasses" type="q0nQNpa78Avs" name="shows scheduled classes" visibility="public" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+          <UML:Association xmi.id="assoc_student_scheduledClasses" name="association_student_scheduledClasses">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_student" type="ka4zpLg9HfTj" name="student" visibility="public" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_scheduledClasses2" type="q0nQNpa78Avs" name="shows scheduled classes" visibility="public" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Namespace.ownedElement>
+      </UML:Package>
+
+      <!-- Component View (Empty) -->
+      <UML:Package xmi.id="pkg_ComponentView" name="Component View">
+      </UML:Package>
+
+      <!-- Deployment View (Empty) -->
+      <UML:Package xmi.id="pkg_DeploymentView" name="Deployment View">
+      </UML:Package>
+
+      <!-- Entity Relationship Model (Empty) -->
+      <UML:Package xmi.id="pkg_EntityRelationshipModel" name="Entity Relationship Model">
+      </UML:Package>
+
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

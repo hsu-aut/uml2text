@@ -1,0 +1,90 @@
+```xml
+<?xml version='1.0' encoding='UTF-8' ?>
+<XMI xmi.version='1.2' xmlns:UML='org.omg.xmi.namespace.UML'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name='UML' xmi.version='1.4'/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id='model_m1' name='UML-Modell'>
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id='package_logicalView' name='Logical View' visibility='public'>
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id='class_int' name='int'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_char' name='char'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_bool' name='bool'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_float' name='float'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_double' name='double'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_short' name='short'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_long' name='long'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_unsignedInt' name='unsigned int'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_unsignedShort' name='unsigned short'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_unsignedLong' name='unsigned long'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            <UML:Class xmi.id='class_string' name='string'>
+              <UML:Stereotype xmi.idref='datatype'/>
+            </UML:Class>
+            
+            <UML:Stereotype xmi.id='datatype' name='datatype'/>
+            <UML:Stereotype xmi.id='constructor' name='constructor'/>
+            <UML:Stereotype xmi.id='friend' name='friend'/>
+            <UML:Stereotype xmi.id='virtual' name='virtual'/>
+            <UML:Stereotype xmi.id='folder' name='folder'/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Activity xmi.id='diagram_lifeCycleOfAJob' name='Life-Cycle of a Job'>
+          <UML:Partition>
+            <UML:State xmi.id='state_inactive' name='Inactive' visibility='public'/>
+            <UML:State xmi.id='state_alive' name='Alive' visibility='public'/>
+            <UML:Transition xmi.id='transition_init' source='state_inactive' target='forkjoin'>
+              <UML:Guard name='init()'/>
+            </UML:Transition>
+            <UML:Transition xmi.id='transition_run' source='state_alive' target='state_alive'>
+              <UML:Guard name='run()'/>
+            </UML:Transition>
+            <UML:Transition xmi.id='transition_exception' source='state_alive' target='state_inactive'>
+              <UML:Guard name='exception'/>
+            </UML:Transition>
+            <UML:Transition xmi.id='transition_success' source='state_alive' target='state_inactive'>
+              <UML:Guard name='success'/>
+            </UML:Transition>
+            <UML:Transition xmi.id='transition_destroy' source='state_alive' target='state_inactive'>
+              <UML:Guard name='destroy'/>
+            </UML:Transition>
+            
+            <UML:Fork xmi.id='forkjoin' visibility='public'/>
+            
+          </UML:Partition>
+        </UML:Activity>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

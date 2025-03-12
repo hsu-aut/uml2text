@@ -1,0 +1,134 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_Memory" name="Memory" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_cartridge" name="cartridge" visibility="private"/>
+                <UML:Attribute xmi.id="attr_RAM" name="RAM" visibility="private"/>
+                <UML:Attribute xmi.id="attr_ioRegs1" name="ioRegs1" visibility="private"/>
+                <UML:Attribute xmi.id="attr_ioRegs2" name="ioRegs2" visibility="private"/>
+                <UML:Attribute xmi.id="attr_xROM" name="xROM" visibility="private"/>
+                <UML:Attribute xmi.id="attr_sRAM" name="sRAM" visibility="private"/>
+                <UML:Attribute xmi.id="attr_pgrROM" name="pgrROM" visibility="private"/>
+                <UML:Attribute xmi.id="attr_map" name="map" visibility="private"/>
+                <UML:Operation xmi.id="op_loadGame" name="loadGame" visibility="public"/>
+                <UML:Operation xmi.id="op_write" name="write1" visibility="public"/>
+                <UML:Operation xmi.id="op_write2" name="write2" visibility="public"/>
+                <UML:Operation xmi.id="op_read" name="read1" visibility="public"/>
+                <UML:Operation xmi.id="op_read2" name="read2" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Cartridge" name="Cartridge" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_uint8" name="uint8" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_CPU" name="CPU" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_pc" name="pc" visibility="private"/>
+                <UML:Attribute xmi.id="attr_sp" name="sp" visibility="private"/>
+                <UML:Attribute xmi.id="attr_A" name="A" visibility="private"/>
+                <UML:Attribute xmi.id="attr_X" name="X" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Y" name="Y" visibility="private"/>
+                <UML:Attribute xmi.id="attr_P" name="P" visibility="private"/>
+                <UML:Attribute xmi.id="attr_N" name="N" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Z" name="Z" visibility="private"/>
+                <UML:Attribute xmi.id="attr_C" name="C" visibility="private"/>
+                <UML:Attribute xmi.id="attr_I" name="I" visibility="private"/>
+                <UML:Attribute xmi.id="attr_D" name="D" visibility="private"/>
+                <UML:Attribute xmi.id="attr_V" name="V" visibility="private"/>
+                <UML:Attribute xmi.id="attr_memory" name="memory" visibility="private"/>
+                <UML:Attribute xmi.id="attr_opcode" name="opcode" visibility="private"/>
+                <UML:Attribute xmi.id="attr_operand" name="operand" visibility="private"/>
+                <UML:Attribute xmi.id="attr_opcodeCycles" name="opcodeCycles" visibility="private"/>
+                <UML:Attribute xmi.id="attr_opcodeSize" name="opcodeSize" visibility="private"/>
+                <UML:Attribute xmi.id="attr_opcodeMode" name="opcodeMode" visibility="private"/>
+                <UML:Operation xmi.id="op_executeOpcode" name="executeOpcode" visibility="public"/>
+                <UML:Operation xmi.id="op_fetchOpcode" name="fetchOpcode" visibility="public"/>
+                <UML:Operation xmi.id="op_emulateCycle" name="emulateCycle" visibility="public"/>
+                <UML:Operation xmi.id="op_compareElements" name="compareElements" visibility="public"/>
+                <UML:Operation xmi.id="op_store_value" name="store_value" visibility="public"/>
+                <UML:Operation xmi.id="op_get_value" name="get_value" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_static_int" name="static int" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Mapper" name="Mapper" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_mapper_id" name="mapper_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_chrBank" name="chrBank" visibility="private"/>
+                <UML:Attribute xmi.id="attr_prgBank" name="prgBank" visibility="private"/>
+                <UML:Attribute xmi.id="attr_prgMode" name="prgMode" visibility="private"/>
+                <UML:Attribute xmi.id="attr_chrMode" name="chrMode" visibility="private"/>
+                <UML:Operation xmi.id="op_switch_banks" name="switch_banks" visibility="public"/>
+                <UML:Operation xmi.id="op_write_mapper" name="write" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Cartridg" name="Cartridg" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_gameROM" name="gameROM" visibility="private"/>
+                <UML:Attribute xmi.id="attr_mapper_c" name="mapper" visibility="private"/>
+                <UML:Operation xmi.id="op_loadGame_c" name="loadGame" visibility="public"/>
+                <UML:Operation xmi.id="op_write_c" name="write" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_MMC1" name="MMC1" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_Mapper"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_shift_reg" name="shift_reg" visibility="private"/>
+                <UML:Attribute xmi.id="attr_regControl" name="regControl" visibility="private"/>
+                <UML:Operation xmi.id="op_clear" name="clear" visibility="public"/>
+                <UML:Operation xmi.id="op_write_control" name="write_control" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Console" name="Console" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_memory_c" name="memory" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Memory"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_cpu_c" name="cpu" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_CPU"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,161 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_System" name="System">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Class ComputeCore -->
+        <UML:Class xmi.id="class_ComputeCore" name="ComputeCore" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ComputeCore_Constructor" name="ComputeCore" visibility="public" />
+            <UML:Operation xmi.id="op_ComputeCore_submit" name="submit" visibility="public" />
+            <UML:Operation xmi.id="op_ComputeCore_getAlgorithmRegistry" name="getAlgorithmRegistry" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class AlgorithmRegistry -->
+        <UML:Class xmi.id="class_AlgorithmRegistry" name="AlgorithmRegistry" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_AlgorithmRegistry_getAlgorithmManager" name="getAlgorithmManager" visibility="public" />
+            <UML:Operation xmi.id="op_AlgorithmRegistry_registerAlgorithm" name="registerAlgorithm" visibility="public" />
+            <UML:Operation xmi.id="op_AlgorithmRegistry_getAlgorithms" name="getAlgorithms" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class ComputeThread -->
+        <UML:Class xmi.id="class_ComputeThread" name="ComputeThread" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ComputeThread_Constructor" name="ComputeThread" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class AlgorithmManager -->
+        <UML:Class xmi.id="class_AlgorithmManager" name="AlgorithmManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_AlgorithmManager_addAlgorithm" name="addAlgorithm" visibility="public" />
+            <UML:Operation xmi.id="op_AlgorithmManager_getAlgByURLSuffix" name="getAlgByURLSuffix" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Interface Algorithm -->
+        <UML:Interface xmi.id="interface_Algorithm" name="Algorithm" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Algorithm_getResult" name="getResult" visibility="public" />
+            <UML:Operation xmi.id="op_Algorithm_setRequest" name="setRequest" visibility="public" />
+            <UML:Operation xmi.id="op_Algorithm_run" name="run" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Class Graphrep -->
+        <UML:Class xmi.id="class_Graphrep" name="Graphrep" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Graphrep_getNodeLat" name="getNodeLat" visibility="public" />
+            <UML:Operation xmi.id="op_Graphrep_getNodeLon" name="getNodeLon" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class HTTPRequestHandler -->
+        <UML:Class xmi.id="class_HTTPRequestHandler" name="HTTPRequestHandler" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_HTTPRequestHandler_messageReceived" name="messageReceived" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class HTTPServer -->
+        <UML:Class xmi.id="class_HTTPServer" name="HTTPServer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_HTTPServer_Main" name="Main" visibility="public" scope="classifier" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class KDTreeNN -->
+        <UML:Class xmi.id="class_KDTreeNN" name="KDTreeNN" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Abstract relation with NNSearcher -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class DumbNN -->
+        <UML:Class xmi.id="class_DumbNN" name="DumbNN" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Abstract relation with NNSearcher -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_ComputeCore_ComputeThread" name="manages">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ComputeCore" type="class_ComputeCore" name="computeCore" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ComputeThread" type="class_ComputeThread" name="computeThread" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ComputeCore_AlgorithmRegistry" name="uses">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ComputeCore_Registry" type="class_ComputeCore" name="computeCore" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AlgorithmRegistry" type="class_AlgorithmRegistry" name="algorithmRegistry" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_AlgorithmRegistry_AlgorithmManager" name="manages">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AlgorithmRegistry_Manager" type="class_AlgorithmRegistry" name="algorithmRegistry" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AlgorithmManager" type="class_AlgorithmManager" name="algorithmManager" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_AlgorithmRegistry_AlgorithmFactory" name="uses">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AlgorithmRegistry_Factory" type="class_AlgorithmRegistry" name="algorithmRegistry" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AlgorithmFactory" type="interface_Algorithm" name="algorithmFactory" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ComputeThread_ComputeRequest" name="handles">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ComputeThread_Request" type="class_ComputeThread" name="computeThread" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ComputeRequest" type="class_ComputeThread" name="computeRequest" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ComputeThread_ComputeResult" name="produces">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ComputeThread_Result" type="class_ComputeThread" name="computeThread" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ComputeResult" type="class_ComputeThread" name="computeResult" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Graphrep_NNSearcher" name="queries">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Graphrep_Search" type="class_Graphrep" name="graphrep" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_NNSearcher" type="interface_Algorithm" name="nnsearcher" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_HTTPRequestHandler_ResultResponder" name="responds">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_HTTPRequestHandler" type="class_HTTPRequestHandler" name="httpRequestHandler" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ResultResponder" type="class_ComputeThread" name="resultResponder" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- DataTypes -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="Char" name="Char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="unsigned_int" name="unsigned_int"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

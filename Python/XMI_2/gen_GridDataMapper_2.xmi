@@ -1,0 +1,154 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NetCDFUtils" name="NetCDFUtils">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse NetCDFGeneralUtils -->
+        <UML:Class xmi.id="class_NetCDFGeneralUtils" name="NetCDFGeneralUtils" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_CloseNetCDF" name="CloseNetCDF"/>
+            <UML:Operation xmi.id="op_GetDimension" name="GetDimension"/>
+            <UML:Operation xmi.id="op_GetAllDimensions" name="GetAllDimensions"/>
+            <UML:Operation xmi.id="op_GetFromNetCDF" name="GetFromNetCDF"/>
+            <UML:Operation xmi.id="op_TimeValueToIndex" name="TimeValueToIndex"/>
+            <UML:Operation xmi.id="op_G_Error" name="G_Error"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse NetCDFGridUtils -->
+        <UML:Class xmi.id="class_NetCDFGridUtils" name="NetCDFGridUtils" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_PrintGrid" name="PrintGrid"/>
+            <UML:Operation xmi.id="op_InitGrid" name="InitGrid"/>
+            <UML:Operation xmi.id="op_GetNetCDFGridParameters" name="GetNetCDFGridParameters"/>
+            <UML:Operation xmi.id="op_Focus2DNetCDFGrid" name="Focus2DNetCDFGrid"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse NetCDFInterpolate -->
+        <UML:Class xmi.id="class_NetCDFInterpolate" name="NetCDFInterpolate" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_LinearInterpolation" name="LinearInterpolation"/>
+            <UML:Operation xmi.id="op_BiLinearInterpolation" name="BiLinearInterpolation"/>
+            <UML:Operation xmi.id="op_TriLinearInterpolation" name="TriLinearInterpolation"/>
+            <UML:Operation xmi.id="op_Interpolate" name="Interpolate"/>
+            <UML:Operation xmi.id="op_ChooseInterpolation" name="ChooseInterpolation"/>
+            <UML:Operation xmi.id="op_CoordinateTransformation" name="CoordinateTransformation"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse GridDataMapper -->
+        <UML:Class xmi.id="class_GridDataMapper" name="GridDataMapper" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_GridDataMapper" name="GridDataMapper"/>
+            <UML:Operation xmi.id="op_InitScaling" name="InitScaling"/>
+            <UML:Operation xmi.id="op_InitNetCDF" name="InitNetCDF"/>
+            <UML:Operation xmi.id="op_InitTime" name="InitTime"/>
+            <UML:Operation xmi.id="op_InitInterpolation" name="InitInterpolation"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse CustomTimeInterpolation -->
+        <UML:Class xmi.id="class_CustomTimeInterpolation" name="CustomTimeInterpolation" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ChooseTimeInterpolation" name="ChooseTimeInterpolation"/>
+            <UML:Operation xmi.id="op_SeasonalInterpolation" name="SeasonalInterpolation"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse cs2cs_interface -->
+        <UML:Class xmi.id="class_cs2cs_interface" name="cs2cs_interface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_cs2cs_transform" name="cs2cs_transform"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse MapperUtils -->
+        <UML:Class xmi.id="class_MapperUtils" name="MapperUtils" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_GetElmerNodeValue" name="GetElmerNodeValue"/>
+            <UML:Operation xmi.id="op_GetElmerMinMax" name="GetElmerMinMax"/>
+            <UML:Operation xmi.id="op_IntWidth" name="IntWidth"/>
+            <UML:Operation xmi.id="op_ListGetStrings" name="ListGetStrings"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition von Assoziationen -->
+        <UML:Association xmi.id="assoc_NetCDFGeneralUtils_GridDataMapper">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_NetCDFGeneralUtils" type="class_NetCDFGeneralUtils" name="NetCDFGeneralUtils" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_GridDataMapper" type="class_GridDataMapper" name="GridDataMapper" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_NetCDFGridUtils_NetCDFGeneralUtils">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_NetCDFGridUtils" type="class_NetCDFGridUtils" name="NetCDFGridUtils" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_NetCDFGeneralUtils2" type="class_NetCDFGeneralUtils" name="NetCDFGeneralUtils" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_NetCDFInterpolate_GridDataMapper">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_NetCDFInterpolate" type="class_NetCDFInterpolate" name="NetCDFInterpolate" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_GridDataMapper2" type="class_GridDataMapper" name="GridDataMapper" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_NetCDFInterpolate_NetCDFGeneralUtils">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_NetCDFInterpolate2" type="class_NetCDFInterpolate" name="NetCDFInterpolate" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_NetCDFGeneralUtils3" type="class_NetCDFGeneralUtils" name="NetCDFGeneralUtils" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_NetCDFInterpolate_CustomTimeInterpolation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_NetCDFInterpolate3" type="class_NetCDFInterpolate" name="NetCDFInterpolate" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_CustomTimeInterpolation" type="class_CustomTimeInterpolation" name="CustomTimeInterpolation" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_GridDataMapper_CustomTimeInterpolation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_GridDataMapper3" type="class_GridDataMapper" name="GridDataMapper" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_CustomTimeInterpolation2" type="class_CustomTimeInterpolation" name="CustomTimeInterpolation" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_GridDataMapper_MapperUtils">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_GridDataMapper4" type="class_GridDataMapper" name="GridDataMapper" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_MapperUtils" type="class_MapperUtils" name="MapperUtils" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition der vordefinierten Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:DataType xmi.id="datatype_UniformGrid_t" name="UniformGrid_t"/>
+        <UML:DataType xmi.id="datatype_TimeType_t" name="TimeType_t"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

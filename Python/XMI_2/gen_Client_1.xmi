@@ -1,0 +1,277 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="data_types" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int" stereotype="datatype"/>
+                <UML:DataType xmi.id="char" name="char" stereotype="datatype"/>
+                <UML:DataType xmi.id="float" name="float" stereotype="datatype"/>
+                <UML:DataType xmi.id="double" name="double" stereotype="datatype"/>
+                <UML:DataType xmi.id="bool" name="bool" stereotype="datatype"/>
+                <UML:DataType xmi.id="short" name="short" stereotype="datatype"/>
+                <UML:DataType xmi.id="long" name="long" stereotype="datatype"/>
+                <UML:DataType xmi.id="string" name="string" stereotype="datatype"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Class Rule -->
+            <UML:Class xmi.id="GVLmLi3AvlDM" name="Rule" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="rule_SID" name="SID" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="rule_rev" name="rev" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="rule_msg" name="msg" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="rule_raw" name="raw" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="rule_priority" name="priority" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class RuleSet -->
+            <UML:Class xmi.id="vHZHN9uLd4Z0" name="RuleSet" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="ruleset_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="ruleset_description" name="description" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Association between RuleSet and Rule -->
+            <UML:Association xmi.id="assoc_RuleSet_Rule">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_RuleSet_Rule_RuleSet" type="vHZHN9uLd4Z0" aggregation="composite" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_RuleSet_Rule_Rule" type="GVLmLi3AvlDM" name="rules" aggregation="none" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Class Threshold -->
+            <UML:Class xmi.id="rnwrHxRBjGXR" name="Threshold" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="threshold_rule" name="rule" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="GVLmLi3AvlDM"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="threshold_type" name="type" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="threshold_track" name="track" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="threshold_count" name="count" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="threshold_seconds" name="seconds" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="threshold_comment" name="comment" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class Supress -->
+            <UML:Class xmi.id="MicW3Szt6SRg" name="Supress" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="supress_rule" name="rule" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="GVLmLi3AvlDM"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="supress_comment" name="comment" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="supress_track" name="track" visibility="private" type="enum"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class Sensor -->
+            <UML:Class xmi.id="E5urpOjRE88t" name="Sensor" visibility="public" isAbstract="false"/>
+
+            <!-- Class StaticFile -->
+            <UML:Class xmi.id="3t2fBusiofT9" name="StaticFile" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="staticfile_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="staticfile_path" name="path" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="staticfile_checksum" name="checksum" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class RuleReference -->
+            <UML:Class xmi.id="WSqUNMY7vs4Q" name="RuleReference" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="ruleref_reference" name="reference" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class RuleReferenceType -->
+            <UML:Class xmi.id="bIpuC4K3dUgX" name="RuleReferenceType" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="rulereftype_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="rulereftype_urlPrefix" name="urlPrefix" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Association between RuleReferenceType and RuleReference -->
+            <UML:Association xmi.id="assoc_RuleReferenceType_RuleReference">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_RuleReferenceType_RuleReference_RuleReferenceType" type="bIpuC4K3dUgX" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_RuleReferenceType_RuleReference_RuleReference" type="WSqUNMY7vs4Q" name="references" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Class RPCServer -->
+            <UML:Class xmi.id="TVsXvRzbiHG8" name="RPCServer" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="rpcserver_runUpdate" name="runUpdate" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class RPCClient -->
+            <UML:Class xmi.id="C6SgxPgJCYyJ" name="RPCClient" visibility="public" isAbstract="false">
+              <UML:Dependency supplier="GVLmLi3AvlDM"/>
+              <UML:Dependency supplier="MicW3Szt6SRg"/>
+              <UML:Dependency supplier="rnwrHxRBjGXR"/>
+              <UML:Dependency supplier="WSqUNMY7vs4Q"/>
+              <UML:Dependency supplier="vHZHN9uLd4Z0"/>
+              <UML:Dependency supplier="3t2fBusiofT9"/>
+            </UML:Class>
+
+            <!-- Class SnortConfigurer -->
+            <UML:Class xmi.id="B0DH777c2CLK" name="SnortConfigurer" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="snortconfigurer_regenerateConfigFiles" name="regenerateConfigFiles" visibility="public"/>
+                <UML:Operation xmi.id="snortconfigurer_restartSnort" name="restartSnort" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class RuleClass -->
+            <UML:Class xmi.id="oymsU5B5i1M6" name="RuleClass" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="ruleclass_classtype" name="classtype" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="ruleclass_description" name="description" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="ruleclass_priority" name="priority" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Association between RuleClass and Rule -->
+            <UML:Association xmi.id="assoc_RuleClass_Rule">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_RuleClass_Rule_RuleClass" type="oymsU5B5i1M6" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_RuleClass_Rule_Rule" type="GVLmLi3AvlDM" name="rules" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Class SupressAddress -->
+            <UML:Class xmi.id="Lh6EABMJwJn6" name="SupressAddress" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="supressaddress_supress" name="supress" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="MicW3Szt6SRg"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="supressaddress_address" name="address" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,81 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Logical View" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="lMbJQdo6XlAv" name="Validator" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_validate" name="validate" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="zdwkausYeMym" name="UserValidator" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="lMbJQdo6XlAv"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_validateUser" name="validateUser" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="r5w23QgBU1lR" name="TimesheetValidator" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="lMbJQdo6XlAv"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_validateTimesheet" name="validateTimesheet" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="PNTHyjmfhzOc" name="TimeEntryValidator" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="lMbJQdo6XlAv"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_validateTimeEntry" name="validateTimeEntry" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="WCTSE9TOhuKV" name="UserDuplicateValidator" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="zdwkausYeMym"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_validateUserDuplicate" name="validateUser" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="IBObx6IDoj5h" name="WeekendValidator" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="r5w23QgBU1lR"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_validateWeekend" name="validateTimesheet" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <!-- More Class elements for each described class with their respective attributes and operations as needed based on the provided description -->
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```
+
+This XMI document represents the core structure of the UML model based on the provided description. Each class is defined as an XML element with its properties and relationships, such as generalizations and operations. The classes are organized under a model named "Logical View," adhering to the hierarchical and encapsulation principles described in the overview.

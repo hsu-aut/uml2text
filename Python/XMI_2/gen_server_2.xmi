@@ -1,0 +1,108 @@
+```xml
+<?xml version = "1.0" encoding = "UTF-8"?>
+<XMI xmi.version = "1.2" xmlns:UML = "org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id = "model_LogicalView" name = "Logical View">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "datamgr" -->
+        <UML:Class xmi.id = "class_datamgr" name = "datamgr" visibility = "public" isAbstract = "false"/>
+
+        <!-- Definition der Klasse "dataupmgr" -->
+        <UML:Class xmi.id = "class_dataupmgr" name = "dataupmgr" visibility = "public" isAbstract = "false"/>
+
+        <!-- Definition der Klasse "datadownmgr" -->
+        <UML:Class xmi.id = "class_datadownmgr" name = "datadownmgr" visibility = "public" isAbstract = "false"/>
+
+        <!-- Definition der Klasse "systo" -->
+        <UML:Class xmi.id = "class_systo" name = "systo" visibility = "public" isAbstract = "false"/>
+
+        <!-- Definition der Klasse "sysup" -->
+        <UML:Class xmi.id = "class_sysup" name = "sysup" visibility = "public" isAbstract = "false"/>
+
+        <!-- Definition der übergeordneten Klasse "newsletter" -->
+        <UML:Class xmi.id = "class_newsletter" name = "newsletter" visibility = "public" isAbstract = "false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id = "gen_network_to_newsletter"/>
+          </UML:GeneralizableElement.generalization>
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id = "gen_sharememory_to_newsletter"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "network" -->
+        <UML:Class xmi.id = "class_network" name = "network" visibility = "public" isAbstract = "false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.idref = "gen_network_to_newsletter" parent = "class_newsletter"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "sharememory" -->
+        <UML:Class xmi.id = "class_sharememory" name = "sharememory" visibility = "public" isAbstract = "false">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.idref = "gen_sharememory_to_newsletter" parent = "class_newsletter"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "ui" -->
+        <UML:Class xmi.id = "class_ui" name = "ui" visibility = "public" isAbstract = "false"/>
+
+        <!-- Definition der Klasse "monitorsystem or ui" -->
+        <UML:Class xmi.id = "class_monitorsystemorui" name = "monitorsystem or ui" visibility = "public" isAbstract = "false"/>
+
+        <!-- Definition der Assoziationen -->
+        <UML:Association xmi.id = "assoc_newsletter_datamgr">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_newsletter_to_datamgr" type = "class_newsletter" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_datamgr_to_newsletter" type = "class_datamgr" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id = "assoc_datamgr_downmgr_upmgr">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_datamgr_to_datadownmgr" type = "class_datamgr" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_datadownmgr_to_datamgr" type = "class_datadownmgr" aggregation = "none"/>
+          </UML:Association.connection>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_datamgr_to_dataupmgr" type = "class_datamgr" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_dataupmgr_to_datamgr" type = "class_dataupmgr" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id = "assoc_datadownmgr_newsletter">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_datadownmgr_to_newsletter" type = "class_datadownmgr" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_newsletter_to_datadownmgr" type = "class_newsletter" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id = "assoc_datadownmgr_newsletter_agg">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_newsletter_to_datadownmgr_agg" type = "class_newsletter" aggregation = "aggregate"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_datadownmgr_to_newsletter_agg" type = "class_datadownmgr" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id = "assoc_monitorsystemorui_classes">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_monitorsystemorui_to_datamgr" type = "class_monitorsystemorui" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_datamgr_to_monitorsystemorui" type = "class_datamgr" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_monitorsystemorui_to_datadownmgr" type = "class_monitorsystemorui" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_datadownmgr_to_monitorsystemorui" type = "class_datadownmgr" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_monitorsystemorui_to_dataupmgr" type = "class_monitorsystemorui" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_dataupmgr_to_monitorsystemorui" type = "class_dataupmgr" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

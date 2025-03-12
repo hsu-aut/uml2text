@@ -1,0 +1,73 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logische Ansicht -->
+        <UML:Package xmi.id="logicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Package für Datentypen -->
+            <UML:Package xmi.id="datatypesPackage" name="Datatypes" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case Ansicht -->
+        <UML:Package xmi.id="useCaseView" name="Use Case View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Actor xmi.id="actor_player_max_bid" name="player_max_bid" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_set_trump_suit" name="set_trump_suit" visibility="public"/>
+            <UML:UseCase xmi.id="usecase_game" name="game" visibility="public"/>
+            
+            <!-- Beziehungen in der Use Case Ansicht -->
+            <UML:Association xmi.id="assoc_player_max_bid_set_trump_suit" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_player_max_bid" type="actor_player_max_bid" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_set_trump_suit_1" type="usecase_set_trump_suit" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_game_set_trump_suit" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game" type="usecase_game" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_set_trump_suit_2" type="usecase_set_trump_suit" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Weitere Ansichten wie Component View, Deployment View und Entity Relationship Model -->
+        <UML:Package xmi.id="componentView" name="Component View" visibility="public"/>
+        <UML:Package xmi.id="deploymentView" name="Deployment View" visibility="public"/>
+        <UML:Package xmi.id="entityRelationshipModel" name="Entity Relationship Model" visibility="public"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

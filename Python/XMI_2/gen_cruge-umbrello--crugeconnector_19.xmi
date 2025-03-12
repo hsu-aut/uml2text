@@ -1,0 +1,93 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Custom Exporter</XMI.exporter>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_CrugeConnector" name="CrugeConnector">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+
+        <UML:Class xmi.id="aHkx1aRwrw3o" name="usuario" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="OxhFMX3vposo" name="UiController" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op1" name="actionConnector" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op2" name="actionExternalLoginResult" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op3" name="_newUser" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op4" name="_doLogin" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op5" name="actionExternalLoginError" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="M8IbeA126hHQ" name="XController" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="M8IbeA126hHQ"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="QtQeKuh5I8yk"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="KjNdduey3uZh" name="XWebsite" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="6GncmTL6Dgio" name="CrugeFactory" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op6" name="getConnectorByName" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op7" name="getAvailableConnectors" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op8" name="getConnectorUrl" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="ISiB3aWP7ss3" name="config/main" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="L1CHdwitXdJc" name="CrugeUi" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op9" name="displayAvailableConnectors" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="SDL9OuuM96AO" name="view_ui_login" visibility="public" isAbstract="false"/>
+
+        <UML:Interface xmi.id="bhGZmgMvPdZ4" name="ICrugeExternalAuth" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op10" name="doReturn" visibility="public"/>
+            <UML:Operation xmi.id="op11" name="getParameters" visibility="public"/>
+            <UML:Operation xmi.id="op12" name="actionRun" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <UML:Class xmi.id="QtQeKuh5I8yk" name="CrugeExternalAuthBase" visibility="public" isAbstract="false">
+
+        <UML:Dependency xmi.id="dep1" client="OxhFMX3vposo" supplier="bhGZmgMvPdZ4" name="actionRun"/>
+        <UML:Association xmi.id="assoc1" name="association1">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc1_end1" type="OxhFMX3vposo" name="CrugeFactory" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assoc1_end2" type="6GncmTL6Dgio" name="UiController" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc2" name="association2">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc2_end1" type="6GncmTL6Dgio" name="CrugeUi" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assoc2_end2" type="L1CHdwitXdJc" name="CrugeFactory" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc3" name="association3">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc3_end1" type="bhGZmgMvPdZ4" name="XWebsite" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assoc3_end2" type="KjNdduey3uZh" name="ICrugeExternalAuth" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

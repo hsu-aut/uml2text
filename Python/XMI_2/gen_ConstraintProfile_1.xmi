@@ -1,0 +1,63 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_ConstraintProfile" name="ConstraintProfile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_ComplexObjectConstraint" name="ComplexObjectConstraint" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_ObjectConstraint" name="ObjectConstraint" visibility="public" isAbstract="false"/>
+            <UML:Association xmi.id="assoc_Constrains">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Constrains_ConstraintProfile" type="class_ConstraintProfile" name="constrains" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Constrains_Target" type="class_Target" name="target" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Class xmi.id="class_ArchetypeSlot" name="ArchetypeSlot" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_ArchetypeRoot" name="ArchetypeRoot" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_AuthoredResource" name="AuthoredResource" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ArchetypeDefinition" name="ArchetypeDefinition" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_referenceType" name="referenceType" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Type"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ArchetypeLibrary" name="ArchetypeLibrary" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ResourceTranslation" name="ResourceTranslation" visibility="public" isAbstract="false"/>
+
+        <UML:Enumeration xmi.id="enum_Lifecycle_state" name="Lifecycle_state" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_created" name="created"/>
+            <UML:EnumerationLiteral xmi.id="literal_active" name="active"/>
+            <UML:EnumerationLiteral xmi.id="literal_archived" name="archived"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_VERSION_STATUS" name="VERSION_STATUS" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_draft" name="draft"/>
+            <UML:EnumerationLiteral xmi.id="literal_published" name="published"/>
+            <UML:EnumerationLiteral xmi.id="literal_retired" name="retired"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

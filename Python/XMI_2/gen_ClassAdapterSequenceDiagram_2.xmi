@@ -1,0 +1,69 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_FacebookLogin" name="FacebookLogin">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Interface ILoginable -->
+        <UML:Interface xmi.id="interface_ILoginable" name="ILoginable" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Login" name="Login" visibility="public" ownerScope="instance">
+              <UML:Parameter xmi.id="param_Login_return" name="return" kind="return" type="Boolean"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <!-- Class FacebookService -->
+        <UML:Class xmi.id="class_FacebookService" name="FacebookService" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_FacebookService_Login" name="Login" visibility="public" ownerScope="instance">
+              <UML:Parameter xmi.id="param_FacebookService_Login" name="params" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+        
+        <!-- Class FBAdapter -->
+        <UML:Class xmi.id="class_FBAdapter" name="FBAdapter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_LoggedInUser" name="LoggedInUser" visibility="private" type="class_User"/>
+            <UML:Operation xmi.id="op_FBAdapter_Login" name="Login" visibility="public" ownerScope="instance">
+              <UML:Parameter xmi.id="param_FBAdapter_Login_return" name="return" kind="return" type="Boolean"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_LoginResult" name="LoginResult" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="gen_FBAdapter_FacebookService" parent="class_FacebookService"/>
+          <UML:Realization xmi.id="realization_FBAdapter_ILoginable" supplier="interface_ILoginable"/>
+        </UML:Class>
+        
+        <!-- Class MainWindow -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_FBAdapter" name="m_FBAdapter" visibility="private" type="interface_ILoginable"/>
+            <UML:Operation xmi.id="op_LoggedInUser" name="LoggedInUser" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Association between MainWindow and ILoginable -->
+        <UML:Association xmi.id="assoc_MainWindow_ILoginable">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MainWindow" type="class_MainWindow" name="mainWindow" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ILoginable" type="interface_ILoginable" name="loginable" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,94 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Stereotypes -->
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+        <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+        <UML:Stereotype xmi.id="stereotype_friend" name="friend"/>
+        <UML:Stereotype xmi.id="stereotype_virtual" name="virtual"/>
+
+        <!-- Data Types -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_byte" name="byte"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+
+        <!-- Components -->
+        <UML:Component xmi.id="component_UserInterface" name="Benutzeroberfläche">
+          <UML:Namespace.ownedElement>
+            <UML:Component xmi.id="component_Editor" name="Editor"/>
+          </UML:Namespace.ownedElement>
+        </UML:Component>
+        <UML:Component xmi.id="component_BrainfuckStudio" name="Brainfuck Studio">
+          <UML:Namespace.ownedElement>
+            <UML:Component xmi.id="component_Debugger" name="Debugger"/>
+            <UML:Component xmi.id="component_Interpreter" name="Interpreter"/>
+            <UML:Component xmi.id="component_Compiler" name="Compiler"/>
+            <UML:Component xmi.id="component_Parser" name="Parser"/>
+          </UML:Namespace.ownedElement>
+        </UML:Component>
+        <UML:Component xmi.id="component_Assembler" name="Assembler"/>
+
+        <!-- Dependencies and Relationships -->
+        <UML:Dependency xmi.id="dependency_UI_Debugger">
+          <UML:Dependency.client>
+            <UML:Component xmi.idref="component_UserInterface"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Component xmi.idref="component_Debugger"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+        <UML:Dependency xmi.id="dependency_Debugger_Interpreter">
+          <UML:Dependency.client>
+            <UML:Component xmi.idref="component_Debugger"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Component xmi.idref="component_Interpreter"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+        <UML:Dependency xmi.id="dependency_Interpreter_Parser">
+          <UML:Dependency.client>
+            <UML:Component xmi.idref="component_Interpreter"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Component xmi.idref="component_Parser"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+        <UML:Dependency xmi.id="dependency_Compiler_Parser">
+          <UML:Dependency.client>
+            <UML:Component xmi.idref="component_Compiler"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Component xmi.idref="component_Parser"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+        <UML:Dependency xmi.id="dependency_Compiler_Assembler">
+          <UML:Dependency.client>
+            <UML:Component xmi.idref="component_Compiler"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Component xmi.idref="component_Assembler"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

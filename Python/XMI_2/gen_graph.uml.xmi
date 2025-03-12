@@ -1,0 +1,73 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GraphModel" name="GraphModel">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Graph" name="Graph" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_newAttr_Graph" name="newAttr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="PlaceHolderType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_newAttr_Node" name="newAttr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="PlaceHolderType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Edge" name="Edge" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_newAttr_Edge" name="newAttr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="EnumType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_from_to">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Edge_Node" type="class_Edge" name="edge" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_Edge" type="class_Node" name="node" visibility="public" aggregation="none" multiplicity="2"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_nodes">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Graph_Node" type="class_Graph" name="graph" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_Graph" type="class_Node" name="node" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_edges">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Graph_Edge" type="class_Graph" name="graph" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Edge_Graph" type="class_Edge" name="edge" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="PlaceHolderType" name="PlaceHolderType"/>
+        <UML:DataType xmi.id="EnumType" name="EnumType"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

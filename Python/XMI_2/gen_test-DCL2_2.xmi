@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="logical_view_id" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="datatypes_id" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="classA_id" name="ClassA">
+              <UML:Classifier.feature>
+                <!-- Other features like attributes or operations can be added here -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="classB_id" name="ClassB">
+              <UML:Generalization xmi.id="gen_ClassB" parent="parentBC_id" child="classB_id"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="classC_id" name="ClassC">
+              <UML:Generalization xmi.id="gen_ClassC" parent="parentBC_id" child="classC_id"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="classD_id" name="ClassD">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="subclassE_id" name="SubclassE"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="classF_id" name="ClassF">
+              <UML:Association xmi.id="assoc_ClassF_ClassA" name="association1">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="end_ClassF_ClassF" type="classF_id"/>
+                  <UML:AssociationEnd xmi.id="end_ClassF_ClassA" type="classA_id"/>
+                </UML:Association.connection>
+              </UML:Association>
+              
+              <UML:Association xmi.id="assoc_self_ClassF">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="end_self_ClassF" type="classF_id"/>
+                  <UML:AssociationEnd xmi.id="end_self_ClassF" type="classF_id"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+            
+            <UML:Class xmi.id="parentBC_id" name="ParentBC">
+              <!-- Parent class of ClassB and ClassC -->
+            </UML:Class>
+            
+            <UML:Interface xmi.id="interface_IClass" name="IClass">
+              <UML:Parameter.parameter.end>
+                <UML:ModelElement.taggedValue>
+                  <!-- Placeholder for Interface-specification -->
+                </UML:ModelElement.taggedValue>
+              </UML:Parameter.parameter.end>
+            </UML:Interface>
+            
+            <UML:Enumeration xmi.id="enumA_id" name="EnumA">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_enumA_1" name="enumA-1"/>
+                <UML:EnumerationLiteral xmi.id="literal_enumA_2" name="enumA-2"/>
+                <UML:EnumerationLiteral xmi.id="literal_enumA_last" name="enumA-last"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            
+            <UML:Enumeration xmi.id="enumB_id" name="EnumB">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_enumB_1" name="enumB-1"/>
+                <UML:EnumerationLiteral xmi.id="literal_enumB_2" name="enumB-2"/>
+                <UML:EnumerationLiteral xmi.id="literal_enumB_3" name="enumB-3"/>
+                <UML:EnumerationLiteral xmi.id="literal_enumB_4" name="enumB-4"/>
+                <UML:EnumerationLiteral xmi.id="literal_enumB_last" name="enumB-last"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            
+            <UML:Association xmi.id="assoc_classA_enumA" name="m_typeA">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_classA_enumA_A" type="classA_id"/>
+                <UML:AssociationEnd xmi.id="end_classA_enumA_B" type="enumA_id"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_classA_enumB" name="m_typeB">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_classA_enumB_A" type="classA_id"/>
+                <UML:AssociationEnd xmi.id="end_classA_enumB_B" type="enumB_id"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_classB_enumB" name="aggregation">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_classB_enumB_A" type="classB_id" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="end_classB_enumB_B" type="enumB_id"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,893 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ARIA_Roles" name="ARIA_Roles">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der abstrakten Klasse "roletype" -->
+        <UML:Class xmi.id="class_roletype" name="roletype" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ariaAtomic" name="aria-atomic" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ariaBusy" name="aria-busy" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ariaLive" name="aria-live" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ariaRelevant" name="aria-relevant" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ariaTranstions" name="aria-transtions" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ariaFlowto" name="aria-flowto" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "structure" -->
+        <UML:Class xmi.id="class_structure" name="structure" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_roletype"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "window" -->
+        <UML:Class xmi.id="class_window" name="window" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_window_ariaExpanded" name="aria-expanded" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_roletype"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "landmark" -->
+        <UML:Class xmi.id="class_landmark" name="landmark" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "section" -->
+        <UML:Class xmi.id="class_section" name="section" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_section_ariaExpanded" name="aria-expanded" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_structure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "sectionhead" -->
+        <UML:Class xmi.id="class_sectionhead" name="sectionhead" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_sectionhead_ariaExpanded" name="aria-expanded" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_structure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "widget" -->
+        <UML:Class xmi.id="class_widget" name="widget" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_roletype"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "composite" -->
+        <UML:Class xmi.id="class_composite" name="composite" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_composite_ariaActivedescendant" name="aria-activedescendant" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_widget"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "input" -->
+        <UML:Class xmi.id="class_input" name="input" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_widget"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "range" -->
+        <UML:Class xmi.id="class_range" name="range" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_range_ariaValuemax" name="aria-valuemax" visibility="private"/>
+            <UML:Attribute xmi.id="attr_range_ariaValuemin" name="aria-valuemin" visibility="private"/>
+            <UML:Attribute xmi.id="attr_range_ariaValuenow" name="aria-valuenow" visibility="private"/>
+            <UML:Attribute xmi.id="attr_range_ariaValuetext" name="aria-valuetext" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_widget"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "command" -->
+        <UML:Class xmi.id="class_command" name="command" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_widget"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "select" -->
+        <UML:Class xmi.id="class_select" name="select" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_select_ariaOrientation" name="aria-orientation" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_composite"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_group"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Example definition of a concrete class with generalization and attributes -->
+        <!-- Definition der Klasse "alert" -->
+        <UML:Class xmi.id="class_alert" name="alert" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "alertdialog" -->
+        <UML:Class xmi.id="class_alertdialog" name="alertdialog" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_alert"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_dialog"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "application" -->
+        <UML:Class xmi.id="class_application" name="application" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_application_ariaActivedescendant" name="aria-activedescendant" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_structure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "article" -->
+        <UML:Class xmi.id="class_article" name="article" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_article_ariaPosinset" name="aria-posinset" visibility="private"/>
+            <UML:Attribute xmi.id="attr_article_ariaSetsize" name="aria-setsize" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_document"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "banner" -->
+        <UML:Class xmi.id="class_banner" name="banner" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_landmark"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "button" -->
+        <UML:Class xmi.id="class_button" name="button" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_button_ariaExpanded" name="aria-expanded" visibility="private"/>
+            <UML:Attribute xmi.id="attr_button_ariaPressed" name="aria-pressed" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_command"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "checkbox" -->
+        <UML:Class xmi.id="class_checkbox" name="checkbox" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_checkbox_ariaChecked" name="aria-checked" visibility="private"/>
+            <UML:Attribute xmi.id="attr_checkbox_ariaReadonly" name="aria-readonly" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_input"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "columnheader" -->
+        <UML:Class xmi.id="class_columnheader" name="columnheader" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_columnheader_ariaSort" name="aria-sort" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_gridcell"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_sectionhead"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_cell"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "combobox" -->
+        <UML:Class xmi.id="class_combobox" name="combobox" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_combobox_ariaExpanded" name="aria-expanded" visibility="private"/>
+            <UML:Attribute xmi.id="attr_combobox_ariaAutocomplete" name="aria-autocomplete" visibility="private"/>
+            <UML:Attribute xmi.id="attr_combobox_ariaReadonly" name="aria-readonly" visibility="private"/>
+            <UML:Attribute xmi.id="attr_combobox_ariaRequired" name="aria-required" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_select"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "complementary" -->
+        <UML:Class xmi.id="class_complementary" name="complementary" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_landmark"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "contentinfo" -->
+        <UML:Class xmi.id="class_contentinfo" name="contentinfo" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_landmark"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "definition" -->
+        <UML:Class xmi.id="class_definition" name="definition" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "dialog" -->
+        <UML:Class xmi.id="class_dialog" name="dialog" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_window"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "directory" -->
+        <UML:Class xmi.id="class_directory" name="directory" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_list"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "document" -->
+        <UML:Class xmi.id="class_document" name="document" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_document_ariaExpanded" name="aria-expanded" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_structure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "form" -->
+        <UML:Class xmi.id="class_form" name="form" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_landmark"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "grid" -->
+        <UML:Class xmi.id="class_grid" name="grid" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_grid_ariaLevel" name="aria-level" visibility="private"/>
+            <UML:Attribute xmi.id="attr_grid_ariaMultiselectable" name="aria-multiselectable" visibility="private"/>
+            <UML:Attribute xmi.id="attr_grid_ariaReadonly" name="aria-readonly" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_composite"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_table"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "gridcell" -->
+        <UML:Class xmi.id="class_gridcell" name="gridcell" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_gridcell_ariaReadonly" name="aria-readonly" visibility="private"/>
+            <UML:Attribute xmi.id="attr_gridcell_ariaRequired" name="aria-required" visibility="private"/>
+            <UML:Attribute xmi.id="attr_gridcell_ariaSelected" name="aria-selected" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_widget"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_cell"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "group" -->
+        <UML:Class xmi.id="class_group" name="group" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_group_ariaActivedescendant" name="aria-activedescendant" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "heading" -->
+        <UML:Class xmi.id="class_heading" name="heading" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_heading_ariaLevel" name="aria-level" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_sectionhead"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "img" -->
+        <UML:Class xmi.id="class_img" name="img" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "link" -->
+        <UML:Class xmi.id="class_link" name="link" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_link_ariaExpanded" name="aria-expanded" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_command"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "list" -->
+        <UML:Class xmi.id="class_list" name="list" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "listbox" -->
+        <UML:Class xmi.id="class_listbox" name="listbox" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_listbox_ariaMultiselectable" name="aria-multiselectable" visibility="private"/>
+            <UML:Attribute xmi.id="attr_listbox_ariaReadonly" name="aria-readonly" visibility="private"/>
+            <UML:Attribute xmi.id="attr_listbox_ariaRequired" name="aria-required" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_select"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "listitem" -->
+        <UML:Class xmi.id="class_listitem" name="listitem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_listitem_ariaLevel" name="aria-level" visibility="private"/>
+            <UML:Attribute xmi.id="attr_listitem_ariaPosinset" name="aria-posinset" visibility="private"/>
+            <UML:Attribute xmi.id="attr_listitem_ariaSetsize" name="aria-setsize" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "menu" -->
+        <UML:Class xmi.id="class_menu" name="menu" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_select"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "menuitem" -->
+        <UML:Class xmi.id="class_menuitem" name="menuitem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_menuitem_ariaPosinset" name="aria-posinset" visibility="private"/>
+            <UML:Attribute xmi.id="attr_menuitem_ariaSetsize" name="aria-setsize" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_command"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "menuitemcheckbox" -->
+        <UML:Class xmi.id="class_menuitemcheckbox" name="menuitemcheckbox" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_checkbox"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_menuitem"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "menuitemradio" -->
+        <UML:Class xmi.id="class_menuitemradio" name="menuitemradio" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_menuitemcheckbox"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_radio"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "navigation" -->
+        <UML:Class xmi.id="class_navigation" name="navigation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_landmark"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "note" -->
+        <UML:Class xmi.id="class_note" name="note" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "option" -->
+        <UML:Class xmi.id="class_option" name="option" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_option_ariaSelected" name="aria-selected" visibility="private"/>
+            <UML:Attribute xmi.id="attr_option_ariaChecked" name="aria-checked" visibility="private"/>
+            <UML:Attribute xmi.id="attr_option_ariaPosinset" name="aria-posinset" visibility="private"/>
+            <UML:Attribute xmi.id="attr_option_ariaSetsize" name="aria-setsize" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_input"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "presentation" -->
+        <UML:Class xmi.id="class_presentation" name="presentation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_structure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "progressbar" -->
+        <UML:Class xmi.id="class_progressbar" name="progressbar" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_range"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "radio" -->
+        <UML:Class xmi.id="class_radio" name="radio" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_radio_ariaChecked" name="aria-checked" visibility="private"/>
+            <UML:Attribute xmi.id="attr_radio_ariaPosinset" name="aria-posinset" visibility="private"/>
+            <UML:Attribute xmi.id="attr_radio_ariaSetsize" name="aria-setsize" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_input"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "radiogroup" -->
+        <UML:Class xmi.id="class_radiogroup" name="radiogroup" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_radiogroup_ariaReadonly" name="aria-readonly" visibility="private"/>
+            <UML:Attribute xmi.id="attr_radiogroup_ariaRequired" name="aria-required" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_select"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "region" -->
+        <UML:Class xmi.id="class_region" name="region" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_landmark"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "row" -->
+        <UML:Class xmi.id="class_row" name="row" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_row_ariaLevel" name="aria-level" visibility="private"/>
+            <UML:Attribute xmi.id="attr_row_ariaSelected" name="aria-selected" visibility="private"/>
+            <UML:Attribute xmi.id="attr_row_ariaColindex" name="aria-colindex" visibility="private"/>
+            <UML:Attribute xmi.id="attr_row_ariaRowindex" name="aria-rowindex" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_group"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_widget"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "rowgroup" -->
+        <UML:Class xmi.id="class_rowgroup" name="rowgroup" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_structure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "rowheader" -->
+        <UML:Class xmi.id="class_rowheader" name="rowheader" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rowheader_ariaSort" name="aria-sort" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_gridcell"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_sectionhead"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_cell"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "search" -->
+        <UML:Class xmi.id="class_search" name="search" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_landmark"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "sectionhead" -->
+        <UML:Class xmi.id="class_sectionhead" name="sectionhead" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_sectionhead_ariaExpanded" name="aria-expanded" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_structure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "separator" -->
+        <UML:Class xmi.id="class_separator" name="separator" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_separator_ariaExpanded" name="presentation" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_structure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "scrollbar" -->
+        <UML:Class xmi.id="class_scrollbar" name="scrollbar" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_scrollbar_ariaFirst" name="aria-first" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_range"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "slider" -->
+        <UML:Class xmi.id="class_slider" name="slider" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_slider_ariaLevel" name="aria-level" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_input"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_range"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "spinbutton" -->
+        <UML:Class xmi.id="class_spinbutton" name="spinbutton" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_spinbutton_ariaExpanded" name="aria-expanded" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_input"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_range"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_composite"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "status" -->
+        <UML:Class xmi.id="class_status" name="status" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "tab" -->
+        <UML:Class xmi.id="class_tab" name="tab" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tab_ariaPosinset" name="aria-posinset" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tab_ariaSelected" name="aria-selected" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tab_ariaSetsize" name="aria-setsize" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_sectionhead"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_widget"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "tablist" -->
+        <UML:Class xmi.id="class_tablist" name="tablist" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tablist_ariaOrientation" name="aria-orientation" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_composite"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "tabpanel" -->
+        <UML:Class xmi.id="class_tabpanel" name="tabpanel" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "textbox" -->
+        <UML:Class xmi.id="class_textbox" name="textbox" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_textbox_ariaExpanded" name="aria-expanded" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_input"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "timer" -->
+        <UML:Class xmi.id="class_timer" name="timer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_status"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "toolbar" -->
+        <UML:Class xmi.id="class_toolbar" name="toolbar" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_toolbar_ariaOrientation" name="aria-orientation" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_group"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "tooltip" -->
+        <UML:Class xmi.id="class_tooltip" name="tooltip" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "tree" -->
+        <UML:Class xmi.id="class_tree" name="tree" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tree_ariaMultiselectable" name="aria-multiselectable" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tree_ariaReadonly" name="aria-readonly" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_select"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "treegrid" -->
+        <UML:Class xmi.id="class_treegrid" name="treegrid" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_grid"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_tree"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "treeitem" -->
+        <UML:Class xmi.id="class_treeitem" name="treeitem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_listitem"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_option"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "searchbox" -->
+        <UML:Class xmi.id="class_searchbox" name="searchbox" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_textbox"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "switch" -->
+        <UML:Class xmi.id="class_switch" name="switch" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_checkbox"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "term" -->
+        <UML:Class xmi.id="class_term" name="term" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "figure" -->
+        <UML:Class xmi.id="class_figure" name="figure" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "feed" -->
+        <UML:Class xmi.id="class_feed" name="feed" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_list"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "table" -->
+        <UML:Class xmi.id="class_table" name="table" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_table_ariaColcount" name="aria-colcount" visibility="private"/>
+            <UML:Attribute xmi.id="attr_table_ariaRowcount" name="aria-rowcount" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_section"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Add more classes as needed to complete the model -->
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

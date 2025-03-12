@@ -1,0 +1,163 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_LIRFile" name="LIR file"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Class xmi.id="class_RNAModel" name="RNAModel" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ModernaStructure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_RNAModel_insert_all_loops" name="insert_all_loops"/>
+            <UML:Operation xmi.id="op_RNAModel_insert_best_loops" name="insert_best_loops"/>
+            <UML:Operation xmi.id="op_RNAModel_insert_fragment" name="insert_fragment"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LoopCandidates" name="LoopCandidates" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_LoopCandidates_create_initial_loop_set" name="create_initial_loop_set"/>
+            <UML:Operation xmi.id="op_LoopCandidates_make_fast_scoring" name="make_fast_scoring"/>
+            <UML:Operation xmi.id="op_LoopCandidates_make_advanced_scoring" name="make_advanced_scoring"/>
+            <UML:Operation xmi.id="op_LoopCandidates_write_loop_candidates" name="write_loop_candidates"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LIRHit" name="LIRHit" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_LIRRecord"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_LIRHit_score" name="score"/>
+            <UML:Operation xmi.id="op_LIRHit_calculate_fast_score" name="calculate_fast_score"/>
+            <UML:Operation xmi.id="op_LIRHit_calculate_advanced_score" name="calculate_advanced_score"/>
+            <UML:Operation xmi.id="op_LIRHit_cmp" name="__cmp__"/>
+            <UML:Operation xmi.id="op_LIRHit_write_structure" name="write_structure"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LIRRecord" name="LIRRecord" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_LIRHit"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ModernaFragment" name="ModernaFragment" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ModernaStructure"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LIR" name="LIR" visibility="public"/>
+
+        <UML:Class xmi.id="class_BioPDBPDBStructure" name="Bio.PDB.PDBStructure" visibility="public"/>
+
+        <UML:Class xmi.id="class_LoopFinder" name="LoopFinder" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_LoopFinder_get_query" name="get_query"/>
+            <UML:Operation xmi.id="op_LoopFinder_find_loop" name="find_loop"/>
+            <UML:Operation xmi.id="op_LoopFinder_find_loop_candidates" name="find_loop_candidates"/>
+            <UML:Operation xmi.id="op_LoopFinder_set_scoring" name="set_scoring"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ModernaStructure" name="ModernaStructure" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_RNAModel"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ModernaFragment"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Template"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Template" name="Template" visibility="public"/>
+
+        <UML:Class xmi.id="class_LIRScoringOptions" name="LIRScoringOptions" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_LIRScoringOptions_goodness" name="goodness"/>
+            <UML:Attribute xmi.id="attr_LIRScoringOptions_seq_ident" name="seq_ident"/>
+            <UML:Attribute xmi.id="attr_LIRScoringOptions_rmsd" name="rmsd"/>
+            <UML:Attribute xmi.id="attr_LIRScoringOptions_clashes" name="clashes"/>
+            <UML:Attribute xmi.id="attr_LIRScoringOptions_hbonds" name="hbonds"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LIRQuery" name="LIRQuery" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_LIRRecord"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_LIRQuery_stem5" name="stem5"/>
+            <UML:Attribute xmi.id="attr_LIRQuery_stem3" name="stem3"/>
+            <UML:Attribute xmi.id="attr_LIRQuery_model" name="model"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ModernaResidue" name="ModernaResidue" visibility="public"/>
+
+        <UML:Class xmi.id="class_BaseRecognizer" name="BaseRecognizer" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="assoc_BaseRecognizer_ModernaResidue" name="ModernaResidue"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Alphabet" name="Alphabet" visibility="public"/>
+
+        <UML:Class xmi.id="class_AlignmentPosition" name="AlignmentPosition" visibility="public"/>
+
+        <UML:Class xmi.id="class_Alignment" name="Alignment" visibility="public"/>
+
+        <UML:Class xmi.id="class_Sequence" name="Sequence" visibility="public"/>
+
+        <UML:Class xmi.id="class_Aeyc4ckoa28Z" name="Aeyc4ckoa28Z" visibility="public"/>
+
+        <UML:Class xmi.id="class_MakeLirFile" name="MakeLirFile" visibility="public"/>
+
+        <UML:Class xmi.id="class_ModernaSuperimposer" name="ModernaSuperimposer" visibility="public"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

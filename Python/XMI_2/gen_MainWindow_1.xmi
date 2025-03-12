@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package for Logical View -->
+        <UML:Package xmi.id="LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Package for Datatypes -->
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsignedint" name="unsigned int"/>
+                <UML:DataType xmi.id="unsignedshort" name="unsigned short"/>
+                <UML:DataType xmi.id="unsignedlong" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Classes -->
+            <UML:Class xmi.id="MainWindow" name="MainWindow" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="flightList" name="flightList" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="MutableObjectListFlight"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="proxyList" name="proxyList" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="FlightProxyList"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="flightListModel" name="flightListModel" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="ObjectListModelFlight"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="proxyModel" name="proxyModel" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="FlightSortFilterProxyModel"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="flightModel" name="flightModel" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="FlightModel"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="ui" name="ui" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="UiMainWindowClass"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="UiMainWindowClass" name="Ui::MainWindowClass" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="flightTable" name="flightTable" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="SkTableView"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="SkTableView" name="SkTableView" visibility="public">
+              <UML:Namespace.ownedElement/>
+            </UML:Class>
+
+            <UML:Class xmi.id="MutableObjectListFlight" name="MutableObjectList<Flight>" visibility="public">
+              <UML:Namespace.ownedElement/>
+            </UML:Class>
+
+            <UML:Class xmi.id="FlightProxyList" name="FlightProxyList" visibility="public">
+              <UML:Namespace.ownedElement/>
+            </UML:Class>
+
+            <UML:Class xmi.id="ObjectListModelFlight" name="ObjectListModel<Flight>" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="list" name="list" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="FlightProxyList"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="FlightSortFilterProxyModel" name="FlightSortFilterProxyModel" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="sourceModel" name="sourceModel" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="ObjectListModelFlight"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="FlightModel" name="FlightModel" visibility="public">
+              <UML:Namespace.ownedElement/>
+            </UML:Class>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_MainWindow_MutableObjectListFlight">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MainWindow" type="MainWindow" name="mainWindow" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_MutableObjectListFlight" type="MutableObjectListFlight" name="flightList" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_MainWindow_FlightProxyList">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MainWindow1" type="MainWindow" name="mainWindow" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_FlightProxyList" type="FlightProxyList" name="proxyList" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_MainWindow_ObjectListModelFlight">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MainWindow2" type="MainWindow" name="mainWindow" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_ObjectListModelFlight" type="ObjectListModelFlight" name="flightListModel" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_MainWindow_FlightSortFilterProxyModel">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MainWindow3" type="MainWindow" name="mainWindow" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_FlightSortFilterProxyModel" type="FlightSortFilterProxyModel" name="proxyModel" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_MainWindow_FlightModel">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MainWindow4" type="MainWindow" name="mainWindow" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_FlightModel" type="FlightModel" name="flightModel" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_ObjectListModelFlight_FlightModel">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_ObjectListModelFlight1" type="ObjectListModelFlight" name="objectListModelFlight" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_FlightModel1" type="FlightModel" name="flightModel" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_MainWindow_UiMainWindowClass">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MainWindow5" type="MainWindow" name="mainWindow" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_UiMainWindowClass" type="UiMainWindowClass" name="ui" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_UiMainWindowClass_SkTableView">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_UiMainWindowClass1" type="UiMainWindowClass" name="uiMainWindowClass" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_SkTableView" type="SkTableView" name="flightTable" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_SkTableView_FlightSortFilterProxyModel">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_SkTableView1" type="SkTableView" name="skTableView" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_FlightSortFilterProxyModel1" type="FlightSortFilterProxyModel" name="flightSortFilterProxyModel" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_ObjectListModelFlight_FlightProxyList">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_ObjectListModelFlight2" type="ObjectListModelFlight" name="objectListModelFlight" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_FlightProxyList1" type="FlightProxyList" name="flightProxyList" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_FlightProxyList_MutableObjectListFlight">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_FlightProxyList2" type="FlightProxyList" name="flightProxyList" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_MutableObjectListFlight1" type="MutableObjectListFlight" name="mutableObjectListFlight" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

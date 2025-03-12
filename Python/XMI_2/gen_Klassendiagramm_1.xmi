@@ -1,0 +1,121 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="datatype_int" name="int" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_char" name="char" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_bool" name="bool" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_float" name="float" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_double" name="double" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_short" name="short" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_long" name="long" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_unsigned_int" name="unsigned int" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_unsigned_short" name="unsigned short" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_unsigned_long" name="unsigned long" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_string" name="string" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_BMX055" name="BMX055" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_m_number_of_devices" name="m_number_of_devices" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="attr_m_devicenumber" name="m_devicenumber" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="attr_m_buffer" name="m_buffer" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Operation xmi.id="op_BMX055" name="BMX055"/>
+                <UML:Operation xmi.id="op_BMX055_destruct" name="~BMX055"/>
+                <UML:Operation xmi.id="op_getData" name="getData"/>
+                <UML:Operation xmi.id="op_getNumberOfDevices" name="getNumberOfDevices"/>
+                <UML:Operation xmi.id="op_getGyroResolution" name="getGyroResolution"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_CRC16" name="CRC16" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_m_CRC16_Table" name="m_CRC16_Table" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="attr_m_crcTable" name="m_crcTable" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Operation xmi.id="op_CRC16" name="CRC16"/>
+                <UML:Operation xmi.id="op_crcInit" name="crcInit"/>
+                <UML:Operation xmi.id="op_CreateCRC" name="CreateCRC"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Initiator" name="Initiator" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_setRectangles" name="setRectangles"/>
+                <UML:Operation xmi.id="op_setValues" name="setValues"/>
+                <UML:Operation xmi.id="op_setHeadlines" name="setHeadlines"/>
+                <UML:Operation xmi.id="op_setOptions" name="setOptions"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_SerialConnection" name="SerialConnection" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_m_comPortHandles" name="m_comPortHandles" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="attr_m_portSettings" name="m_portSettings" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="attr_m_baudRate" name="m_baudRate" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Operation xmi.id="op_OpenPort" name="OpenPort"/>
+                <UML:Operation xmi.id="op_ReadByte" name="ReadByte"/>
+                <UML:Operation xmi.id="op_ReadByteArray" name="ReadByteArray"/>
+                <UML:Operation xmi.id="op_SendByte" name="SendByte"/>
+                <UML:Operation xmi.id="op_SendByteArray" name="SendByteArray"/>
+                <UML:Operation xmi.id="op_ClosePort" name="ClosePort"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_GUI" name="GUI" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_showData" name="showData"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_TextManager" name="TextManager" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_m_GyroText" name="m_GyroText" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="attr_m_AccText" name="m_AccText" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="attr_m_MeasurementText" name="m_MeasurementText" visibility="private" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Operation xmi.id="op_changeAcc" name="changeAcc"/>
+                <UML:Operation xmi.id="op_changeGyro" name="changeGyro"/>
+                <UML:Operation xmi.id="op_changeMeasurements" name="changeMeasurements"/>
+                <UML:Operation xmi.id="op_changeTime" name="changeTime"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class xmi.id="datatype_uint8_t" name="uint8_t" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_uint16_t" name="uint16_t" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_HANDLE" name="HANDLE" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_DCB" name="DCB" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_COMMTIMEOUTS" name="COMMTIMEOUTS" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_unsigned_char" name="unsigned char" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_std_vector_RectangleShape" name="std::vector&lt;sf::RectangleShape*>" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_std_vector_Text" name="std::vector&lt;sf::Text*>" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_RenderWindow" name="sf::RenderWindow" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_Font" name="sf::Font" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="datatype_Time" name="sf::Time" visibility="public" isAbstract="false"/>
+
+            <UML:Association xmi.id="assoc_BMX055_SerialConnection" name="bmx055-serialconnection" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_BMX055_SerialConnection_BMX055" type="class_BMX055" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_BMX055_SerialConnection_SerialConnection" type="class_SerialConnection" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

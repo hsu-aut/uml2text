@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Analysis" name="Analysis" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mesh" name="mesh" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mAnalyseShader" name="mAnalyseShader" visibility="private"/>
+            <UML:Attribute xmi.id="attr_nbVertices" name="nbVertices" visibility="private"/>
+            <UML:Attribute xmi.id="attr_nbFaces" name="nbFaces" visibility="private"/>
+            <UML:Attribute xmi.id="attr_meanValence" name="meanValence" visibility="private"/>
+            <UML:Operation xmi.id="op_constructor" name="Analysis" visibility="public"/>
+            <UML:Operation xmi.id="op_initialize" name="initialize" visibility="public"/>
+            <UML:Operation xmi.id="op_getAnalysisInfo" name="getAnalysisInfo" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Mesh" name="Mesh" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_load" name="load" visibility="public"/>
+            <UML:Operation xmi.id="op_draw" name="draw" visibility="public"/>
+            <UML:Attribute xmi.id="attr_indices" name="indices" visibility="private"/>
+            <UML:Attribute xmi.id="attr_halfEdgeData" name="halfEdgeData" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Shader" name="Shader" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mIsValid" name="mIsValid" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mProgramID" name="mProgramID" visibility="private"/>
+            <UML:Operation xmi.id="op_activate" name="activate" visibility="public"/>
+            <UML:Operation xmi.id="op_manage" name="manage" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PointCloud" name="PointCloud" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_positions" name="positions" visibility="private"/>
+            <UML:Attribute xmi.id="attr_normals" name="normals" visibility="private"/>
+            <UML:Attribute xmi.id="attr_colors" name="colors" visibility="private"/>
+            <UML:Operation xmi.id="op_process" name="process" visibility="public"/>
+            <UML:Operation xmi.id="op_display" name="display" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Octree" name="Octree" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_positions" name="positions" visibility="private"/>
+            <UML:Attribute xmi.id="attr_normals" name="normals" visibility="private"/>
+            <UML:Operation xmi.id="op_construct" name="construct" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_WireCube" name="WireCube" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_WireCube_Shape" name="generalization" visibility="public" parent="class_Shape"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Shape" name="Shape" visibility="public" isAbstract="true"/>
+
+        <UML:Class xmi.id="class_Trackball" name="Trackball" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_startTranslation" name="startTranslation" visibility="public"/>
+            <UML:Operation xmi.id="op_zoom" name="zoom" visibility="public"/>
+            <UML:Operation xmi.id="op_setFOV" name="setFOV" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Dependency xmi.id="dep_Analysis_Shader">
+          <UML:Dependency.client xmi.idref="class_Analysis"/>
+          <UML:Dependency.supplier xmi.idref="class_Shader"/>
+        </UML:Dependency>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

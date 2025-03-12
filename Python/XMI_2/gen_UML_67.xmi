@@ -1,0 +1,92 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt_int" name="int"/>
+            <UML:DataType xmi.id="dt_char" name="char"/>
+            <UML:DataType xmi.id="dt_bool" name="bool"/>
+            <UML:DataType xmi.id="dt_float" name="float"/>
+            <UML:DataType xmi.id="dt_double" name="double"/>
+            <UML:Class xmi.id="cls_vector" name="vector"/>
+            <UML:Class xmi.id="cls_shared_ptr" name="shared_ptr"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Class xmi.id="cls_SigmoidSynapse" name="SigmoidSynapse" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_evaluate_SigmoidSynapse" name="evaluate" visibility="public" isAbstract="false" isQuery="false"/>
+            <UML:Operation xmi.id="op_operator_SigmoidSynapse" name="operator()" visibility="public" isAbstract="false" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="int_Synapse" name="Synapse" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_evaluate_Synapse" name="evaluate" visibility="public" isAbstract="true" isQuery="false"/>
+            <UML:Operation xmi.id="op_operator_Synapse" name="operator()" visibility="public" isAbstract="true" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="cls_NeuralNet" name="NeuralNet" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_m_nodes" name="m_nodes" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_weights" name="m_weights" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_synapse" name="m_synapse" visibility="private"/>
+            <UML:Operation xmi.id="op_evaluate_NeuralNet" name="evaluate" visibility="public"/>
+            <UML:Operation xmi.id="op_structure_NeuralNet" name="structure" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Association xmi.id="assoc_NeuralNet_vector" associationType="aggregate">
+            <UML:AssociationEnd xmi.id="assocEnd_NeuralNet_vector" type="cls_vector" multiplicity="1"/>
+          </UML:Association>
+          <UML:Association xmi.id="assoc_NeuralNet_shared_ptr" associationType="aggregate">
+            <UML:AssociationEnd xmi.id="assocEnd_NeuralNet_shared_ptr" type="cls_shared_ptr" multiplicity="1"/>
+          </UML:Association>
+        </UML:Class>
+        
+        <UML:Class xmi.id="cls_CheckersNet" name="CheckersNet" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general xmi.idref="cls_NeuralNet"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_player_CheckersNet" name="player" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="cls_AB_Search" name="AB_Search" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_nextMove_AB_Search" name="nextMove" visibility="public"/>
+            <UML:Operation xmi.id="op_operator_AB_Search" name="operator()" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Association xmi.id="assoc_AB_Search_NeuralNet" associationType="reference">
+            <UML:AssociationEnd xmi.id="assocEnd_AB_Search_NeuralNet" type="cls_NeuralNet" multiplicity="1"/>
+          </UML:Association>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="int_MoveFinder" name="MoveFinder" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_possibleMoves_MoveFinder" name="possibleMoves" visibility="public" isAbstract="true"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="cls_CheckersMoveFinder" name="CheckersMoveFinder" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general xmi.idref="int_MoveFinder"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

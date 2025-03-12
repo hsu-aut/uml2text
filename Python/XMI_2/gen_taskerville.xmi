@@ -1,0 +1,77 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_taskerville" name="taskerville">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Interface xmi.id="interface_Project" name="Project" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_getName_Project" name="getName" visibility="public">
+              <UML:Parameter xmi.id="param_return_getName_Project" name="return" kind="return" type="UnspecifiedType"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_getProjectId" name="getProjectId" visibility="public">
+              <UML:Parameter xmi.id="param_return_getProjectId" name="return" kind="return" type="UnspecifiedType"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_Member" name="Member" visibility="public">
+          <UML:Generalization xmi.id="gen_Member_Identifyable" parent="interface_Identifyable"/>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_Group" name="Group" visibility="public">
+          <UML:Generalization xmi.id="gen_Group_Identifyable" parent="interface_Identifyable"/>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_Identifyable" name="Identifyable" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_getName_Identifyable" name="getName" visibility="public">
+              <UML:Parameter xmi.id="param_return_getName_Identifyable" name="return" kind="return" type="UnspecifiedType"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_getEmail" name="getEmail" visibility="public">
+              <UML:Parameter xmi.id="param_return_getEmail" name="return" kind="return" type="UnspecifiedType"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class_ProjectImpl" name="ProjectImpl" visibility="public">
+          <UML:Dependency xmi.id="dep_ProjectImpl_Project">
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_ProjectImpl"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Interface xmi.idref="interface_Project"/>
+            </UML:Dependency.supplier>
+            <UML:Dependency.stereotype xmi.idref="stereo_realize"/>
+          </UML:Dependency>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Project_Member">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Project_Member_Project" type="interface_Project" aggregation="composite" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Project_Member_Member" type="interface_Member" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Project_Group">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Project_Group_Project" type="interface_Project" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Project_Group_Group" type="interface_Group" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Stereotype xmi.id="stereo_realize" name="realize"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

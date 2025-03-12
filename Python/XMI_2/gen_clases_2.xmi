@@ -1,0 +1,166 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Data Types -->
+        <UML:DataType xmi.id="Kl3PasXZM9xZ" name="String"/>
+        <UML:DataType xmi.id="qFyFhffdC2VR" name="Number"/>
+        <UML:DataType xmi.id="hoi3AtZAE5Lu" name="Boolean"/>
+        
+        <!-- Classes and Attributes -->
+        <UML:Class xmi.id="5cnlH5Zpa5Ch" name="Product" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="Product_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Kl3PasXZM9xZ"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="VRjSVSgXm13U" name="Brand" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="Brand_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Kl3PasXZM9xZ"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="nvzmh7Onj9W1" name="Variete" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="Variete_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Kl3PasXZM9xZ"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="F5qp81WeQF6t" name="Price" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="Price_amount" name="amount" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="qFyFhffdC2VR"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="Price_special" name="special" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="hoi3AtZAE5Lu"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="HvF0ycYp859H" name="MarketBrand" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="MarketBrand_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Kl3PasXZM9xZ"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="2jTrwR4d4jEF" name="Market" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="Market_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Kl3PasXZM9xZ"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="lkgrEnmTi0Se" name="Purchase" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="Purchase_total" name="total" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="qFyFhffdC2VR"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="XE5aACi8eH04" name="PurchaseLine" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="ilU5AXipqp7P" name="MeasureUnit" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="MeasureUnit_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Kl3PasXZM9xZ"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="IyN7PQpziruR" name="purchase-market" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Purchase_Market" type="lkgrEnmTi0Se" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Market_Purchase" type="2jTrwR4d4jEF" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="QAy61sXdX3En" name="market-marketBrand" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Market_MarketBrand" type="2jTrwR4d4jEF" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="AssociationEnd_MarketBrand_Market" type="HvF0ycYp859H" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="fW0AXFxGtrVK" name="purchase-product" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Purchase_Product" type="lkgrEnmTi0Se" multiplicity="0..*" />
+            <UML:AssociationEnd xmi.id="AssociationEnd_Product_Purchase" type="5cnlH5Zpa5Ch" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Compositions -->
+        <UML:Association xmi.id="LZ78DoqPFw9a" name="product-price" visibility="public" aggregation="composite">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Product_Price" type="5cnlH5Zpa5Ch" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Price_Product" type="F5qp81WeQF6t" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="YZilTrMPX8WL" name="marketbrand-market" visibility="public" aggregation="composite">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AssociationEnd_MarketBrand_Market_Compose" type="HvF0ycYp859H" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Market_MarketBrand_Compose" type="2jTrwR4d4jEF" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Aggregations -->
+        <UML:Association xmi.id="l2M3iaCuN2RD" name="variete-product" visibility="public" aggregation="aggregate">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Variete_Product" type="nvzmh7Onj9W1" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Product_Variete" type="5cnlH5Zpa5Ch" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="ZrL7zrQkKiF9" name="brand-product" visibility="public" aggregation="aggregate">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Brand_Product" type="VRjSVSgXm13U" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="AssociationEnd_Product_Brand" type="5cnlH5Zpa5Ch" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

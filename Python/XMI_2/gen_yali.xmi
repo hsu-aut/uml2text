@@ -1,0 +1,75 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="Top-Level Modell">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klassen und deren Beziehungen zu anderen -->
+        
+        <UML:Class xmi.id="class_Device" name="Device" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_device_status" name="status" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Partition" name="Partition" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Partition_Device" parent="class_Device"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_format" name="format" visibility="public"/>
+            <UML:Operation xmi.id="op_resize" name="resize" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Ext3FileSystem" name="Ext3FileSystem" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Ext3FileSystem_FileSystem" parent="class_FileSystem"/>
+        </UML:Class>
+        
+        <!-- GUI-Komponenten -->
+        
+        <UML:Class xmi.id="class_Widget" name="Widget" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_ErrorWidget" name="ErrorWidget" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ErrorWidget_Widget" parent="class_Widget"/>
+        </UML:Class>
+        
+        <!-- Exceptions und Fehlerbehandlung -->
+        
+        <UML:Class xmi.id="class_Exception" name="Exception" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_YaliError" name="YaliError" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_YaliError_Exception" parent="class_Exception"/>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        
+        <UML:Association xmi.id="assoc_Partition_FileSystem">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Partition" type="class_Partition" name="partition" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FileSystem" type="class_FileSystem" name="fileSystem" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition von Datentypen -->
+        
+        <UML:DataType xmi.id="String" name="String"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

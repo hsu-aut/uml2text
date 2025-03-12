@@ -1,0 +1,276 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="int" name="int" stereotype="datatype"/>
+        <UML:DataType xmi.id="char" name="char" stereotype="datatype"/>
+        <UML:DataType xmi.id="bool" name="bool" stereotype="datatype"/>
+        <UML:DataType xmi.id="string" name="string" stereotype="datatype"/>
+        
+        <!-- Klasse InstallDB -->
+        <UML:Class xmi.id="class_InstallDB" name="InstallDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" type="LockedDBShelf"/>
+            <UML:Attribute xmi.id="attr_db" name="db" visibility="private" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse InstallInfo -->
+        <UML:Class xmi.id="class_InstallInfo" name="InstallInfo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_version" name="version" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_release" name="release" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_build" name="build" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_distribution" name="distribution" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_time" name="time" visibility="private" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Aggregation zwischen InstallDB und InstallInfo -->
+        <UML:Association xmi.id="assoc_InstallDB_InstallInfo">
+          <UML:Association.connection>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_InstallDB_InstallInfo_InstallDB" 
+                type="class_InstallDB" 
+                name="installDB" 
+                visibility="public" 
+                aggregation="composite" 
+                multiplicity="1"/>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_InstallDB_InstallInfo_InstallInfo" 
+                type="class_InstallInfo" 
+                name="installInfo" 
+                visibility="public" 
+                aggregation="none" 
+                multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Klasse LockedDBShelf -->
+        <UML:Class xmi.id="class_LockedDBShelf" name="LockedDBShelf" visibility="public" isAbstract="false"/>
+        
+        <!-- Klasse RepoDB -->
+        <UML:Class xmi.id="class_RepoDB" name="RepoDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" type="LockedDBShelf"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse Repo -->
+        <UML:Class xmi.id="class_Repo" name="Repo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_indexuri" name="indexuri" visibility="private" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Aggregation zwischen RepoDB und Repo -->
+        <UML:Association xmi.id="assoc_RepoDB_Repo">
+          <UML:Association.connection>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_RepoDB_Repo_RepoDB" 
+                type="class_RepoDB" 
+                name="repoDB" 
+                visibility="public" 
+                aggregation="composite" 
+                multiplicity="1"/>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_RepoDB_Repo_Repo" 
+                type="class_Repo" 
+                name="repo" 
+                visibility="public" 
+                aggregation="none" 
+                multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Klasse FilesDB -->
+        <UML:Class xmi.id="class_FilesDB" name="FilesDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" type="LockedDBShelf"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse FileInfo -->
+        <UML:Class xmi.id="class_FileInfo" name="FileInfo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_path" name="path" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_size" name="size" visibility="private" type="int"/>
+            <UML:Attribute xmi.id="attr_hash" name="hash" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_permanent" name="permanent" visibility="private" type="bool"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Aggregation zwischen FilesDB und FileInfo -->
+        <UML:Association xmi.id="assoc_FilesDB_FileInfo">
+          <UML:Association.connection>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_FilesDB_FileInfo_FilesDB" 
+                type="class_FilesDB" 
+                name="filesDB" 
+                visibility="public" 
+                aggregation="composite" 
+                multiplicity="1"/>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_FilesDB_FileInfo_FileInfo" 
+                type="class_FileInfo" 
+                name="fileInfo" 
+                visibility="public" 
+                aggregation="none" 
+                multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Klasse ItemByRepo -->
+        <UML:Class xmi.id="class_ItemByRepo" name="ItemByRepo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" type="LockedDBShelf"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Enumeration repo -->
+        <UML:Enumeration xmi.id="enum_repo" name="repo">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="lit_installed" name="installed"/>
+            <UML:EnumerationLiteral xmi.id="lit_thirdparty" name="thirdparty"/>
+            <UML:EnumerationLiteral xmi.id="lit_repos" name="repos"/>
+            <UML:EnumerationLiteral xmi.id="lit_all" name="all"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+        
+        <!-- Klasse ComponentDB -->
+        <UML:Class xmi.id="class_ComponentDB" name="ComponentDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_itemByRepo" name="itemByRepo" visibility="private" type="ItemByRepo"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse Component -->
+        <UML:Class xmi.id="class_Component" name="Component" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_localname" name="localname" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_summary" name="summary" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_dependencies" name="dependencies" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_packages" name="packages" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_sources" name="sources" visibility="private" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Aggregation zwischen ComponentDB und Component -->
+        <UML:Association xmi.id="assoc_ComponentDB_Component">
+          <UML:Association.connection>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_ComponentDB_Component_ComponentDB" 
+                type="class_ComponentDB" 
+                name="componentDB" 
+                visibility="public" 
+                aggregation="composite" 
+                multiplicity="1"/>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_ComponentDB_Component_Component" 
+                type="class_Component" 
+                name="component" 
+                visibility="public" 
+                aggregation="none" 
+                multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Klasse PackageDB -->
+        <UML:Class xmi.id="class_PackageDB" name="PackageDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" type="ItemByRepo"/>
+            <UML:Attribute xmi.id="attr_dr" name="dr" visibility="private" type="ItemByRepo"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse Package -->
+        <UML:Class xmi.id="class_Package" name="Package" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_package_name" name="name" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_summary" name="summary" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_partof" name="partof" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_license" name="license" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_dependencies" name="dependencies" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_conflicts" name="conflicts" visibility="private" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Aggregation zwischen PackageDB und Package -->
+        <UML:Association xmi.id="assoc_PackageDB_Package">
+          <UML:Association.connection>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_PackageDB_Package_PackageDB" 
+                type="class_PackageDB" 
+                name="packageDB" 
+                visibility="public" 
+                aggregation="composite" 
+                multiplicity="1"/>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_PackageDB_Package_Package" 
+                type="class_Package" 
+                name="package" 
+                visibility="public" 
+                aggregation="none" 
+                multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Klasse SourceDB -->
+        <UML:Class xmi.id="class_SourceDB" name="SourceDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" type="ItemByRepo"/>
+            <UML:Attribute xmi.id="attr_dpkgtosrc" name="dpkgtosrc" visibility="private" type="ItemByRepo"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse SpecFile -->
+        <UML:Class xmi.id="class_SpecFile" name="SpecFile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_source" name="source" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_packages" name="packages" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_history" name="history" visibility="private" type="string"/>
+            <UML:Attribute xmi.id="attr_components" name="components" visibility="private" type="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Aggregation zwischen SourceDB und SpecFile -->
+        <UML:Association xmi.id="assoc_SourceDB_SpecFile">
+          <UML:Association.connection>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_SourceDB_SpecFile_SourceDB" 
+                type="class_SourceDB" 
+                name="sourceDB" 
+                visibility="public" 
+                aggregation="composite" 
+                multiplicity="1"/>
+            <UML:AssociationEnd 
+                xmi.id="assocEnd_SourceDB_SpecFile_SpecFile" 
+                type="class_SpecFile" 
+                name="specFile" 
+                visibility="public" 
+                aggregation="none" 
+                multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

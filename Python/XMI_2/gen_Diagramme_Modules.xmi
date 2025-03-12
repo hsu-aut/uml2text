@@ -1,0 +1,125 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StrategicGame" name="StrategicGame">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Affichage Class -->
+        <UML:Class xmi.id="class_Affichage" name="Affichage">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tileSet" name="tileSet" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tileSetTexture" name="tileSetTexture" visibility="private"/>
+            <UML:Attribute xmi.id="attr_nbTileCamX" name="nbTileCamX" visibility="private"/>
+            <UML:Attribute xmi.id="attr_nbTileCamY" name="nbTileCamY" visibility="private"/>
+            <UML:Attribute xmi.id="attr_jeu" name="jeu" visibility="private"/>
+            <UML:Operation xmi.id="op_initAffichage" name="initAffichage"/>
+            <UML:Operation xmi.id="op_affiche" name="affiche"/>
+            <UML:Operation xmi.id="op_detruireAffichage" name="detruireAffichage"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Batiment Class -->
+        <UML:Class xmi.id="class_Batiment" name="Batiment">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="attr_typeBat" name="typeBat" visibility="private"/>
+            <UML:Attribute xmi.id="attr_vieCourante" name="vieCourante" visibility="private"/>
+            <UML:Attribute xmi.id="attr_enConstruction" name="enConstruction" visibility="private"/>
+            <UML:Operation xmi.id="op_initBatiment" name="initBatiment"/>
+            <UML:Operation xmi.id="op_detruireBatiment" name="detruireBatiment"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- BatBase Class -->
+        <UML:Class xmi.id="class_BatBase" name="BatBase">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nomBat" name="nomBat" visibility="private"/>
+            <UML:Attribute xmi.id="attr_vieMax" name="vieMax" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tempsConstruct" name="tempsConstruct" visibility="private"/>
+            <UML:Attribute xmi.id="attr_coutPierre" name="coutPierre" visibility="private"/>
+            <UML:Attribute xmi.id="attr_coutMithril" name="coutMithril" visibility="private"/>
+            <UML:Operation xmi.id="op_chargementBatBase" name="chargementBatBase"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- UniteBase Class -->
+        <UML:Class xmi.id="class_UniteBase" name="UniteBase">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_vieMax" name="vieMax" visibility="private"/>
+            <UML:Attribute xmi.id="attr_attaque" name="attaque" visibility="private"/>
+            <UML:Attribute xmi.id="attr_nom" name="nom" visibility="private"/>
+            <UML:Operation xmi.id="op_chargementUniteBase" name="chargementUniteBase"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Unite Class -->
+        <UML:Class xmi.id="class_Unite" name="Unite">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_deplacement" name="deplacement" visibility="private"/>
+            <UML:Attribute xmi.id="attr_posCibleX" name="posCibleX" visibility="private"/>
+            <UML:Attribute xmi.id="attr_chemin" name="chemin" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Jeu Class -->
+        <UML:Class xmi.id="class_Jeu" name="Jeu">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nbJoueur" name="nbJoueur" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tableauJoueur" name="tableauJoueur" visibility="private"/>
+            <UML:Attribute xmi.id="attr_carte" name="carte" visibility="private"/>
+            <UML:Operation xmi.id="op_commencerPartie" name="commencerPartie"/>
+            <UML:Operation xmi.id="op_boucleJeu" name="boucleJeu"/>
+            <UML:Operation xmi.id="op_sauvegarder" name="sauvegarder"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Joueur Class -->
+        <UML:Class xmi.id="class_Joueur" name="Joueur">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_idJoueur" name="idJoueur" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pierre" name="pierre" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mithril" name="mithril" visibility="private"/>
+            <UML:Attribute xmi.id="attr_cameraX" name="cameraX" visibility="private"/>
+            <UML:Attribute xmi.id="attr_cameraY" name="cameraY" visibility="private"/>
+            <UML:Operation xmi.id="op_initJoueur" name="initJoueur"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Terrain Class -->
+        <UML:Class xmi.id="class_Terrain" name="Terrain">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tabCase" name="tabCase" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tailleX" name="tailleX" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tailleY" name="tailleY" visibility="private"/>
+            <UML:Operation xmi.id="op_initTerrain" name="initTerrain"/>
+            <UML:Operation xmi.id="op_detruireTerrain" name="detruireTerrain"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- sCase Class -->
+        <UML:Class xmi.id="class_sCase" name="sCase">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_initCase" name="initCase"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- File Class -->
+        <UML:Class xmi.id="class_File" name="File">
+          <UML:Namespace.ownedElement>
+            <!-- Attributes and operations for File class defined here -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

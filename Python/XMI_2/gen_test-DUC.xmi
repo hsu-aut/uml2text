@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Restaurant" name="Restaurant">
+      
+      <!-- Logical View -->
+      <UML:Package xmi.id="package_LogicalView" name="Logical View">
+        <UML:Namespace.ownedElement>
+          
+          <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+            <UML:Namespace.ownedElement>
+              <UML:DataType xmi.id="datatype_int" name="int"/>
+              <UML:DataType xmi.id="datatype_char" name="char"/>
+              <UML:DataType xmi.id="datatype_bool" name="bool"/>
+              <UML:DataType xmi.id="datatype_float" name="float"/>
+              <UML:DataType xmi.id="datatype_double" name="double"/>
+              <UML:DataType xmi.id="datatype_short" name="short"/>
+              <UML:DataType xmi.id="datatype_long" name="long"/>
+              <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+              <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+              <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+              <UML:DataType xmi.id="datatype_string" name="string"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+          
+        </UML:Namespace.ownedElement>
+      </UML:Package>
+      
+      <!-- Use Case View -->
+      <UML:Package xmi.id="package_UseCaseView" name="Use Case View">
+        <UML:Namespace.ownedElement>
+          
+          <!-- Actors -->
+          <UML:Actor xmi.id="actor_Waiter" name="Waiter"/>
+          <UML:Actor xmi.id="actor_Client" name="Client"/>
+          <UML:Actor xmi.id="actor_Chef" name="Chef"/>
+          <UML:Actor xmi.id="actor_Cashier" name="Cashier"/>
+          
+          <!-- Use Cases -->
+          <UML:UseCase xmi.id="usecase_OrderFood" name="Order Food"/>
+          <UML:UseCase xmi.id="usecase_OrderWine" name="Order Wine"/>
+          <UML:UseCase xmi.id="usecase_ServeFood" name="Serve Food"/>
+          <UML:UseCase xmi.id="usecase_CookFood" name="Cook Food"/>
+          <UML:UseCase xmi.id="usecase_ServeWine" name="Serve Wine"/>
+          <UML:UseCase xmi.id="usecase_EatFood" name="Eat Food"/>
+          <UML:UseCase xmi.id="usecase_DrinkWine" name="Drink Wine"/>
+          <UML:UseCase xmi.id="usecase_PayForFood" name="Pay for Food"/>
+          <UML:UseCase xmi.id="usecase_PayForWine" name="Pay for Wine"/>
+          
+          <!-- Associations -->
+          <UML:Association xmi.id="assoc_Waiter_OrderFood" name="Waiter orders food">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.idref="actor_Waiter"/>
+              <UML:AssociationEnd xmi.idref="usecase_OrderFood"/>
+            </UML:Association.connection>
+          </UML:Association>
+          <UML:Association xmi.id="assoc_Client_OrderFood" name="Client orders food">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.idref="actor_Client"/>
+              <UML:AssociationEnd xmi.idref="usecase_OrderFood"/>
+            </UML:Association.connection>
+          </UML:Association>
+          <UML:Association xmi.id="assoc_Chef_CookFood" name="Chef cooks food">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.idref="actor_Chef"/>
+              <UML:AssociationEnd xmi.idref="usecase_CookFood"/>
+            </UML:Association.connection>
+          </UML:Association>
+          <UML:Association xmi.id="assoc_Client_PayForFood" name="Client pays for food">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.idref="actor_Client"/>
+              <UML:AssociationEnd xmi.idref="usecase_PayForFood"/>
+            </UML:Association.connection>
+          </UML:Association>
+          <UML:Association xmi.id="assoc_Cashier_FacilitatePayment" name="Cashier facilitates payment">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.idref="actor_Cashier"/>
+              <UML:AssociationEnd xmi.idref="usecase_PayForFood"/>
+            </UML:Association.connection>
+          </UML:Association>
+          
+          <!-- Dependencies -->
+          <UML:Dependency xmi.id="dep_OrderWine_OrderFood" name="Order Wine depends on Order Food">
+            <UML:Dependency.client>
+              <UML:UseCase xmi.idref="usecase_OrderWine"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:UseCase xmi.idref="usecase_OrderFood"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+          <UML:Dependency xmi.id="dep_ServeFood_ServeWine" name="Serve Food depends on Serve Wine">
+            <UML:Dependency.client>
+              <UML:UseCase xmi.idref="usecase_ServeFood"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:UseCase xmi.idref="usecase_ServeWine"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+          <UML:Dependency xmi.id="dep_DrinkWine_EatFood" name="Drink Wine depends on Eat Food">
+            <UML:Dependency.client>
+              <UML:UseCase xmi.idref="usecase_DrinkWine"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:UseCase xmi.idref="usecase_EatFood"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+          <UML:Dependency xmi.id="dep_PayForWine_ServeWine" name="Pay for Wine depends on Serve Wine">
+            <UML:Dependency.client>
+              <UML:UseCase xmi.idref="usecase_PayForWine"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:UseCase xmi.idref="usecase_ServeWine"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+          
+        </UML:Namespace.ownedElement>
+      </UML:Package>
+
+      <!-- Component View (Empty) -->
+      <UML:Package xmi.id="package_ComponentView" name="Component View">
+        <UML:Namespace.ownedElement/>
+      </UML:Package>
+
+      <!-- Deployment View (Empty) -->
+      <UML:Package xmi.id="package_DeploymentView" name="Deployment View">
+        <UML:Namespace.ownedElement/>
+      </UML:Package>
+
+      <!-- Entity Relationship Model (Empty) -->
+      <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model">
+        <UML:Namespace.ownedElement/>
+      </UML:Package>
+
+    </UML:Model>
+  </XMI.content>
+</XMI>

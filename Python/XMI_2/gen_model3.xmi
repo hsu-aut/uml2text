@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Projekt" name="projekt" isAbstract="false" >
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_definition" name="definition">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_datatype" name="datatype">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_Float" name="Float" isAbstract="false"/>
+                
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_void" name="void"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Package xmi.id="package_stereotype" name="stereotype">
+              <UML:Namespace.ownedElement>
+                <UML:Stereotype xmi.id="stereotype_service" name="service" baseClass="Model Class"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="package_src" name="src">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_app" name="app">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_User" name="User" isAbstract="false" stereotype="service">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_listeUser" name="listeUser">
+                      <UML:StructuralFeature.type>
+                        <UML:Interface xmi.idref="interface_List"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Operation xmi.id="op_getAllUser" name="getAllUser">
+                      <UML:Parameter xmi.id="param_void" kind="return" type="datatype_void"/>
+                    </UML:Operation>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Package xmi.id="package_data" name="data">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_Joueur" name="Joueur" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_nom" name="nom" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_prenom" name="prenom" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_login" name="login" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_motDePasse" name="motDePasse" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_mail" name="mail" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_tentativeConnexion" name="tentativeConnexion" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_joueurID" name="joueurID" type="class_Integer"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_Personnage" name="Personnage" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_nom" name="nom" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_description" name="description" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_image" name="image" type="class_Image"/>
+                    <UML:Attribute xmi.id="attr_personnageID" name="personnageID" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_experience" name="experience" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_niveau" name="niveau" type="class_Integer"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_Guilde" name="Guilde" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_guildeID" name="guildeID" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_nom" name="nom" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_description" name="description" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_image" name="image" type="class_Image"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_Objet" name="Objet" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_objetID" name="objetID" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_nom" name="nom" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_description" name="description" type="class_String"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_TypeObjet" name="TypeObjet" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_typeObjetID" name="typeObjetID" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_nom" name="nom" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_description" name="description" type="class_String"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_Caracteristiques" name="Caracteristiques" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_caracteristiqueID" name="caracteristiqueID" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_duree" name="duree" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_vie" name="vie" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_force" name="force" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_habilete" name="habilete" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_endurance" name="endurance" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_intellGence" name="intellGence" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_attaque" name="attaque" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_defense" name="defense" type="class_Integer"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_TypeCaracteristique" name="TypeCaracteristique" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_typeCaracteristiqueID" name="caracteristiqueID" type="class_Integer"/>
+                    <UML:Attribute xmi.id="attr_nom" name="nom" type="class_String"/>
+                    <UML:Attribute xmi.id="attr_description" name="description" type="class_String"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="package_type" name="type">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Image" name="Image" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="package_java" name="java">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_util" name="util">
+              <UML:Namespace.ownedElement>
+                <UML:Interface xmi.id="interface_List" name="List"/>
+                <UML:Class xmi.id="class_Date" name="Date" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Package xmi.id="package_math" name="math">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_BigInteger" name="BigInteger" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Package xmi.id="package_lang" name="lang">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_String" name="String" isAbstract="false"/>
+                <UML:Class xmi.id="class_Integer" name="Integer" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Association xmi.id="assoc_Joueur_Personnage">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Joueur" type="class_Joueur" name="joueur" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Personnage" type="class_Personnage" name="personnage" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Guilde_Personnage">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Guilde" type="class_Guilde" name="guilde" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Personnages" type="class_Personnage" name="personnages" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Personnage_Caracteristiques">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PersonnageCar" type="class_Personnage" name="personnage" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Caracteristiques" type="class_Caracteristiques" name="caracteristiques" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Objet_TypeObjet">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Objet" type="class_Objet" name="objet" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TypeObjet" type="class_TypeObjet" name="typeObjet" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_TypeObjet_CategorieObjet">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TypeObjet" type="class_TypeObjet" name="typeObjet" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CategorieObjet" type="class_CategorieObjet" name="categorieObjet" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

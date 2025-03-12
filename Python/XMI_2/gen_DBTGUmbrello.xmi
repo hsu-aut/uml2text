@@ -1,0 +1,75 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        <!-- Paket Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="datatype_int" name="int"/>
+            <UML:Class xmi.id="datatype_char" name="char"/>
+            <UML:Class xmi.id="datatype_bool" name="bool"/>
+            <UML:Class xmi.id="datatype_float" name="float"/>
+            <UML:Class xmi.id="datatype_double" name="double"/>
+            <UML:Class xmi.id="datatype_short" name="short"/>
+            <UML:Class xmi.id="datatype_long" name="long"/>
+            <UML:Class xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Logical View -->
+        <UML:Class xmi.id="class_character128" name="character(128)"/>
+        <UML:Class xmi.id="class_serila" name="serila"/>
+        
+        <!-- Entities im Entity Relationship Model -->
+        <UML:Class xmi.id="class_Cities" name="Cities" visibility="public">
+          <UML:Attribute xmi.id="attr_ID_Cities" name="ID_Cities" visibility="private"/>
+          <UML:Attribute xmi.id="attr_City_Name" name="City_Name" visibility="private"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Departaments" name="Departaments" visibility="public">
+          <UML:Attribute xmi.id="attr_ID_Departaments" name="ID_Departaments" visibility="private"/>
+          <UML:Attribute xmi.id="attr_Departament_Name" name="Departament_Name" visibility="private"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Operators" name="Operators" visibility="public">
+          <UML:Attribute xmi.id="attr_ID_Operators" name="ID_Operators" visibility="private"/>
+          <UML:Attribute xmi.id="attr_Operators_Name" name="Operators_Name" visibility="private"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Frequency_Bands" name="Frequency_Bands" visibility="public"/>
+
+        <UML:Class xmi.id="class_Frequency_Ranks" name="Frequency_Ranks" visibility="public"/>
+
+        <UML:Class xmi.id="class_Channels" name="Channels" visibility="public"/>
+
+        <!-- Assoziationen im Entity Relationship Model -->
+        <UML:Association xmi.id="assoc_Cities_Departaments" name="Cities_by_Departament" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_Cities" type="class_Cities" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_Departaments" type="class_Departaments" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Channels_Assignation_Operators" name="Channels_Assignation_by_Operator" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_Operators" type="class_Operators" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_Channels" type="class_Channels" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Spezielle Assoziationen -->
+        <UML:Generalization xmi.id="gen_Channel_Assignations_ISA" parent="class_Channels" child="class_Frequency_Bands"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

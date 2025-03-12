@@ -1,0 +1,280 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Resource" name="Resource" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_res_id" name="res_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_uri" name="uri" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SurfaceForm" name="SurfaceForm" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_sf_id" name="sf_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CandidateMapping" name="CandidateMapping" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_sf_id" name="sf_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SurfaceForm"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_res_id" name="res_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Resource"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Context" name="Context" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_res_id" name="res_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Resource"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_token_id" name="token_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Token"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ResourceType" name="ResourceType" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_res_id" name="res_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Resource"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_type_id" name="type_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_OntologyClass"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Topic" name="Topic" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_topic_id" name="topic_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_OntologyClass" name="OntologyClass" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_type_id" name="type_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TopicalContext" name="TopicalContext" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_token_id" name="token_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Token"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_topic_id" name="topic_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Topic"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TopicalPrior" name="TopicalPrior" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_res_id" name="res_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Resource"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_topic_id" name="topic_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Topic"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Token" name="Token" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_token_id" name="token_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Resource_ResourceType">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Resource_ResourceType_Resource" type="class_Resource" name="resource" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Resource_ResourceType_ResourceType" type="class_ResourceType" name="resourceType" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ResourceType_OntologyClass">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ResourceType_OntologyClass_ResourceType" type="class_ResourceType" name="resourceType" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ResourceType_OntologyClass_OntologyClass" type="class_OntologyClass" name="ontologyClass" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_SurfaceForm_CandidateMapping">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SurfaceForm_CandidateMapping_SurfaceForm" type="class_SurfaceForm" name="surfaceForm" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SurfaceForm_CandidateMapping_CandidateMapping" type="class_CandidateMapping" name="candidateMapping" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Resource_CandidateMapping">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Resource_CandidateMapping_Resource" type="class_Resource" name="resource" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Resource_CandidateMapping_CandidateMapping" type="class_CandidateMapping" name="candidateMapping" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Context_Token">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Context_Token_Context" type="class_Context" name="context" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Context_Token_Token" type="class_Token" name="token" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_TopicalContext_Topic">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TopicalContext_Topic_TopicalContext" type="class_TopicalContext" name="topicalContext" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TopicalContext_Topic_Topic" type="class_Topic" name="topic" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Context_Resource">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Context_Resource_Context" type="class_Context" name="context" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Context_Resource_Resource" type="class_Resource" name="resource" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_TopicalPrior_Resource">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TopicalPrior_Resource_TopicalPrior" type="class_TopicalPrior" name="topicalPrior" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TopicalPrior_Resource_Resource" type="class_Resource" name="resource" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_TopicalPrior_Topic">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TopicalPrior_Topic_TopicalPrior" type="class_TopicalPrior" name="topicalPrior" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TopicalPrior_Topic_Topic" type="class_Topic" name="topic" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,94 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StandardProfileL3" name="StandardProfileL3">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package Import -->
+        <UML:PackageImport xmi.id="packageImport_UMLMetamodel" importedPackage="UMLMetamodel"/>
+
+        <!-- Extension: Component_BuildComponent -->
+        <UML:Class xmi.id="extension_Component_BuildComponent" name="Component_BuildComponent" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="base_Component" name="base_Component" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_BuildComponent"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Extension: Model_Metamodel -->
+        <UML:Class xmi.id="extension_Model_Metamodel" name="Model_Metamodel" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="base_Model" name="base_Model" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Metamodel"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Extension: Model_SystemModel -->
+        <UML:Class xmi.id="extension_Model_SystemModel" name="Model_SystemModel" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="base_Model" name="base_Model" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SystemModel"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Stereotype: BuildComponent -->
+        <UML:Class xmi.id="class_BuildComponent" name="BuildComponent" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Association to Component_BuildComponent -->
+            <UML:Association xmi.id="assoc_BuildComponent_ComponentBuildComponent" name="BuildComponent-ComponentBuildComponent">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_BuildComponent" type="class_BuildComponent" name="buildComponent" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_ComponentBuildComponent" type="extension_Component_BuildComponent" name="componentBuildComponent" visibility="public" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Stereotype: Metamodel -->
+        <UML:Class xmi.id="class_Metamodel" name="Metamodel" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Association to Model_Metamodel -->
+            <UML:Association xmi.id="assoc_Metamodel_ModelMetamodel" name="Metamodel-ModelMetamodel">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Metamodel" type="class_Metamodel" name="metamodel" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_ModelMetamodel" type="extension_Model_Metamodel" name="modelMetamodel" visibility="public" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Stereotype: SystemModel -->
+        <UML:Class xmi.id="class_SystemModel" name="SystemModel" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Association to Model_SystemModel -->
+            <UML:Association xmi.id="assoc_SystemModel_ModelSystemModel" name="SystemModel-ModelSystemModel">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_SystemModel" type="class_SystemModel" name="systemModel" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_ModelSystemModel" type="extension_Model_SystemModel" name="modelSystemModel" visibility="public" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

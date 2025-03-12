@@ -1,0 +1,97 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DependencyMatrixCustomization" name="DependencyMatrixCustomization">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Aufzählungen -->
+        <UML:Enumeration xmi.id="enum_TextDirection" name="TextDirection" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="lit_Vertical" name="Vertical"/>
+            <UML:EnumerationLiteral xmi.id="lit_Horizontal" name="Horizontal"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_RelationOption" name="RelationOption" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="lit_All" name="All"/>
+            <UML:EnumerationLiteral xmi.id="lit_WithRelations" name="With relations"/>
+            <UML:EnumerationLiteral xmi.id="lit_WithoutRelations" name="Without relations"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_Direction" name="Direction" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="lit_RowToColumn" name="Row to column"/>
+            <UML:EnumerationLiteral xmi.id="lit_ColumnToRow" name="Column to row"/>
+            <UML:EnumerationLiteral xmi.id="lit_Both" name="Both"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_OwnerDisplayMode" name="OwnerDisplayMode" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="lit_CompleteTree" name="Complete tree"/>
+            <UML:EnumerationLiteral xmi.id="lit_Hidden" name="Hidden"/>
+            <UML:EnumerationLiteral xmi.id="lit_FullQualifiedName" name="Full qualified name"/>
+            <UML:EnumerationLiteral xmi.id="lit_CompactTree" name="Compact tree"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_SortingMode" name="SortingMode" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="lit_Ascending" name="Ascending"/>
+            <UML:EnumerationLiteral xmi.id="lit_Descending" name="Descending"/>
+            <UML:EnumerationLiteral xmi.id="lit_Custom" name="Custom"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Klasse -->
+        <UML:Class xmi.id="class_CustomizationOfDependencyMatrix" name="CustomizationOfDependencyMatrix" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Row" name="Row" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Column" name="Column" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Stereotypen -->
+        <UML:Stereotype xmi.id="stereo_DependencyMatrix" name="DependencyMatrix" visibility="public">
+          <UML:Stereotype.child>
+            <UML:Attribute xmi.id="attr_columnTextDirection" name="columnTextDirection" visibility="public" type="enum_TextDirection"/>
+            <UML:Attribute xmi.id="attr_columnOwnerDisplayMode" name="columnOwnerDisplayMode" visibility="public" type="enum_OwnerDisplayMode"/>
+            <UML:Attribute xmi.id="attr_showInnerDependencies" name="showInnerDependencies" visibility="public"/>
+          </UML:Stereotype.child>
+        </UML:Stereotype>
+
+        <UML:Stereotype xmi.id="stereo_MatrixFilter" name="MatrixFilter" visibility="public">
+          <UML:Stereotype.child>
+            <UML:Attribute xmi.id="attr_rowElementType" name="rowElementType" visibility="public"/>
+            <UML:Attribute xmi.id="attr_removedRowElements" name="removedRowElements" visibility="public"/>
+          </UML:Stereotype.child>
+        </UML:Stereotype>
+
+        <!-- Erweiterungen -->
+        <UML:Extension xmi.id="ext_DependencyMatrix" name="DependencyMatrixExtension" visibility="public">
+          <UML:Extension.extendedElement>
+            <UML:Stereotype xmi.idref="stereo_DependencyMatrix"/>
+          </UML:Extension.extendedElement>
+        </UML:Extension>
+
+        <UML:Extension xmi.id="ext_MatrixFilter" name="MatrixFilterExtension" visibility="public">
+          <UML:Extension.extendedElement>
+            <UML:Stereotype xmi.idref="stereo_MatrixFilter"/>
+          </UML:Extension.extendedElement>
+        </UML:Extension>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,518 @@
+### Instructions:
+Analysiere die im Input folgende textuelle Modellbeschreibung und wandle sie in ein UML-Modell um, welches du im XMI-Format beschreib und nach XML-Syntax erstellst, die alle Klassen, Attribute, Operationen und definierten Beziehungen. 
+
+### Restrains:
+Achte dabei darauf, dass die XML-Syntax-Syntax exakt eingehalten wird und das Modell sowohl syntaktisch als auch semantisch korrekt ist.
+Stelle außerdem sicher, dass das generierte Modell ausschließlich auf den im Kontext beschriebenen Elementen basiert.
+Verwende ausschließlich das XML-Syntax-Format zur Darstellung des UML-Modells.
+Es dürfen keine zusätzlichen Klassen oder Beziehungen eingefügt werden, die nicht in der Beschreibung enthalten sind.
+Die Aggregationen und Referenzen müssen exakt abgebildet werden.
+Die Struktur und Namensgebung der Klassen, Attribute und Operationen müssen exakt der Beschreibung folgen.
+Beachte die T-Box im Kontext zum vorgehen.
+Wenn etwas nicht vorkommt, dann erwähne es nicht, anstatt zu sagen, dass es nicht vorkommt.
+
+###Kontext:
+
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = 'Sun May 26 18:40:26 CEST 2013'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
+      <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $ </XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id = 'TBoxModel_1' name = 'TBoxModel' isSpecification = 'false' isRoot = 'false' isLeaf = 'false' isAbstract = 'false'>
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Class" -->
+        <UML:Class xmi.id = 'TBox_Class' name = 'Class' visibility = 'public' isSpecification = 'false' isRoot = 'false' isLeaf = 'false' isAbstract = 'false'>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id = 'TBox_Class_name' name = 'name' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+            <UML:Attribute xmi.id = 'TBox_Class_identifier' name = 'identifier' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+            <UML:Operation xmi.id = 'TBox_Class_getAttributes' name = 'getAttributes' visibility = 'public' isSpecification = 'false' isQuery = 'true'>
+              <UML:Parameter xmi.id = 'TBox_Class_getAttributes_return' name = 'return' kind = 'return' type = 'List&lt;Attribute&gt;'/>
+            </UML:Operation>
+            <UML:Operation xmi.id = 'TBox_Class_getOperations' name = 'getOperations' visibility = 'public' isSpecification = 'false' isQuery = 'true'>
+              <UML:Parameter xmi.id = 'TBox_Class_getOperations_return' name = 'return' kind = 'return' type = 'List&lt;Operation&gt;'/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Attribute" -->
+        <UML:Class xmi.id = 'TBox_Attribute' name = 'Attribute' visibility = 'public' isSpecification = 'false' isRoot = 'false' isLeaf = 'false' isAbstract = 'false'>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id = 'TBox_Attribute_name' name = 'name' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+            <UML:Attribute xmi.id = 'TBox_Attribute_type' name = 'type' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+            <UML:Attribute xmi.id = 'TBox_Attribute_visibility' name = 'visibility' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Operation" -->
+        <UML:Class xmi.id = 'TBox_Operation' name = 'Operation' visibility = 'public' isSpecification = 'false' isRoot = 'false' isLeaf = 'false' isAbstract = 'false'>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id = 'TBox_Operation_name' name = 'name' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+            <UML:Operation xmi.id = 'TBox_Operation_getParameters' name = 'getParameters' visibility = 'public' isSpecification = 'false' isQuery = 'true'>
+              <UML:Parameter xmi.id = 'TBox_Operation_getParameters_return' name = 'return' kind = 'return' type = 'List&lt;Parameter&gt;'/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Parameter" -->
+        <UML:Class xmi.id = 'TBox_Parameter' name = 'Parameter' visibility = 'public' isSpecification = 'false' isRoot = 'false' isLeaf = 'false' isAbstract = 'false'>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id = 'TBox_Parameter_name' name = 'name' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+            <UML:Attribute xmi.id = 'TBox_Parameter_type' name = 'type' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+            <UML:Attribute xmi.id = 'TBox_Parameter_direction' name = 'direction' visibility = 'public' isSpecification = 'false' ownerScope = 'instance' changeability = 'changeable' targetScope = 'instance'/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Assoziation zwischen Class und Attribute -->
+        <UML:Association xmi.id = 'TBox_Association_Class_Attribute' name = 'class-attribute' visibility = 'public' isSpecification = 'false'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = 'TBox_Association_Class_Attribute_end1' type = 'TBox_Class' aggregation = 'none'/>
+            <UML:AssociationEnd xmi.id = 'TBox_Association_Class_Attribute_end2' type = 'TBox_Attribute' aggregation = 'none'/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation zwischen Class und Operation -->
+        <UML:Association xmi.id = 'TBox_Association_Class_Operation' name = 'class-operation' visibility = 'public' isSpecification = 'false'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = 'TBox_Association_Class_Operation_end1' type = 'TBox_Class' aggregation = 'none'/>
+            <UML:AssociationEnd xmi.id = 'TBox_Association_Class_Operation_end2' type = 'TBox_Operation' aggregation = 'none'/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation zwischen Operation und Parameter -->
+        <UML:Association xmi.id = 'TBox_Association_Operation_Parameter' name = 'operation-parameter' visibility = 'public' isSpecification = 'false'>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = 'TBox_Association_Operation_Parameter_end1' type = 'TBox_Operation' aggregation = 'none'/>
+            <UML:AssociationEnd xmi.id = 'TBox_Association_Operation_Parameter_end2' type = 'TBox_Parameter' aggregation = 'none'/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+
+###Few-Shot
+
+##Example1:
+
+## Instructions:
+Analysiere die im Input folgende textuelle Modellbeschreibung und wandle sie in ein UML-Modell um, welches du im XMI-Format beschreib und nach XML-Syntax erstellst, die alle Klassen, Attribute, Operationen und definierten Beziehungen. 
+
+## Restrains:
+Achte dabei darauf, dass die XML-Syntax-Syntax exakt eingehalten wird und das Modell sowohl syntaktisch als auch semantisch korrekt ist.
+Stelle außerdem sicher, dass das generierte Modell ausschließlich auf den im Kontext beschriebenen Elementen basiert.
+Verwende ausschließlich das XML-Syntax-Format zur Darstellung des UML-Modells.
+Es dürfen keine zusätzlichen Klassen oder Beziehungen eingefügt werden, die nicht in der Beschreibung enthalten sind.
+Die Aggregationen und Referenzen müssen exakt abgebildet werden.
+Die Struktur und Namensgebung der Klassen, Attribute und Operationen müssen exakt der Beschreibung folgen.
+Beachte die T-Box im Kontext zum vorgehen.
+
+##Input:
+Modellname: LibraryManagement
+
+Übersicht:
+Das Modell LibraryManagement bildet ein einfaches Bibliotheksverwaltungssystem ab und besteht aus folgenden Klassen:
+
+Library:
+Aggregiert mehrere Instanzen der Klassen Book und Member. Sie stellt die zentrale Organisationseinheit der Bibliothek dar.
+
+Book:
+Repräsentiert ein Buch in der Bibliothek.
+Attribute:
+
+title (Buchtitel)
+author (Autor)
+isbn (ISBN-Nummer)
+Member:
+Stellt ein Bibliotheksmitglied dar.
+Attribute:
+
+name (Name des Mitglieds)
+memberId (Mitglieds-ID)
+Loan:
+Modelliert die Ausleihe eines Buches an ein Mitglied.
+Attribute:
+
+loanDate (Ausleihdatum)
+returnDate (Rückgabedatum)
+Referenzen:
+Verweist auf ein Book
+Verweist auf ein Member
+Beziehungen:
+
+Die Klasse Library aggregiert die Klassen Book und Member (starke Komposition).
+Die Klasse Loan verbindet Book und Member über assoziative Beziehungen, wodurch die Ausleihe als eigenständiges Element modelliert wird.
+
+##Output:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LibraryManagement" name="LibraryManagement">
+      <UML:Namespace.ownedElement>
+
+        
+        <UML:Class xmi.id="class_Library" name="Library" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Attribute xmi.id="attr_books" name="books" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Book"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            
+            <UML:Attribute xmi.id="attr_members" name="members" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Member"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_Book" name="Book" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_author" name="author" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_isbn" name="isbn" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_Member" name="Member" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_memberId" name="memberId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_Loan" name="Loan" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_loanDate" name="loanDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_returnDate" name="returnDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            
+            <UML:Attribute xmi.id="ref_book" name="book" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Book"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            
+            <UML:Attribute xmi.id="ref_member" name="member" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Member"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Association xmi.id="assoc_Loan_Book">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Loan_Book_Loan" type="class_Loan" name="loan" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Loan_Book_Book" type="class_Book" name="book" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        
+        <UML:Association xmi.id="assoc_Loan_Member">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Loan_Member_Loan" type="class_Loan" name="loan" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Loan_Member_Member" type="class_Member" name="member" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+
+
+##Example 2:
+
+## Instructions:
+Analysiere die im Input folgende textuelle Modellbeschreibung und wandle sie in ein UML-Modell um, welches du im XMI-Format beschreib und nach XML-Syntax erstellst, die alle Klassen, Attribute, Operationen und definierten Beziehungen. 
+
+## Restrains:
+Achte dabei darauf, dass die XML-Syntax-Syntax exakt eingehalten wird und das Modell sowohl syntaktisch als auch semantisch korrekt ist.
+Stelle außerdem sicher, dass das generierte Modell ausschließlich auf den im Kontext beschriebenen Elementen basiert.
+Verwende ausschließlich das XML-Syntax-Format zur Darstellung des UML-Modells.
+Es dürfen keine zusätzlichen Klassen oder Beziehungen eingefügt werden, die nicht in der Beschreibung enthalten sind.
+Die Aggregationen und Referenzen müssen exakt abgebildet werden.
+Die Struktur und Namensgebung der Klassen, Attribute und Operationen müssen exakt der Beschreibung folgen.
+Beachte die T-Box im Kontext zum vorgehen.
+
+##Input:
+Modellname: OnlineShop
+
+Übersicht:
+Das Modell OnlineShop repräsentiert eine einfache E-Commerce-Plattform und besteht aus folgenden Klassen:
+
+OnlineShop:
+Dient als zentrale Plattform, die die wesentlichen Komponenten des Shops verwaltet. Sie aggregiert Produkte, Kunden und Bestellungen.
+
+Product:
+Repräsentiert ein Produkt im Shop.
+Attribute:
+
+name (Produktname)
+price (Preis)
+description (Beschreibung)
+sku (Artikelnummer)
+Customer:
+Stellt einen Kunden dar, der im Shop einkauft.
+Attribute:
+
+firstName (Vorname)
+lastName (Nachname)
+email (E-Mail-Adresse)
+Order:
+Modelliert eine Bestellung eines Kunden.
+Attribute:
+
+orderDate (Bestelldatum)
+status (Bestellstatus)
+Beziehungen:
+Aggregiert mehrere OrderItems (starke Komposition)
+Referenziert einen Customer (Kunde, der die Bestellung aufgegeben hat)
+OrderItem:
+Repräsentiert einen einzelnen Artikel innerhalb einer Bestellung.
+Attribute:
+
+quantity (Menge)
+unitPrice (Preis pro Einheit)
+Beziehungen:
+Referenziert ein Product (das bestellte Produkt)
+Payment:
+Modelliert die Zahlung für eine Bestellung.
+Attribute:
+
+amount (Zahlungsbetrag)
+paymentDate (Zahlungsdatum)
+method (Zahlungsmethode)
+Beziehungen:
+Referenziert die zugehörige Order
+Beziehungen im Überblick:
+
+Die Klasse OnlineShop aggregiert die Klassen Product, Customer und Order.
+Die Klasse Order aggregiert OrderItem und referenziert Customer.
+Die Klasse OrderItem referenziert Product.
+Die Klasse Payment referenziert Order.
+
+##Output:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_OnlineShop" name="OnlineShop">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_OnlineShop" name="OnlineShop" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_products" name="products" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Product"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_customers" name="customers" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Customer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_orders" name="orders" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Order"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_Product" name="Product" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_productName" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_price" name="price" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sku" name="sku" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_Customer" name="Customer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_email" name="email" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_Order" name="Order" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_orderDate" name="orderDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_status" name="status" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_orderItems" name="orderItems" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_OrderItem"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_customer" name="customer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Customer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_OrderItem" name="OrderItem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_quantity" name="quantity" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_unitPrice" name="unitPrice" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_product" name="product" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Product"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_Payment" name="Payment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_amount" name="amount" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_paymentDate" name="paymentDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_method" name="method" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_order" name="order" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Order"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Association xmi.id="assoc_Order_Customer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Order_Customer_Order" type="class_Order" name="order" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Order_Customer_Customer" type="class_Customer" name="customer" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_OrderItem_Product">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OrderItem_Product_OrderItem" type="class_OrderItem" name="orderItem" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_OrderItem_Product_Product" type="class_Product" name="product" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Payment_Order">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Payment_Order_Payment" type="class_Payment" name="payment" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Payment_Order_Order" type="class_Order" name="order" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+
+
+###Input:

@@ -1,0 +1,101 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_testing" name="testing">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_java" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_util" name="util">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_Vector" name="Vector" visibility="public" isAbstract="false"/>
+                <UML:Interface xmi.id="interface_Iterator" name="Iterator" visibility="public"/>
+                <UML:Interface xmi.id="interface_Collection" name="Collection" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Package xmi.id="package_lang" name="lang">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_Object" name="Object" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_Name" name="Name" stereotype="singleton" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Operation" name="Operation" isQuery="true"/>
+          </UML:Classifier.feature>
+          <UML:Generalization xmi.id="generalization_Name_NameIf" parent="interface_NameIf"/>
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_NameIf" name="NameIf" visibility="public"/>
+
+        <UML:Class xmi.id="class_Little" name="Little" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- State machine not represented in XMI -->
+          </UML:Classifier.feature>
+          <UML:Generalization xmi.id="generalization_Little_A" parent="class_A"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_A" name="A" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_BitOf" name="Bit of" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <!-- Activity graph not represented in XMI -->
+          </UML:Classifier.feature>
+          <UML:AssociationEnd type="class_Little" aggregation="composite"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Everything" name="Everything" visibility="public" isAbstract="false">
+          <UML:Comment name="Yes!"/>
+          <UML:Generalization xmi.id="generalization_Everything_BitOf" parent="class_BitOf"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Simple" name="Simple" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attr1" name="attr1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Vector"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_attr2" name="attr2" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Interface xmi.idref="interface_Iterator"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Oper1" name="Oper1"/>
+            <UML:Operation xmi.id="operation_Oper2" name="Oper2"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Association xmi.id="association_Simple_Model">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Simple_Model_Simple" type="class_Simple" name="simple" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Simple_Model_Model" type="class_Model" name="model" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:UseCase xmi.id="usecase_UC1" name="UC1" visibility="public">
+          <UML:Generalization xmi.id="generalization_UC1_UC2" parent="usecase_UC2"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_UC2" name="UC2" visibility="public"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

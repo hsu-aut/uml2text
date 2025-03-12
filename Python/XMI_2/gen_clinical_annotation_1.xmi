@@ -1,0 +1,82 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EAModel" name="EA Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datenmodell -->
+        <UML:Class xmi.id="class_DYEXTN_ABSTRACT_RECORD_ENTRY" name="DYEXTN_ABSTRACT_RECORD_ENTRY" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_MODIFIED_BY" name="MODIFIED_BY" visibility="private"/>
+            <UML:Attribute xmi.id="attr_MODIFIED_DATE" name="MODIFIED_DATE" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ACTIVITY_STATUS" name="ACTIVITY_STATUS" visibility="private"/>
+            <UML:Attribute xmi.id="attr_IDENTIFIER" name="IDENTIFIER" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CATISSUE_PARTICIPANT_REC_NTRY" name="CATISSUE_PARTICIPANT_REC_NTRY" visibility="public">
+          <UML:Generalization xmi.id="gen_ParticipantRecEntry" parent="class_DYEXTN_ABSTRACT_RECORD_ENTRY"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CATISSUE_PARTICIPANT" name="CATISSUE_PARTICIPANT" visibility="public">
+          <UML:Association xmi.id="assoc_CATISSUE_PARTICIPANT_ParticipantRecordEntry" name="ParticipantRecordEntry">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_CATISSUE_PARTICIPANT" type="class_CATISSUE_PARTICIPANT" name="participant" visibility="public" />
+              <UML:AssociationEnd xmi.id="assocEnd_ParticipantRecordEntry" type="class_CATISSUE_PARTICIPANT_REC_NTRY" name="participantRecordEntry" visibility="public" />
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Logisches Modell -->
+        <UML:Class xmi.id="class_TreatmentAnnotation" name="TreatmentAnnotation" visibility="public">
+          <UML:Generalization xmi.id="gen_TreatmentAnnotation" parent="class_ChemoRXAnnotation" />
+          <UML:Generalization xmi.id="gen_TreatmentAnnotation_RadRXAnnotation" parent="class_RadRXAnnotation" />
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ChemoRXAnnotation" name="ChemoRXAnnotation" visibility="public"/>
+
+        <UML:Class xmi.id="class_RadRXAnnotation" name="RadRXAnnotation" visibility="public"/>
+
+        <UML:Class xmi.id="class_HealthExaminationAnnotation" name="HealthExaminationAnnotation" visibility="public">
+          <UML:Generalization xmi.id="gen_HealthExam_RecurrenceHealthExam" parent="class_RecurrenceHealthExaminationAnnotation"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RecurrenceHealthExaminationAnnotation" name="RecurrenceHealthExaminationAnnotation" visibility="public">
+          <UML:Generalization xmi.id="gen_RecurrenceHealth_DistantHealthExam" parent="class_DistantRecurrenceHealthExaminationAnnotation"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DistantRecurrenceHealthExaminationAnnotation" name="DistantRecurrenceHealthExaminationAnnotation" visibility="public"/>
+
+        <UML:Class xmi.id="class_Duration" name="Duration" visibility="public"/>
+        
+        <UML:Class xmi.id="class_EnvironmentalExposuresHealthAnnotation" name="EnvironmentalExposuresHealthAnnotation" visibility="public">
+          <UML:Association xmi.id="assoc_EnvironmentalExposures_Duration" name="duration">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_EnvironmentalExposures" type="class_EnvironmentalExposuresHealthAnnotation" name="environmentalExposures" visibility="public" />
+              <UML:AssociationEnd xmi.id="assocEnd_Duration" type="class_Duration" name="duration" visibility="public" />
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FamilyHistoryAnnotation" name="FamilyHistoryAnnotation" visibility="public">
+          <UML:Association xmi.id="assoc_FamilyHistory_GeneralHealthDiagnosis" name="GeneralHealthDiagnosis">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_FamilyHistory" type="class_FamilyHistoryAnnotation" name="familyHistory" visibility="public" />
+              <UML:AssociationEnd xmi.id="assocEnd_GeneralHealthDiagnosis" type="class_GeneralHealthDiagnosis" name="generalHealthDiagnosis" visibility="public" />
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,66 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Interface xmi.id="interface_StrategyBot" name="StrategyBot"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_ComponentView" name="Component View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="component_DumbBot" name="DumbBot" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="component_OutMessageQueue" name="OutMessageQueue" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="component_PatternWeightBot" name="PatternWeightBot" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="component_HoldBot" name="HoldBot" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="component_KnowledgeBase" name="KnowledgeBase" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="component_EmotionDatabase" name="EmotionDatabase" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="component_CharacterDatabase" name="CharacterDatabase" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="component_BotCharacterSpec" name="BotCharacterSpec" visibility="public" isStatic="true" isAbstract="false"/>
+            <UML:Class xmi.id="component_InMessageQueue" name="InMessageQueue" visibility="public" isAbstract="false"/>
+
+            <UML:Abstraction xmi.id="abstraction_HoldBot" supplier="interface_StrategyBot" client="component_HoldBot"/>
+            <UML:Abstraction xmi.id="abstraction_PatternWeightBot" supplier="interface_StrategyBot" client="component_PatternWeightBot"/>
+            <UML:Abstraction xmi.id="abstraction_DumbBot" supplier="interface_StrategyBot" client="component_DumbBot"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View"/>
+        <UML:Package xmi.id="package_DeploymentView" name="Deployment View"/>
+        <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

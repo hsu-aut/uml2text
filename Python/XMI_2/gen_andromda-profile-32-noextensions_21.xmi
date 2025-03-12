@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UMLModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- DataTypes Package -->
+        <UML:Package xmi.id="package_DataTypes" name="DataTypes">
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition diverser Datentypen -->
+            <UML:DataType xmi.id="datatype_Integer" name="Integer"/>
+            <UML:DataType xmi.id="datatype_DateTime" name="DateTime"/>
+            <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+            <UML:DataType xmi.id="datatype_List" name="List"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Webservice Package -->
+        <UML:Package xmi.id="package_Webservice" name="Webservice">
+          <UML:Namespace.ownedElement>
+
+            <!-- Enums -->
+            <UML:Enumeration xmi.id="enum_WebServiceStyle" name="WebServiceStyle">
+              <UML:Enumeration.literal>
+                <UML:Literal name="wrapped"/>
+                <UML:Literal name="document"/>
+                <UML:Literal name="rpc"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Service Stereotype -->
+        <UML:Package xmi.id="package_Service" name="Service">
+          <UML:Namespace.ownedElement>
+
+            <!-- Application Exception -->
+            <UML:Class xmi.id="class_ApplicationException" name="ApplicationException" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="generalization_ApplicationException_Exception" child="class_ApplicationException" parent="class_Exception"/>
+            </UML:Class>
+
+            <!-- Unexpected Exception -->
+            <UML:Class xmi.id="class_UnexpectedException" name="UnexpectedException" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="generalization_UnexpectedException_Exception" child="class_UnexpectedException" parent="class_Exception"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Process Package -->
+        <UML:Package xmi.id="package_Process" name="Process">
+          <UML:Namespace.ownedElement>
+
+            <!-- Task Stereotype -->
+            <UML:Stereotype xmi.id="stereotype_Task" name="Task"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Presentation Package -->
+        <UML:Package xmi.id="package_Presentation" name="Presentation">
+          <UML:Namespace.ownedElement>
+
+            <!-- FrontEnd Application Stereotype -->
+            <UML:Stereotype xmi.id="stereotype_FrontEndApplication" name="FrontEndApplication"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Persistence Package -->
+        <UML:Package xmi.id="package_Persistence" name="Persistence">
+          <UML:Namespace.ownedElement>
+
+            <!-- Entity Stereotype -->
+            <UML:Stereotype xmi.id="stereotype_Entity" name="Entity"/>
+            <UML:Stereotype xmi.id="stereotype_Manageable" name="Manageable"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

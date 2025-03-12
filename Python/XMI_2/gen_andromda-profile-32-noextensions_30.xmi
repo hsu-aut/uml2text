@@ -1,0 +1,103 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="Sun May 26 18:40:26 CEST 2013">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
+      <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="DataModel" name="DataModel" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+
+        <!-- DataTypes Package -->
+        <UML:Package xmi.id="DataTypes_Package" name="DataTypes">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="DataType_StringArray" name="String[]" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="DataType_DoubleArray" name="double[]" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="DataType_Integer" name="Integer" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="DataType_int"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="DataType_Integer"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="DataType_int" name="int" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="DataType_DateTime" name="DateTime" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="DataType_Date"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="DataType_DateTime"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="DataType_Date" name="Date" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="DataType_boolean" name="boolean" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="DataType_Object" name="Object" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="DataType_List" name="List" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="DataType_long" name="long" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="DataType_Byte" name="Byte" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Webservice Package -->
+        <UML:Package xmi.id="Webservice_Package" name="Webservice">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="Stereotype_WebService" name="WebService"/>
+            <UML:Stereotype xmi.id="Stereotype_WebServiceOperation" name="WebServiceOperation"/>
+            <UML:Enumeration xmi.id="Enum_WebServiceProvider" name="WebServiceProvider">
+              <UML:EnumerationLiteral name="RPC"/>
+              <UML:EnumerationLiteral name="EJB"/>
+            </UML:Enumeration>
+            <UML:Enumeration xmi.id="Enum_WebServiceStyle" name="WebServiceStyle">
+              <UML:EnumerationLiteral name="rpc"/>
+              <UML:EnumerationLiteral name="document"/>
+              <UML:EnumerationLiteral name="wrapped"/>
+            </UML:Enumeration>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Process Package -->
+        <UML:Package xmi.id="Process_Package" name="Process">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="Stereotype_NodeLeave" name="Node Leave"/>
+            <UML:Stereotype xmi.id="Stereotype_Timer" name="Timer"/>
+            <UML:Stereotype xmi.id="Stereotype_BusinessProcess" name="Business Process"/>
+            <UML:Stereotype xmi.id="Stereotype_Task" name="Task"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Presentation Package -->
+        <UML:Package xmi.id="Presentation_Package" name="Presentation">
+          <UML:Namespace.ownedElement>
+            <UML:TagDefinition xmi.id="TagDefinition_WebActionType" name="WebActionType"/>
+            <UML:TagDefinition xmi.id="TagDefinition_WebFieldType" name="WebFieldType"/>
+            <UML:Stereotype xmi.id="Stereotype_FrontEndApplication" name="FrontEndApplication"/>
+            <UML:Stereotype xmi.id="Stereotype_FrontEndUseCase" name="FrontEndUseCase"/>
+            <UML:Stereotype xmi.id="Stereotype_FrontEndView" name="FrontEndView"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Persistence Package -->
+        <UML:Package xmi.id="Persistence_Package" name="Persistence">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="Stereotype_Entity" name="Entity"/>
+            <UML:Stereotype xmi.id="Stereotype_ValueObject" name="ValueObject"/>
+            <UML:Stereotype xmi.id="Stereotype_Identifier" name="Identifier"/>
+            <UML:TagDefinition xmi.id="TagDefinition_HibernateEntityCache" name="@andromda.hibernate.entity.cache"/>
+            <UML:TagDefinition xmi.id="TagDefinition_Column" name="@andromda.persistence.column"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

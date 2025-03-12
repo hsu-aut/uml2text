@@ -1,0 +1,261 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_vwa-db" name="vwa-db">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Drawing" -->
+        <UML:Class xmi.id="class_Drawing" name="Drawing" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_elements" name="elements" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Form"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse "Form" -->
+        <UML:Class xmi.id="class_Form" name="Form" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_position" name="position" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Point"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Vererbte Klasse "Rectangle" -->
+        <UML:Class xmi.id="class_Rectangle" name="Rectangle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_Form"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_width" name="width" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Vererbte Klasse "Circle" -->
+        <UML:Class xmi.id="class_Circle" name="Circle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_Form"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_radius" name="radius" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Point" -->
+        <UML:Class xmi.id="class_Point" name="Point" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Assoziation -->
+        <UML:Association xmi.id="assoc_Drawing_Form" name="contains">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Drawing_Form_Drawing" type="class_Drawing" name="drawing" visibility="public" aggregation="composite" multiplicity="1">
+              <UML:AssociationEnd.participant>
+                <UML:Class xmi.idref="class_Drawing"/>
+              </UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+            <UML:AssociationEnd xmi.id="assocEnd_Drawing_Form_Form" type="class_Form" name="form" visibility="public" aggregation="none" multiplicity="*">
+              <UML:AssociationEnd.participant>
+                <UML:Class xmi.idref="class_Form"/>
+              </UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition von Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+
+        <!-- Instanz der Klasse Drawing -->
+        <UML:Object xmi.id="obj_DrawingInstance" name="DrawingInstance">
+          <UML:Classifier xmi.idref="class_Drawing"/>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_name"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>"Hugo"</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+        </UML:Object>
+
+        <!-- Instanzen der Klasse Rectangle -->
+        <UML:Object xmi.id="obj_r1" name="r1">
+          <UML:Classifier xmi.idref="class_Rectangle"/>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_width"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>6</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_height"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>6</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+        </UML:Object>
+
+        <!-- Instanzen der Klasse Circle -->
+        <UML:Object xmi.id="obj_c1" name="c1">
+          <UML:Classifier xmi.idref="class_Circle"/>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_radius"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>1</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+        </UML:Object>
+
+        <UML:Object xmi.id="obj_c2" name="c2">
+          <UML:Classifier xmi.idref="class_Circle"/>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_radius"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>1</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+        </UML:Object>
+
+        <!-- Instanzen der Klasse Point -->
+        <UML:Object xmi.id="obj_r1p" name="r1p">
+          <UML:Classifier xmi.idref="class_Point"/>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_x"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>0</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_y"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>0</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+        </UML:Object>
+
+        <UML:Object xmi.id="obj_c1p" name="c1p">
+          <UML:Classifier xmi.idref="class_Point"/>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_x"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>1</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_y"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>1</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+        </UML:Object>
+
+        <UML:Object xmi.id="obj_c2p" name="c2p">
+          <UML:Classifier xmi.idref="class_Point"/>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_x"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>2</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+          <UML:Slot>
+            <UML:Slot.definingFeature>
+              <UML:Attribute xmi.idref="attr_y"/>
+            </UML:Slot.definingFeature>
+            <UML:Slot.value>
+              <UML:DataValue>
+                <UML:DataValue.value>2</UML:DataValue.value>
+              </UML:DataValue>
+            </UML:Slot.value>
+          </UML:Slot>
+        </UML:Object>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    
+    <!-- Definition des Modells -->
+    <UML:Model xmi.id="model_Process" name="Process">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klassen -->
+        <UML:Class xmi.id="class_UserNodeType" name="UserNodeType" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_NodeHead" name="NodeHead" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DataConverter" name="DataConverter" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_rawData" name="rawData" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_RawData"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="datatype_RawData" name="RawData"/>
+        <UML:DataType xmi.id="datatype_HashRef" name="HashRef"/>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Node_UserNodeType">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_UserNodeType_Node" type="class_Node" name="node" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_UserNodeType_UserNodeType" type="class_UserNodeType" name="userNodeType" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Node_NodeHead">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_NodeHead_Node" type="class_Node" name="node" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_NodeHead_NodeHead" type="class_NodeHead" name="nodeHead" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Aktivitätendiagramm -->
+        <UML:ActivityGraph xmi.id="activity_ProcessFlow" name="ProcessFlow">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="state_Top" name="top">
+              <UML:CompositeState.substate>
+                <UML:Pseudostate xmi.id="initial_Pseudo" name="initial" kind="initial"/>
+                <UML:ActionState xmi.id="actionState_PrepareData" name="prepare data and initialize"/>
+                <UML:ActionState xmi.id="actionState_LoadYaml" name="loadYaml"/>
+                <UML:ActionState xmi.id="actionState_Convert2Data" name="convert2Data"/>
+                <UML:ActionState xmi.id="actionState_Convert2NodeTree" name="convert2NodeTree"/>
+                <UML:ActionState xmi.id="actionState_MapNodes" name="mapNodes"/>
+                <UML:ActionState xmi.id="actionState_TransferControl" name="transferControl"/>
+                <UML:ActionState xmi.id="actionState_UserActions" name="userActions"/>
+                <UML:ActionState xmi.id="actionState_UserResults" name="userResults"/>
+                <UML:FinalState xmi.id="final_FinalState" name="final"/>
+              </UML:CompositeState.substate>
+              
+              <!-- Transitionen -->
+              <UML:Transition xmi.id="transition_Initial_PrepareData" source="initial_Pseudo" target="actionState_PrepareData"/>
+              <UML:Transition xmi.id="transition_PrepareData_LoadYaml" source="actionState_PrepareData" target="actionState_LoadYaml"/>
+              <UML:Transition xmi.id="transition_LoadYaml_Convert2Data" source="actionState_LoadYaml" target="actionState_Convert2Data"/>
+              <UML:Transition xmi.id="transition_Convert2Data_Convert2NodeTree" source="actionState_Convert2Data" target="actionState_Convert2NodeTree"/>
+              <UML:Transition xmi.id="transition_Convert2NodeTree_MapNodes" source="actionState_Convert2NodeTree" target="actionState_MapNodes"/>
+              <UML:Transition xmi.id="transition_MapNodes_TransferControl" source="actionState_MapNodes" target="actionState_TransferControl"/>
+              <UML:Transition xmi.id="transition_TransferControl_UserActions" source="actionState_TransferControl" target="actionState_UserActions"/>
+              <UML:Transition xmi.id="transition_UserActions_UserResults" source="actionState_UserActions" target="actionState_UserResults"/>
+              <UML:Transition xmi.id="transition_UserResults_Final" source="actionState_UserResults" target="final_FinalState"/>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:ActivityGraph>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

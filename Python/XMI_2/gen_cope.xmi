@@ -1,0 +1,201 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Grundlegende Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        
+        <!-- Definition der Klasse Attribute -->
+        <UML:Class xmi.id="class_Attribute" name="Attribute" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_mandatory" name="mandatory" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_final" name="final" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse FunctionAttribute -->
+        <UML:Class xmi.id="class_FunctionAttribute" name="FunctionAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Attribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse StringAttribute -->
+        <UML:Class xmi.id="class_StringAttribute" name="StringAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FunctionAttribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_minimumLength" name="minimumLength" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_maximumLength" name="maximumLength" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse LongAttribute -->
+        <UML:Class xmi.id="class_LongAttribute" name="LongAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FunctionAttribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse IntegerAttribute -->
+        <UML:Class xmi.id="class_IntegerAttribute" name="IntegerAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FunctionAttribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse DataAttribute -->
+        <UML:Class xmi.id="class_DataAttribute" name="DataAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Attribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse BooleanAttribute -->
+        <UML:Class xmi.id="class_BooleanAttribute" name="BooleanAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FunctionAttribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse DoubleAttribute -->
+        <UML:Class xmi.id="class_DoubleAttribute" name="DoubleAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FunctionAttribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse EnumAttribute -->
+        <UML:Class xmi.id="class_EnumAttribute" name="EnumAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FunctionAttribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse ItemAttribute -->
+        <UML:Class xmi.id="class_ItemAttribute" name="ItemAttribute" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_FunctionAttribute"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Type -->
+        <UML:Class xmi.id="class_Type" name="Type" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Association xmi.id="assoc_Type_Attributes" name="type-attributes">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Type" type="class_Type" visibility="private" aggregation="composite" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Attribute" type="class_Attribute" visibility="private" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Attribute xmi.id="attr_features" name="features" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Feature"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse View -->
+        <UML:Class xmi.id="class_View" name="View" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Definition der Klasse SumView -->
+        <UML:Class xmi.id="class_SumView" name="SumView" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_View"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse UppercaseView -->
+        <UML:Class xmi.id="class_UppercaseView" name="UppercaseView" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_View"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse Pattern -->
+        <UML:Class xmi.id="class_Pattern" name="Pattern" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der Interfaces -->
+        <UML:Interface xmi.id="interface_Function" name="Function"/>
+        <UML:Interface xmi.id="interface_IntegerFunction" name="IntegerFunction"/>
+        <UML:Interface xmi.id="interface_StringFunction" name="StringFunction"/>
+        <UML:Interface xmi.id="interface_ItemFunction" name="ItemFunction"/>
+        
+        <!-- Klasse Feature als unbekannt spezifiziert -->
+        <UML:Class xmi.id="class_Feature" name="Feature" visibility="public" isAbstract="true"/>
+        
+        <!-- Abgeleitete Beziehungen -->
+        
+        <!-- Abstraction Beziehungen -->
+        <UML:Dependency xmi.id="dependency_StringAttribute_StringFunction" name="Implements">
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="class_StringAttribute"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Interface xmi.idref="interface_StringFunction"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

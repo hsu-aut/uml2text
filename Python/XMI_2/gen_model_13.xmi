@@ -1,0 +1,132 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ScoutinModel" name="ScoutinModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Akteure -->
+        <UML:Actor xmi.id="actor_Visitor" name="Visitor"/>
+        <UML:Actor xmi.id="actor_Staff" name="Staff"/>
+        <UML:Actor xmi.id="actor_Account" name="Account"/>
+
+        <!-- Definition der Use Cases -->
+        <UML:UseCase xmi.id="uc_SignIn" name="Sign in"/>
+        <UML:UseCase xmi.id="uc_SignOut" name="Sign out"/>
+        <UML:UseCase xmi.id="uc_SignUp" name="Sign up"/>
+        <UML:UseCase xmi.id="uc_ViewTheProfile" name="View the profile">
+          <UML:ExtensionPoint xmi.id="ext_newEP" name="newEP"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="uc_EditTheProfile" name="Edit the profile"/>
+        <UML:UseCase xmi.id="uc_ChangeThePassword" name="Change the password"/>
+        <UML:UseCase xmi.id="uc_ViewCards" name="View cards"/>
+        <UML:UseCase xmi.id="uc_DeleteACard" name="Delete a card"/>
+        <UML:UseCase xmi.id="uc_EditCardDescription" name="Edit card description"/>
+        <UML:UseCase xmi.id="uc_ClaimCards" name="Claim cards"/>
+        <UML:UseCase xmi.id="uc_CreateNewPage" name="Create new page"/>
+        <UML:UseCase xmi.id="uc_ChooseACategory" name="Choose a category"/>
+        <UML:UseCase xmi.id="uc_ChooseFilters" name="Choose filters"/>
+        <UML:UseCase xmi.id="uc_ViewCardDetails" name="View card details"/>
+        <UML:UseCase xmi.id="uc_Repost" name="Repost"/>
+        <UML:UseCase xmi.id="uc_LikeACard" name="Like a card"/>
+        <UML:UseCase xmi.id="uc_ReplyACard" name="Reply a card"/>
+        <UML:UseCase xmi.id="uc_FollowAPersonAlbum" name="Follow a person/album"/>
+
+        <!-- Use Case Assoziierungen -->
+        <UML:Association xmi.id="assoc_Visitor_SignUp">
+          <UML:AssociationEnd xmi.id="assoc_end_Visitor" type="actor_Visitor" name="signUp" aggregation="none" multiplicity="1"/>
+          <UML:AssociationEnd xmi.id="assoc_end_SignUp" type="uc_SignUp" aggregation="none" multiplicity="1"/>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Account_SignIn">
+          <UML:AssociationEnd xmi.id="assoc_end_AccountSignIn" type="actor_Account" name="signIn" aggregation="none" multiplicity="1"/>
+          <UML:AssociationEnd xmi.id="assoc_end_SignIn" type="uc_SignIn" aggregation="none" multiplicity="1"/>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Account_SignOut">
+          <UML:AssociationEnd xmi.id="assoc_end_AccountSignOut" type="actor_Account" name="signOut" aggregation="none" multiplicity="1"/>
+          <UML:AssociationEnd xmi.id="assoc_end_SignOut" type="uc_SignOut" aggregation="none" multiplicity="1"/>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Account_ViewProfile">
+          <UML:AssociationEnd xmi.id="assoc_end_AccountViewProfile" type="actor_Account" name="viewProfile" aggregation="none" multiplicity="1"/>
+          <UML:AssociationEnd xmi.id="assoc_end_ViewProfile" type="uc_ViewTheProfile" aggregation="none" multiplicity="1"/>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Account_EditProfile">
+          <UML:AssociationEnd xmi.id="assoc_end_AccountEditProfile" type="actor_Account" name="editProfile" aggregation="none" multiplicity="1"/>
+          <UML:AssociationEnd xmi.id="assoc_end_EditProfile" type="uc_EditTheProfile" aggregation="none" multiplicity="1"/>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Account_ChangePassword">
+          <UML:AssociationEnd xmi.id="assoc_end_AccountChangePassword" type="actor_Account" name="changePassword" aggregation="none" multiplicity="1"/>
+          <UML:AssociationEnd xmi.id="assoc_end_ChangePassword" type="uc_ChangeThePassword" aggregation="none" multiplicity="1"/>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Account_ViewCards">
+          <UML:AssociationEnd xmi.id="assoc_end_AccountViewCards" type="actor_Account" name="viewCards" aggregation="none" multiplicity="1"/>
+          <UML:AssociationEnd xmi.id="assoc_end_ViewCards" type="uc_ViewCards" aggregation="none" multiplicity="1"/>
+        </UML:Association>
+        
+        <!-- Erweiterungen und Abhängigkeiten -->
+        <UML:Extend xmi.id="ext1" extendedCase="uc_ViewTheProfile" extension="uc_EditTheProfile"/>
+        
+        <UML:Extend xmi.id="ext2" extendedCase="uc_ViewCards" extension="uc_DeleteACard"/>
+        
+        <UML:Extend xmi.id="ext3" extendedCase="uc_ViewCards" extension="uc_EditCardDescription"/>
+        
+        <UML:Extend xmi.id="ext4" extendedCase="uc_ViewCards" extension="uc_ClaimCards"/>
+        
+        <UML:Extend xmi.id="ext5" extendedCase="uc_ClaimCards" extension="uc_CreateNewPage"/>
+        
+        <UML:Extend xmi.id="ext6" extendedCase="uc_ViewCards" extension="uc_ChooseACategory"/>
+        
+        <UML:Extend xmi.id="ext7" extendedCase="uc_ViewCards" extension="uc_ChooseFilters"/>
+        
+        <UML:Extend xmi.id="ext8" extendedCase="uc_ViewCards" extension="uc_ViewCardDetails"/>
+        
+        <UML:Extend xmi.id="ext9" extendedCase="uc_ViewCards" extension="uc_Repost"/>
+        
+        <UML:Extend xmi.id="ext10" extendedCase="uc_ViewCards" extension="uc_LikeACard"/>
+        
+        <UML:Extend xmi.id="ext11" extendedCase="uc_ViewCardDetails" extension="uc_ReplyACard"/>
+        
+        <UML:Extend xmi.id="ext12" extendedCase="uc_ViewCards" extension="uc_FollowAPersonAlbum"/>
+        
+        <!-- Komponenten -->
+        <UML:Component xmi.id="comp_Exception" name="Exception"/>
+        
+        <UML:Component xmi.id="comp_AuthenticationService" name="AuthenticationService"/>
+        
+        <UML:Component xmi.id="comp_LogService" name="LogService"/>
+        
+        <UML:Component xmi.id="comp_AccountService" name="AccountService"/>
+        
+        <UML:Component xmi.id="comp_CardService" name="CardService"/>
+        
+        <UML:Component xmi.id="comp_NotificationService" name="NotificationService"/>
+        
+        <UML:Component xmi.id="comp_DatabaseService" name="DatabaseService" stereotype="Framework, Component"/>
+
+        <!-- Database und MySQL -->
+        <UML:Component xmi.id="comp_Database" name="Database" stereotype="HibernateFramework"/>
+        
+        <UML:Component xmi.id="comp_MySQL" name="MySQL" stereotype="DBMS"/>
+        
+        <UML:Association xmi.id="assoc_Database_MySQL">
+          <UML:AssociationEnd xmi.id="assoc_end_Database" type="comp_Database" aggregation="none" multiplicity="1"/>
+          <UML:AssociationEnd xmi.id="assoc_end_MySQL" type="comp_MySQL" aggregation="none" multiplicity="1"/>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

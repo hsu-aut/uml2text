@@ -1,0 +1,183 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket für Datentypen -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition von Datentypen -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse dictionary -->
+        <UML:Class xmi.id="class_dictionary" name="dictionary">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getRandomWords" name="getRandomWords" visibility="public"/>
+            <UML:Operation xmi.id="op_getWordItemsByTable" name="getWordItemsByTable" visibility="public"/>
+            <UML:Operation xmi.id="op_assureWord" name="assureWord" visibility="public"/>
+            <UML:Operation xmi.id="op_isWordExists" name="isWordExists" visibility="public"/>
+            <UML:Operation xmi.id="op_hasClasses" name="hasClasses" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse word -->
+        <UML:Class xmi.id="class_word" name="word">
+          <UML:Classifier.feature>
+            <!-- Keine spezifischen Attribute oder Operationen definiert -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse vocabulary -->
+        <UML:Class xmi.id="class_vocabulary" name="vocabulary">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_initLevel" name="initLevel" visibility="public"/>
+            <UML:Attribute xmi.id="attr_userId" name="userId" visibility="public"/>
+            <UML:Operation xmi.id="op_getWords" name="getWords" visibility="public"/>
+            <UML:Operation xmi.id="op_addWord" name="addWord" visibility="public"/>
+            <UML:Operation xmi.id="op_suggestTags" name="suggestTags" visibility="public"/>
+            <UML:Operation xmi.id="op_searchWords" name="searchWords" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse array -->
+        <UML:Class xmi.id="class_array" name="array">
+          <UML:Classifier.feature>
+            <!-- Keine spezifischen Attribute oder Operationen definiert -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse words -->
+        <UML:Class xmi.id="class_words" name="words">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_var2method" name="var2method" visibility="public"/>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_word" name="word" visibility="public"/>
+            <UML:Operation xmi.id="op_initialize" name="initialize" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse tests -->
+        <UML:Class xmi.id="class_tests" name="tests">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_prepare" name="prepare" visibility="public"/>
+            <UML:Operation xmi.id="op_verify" name="verify" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse object -->
+        <UML:Class xmi.id="class_object" name="object">
+          <UML:Classifier.feature>
+            <!-- Basisklasse, keine spezifischen Attribute oder Operationen definiert -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse vocabularyController -->
+        <UML:Class xmi.id="class_vocabularyController" name="vocabularyController">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="interface_ipage"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_add" name="add" visibility="public"/>
+            <UML:Operation xmi.id="op_delete" name="delete" visibility="public"/>
+            <UML:Operation xmi.id="op_updateTag" name="updateTag" visibility="public"/>
+            <UML:Operation xmi.id="op_suggestTags" name="suggestTags" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse testController -->
+        <UML:Class xmi.id="class_testController" name="testController">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="interface_ipage"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_viewTest" name="viewTest" visibility="public"/>
+            <UML:Operation xmi.id="op_verify" name="verify" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse dictionaryCrawler -->
+        <UML:Class xmi.id="class_dictionaryCrawler" name="dictionaryCrawler" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_fetch" name="fetch" visibility="public"/>
+            <UML:Operation xmi.id="op_parse" name="parse" visibility="public"/>
+            <UML:Operation xmi.id="op_get" name="get" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Implementierungsklassen für dictionaryCrawler -->
+        <UML:Class xmi.id="class_googleC" name="googleC">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_dictionaryCrawler"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_urbanC" name="urbanC">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_dictionaryCrawler"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_seslisozlukC" name="seslisozlukC">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_dictionaryCrawler"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_dictionaryC" name="dictionaryC">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_dictionaryCrawler"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse crawlers -->
+        <UML:Class xmi.id="class_crawlers" name="crawlers">
+          <UML:Classifier.feature>
+            <!-- Keine spezifischen Attribute oder Operationen definiert -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Abhängigkeiten zwischen Klassen -->
+        <UML:Dependency xmi.id="dependency_1" client="class_dictionary" supplier="class_vocabulary"/>
+        <UML:Dependency xmi.id="dependency_2" client="class_words" supplier="class_vocabulary"/>
+        <UML:Dependency xmi.id="dependency_3" client="class_tests" supplier="class_words"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

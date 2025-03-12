@@ -1,0 +1,178 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML-Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Herbs Package -->
+            <UML:Package xmi.id="Herbs" name="Herbs">
+              <UML:Namespace.ownedElement>
+
+                <!-- ArrayFixedsize Class -->
+                <UML:Class xmi.id="YdsrEj0bajLd" name="ArrayFixedsize" visibility="public">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="buffer" name="buffer" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="int"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="n" name="n" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="int"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Operation xmi.id="constructor1" name="ArrayFixedsize" visibility="public"/>
+                    <UML:Operation xmi.id="begin" name="begin" visibility="public"/>
+                    <UML:Operation xmi.id="end" name="end" visibility="public"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <UML:Class xmi.id="Fxlj531siUYF" name="Thread" visibility="public"/>
+                <UML:Class xmi.id="fgSYyLKrwKSu" name="Path" visibility="public"/>
+                <UML:Class xmi.id="w36Z0yXFvHxy" name="LogWriter" visibility="public"/>
+                <UML:Class xmi.id="neroBCKXmwqd" name="EventAuto" visibility="public"/>
+                <UML:Class xmi.id="W9wrc4rlzY2k" name="Directory" visibility="public"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Model Class -->
+            <UML:Class xmi.id="qJw69fNxvsgS" name="Model" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="model_loaded" name="model_loaded" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="bool"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="model_setup" name="model_setup" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="bool"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="nVarsGet" name="nVarsGet" visibility="public"/>
+                <UML:Operation xmi.id="stateCreate" name="stateCreate" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Simulation Class -->
+            <UML:Class xmi.id="3SEY3kIt1CyB" name="Simulation" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="buffers" name="buffers" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="m_model" name="m_model" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="qJw69fNxvsgS"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="run" name="run" visibility="public"/>
+                <UML:Operation xmi.id="stop" name="stop" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- ApplicationState Class -->
+            <UML:Class xmi.id="PWFFo59rDuvW" name="ApplicationState" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="simsetup" name="simsetup" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="LOFju2Zk1Vee"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="importer" name="importer" visibility="private"/>
+                <UML:Attribute xmi.id="exporter" name="exporter" visibility="private"/>
+                <UML:Attribute xmi.id="m_loader" name="m_loader" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="s1wtfaqcVdVl"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="LOFju2Zk1Vee" name="ModelSetup" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="destroy" name="destroy" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="s1wtfaqcVdVl" name="ModelLoader" visibility="public">
+              <UML:Classifier.feature/>
+            </UML:Class>
+
+            <UML:Class xmi.id="FJpvHfnziiiN" name="ModelInfo" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="modelInfoGet" name="modelInfoGet" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- GUI Package -->
+            <UML:Package xmi.id="Gui" name="Gui">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="Button" name="Button" visibility="public"/>
+                <UML:Class xmi.id="Label" name="Label" visibility="public"/>
+                <UML:Class xmi.id="Combobox" name="Combobox" visibility="public"/>
+                <UML:Class xmi.id="LogwriterMsgbox" name="LogwriterMsgbox" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- RandBootstrap Class -->
+            <UML:Class xmi.id="YILABTvlTvjk" name="RandBootstrap" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="state_current" name="state_current" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="RandBootstrap" name="RandBootstrap" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- DatablockProcessor Class -->
+            <UML:Class xmi.id="uzWH9T1tGdmm" name="DatablockProcessor" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="m_buffers" name="m_buffers" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="m_model" name="m_model" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="qJw69fNxvsgS"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

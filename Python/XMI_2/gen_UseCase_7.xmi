@@ -1,0 +1,80 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="Модель UML">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Stereotype xmi.id="folder" name="folder"/>
+        <UML:Stereotype xmi.id="datatype" name="datatype"/>
+        
+        <UML:Package xmi.id="Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+                <UML:DataType xmi.id="undef" name="undef"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="Use_Case_View" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <UML:Actor xmi.id="Aktor_Polzovatel" name="Пользователь"/>
+            <UML:Actor xmi.id="Aktor_Mobile_User" name="Mobile user"/>
+            <UML:Actor xmi.id="Aktor_G2TServer" name="G2TServer"/>
+            <UML:Actor xmi.id="Aktor_MapServer" name="MapServer"/>
+
+            <UML:UseCase xmi.id="UseCase_Izmenenie_LP" name="Изменение л.п."/>
+            <UML:UseCase xmi.id="UseCase_Poisk_Kontenta" name="Поиск контента"/>
+            <UML:UseCase xmi.id="UseCase_Dobavlenie_Kommentariev" name="Добавление комментариев"/>
+            <UML:UseCase xmi.id="UseCase_Podpiska" name="Подписка на ..."/>
+            <UML:UseCase xmi.id="UseCase_Dobavlenie_Kontenta" name="Добавление контента"/>
+
+            <UML:Association xmi.id="Association_Polzovatel_Dobavlenie_Kontenta">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="AssociationEnd_Polzovatel" type="Aktor_Polzovatel" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="AssociationEnd_Dobavlenie_Kontenta" type="UseCase_Dobavlenie_Kontenta" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:UseCase xmi.id="UseCase_Sozdanie_LP" name="Создание л.п."/>
+            <UML:UseCase xmi.id="UseCase_Pravka_Nazvani" name="Правка названи"/>
+            <UML:UseCase xmi.id="UseCase_Udalenie_Kommentariev" name="Удаление комментариев"/>
+
+            <UML:Association xmi.id="Association_Polzovatel_Sozdanie_LP">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="AssociationEnd_Polzovatel_Sozdanie" type="Aktor_Polzovatel" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="AssociationEnd_Sozdanie_LP" type="UseCase_Sozdanie_LP" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Dependency xmi.id="Dependency_Sozdanie_Zavisimost"/>
+            <UML:Dependency xmi.id="Dependency_Pravka_Zavisimost"/>
+            <UML:Dependency xmi.id="Dependency_Dobavlenie_Zavisimost"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="Modelo UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public" isAbstract="false" isLeaf="false" isRoot="false">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+            
+            <!-- CSimuladorTelha -->
+            <UML:Class xmi.id="class_CSimuladorTelha" name="CSimuladorTelha" visibility="public" isAbstract="false" isLeaf="false" isRoot="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_funcoes_clima" name="funcoes_clima" visibility="protected"/>
+                <UML:Attribute xmi.id="attr_fluido" name="fluido" visibility="protected"/>
+                <UML:Attribute xmi.id="attr_fout" name="fout" visibility="protected"/>
+                <UML:Operation xmi.id="op_simulation" name="simulation" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- ofstream -->
+            <UML:Class xmi.id="class_ofstream" name="ofstream" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+            
+            <!-- CMeioPoroso_Telha_Discretizada_TDMA -->
+            <UML:Class xmi.id="class_CMeioPoroso_Telha_Discretizada_TDMA" name="CMeioPoroso_Telha_Discretizada_TDMA" visibility="public" isAbstract="false" isLeaf="false" isRoot="false">
+              <UML:Generalization xmi.idref="class_CMeioPoroso_Telha"/>
+            </UML:Class>
+            
+            <!-- CMeioPoroso_Telha -->
+            <UML:Class xmi.id="class_CMeioPoroso_Telha" name="CMeioPoroso_Telha" visibility="public" isAbstract="true" isLeaf="false" isRoot="false"/>
+            
+            <!-- CTransferenciaCalorMassa -->
+            <UML:Class xmi.id="class_CTransferenciaCalorMassa" name="CTransferenciaCalorMassa" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+            
+            <!-- CSolver_TDMA -->
+            <UML:Class xmi.id="class_CSolver_TDMA" name="CSolver_TDMA" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+            
+            <!-- CFuncoesClima -->
+            <UML:Class xmi.id="class_CFuncoesClima" name="CFuncoesClima" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+        
+            <!-- CFuncaoDifusividade -->
+            <UML:Class xmi.id="class_CFuncaoDifusividade" name="CFuncaoDifusividade" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+            
+            <!-- CFuncaoCondutividade -->
+            <UML:Class xmi.id="class_CFuncaoCondutividade" name="CFuncaoCondutividade" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+            
+            <!-- CFuncaoAdsorcao -->
+            <UML:Class xmi.id="class_CFuncaoAdsorcao" name="CFuncaoAdsorcao" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+            
+            <!-- CFluido -->
+            <UML:Class xmi.id="class_CFluido" name="CFluido" visibility="public" isAbstract="false" isLeaf="false" isRoot="false"/>
+        
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_CSimuladorTelha_Clima">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_CSimuladorTelha" name="CSimuladorTelha" visibility="public"/>
+            <UML:AssociationEnd xmi.idref="class_CFuncoesClima" name="CFuncoesClima" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_CSimuladorTelha_Fluido">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_CSimuladorTelha" name="CSimuladorTelha" visibility="public"/>
+            <UML:AssociationEnd xmi.idref="class_CFluido" name="CFluido" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_CMeioPoroso_Discretizada_Clima">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_CMeioPoroso_Telha_Discretizada_TDMA" name="CMeioPoroso_Telha_Discretizada_TDMA" visibility="public"/>
+            <UML:AssociationEnd xmi.idref="class_CFuncoesClima" name="CFuncoesClima" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_CMeioPoroso_Discretizada_Fluido">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.idref="class_CMeioPoroso_Telha_Discretizada_TDMA" name="CMeioPoroso_Telha_Discretizada_TDMA" visibility="public"/>
+            <UML:AssociationEnd xmi.idref="class_CFluido" name="CFluido" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Generalization xmi.id="gen_CMeioPoroso_Discretizada" child="class_CMeioPoroso_Telha_Discretizada_TDMA" parent="class_CMeioPoroso_Telha"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

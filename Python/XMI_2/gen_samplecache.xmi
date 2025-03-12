@@ -1,0 +1,117 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_QString" name="QString"/>
+            <UML:DataType xmi.id="datatype_QList" name="QList&lt;SamplePlayer*&gt;"/>
+            <UML:DataType xmi.id="datatype_QHash" name="QHash&lt;QString, SamplePlayer*&gt;"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_Phonon" name="Phonon">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Category" name="Category" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_SampleCache" name="SampleCache" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_outputCategory" name="outputCategory" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Category"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_players" name="m_players" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_QHash"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_loadSample" name="loadSample" visibility="public">
+              <UML:Parameter xmi.id="param_loadSample_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_SamplePlayer"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_playSample" name="playSample" visibility="public"/>
+            <UML:Operation xmi.id="op_clear" name="clear" visibility="public"/>
+            <UML:Operation xmi.id="op_addEffect" name="addEffect" visibility="public">
+              <UML:Parameter xmi.id="param_addEffect_return" name="return" kind="return">
+                <UML:Class xmi.idref="class_Effect"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SamplePlayer" name="SamplePlayer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_media" name="m_media" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MediaObject"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_audio" name="m_audio" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AudioOutput"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_source" name="m_source" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MediaSource"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_outputCategory" name="outputCategory" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Category"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_constructor_SamplePlayer" name="SamplePlayer" visibility="public"/>
+            <UML:Operation xmi.id="op_signal_finished" name="signal finished" visibility="public"/>
+            <UML:Operation xmi.id="op_signal_loaded" name="signal loaded" visibility="public"/>
+            <UML:Operation xmi.id="op_play" name="play" visibility="public"/>
+            <UML:Operation xmi.id="op_addEffect_SamplePlayer" name="addEffect" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AudioOutput" name="AudioOutput" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_MediaObject" name="MediaObject" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_MediaSource" name="MediaSource" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_EffectDescription" name="EffectDescription" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="assoc_SampleCache_SamplePlayer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SampleCache_SampleCache" type="class_SampleCache" name="sampleCache" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SampleCache_SamplePlayer" type="class_SamplePlayer" name="samplePlayer" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_MediaObject_AudioOutput">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MediaObject_MediaObject" type="class_MediaObject" name="mediaObject" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MediaObject_AudioOutput" type="class_AudioOutput" name="audioOutput" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,103 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EA_Model" name="EA Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- EA Root Class -->
+        <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+
+        <!-- Packages and their contents -->
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Collaboration xmi.id="collaboration_Collaborations" name="Collaborations">
+              <UML:Collaboration.interaction>
+                <UML:ClassifierRole xmi.id="role_DataModel" name="Data Model" base="class_EARootClass"/>
+                <UML:ClassifierRole xmi.id="role_LogicalModel" name="Logical Model" base="class_EARootClass"/>
+              </UML:Collaboration.interaction>
+            </UML:Collaboration>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Data Model -->
+        <UML:Package xmi.id="package_DataModel" name="Data Model" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_SampleTable" name="SampleTable" visibility="public" isAbstract="false">
+              <!-- Dependency described here -->
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Logical Model -->
+        <UML:Package xmi.id="package_LogicalModel" name="Logical Model" visibility="public">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Collaboration xmi.id="collaboration_LogicalCollaborations" name="Collaborations">
+              <UML:Collaboration.interaction>
+                <UML:ClassifierRole xmi.id="role_com" name="com" base="class_EARootClass"/>
+              </UML:Collaboration.interaction>
+            </UML:Collaboration>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Domain Package -->
+        <UML:Package xmi.id="package_hr" name="hr" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_Employee" name="Employee" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="private" type="string"/>
+              <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="private" type="string"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Manager" name="Manager" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_budget" name="budget" visibility="private" type="float"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Organization" name="Organization" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_name" name="name" visibility="private" type="string"/>
+              <UML:Attribute xmi.id="attr_directorName" name="directorName" visibility="private" type="string"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Contractor" name="Contractor" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_billingRate" name="billingRate" visibility="private" type="float"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Company" name="Company" visibility="public" isAbstract="false">
+              <!-- In possession of class Organization -->
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        
+        <!-- Additional Classes -->
+        <UML:Class xmi.id="class_Skill" name="Skill" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_category" name="category" visibility="private" type="string"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DomainObject" name="DomainObject" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EngineeringConsultant" name="EngineeringConsultant" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_SalesConsultant" name="SalesConsultant" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

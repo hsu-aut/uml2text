@@ -1,0 +1,235 @@
+```xml
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SpecimenEvents" name="SpecimenEvents">
+      <UML:Namespace.ownedElement>
+        
+        <!-- TagDefinitions -->
+        <UML:Class xmi.id="class_TagDefinitions" name="TagDefinitions" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_parent" name="parent" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_created" name="created" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_modified" name="modified" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_iscontrolled" name="iscontrolled" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_isprotected" name="isprotected" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Collaborations -->
+        <UML:Collaboration xmi.id="collab_Collaborations" name="Collaborations" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:ClassifierRole xmi.id="role_java" name="java"/>
+            <UML:ClassifierRole xmi.id="role_sop" name="sop"/>
+          </UML:Namespace.ownedElement>
+        </UML:Collaboration>
+        
+        <!-- Packages -->
+        <UML:Package xmi.id="pkg_java" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:Collaboration xmi.id="collab_Java" name="javaCollaborations">
+              <UML:Namespace.ownedElement>
+                <UML:ClassifierRole xmi.id="role_lang" name="lang"/>
+                <UML:ClassifierRole xmi.id="role_util" name="util"/>
+              </UML:Namespace.ownedElement>
+            </UML:Collaboration>
+            <UML:Class xmi.id="class_String" name="String" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="pkg_lang" name="lang">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.idref="class_String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="pkg_util" name="util">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Date" name="Date" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Package: sop -->
+        <UML:Package xmi.id="pkg_sop" name="sop">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_FrozenEventParameters" name="FrozenEventParameters" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_method" name="method" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_MolecularSpecimenReviewParameters" name="MolecularSpecimenReviewParameters" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_absorbanceAt260" name="absorbanceAt260" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_absorbanceAt280" name="absorbanceAt280" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_gelImageURL" name="gelImageURL" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_TissueSpecimenReviewEventParameters" name="TissueSpecimenReviewEventParameters" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_histologicalQuality" name="histologicalQuality" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_lymphocyticPercentage" name="lymphocyticPercentage" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_EmbeddedEventParameters" name="EmbeddedEventParameters" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_embeddingMedium" name="embeddingMedium" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_ProcedureEventParameters" name="ProcedureEventParameters" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_url" name="url" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_ReceivedEventParameters" name="ReceivedEventParameters" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_receivedQuality" name="receivedQuality" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_SpunEventParameters" name="SpunEventParameters" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_durationInMinutes" name="durationInMinutes" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Long"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_gravityForce" name="gravityForce" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Weitere Klassen -->
+        <UML:Class xmi.id="class_FixedEventParameters" name="FixedEventParameters" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_durationInMinutes" name="durationInMinutes" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fixationType" name="fixationType" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CellSpecimenReviewParameters" name="CellSpecimenReviewParameters" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_neoplasticCellularityPercentage" name="neoplasticCellularityPercentage" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CheckInCheckOutEventParameter" name="CheckInCheckOutEventParameter" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_storageStatus" name="storageStatus" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FluidSpecimenReviewEventParameters" name="FluidSpecimenReviewEventParameters" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_cellCount" name="cellCount" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- DataTypes -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Double" name="double"/>
+        <UML:DataType xmi.id="Long" name="long"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

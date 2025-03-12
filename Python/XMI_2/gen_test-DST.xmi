@@ -1,0 +1,125 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Stereotypen "folder" -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder" visibility="public"/>
+        
+        <!-- Definition des Stereotypen "datatype" -->
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype" visibility="public"/>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="LogicalView" visibility="public">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Datentypen -->
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- State Diagram "test_DST" -->
+        <UML:StateMachine xmi.id="statemachine_test_DST" name="test_DST">
+          <UML:Top>
+            <UML:CompositeState xmi.id="state_top" name="Top">
+              <UML:Subvertex>
+                
+                <!-- Zustände -->
+                <UML:State xmi.id="state_Dialtone" name="Dialtone">
+                  <UML:DoActivity>play dial tone</UML:DoActivity>
+                  <UML:Outgoing>
+                    <UML:Transition xmi.idref="transition_state_to_Dialtone"/>
+                  </UML:Outgoing>
+                </UML:State>
+                
+                <UML:State xmi.id="state_Idle" name="Idle"/>
+                
+                <UML:State xmi.id="state_Timeout" name="Timeout">
+                  <UML:DoActivity>play message</UML:DoActivity>
+                </UML:State>
+                
+                <UML:State xmi.id="state_Active" name="Active"/>
+                
+                <UML:State xmi.id="state_Dialing" name="Dialing"/>
+                
+                <UML:State xmi.id="state_Connecting" name="Connecting"/>
+                
+                <UML:State xmi.id="state_Ringing" name="Ringing">
+                  <UML:DoActivity>play ringing tone</UML:DoActivity>
+                </UML:State>
+                
+                <UML:State xmi.id="state_Busy" name="Busy">
+                  <UML:DoActivity>play busy tone</UML:DoActivity>
+                </UML:State>
+                
+                <UML:State xmi.id="state_Talking" name="Talking"/>
+                
+                <UML:State xmi.id="state_Invalid" name="Invalid"/>
+                
+              </UML:Subvertex>
+              
+              <!-- Übergänge -->
+              <UML:Transition xmi.id="transition_Idle_to_Dialtone" source="state_Idle" target="state_Dialtone">
+                <UML:Trigger>lift receiver / get dialtone</UML:Trigger>
+              </UML:Transition>
+              
+              <UML:Transition xmi.id="transition_Active_to_Idle" source="state_Active" target="state_Idle">
+                <UML:Trigger>caller hangs up / disconnect</UML:Trigger>
+              </UML:Transition>
+              
+              <UML:Transition xmi.id="transition_Ringing_to_Talking" source="state_Ringing" target="state_Talking">
+                <UML:Trigger>callee answers / enable speech & callee answers</UML:Trigger>
+              </UML:Transition>
+              
+              <UML:Transition xmi.id="transition_Dialing_to_Connecting" source="state_Dialing" target="state_Connecting">
+                <UML:Trigger>dial digit (n) / connect</UML:Trigger>
+              </UML:Transition>
+              
+              <UML:Transition xmi.id="transition_Dialing_to_Timeout" source="state_Dialing" target="state_Timeout">
+                <UML:Trigger>after 15s & dial digit (n)</UML:Trigger>
+              </UML:Transition>
+              
+              <UML:Transition xmi.id="transition_Ringing_to_Busy" source="state_Ringing" target="state_Busy">
+                <UML:Trigger>busy & connected</UML:Trigger>
+              </UML:Transition>
+              
+              <UML:Transition xmi.id="transition_state_to_Dialtone" source="state_Idle" target="state_Dialtone">
+                <UML:Trigger>lift receiver / get dialtone</UML:Trigger>
+              </UML:Transition>
+              
+            </UML:CompositeState>
+          </UML:Top>
+        </UML:StateMachine>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

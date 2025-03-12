@@ -1,0 +1,160 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="2023-10-25">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="UML_Model" name="UML Modeli">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes -->
+            <UML:DataType xmi.id="int" name="int"/>
+            <UML:DataType xmi.id="char" name="char"/>
+            <UML:DataType xmi.id="bool" name="bool"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <UML:DataType xmi.id="short" name="short"/>
+            <UML:DataType xmi.id="long" name="long"/>
+            <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="string" name="string"/>
+
+            <!-- Classes -->
+            <UML:Class xmi.id="KMainWindow_UneBTbxtgfL4" name="KMainWindow" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="QMainWindow_CYoks3znNjoL"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="MainWindow_3qyKeZL0MjWA" name="MainWindow" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="KMainWindow_UneBTbxtgfL4"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="MainWindow_3qyKeZL0MjWA_init" name="__init__">
+                  <UML:Parameter name="self" kind="in"/>
+                  <UML:Parameter name="parent" kind="in" type="QObject"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="KCModule_Q4R8AzvZM2Jc" name="KCModule" visibility="public" isAbstract="false"/>
+
+            <UML:Class xmi.id="Module_Stip1xHDbdjH" name="Module" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="KCModule_Q4R8AzvZM2Jc"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="Module_Stip1xHDbdjH_init" name="__init__">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="Module_Stip1xHDbdjH_save" name="save">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="Module_Stip1xHDbdjH_CreatePlugin" name="CreatePlugin">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="MainWidget_xQL893okOkE8" name="MainWidget" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="QtGui_QWidget_cLwUmTdaUYA8"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="MainWidget_xQL893okOkE8_init" name="__init__">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="MainWidget_xQL893okOkE8_slotButtonsClicked" name="slotButtonsClicked">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="MainWidget_xQL893okOkE8_checkBackend" name="checkBackend">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="MainWidget_xQL893okOkE8_signalHandler" name="signalHandler">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="QtGui_QWidget_cLwUmTdaUYA8" name="QtGui::QWidget" visibility="public" isAbstract="false"/>
+
+            <UML:Class xmi.id="Interface_lImSnqrI8jly" name="Interface" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="Interface_lImSnqrI8jly_listenSignals" name="listenSignals">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="Interface_lImSnqrI8jly_getPackages" name="getPackages">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="Interface_lImSnqrI8jly_listServices" name="listServices">
+                  <UML:Parameter name="self" kind="in"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Additional Classes -->
+            <UML:Class xmi.id="QDialogButtonBox_2CmPHVLr1M5X" name="QDialogButtonBox" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="SIGNAL_8i1BxqdgxBAx" name="SIGNAL" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="Array_5gsQRwlXAjCN" name="[]" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="Uİ_m_UFN5tbzrruhG" name="Uİ_m" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="Ui_MainWidget_SQCV0Ev0ZaUE" name="Ui_MainWidget" visibility="public" isAbstract="false"/>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="Assoc_MainWindow_MainWidget">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="AssocEnd_MainWindow" type="MainWindow_3qyKeZL0MjWA" name="mainWindow" visibility="public" aggregation="composite" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="AssocEnd_MainWidget" type="MainWidget_xQL893okOkE8" name="mainWidget" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="Assoc_Module_MainWidget">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="AssocEnd_Module" type="Module_Stip1xHDbdjH" name="module" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="AssocEnd_MainWidget_Module" type="MainWidget_xQL893okOkE8" name="mainWidget" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="Assoc_MainWidget_Interface">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="AssocEnd_MainWidget_Interface" type="MainWidget_xQL893okOkE8" name="mainWidget" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="AssocEnd_Interface" type="Interface_lImSnqrI8jly" name="interface" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Dependencies -->
+            <UML:Dependency xmi.id="Dep_MainWidget_Ui_MainWidget">
+              <UML:Dependency.client>
+                <UML:Class xmi.idref="MainWidget_xQL893okOkE8"/>
+              </UML:Dependency.client>
+              <UML:Dependency.supplier>
+                <UML:Class xmi.idref="Ui_MainWidget_SQCV0Ev0ZaUE"/>
+              </UML:Dependency.supplier>
+            </UML:Dependency>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

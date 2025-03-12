@@ -1,0 +1,110 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BiologicalSystem" name="BiologicalSystem">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "gene_mapping" -->
+        <UML:Class xmi.id="class_gene_mapping" name="gene_mapping" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_gene_id" name="gene_id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_tax_id" name="tax_id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_genomic_acc" name="genomic_acc" visibility="public"/>
+            <UML:Attribute xmi.id="attr_start" name="start" visibility="public"/>
+            <UML:Attribute xmi.id="attr_stop" name="stop" visibility="public"/>
+            <UML:Attribute xmi.id="attr_version" name="version" visibility="public"/>
+            <UML:Attribute xmi.id="attr_mrna_acc" name="mrna_acc" visibility="public"/>
+            <UML:Attribute xmi.id="attr_mRNA_start" name="mRNA_start" visibility="public"/>
+            <UML:Attribute xmi.id="attr_mRNA_stop" name="mRNA_stop" visibility="public"/>
+            <UML:Attribute xmi.id="attr_cds_acc" name="cds_acc" visibility="public"/>
+            <UML:Attribute xmi.id="attr_cds_start" name="cds_start" visibility="public"/>
+            <UML:Attribute xmi.id="attr_cds_stop" name="cds_stop" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "annot_assembly" -->
+        <UML:Class xmi.id="class_annot_assembly" name="annot_assembly" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_gi" name="gi" visibility="public"/>
+            <UML:Attribute xmi.id="attr_refseq_id" name="refseq_id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_acc" name="acc" visibility="public"/>
+            <UML:Attribute xmi.id="attr_version" name="version" visibility="public"/>
+            <UML:Attribute xmi.id="attr_tax_id" name="tax_id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_chromosome" name="chromosome" visibility="public"/>
+            <UML:Attribute xmi.id="attr_start" name="start" visibility="public"/>
+            <UML:Attribute xmi.id="attr_stop" name="stop" visibility="public"/>
+            <UML:Attribute xmi.id="attr_orientation" name="orientation" visibility="public"/>
+            <UML:Attribute xmi.id="attr_sequence" name="sequence" visibility="public"/>
+            <UML:Attribute xmi.id="attr_raw_sequence_start_id" name="raw_sequence_start_id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_seq_type" name="seq_type" visibility="public"/>
+            <UML:Attribute xmi.id="attr_comment" name="comment" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "raw_sequence" -->
+        <UML:Class xmi.id="class_raw_sequence" name="raw_sequence" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_acc" name="acc" visibility="public"/>
+            <UML:Attribute xmi.id="attr_start" name="start" visibility="public"/>
+            <UML:Attribute xmi.id="attr_stop" name="stop" visibility="public"/>
+            <UML:Attribute xmi.id="attr_sequence" name="sequence" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "sequence_type" -->
+        <UML:Class xmi.id="class_sequence_type" name="sequence_type" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="public"/>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "prom_seq" -->
+        <UML:Class xmi.id="class_prom_seq" name="prom_seq" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der Schnittstelle "new_interface" -->
+        <UML:Interface xmi.id="interface_new_interface" name="new_interface" visibility="public" isAbstract="true">
+          <UML:Operation xmi.id="operation_new_operation" name="new_operation" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+
+        <!-- Assoziation zwischen gene_mapping und annot_assembly -->
+        <UML:Association xmi.id="assoc_gene_mapping_annot_assembly" name="gene_mapping-annot_assembly">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_gene_mapping" type="class_gene_mapping" name="gene_mapping" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_annot_assembly" type="class_annot_assembly" name="annot_assembly" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen annot_assembly und raw_sequence -->
+        <UML:Association xmi.id="assoc_annot_assembly_raw_sequence" name="annot_assembly-raw_sequence">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_annot_assembly" type="class_annot_assembly" name="annot_assembly" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_raw_sequence" type="class_raw_sequence" name="raw_sequence" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen annot_assembly und sequence_type -->
+        <UML:Association xmi.id="assoc_annot_assembly_sequence_type" name="annot_assembly-sequence_type">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_annot_assembly" type="class_annot_assembly" name="annot_assembly" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_sequence_type" type="class_sequence_type" name="sequence_type" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

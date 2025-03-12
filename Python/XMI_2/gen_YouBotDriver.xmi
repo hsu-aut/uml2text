@@ -1,0 +1,85 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_Joint" name="Joint" visibility="public"/>
+        <UML:Class xmi.id="class_YouBotJoint" name="YouBotJoint" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.supertype>
+              <UML:Class xmi.idref="class_Joint"/>
+            </UML:Generalization.supertype>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.supertype>
+              <UML:Class xmi.idref="class_JointTrajectoryController"/>
+            </UML:Generalization.supertype>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.supertype>
+              <UML:Class xmi.idref="class_JointLimitMonitor"/>
+            </UML:Generalization.supertype>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.supertype>
+              <UML:Class xmi.idref="class_YouBotJointPasswordProtected"/>
+            </UML:Generalization.supertype>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_YouBotBase" name="YouBotBase" visibility="public">
+          <UML:AssociationEnd>
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="class_YouBotJoint"/>
+            </UML:AssociationEnd.type>
+          </UML:AssociationEnd>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_YouBotManipulator" name="YouBotManipulator" visibility="public">
+          <UML:AssociationEnd aggregation="composite">
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="class_YouBotJoint"/>
+            </UML:AssociationEnd.type>
+          </UML:AssociationEnd>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_JointTrajectoryController" name="JointTrajectoryController" visibility="public"/>
+        <UML:Class xmi.id="class_JointLimitMonitor" name="JointLimitMonitor" visibility="public"/>
+        <UML:Class xmi.id="class_YouBotJointPasswordProtected" name="YouBotJointPasswordProtected" visibility="public"/>
+        <UML:Class xmi.id="class_YouBotJointParameter" name="YouBotJointParameter" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.supertype>
+              <UML:Class xmi.idref="class_YouBotJointReadOnly"/>
+            </UML:Generalization.supertype>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_YouBotJointReadOnly" name="YouBotJointReadOnly" visibility="public"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

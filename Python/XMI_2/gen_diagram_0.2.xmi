@@ -1,0 +1,106 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="Fri Mar 05 18:40:26 CEST 2023">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model" isSpecification="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="Datatypes" name="Datatypes"/>
+            <UML:Package xmi.id="0uq5fGSIUjcW" name="new_package"/>
+            <UML:Interface xmi.id="ISELHMiHnuk6" name="new_interface"/>
+            
+            <UML:Class xmi.id="jehttDKV3ixu" name="st_point" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="x_attr" name="x" type="68dsjnSCon5g" visibility="public"/>
+                <UML:Attribute xmi.id="y_attr" name="y" type="68dsjnSCon5g" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="MsjU2yDKMpQQ" name="new_class" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="ut7x8MsBKMLZ" name="st_rect" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="position_attr" name="position" type="jehttDKV3ixu" visibility="public"/>
+                <UML:Attribute xmi.id="size_attr" name="size" type="iEqUUIGtVsxw" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="iEqUUIGtVsxw" name="st_size" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="w_attr" name="w" type="68dsjnSCon5g" visibility="public"/>
+                <UML:Attribute xmi.id="h_attr" name="h" type="68dsjnSCon5g" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="fPMd9HC7Z8zc" name="st_file_npc" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="weak_point_id_attr" name="weak_point_id" type="char[4]" visibility="public"/>
+                <UML:Attribute xmi.id="ia_type_attr" name="ia_type" type="dn21Txp6gWZc" visibility="public"/>
+                <UML:Attribute xmi.id="hp_attr" name="hp" type="int" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="dn21Txp6gWZc" name="enum IA_TYPES" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="68dsjnSCon5g" name="unsigned short int" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="UFzR0rmnjto2" name="short int" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="ePhlEcY81ukI" name="st_file_stage" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="bgmusic_filename_attr" name="bgmusic_filename" type="char[512]" visibility="public"/>
+                <UML:Attribute xmi.id="maps_attr" name="maps" type="int[4]" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="iJjRZKEJrNNo" name="st_file_boss" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="RLa4vqW4aXvf"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="name_attr" name="name" type="char[256]" visibility="public"/>
+                <UML:Attribute xmi.id="face_filename_attr" name="face_filename" type="char[256]" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="RLa4vqW4aXvf" name="st_boss_list" visibility="public" isAbstract="false"/>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_stage_maplist" name="uses">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_stage" type="EG0NSnBhPloH" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="end_maplist" type="UcCtLFe1BROb" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_maplist_npc" name="npc_list">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_map_list" type="UcCtLFe1BROb" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="end_npc_list" type="cwnreU1XuNux" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_map_npc_frame" name="frame_list">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_map_npc_list" type="map_npc_list" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="end_frame_list" type="3nJEifGneUeT" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

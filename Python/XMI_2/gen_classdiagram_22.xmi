@@ -1,0 +1,117 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UIArchitecture" name="UIArchitecture">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition des Pakets Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_getDriver" name="getDriver"/>
+            <UML:DataType xmi.id="datatype_m_mapVec" name="m_mapVec"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse MyTextEdit -->
+        <UML:Class xmi.id="class_MyTextEdit" name="MyTextEdit" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="QTextEdit"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse QTextEdit -->
+        <UML:Class xmi.id="QTextEdit" name="QTextEdit" visibility="public"/>
+
+        <!-- Definition der Klasse MyGraphicsScene -->
+        <UML:Class xmi.id="class_MyGraphicsScene" name="MyGraphicsScene" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="QGraphicsScene"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse QGraphicsScene -->
+        <UML:Class xmi.id="QGraphicsScene" name="QGraphicsScene" visibility="public"/>
+
+        <!-- Definition der Klasse UIComponent -->
+        <UML:Class xmi.id="class_UIComponent" name="UIComponent" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse MainWindow -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Aggregation xmi.id="agg_MainWindow_UIComponent" aggregation="composite">
+            <UML:Classifier.feature>
+              <UML:Attribute name="uiComponent" type="class_UIComponent"/>
+              <UML:Attribute name="myGraphicsScene" type="class_MyGraphicsScene"/>
+              <UML:Attribute name="myTextEdit" type="class_MyTextEdit"/>
+            </UML:Classifier.feature>
+          </UML:Aggregation>
+        </UML:Class>
+
+        <!-- Definition der Klasse ThreadedParser -->
+        <UML:Class xmi.id="class_ThreadedParser" name="ThreadedParser" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse NodeMap -->
+        <UML:Class xmi.id="class_NodeMap" name="NodeMap" visibility="public" isAbstract="false">
+          <UML:Aggregation xmi.id="agg_NodeMap_BNode" aggregation="composite">
+            <UML:Classifier.feature>
+              <UML:Attribute name="bnode" type="class_BNode"/>
+            </UML:Classifier.feature>
+          </UML:Aggregation>
+        </UML:Class>
+
+        <!-- Definition der Klasse BNode -->
+        <UML:Class xmi.id="class_BNode" name="BNode" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse ListViewModel -->
+        <UML:Class xmi.id="class_ListViewModel" name="ListViewModel" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse PatternDTO -->
+        <UML:Class xmi.id="class_PatternDTO" name="PatternDTO" visibility="public" isAbstract="false">
+
+          <!-- Assoziation zu NodeMap -->
+          <UML:Association xmi.id="assoc_PatternDTO_NodeMap" name="patternNodeMap">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_PatternDTO_NodeMap_PatternDTO" type="class_PatternDTO" name="pattern" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_PatternDTO_NodeMap_NodeMap" type="class_NodeMap" name="nodeMap" multiplicity="*"/>
+            </UML:Association.connection>
+          </UML:Association>
+          
+        </UML:Class>
+
+        <!-- Assoziation zwischen MyTextEdit und ListViewModel -->
+        <UML:Association xmi.id="assoc_MyTextEdit_ListViewModel">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MyTextEdit_ListViewModel_MyTextEdit" type="class_MyTextEdit" name="textEdit" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MyTextEdit_ListViewModel_ListViewModel" type="class_ListViewModel" name="listView" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Referenz auf benutzerdefinierte Datentypen -->
+        <UML:DataType xmi.id="m_mapVec_ref" name="m_mapVec"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

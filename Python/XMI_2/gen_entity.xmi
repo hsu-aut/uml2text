@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatype Definitions -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="3GcDWgReT6sf" name="int"/>
+            <UML:DataType xmi.id="kfmjxE9I9iGh" name="char"/>
+            <UML:DataType xmi.id="cVMgNOiezv8d" name="bool"/>
+            <UML:DataType xmi.id="Km6QelzOPk5K" name="float"/>
+            <UML:DataType xmi.id="wEc5wrmWM6Ak" name="double"/>
+            <UML:DataType xmi.id="TqMSjU53G9Rs" name="short"/>
+            <UML:DataType xmi.id="tPEI7Jc1XD6R" name="long"/>
+            <UML:DataType xmi.id="2qvOw56NwSpd" name="unsigned int"/>
+            <UML:DataType xmi.id="ushA260tTEBY" name="unsigned short"/>
+            <UML:DataType xmi.id="XlZ2wfRyTMLQ" name="unsigned long"/>
+            <UML:DataType xmi.id="SRnMsbzmRevR" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class Definitions -->
+        <UML:Class xmi.id="w78PSTpusbEk" name="entity" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="entity_playerCollision" name="playerCollision" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="entity_playerCollision_return" name="return" kind="return" type="cVMgNOiezv8d"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="entity_worldCollision" name="worldCollision" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="entity_worldCollision_return" name="return" kind="return" type="cVMgNOiezv8d"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="ABVboQ1XJLhR" name="character" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="character_setDelta" name="setDelta" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="character_setDelta_x" name="x" kind="in" type="3GcDWgReT6sf"/>
+              <UML:Parameter xmi.id="character_setDelta_y" name="y" kind="in" type="3GcDWgReT6sf"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="pQ32hjBdoH2E" name="pickup" visibility="public" isAbstract="false">
+          <!-- No Specific Attributes or Operations defined in the context -->
+        </UML:Class>
+
+        <UML:Class xmi.id="tm5PTgcNtGHr" name="pacman" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="ABVboQ1XJLhR"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="ISAP7r0EQoEx" name="ghost" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="ABVboQ1XJLhR"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="24eoFtqsB1nY" name="game_logic" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="game_logic_new_attribute" name="new_attribute" visibility="public" type="ePdR7NZEYuG6"/>
+            <UML:Attribute xmi.id="game_logic_characters" name="characters" visibility="public" type="ISAP7r0EQoEx"/>
+            <UML:Attribute xmi.id="game_logic_player" name="player" visibility="public" type="tm5PTgcNtGHr"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="ePdR7NZEYuG6" name="level" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="level_pickups" name="pickups" visibility="public" type="pQ32hjBdoH2E"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="2DCgKxaygzhs" name="teleport" visibility="public" isAbstract="false">
+          <!-- No Specific Attributes or Operations defined in the context -->
+        </UML:Class>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

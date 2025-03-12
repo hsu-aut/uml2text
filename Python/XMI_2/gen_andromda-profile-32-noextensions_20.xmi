@@ -1,0 +1,147 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DomainModel" name="DomainModel">
+      <UML:Namespace.ownedElement>
+        <!-- Datatypes -->
+        <UML:DataType xmi.id="dt_StringArray" name="String[]" visibility="public"/>
+        <UML:DataType xmi.id="dt_DoubleArray" name="double[]" visibility="public"/>
+        <UML:Class xmi.id="cls_Integer" name="Integer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="primitive_int"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="cls_DateTime" name="DateTime" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="cls_Date"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="cls_Byte" name="Byte" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="primitive_byte"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="cls_Float" name="Float" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="primitive_float"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="cls_List" name="List" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="cls_Collection"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="cls_Boolean" name="Boolean" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="primitive_boolean"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Enumerations for Webservice Package -->
+        <UML:Enumeration xmi.id="enum_WebServiceStyle" name="WebServiceStyle" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_wrapped" name="wrapped"/>
+            <UML:EnumerationLiteral xmi.id="literal_document" name="document"/>
+            <UML:EnumerationLiteral xmi.id="literal_rpc" name="rpc"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        <UML:Enumeration xmi.id="enum_WebServiceProvider" name="WebServiceProvider" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_RPC" name="RPC"/>
+            <UML:EnumerationLiteral xmi.id="literal_EJB" name="EJB"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        <UML:Enumeration xmi.id="enum_WebServiceUse" name="WebServiceUse" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_literal" name="literal"/>
+            <UML:EnumerationLiteral xmi.id="literal_encoded" name="encoded"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Stereotypes for Service Package -->
+        <UML:Stereotype xmi.id="stereotype_Service" name="Service"/>
+        <UML:Stereotype xmi.id="stereotype_ServiceRef" name="ServiceRef"/>
+
+        <!-- Enumerations for Service Package -->
+        <UML:Enumeration xmi.id="enum_SpringRemotingProtocol" name="SpringRemotingProtocol" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_rmi" name="rmi"/>
+            <UML:EnumerationLiteral xmi.id="literal_burlap" name="burlap"/>
+            <UML:EnumerationLiteral xmi.id="literal_hessian" name="hessian"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        <UML:Enumeration xmi.id="enum_SpringTransactionType" name="SpringTransactionType" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_PROPAGATION_REQUIRED" name="PROPAGATION_REQUIRED"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Stereotypes for Process Package -->
+        <UML:Stereotype xmi.id="stereotype_BusinessProcess" name="Business Process">
+          <UML:Stereotype.baseClass>
+            <UML:Class xmi.idref="cls_UseCase"/>
+          </UML:Stereotype.baseClass>
+        </UML:Stereotype>
+        <UML:Stereotype xmi.id="stereotype_Task" name="Task"/>
+
+        <!-- Process related classes -->
+        <UML:Class xmi.id="cls_UseCase" name="UseCase" visibility="public"/>
+        <UML:Class xmi.id="cls_CallEvent" name="CallEvent" visibility="public"/>
+
+        <!-- Stereotypes for Presentation Package -->
+        <UML:Stereotype xmi.id="stereotype_FrontEndException" name="FrontEndException"/>
+        <UML:Stereotype xmi.id="stereotype_FrontEndUseCase" name="FrontEndUseCase"/>
+        <UML:Stereotype xmi.id="stereotype_FrontEndView" name="FrontEndView"/>
+
+        <!-- Enumerations for Presentation Package -->
+        <UML:Enumeration xmi.id="enum_WebFieldType" name="WebFieldType" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_text" name="text"/>
+            <UML:EnumerationLiteral xmi.id="literal_checkbox" name="checkbox"/>
+            <UML:EnumerationLiteral xmi.id="literal_password" name="password"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        <UML:Enumeration xmi.id="enum_WebActionType" name="WebActionType" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_hyperlink" name="hyperlink"/>
+            <UML:EnumerationLiteral xmi.id="literal_form" name="form"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Persistence Package and Tag Definitions -->
+        <UML:Stereotype xmi.id="stereotype_Manageable" name="Manageable"/>
+
+        <!-- XML related attributes and schema -->
+        <!-- Tag Definitions and other domain-specific categories would be defined here as needed -->
+        <!-- Primitive DataTypes -->
+        <UML:PrimitiveType xmi.id="primitive_int" name="int"/>
+        <UML:PrimitiveType xmi.id="primitive_byte" name="byte"/>
+        <UML:PrimitiveType xmi.id="primitive_float" name="float"/>
+        <UML:PrimitiveType xmi.id="primitive_boolean" name="boolean"/>
+        <UML:Class xmi.id="cls_Collection" name="Collection" visibility="public"/>
+        <UML:Class xmi.id="cls_Date" name="Date" visibility="public"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

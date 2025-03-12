@@ -1,0 +1,63 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_KDESystem" name="KDESystem">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="pkg_KDE_Plasma_Engine" name="KDE::Plasma::Engine">
+          <UML:Dependency xmi.id="dep_13_14" supplier="pkg_KDE_Hardware"/>
+        </UML:Package>
+        <UML:Package xmi.id="pkg_KDE_Hardware" name="KDE::Hardware">
+          <UML:Dependency xmi.id="dep_14_15" supplier="pkg_KDE_Hardware_Backends"/>
+        </UML:Package>
+        <UML:Package xmi.id="pkg_KDE_Hardware_Backends" name="KDE::Hardware::Backends"/>
+        <UML:Package xmi.id="pkg_KDE_Plasma_Applets" name="KDE::Plasma::Applets"/>
+        <UML:Package xmi.id="pkg_KDE_Hardware_Widgets" name="KDE::Hardware::Widgets"/>
+        <UML:Package xmi.id="pkg_KDE_KCM" name="KDE::KCM">
+          <UML:Dependency xmi.id="dep_34_27" supplier="pkg_KDE_Hardware_Widgets"/>
+        </UML:Package>
+        <UML:Package xmi.id="pkg_Solid_Ifaces" name="Solid::Ifaces">
+          <UML:Class xmi.id="cls_Capability" name="Capability" isAbstract="true">
+            <!-- Add features if needed -->
+          </UML:Class>
+          <UML:Generalization xmi.id="gen_Ifaces_Capability">
+            <UML:Generalization.child>
+              <!-- Add each child class here -->
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="cls_Capability"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Package>
+        <UML:Package xmi.id="pkg_Solid_PowerManagement_Ifaces" name="Solid::PowerManagement::Ifaces"/>
+        <UML:Package xmi.id="pkg_Solid_Network_Ifaces" name="Solid::Network::Ifaces"/>
+        <UML:Package xmi.id="pkg_Solid" name="Solid">
+          <UML:Class xmi.id="cls_Device_83" name="Device">
+            <UML:Generalization xmi.id="gen_Solid_Device">
+              <UML:Generalization.child>
+                <UML:Class xmi.idref="cls_Device_83"/>
+              </UML:Generalization.child>
+              <UML:Generalization.parent>
+                <UML:Class xmi.idref="cls_Device_652"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+          </UML:Class>
+          <UML:Class xmi.id="cls_DeviceCache" name="DeviceCache">
+            <UML:AssociationEnd xmi.id="assoc_DeviceCache_Device" type="cls_Device_652"/>
+          </UML:Class>
+          <UML:Class xmi.id="cls_DeviceManager" name="DeviceManager">
+            <UML:AssociationEnd xmi.id="assoc_DeviceManager_Device" type="cls_Device_652"/>
+          </UML:Class>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

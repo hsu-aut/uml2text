@@ -1,0 +1,134 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model" visibility="public" isAbstract="false">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:Class xmi.id="class_date" name="date" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+        
+            <UML:Class xmi.id="class_Cabins" name="cabins" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_number" name="number" visibility="private" type="datatype_char"/>
+                <UML:Attribute xmi.id="attr_class" name="class" visibility="private" type="datatype_char"/>
+                <UML:Attribute xmi.id="attr_cruiseship_id" name="cruiseship_id" visibility="private" type="datatype_int"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Cruiseships" name="cruiseships" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private" type="datatype_char"/>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private" type="datatype_int"/>
+                <UML:Attribute xmi.id="attr_owner_id" name="owner_id" visibility="private" type="datatype_int"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Prices" name="prices" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_price" name="price" visibility="private" type="datatype_int"/>
+                <UML:Attribute xmi.id="attr_reserved" name="reserved" visibility="private" type="datatype_bool"/>
+                <UML:Attribute xmi.id="attr_cabin_id" name="cabin_id" visibility="private" type="datatype_int"/>
+                <UML:Attribute xmi.id="attr_route_id" name="route_id" visibility="private" type="datatype_int"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Routes" name="routes" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_cruiseship_id" name="cruiseship_id" visibility="private" type="datatype_int"/>
+                <UML:Attribute xmi.id="attr_start_move_id" name="start_move_id" visibility="private" type="datatype_int"/>
+                <UML:Attribute xmi.id="attr_end_move_id" name="end_move_id" visibility="private" type="datatype_int"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Moves" name="moves" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_date" name="date" visibility="private" type="class_date"/>
+                <UML:Attribute xmi.id="attr_city_id" name="city_id" visibility="private" type="datatype_int"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Cities" name="cities" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private" type="datatype_char"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Owners" name="owners" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private" type="datatype_char"/>
+                <UML:Attribute xmi.id="attr_info" name="info" visibility="private" type="datatype_char"/>
+                <UML:Attribute xmi.id="attr_email" name="email" visibility="private" type="datatype_char"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+
+          <UML:Association xmi.id="assoc_cabins_cruiseships">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_cabins" type="class_Cabins" name="cabins" visibility="public" aggregation="none" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_cruiseships_cabin" type="class_Cruiseships" name="cruiseships" visibility="public" aggregation="none" multiplicity="1..*"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+          <UML:Association xmi.id="assoc_cruiseships_owners">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_cruiseships_owner" type="class_Cruiseships" name="cruiseships" visibility="public" aggregation="none" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_owners" type="class_Owners" name="owners" visibility="public" aggregation="none" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+          <UML:Association xmi.id="assoc_prices_cabins">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_prices_cabin" type="class_Prices" name="prices" visibility="public" aggregation="none" multiplicity="0..*"/>
+              <UML:AssociationEnd xmi.id="assocEnd_cabins_price" type="class_Cabins" name="cabins" visibility="public" aggregation="none" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+          
+          <UML:Association xmi.id="assoc_prices_routes">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_prices_route" type="class_Prices" name="prices" visibility="public" aggregation="none" multiplicity="0..*"/>
+              <UML:AssociationEnd xmi.id="assocEnd_routes_price" type="class_Routes" name="routes" visibility="public" aggregation="none" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+          <UML:Association xmi.id="assoc_routes_moves">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_routes_move" type="class_Routes" name="routes" visibility="public" aggregation="none" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_moves" type="class_Moves" name="moves" visibility="public" aggregation="none" multiplicity="1..*"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+          <UML:Association xmi.id="assoc_moves_cities">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_moves_city" type="class_Moves" name="moves" visibility="public" aggregation="none" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_cities" type="class_Cities" name="cities" visibility="public" aggregation="none" multiplicity="1..*"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

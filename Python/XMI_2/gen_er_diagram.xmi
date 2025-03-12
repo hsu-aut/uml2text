@@ -1,0 +1,277 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Base" name="Base">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_Int" name="int"/>
+            <UML:DataType xmi.id="datatype_Char" name="char"/>
+            <UML:DataType xmi.id="datatype_Boolean" name="boolean"/>
+            <UML:DataType xmi.id="datatype_Float" name="float"/>
+            <UML:DataType xmi.id="datatype_Double" name="double"/>
+            <UML:DataType xmi.id="datatype_Byte" name="byte"/>
+            <UML:DataType xmi.id="datatype_Short" name="short"/>
+            <UML:DataType xmi.id="datatype_Long" name="long"/>
+            <UML:DataType xmi.id="datatype_String" name="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Varchar" name="varchar" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <!-- Attribute definition goes here if needed -->
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_Mentors" name="mentors" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_mentorId" name="mentor_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_returning" name="returning" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_locked" name="locked" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_onlineHybrid" name="online_hybrid" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_odinId" name="odin_id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_fullName" name="full_name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_slotsAvailable" name="slots_available" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_owningDept" name="owning_dept" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_email" name="email" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_MentorTimePref" name="mentor_time_pref" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_mentorIdRef" name="mentor_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_timeId" name="time_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_weight" name="weight" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_MentorThemePref" name="mentor_theme_pref" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_mentorIdRef" name="mentor_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_themeId" name="theme_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_weight" name="weight" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_MentorFacultyPref" name="mentor_faculty_pref" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_mentorIdRef" name="mentor_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_facultyId" name="faculty_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_weight" name="weight" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Courses" name="courses" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_courseId" name="course_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_index" name="index" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_timeId" name="time_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_themeId" name="theme_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_preAssignedMentorId" name="pre_assigned_mentor_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_facultyId" name="faculty_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_onlineHybrid" name="online_hybrid" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Themes" name="themes" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_themeId" name="theme_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_themeName" name="theme_name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_TimeWeightValue" name="time_weight_value" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_weight" name="weight" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_value" name="value" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_ThemeWeightValue" name="theme_weight_value" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_weight" name="weight" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_value" name="value" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_FacultyWeightValue" name="faculty_weight_value" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_weight" name="weight" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_Int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_value" name="value" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Times" name="times" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_timeId" name="time_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_timeName" name="time_name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Faculty" name="faculty" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_facultyId" name="faculty_id" visibility="private"/>
+                <UML:Attribute xmi.id="attr_facultyName" name="faculty_name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_email" name="email" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_MentorTimePref_Mentors">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MentorTimePref_Mentor" type="class_MentorTimePref" name="mentorTimePref" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Mentor_MentorTimePref" type="class_Mentors" name="mentors" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_MentorThemePref_Mentors">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MentorThemePref_Mentor" type="class_MentorThemePref" name="mentorThemePref" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Mentor_MentorThemePref" type="class_Mentors" name="mentors" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_MentorFacultyPref_Mentors">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_MentorFacultyPref_Mentor" type="class_MentorFacultyPref" name="mentorFacultyPref" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Mentor_MentorFacultyPref" type="class_Mentors" name="mentors" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Courses_Themes">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Courses_Theme" type="class_Courses" name="courses" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Themes_Courses" type="class_Themes" name="themes" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Courses_Mentors">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Courses_Mentor" type="class_Courses" name="courses" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Mentors_Courses" type="class_Mentors" name="mentors" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Courses_Faculty">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Courses_Faculty" type="class_Courses" name="courses" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Faculty_Courses" type="class_Faculty" name="faculty" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Courses_Times">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Courses_Times" type="class_Courses" name="courses" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Times_Courses" type="class_Times" name="times" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

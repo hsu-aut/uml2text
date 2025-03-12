@@ -1,0 +1,123 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_PluginSystem" name="PluginSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Klasse BasePlugin -->
+        <UML:Class xmi.id="class_BasePlugin" name="BasePlugin" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_QObject"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_enabled" name="enabled" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            
+            <UML:Operation xmi.id="oper_isEnabled" name="isEnabled" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="oper_setEnabled" name="setEnabled" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="oper_settingsKey" name="settingsKey" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+          <UML:Association>
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocend_BasePlugin_PluginInfos" type="class_PluginInfos" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+        <!-- Klasse PluginInfos -->
+        <UML:Class xmi.id="class_PluginInfos" name="PluginInfos" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Caption" name="Caption" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Description" name="Description" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Author" name="Author" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse CLIToolInterface -->
+        <UML:Class xmi.id="class_CLIToolInterface" name="CLIToolInterface" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="oper_defaultCommands" name="defaultCommands" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="oper_setUserCommands" name="setUserCommands" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse CompilerPlugin -->
+        <UML:Class xmi.id="class_CompilerPlugin" name="CompilerPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_BasePlugin"/>
+              <UML:Class xmi.idref="class_CLIToolInterface"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="oper_parameters" name="parameters" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="oper_setParameters" name="setParameters" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse ProjectPlugin -->
+        <UML:Class xmi.id="class_ProjectPlugin" name="ProjectPlugin" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_BasePlugin"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_mSuffixes" name="mSuffixes" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QStringList"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="oper_suffixes" name="suffixes" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="oper_getProjectItem" name="getProjectItem" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse ProjectsModel -->
+        <UML:Class xmi.id="class_ProjectsModel" name="ProjectsModel" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_QStandardItemModel"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="oper_addProject" name="addProject" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="oper_close" name="close" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="oper_save" name="save" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="QString" name="QString"/>
+        <UML:DataType xmi.id="QStringList" name="QStringList"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

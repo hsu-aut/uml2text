@@ -1,0 +1,130 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Logical_View" name="Logical View">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_DataServer" name="DataServer" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_Data_Server" name="Data_Server">
+              <UML:Parameter kind="return" name="return" type="class_DataServer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_writeCSV" name="writeCSV"/>
+            <UML:Operation xmi.id="op_writeXML" name="writeXML"/>
+            <UML:Operation xmi.id="op_queryData" name="queryData">
+              <UML:Parameter kind="return" name="return" type="class_CountyCode"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_XMLserializer" name="XMLserializer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_XMLserializer"/>
+            <UML:Generalization.parent xmi.idref="class_Data_Source"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CSVserializer" name="CSVserializer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_CSVserializer"/>
+            <UML:Generalization.parent xmi.idref="class_Data_Source"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TCP_source" name="TCP_source" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_TCP_source"/>
+            <UML:Generalization.parent xmi.idref="class_Data_Source"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Data_Source" name="Data_Source" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Controller" name="Controller" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_defaultHTML" name="defaultHTML" visibility="private" type="datatype_string"/>
+            <UML:Attribute xmi.id="attr_advancedHTML" name="advancedHTML" visibility="private" type="datatype_string"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HTMLOutput" name="HTMLOutput" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_HTML_Output" name="HTML_Output"/>
+            <UML:Operation xmi.id="op_renderMapsEmbedding" name="renderMapsEmbedding"/>
+            <UML:Operation xmi.id="op_renderWikiEmbedding" name="renderWikiEmbedding"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CountyCodeMap" name="CountyCodeMap" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_CountyCode" name="CountyCode" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_GoogleMaps" name="GoogleMaps" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Wikipedia" name="Wikipedia" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Shapes" name="Shapes" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="assoc_Controller_DataServer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Controller" type="class_Controller" name="controller" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DataServer" type="class_DataServer" name="dataServer" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DataServer_XMLserializer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataServer" type="class_DataServer" name="dataServer" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XMLserializer" type="class_XMLserializer" name="xmlSerializer" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DataServer_CSVserializer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataServer" type="class_DataServer" name="dataServer" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CSVserializer" type="class_CSVserializer" name="csvSerializer" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DataServer_TCP_source">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataServer" type="class_DataServer" name="dataServer" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TCP_source" type="class_TCP_source" name="tcpSource" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Controller_HTMLOutput">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Controller" type="class_Controller" name="controller" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_HTMLOutput" type="class_HTMLOutput" name="htmlOutput" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

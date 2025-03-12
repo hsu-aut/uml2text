@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" name="EARootClass">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="EAPK_F628F95E_FD35_4d0c_B7B8_668BAE01DAC7" name="Domain Model">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="EAID_E86C6BB1_2DAF_4c4d_AEE9_9BAD6D564DC1" name="DomainObject" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="EAID_E86C6BB1_id" name="id" visibility="private" type="String"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="EAID_5231C81A_6497_4ad6_81D2_74ED0E2515E3" name="Skill" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="EAID_5231C81A_category" name="category" visibility="private" type="String"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="EAID_5CD2865D_8003_4739_A5A2_251D3858F38B" name="Contractor" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="EAID_5CD2865D_billingRate" name="billingRate" visibility="private" type="String"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="EAID_EngineeringConsultant" name="EngineeringConsultant" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="EAID_5CD2865D_8003_4739_A5A2_251D3858F38B"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Association>
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="EAID_Skill_Engineer_Skill" type="EAID_5231C81A_6497_4ad6_81D2_74ED0E2515E3" name="skills" visibility="public" aggregation="none" multiplicity="1..*"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+            
+            <UML:Class xmi.id="EAID_Company" name="Company" visibility="public" isAbstract="false">
+              <UML:Association>
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="EAID_Company_Contractor" type="EAID_5CD2865D_8003_4739_A5A2_251D3858F38B" name="contractors" visibility="public" aggregation="none" multiplicity="0..1"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+            
+            <UML:Class xmi.id="EAID_Employee" name="Employee" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="EAID_E86C6BB1_2DAF_4c4d_AEE9_9BAD6D564DC1"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="EAID_Employee_firstName" name="firstName" visibility="private" type="String"/>
+                <UML:Attribute xmi.id="EAID_Employee_lastName" name="lastName" visibility="private" type="String"/>
+              </UML:Classifier.feature>
+              <UML:Association>
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="EAID_Employee_Organization" type="EAID_Organization" name="organization" visibility="public" aggregation="none" multiplicity="1..*"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+            
+            <UML:Class xmi.id="EAID_Manager" name="Manager" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="EAID_Manager_budget" name="budget" visibility="private" type="String"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="EAID_SalesConsultant" name="SalesConsultant" visibility="public"/>
+            
+            <UML:Class xmi.id="EAID_Organization" name="Organization" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="EAID_E86C6BB1_2DAF_4c4d_AEE9_9BAD6D564DC1"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="EAID_Organization_directorName" name="directorName" visibility="private" type="String"/>
+                <UML:Attribute xmi.id="EAID_Organization_name" name="name" visibility="private" type="String"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="TechnicalSkill" name="Technical Skill" visibility="public"/>
+            
+            <UML:Class xmi.id="BillingRate" name="Billing Rate" visibility="public"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,108 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="um_model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="datatypes_package" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int_type" name="int"/>
+                <UML:DataType xmi.id="char_type" name="char"/>
+                <UML:DataType xmi.id="bool_type" name="bool"/>
+                <UML:DataType xmi.id="float_type" name="float"/>
+                <UML:DataType xmi.id="double_type" name="double"/>
+                <UML:DataType xmi.id="short_type" name="short"/>
+                <UML:DataType xmi.id="long_type" name="long"/>
+                <UML:DataType xmi.id="unsigned_int_type" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short_type" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long_type" name="unsigned long"/>
+                <UML:DataType xmi.id="string_type" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Enumeration xmi.id="direction_enum" name="Direction">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="dir_north" name="NORTH"/>
+                <UML:EnumerationLiteral xmi.id="dir_south" name="SOUTH"/>
+                <UML:EnumerationLiteral xmi.id="dir_east" name="EAST"/>
+                <UML:EnumerationLiteral xmi.id="dir_west" name="WEST"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            <UML:Class xmi.id="player_class" name="Player" visibility="public">
+              <UML:Attribute xmi.id="player_location_attr" name="location"/>
+              <UML:Operation xmi.id="player_go_op" name="go"/>
+              <UML:Operation xmi.id="player_look_op" name="look"/>
+            </UML:Class>
+            <UML:Class xmi.id="place_class" name="Place" visibility="public">
+              <UML:Attribute xmi.id="place_title_attr" name="title"/>
+              <UML:Attribute xmi.id="place_description_attr" name="description"/>
+              <UML:Attribute xmi.id="place_exits_attr" name="exits"/>
+            </UML:Class>
+            <UML:Class xmi.id="thing_class" name="Thing" visibility="public">
+              <UML:Attribute xmi.id="thing_name_attr" name="name"/>
+              <UML:Attribute xmi.id="thing_location_attr" name="location"/>
+              <UML:Attribute xmi.id="thing_short_descr_attr" name="short_descr"/>
+              <UML:Attribute xmi.id="thing_long_descr_attr" name="long_descr"/>
+            </UML:Class>
+            <UML:Class xmi.id="bot_class" name="Bot" visibility="public" isAbstract="true">
+              <UML:Attribute xmi.id="bot_name_attr" name="name"/>
+              <UML:Attribute xmi.id="bot_location_attr" name="location"/>
+            </UML:Class>
+            <UML:Class xmi.id="game_class" name="Game" visibility="public">
+              <UML:Reference xmi.id="player_ref" name="Player"/>
+              <UML:Reference xmi.id="places_ref" name="Places"/>
+              <UML:Reference xmi.id="things_ref" name="Things"/>
+              <UML:Operation xmi.id="game_main_op" name="main"/>
+              <UML:Operation xmi.id="game_show_instructions_op" name="showInstructions"/>
+              <UML:Operation xmi.id="game_show_title_op" name="showTitle"/>
+              <UML:Operation xmi.id="game_show_goodbye_op" name="showGoodbye"/>
+              <UML:Operation xmi.id="game_wants_instructions_op" name="playerWantsInstructions"/>
+            </UML:Class>
+            <UML:Class xmi.id="places_class" name="Places" visibility="public">
+              <UML:Operation xmi.id="places_get_by_id_op" name="getByID"/>
+            </UML:Class>
+            <UML:Class xmi.id="things_class" name="Things" visibility="public">
+              <UML:Operation xmi.id="things_get_by_id_op" name="getByID"/>
+              <UML:Operation xmi.id="things_get_by_location_op" name="getByLocation"/>
+            </UML:Class>
+            <UML:Class xmi.id="bots_class" name="Bots" visibility="public">
+              <UML:Operation xmi.id="bots_get_by_id_op" name="getByID"/>
+              <UML:Operation xmi.id="bots_get_by_location_op" name="getByLocation"/>
+            </UML:Class>
+            <UML:Class xmi.id="foxybot_class" name="FoxyBot" visibility="public">
+              <UML:Generalization xmi.id="generalization_foxybot_bot" parent="bot_class"/>
+            </UML:Class>
+            <UML:Class xmi.id="freddybot_class" name="FreddyBot" visibility="public">
+              <UML:Generalization xmi.id="generalization_freddybot_bot" parent="bot_class"/>
+            </UML:Class>
+            <UML:Class xmi.id="bonniebot_class" name="BonnieBot" visibility="public">
+              <UML:Generalization xmi.id="generalization_bonniebot_bot" parent="bot_class"/>
+            </UML:Class>
+            <UML:Class xmi.id="chicabot_class" name="ChicaBot" visibility="public">
+              <UML:Generalization xmi.id="generalization_chicabot_bot" parent="bot_class"/>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Association xmi.id="association_player_place">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="association_end_player" type="player_class" name="player"/>
+            <UML:AssociationEnd xmi.id="association_end_place" type="place_class" name="place"/>
+          </UML:Association.connection>
+          <UML:AssociationEnd xmi.id="association_end_thing" type="thing_class" name="thing"/>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

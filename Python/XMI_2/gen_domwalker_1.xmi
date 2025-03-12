@@ -1,0 +1,70 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+      <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+      <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+      <UML:Stereotype xmi.id="stereotype_friend" name="friend"/>
+      <UML:Stereotype xmi.id="stereotype_virtual" name="virtual"/>
+      
+      <UML:Package xmi.id="logicalView" name="Logical View">
+        <UML:Namespace.ownedElement>
+          <UML:Package xmi.id="datatypes_package" name="Datatypes">
+            <UML:Namespace.ownedElement>
+              <UML:DataType xmi.id="datatype_void" name="void"/>
+              <UML:DataType xmi.id="datatype_char" name="char"/>
+              <UML:DataType xmi.id="datatype_bool" name="bool"/>
+              <UML:DataType xmi.id="datatype_float" name="float"/>
+              <UML:DataType xmi.id="datatype_double" name="double"/>
+              <UML:DataType xmi.id="datatype_short" name="short"/>
+              <UML:DataType xmi.id="datatype_long" name="long"/>
+              <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+              <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+              <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+              <UML:DataType xmi.id="datatype_string" name="string"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+          
+          <UML:Class xmi.id="class_DomWalker" name="DomWalker" visibility="public" isAbstract="false">
+            <UML:Attribute xmi.id="attr_m_Doc" name="m_Doc" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_QDomDocument"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_constructor" name="DomWalker" visibility="public" stereotype="stereotype_constructor"/>
+            <UML:Operation xmi.id="op_destructor" name="~DomWalker" visibility="public"/>
+            <UML:Operation xmi.id="op_visit" name="visit" visibility="public"/>
+            <!-- Additional operations can be defined as needed -->
+          </UML:Class>
+          
+          <UML:Class xmi.id="class_QDomDocument" name="QDomDocument" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_QDomElement" name="QDomElement" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_QDomNode" name="QDomNode" visibility="public" isAbstract="false"/>
+          <UML:Class xmi.id="class_QString" name="QString" visibility="public" isAbstract="false"/>
+          
+          <UML:Class xmi.id="class_Slacker" name="Slacker" visibility="public" isAbstract="false">
+            <UML:Generalization xmi.id="gen_Slacker_DomWalker" parent="class_DomWalker" child="class_Slacker" />
+          </UML:Class>
+          
+          <UML:Association xmi.id="assoc_DomWalker_QDomDocument" name="domWalker-QDomDocument" visibility="public">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_DomWalker" type="class_DomWalker" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_QDomDocument" type="class_QDomDocument" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+        </UML:Namespace.ownedElement>
+      </UML:Package>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

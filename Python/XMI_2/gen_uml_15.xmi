@@ -1,0 +1,120 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_LogicaView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="dataType_int" name="int"/>
+                <UML:DataType xmi.id="dataType_char" name="char"/>
+                <UML:DataType xmi.id="dataType_bool" name="bool"/>
+                <UML:DataType xmi.id="dataType_float" name="float"/>
+                <UML:DataType xmi.id="dataType_double" name="double"/>
+                <UML:DataType xmi.id="dataType_short" name="short"/>
+                <UML:DataType xmi.id="dataType_long" name="long"/>
+                <UML:DataType xmi.id="dataType_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="dataType_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="dataType_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="dataType_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="class_Relation" name="Relation" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_Relation_init" name="init" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_clone" name="clone" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_select" name="select" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_join" name="join" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_where" name="where" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_group" name="group" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_having" name="having" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_order" name="order" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_limit" name="limit" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_offset" name="offset" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_sql" name="sql" visibility="public"/>
+                <UML:Operation xmi.id="op_Relation_exec" name="exec" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_BinaryOp" name="BinaryOp" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_BinaryOp_left" name="left" visibility="private"/>
+                <UML:Attribute xmi.id="attr_BinaryOp_right" name="right" visibility="private"/>
+                <UML:Attribute xmi.id="attr_BinaryOp_operator" name="operator" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_UnaryOp" name="UnaryOp" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_UnaryOp_subject" name="subject" visibility="private"/>
+                <UML:Attribute xmi.id="attr_UnaryOp_operator" name="operator" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Table" name="Table" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="class_Expression" name="Expression" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="class_Visitor" name="Visitor" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_Sql"/>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_Visitor_visit" name="visit" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Sql" name="Sql" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_SqlServer"/>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_SqlServer" name="SqlServer" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_SqlServer_visit_nodes_limit" name="visit_nodes_limit" visibility="public"/>
+                <UML:Operation xmi.id="op_SqlServer_visit_nodes_offset" name="visit_nodes_offset" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="true">
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_UnaryOp"/>
+                <UML:Class xmi.idref="class_BinaryOp"/>
+                <UML:Class xmi.idref="class_Table"/>
+                <UML:Class xmi.idref="class_Expression"/>
+                <UML:Class xmi.idref="class_Wildcard"/>
+                <UML:Class xmi.idref="class_Literal"/>
+                <UML:Class xmi.idref="class_Order"/>
+                <UML:Class xmi.idref="class_Column"/>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Literal" name="Literal" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="class_Wildcard" name="Wildcard" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="class_Column" name="Column" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="class_Order" name="Order" visibility="public" isAbstract="false"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

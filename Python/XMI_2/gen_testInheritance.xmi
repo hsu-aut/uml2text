@@ -1,0 +1,97 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_test.GraphClass" name="test.GraphClass">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "MyGraphClass" -->
+        <UML:Class xmi.id="class_MyGraphClass" name="MyGraphClass" visibility="public" isAbstract="false">
+          <UML:Stereotype xmi.id="stereotype" name="stereotype"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "A" -->
+        <UML:Class xmi.id="class_A" name="A" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "O" -->
+        <UML:Class xmi.id="class_O" name="O" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klassen VC1 bis VC6 -->
+        <UML:Class xmi.id="class_VC1" name="VC1" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_VC2" name="VC2" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_VC3" name="VC3" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_VC4" name="VC4" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_VC5" name="VC5" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_VC6" name="VC6" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Assoziation EC1 -->
+        <UML:Association xmi.id="assoc_EC1" name="EC1" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_EC1_A" type="class_A" name="A" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EC1_O" type="class_O" name="O" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Generalisierungen -->
+        <UML:Generalization xmi.id="gen_VC2_VC1">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_VC2"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_VC1"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+        <UML:Generalization xmi.id="gen_VC3_VC2">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_VC3"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_VC2"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+        <UML:Generalization xmi.id="gen_VC4_VC2_VC3">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_VC4"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_VC2"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_VC3"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+        <UML:Generalization xmi.id="gen_VC5_VC4_VC2">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_VC5"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_VC4"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_VC2"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_VC6"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+        <UML:Generalization xmi.id="gen_VC6_VC2">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_VC6"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_VC2"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

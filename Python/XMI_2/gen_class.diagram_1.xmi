@@ -1,0 +1,77 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ProcessManager" name="ProcessManager">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_ProcessManager" name="ProcessManager" visibility="public" isAbstract="false" />
+
+        <UML:Class xmi.id="class_AbstractManager" name="AbstractManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_time" name="$time" visibility="private"/>
+            <UML:Attribute xmi.id="attr_time_begin" name="$time_begin" visibility="private"/>
+            <UML:Attribute xmi.id="attr_time_end" name="$time_end" visibility="private"/>
+            <UML:Attribute xmi.id="attr_memory_begin" name="$memory_begin" visibility="private"/>
+            <UML:Attribute xmi.id="attr_memory_end" name="$memory_end" visibility="private"/>
+            <UML:Attribute xmi.id="attr_config" name="$config" visibility="private"/>
+            <UML:Operation xmi.id="op_construct" name="__construct" visibility="public"/>
+            <UML:Operation xmi.id="op_setConfig" name="setConfig" visibility="public"/>
+            <UML:Operation xmi.id="op_setTime" name="setTime" visibility="public"/>
+            <UML:Operation xmi.id="op_startProcess" name="startProcess" visibility="public"/>
+            <UML:Operation xmi.id="op_isLimitValid" name="isLimitValid" visibility="public"/>
+            <UML:Operation xmi.id="op_updateMemory" name="updateMemory" visibility="public"/>
+            <UML:Operation xmi.id="op_updateTime" name="updateTime" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_ManagerInterface" name="ManagerInterface" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_interface_construct" name="__construct" visibility="public"/>
+            <UML:Operation xmi.id="op_interface_setConfig" name="setConfig" visibility="public"/>
+            <UML:Operation xmi.id="op_interface_setTime" name="setTime" visibility="public"/>
+            <UML:Operation xmi.id="op_interface_startProcess" name="startProcess" visibility="public"/>
+            <UML:Operation xmi.id="op_interface_preProcess" name="preProcess" visibility="public"/>
+            <UML:Operation xmi.id="op_interface_postProcess" name="postProcess" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class_Exception" name="Exception" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Manager" name="Manager" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:GeneralizableElement.generalization>
+              <UML:Generalization.child xmi.idref="class_Manager"/>
+              <UML:Generalization.parent xmi.idref="class_AbstractManager"/>
+            </UML:GeneralizableElement.generalization>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_preProcess" name="preProcess" visibility="public"/>
+            <UML:Operation xmi.id="op_postProcess" name="postProcess" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_ProcessInterface" name="ProcessInterface" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:DataType xmi.id="datatype_Array" name="Array"/>
+        <UML:DataType xmi.id="datatype_void" name="void"/>
+        <UML:DataType xmi.id="datatype_self" name="self"/>
+        <UML:DataType xmi.id="datatype_integer" name="integer"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

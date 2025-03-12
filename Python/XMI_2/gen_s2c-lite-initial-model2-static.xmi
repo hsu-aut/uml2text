@@ -1,0 +1,120 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_s2c-lite-initial-model" name="s2c-lite-initial-model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_P" name="P" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_B" name="B" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_a" name="a" visibility="public" aggregation="composite">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_b" name="b" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_c" name="c" visibility="private" changeability="frozen">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation1" name="Operation1" visibility="public" isStatic="true">
+                  <UML:Parameter xmi.id="param_x" name="x" kind="in" type="Integer"/>
+                  <UML:Parameter xmi.id="param_y" name="y" kind="in" type="Integer"/>
+                  <UML:Parameter xmi.id="param_return" name="return" kind="return" type="Boolean"/>
+                </UML:Operation>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:StateMachine xmi.id="statemachine_B_Stm" name="B_Stm">
+              <UML:Top>
+                <UML:CompositeState xmi.id="top_state" name="top">
+                  <UML:Subvertex>
+                    <UML:Pseudostate xmi.id="initial" kind="initial"/>
+                    <UML:SimpleState xmi.id="atomic_state" name="Atomic State">
+                      <UML:Entry>
+                        <UML:ActionScript language="Java" body="b = false;"/>
+                      </UML:Entry>
+                      <UML:Exit>
+                        <UML:ActionScript language="Java" body="b = true;"/>
+                      </UML:Exit>
+                    </UML:SimpleState>
+                    <UML:SimpleState xmi.id="atomic_state1" name="Atomic State1"/>
+                    <UML:FinalState xmi.id="final" name="Final"/>
+                    <UML:Pseudostate xmi.id="junction" kind="junction"/>
+                  </UML:Subvertex>
+                  <UML:Transition>
+                    <UML:Source href="#initial"/>
+                    <UML:Target href="#atomic_state"/>
+                  </UML:Transition>
+                  <UML:Transition>
+                    <UML:Source href="#atomic_state"/>
+                    <UML:Target href="#junction"/>
+                    <UML:Trigger>
+                      <UML:SignalEvent xmi.id="event1" name="Event1"/>
+                    </UML:Trigger>
+                  </UML:Transition>
+                  <UML:Transition>
+                    <UML:Source href="#atomic_state1"/>
+                    <UML:Target href="#atomic_state">
+                      <UML:Guard>
+                        <UML:Expression language="Java" body="a <= 10"/>
+                      </UML:Guard>
+                      <UML:Effect>
+                        <UML:ActionScript language="Java" body="b = Operation1(a, 10);"/>
+                      </UML:Effect>
+                    </UML:Target>
+                  </UML:Transition>
+                  <UML:Transition>
+                    <UML:Source href="#junction"/>
+                    <UML:Target href="#atomic_state1">
+                      <UML:Guard>
+                        <UML:Expression language="Java" body="a > 10"/>
+                      </UML:Guard>
+                    </UML:Target>
+                  </UML:Transition>
+                  <UML:Transition>
+                    <UML:Source href="#junction"/>
+                    <UML:Target href="#final">
+                      <UML:Guard>
+                        <UML:Expression language="Java" body="a <= 10"/>
+                      </UML:Guard>
+                      <UML:Effect>
+                        <UML:ActionScript language="Java" body="a = 0;"/>
+                      </UML:Effect>
+                    </UML:Target>
+                  </UML:Transition>
+                </UML:CompositeState>
+              </UML:Top>
+            </UML:StateMachine>
+            <UML:Signal xmi.id="signal1" name="Signal1">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="signal1_attr_x" name="x" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Signal>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="String" name="String"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

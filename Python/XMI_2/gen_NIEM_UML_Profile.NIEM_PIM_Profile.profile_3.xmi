@@ -1,0 +1,74 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Profile xmi.id="profile_NIEM_PIM_Profile" name="NIEM_PIM_Profile">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Import NIEM Common Profile -->
+        <UML:ElementImport xmi.id="import_NIEM_Common_Profile" importedElement="NIEM_Common_Profile"/>
+        
+        <!-- Import UML Model -->
+        <UML:ElementImport xmi.id="import_UML_Model" importedElement="UML_Model"/>
+        
+        <!-- Stereotype Augments -->
+        <UML:Stereotype xmi.id="stereotype_Augments" name="Augments">
+          <UML:Stereotype.baseClass>Generalization</UML:Stereotype.baseClass>
+        </UML:Stereotype>
+
+        <!-- Stereotype InformationModel -->
+        <UML:Stereotype xmi.id="stereotype_InformationModel" name="InformationModel">
+          <UML:Stereotype.baseClass>Package</UML:Stereotype.baseClass>
+          <UML:Stereotype.generalization>
+            <UML:Generalization xmi.idref="stereotype_Namespace"/>
+          </UML:Stereotype.generalization>
+          <UML:Stereotype.taggedValue>
+            <UML:TaggedValue tag="defaultPurpose" type="DefaultPurposeCode"/>
+          </UML:Stereotype.taggedValue>
+        </UML:Stereotype>
+
+        <!-- Stereotype ReferenceName -->
+        <UML:Stereotype xmi.id="stereotype_ReferenceName" name="ReferenceName">
+          <UML:Stereotype.taggedValue>
+            <UML:TaggedValue tag="NIEMName" type="String"/>
+          </UML:Stereotype.taggedValue>
+        </UML:Stereotype>
+
+        <!-- Stereotype RoleOf -->
+        <UML:Stereotype xmi.id="stereotype_RoleOf" name="RoleOf">
+          <UML:Stereotype.baseClass>Property</UML:Stereotype.baseClass>
+        </UML:Stereotype>
+
+        <!-- Stereotype RolePlayedBy -->
+        <UML:Stereotype xmi.id="stereotype_RolePlayedBy" name="RolePlayedBy">
+          <UML:Stereotype.baseClass>Generalization</UML:Stereotype.baseClass>
+        </UML:Stereotype>
+
+        <!-- Stereotype Subsets -->
+        <UML:Stereotype xmi.id="stereotype_Subsets" name="Subsets">
+          <UML:Stereotype.baseClass>Realization</UML:Stereotype.baseClass>
+        </UML:Stereotype>
+        
+        <!-- Enumeration DefaultPurposeCode -->
+        <UML:Enumeration xmi.id="enum_DefaultPurposeCode" name="DefaultPurposeCode">
+          <UML:Enumeration.literal name="subset"/>
+          <UML:Enumeration.literal name="constraint"/>
+          <UML:Enumeration.literal name="exchange"/>
+          <UML:Enumeration.literal name="extension"/>
+          <UML:Enumeration.literal name="incremental"/>
+          <UML:Enumeration.literal name="reference"/>
+          <UML:Enumeration.literal name="replacement"/>
+        </UML:Enumeration>
+
+      </UML:Namespace.ownedElement>
+    </UML:Profile>
+  </XMI.content>
+</XMI>
+```

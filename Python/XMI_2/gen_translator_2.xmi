@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+        <UML:Stereotype xmi.id="stereotype_friend" name="friend"/>
+        <UML:Stereotype xmi.id="stereotype_virtual" name="virtual"/>
+        
+        <UML:Class xmi.id="class_JCVI_Translator" name="JCVI::Translator" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Stereotype xmi.idref="stereotype_datatype"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Stereotype xmi.idref="stereotype_datatype"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_table" name="table" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Table_Set"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_starts" name="starts" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Table_Set"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_reverse" name="reverse" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Table_Set"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_new" name="new" visibility="public" isSpecification="false">
+              <UML:Parameter name="id" kind="in"/>
+              <UML:Parameter name="type" kind="in"/>
+              <UML:Stereotype xmi.idref="stereotype_constructor"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_custom" name="custom" visibility="public" isSpecification="false">
+              <UML:Parameter name="table_ref" kind="in"/>
+              <UML:Parameter name="complete" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_translate" name="translate" visibility="public" isSpecification="false">
+              <UML:Parameter name="seq_ref" kind="in"/>
+              <UML:Parameter name="params" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_translate_exons" name="translate_exons" visibility="public" isSpecification="false">
+              <UML:Parameter name="seq_ref" kind="in"/>
+              <UML:Parameter name="exons" kind="in"/>
+              <UML:Parameter name="params" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_prepare" name="_prepare" visibility="private" isSpecification="false">
+              <UML:Parameter name="strand" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_endpoints" name="_endpoints" visibility="private" isSpecification="false"/>
+            <UML:Operation xmi.id="op_start" name="_start" visibility="private" isSpecification="false"/>
+            <UML:Operation xmi.id="op_translate_internal" name="_translate" visibility="private" isSpecification="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Table_Set" name="Table Set" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_0" name="0" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+            <UML:Attribute xmi.id="attr_1" name="1" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Translator_TableSet_table">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Translator_table" type="class_JCVI_Translator" name="class_JCVI_Translator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TableSet_table" type="class_Table_Set" name="table" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Translator_TableSet_starts">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Translator_starts" type="class_JCVI_Translator" name="class_JCVI_Translator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TableSet_starts" type="class_Table_Set" name="starts" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Translator_TableSet_reverse">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Translator_reverse" type="class_JCVI_Translator" name="class_JCVI_Translator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TableSet_reverse" type="class_Table_Set" name="reverse" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

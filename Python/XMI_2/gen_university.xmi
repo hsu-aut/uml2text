@@ -1,0 +1,142 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Hauptmodell" name="Hauptmodell">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Klasse Person -->
+        <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_firstname" name="firstname" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lastname" name="lastname" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_age" name="age" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse Student -->
+        <UML:Class xmi.id="class_Student" name="Student" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Student_Person" parent="class_Person"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_studentID" name="studentID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse Professor -->
+        <UML:Class xmi.id="class_Professor" name="Professor" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Professor_Person" parent="class_Person"/>
+        </UML:Class>
+        
+        <!-- Klasse JuniorProfessor -->
+        <UML:Class xmi.id="class_JuniorProfessor" name="JuniorProfessor" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_JuniorProfessor_Professor" parent="class_Professor"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_juniorYear" name="juniorYear" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse Examination -->
+        <UML:Class xmi.id="class_Examination" name="Examination" visibility="public" isAbstract="false"/>
+        
+        <!-- Klasse GraduateExamination -->
+        <UML:Class xmi.id="class_GraduateExamination" name="GraduateExamination" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_GraduateExam_Examination" parent="class_Examination"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_topicGraduateExam" name="topic" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse Lecture -->
+        <UML:Class xmi.id="class_Lecture" name="Lecture" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_topicLecture" name="topic" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Klasse Faculty -->
+        <UML:Class xmi.id="class_Faculty" name="Faculty" visibility="public" isAbstract="false"/>
+
+        <!-- Assoziation AExaminationLecture -->
+        <UML:Association xmi.id="assoc_Examination_Lecture" name="AExaminationLecture">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Examination_Lecture_Examination" type="class_Examination" name="examination" visibility="public" aggregation="none" multiplicity="0..1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Examination_Lecture_Lecture" type="class_Lecture" name="lecture" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation AProfessorLecture -->
+        <UML:Association xmi.id="assoc_Professor_Lecture" name="AProfessorLecture">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Professor_Lecture_Professor" type="class_Professor" name="professor" visibility="public" aggregation="none" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Professor_Lecture_Lecture" type="class_Lecture" name="lecture" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation AFacultyProfessor -->
+        <UML:Association xmi.id="assoc_Faculty_Professor" name="AFacultyProfessor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Faculty_Professor_Faculty" type="class_Faculty" name="faculty" visibility="public" aggregation="none" multiplicity="0..1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Faculty_Professor_Professor" type="class_Professor" name="professor" visibility="public" aggregation="none" multiplicity="0..1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation AStudentLecture -->
+        <UML:Association xmi.id="assoc_Student_Lecture" name="AStudentLecture">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Student_Lecture_Student" type="class_Student" name="student" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Student_Lecture_Lecture" type="class_Lecture" name="lecture" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation AStudentExamination -->
+        <UML:Association xmi.id="assoc_Student_Examination" name="AStudentExamination">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Student_Examination_Student" type="class_Student" name="student" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Student_Examination_Examination" type="class_Examination" name="examination" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="int" name="int"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

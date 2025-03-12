@@ -1,0 +1,154 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BackupManagement" name="BackupManagement">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Stereotypes -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_enum" name="enum"/>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_File" name="File" visibility="public" isAbstract="false"/>
+            
+            <UML:Package xmi.id="package_Responsibility" name="Responsibility">
+              <UML:Namespace.ownedElement>
+
+                <!-- Classes -->
+                <UML:Class xmi.id="class_BackupClient" name="BackupClient" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_processor" name="processor" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="class_BackupProcessor"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Operation xmi.id="op_startBackup" name="startBackup" visibility="public">
+                      <UML:Parameter xmi.id="param_request" name="request" kind="in" type="class_BackupRequest"/>
+                    </UML:Operation>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_BackupProcessor" name="BackupProcessor" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_initialHandler" name="initialHandler" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="class_DBBackupHandler"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Operation xmi.id="op_buildChainOfResponsibility" name="buildChainOfResponsibility" visibility="public"/>
+                    <UML:Operation xmi.id="op_startBackupProcessor" name="startBackup" visibility="public">
+                      <UML:Parameter xmi.id="param_request" name="request" kind="in" type="class_BackupRequest"/>
+                    </UML:Operation>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_DBBackupHandler" name="DBBackupHandler" visibility="public" isAbstract="true">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_nextHandler" name="nextHandler" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="class_DBBackupHandler"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Operation xmi.id="op_processRequest" name="processRequest" visibility="public" isAbstract="true">
+                      <UML:Parameter xmi.id="param_request" name="request" kind="in" type="class_BackupRequest"/>
+                    </UML:Operation>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_CleanUpHandler" name="CleanUpHandler" visibility="public" isAbstract="false">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_DBBackupHandler"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_DumpProcessHandler" name="DumpProcessHandler" visibility="public" isAbstract="false">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_DBBackupHandler"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_ZipProcessHandler" name="ZipProcessHandler" visibility="public" isAbstract="false">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_DBBackupHandler"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_UploadToDropboxHandler" name="UploadToDropboxHandler" visibility="public" isAbstract="false">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_DBBackupHandler"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_BackupRequest" name="BackupRequest" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_status" name="status" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:Enumeration xmi.idref="enum_BackupStatus"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_dbName" name="dbName" visibility="private"/>
+                    <UML:Attribute xmi.id="attr_dumpFile" name="dumpFile" visibility="private"/>
+                    <UML:Attribute xmi.id="attr_zipedDumpFile" name="zipedDumpFile" visibility="private"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <!-- Enumeration -->
+                <UML:Enumeration xmi.id="enum_BackupStatus" name="BackupStatus" visibility="public">
+                  <UML:Enumeration.literal name="INITIALIZED"/>
+                  <UML:Enumeration.literal name="DUMPED"/>
+                  <UML:Enumeration.literal name="ZIPED"/>
+                  <UML:Enumeration.literal name="UPLOADED"/>
+                  <UML:Enumeration.literal name="COMPLETED"/>
+                </UML:Enumeration>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Datatypes -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="boolean"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+                <UML:DataType xmi.id="datatype_byte" name="byte"/>
+                <UML:DataType xmi.id="datatype_String" name="String"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

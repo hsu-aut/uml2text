@@ -1,0 +1,167 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_java" name="java">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Pakete -->
+        <UML:Package xmi.id="package_lang" name="lang">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Interfaces -->
+            <UML:Interface xmi.id="interface_Comparable" name="Comparable">
+              <UML:Operation xmi.id="op_compareTo" name="compareTo"/>
+            </UML:Interface>
+            <UML:Interface xmi.id="interface_Cloneable" name="Cloneable"/>
+            
+            <!-- Klassen -->
+            <UML:Class xmi.id="class_Boolean" name="Boolean" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Character" name="Character" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_String" name="String" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Class" name="Class" visibility="public" isAbstract="false"/>
+            
+            <!-- Enumeration -->
+            <UML:Enumeration xmi.id="enum_ThreadState" name="Thread.State"/>
+            
+            <!-- Datentyp -->
+            <UML:DataType xmi.id="datatype_Deprecated" name="Deprecated"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- util Paket -->
+        <UML:Package xmi.id="package_util" name="util">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Interfaces -->
+            <UML:Interface xmi.id="interface_Collection" name="Collection"/>
+            <UML:Interface xmi.id="interface_Iterator" name="Iterator"/>
+            <UML:Interface xmi.id="interface_List" name="List"/>
+            <UML:Interface xmi.id="interface_Map" name="Map"/>
+            <UML:Interface xmi.id="interface_Queue" name="Queue"/>
+            <UML:Interface xmi.id="interface_Set" name="Set"/>
+            
+            <!-- Klassen -->
+            <UML:Class xmi.id="class_ArrayList" name="ArrayList" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Date" name="Date" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_HashMap" name="HashMap" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_HashSet" name="HashSet" visibility="public" isAbstract="false"/>
+            
+            <!-- Klasse mit Methoden -->
+            <UML:Class xmi.id="class_Random" name="Random" visibility="public" isAbstract="false">
+              <UML:Operation xmi.id="op_next" name="next"/>
+              <UML:Operation xmi.id="op_nextBoolean" name="nextBoolean"/>
+              <UML:Operation xmi.id="op_nextInt" name="nextInt"/>
+            </UML:Class>
+            
+            <!-- regex Paket -->
+            <UML:Package xmi.id="package_regex" name="regex">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Interface -->
+                <UML:Interface xmi.id="interface_MatchResult" name="MatchResult"/>
+                
+                <!-- Klassen -->
+                <UML:Class xmi.id="class_Matcher" name="Matcher" visibility="public" isAbstract="false"/>
+                <UML:Class xmi.id="class_Pattern" name="Pattern" visibility="public" isAbstract="false"/>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Benutzerdefinierte Klassen -->
+        <UML:Class xmi.id="class_UserClass" name="UserClass" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_type_user" name="type_user" visibility="private"/>
+          <UML:Operation xmi.id="op_getType_user" name="getType_user"/>
+          <UML:Operation xmi.id="op_setType_user" name="setType_user"/>
+        </UML:Class>
+        
+        <!-- Spezialisierungen von UserClass -->
+        <UML:Class xmi.id="class_UserStudent" name="UserStudent" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_univRollNo" name="univRollNo" visibility="private"/>
+          <UML:Attribute xmi.id="attr_colgRollNo" name="colgRollNo" visibility="private"/>
+          <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+          <UML:Attribute xmi.id="attr_fathersName" name="fathersName" visibility="private"/>
+          <UML:Attribute xmi.id="attr_mothersName" name="mothersName" visibility="private"/>
+          <UML:Attribute xmi.id="attr_contactNo" name="contactNo" visibility="private"/>
+          <UML:Attribute xmi.id="attr_email" name="email" visibility="private"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_UserFaculty" name="UserFaculty" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_facultyCode" name="facultyCode" visibility="private"/>
+          <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+          <UML:Attribute xmi.id="attr_contactNo" name="contactNo" visibility="private"/>
+          <UML:Attribute xmi.id="attr_email" name="email" visibility="private"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UserGuest" name="UserGuest" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_guestId" name="guestId" visibility="private"/>
+          <UML:Attribute xmi.id="attr_profession" name="profession" visibility="private"/>
+          <UML:Operation xmi.id="op_checkProfession" name="checkProfession"/>
+        </UML:Class>
+        
+        <!-- Akteure -->
+        <UML:Actor xmi.id="actor_User" name="User" visibility="public"/>
+        <UML:Actor xmi.id="actor_StudentUser" name="StudentUser" visibility="public"/>
+        <UML:Actor xmi.id="actor_FacultyUser" name="FacultyUser" visibility="public"/>
+        
+        <!-- Anwendungsfälle -->
+        <UML:UseCase xmi.id="usecase_Login" name="Login"/>
+        <UML:UseCase xmi.id="usecase_Logout" name="Logout"/>
+        <UML:UseCase xmi.id="usecase_View" name="View"/>
+        <UML:UseCase xmi.id="usecase_ContributePlay" name="Contribute/Play"/>
+        <UML:UseCase xmi.id="usecase_EventsCalender" name="Events Calender"/>
+        <UML:UseCase xmi.id="usecase_CrossCheckAdmin" name="Cross-Check by Admin"/>
+        <UML:UseCase xmi.id="usecase_PasswdReminder" name="Passwd Reminder"/>
+        <UML:UseCase xmi.id="usecase_Register" name="Register"/>
+
+        <UML:UseCase xmi.id="usecase_ViewStudent" name="View_Student"/>
+        <UML:UseCase xmi.id="usecase_ViewFaculty" name="View_Faculty"/>
+        <UML:UseCase xmi.id="usecase_TimeTable" name="Time Table"/>
+        <UML:UseCase xmi.id="usecase_ProgressReport" name="Progress Report"/>
+        <UML:UseCase xmi.id="usecase_Attendance" name="Attendance"/>
+        <UML:UseCase xmi.id="usecase_Marks" name="Marks(Internal / Sem)"/>
+        <UML:UseCase xmi.id="usecase_Profile" name="Profile"/>
+        <UML:UseCase xmi.id="usecase_ResumePersonalWebsite" name="Resume/Personal Website"/>
+        <UML:UseCase xmi.id="usecase_PublicationsBooks" name="Publications/Books"/>
+        
+        <!-- Beziehungen -->
+        
+        <!-- Generalisation Beziehungen -->
+        <UML:Generalization xmi.id="gen_User_StudentUser" parent="actor_User" child="actor_StudentUser"/>
+        <UML:Generalization xmi.id="gen_User_FacultyUser" parent="actor_User" child="actor_FacultyUser"/>
+        
+        <UML:Generalization xmi.id="gen_UserClass_UserStudent" parent="class_UserClass" child="class_UserStudent"/>
+        <UML:Generalization xmi.id="gen_UserClass_UserFaculty" parent="class_UserClass" child="class_UserFaculty"/>
+        <UML:Generalization xmi.id="gen_UserClass_UserGuest" parent="class_UserClass" child="class_UserGuest"/>
+        
+        <!-- Akteur zu Use-Case Assoziationen -->
+        <UML:Association xmi.id="assoc_StudentUser_ViewStudent">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_StudentUser_ViewStudent_StudentUser" type="actor_StudentUser"/>
+            <UML:AssociationEnd xmi.id="assocEnd_StudentUser_ViewStudent_ViewStudent" type="usecase_ViewStudent"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_FacultyUser_ViewFaculty">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_FacultyUser_ViewFaculty_FacultyUser" type="actor_FacultyUser"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FacultyUser_ViewFaculty_ViewFaculty" type="usecase_ViewFaculty"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

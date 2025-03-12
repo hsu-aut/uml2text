@@ -1,0 +1,228 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Schauspieler (Actors) -->
+            <UML:Actor xmi.id="actor_super_user" name="super_user"/>
+            <UML:Actor xmi.id="actor_admin" name="admin"/>
+            <UML:Actor xmi.id="actor_client_landlord" name="client_landlord"/>
+            <UML:Actor xmi.id="actor_client" name="client"/>
+
+            <!-- Use Cases -->
+            <UML:UseCase xmi.id="use_case_create_admin" name="create admin"/>
+            <UML:UseCase xmi.id="use_case_logged_in" name="logged in"/>
+            <UML:UseCase xmi.id="use_case_reset_password" name="reset password"/>
+            <UML:UseCase xmi.id="use_case_revoke_admin" name="revoke admin"/>
+            <UML:UseCase xmi.id="use_case_revoke_user" name="revoke user"/>
+            <UML:UseCase xmi.id="use_case_show_query_results" name="show query results"/>
+            <UML:UseCase xmi.id="use_case_make_reservation" name="make reservation"/>
+            <UML:UseCase xmi.id="use_case_reservation" name="reservation"/>
+            <UML:UseCase xmi.id="use_case_reservation_complete" name="reservation complete"/>
+            <UML:UseCase xmi.id="use_case_change_reservation" name="change reservation"/>
+            <UML:UseCase xmi.id="use_case_register_complaint" name="register complaint"/>
+            <UML:UseCase xmi.id="use_case_complaint_solved" name="complaint solved"/>
+            <UML:UseCase xmi.id="use_case_opinion" name="opinion"/>
+            <UML:UseCase xmi.id="use_case_outbox" name="outbox"/>
+
+            <!-- Associations zwischen Schauspielern und Use Cases -->
+            <UML:Association xmi.id="assoc_super_user_create_admin" name="super_user-create_admin">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_super_user" type="actor_super_user" aggregation="none" role="super_user"/>
+                <UML:AssociationEnd xmi.id="assocEnd_create_admin" type="use_case_create_admin" aggregation="none" role="create admin"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_super_user_logged_in" name="super_user-logged_in">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_super_user_logged" type="actor_super_user" aggregation="none" role="super_user"/>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in" type="use_case_logged_in" aggregation="none" role="logged in"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_super_user_revoke_user" name="super_user-revoke_user">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_super_user_revoke" type="actor_super_user" aggregation="none" role="super_user"/>
+                <UML:AssociationEnd xmi.id="assocEnd_revoke_user" type="use_case_revoke_user" aggregation="none" role="revoke user"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_admin_logged_in" name="admin-logged_in">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_admin" type="actor_admin" aggregation="none" role="admin"/>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_admin" type="use_case_logged_in" aggregation="none" role="logged in"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_admin_reset_password" name="admin-reset_password">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_admin_reset" type="actor_admin" aggregation="none" role="admin"/>
+                <UML:AssociationEnd xmi.id="assocEnd_reset_password" type="use_case_reset_password" aggregation="none" role="reset password"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_admin_revoke_admin" name="admin-revoke_admin">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_admin_revoke" type="actor_admin" aggregation="none" role="admin"/>
+                <UML:AssociationEnd xmi.id="assocEnd_revoke_admin" type="use_case_revoke_admin" aggregation="none" role="revoke admin"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_client_landlord_show_query_results" name="client_landlord-show_query_results">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_client_landlord" type="actor_client_landlord" aggregation="none" role="client_landlord"/>
+                <UML:AssociationEnd xmi.id="assocEnd_show_query_results" type="use_case_show_query_results" aggregation="none" role="show query results"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_client_logged_in" name="client-logged_in">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_client" type="actor_client" aggregation="none" role="client"/>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_client" type="use_case_logged_in" aggregation="none" role="logged in"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_client_reset_password" name="client-reset_password">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_client_reset" type="actor_client" aggregation="none" role="client"/>
+                <UML:AssociationEnd xmi.id="assocEnd_reset_password_client" type="use_case_reset_password" aggregation="none" role="reset password"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_client_outbox" name="client-outbox">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_client_outbox" type="actor_client" aggregation="none" role="client"/>
+                <UML:AssociationEnd xmi.id="assocEnd_outbox" type="use_case_outbox" aggregation="none" role="outbox"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_client_show_query_results" name="client-show_query_results">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_client_show" type="actor_client" aggregation="none" role="client"/>
+                <UML:AssociationEnd xmi.id="assocEnd_show_query_results_client" type="use_case_show_query_results" aggregation="none" role="show query results"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_client_opinion" name="client-opinion">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_client_opinion" type="actor_client" aggregation="none" role="client"/>
+                <UML:AssociationEnd xmi.id="assocEnd_opinion" type="use_case_opinion" aggregation="none" role="opinion"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Use Case Verbindungen -->
+            <UML:Association xmi.id="assoc_create_admin_logged_in" name="create_admin-logged_in">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_create_admin_logged" type="use_case_create_admin" aggregation="none" role="create admin"/>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_create" type="use_case_logged_in" aggregation="none" role="logged in"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_logged_in_revoke_user" name="logged_in-revoke_user">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_revoke" type="use_case_logged_in" aggregation="none" role="logged in"/>
+                <UML:AssociationEnd xmi.id="assocEnd_revoke_user_logged" type="use_case_revoke_user" aggregation="none" role="revoke user"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_logged_in_make_reservation" name="logged_in-make_reservation">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_make" type="use_case_logged_in" aggregation="none" role="logged in"/>
+                <UML:AssociationEnd xmi.id="assocEnd_make_reservation_logged" type="use_case_make_reservation" aggregation="none" role="make reservation"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_logged_in_register_complaint" name="logged_in-register_complaint">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_register" type="use_case_logged_in" aggregation="none" role="logged in"/>
+                <UML:AssociationEnd xmi.id="assocEnd_register_complaint_logged" type="use_case_register_complaint" aggregation="none" role="register complaint"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_logged_in_reservation" name="logged_in-reservation">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_reserve" type="use_case_logged_in" aggregation="none" role="logged in"/>
+                <UML:AssociationEnd xmi.id="assocEnd_reservation_logged" type="use_case_reservation" aggregation="none" role="reservation"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_logged_in_reservation_complete" name="logged_in-reservation_complete">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_complete" type="use_case_logged_in" aggregation="none" role="logged in"/>
+                <UML:AssociationEnd xmi.id="assocEnd_reservation_complete_logged" type="use_case_reservation_complete" aggregation="none" role="reservation complete"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_logged_in_opinion" name="logged_in-opinion">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_opinion" type="use_case_logged_in" aggregation="none" role="logged in"/>
+                <UML:AssociationEnd xmi.id="assocEnd_opinion_logged" type="use_case_opinion" aggregation="none" role="opinion"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_change_reservation_reservation_complete" name="change_reservation-reservation_complete">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_change_reservation" type="use_case_change_reservation" aggregation="none" role="change reservation"/>
+                <UML:AssociationEnd xmi.id="assocEnd_reservation_complete_change" type="use_case_reservation_complete" aggregation="none" role="reservation complete"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_register_complaint_complaint_solved" name="register_complaint-complaint_solved">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_register_complaint" type="use_case_register_complaint" aggregation="none" role="register complaint"/>
+                <UML:AssociationEnd xmi.id="assocEnd_complaint_solved" type="use_case_complaint_solved" aggregation="none" role="complaint solved"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_opinion_reservation_complete" name="opinion-reservation_complete">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_opinion_complete" type="use_case_opinion" aggregation="none" role="opinion"/>
+                <UML:AssociationEnd xmi.id="assocEnd_reservation_complete_opinion" type="use_case_reservation_complete" aggregation="none" role="reservation complete"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_outbox_logged_in" name="outbox-logged_in">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_outbox" type="use_case_outbox" aggregation="none" role="outbox"/>
+                <UML:AssociationEnd xmi.id="assocEnd_logged_in_outbox" type="use_case_logged_in" aggregation="none" role="logged in"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

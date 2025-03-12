@@ -1,0 +1,359 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_CompanySystem" name="CompanySystem">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Company" name="Company" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_companyId" name="companyId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_companyName" name="companyName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_location" name="location" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getId" name="getId" visibility="public"/>
+            <UML:Operation xmi.id="op_setId" name="setId" visibility="public">
+              <UML:Parameter xmi.id="param_setId_id" name="id" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getCompanyName" name="getCompanyName" visibility="public"/>
+            <UML:Operation xmi.id="op_setCompanyName" name="setCompanyName" visibility="public">
+              <UML:Parameter xmi.id="param_setCompanyName_companyName" name="companyName" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getLocation" name="getLocation" visibility="public"/>
+            <UML:Operation xmi.id="op_setLocation" name="setLocation" visibility="public">
+              <UML:Parameter xmi.id="param_setLocation_location" name="location" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_Department" name="Department" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_departmentType" name="departmentType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getId" name="getId" visibility="public"/>
+            <UML:Operation xmi.id="op_setId" name="setId" visibility="public">
+              <UML:Parameter xmi.id="param_setId_id_department" name="id" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getDepartmentType" name="getDepartmentType" visibility="public"/>
+            <UML:Operation xmi.id="op_setDepartmentType" name="setDepartmentType" visibility="public">
+              <UML:Parameter xmi.id="param_setDepartmentType_departmentType" name="departmentType" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_Employee" name="Employee" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_employeeId" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_gender" name="gender" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_phone" name="phone" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_address" name="address" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_companyId" name="companyId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Company"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_departmentId" name="departmentId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Department"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getEmployeeId" name="getId" visibility="public"/>
+            <UML:Operation xmi.id="op_setEmployeeId" name="setId" visibility="public">
+              <UML:Parameter xmi.id="param_setEmployeeId_id" name="id" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getFirstName" name="getFirstName" visibility="public"/>
+            <UML:Operation xmi.id="op_setFirstName" name="setFirstName" visibility="public">
+              <UML:Parameter xmi.id="param_setFirstName_firstName" name="firstName" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getLastName" name="getLastName" visibility="public"/>
+            <UML:Operation xmi.id="op_setLastName" name="setLastName" visibility="public">
+              <UML:Parameter xmi.id="param_setLastName_lastName" name="lastName" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getGender" name="getGender" visibility="public"/>
+            <UML:Operation xmi.id="op_setGender" name="setGender" visibility="public">
+              <UML:Parameter xmi.id="param_setGender_gender" name="gender" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getPhone" name="getPhone" visibility="public"/>
+            <UML:Operation xmi.id="op_setPhone" name="setPhone" visibility="public">
+              <UML:Parameter xmi.id="param_setPhone_phone" name="phone" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getAddress" name="getAddress" visibility="public"/>
+            <UML:Operation xmi.id="op_setAddress" name="setAddress" visibility="public">
+              <UML:Parameter xmi.id="param_setAddress_address" name="address" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getCompanyId" name="getCompanyId" visibility="public"/>
+            <UML:Operation xmi.id="op_setCompanyId" name="setCompanyId" visibility="public">
+              <UML:Parameter xmi.id="param_setCompanyId_companyId" name="companyId" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getDepartmentId" name="getDepartmentId" visibility="public"/>
+            <UML:Operation xmi.id="op_setDepartmentId" name="setDepartmentId" visibility="public">
+              <UML:Parameter xmi.id="param_setDepartmentId_departmentId" name="departmentId" kind="in" type="Integer"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_Tool" name="Tool" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_toolId" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_toolName" name="toolName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_numberOfAvailables" name="numberOfAvailables" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getToolId" name="getId" visibility="public"/>
+            <UML:Operation xmi.id="op_setToolId" name="setId" visibility="public">
+              <UML:Parameter xmi.id="param_setToolId_id" name="id" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getToolName" name="getToolName" visibility="public"/>
+            <UML:Operation xmi.id="op_setToolName" name="setToolName" visibility="public">
+              <UML:Parameter xmi.id="param_setToolName_toolName" name="toolName" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_isExpensive" name="isExpensive" visibility="public"/>
+            <UML:Operation xmi.id="op_setIsExpensive" name="setIsExpensive" visibility="public">
+              <UML:Parameter xmi.id="param_setIsExpensive_isExpensive" name="isExpensive" kind="in" type="Boolean"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getNumberOfAvailables" name="getNumberOfAvailables" visibility="public"/>
+            <UML:Operation xmi.id="op_setNumberOfAvailables" name="setNumberOfAvailables" visibility="public">
+              <UML:Parameter xmi.id="param_setNumberOfAvailables_numberOfAvailables" name="numberOfAvailables" kind="in" type="Integer"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_ExpensiveToolLog" name="ExpensiveToolLog" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_logId" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_employeeId" name="employeeId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Employee"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_toolId" name="toolId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Tool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_quantity" name="quantity" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_status" name="status" visibility="private">  
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lendDate" name="lendDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_backDate" name="backDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getLogId" name="getId" visibility="public"/>
+            <UML:Operation xmi.id="op_setLogId" name="setId" visibility="public">
+              <UML:Parameter xmi.id="param_setLogId_id" name="id" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getEmployeeId_log" name="getEmployeeId" visibility="public"/>
+            <UML:Operation xmi.id="op_setEmployeeId_log" name="setEmployeeId" visibility="public">
+              <UML:Parameter xmi.id="param_setEmployeeId_employeeId" name="employeeId" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getToolId_log" name="getToolId" visibility="public"/>
+            <UML:Operation xmi.id="op_setToolId_log" name="setToolId" visibility="public">
+              <UML:Parameter xmi.id="param_setToolId_toolId" name="toolId" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getQuantity" name="getQuantity" visibility="public"/>
+            <UML:Operation xmi.id="op_setQuantity" name="setQuantity" visibility="public">
+              <UML:Parameter xmi.id="param_setQuantity_quantity" name="quantity" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getStatus" name="getStatus" visibility="public"/>
+            <UML:Operation xmi.id="op_setStatus" name="setStatus" visibility="public">
+              <UML:Parameter xmi.id="param_setStatus_status" name="status" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getLendDate" name="getLendDate" visibility="public"/>
+            <UML:Operation xmi.id="op_setLendDate" name="setLendDate" visibility="public">
+              <UML:Parameter xmi.id="param_setLendDate_lendDate" name="lendDate" kind="in" type="Date"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getBackDate" name="getBackDate" visibility="public"/>
+            <UML:Operation xmi.id="op_setBackDate" name="setBackDate" visibility="public">
+              <UML:Parameter xmi.id="param_setBackDate_backDate" name="backDate" kind="in" type="Date"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_InexpensiveToolLog" name="InexpensiveToolLog" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_logId_inexp" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_employeeId_inexp" name="employeeId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Employee"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_toolId_inexp" name="toolId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Tool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_quantity_inexp" name="quantity" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_status_inexp" name="status" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_logDate_inexp" name="logDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getLogId_inexp" name="getId" visibility="public"/>
+            <UML:Operation xmi.id="op_setLogId_inexp" name="setId" visibility="public">
+              <UML:Parameter xmi.id="param_setLogId_inexp_id" name="id" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getEmployeeId_inexp" name="getEmployeeId" visibility="public"/>
+            <UML:Operation xmi.id="op_setEmployeeId_inexp" name="setEmployeeId" visibility="public">
+              <UML:Parameter xmi.id="param_setEmployeeId_inexp_employeeId" name="employeeId" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getToolId_inexp" name="getToolId" visibility="public"/>
+            <UML:Operation xmi.id="op_setToolId_inexp" name="setToolId" visibility="public">
+              <UML:Parameter xmi.id="param_setToolId_inexp_toolId" name="toolId" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getQuantity_inexp" name="getQuantity" visibility="public"/>
+            <UML:Operation xmi.id="op_setQuantity_inexp" name="setQuantity" visibility="public">
+              <UML:Parameter xmi.id="param_setQuantity_inexp_quantity" name="quantity" kind="in" type="Integer"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getStatus_inexp" name="getStatus" visibility="public"/>
+            <UML:Operation xmi.id="op_setStatus_inexp" name="setStatus" visibility="public">
+              <UML:Parameter xmi.id="param_setStatus_inexp_status" name="status" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getLogDate_inexp" name="getLogDate" visibility="public"/>
+            <UML:Operation xmi.id="op_setLogDate_inexp" name="setLogDate" visibility="public">
+              <UML:Parameter xmi.id="param_setLogDate_inexp_logDate" name="logDate" kind="in" type="Date"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Interface xmi.id="interface_CompanyService" name="CompanyService" visibility="public"/>
+        <UML:Interface xmi.id="interface_CompanyDao" name="CompanyDao" visibility="public">
+          <UML:Operation xmi.id="op_getCompanies" name="getCompanies" visibility="public"/>
+        </UML:Interface>
+        <UML:Interface xmi.id="interface_DepartmentService" name="DepartmentService" visibility="public"/>
+        <UML:Interface xmi.id="interface_DepartmentDao" name="DepartmentDao" visibility="public"/>
+        <UML:Interface xmi.id="interface_EmployeeService" name="EmployeeService" visibility="public"/>
+        <UML:Interface xmi.id="interface_EmployeeDao" name="EmployeeDao" visibility="public"/>
+        <UML:Interface xmi.id="interface_ToolService" name="ToolService" visibility="public"/>
+        <UML:Interface xmi.id="interface_ToolDao" name="ToolDao" visibility="public"/>
+        <UML:Interface xmi.id="interface_ToolLogService" name="ToolLogService" visibility="public"/>
+        <UML:Interface xmi.id="interface_ToolLogDao" name="ToolLogDao" visibility="public"/>
+        <UML:Association xmi.id="assoc_Employee_Company" name="employee-company" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Employee" type="class_Employee" name="employee" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Company" type="class_Company" name="company" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Employee_Department" name="employee-department" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Employee_Department" type="class_Employee" name="employee" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Department_Employee" type="class_Department" name="department" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Tool_ExpensiveToolLog" name="tool-expensiveToolLog" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Tool" type="class_Tool" name="tool" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ExpensiveToolLog" type="class_ExpensiveToolLog" name="expensiveToolLog" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Tool_InexpensiveToolLog" name="tool-inexpensiveToolLog" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Tool_Inexp" type="class_Tool" name="tool" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_InexpensiveToolLog" type="class_InexpensiveToolLog" name="inexpensiveToolLog" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Tool_Company" name="tool-company" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Tool_Company" type="class_Tool" name="tool" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Company_Tool" type="class_Company" name="company" visibility="public" aggregation="aggregate" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Tool_Department" name="tool-department" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Tool_Department" type="class_Tool" name="tool" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Department_Tool" type="class_Department" name="department" visibility="public" aggregation="aggregate" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

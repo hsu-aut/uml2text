@@ -1,0 +1,125 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Generated</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_testModel04" name="testModel04">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="pkg_scope" name="scope">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="pkg_package1" name="package1">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_Class1" name="Class1" visibility="public"/>
+                <UML:Class xmi.id="class_Class2" name="Class2" visibility="public"/>
+                <UML:Package xmi.id="pkg_package1_1" name="package1_1">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="class_Class3" name="Class3" visibility="public"/>
+                    <UML:Class xmi.id="class_Class4" name="Class4" visibility="public"/>
+                    <UML:Package xmi.id="pkg_package1_1_1" name="package1_1_1">
+                      <UML:Namespace.ownedElement>
+                        <UML:Class xmi.id="class_Class5" name="Class5" visibility="public"/>
+                      </UML:Namespace.ownedElement>
+                    </UML:Package>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                <UML:Package xmi.id="pkg_package1_2" name="package1_2">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="class_Class6" name="Class6" visibility="public"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Package xmi.id="pkg_package2" name="package2"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Class xmi.id="class_Person" name="Person" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="public"/>
+            <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="public"/>
+            <UML:Operation xmi.id="op_getAge" name="getAge" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:Stereotype xmi.id="stereotype_variant" name="variant"/>
+        </UML:Class>
+        <UML:Package xmi.id="pkg_relations" name="relations">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Vehicle" name="Vehicle" visibility="public">
+              <UML:Generalization xmi.idref="gen_vehicle"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Car" name="Car" visibility="public">
+              <UML:Generalization xmi.idref="gen_vehicle"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Motorcycle" name="Motorcycle" visibility="public">
+              <UML:Generalization xmi.idref="gen_vehicle"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Cruiser" name="Cruiser" visibility="public">
+              <UML:Generalization xmi.idref="gen_motorcycle"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Enduro" name="Enduro" visibility="public">
+              <UML:Generalization xmi.idref="gen_motorcycle"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Train" name="Train" visibility="public">
+              <UML:Generalization xmi.idref="gen_vehicle"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Racecar" name="Racecar" visibility="public">
+              <UML:Generalization xmi.idref="gen_car"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Manufacturer" name="Manufacturer" visibility="public"/>
+            <UML:Class xmi.id="class_Supplier" name="Supplier" visibility="public"/>
+            <UML:Interface xmi.id="interface_Logistics" name="Logistics" visibility="public"/>
+            <UML:Class xmi.id="class_Resource" name="Resource" visibility="public"/>
+            <UML:Actor xmi.id="actor_Driver" name="Driver" visibility="public"/>
+            <UML:Association xmi.id="assoc_Manufacturer_Supplier">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Manufacturer" type="class_Manufacturer" name="manufacturer" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Supplier" type="class_Supplier" name="supplier" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Dependency xmi.id="dep_Manufacturer_Logistics" client="class_Manufacturer" supplier="interface_Logistics"/>
+            <UML:Dependency xmi.id="dep_Supplier_Logistics" client="class_Supplier" supplier="interface_Logistics"/>
+            <UML:Dependency xmi.id="dep_Supplier_Resource" client="class_Supplier" supplier="class_Resource"/>
+            <UML:Dependency xmi.id="dep_Driver_Vehicle" client="actor_Driver" supplier="class_Vehicle"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="pkg_conncomp" name="conncomp">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_ClassA" name="ClassA" visibility="public"/>
+            <UML:Class xmi.id="class_ClassB" name="ClassB" visibility="public"/>
+            <UML:Class xmi.id="class_ClassC" name="ClassC" visibility="public"/>
+            <UML:Class xmi.id="class_ClassD" name="ClassD" visibility="public"/>
+            <UML:Class xmi.id="class_ClassE" name="ClassE" visibility="public"/>
+            <UML:Class xmi.id="class_ClassF" name="ClassF" visibility="public"/>
+            <UML:Class xmi.id="class_ClassG" name="ClassG" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_ClassG_Op1" name="operation1" visibility="public">
+                  <UML:Parameter xmi.id="param_Op1_ClassA" name="param1" type="class_ClassA" kind="in"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_ClassG_Op2" name="operation2" visibility="public">
+                  <UML:Parameter xmi.id="param_Op2_ClassA" name="param2" type="class_ClassA" kind="in"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="pkg_action" name="action">
+          <UML:Namespace.ownedElement>
+            <UML:ActivityGraph xmi.id="ag_Activities" name="Activities">
+              <UML:ActivityGraph.node>
+                <UML:ActionState xmi.id="action_createAccount" name="create bank account"/>
+                <UML:ActionState xmi.id="action_updateCustomer" name="update customer"/>
+                <UML:ActionState xmi.id="action_deleteFile" name="delete file"/>
+                <UML:ActionState xmi.id="action_verifyContract" name="verify contract"/>
+              </UML:ActivityGraph.node>
+            </UML:ActivityGraph>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

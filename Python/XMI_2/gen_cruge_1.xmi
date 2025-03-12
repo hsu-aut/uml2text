@@ -1,0 +1,121 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+
+        <!-- Paket Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_int" name="int"/>
+            <UML:Class xmi.id="class_char" name="char"/>
+            <UML:Class xmi.id="class_bool" name="bool"/>
+            <UML:Class xmi.id="class_float" name="float"/>
+            <UML:Class xmi.id="class_double" name="double"/>
+            <UML:Class xmi.id="class_short" name="short"/>
+            <UML:Class xmi.id="class_long" name="long"/>
+            <UML:Class xmi.id="class_unsigned_int" name="unsigned int"/>
+            <UML:Class xmi.id="class_unsigned_short" name="unsigned short"/>
+            <UML:Class xmi.id="class_unsigned_long" name="unsigned long"/>
+            <UML:Class xmi.id="class_string" name="string"/>
+            <UML:Class xmi.id="class_Yii_app_user" name="Yii.app.user"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Paket yii/framework -->
+        <UML:Package xmi.id="package_yii_framework" name="yii/framework">
+          
+          <!-- Sub-Paket web/auth -->
+          <UML:Package xmi.id="package_web_auth" name="web/auth">
+            <UML:Namespace.ownedElement>
+              <UML:Class xmi.id="class_CBaseUserIdentity" name="CBaseUserIdentity"/>
+              <UML:Class xmi.id="class_BaseUserIdentity" name="BaseUserIdentity">
+                <UML:Generalization>
+                  <UML:Generalization.child>
+                    <UML:Class xmi.idref="class_CUserIdentity"/>
+                  </UML:Generalization.child>
+                </UML:Generalization>
+              </UML:Class>
+              <UML:Class xmi.id="class_CWebUser" name="CWebUser"/>
+              <UML:Class xmi.id="class_CUserIdentity" name="CUserIdentity">
+                <UML:Generalization>
+                  <UML:Generalization.child>
+                    <UML:Class xmi.idref="class_BaseUserIdentity"/>
+                  </UML:Generalization.child>
+                </UML:Generalization>
+              </UML:Class>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+
+          <!-- Sub-Paket base -->
+          <UML:Package xmi.id="package_base" name="base">
+            <UML:Namespace.ownedElement>
+              <UML:Class xmi.id="class_CModel" name="CModel">
+                <UML:Generalization>
+                  <UML:Generalization.children>
+                    <UML:Class xmi.idref="class_CFormModel"/>
+                  </UML:Generalization.children>
+                </UML:Generalization>
+              </UML:Class>
+              <UML:Class xmi.id="class_CApplicationComponent" name="CApplicationComponent"/>
+              <UML:Class xmi.id="class_CComponent" name="CComponent"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+
+        </UML:Package>
+
+        <!-- Paket application -->
+        <UML:Package xmi.id="package_application" name="application">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_CFormModel" name="CFormModel">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_CModel"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_UserIdentity" name="UserIdentity">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_authenticate" name="authenticate"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_view_login" name="view/login"/>
+            <UML:Class xmi.id="class_YourUser" name="YourUser"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_login_request">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_view_login" type="class_view_login" name="view/login" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CFormModel" type="class_CFormModel" name="CFormModel" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML: Association xmi.id="assoc_authenticate">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_CFormModel_auth" type="class_CFormModel" name="CFormModel_auth" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UserIdentity" type="class_UserIdentity" name="UserIdentity" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_login">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_CFormModel_login" type="class_CFormModel" name="CFormModel_login" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Yii_app_user" type="class_Yii_app_user" name="Yii.app.user" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

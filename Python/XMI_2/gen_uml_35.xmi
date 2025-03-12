@@ -1,0 +1,109 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package Structure -->
+        <UML:Package xmi.id="p1" name="Logical View" isAbstract="false" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="p2" name="Datatypes" isAbstract="false" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="int" name="int" isAbstract="false" visibility="public"/>
+                <UML:Class xmi.id="char" name="char" isAbstract="false" visibility="public"/>
+                <UML:Class xmi.id="float" name="float" isAbstract="false" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Classes -->
+        <UML:Class xmi.id="class_btDiscreteDynamicsWorld" name="btDiscreteDynamicsWorld" isAbstract="false" visibility="public"/>
+        <UML:Class xmi.id="class_btDbvtBroadphase" name="btDbvtBroadphase" isAbstract="false" visibility="public"/>
+        <UML:Class xmi.id="class_btDefaultCollisionConfiguration" name="btDefaultCollisionConfiguration" isAbstract="false" visibility="public"/>
+        <UML:Class xmi.id="class_btCollisionDispatcher" name="btCollisionDispatcher" isAbstract="false" visibility="public"/>
+        <UML:Class xmi.id="class_btSequentialImpulseConstraintSolver" name="btSequentialImpulseConstraintSolver" isAbstract="false" visibility="public"/>
+        
+        <!-- Package: std -->
+        <UML:Package xmi.id="p3" name="std" isAbstract="false" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="vector" name="vector" isAbstract="false" visibility="public"/>
+            <UML:Class xmi.id="chrono" name="chrono" isAbstract="false" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="time_point" name="time_point" isAbstract="false" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: simulator -->
+        <UML:Package xmi.id="p4" name="simulator" isAbstract="false" visibility="public"/>
+        
+        <!-- Package: osg -->
+        <UML:Package xmi.id="p5" name="osg" isAbstract="false" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="Node" name="Node" isAbstract="false" visibility="public"/>
+            <UML:Class xmi.id="NodeVisitor" name="NodeVisitor" isAbstract="false" visibility="public"/>
+            <UML:Class xmi.id="Group" name="Group" isAbstract="false" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Package: osgGA -->
+        <UML:Package xmi.id="p6" name="osgGA" isAbstract="false" visibility="public"/>
+        
+        <!-- Package: osgViewer -->
+        <UML:Package xmi.id="p7" name="osgViewer" isAbstract="false" visibility="public"/>
+
+         <!-- Package: Eigen -->
+        <UML:Package xmi.id="p8" name="Eigen" isAbstract="false" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="Vector3d" name="Vector3d" isAbstract="false" visibility="public"/>
+            <UML:Class xmi.id="Vector4d" name="Vector4d" isAbstract="false" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Key classes and inheritance -->
+        <UML:Class xmi.id="Part" name="Part" isAbstract="true" visibility="public"/>
+        <UML:Class xmi.id="Box" name="Box" isAbstract="false" visibility="public">
+          <UML:Generalization xmi.id="gen_Box_Part" general="Part"/>
+        </UML:Class>
+        <UML:Class xmi.id="Ground" name="Ground" isAbstract="false" visibility="public">
+          <UML:Generalization xmi.id="gen_Ground_Part" general="Part"/>
+        </UML:Class>
+        <UML:Class xmi.id="Robot" name="Robot" isAbstract="false" visibility="public">
+          <UML:Generalization xmi.id="gen_Robot_Part" general="Part"/>
+        </UML:Class>
+
+        <!-- Physics Simulation and Visualization -->
+        <UML:Class xmi.id="BulletEnvironment" name="BulletEnvironment" isAbstract="false" visibility="public"/>
+        <UML:Class xmi.id="OSGEnvironment" name="OSGEnvironment" isAbstract="false" visibility="public"/>
+
+        <!-- Callback and Event Handling -->
+        <UML:Class xmi.id="PhysicsCallback" name="PhysicsCallback" isAbstract="false" visibility="public"/>
+        <UML:Class xmi.id="KeyboardEventHandler" name="KeyboardEventHandler" isAbstract="false" visibility="public"/>
+
+        <!-- Agent and Actuator -->
+        <UML:Class xmi.id="Agent" name="Agent" isAbstract="false" visibility="public"/>
+        <UML:Class xmi.id="Actuator" name="Actuator" isAbstract="false" visibility="public"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_BulletEnvironment_Part">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BulletEnvironment" type="BulletEnvironment" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Part" type="Part" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

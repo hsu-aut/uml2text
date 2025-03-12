@@ -1,0 +1,99 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+    <XMI.header>
+        <XMI.documentation>
+            <XMI.exporter>ArgoUML</XMI.exporter>
+            <XMI.exporterVersion>0.34</XMI.exporterVersion>
+        </XMI.documentation>
+        <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+    </XMI.header>
+    <XMI.content>
+        <UML:Model xmi.id="model_m1" name="m1">
+            <UML:Namespace.ownedElement>
+                <!-- Definition der Klasse Date -->
+                <UML:Class xmi.id="class_Date" name="Date" visibility="public" isAbstract="false" />
+                <!-- Definition der generischen Klasse List -->
+                <UML:Class xmi.id="class_List" name="List" visibility="public" isAbstract="false">
+                    <UML:TemplateParameter xmi.id="templateParam_T" name="T"/>
+                </UML:Class>
+                <!-- Definition der Klasse Staff -->
+                <UML:Class xmi.id="class_Staff" name="Staff" visibility="public" isAbstract="false">
+                    <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_id" name="id" visibility="private" datatype="Long" />
+                        <UML:Attribute xmi.id="attr_name_Staff" name="name" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_username" name="username" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_password" name="password" visibility="private" datatype="String" />
+                    </UML:Namespace.ownedElement>
+                </UML:Class>
+                <!-- Definition der Klasse Patient -->
+                <UML:Class xmi.id="class_Patient" name="Patient" visibility="public" isAbstract="false">
+                    <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_id_Patient" name="id" visibility="private" datatype="Long" />
+                        <UML:Attribute xmi.id="attr_name_Patient" name="name" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_dob" name="dob" visibility="private" type="class_Date" />
+                        <UML:Attribute xmi.id="attr_dobPlace" name="dobPlace" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_ssn" name="ssn" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_phone" name="phone" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_address" name="address" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_fathersName" name="fathersName" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_mothersName" name="mothersName" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_treatmentHistory" name="treatmentHistory" visibility="private">
+                            <UML:StructuralFeature.type>
+                                <UML:Class xmi.idref="class_List_Treatment"/>
+                            </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                    </UML:Namespace.ownedElement>
+                </UML:Class>
+                <!-- Definition der Klasse Address -->
+                <UML:Class xmi.id="class_Address" name="Address" visibility="public" isAbstract="false">
+                    <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_id_Address" name="id" visibility="private" datatype="Long" />
+                        <UML:Attribute xmi.id="attr_street" name="street" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_appartmentNo" name="appartmentNo" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_city" name="city" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_zipCode" name="zipCode" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_state" name="state" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_country" name="country" visibility="private" datatype="String" />
+                    </UML:Namespace.ownedElement>
+                </UML:Class>
+                <!-- Definition der Klasse Treatment -->
+                <UML:Class xmi.id="class_Treatment" name="Treatment" visibility="public" isAbstract="false">
+                    <UML:Namespace.ownedElement>
+                        <UML:Attribute xmi.id="attr_id_Treatment" name="id" visibility="private" datatype="Long" />
+                        <UML:Attribute xmi.id="attr_title" name="title" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_nameofDoctor" name="nameofDoctor" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_nameOfHospital" name="nameOfHospital" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_addressOfHospital" name="addressOfHospital" visibility="private" type="class_Address" />
+                        <UML:Attribute xmi.id="attr_dateOfTreatment" name="dateOfTreatment" visibility="private" type="class_Date" />
+                        <UML:Attribute xmi.id="attr_symptoms" name="symptoms" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_descriptionOfTreatment" name="descriptionOfTreatment" visibility="private" datatype="String" />
+                        <UML:Attribute xmi.id="attr_treatmentReports" name="treatmentReports" visibility="private">
+                            <UML:StructuralFeature.type>
+                                <UML:Class xmi.idref="class_List_String"/>
+                            </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                    </UML:Namespace.ownedElement>
+                </UML:Class>
+                <!-- Assoziation zwischen Patient und Treatment -->
+                <UML:Association xmi.id="assoc_Patient_Treatment" name="patient-treatment" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_Patient" type="class_Patient" aggregation="none" multiplicity="1"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_Treatment" type="class_Treatment" aggregation="none" multiplicity="*"/>
+                    </UML:Association.connection>
+                </UML:Association>
+                <!-- Assoziation zwischen Treatment und Address -->
+                <UML:Association xmi.id="assoc_Treatment_Address" name="treatment-address" visibility="public">
+                    <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_Treatment_Address" type="class_Treatment" aggregation="none" multiplicity="1"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_Address" type="class_Address" aggregation="none" multiplicity="1"/>
+                    </UML:Association.connection>
+                </UML:Association>
+                <!-- Primitive Datentypen -->
+                <UML:DataType xmi.id="datatype_String" name="String"/>
+                <UML:DataType xmi.id="datatype_Long" name="Long"/>
+            </UML:Namespace.ownedElement>
+        </UML:Model>
+    </XMI.content>
+</XMI>
+```

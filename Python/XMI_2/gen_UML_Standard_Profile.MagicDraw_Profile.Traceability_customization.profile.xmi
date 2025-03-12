@@ -1,0 +1,197 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TraceabilityModel" name="TraceabilityModel">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_TraceabilityGroup" name="TraceabilityGroup" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Traceability" name="Traceability" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ParticipatesInInteractions" name="Participates In Interactions" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_participatesInInteraction" name="participatesInInteraction" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Interaction"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ParticipatesInActivities" name="Participates In Activities" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_participatesInActivity" name="participatesInActivity" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Activity"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UsedClassifiersInInteractions" name="Used Classifiers In Interactions" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_usedClassifier" name="usedClassifier" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Classifier"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_DescribedUseCases" name="Described Use Cases" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_describedUseCase" name="describedUseCase" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Element"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DescribingBehaviors" name="Describing Behaviors" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_describingBehavior" name="describingBehavior" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Element"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SpecificClassifiers" name="Specific Classifiers" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_specificClassifier" name="specificClassifier" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_AllSpecificClassifiers" name="All Specific Classifiers" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_allSpecificClassifiers" name="allSpecificClassifiers" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AllGeneralClassifiers" name="All General Classifiers" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_allGeneralClassifiers" name="allGeneralClassifiers" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UsedClassifiersInActivities" name="Used Classifiers In Activities" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_usedClassifierInActivities" name="usedClassifier" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Classifier"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UseCaseSpecifyingUseCases" name="Use Case Specifying Use Cases" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_specifyingUseCase" name="specifyingUseCase" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_UseCase"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComponentSpecifyingClasses" name="Component Specifying Classes" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_specifyingClass" name="specifyingClass" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ArtifactManifestingClassifiers" name="Artifact Manifesting Classifiers" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_manifestedInArtifact" name="manifestedInArtifact" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ClassSpecifyingUseCases" name="Class Specifying Use Cases" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_specifyingUseCaseInClass" name="specifyingUseCase" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ElementSpecifyingElements" name="Element Specifying Elements" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_specifyingElement" name="specifyingElement" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ElementAllSpecifyingElements" name="Element All Specifying Elements" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_allSpecifyingElements" name="allSpecifyingElements" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ClassifierSpecifyingComponents" name="Classifier Specifying Components" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_specifyingComponent" name="specifyingComponent" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ElementRealizingElements" name="Element Realizing Elements" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_realizingElement" name="realizingElement" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ElementAllRealizingElements" name="Element All Realizing Elements" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_allRealizingElements" name="allRealizingElements" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UseCaseRealizingUseCases" name="Use Case Realizing Use Cases" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_realizingUseCase" name="realizingUseCase" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComponentRealizingClassifiers" name="Component Realizing Classifiers" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_realizingClassifier" name="realizingClassifier" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComponentManifestedByArtifacts" name="Component Manifested by Artifacts" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_manifestedByArtifact" name="manifestedByArtifact" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_InterfaceRealizingClassifiers" name="Interface Realizing Classifiers" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_realizingClassifierInInterface" name="realizingClassifier" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ClassRealizingComponents" name="Class Realizing Components" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_realizingComponentInClass" name="realizingComponent" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UseCaseRealizingClasses" name="Use Case Realizing Classes" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_realizingClassInUseCase" name="realizingClass" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,122 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        <!-- Paket Datatypes -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt_int" name="int"/>
+            <UML:DataType xmi.id="dt_char" name="char"/>
+            <UML:DataType xmi.id="dt_bool" name="bool"/>
+            <UML:DataType xmi.id="dt_float" name="float"/>
+            <UML:DataType xmi.id="dt_double" name="double"/>
+            <UML:DataType xmi.id="dt_short" name="short"/>
+            <UML:DataType xmi.id="dt_long" name="long"/>
+            <UML:DataType xmi.id="dt_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="dt_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="dt_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="dt_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Klasse Komplex -->
+        <UML:Class xmi.id="cls_Komplex" name="Komplex" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_re" name="re" visibility="private" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_im" name="im" visibility="private" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+          <UML:BehavioralFeature xmi.id="op_toString_Komplex" name="toString" visibility="public" isQuery="true">
+            <UML:Parameter name="return" kind="return">
+              <UML:Parameter.type>
+                <UML:DataType xmi.idref="dt_string"/>
+              </UML:Parameter.type>
+            </UML:Parameter>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_add_Komplex" name="add" visibility="public">
+            <UML:Parameter name="other" kind="in" type="cls_Komplex"/>
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_sub_Komplex" name="sub" visibility="public">
+            <UML:Parameter name="other" kind="in" type="cls_Komplex"/>
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_mul_Komplex" name="mul" visibility="public">
+            <UML:Parameter name="other" kind="in" type="cls_Komplex"/>
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_div_Komplex" name="div" visibility="public">
+            <UML:Parameter name="other" kind="in" type="cls_Komplex"/>
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_conj_Komplex" name="conj" visibility="public">
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+        </UML:Class>
+
+        <!-- Klasse Heltal -->
+        <UML:Class xmi.id="cls_Heltal" name="Heltal" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_value" name="value" visibility="private" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+          <UML:BehavioralFeature xmi.id="op_toString_Heltal" name="toString" visibility="public" isQuery="true">
+            <UML:Parameter name="return" kind="return">
+              <UML:Parameter.type>
+                <UML:DataType xmi.idref="dt_string"/>
+              </UML:Parameter.type>
+            </UML:Parameter>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_getValue_Heltal" name="getValue" visibility="public">
+            <UML:Parameter name="return" kind="return">
+              <UML:Parameter.type>
+                <UML:DataType xmi.idref="dt_long"/>
+              </UML:Parameter.type>
+            </UML:Parameter>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_add_Heltal" name="add" visibility="public">
+            <UML:Parameter name="other" kind="in" type="cls_Heltal"/>
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_sub_Heltal" name="sub" visibility="public">
+            <UML:Parameter name="other" kind="in" type="cls_Heltal"/>
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_mul_Heltal" name="mul" visibility="public">
+            <UML:Parameter name="other" kind="in" type="cls_Heltal"/>
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+          <UML:BehavioralFeature xmi.id="op_div_Heltal" name="div" visibility="public">
+            <UML:Parameter name="other" kind="in" type="cls_Heltal"/>
+            <UML:Parameter name="return" kind="return"/>
+          </UML:BehavioralFeature>
+        </UML:Class>
+
+        <!-- Abhängigkeiten -->
+        <UML:Dependency xmi.id="dep_Komplex_Heltal" client="cls_Komplex" supplier="cls_Heltal"/>
+        <UML:Dependency xmi.id="dep_Heltal_Komplex" client="cls_Heltal" supplier="cls_Komplex"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

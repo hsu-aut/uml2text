@@ -1,0 +1,297 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+
+    <!-- Logical View -->
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+
+        <!-- Datatypes Package with predefined types -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- New empty package -->
+        <UML:Package xmi.id="package_new_package" name="new_package"/>
+
+        <!-- Classes and their cyclic associations -->
+        <UML:Class xmi.id="class_TopLeft" name="TopLeft">
+          <UML:Classifier.feature>
+            <!-- Association -->
+            <UML:AssociationEnd xmi.idref="assoc_TopLeft_BottomLeft_end" type="class_BottomLeft"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BottomLeft" name="BottomLeft">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.idref="assoc_BottomLeft_BottomRight_end" type="class_BottomRight"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BottomRight" name="BottomRight">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.idref="assoc_BottomRight_TopRight_end" type="class_TopRight"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TopRight" name="TopRight">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.idref="assoc_TopRight_TopLeft_end" type="class_TopLeft"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Linear related classes -->
+        <UML:Class xmi.id="class_Alpha" name="Alpha">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.idref="assoc_Alpha_Bravo_end" type="class_Bravo"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Bravo" name="Bravo">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.idref="assoc_Bravo_Charlie_end" type="class_Charlie"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Charlie" name="Charlie">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.idref="assoc_Charlie_Delta_end" type="class_Delta"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Delta" name="Delta">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.idref="assoc_Delta_Echo_end" type="class_Echo"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Echo" name="Echo"/>
+
+        <!-- Class A and Class B association -->
+        <UML:Class xmi.id="class_Class_A" name="Class A">
+          <UML:Classifier.feature>
+            <UML:AssociationEnd xmi.idref="assoc_Class_A_ClassB_end" type="class_ClassB"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ClassB" name="ClassB"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_TopLeft_BottomLeft" name="TopLeft-BottomLeft">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_TopLeft_BottomLeft_end" type="class_BottomLeft" name="toBottomLeft"/>
+            <UML:AssociationEnd xmi.id="assoc_BottomLeft_TopLeft_end" type="class_TopLeft" name="fromTopLeft"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_BottomLeft_BottomRight" name="BottomLeft-BottomRight">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_BottomLeft_BottomRight_end" type="class_BottomRight" name="toBottomRight"/>
+            <UML:AssociationEnd xmi.id="assoc_BottomRight_BottomLeft_end" type="class_BottomLeft" name="fromBottomLeft"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_BottomRight_TopRight" name="BottomRight-TopRight">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_BottomRight_TopRight_end" type="class_TopRight" name="toTopRight"/>
+            <UML:AssociationEnd xmi.id="assoc_TopRight_BottomRight_end" type="class_BottomRight" name="fromBottomRight"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_TopRight_TopLeft" name="TopRight-TopLeft">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_TopRight_TopLeft_end" type="class_TopLeft" name="toTopLeft"/>
+            <UML:AssociationEnd xmi.id="assoc_TopLeft_TopRight_end" type="class_TopRight" name="fromTopRight"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Alpha_Bravo" name="Alpha-Bravo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_Alpha_Bravo_end" type="class_Bravo" name="toBravo"/>
+            <UML:AssociationEnd xmi.id="assoc_Bravo_Alpha_end" type="class_Alpha" name="fromAlpha"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Bravo_Charlie" name="Bravo-Charlie">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_Bravo_Charlie_end" type="class_Charlie" name="toCharlie"/>
+            <UML:AssociationEnd xmi.id="assoc_Charlie_Bravo_end" type="class_Bravo" name="fromBravo"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Charlie_Delta" name="Charlie-Delta">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_Charlie_Delta_end" type="class_Delta" name="toDelta"/>
+            <UML:AssociationEnd xmi.id="assoc_Delta_Charlie_end" type="class_Charlie" name="fromCharlie"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Delta_Echo" name="Delta-Echo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_Delta_Echo_end" type="class_Echo" name="toEcho"/>
+            <UML:AssociationEnd xmi.id="assoc_Echo_Delta_end" type="class_Delta" name="fromDelta"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Class_A_ClassB" name="ClassA-ClassB">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_Class_A_ClassB_end" type="class_ClassB" name="toClassB"/>
+            <UML:AssociationEnd xmi.id="assoc_ClassB_Class_A_end" type="class_Class_A" name="fromClassA"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <!-- Use Case View -->
+    <UML:Model xmi.id="model_UseCaseView" name="UseCaseView">
+      <UML:Namespace.ownedElement>
+
+        <!-- Actor in Use Case -->
+        <UML:Actor xmi.id="actor_user" name="user"/>
+
+        <!-- Use Cases and associations -->
+        <UML:UseCase xmi.id="usecase_load_diagram" name="load diagram">
+          <UML:AssociationEnd xmi.idref="assoc_user_load_diagram_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_change_current_diagram" name="change current diagram">
+          <UML:AssociationEnd xmi.idref="assoc_user_change_current_diagram_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_move_diagram_center_mouse_wheel" name="move diagram center (mouse wheel)">
+          <UML:AssociationEnd xmi.idref="assoc_user_move_diagram_center_mouse_wheel_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_move_diagram_center_slider" name="move diagram center (slider)">
+          <UML:AssociationEnd xmi.idref="assoc_user_move_diagram_center_slider_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_zoom_in_out_diagram_mouse_wheel" name="zoom in/out diagram (mouse wheel)">
+          <UML:AssociationEnd xmi.idref="assoc_user_zoom_in_out_diagram_mouse_wheel_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_zoom_in_out_diagram_slider_buttons" name="zoom in/out diagram (slider/buttons)">
+          <UML:AssociationEnd xmi.idref="assoc_user_zoom_in_out_diagram_slider_buttons_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_move_pane_in_bird_view" name="move pane in bird view">
+          <UML:AssociationEnd xmi.idref="assoc_user_move_pane_in_bird_view_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_resize_application_window" name="resize application window">
+          <UML:AssociationEnd xmi.idref="assoc_user_resize_application_window_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_resize_bird_view_window" name="resize bird view window">
+          <UML:AssociationEnd xmi.idref="assoc_user_resize_bird_view_window_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="usecase_press_key_in_bird_view_window" name="press key in bird view window">
+          <UML:AssociationEnd xmi.idref="assoc_user_press_key_in_bird_view_window_end" type="actor_user"/>
+        </UML:UseCase>
+
+        <!-- Associations between user and use cases -->
+        <UML:Association xmi.id="assoc_user_load_diagram" name="user-load diagram">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_load_diagram_end" type="usecase_load_diagram" name="load diagram end"/>
+            <UML:AssociationEnd xmi.id="assoc_load_diagram_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_change_current_diagram" name="user-change current diagram">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_change_current_diagram_end" type="usecase_change_current_diagram" name="change current diagram end"/>
+            <UML:AssociationEnd xmi.id="assoc_change_current_diagram_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_move_diagram_center_mouse_wheel" name="user-move diagram center (mouse wheel)">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_move_diagram_center_mouse_wheel_end" type="usecase_move_diagram_center_mouse_wheel" name="move diagram center (mouse wheel) end"/>
+            <UML:AssociationEnd xmi.id="assoc_move_diagram_center_mouse_wheel_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_move_diagram_center_slider" name="user-move diagram center (slider)">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_move_diagram_center_slider_end" type="usecase_move_diagram_center_slider" name="move diagram center (slider) end"/>
+            <UML:AssociationEnd xmi.id="assoc_move_diagram_center_slider_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_user_zoom_in_out_diagram_mouse_wheel" name="user-zoom in/out diagram (mouse wheel)">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_zoom_in_out_diagram_mouse_wheel_end" type="usecase_zoom_in_out_diagram_mouse_wheel" name="zoom in/out diagram (mouse wheel) end"/>
+            <UML:AssociationEnd xmi.id="assoc_zoom_in_out_diagram_mouse_wheel_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_zoom_in_out_diagram_slider_buttons" name="user-zoom in/out diagram (slider/buttons)">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_zoom_in_out_diagram_slider_buttons_end" type="usecase_zoom_in_out_diagram_slider_buttons" name="zoom in/out diagram (slider/buttons) end"/>
+            <UML:AssociationEnd xmi.id="assoc_zoom_in_out_diagram_slider_buttons_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_move_pane_in_bird_view" name="user-move pane in bird view">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_move_pane_in_bird_view_end" type="usecase_move_pane_in_bird_view" name="move pane in bird view end"/>
+            <UML:AssociationEnd xmi.id="assoc_move_pane_in_bird_view_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_resize_application_window" name="user-resize application window">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_resize_application_window_end" type="usecase_resize_application_window" name="resize application window end"/>
+            <UML:AssociationEnd xmi.id="assoc_resize_application_window_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_resize_bird_view_window" name="user-resize bird view window">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_resize_bird_view_window_end" type="usecase_resize_bird_view_window" name="resize bird view window end"/>
+            <UML:AssociationEnd xmi.id="assoc_resize_bird_view_window_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_press_key_in_bird_view_window" name="user-press key in bird view window">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assoc_user_press_key_in_bird_view_window_end" type="usecase_press_key_in_bird_view_window" name="press key in bird view window end"/>
+            <UML:AssociationEnd xmi.id="assoc_press_key_in_bird_view_window_user_end" type="actor_user" name="user end"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <!-- Placeholders for empty views -->
+    <UML:Model xmi.id="model_ComponentView" name="ComponentView"/>
+
+    <UML:Model xmi.id="model_DeploymentView" name="DeploymentView"/>
+
+    <UML:Model xmi.id="model_EntityRelationshipModel" name="EntityRelationshipModel"/>
+
+  </XMI.content>
+</XMI>
+```

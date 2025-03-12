@@ -1,0 +1,76 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_uml1.4" name="uml1.4">
+      <UML:Namespace.ownedElement>
+        <!-- Packages -->
+        <UML:Package xmi.id="package_Core" name="Core"/>
+        <UML:Package xmi.id="package_Data_Types" name="Data Types"/>
+        <UML:Package xmi.id="package_Extension_Mechanisms" name="Extension Mechanisms"/>
+        <UML:Package xmi.id="package_Behavioral_Elements" name="Behavioral Elements"/>
+        <UML:Package xmi.id="package_Collaborations" name="Collaborations"/>
+        <UML:Package xmi.id="package_Use_Cases" name="Use Cases"/>
+        <UML:Package xmi.id="package_State_Machines" name="State Machines"/>
+        <UML:Package xmi.id="package_Activity_Graphs" name="Activity Graphs"/>
+        
+        <!-- Classes -->
+        <UML:Class xmi.id="class_Element" name="Element" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_ModelElement" name="ModelElement" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_name" name="name" visibility="public"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_GeneralizableElement" name="GeneralizableElement" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_isRoot" name="isRoot" visibility="public"/>
+          <UML:Attribute xmi.id="attr_isLeaf" name="isLeaf" visibility="public"/>
+          <UML:Attribute xmi.id="attr_isAbstract" name="isAbstract" visibility="public"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_Classifier" name="Classifier" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_Feature" name="Feature" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_ownerScope" name="ownerScope" visibility="public"/>
+          <UML:Attribute xmi.id="attr_visibility" name="visibility" visibility="public"/>
+        </UML:Class>
+
+        <!-- Specific Derived Classes -->
+        <UML:Class xmi.id="class_Constraint" name="Constraint" visibility="public">
+          <UML:Attribute xmi.id="attr_body" name="body" visibility="public"/>
+          <UML:Generalization child="class_Constraint" parent="class_ModelElement"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_Parameter" name="Parameter" visibility="public">
+          <UML:Attribute xmi.id="attr_defaultValue" name="defaultValue" visibility="public"/>
+          <UML:Attribute xmi.id="attr_kind" name="kind" visibility="public"/>
+          <UML:Generalization child="class_Parameter" parent="class_ModelElement"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_StructuralFeature" name="StructuralFeature" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_BehaviouralFeature" name="BehaviouralFeature" visibility="public" isAbstract="true"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_ModelElement_TaggedValue" name="ModelElement-TaggedValue">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ModelElement" type="class_ModelElement" name="modelElement" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TaggedValue" type="class_TaggedValue" name="taggedValue" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Association_AssociationEnd" name="Association-AssociationEnd">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Association" type="class_Association" name="association" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AssociationEnd" type="class_AssociationEnd" name="associationEnd" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Dependency" name="Dependency">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Dependency_Client" type="class_ModelElement" name="client" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Dependency_Supplier" type="class_ModelElement" name="supplier" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

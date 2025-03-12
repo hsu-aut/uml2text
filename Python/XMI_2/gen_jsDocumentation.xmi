@@ -1,0 +1,297 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_OpticalSheetManagement" name="OpticalSheetManagement">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Course" name="Course" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_kursCode" name="kursCode" visibility="private" />
+            <UML:Attribute xmi.id="attr_Name" name="Name" visibility="private" />
+            <UML:Attribute xmi.id="attr_Abkürzung" name="Abkürzung" visibility="private" />
+            <UML:Attribute xmi.id="attr_idCourse" name="idCourse" visibility="private" />
+            <UML:Attribute xmi.id="attr_idOffers" name="idOffers" visibility="private" />
+            <UML:Attribute xmi.id="attr_Bevorzugt" name="Bevorzugt" visibility="private" />
+            <UML:Operation xmi.id="op_initializeCourse" name="Initialize course" visibility="public" />
+            <UML:Operation xmi.id="op_findOffers" name="findOffers" visibility="public" />
+            <UML:Operation xmi.id="op_clone" name="clone" visibility="public" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Column" name="Column" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Nummer" name="Nummer" visibility="private" />
+            <UML:Attribute xmi.id="attr_zuhörigerKurs" name="zuhöriger Kurs" visibility="private" />
+            <UML:Attribute xmi.id="attr_Vater" name="Vater" visibility="private" />
+            <UML:Attribute xmi.id="attr_bereit" name="bereit" visibility="private" />
+            <UML:Attribute xmi.id="attr_geändert" name="geändert" visibility="private" />
+            <UML:Attribute xmi.id="attr_fontTextbox" name="fontTextbox" visibility="private" />
+            <UML:Attribute xmi.id="attr_codeTextbox" name="codeTextbox" visibility="private" />
+            <UML:Attribute xmi.id="attr_abbreviationTextbox" name="abbreviationTextbox" visibility="private" />
+            <UML:Attribute xmi.id="attr_div" name="div" visibility="private" />
+            <UML:Operation xmi.id="op_initializeColumn" name="Initialize Column" visibility="public" />
+            <UML:Operation xmi.id="op_codeChanged" name="codeChanged" visibility="public" />
+            <UML:Operation xmi.id="op_showState" name="showState" visibility="public" />
+            <UML:Operation xmi.id="op_getData" name="getData" visibility="public" />
+            <UML:Operation xmi.id="op_setCourse" name="setCourse" visibility="public" />
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Columns" name="Columns" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_columns" name="columns" visibility="private" />
+            <UML:Attribute xmi.id="attr_switchButton" name="switchButton" visibility="private" />
+            <UML:Attribute xmi.id="attr_optionsDiv" name="optionsDiv" visibility="private" />
+            <UML:Attribute xmi.id="attr_coursesList" name="coursesList" visibility="private" />
+            <UML:Attribute xmi.id="attr_idTimePeriod" name="idTimePeriod" visibility="private" />
+            <UML:Attribute xmi.id="attr_okToPrint" name="okToPrint" visibility="private" />
+            <UML:Attribute xmi.id="attr_okToSave" name="okToSave" visibility="private" />
+            <UML:Attribute xmi.id="attr_div" name="div" visibility="private" />
+            <UML:Operation xmi.id="op_initializeColumns" name="Initialize Columns" visibility="public" />
+            <UML:Operation xmi.id="op_checkState" name="checkState" visibility="public" />
+            <UML:Operation xmi.id="op_showColumns" name="showColumns" visibility="public" />
+            <UML:Operation xmi.id="op_createSwitchColumns" name="createSwitchColumns" visibility="public" />
+            <UML:Operation xmi.id="op_switchColumns" name="switchColumns" visibility="public" />
+            <UML:Operation xmi.id="op_showCoursesList" name="showCoursesList" visibility="public" />
+            <UML:Operation xmi.id="op_loadColumn" name="loadColumn" visibility="public" />
+            <UML:Operation xmi.id="op_getDataColumns" name="getData" visibility="public" />
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CourseList" name="CourseList" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_chosenCourses" name="chosenCourses" visibility="private" />
+            <UML:Attribute xmi.id="attr_idTimePeriodCL" name="idTimePeriod" visibility="private" />
+            <UML:Attribute xmi.id="attr_idCycle" name="idCycle" visibility="private" />
+            <UML:Attribute xmi.id="attr_term" name="term" visibility="private" />
+            <UML:Attribute xmi.id="attr_divCL" name="div" visibility="private" />
+            <UML:Attribute xmi.id="attr_courses" name="courses" visibility="private" />
+            <UML:Operation xmi.id="op_initializeCourseList" name="Initialize CourseList" visibility="public" />
+            <UML:Operation xmi.id="op_search" name="search" visibility="public" />
+            <UML:Operation xmi.id="op_getCourses" name="getCourses" visibility="public" />
+            <UML:Operation xmi.id="op_expandCourses" name="expandCourses" visibility="public" />
+            <UML:Operation xmi.id="op_showCoursesListCL" name="showCoursesList" visibility="public" />
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_AnswerType" name="AnswerType" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_NameAT" name="Name" visibility="private" />
+            <UML:Attribute xmi.id="attr_idAnswerType" name="idAnswerType" visibility="private" />
+            <UML:Attribute xmi.id="attr_alternativeMeaning" name="alternativeMeaning" visibility="private" />
+            <UML:Operation xmi.id="op_initializeAnswerType" name="Initialize AnswerType" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Instructions" name="Instructions" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_divInst" name="div" visibility="private" />
+            <UML:Attribute xmi.id="attr_select1" name="select1" visibility="private" />
+            <UML:Attribute xmi.id="attr_select2" name="select2" visibility="private" />
+            <UML:Attribute xmi.id="attr_select3" name="select3" visibility="private" />
+            <UML:Attribute xmi.id="attr_answerTypes" name="answerTypes" visibility="private" />
+            <UML:Operation xmi.id="op_initializeInstructions" name="Initialize Instructions" visibility="public"/>
+            <UML:Operation xmi.id="op_createFonts" name="createFonts" visibility="public"/>
+            <UML:Operation xmi.id="op_getDataInst" name="getData" visibility="public"/>
+            <UML:Operation xmi.id="op_getAnswerTypes" name="getAnswerTypes" visibility="public"/>
+            <UML:Operation xmi.id="op_findAnswerTypeById" name="findAnswerTypeById" visibility="public"/>
+            <UML:Operation xmi.id="op_updateInstructions" name="updateInstructions" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Question" name="Question" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Frageformulierung" name="Frageformulierung" visibility="private" />
+            <UML:Attribute xmi.id="attr_idQuestion" name="idQuestion" visibility="private" />
+            <UML:Attribute xmi.id="attr_idAnswerTypeQ" name="idAnswerType" visibility="private" />
+            <UML:Operation xmi.id="op_initializeQuestion" name="Initialize Question" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QuestionBox" name="QuestionBox" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_number" name="number" visibility="private" />
+            <UML:Attribute xmi.id="attr_father" name="father" visibility="private" />
+            <UML:Attribute xmi.id="attr_fontTextboxQB" name="fontTextbox" visibility="private" />
+            <UML:Attribute xmi.id="attr_questionTextbox" name="questionTextbox" visibility="private" />
+            <UML:Attribute xmi.id="attr_divQB" name="div" visibility="private" />
+            <UML:Attribute xmi.id="attr_question" name="question" visibility="private" />
+            <UML:Attribute xmi.id="attr_ready" name="ready" visibility="private" />
+            <UML:Attribute xmi.id="attr_changed" name="changed" visibility="private" />
+            <UML:Operation xmi.id="op_initializeQuestionBox" name="Initialize QuestionBox" visibility="public"/>
+            <UML:Operation xmi.id="op_showStateQB" name="showState" visibility="public"/>
+            <UML:Operation xmi.id="op_store" name="store" visibility="public"/>
+            <UML:Operation xmi.id="op_questionChanged" name="questionChanged" visibility="public"/>
+            <UML:Operation xmi.id="op_setQuestion" name="setQuestion" visibility="public"/>
+            <UML:Operation xmi.id="op_getDataQB" name="getData" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Questionnaire" name="Questionnaire" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_idQuestionnaire" name="idQuestionnaire" visibility="private" />
+            <UML:Attribute xmi.id="attr_assessmentNumber" name="assessmentNumber" visibility="private" />
+            <UML:Attribute xmi.id="attr_instructions" name="instructions" visibility="private" />
+            <UML:Attribute xmi.id="attr_optionsDivQ" name="optionsDiv" visibility="private" />
+            <UML:Attribute xmi.id="attr_questionsList" name="questionsList" visibility="private" />
+            <UML:Attribute xmi.id="attr_span" name="span" visibility="private" />
+            <UML:Attribute xmi.id="attr_questionBoxes" name="questionBoxes" visibility="private" />
+            <UML:Attribute xmi.id="attr_okToPrintQ" name="okToPrint" visibility="private" />
+            <UML:Attribute xmi.id="attr_okToSaveQ" name="okToSave" visibility="private" />
+            <UML:Attribute xmi.id="attr_divQ" name="div" visibility="private" />
+            <UML:Operation xmi.id="op_initializeQuestionnaire" name="Initialize Questionnaire" visibility="public"/>
+            <UML:Operation xmi.id="op_checkStateQ" name="checkState" visibility="public"/>
+            <UML:Operation xmi.id="op_createQuestion" name="createQuestion" visibility="public"/>
+            <UML:Operation xmi.id="op_showQuestionnaire" name="showQuestionnaire" visibility="public"/>
+            <UML:Operation xmi.id="op_showQuestionList" name="showQuestionList" visibility="public"/>
+            <UML:Operation xmi.id="op_loadQuestion" name="loadQuestion" visibility="public"/>
+            <UML:Operation xmi.id="op_getDataQ" name="getData" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Encoded" name="Encoded" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_encodings" name="encodings" visibility="private" />
+            <UML:Attribute xmi.id="attr_divE" name="div" visibility="private" />
+            <UML:Attribute xmi.id="attr_opticalSheet" name="opticalSheet" visibility="private" />
+            <UML:Attribute xmi.id="attr_okToSaveE" name="okToSave" visibility="private" />
+            <UML:Attribute xmi.id="attr_okToPrintE" name="okToPrint" visibility="private" />
+            <UML:Attribute xmi.id="attr_changedE" name="changed" visibility="private" />
+            <UML:Attribute xmi.id="attr_set" name="set" visibility="private" />
+            <UML:Operation xmi.id="op_initializeEncoded" name="Initialize Encoded" visibility="public"/>
+            <UML:Operation xmi.id="op_getEncodings" name="getEncodings" visibility="public"/>
+            <UML:Operation xmi.id="op_checkStateE" name="checkState" visibility="public"/>
+            <UML:Operation xmi.id="op_changeEncoding" name="changeEncoding" visibility="public"/>
+            <UML:Operation xmi.id="op_setEncoding" name="setEncoding" visibility="public"/>
+            <UML:Operation xmi.id="op_getDataE" name="getData" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_OpticalSheet" name="OpticalSheet" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_idCycle" name="idCycle" visibility="private" />
+            <UML:Attribute xmi.id="attr_termOS" name="term" visibility="private" />
+            <UML:Attribute xmi.id="attr_idTimePeriodOS" name="idTimePeriod" visibility="private" />
+            <UML:Attribute xmi.id="attr_questionnaires" name="questionnaires" visibility="private" />
+            <UML:Attribute xmi.id="attr_useQuestionnaire" name="useQuestionnaire" visibility="private" />
+            <UML:Attribute xmi.id="attr_optionsDivOS" name="optionsDiv" visibility="private" />
+            <UML:Attribute xmi.id="attr_buttons" name="buttons" visibility="private" />
+            <UML:Attribute xmi.id="attr_positions" name="positions" visibility="private" />
+            <UML:Attribute xmi.id="attr_divOS" name="div" visibility="private" />
+            <UML:Attribute xmi.id="attr_initialButtons" name="initialButtons" visibility="private" />
+            <UML:Attribute xmi.id="attr_columnsOS" name="columns" visibility="private" />
+            <UML:Attribute xmi.id="attr_encodedOS" name="encoded" visibility="private" />
+            <UML:Attribute xmi.id="attr_idOpticalSheet" name="idOpticalSheet" visibility="private" />
+            <UML:Operation xmi.id="op_initializeOpticalSheet" name="Initialize OpticalSheet" visibility="public"/>
+            <UML:Operation xmi.id="op_newOpticalSheet" name="newOpticalSheet" visibility="public"/>
+            <UML:Operation xmi.id="op_findOpticalSheetById" name="findOpticalSheetById" visibility="public"/>
+            <UML:Operation xmi.id="op_findOpticalSheetByTimePeriodCycleTerm" name="findOpticalSheetByTimePeriod_Cycle_Term" visibility="public"/>
+            <UML:Operation xmi.id="op_loadOpticalSheet" name="loadOpticalSheet" visibility="public"/>
+            <UML:Operation xmi.id="op_storeOS" name="store" visibility="public"/>
+            <UML:Operation xmi.id="op_printOpticalSheet" name="printOpticalSheet" visibility="public"/>
+            <UML:Operation xmi.id="op_printQualitativeQuestionnaire" name="printQualitativeQuestionnaire" visibility="public"/>
+            <UML:Operation xmi.id="op_getDataOS" name="getData" visibility="public"/>
+            <UML:Operation xmi.id="op_createNewOpticalSheet" name="createNewOpticalSheet" visibility="public"/>
+            <UML:Operation xmi.id="op_loadEncoding" name="loadEncoding" visibility="public"/>
+            <UML:Operation xmi.id="op_loadColumns" name="loadColumns" visibility="public"/>
+            <UML:Operation xmi.id="op_nextAssessment" name="nextAssessment" visibility="public"/>
+            <UML:Operation xmi.id="op_createNewAssessment" name="createNewAssessment" visibility="public"/>
+            <UML:Operation xmi.id="op_createQuestionnaire" name="createQuestionnaire" visibility="public"/>
+            <UML:Operation xmi.id="op_loadQuestionnaires" name="loadQuestionnaires" visibility="public"/>
+            <UML:Operation xmi.id="op_copyQuestionnaire" name="copyQuestionnaire" visibility="public"/>
+            <UML:Operation xmi.id="op_showCopyQuestionnairesList" name="showCopyQuestionnairesList" visibility="public"/>
+            <UML:Operation xmi.id="op_showWorking" name="showWorking" visibility="public"/>
+            <UML:Operation xmi.id="op_showOpticalSheet" name="showOpticalSheet" visibility="public"/>
+            <UML:Operation xmi.id="op_removeCycleFromOpticalSheet" name="removeCycleFromOpticalSheet" visibility="public"/>
+            <UML:Operation xmi.id="op_showCopyQuestionnaire" name="showCopyQuestionnaire" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Positions" name="Positions" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_divPos" name="div" visibility="private" />
+            <UML:Attribute xmi.id="attr_questionnaireX" name="questionnaireX" visibility="private" />
+            <UML:Attribute xmi.id="attr_questionnaireY" name="questionnaireY" visibility="private" />
+            <UML:Attribute xmi.id="attr_questionnaireDY" name="questionnaireDY" visibility="private" />
+            <UML:Attribute xmi.id="attr_columnsX" name="columnsX" visibility="private" />
+            <UML:Attribute xmi.id="attr_columnsY" name="columnsY" visibility="private" />
+            <UML:Attribute xmi.id="attr_columnsDX" name="columnsDX" visibility="private" />
+            <UML:Attribute xmi.id="attr_tableX" name="tableX" visibility="private" />
+            <UML:Attribute xmi.id="attr_tableY" name="tableY" visibility="private" />
+            <UML:Attribute xmi.id="attr_numberOfLines" name="numberOfLines" visibility="private" />
+            <UML:Attribute xmi.id="attr_qualitativeQuestionnaireType" name="qualitativeQuestionnaireType" visibility="private" />
+            <UML:Attribute xmi.id="attr_downloadType" name="downloadType" visibility="private" />
+            <UML:Operation xmi.id="op_getDataPos" name="Get Data" visibility="public"/>
+            <UML:Operation xmi.id="op_createPosition" name="createPosition" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Association xmi.id="assoc_Column_Course">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Column_Course_Column" type="class_Column" name="column" visibility="public" aggregation="none" />
+            <UML:AssociationEnd xmi.id="assocEnd_Column_Course_Course" type="class_Course" name="course" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Columns_CourseList">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Columns_CL_Columns" type="class_Columns" name="columns" visibility="public" aggregation="none" />
+            <UML:AssociationEnd xmi.id="assocEnd_Columns_CL_CourseList" type="class_CourseList" name="courseList" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_CourseList_Course">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_CourseList_Course_CourseList" type="class_CourseList" name="courseList" visibility="public" aggregation="none" />
+            <UML:AssociationEnd xmi.id="assocEnd_CourseList_Course_Course" type="class_Course" name="course" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_QuestionBox_Question">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_QuestionBox_Question_QBox" type="class_QuestionBox" name="questionBox" visibility="public" aggregation="none" />
+            <UML:AssociationEnd xmi.id="assocEnd_QuestionBox_Question_Q" type="class_Question" name="question" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Instructions_AnswerType">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Instructions_AT_Inst" type="class_Instructions" name="instructions" visibility="public" aggregation="none" />
+            <UML:AssociationEnd xmi.id="assocEnd_Instructions_AT_AnswerType" type="class_AnswerType" name="answerType" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_OpticalSheet_Encoded">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OpticalSheet_Encoded_OS" type="class_OpticalSheet" name="opticalSheet" visibility="public" aggregation="composite" />
+            <UML:AssociationEnd xmi.id="assocEnd_OpticalSheet_Encoded_Encoded" type="class_Encoded" name="encoded" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_OpticalSheet_Columns">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OpticalSheet_Columns_OS" type="class_OpticalSheet" name="opticalSheet" visibility="public" aggregation="composite" />
+            <UML:AssociationEnd xmi.id="assocEnd_OpticalSheet_Columns_Columns" type="class_Columns" name="columns" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_OpticalSheet_Questionnaires">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OpticalSheet_Questionnaires_OS" type="class_OpticalSheet" name="opticalSheet" visibility="public" aggregation="composite" />
+            <UML:AssociationEnd xmi.id="assocEnd_OpticalSheet_Questionnaires_Questionnaires" type="class_Questionnaire" name="questionnaire" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

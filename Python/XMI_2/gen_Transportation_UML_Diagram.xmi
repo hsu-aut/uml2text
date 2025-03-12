@@ -1,0 +1,156 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomTool</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ReservationForm" name="Reservation Form">
+      <UML:Namespace.ownedElement>
+
+        <!-- Class: Reservation -->
+        <UML:Class xmi.id="class_Reservation" name="Reservation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_waiver" name="waiver" visibility="private"/>
+            <UML:Attribute xmi.id="attr_ticket" name="ticket" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pickDate" name="pickDate" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pickTime" name="pickTime" visibility="private"/>
+            <UML:Attribute xmi.id="attr_destId" name="destId" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pickId" name="pickId" visibility="private"/>
+            <UML:Attribute xmi.id="attr_destTime" name="destTime" visibility="private"/>
+            <UML:Attribute xmi.id="attr_vehicleId" name="vehicleId" visibility="private"/>
+            <UML:Attribute xmi.id="attr_clientId" name="clientId" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: Db1 -->
+        <UML:Class xmi.id="class_Db1" name="Db1" visibility="public" isAbstract="false"/>
+        
+        <!-- Class: Vehicle -->
+        <UML:Class xmi.id="class_Vehicle" name="Vehicle" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_color" name="color" visibility="private"/>
+            <UML:Attribute xmi.id="attr_vehicleId" name="vehicleId" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: Client -->
+        <UML:Class xmi.id="class_Client" name="Client" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_disability" name="disability" visibility="private"/>
+            <UML:Attribute xmi.id="attr_emergName" name="emergName" visibility="private"/>
+            <UML:Attribute xmi.id="attr_emergPhone" name="emergPhone" visibility="private"/>
+            <UML:Attribute xmi.id="attr_clientPhone" name="clientPhone" visibility="private"/>
+            <UML:Attribute xmi.id="attr_assistance" name="assistance" visibility="private"/>
+            <UML:Attribute xmi.id="attr_clientId" name="clientId" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: Dest -->
+        <UML:Class xmi.id="class_Dest" name="Dest" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_destId" name="destId" visibility="private"/>
+            <!-- Additional attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: pickUp -->
+        <UML:Class xmi.id="class_pickUp" name="pickUp" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_pickDesc" name="pickDesc" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pickAddr1" name="pickAddr1" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pickAddr2" name="pickAddr2" visibility="private"/>
+            <!-- Additional attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: reservationForm -->
+        <UML:Class xmi.id="class_reservationForm" name="reservationForm" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_submit" name="submit" visibility="public"/>
+            <UML:Operation xmi.id="op_cancel" name="cancel" visibility="public"/>
+            <!-- Form fields as attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: submissionForm -->
+        <UML:Class xmi.id="class_submissionForm" name="submissionForm" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_okay" name="Okay" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: printOutForm -->
+        <UML:Class xmi.id="class_printOutForm" name="printOutForm" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_view" name="view" visibility="public"/>
+            <UML:Operation xmi.id="op_edit" name="edit" visibility="public"/>
+            <UML:Operation xmi.id="op_delete" name="delete" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: calendarForm -->
+        <UML:Class xmi.id="class_calendarForm" name="calendarForm" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_viewEventDetails" name="viewEventDetails" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Placeholder for Interface -->
+        <UML:Interface xmi.id="interface_unnamed" name="UnnamedInterface" visibility="public"/>
+
+        <!-- Supporting Classes -->
+        <UML:Class xmi.id="class_varchar" name="varchar" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Name" name="Name" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_text" name="text" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Dropdown" name="Dropdown" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Text" name="Text" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DropDown" name="DropDown" visibility="public" isAbstract="false"/>
+        
+        <!-- Associations -->
+
+        <UML:Association xmi.id="assoc_Reservation_Db1">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Reservation_Db1" type="class_Reservation" name="reservations" visibility="public" aggregation="composite" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Db1_Reservation" type="class_Db1" name="db" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Reservation_Vehicle">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Reservation_Vehicle" type="class_Reservation" name="reservation" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Vehicle_Reservation" type="class_Vehicle" name="vehicle" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Reservation_Client">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Reservation_Client" type="class_Reservation" name="reservation" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Client_Reservation" type="class_Client" name="client" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_calendarForm_Db1">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_calendarForm" type="class_calendarForm" name="calendarForm" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Db1_calendar" type="class_Db1" name="dbCalendar" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_reservationForm_submissionForm">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_reservationForm" type="class_reservationForm" name="reservationForm" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_submissionForm" type="class_submissionForm" name="submissionForm" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

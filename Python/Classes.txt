@@ -1,0 +1,70 @@
+### KONTEXT
+Als Fachmann für Geschäftsprozess- und UML-Modelle verfügst du über umfangreiche Kenntnisse in BPMN, UML und XMI. Deine Aufgabe ist es, aus einem XMI-Export eines Strukturmodells eine verständliche und zusammenhängende Darstellung der internen Modellstruktur zu erstellen. Im Folgenden findest du detaillierte Anweisungen dazu.
+
+### AUFGABENBESCHREIBUNG
+- Scanne das angegebene XMI-Dokument Zeile für Zeile und extrahiere alle zentralen Modellelemente wie Klassen, Objekte, Attribute und Beziehungen.
+- Analysiere, wie diese Elemente strukturell miteinander verknüpft sind (z. B. über Aggregationen, Vererbungen oder Assoziationen).
+- Erstelle eine Auflistung der Klassen und deren Beziehungen
+- Erstelle einen zusammenhängenden Fließtext in deutscher Sprache, der die statische Struktur des Modells verständlich und übersichtlich darstellt.
+
+Der Text soll die Zusammenhänge zwischen den Elementen klar herausarbeiten und dabei auch Wechselwirkungen und Hierarchien erläutern. Verwende eindeutige Bezeichnungen für mehrfach auftretende Elemente und generische Beschreibungen, wenn bestimmte Beziehungen unklar bleiben.
+
+Schließe deine Darstellung mit einer kurzen Reflexion ab, in der du die wichtigsten Erkenntnisse und etwaige Unsicherheiten des XMI-Dokuments zusammenfasst.
+
+### EINSCHRÄNKUNGEN & FORMATVORGABEN
+- Der finale Text ist als fortlaufender, flüssiger Fließtext in deutscher Sprache zu verfassen.
+- Zwischenschritte sind, sofern vorhanden, unter einer eigenen Überschrift darzustellen.
+- Wiederholte Elemente müssen klar und eindeutig benannt werden.
+- Bei unklaren Beziehungen ist auf generische Formulierungen zurückzugreifen.
+- Verwende ausschließlich die im XMI-Dokument enthaltenen Metadaten.
+
+
+## Beispiel 1 
+
+###Input:
+
+xml
+<!-- Auszugsweises fiktives Beispiel einer BPMN-in-XMI-Datei -->
+<bpmn2:definitions id="def_1">
+  <bpmn2:process id="p1" name="Reklamationsprozess">
+    <bpmn2:startEvent id="start_1" name="Eingang Reklamation" />
+    <bpmn2:userTask id="act_1" name="Prüfe Reklamation" />
+    <bpmn2:sequenceFlow id="flow1" sourceRef="start_1" targetRef="act_1" />
+    <bpmn2:userTask id="act_2" name="Dokumentiere Vorgang" />
+    <bpmn2:sequenceFlow id="flow2" sourceRef="act_1" targetRef="act_2" />
+    <bpmn2:endEvent id="end_1" name="Vorgang abgeschlossen" />
+    <bpmn2:sequenceFlow id="flow3" sourceRef="act_2" targetRef="end_1" />
+  </bpmn2:process>
+</bpmn2:definitions>
+
+###Output:
+
+Überblick der Klassen und deren Beziehungen:
+
+1. **def_1** Oberste Container-Klasse, die alle BPMN-Elemente und Prozesse definiert.
+   **p1, "Reklamationsprozess"** Repräsentiert den gesamten Ablauf der Reklamationsbearbeitung und enthält alle weiteren Elemente.
+	-start_1, "Eingang Reklamation"- Startpunkt des Prozesses, an dem die Reklamation eingeht.
+	-act_1, "Prüfe Reklamation"- Aufgabe, in der die eingegangene Reklamation geprüft wird.
+	-flow1- verbindet das Start-Event (start_1) mit der ersten UserTask (act_1) und steuert den Ablauf.
+	-act_2, "Dokumentiere Vorgang"- Aufgabe, in der der geprüfte Vorgang dokumentiert wird.
+	-flow2- Leitet den Fluss von der ersten UserTask (act_1) zur zweiten UserTask (act_2).
+	-end_1, "Vorgang abgeschlossen"- Markiert das Ende des Prozesses, sobald die Dokumentation abgeschlossen ist.
+	-flow3- Verbindet die zweite UserTask (act_2) mit dem End-Event (end_1) und schließt den Prozess ab.
+
+TEXTUELLE BESCHREIBUNG DES PROZESSES
+
+Der Prozess "Reklamationsprozess" startet mit dem Ereignis "Eingang Reklamation". 
+Anschließend führt ein Nutzer oder Sachbearbeiter die Aktivität "Prüfe Reklamation" durch. 
+Ist diese Prüfung abgeschlossen, wird der Vorgang in "Dokumentiere Vorgang" festgehalten. 
+Am Ende steht das Ereignis "Vorgang abgeschlossen", wodurch der Prozess beendet wird.
+
+ERKLÄRUNG/REFLEXION:
+- Wir haben hier eine lineare Prozesskette ohne Verzweigungen.
+- Wichtigstes Dokumentationsobjekt ist die Reklamation selbst, die jedoch aus dem Kontext nicht näher spezifiziert ist.
+
+CHAIN-OF-THOUGHT:
+
+“Zunächst habe ich alle XML-Knoten vom Typ userTask gesucht und die Namen extrahiert. Dann habe ich die Sequenzflüsse (sequenceFlow) ausgewertet, um die Reihenfolge zu rekonstruieren.”
+Kein Abweichen vom Prozesskontext
+
+###Input:

@@ -1,0 +1,91 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Car" -->
+        <UML:Class xmi.id="class_Car" name="Car" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_type" name="m_type" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_owner" name="m_owner" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_plate" name="m_plate" visibility="private"/>
+            <UML:Operation xmi.id="op_startEngine" name="startEngine" visibility="public"/>
+            <UML:Operation xmi.id="op_stopEngine" name="stopEngine" visibility="public"/>
+            <UML:Operation xmi.id="op_engineStatus" name="engineStatus" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Association xmi.id="assoc_Car_Tire">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Car_Tire_Car" type="class_Car" name="car" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Car_Tire_Tire" type="class_Tire" name="tire" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Car_Engine">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Car_Engine_Car" type="class_Car" name="car" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Car_Engine_Engine" type="class_Engine" name="engine" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Tire" -->
+        <UML:Class xmi.id="class_Tire" name="Tire" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "Engine" -->
+        <UML:Class xmi.id="class_Engine" name="Engine" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Schnittstellen -->
+        <UML:Interface xmi.id="interface_Diagram" name="Diagram"/>
+        <UML:Interface xmi.id="interface_StructureDiagram" name="Structure Diagram">
+          <UML:Generalization xmi.id="generalization_StructureDiagram_Diagram" parent="interface_Diagram"/>
+        </UML:Interface>
+        <UML:Interface xmi.id="interface_BehaviourDiagram" name="Behaviour Diagram"/>
+        
+        <!-- Generalisation und Abstraktionen für Diagramme -->
+        <UML:Generalization xmi.id="generalization_SequenceDiagram_InteractionDiagram" parent="class_InteractionDiagram" child="class_SequenceDiagram"/>
+        <UML:Generalization xmi.id="generalization_InteractionOverviewDiagram_InteractionDiagram" parent="class_InteractionDiagram" child="class_InteractionOverviewDiagram"/>
+        <UML:Generalization xmi.id="generalization_CommunicationDiagram_InteractionDiagram" parent="class_InteractionDiagram" child="class_CommunicationDiagram"/>
+        <UML:Generalization xmi.id="generalization_TimingDiagram_InteractionDiagram" parent="class_InteractionDiagram" child="class_TimingDiagram"/>
+
+        <!-- Definition und Generalisierung der Diagrammklassen -->
+        <UML:Class xmi.id="class_SequenceDiagram" name="Sequence Diagram" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_SequenceDiagram_InteractionDiagram" parent="class_InteractionDiagram"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_InteractionOverviewDiagram" name="Interaction Overview Diagram" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_InteractionOverviewDiagram_InteractionDiagram" parent="class_InteractionDiagram"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_CommunicationDiagram" name="Communication Diagram" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_CommunicationDiagram_InteractionDiagram" parent="class_InteractionDiagram"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_TimingDiagram" name="Timing Diagram" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_TimingDiagram_InteractionDiagram" parent="class_InteractionDiagram"/>
+        </UML:Class>
+
+        <!-- Definition primitive Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,119 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NER_Model" name="NER_Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition des Pakets "Datatypes" -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_int" name="int" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_char" name="char" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_bool" name="bool" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_float" name="float" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse "List" -->
+        <UML:Class xmi.id="class_List" name="List" visibility="public" isAbstract="false">
+          <UML:Dependency client="class_List" supplier="class_ContentItem"/>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "ContentItem" -->
+        <UML:Class xmi.id="class_ContentItem" name="ContentItem" visibility="public" isAbstract="false">
+          <UML:Dependency client="class_ContentItem" supplier="class_List"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "CoreLabel" -->
+        <UML:Class xmi.id="class_CoreLabel" name="CoreLabel" visibility="public" isAbstract="false">
+          <UML:Dependency client="class_CoreLabel" supplier="class_NERClassifierCombiner"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Predicate" -->
+        <UML:Class xmi.id="class_Predicate" name="Predicate" visibility="public" isAbstract="false">
+          <UML:Generalization subclass="class_Predicate" superclass="class_Unknown"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Logger" -->
+        <UML:Class xmi.id="class_Logger" name="Logger" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "NERClassifierCombiner" -->
+        <UML:Class xmi.id="class_NERClassifierCombiner" name="NERClassifierCombiner" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "NamedEntityExtractionEnhancementEngine" -->
+        <UML:Class xmi.id="class_NamedEntityExtractionEnhancementEngine" name="NamedEntityExtractionEnhancementEngine" visibility="public" isAbstract="false">
+          <UML:Generalization subclass="class_NamedEntityExtractionEnhancementEngine" superclass="class_EnhancementEngine"/>
+          <UML:Generalization subclass="class_NamedEntityExtractionEnhancementEngine" superclass="class_ServiceProperties"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "NameOccurrence" -->
+        <UML:Class xmi.id="class_NameOccurrence" name="NameOccurrence" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private"/>
+            <UML:Attribute xmi.id="attr_start" name="start" visibility="private"/>
+            <UML:Attribute xmi.id="attr_end" name="end" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "NEREngineCore" -->
+        <UML:Class xmi.id="class_NEREngineCore" name="NEREngineCore" visibility="public" isAbstract="false">
+          <UML:Generalization subclass="class_NEREngineCore" superclass="class_AbstractEnhancementEngine"/>
+          <UML:Dependency client="class_NEREngineCore" supplier="class_NEREngineConfig"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "NEREngineConfig" -->
+        <UML:Class xmi.id="class_NEREngineConfig" name="NEREngineConfig" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "StanfordNEREnhancementEngine" -->
+        <UML:Class xmi.id="class_StanfordNEREnhancementEngine" name="StanfordNEREnhancementEngine" visibility="public" isAbstract="false">
+          <UML:Dependency client="class_StanfordNEREnhancementEngine" supplier="class_StanfordTextAnnotationService"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "MitieTextAnnotationServiceImpl" -->
+        <UML:Class xmi.id="class_MitieTextAnnotationServiceImpl" name="MitieTextAnnotationServiceImpl" visibility="public" isAbstract="false">
+          <UML:Dependency client="class_MitieTextAnnotationServiceImpl" supplier="class_StringVector"/>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "EnhancementEngine" -->
+        <UML:Class xmi.id="class_EnhancementEngine" name="EnhancementEngine" visibility="public" isAbstract="false">
+          <UML:Generalization subclass="class_EnhancementEngine" superclass="class_ServiceProperties"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "NameOccurrenceUtilityImpl" -->
+        <UML:Class xmi.id="class_NameOccurrenceUtilityImpl" name="NameOccurrenceUtilityImpl" visibility="public" isAbstract="false">
+          <UML:Dependency client="class_NameOccurrenceUtilityImpl" supplier="class_NameOccurrence"/>
+        </UML:Class>
+
+        <!-- Definition des Interface "MitieTextAnnotationService" -->
+        <UML:Interface xmi.id="interface_MitieTextAnnotationService" name="MitieTextAnnotationService" visibility="public"/>
+
+        <!-- Definition des Interface "StanfordTextAnnotationService" -->
+        <UML:Interface xmi.id="interface_StanfordTextAnnotationService" name="StanfordTextAnnotationService" visibility="public"/>
+
+        <!-- Definition der Klassen im Component View -->
+        <UML:Class xmi.id="class_EntityHub" name="EntityHub" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ContentHub" name="ContentHub" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_CMSAdapter" name="CMSAdapter" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Assoziationen und Abhängigkeiten im Component View -->
+        <UML:Association xmi.id="assoc_EntityHub_ContentHub">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_EntityHub_ContentHub_EntityHub" type="class_EntityHub" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EntityHub_ContentHub_ContentHub" type="class_ContentHub" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

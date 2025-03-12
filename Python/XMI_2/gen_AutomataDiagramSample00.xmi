@@ -1,0 +1,109 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Generated UML Model</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Packages für Datentypen -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="datatype_int" name="int" stereotype="datatype"/>
+            <UML:Class xmi.id="datatype_char" name="char" stereotype="datatype"/>
+            <UML:Class xmi.id="datatype_bool" name="bool" stereotype="datatype"/>
+            <UML:Class xmi.id="datatype_float" name="float" stereotype="datatype"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition der Klasse Automata -->
+        <UML:Class xmi.id="class_Automata" name="Automata" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="private" type="enum_state"/>
+            <UML:Attribute xmi.id="attr_stateChange" name="stateChange" visibility="private" type="enum_stateChange"/>
+            <UML:Attribute xmi.id="attr_currentState" name="currentState" visibility="private" type="enum_currentState"/>
+            <UML:Attribute xmi.id="attr_solicitor" name="solicitor" visibility="private" type="Array_of_functions"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Array -->
+        <UML:Class xmi.id="class_Array" name="Array" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Array of functions -->
+        <UML:Class xmi.id="class_Array_of_functions" name="Array of functions" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Array of enum -->
+        <UML:Class xmi.id="class_Array_of_enum" name="Array of enum" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Arrayof enum -->
+        <UML:Class xmi.id="class_Arrayof_enum" name="Arrayof enum" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Enumeration state -->
+        <UML:Enumeration xmi.id="enum_state" name="state">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_none" name="none">
+              <UML:TypedValue value="0"/>
+            </UML:EnumerationLiteral>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Definition der Enumeration stateChange -->
+        <UML:Enumeration xmi.id="enum_stateChange" name="stateChange">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_up" name="up">
+              <UML:TypedValue value="0"/>
+            </UML:EnumerationLiteral>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_steady" name="steady">
+              <UML:TypedValue value="1"/>
+            </UML:EnumerationLiteral>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_down" name="down">
+              <UML:TypedValue value="2"/>
+            </UML:EnumerationLiteral>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Definition der Enumeration currentState -->
+        <UML:Enumeration xmi.id="enum_currentState" name="currentState">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_previous" name="previous"/>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_current" name="current"/>
+            <UML:EnumerationLiteral xmi.id="enumLiteral_requested" name="requested"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Definition der Assoziationen -->
+        <UML:Association xmi.id="assoc_Automata_state" name="assoc_Automata_state">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Automata" type="class_Automata" name="Automata"/>
+            <UML:AssociationEnd xmi.id="assocEnd_state" type="enum_state" name="state"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Automata_stateChange" name="assoc_Automata_stateChange">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Automata" type="class_Automata" name="Automata"/>
+            <UML:AssociationEnd xmi.id="assocEnd_stateChange" type="enum_stateChange" name="stateChange"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Automata_currentState" name="assoc_Automata_currentState">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Automata" type="class_Automata" name="Automata"/>
+            <UML:AssociationEnd xmi.id="assocEnd_currentState" type="enum_currentState" name="currentState"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

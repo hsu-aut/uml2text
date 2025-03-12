@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_Thread" name="Thread" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_solicitor_Thread" name="solicitor" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_function"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_run_Thread" name="run" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Automata" name="Automata" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_state_Automata" name="state" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="enum_type"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_stateChange_Automata" name="stateChange" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="enum_type"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_currentState_Automata" name="currentState" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="enum_type"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_solicitor_Automata" name="solicitor" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_ArrayOfFunctions"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_run_Automata" name="run" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_ThreadAutomata" name="ThreadAutomata" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_run_ThreadAutomata" name="run" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Dependency xmi.id="dep_Thread_ThreadAutomata" supplier="class_ThreadAutomata" client="class_Thread"/>
+            <UML:Dependency xmi.id="dep_Automata_ThreadAutomata" supplier="class_ThreadAutomata" client="class_Automata"/>
+
+            <UML:Association xmi.id="assoc_Automata_ThreadAutomata">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata" type="class_Automata" name="automata" visibility="public" multiplicity="0..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_ThreadAutomata" type="class_ThreadAutomata" name="threadAutomata" visibility="public" multiplicity="0..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:DataType xmi.id="enum_type" name="enum"/>
+            <UML:Class xmi.id="class_ArrayOfFunctions" name="Array of functions"/>
+            <UML:Class xmi.id="class_function" name="function"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

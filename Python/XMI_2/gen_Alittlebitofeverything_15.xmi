@@ -1,0 +1,98 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="xmi.1" name="Model" visibility="public">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition of Package -->
+        <UML:Package xmi.id="xmi.2" name="Package" visibility="public">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition of Interface NameIf -->
+            <UML:Interface xmi.id="interface_NameIf" name="NameIf" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_Operation" name="Operation" visibility="public">
+                  <UML:Parameter xmi.id="parameter_return" name="return" kind="return"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Interface>
+            
+            <!-- Definition of Class Name -->
+            <UML:Class xmi.id="class_Name" name="Name" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_Operation" name="Operation" visibility="public">
+                  <UML:Parameter xmi.id="parameter_return" name="return" kind="return"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+              <UML:Generalization xmi.id="gen_Name_NameIf" parent="interface_NameIf"/>
+            </UML:Class>
+            
+            <!-- Definition of Abstraction -->
+            <UML:Abstraction xmi.id="abstraction_Name_NameIf" client="class_Name" supplier="interface_NameIf">
+              <UML:Stereotype name="realize"/>
+            </UML:Abstraction>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition of Class Little -->
+        <UML:Class xmi.id="class_Little" name="Little" visibility="public">
+          <UML:Generalization xmi.id="gen_Little_A" parent="class_A"/>
+          <UML:StateMachine xmi.id="statemachine_Little">
+            <UML:State name="state_machine_top"/>
+          </UML:StateMachine>
+        </UML:Class>
+
+        <!-- Definition of Class Bit of -->
+        <UML:Class xmi.id="class_BitOf" name="Bit of" visibility="public" isAbstract="true">
+          <UML:Generalization xmi.id="gen_BitOf_Everything" parent="class_Everything"/>
+          <UML:ActivityGraph xmi.id="activitygraph_BitOf"/>
+        </UML:Class>
+
+        <!-- Definition of Class Simple -->
+        <UML:Class xmi.id="class_Simple" name="Simple" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Simple_attr1" name="attr1" visibility="private"/>
+            <UML:Attribute xmi.id="attr_Simple_attr2" name="attr2" visibility="private"/>
+            <UML:Operation xmi.id="operation_Simple_Operation" name="Operation" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition of Class Model -->
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Model_attr" name="attr" visibility="private"/>
+            <UML:Operation xmi.id="operation_Model_Oper1" name="Oper1" visibility="public"/>
+            <UML:Operation xmi.id="operation_Model_Oper2" name="Oper2" visibility="public"/>
+          </UML:Classifier.feature>
+          <UML:AssociationEnd xmi.id="assocEnd_Model_BitOf" type="class_BitOf"/>
+          <UML:AssociationEnd xmi.id="assocEnd_Model_Simple" type="class_Simple"/>
+        </UML:Class>
+
+        <!-- Actor-UseCase Structure -->
+        <UML:Actor xmi.id="actor_JohnWayne" name="John Wayne" visibility="public"/>
+        
+        <UML:UseCase xmi.id="usecase_UC1" name="UC1" visibility="public"/>
+        <UML:UseCase xmi.id="usecase_UC2" name="UC2" visibility="public">
+          <UML:Generalization xmi.id="gen_UC2_UC1" parent="usecase_UC1"/>
+        </UML:UseCase>
+
+        <!-- Collaboration and Roles -->
+        <UML:Collaboration xmi.id="collaboration" name="Collaboration" visibility="public">
+          <UML:ClassifierRole xmi.id="role_j1" name="j1"/>
+          <UML:ClassifierRole xmi.id="role_j2" name="/j2"/>
+        </UML:Collaboration>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

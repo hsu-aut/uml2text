@@ -1,0 +1,160 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_NetworkCommunication" name="NetworkCommunication">
+      <UML:Namespace.ownedElement>
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="int" name="int"/>
+            <UML:DataType xmi.id="char" name="char"/>
+            <UML:DataType xmi.id="bool" name="bool"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <UML:DataType xmi.id="short" name="short"/>
+            <UML:DataType xmi.id="long" name="long"/>
+            <UML:DataType xmi.id="string" name="string"/>
+            <UML:DataType xmi.id="ListenerHandlerPtr" name="ListenerHandler*"/>
+            <UML:DataType xmi.id="SenderHandlerPtr" name="SenderHandler*"/>
+            <UML:DataType xmi.id="ConnectionHandlerPtr" name="ConnectionHandler*"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Ana Package -->
+        <UML:Package xmi.id="pkg_Ana" name="Ana">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_NetInt" name="NetInt"/>
+            <UML:Class xmi.id="class_NetUint" name="NetUint"/>
+            <UML:Class xmi.id="class_Message" name="Message"/>
+            <UML:Class xmi.id="class_Port" name="Port"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- listener_handler Class -->
+        <UML:Class xmi.id="class_listener_handler" name="listener_handler" isAbstract="true">
+          <UML:Operation xmi.id="op_handle_message" name="handle_message">
+            <UML:Parameter name="hasError" type="bool"/>
+            <UML:Parameter name="ClientID" type="int"/>
+          </UML:Operation>
+          <UML:Operation xmi.id="op_handle_disconnect" name="handle_disconnect">
+            <UML:Parameter name="hasError" type="bool"/>
+            <UML:Parameter name="ClientID" type="int"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <!-- connection_handler Class -->
+        <UML:Class xmi.id="class_connection_handler" name="connection_handler" isAbstract="true">
+          <UML:Operation xmi.id="op_handle_connect" name="handle_connect">
+            <UML:Parameter name="hasError" type="bool"/>
+            <UML:Parameter name="ClientID" type="int"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <!-- send_handler Class -->
+        <UML:Class xmi.id="class_send_handler" name="send_handler">
+          <UML:Operation xmi.id="op_handle_send" name="handle_send">
+            <UML:Parameter name="data" type="string"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <!-- client_predicate Interface -->
+        <UML:Interface xmi.id="interface_client_predicate" name="client_predicate">
+          <UML:Operation xmi.id="op_selects" name="selects"/>
+        </UML:Interface>
+
+        <!-- client Class -->
+        <UML:Class xmi.id="class_client" name="client" isAbstract="true">
+          <UML:Operation xmi.id="op_connect" name="connect"/>
+          <UML:Operation xmi.id="op_run" name="run"/>
+          <UML:Operation xmi.id="op_send" name="send"/>
+        </UML:Class>
+
+        <!-- server Class -->
+        <UML:Class xmi.id="class_server" name="server" isAbstract="true">
+          <UML:Operation xmi.id="op_send_all" name="send_all"/>
+          <UML:Operation xmi.id="op_send_if" name="send_if"/>
+          <UML:Operation xmi.id="op_send_one" name="send_one"/>
+        </UML:Class>
+
+        <!-- NetListener Class -->
+        <UML:Class xmi.id="class_NetListener" name="NetListener">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_server"/>
+            </UML:Generalization.parent>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_client_proxy"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Predicate Class -->
+        <UML:Class xmi.id="class_Predicate" name="Predicate">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class__generic_predicate"/>
+            </UML:Generalization.parent>
+            <UML:Generalization.child>
+              <UML:Interface xmi.idref="interface_client_predicate"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Other Elements -->
+        <UML:Class xmi.id="class__generic_predicate" name="_generic_predicate" isAbstract="true">
+          <UML:Operation xmi.id="op_selects_private" name="selects" visibility="private"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_client_proxy" name="client_proxy"/>
+
+        <!-- Enum timeout_policy -->
+        <UML:DataType xmi.id="enum_timeout_policy" name="timeout_policy">
+          <UML:Enumeration.literal name="NoTimeouts"/>
+          <UML:Enumeration.literal name="FixedTime"/>
+        </UML:DataType>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_client_client_proxy">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_client" multiplicity="1"/>
+            <UML:AssociationEnd type="class_client_proxy" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_server_client_proxy">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_server"/>
+            <UML:AssociationEnd type="class_client_proxy"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_server_timed_sender">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_server" aggregation="none"/>
+            <UML:AssociationEnd type="class_timed_sender"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_server_read_buffer_implementation">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="class_server" aggregation="none"/>
+            <UML:AssociationEnd type="class_read_buffer_implementation"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Additional Elements -->
+        <UML:Class xmi.id="class_timed_sender" name="timed_sender"/>
+        <UML:Class xmi.id="class_read_buffer_implementation" name="read_buffer_implementation"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

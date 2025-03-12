@@ -1,0 +1,158 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Interface IComponent -->
+        <UML:Interface xmi.id="interface_IComponent" name="IComponent" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_displaySelectedPhotoTags" name="displaySelectedPhotoTags" visibility="public"></UML:Operation>
+            <UML:Operation xmi.id="op_newOperation" name="newOperation" visibility="public"></UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <!-- Class FBAdapter -->
+        <UML:Class xmi.id="class_FBAdapter" name="FBAdapter" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_FBAdapter"/>
+            <UML:Generalization.parent xmi.idref="class_FacebookService"/>
+          </UML:Generalization>
+          <UML:Dependency>
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_FBAdapter"/>
+            </UML:Dependency.client>
+          </UML:Dependency>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Login" name="Login" visibility="public"></UML:Operation>
+            <UML:Attribute xmi.id="attr_LoggedInUser" name="LoggedInUser" visibility="public" type="class_User"></UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Class Singleton<T> -->
+        <UML:Class xmi.id="class_Singleton" name="Singleton<T>" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_Singleton"/>
+            <UML:Generalization.parent xmi.idref="class_FBAdapter"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Instance" name="Instance" visibility="private" type="class_Instance"></UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Class User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Class FacebookAlbum -->
+        <UML:Class xmi.id="class_FacebookAlbum" name="FacebookAlbum" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_FacebookAlbum"/>
+            <UML:Generalization.parent xmi.idref="class_Singleton"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Album" name="m_Album" visibility="private"></UML:Attribute>
+            <UML:Attribute xmi.id="attr_User" name="m_User" visibility="private"></UML:Attribute>
+            <UML:Operation xmi.id="op_displaySelectedAlbumsPhotos" name="displaySelectedAlbumsPhotos" visibility="private"></UML:Operation>
+            <UML:Operation xmi.id="op_FriendsListBox_SelectedIndexChanged" name="FriendsListBox_SelectedIndexChanged" visibility="public"></UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Class MainWindow -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_FBAdapter" name="m_FBAdapter" visibility="private" type="class_FBAdapter"></UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_FacebookUser" name="m_FacebookUser" visibility="private" type="class_FacebookUser"></UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_FacebookUserFriend" name="m_FacebookUserFriend" visibility="private"></UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_FacebookAlbum" name="m_FacebookAlbum" visibility="private" type="class_FacebookAlbum"></UML:Attribute>
+            <UML:Operation xmi.id="op_loginAndInit" name="loginAndInit" visibility="private"></UML:Operation>
+            <UML:Operation xmi.id="op_buttonLogin_Click" name="buttonLogin_Click" visibility="private"></UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Class Album -->
+        <UML:Class xmi.id="class_Album" name="Album" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Class Instance -->
+        <UML:Class xmi.id="class_Instance" name="Instance" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Class FacebookUser -->
+        <UML:Class xmi.id="class_FacebookUser" name="FacebookUser" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Class PictureBox -->
+        <UML:Class xmi.id="class_PictureBox" name="PictureBox" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_PictureBox"/>
+            <UML:Generalization.parent xmi.idref="class_PictureBoxProxy"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Load" name="Load" visibility="private">
+              <UML:Parameter name="URL" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Class PictureBoxProxy -->
+        <UML:Class xmi.id="class_PictureBoxProxy" name="PictureBoxProxy" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Proxy_Load" name="Load" visibility="public">
+              <UML:Parameter name="URL" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Interface IPictureBox -->
+        <UML:Interface xmi.id="interface_IPictureBox" name="IPictureBox" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="interface_op_Load" name="Load" visibility="public">
+              <UML:Parameter name="URL" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <!-- Class FacebookService -->
+        <UML:Class xmi.id="class_FacebookService" name="FacebookService" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_Service_Login" name="Login" visibility="public"></UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Interface ILoginable -->
+        <UML:Interface xmi.id="interface_ILoginable" name="ILoginable" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ILoginable_Login" name="Login" visibility="public"></UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <!-- Additional Classes -->
+        <UML:Class xmi.id="class_ListBox" name="ListBox" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Panel" name="Panel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_FolderBrowserDialog" name="FolderBrowserDialog" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ProgressBar" name="ProgressBar" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Hashtable" name="Hashtable" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_AlbumsPhotosControler" name="AlbumsPhotosControler" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute name="pictureBox1" type="class_PictureBox" visibility="private"/>
+            <UML:Attribute name="pictureBox2" type="class_PictureBox" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Dictionary" name="Dictionary" visibility="public" isAbstract="false">
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

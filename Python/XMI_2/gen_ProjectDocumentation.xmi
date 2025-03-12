@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="LogicalView" name="Logical View" isAbstract="false" isSpecification="false">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="Datatypes" name="Datatypes" stereotype="folder">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="BbDxfmfYtOdn" name="NetworkManager" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="mContext" name="mContext" visibility="private" type="zrB0YOyE8bm2"/>
+                <UML:Operation xmi.id="setContext" name="setContext" visibility="public">
+                  <UML:Parameter xmi.id="param_context" name="context" kind="in" type="zrB0YOyE8bm2"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Interface xmi.id="zrB0YOyE8bm2" name="Context" visibility="public" stereotype="interface">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="setStrategy" name="setStrategy" visibility="public">
+                  <UML:Parameter xmi.id="param_strategy" name="strategy" kind="in" type="fRjJsTOZo02c"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Interface>
+
+            <UML:Class xmi.id="vDatOaRkWfs8" name="Client" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="mOperation" name="mOperation" visibility="private" type="WIXTQXeAFnUe"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="tx6cqHCjfk9P" name="Server" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <UML:Interface xmi.id="fRjJsTOZo02c" name="NetworkStrategy" visibility="public" stereotype="interface">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="initSocket" name="initSocket" visibility="public">
+                  <UML:Parameter xmi.id="return_initSocket" name="return" kind="return" type="bool"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Interface>
+
+            <UML:Class xmi.id="ro0eQKTdLnz8" name="QNetwork" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <UML:Class xmi.id="dbaH0vldEWdN" name="SocketAPI" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <UML:Class xmi.id="WIXTQXeAFnUe" name="NetworkStrategy*" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <!-- Association between NetworkManager and Context -->
+            <UML:Association xmi.id="assoc_NetworkManager_Context">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_NetworkManager_Context_1" type="BbDxfmfYtOdn" name="NetworkManager" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="end_NetworkManager_Context_2" type="zrB0YOyE8bm2" name="Context" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Abstraction between Client and Context -->
+            <UML:Dependency xmi.id="dep_Client_Context" client="vDatOaRkWfs8" supplier="zrB0YOyE8bm2">
+              <UML:Dependency.stereotype name="abstraction"/>
+            </UML:Dependency>
+
+            <!-- Abstraction between Server and Context -->
+            <UML:Dependency xmi.id="dep_Server_Context" client="tx6cqHCjfk9P" supplier="zrB0YOyE8bm2">
+              <UML:Dependency.stereotype name="abstraction"/>
+            </UML:Dependency>
+
+            <!-- Dependency from Context to NetworkStrategy -->
+            <UML:Dependency xmi.id="dep_Context_NetworkStrategy" client="zrB0YOyE8bm2" supplier="fRjJsTOZo02c">
+            </UML:Dependency>
+
+            <!-- Abstraction between QNetwork and NetworkStrategy -->
+            <UML:Dependency xmi.id="dep_QNetwork_NetworkStrategy" client="ro0eQKTdLnz8" supplier="fRjJsTOZo02c">
+              <UML:Dependency.stereotype name="abstraction"/>
+            </UML:Dependency>
+
+            <!-- Abstraction between SocketAPI and NetworkStrategy -->
+            <UML:Dependency xmi.id="dep_SocketAPI_NetworkStrategy" client="dbaH0vldEWdN" supplier="fRjJsTOZo02c">
+              <UML:Dependency.stereotype name="abstraction"/>
+            </UML:Dependency>
+
+            <!-- Association between NetworkManager and NetworkStrategy -->
+            <UML:Association xmi.id="assoc_NetworkManager_NetworkStrategy">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="end_NetworkManager_NetworkStrategy_1" type="BbDxfmfYtOdn" name="NetworkManager" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="end_NetworkManager_NetworkStrategy_2" type="fRjJsTOZo02c" name="NetworkStrategy" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

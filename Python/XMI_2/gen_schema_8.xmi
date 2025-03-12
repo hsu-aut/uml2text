@@ -1,0 +1,267 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Class BoundarySurface -->
+        <UML:Class xmi.id="class_BoundarySurface" name="BoundarySurface" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_isWindowLess" name="isWindowLess" visibility="public"/>
+            <UML:Attribute xmi.id="attr_material" name="material" visibility="public"/>
+            <UML:Attribute xmi.id="attr_LOD2MultiSurface" name="LOD2MultiSurface" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class Opening -->
+        <UML:Class xmi.id="class_Opening" name="Opening" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Class Window -->
+        <UML:Class xmi.id="class_Window" name="Window" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Opening"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class AbstractBuilding -->
+        <UML:Class xmi.id="class_AbstractBuilding" name="AbstractBuilding" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Class Building -->
+        <UML:Class xmi.id="class_Building" name="Building" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractBuilding"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class BuildingPart -->
+        <UML:Class xmi.id="class_BuildingPart" name="BuildingPart" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_yearOfConstruction" name="yearOfConstruction" visibility="public"/>
+            <UML:Attribute xmi.id="attr_yearOfDemolition" name="yearOfDemolition" visibility="public"/>
+            <UML:Attribute xmi.id="attr_storeysAboveGround" name="storeysAboveGround" visibility="public"/>
+            <UML:Operation xmi.id="op_height" name="height" visibility="public">
+              <UML:Parameter name="return" kind="return" type="double"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_respectProspect" name="respectProspect" visibility="public">
+              <UML:Parameter name="return" kind="return" type="bool"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_epsilonBand" name="epsilonBand" visibility="public">
+              <UML:Parameter name="return" kind="return" type="AbstractBuilding"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class WallSurface -->
+        <UML:Class xmi.id="class_WallSurface" name="WallSurface" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_BoundarySurface"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class SpecificWallSurface -->
+        <UML:Class xmi.id="class_SpecificWallSurface" name="SpecificWallSurface" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_WallSurface"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="public"/>
+            <UML:Attribute xmi.id="attr_length" name="length" visibility="public"/>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class RoofSurface -->
+        <UML:Class xmi.id="class_RoofSurface" name="RoofSurface" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_BoundarySurface"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class SpecificRoofSurface -->
+        <UML:Class xmi.id="class_SpecificRoofSurface" name="SpecificRoofSurface" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_RoofSurface"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_angleMin" name="angleMin" visibility="public"/>
+            <UML:Attribute xmi.id="attr_angleMax" name="angleMax" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class SubParcel -->
+        <UML:Class xmi.id="class_SubParcel" name="SubParcel" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_geom" name="geom" visibility="public"/>
+            <UML:Attribute xmi.id="attr_area" name="area" visibility="public"/>
+            <UML:Attribute xmi.id="attr_far" name="far" visibility="public"/>
+            <UML:Attribute xmi.id="attr_var" name="var" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class CadastralParcel -->
+        <UML:Class xmi.id="class_CadastralParcel" name="CadastralParcel" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_geom" name="geom" visibility="public"/>
+            <UML:Attribute xmi.id="attr_area" name="area" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class BasicPropertyUnit -->
+        <UML:Class xmi.id="class_BasicPropertyUnit" name="BasicPropertyUnit" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_NeighbourFeature"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class UrbaZone -->
+        <UML:Class xmi.id="class_UrbaZone" name="UrbaZone" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="public"/>
+            <UML:Attribute xmi.id="attr_text" name="text" visibility="public"/>
+            <UML:Attribute xmi.id="attr_validityDate" name="validityDate" visibility="public"/>
+            <UML:Attribute xmi.id="attr_geom" name="geom" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class Rule -->
+        <UML:Class xmi.id="class_Rule" name="Rule" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_OCLformulation" name="OCLformulation" visibility="public"/>
+            <UML:Attribute xmi.id="attr_text" name="text" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class UrbaDocument -->
+        <UML:Class xmi.id="class_UrbaDocument" name="UrbaDocument" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_approvalDate" name="approvalDate" visibility="public"/>
+            <UML:Attribute xmi.id="attr_endDate" name="endDate" visibility="public"/>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class Prescription -->
+        <UML:Class xmi.id="class_Prescription" name="Prescription" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Class Prescription_LIN -->
+        <UML:Class xmi.id="class_Prescription_LIN" name="Prescription_LIN" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Prescription"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class Prescription_PCT -->
+        <UML:Class xmi.id="class_Prescription_PCT" name="Prescription_PCT" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Prescription"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class Prescription_SURF -->
+        <UML:Class xmi.id="class_Prescription_SURF" name="Prescription_SURF" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Prescription"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Association between Opening and BoundarySurface -->
+        <UML:Association xmi.id="association_Opening_BoundarySurface" name="OpeningBoundarySurface">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_Opening" type="class_Opening" name="opening" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="end_BoundarySurface" type="class_BoundarySurface" name="boundarySurface" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between BuildingPart and AbstractBuilding -->
+        <UML:Association xmi.id="association_BuildingPart_AbstractBuilding" name="BuildingPartAbstractBuilding">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_BuildingPart" type="class_BuildingPart" name="buildingPart" visibility="public" aggregation="composite" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="end_AbstractBuilding" type="class_AbstractBuilding" name="abstractBuilding" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between SubParcel and BuildingPart -->
+        <UML:Association xmi.id="association_SubParcel_BuildingPart" name="SubParcelBuildingPart">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_SubParcel" type="class_SubParcel" name="subParcel" visibility="public"/>
+            <UML:AssociationEnd xmi.id="end_BuildingPart" type="class_BuildingPart" name="buildingPart" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between Building and BasicPropertyUnit -->
+        <UML:Association xmi.id="association_Building_BasicPropertyUnit" name="BuildingBasicPropertyUnit">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_Building" type="class_Building" name="building" visibility="public"/>
+            <UML:AssociationEnd xmi.id="end_BasicPropertyUnit" type="class_BasicPropertyUnit" name="basicPropertyUnit" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between UrbaZone and UrbaDocument -->
+        <UML:Association xmi.id="association_UrbaZone_UrbaDocument" name="UrbaZoneUrbaDocument">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_UrbaZone" type="class_UrbaZone" name="urbaZone" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="end_UrbaDocument" type="class_UrbaDocument" name="urbaDocument" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Primitive Datatypes -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+        <UML:DataType xmi.id="datatype_byte" name="byte"/>
+        <UML:DataType xmi.id="datatype_String" name="String"/>
+        <UML:DataType xmi.id="datatype_Integer" name="Integer"/>
+        <UML:DataType xmi.id="datatype_Character" name="Character"/>
+        <UML:DataType xmi.id="datatype_Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="datatype_Float" name="Float"/>
+        <UML:DataType xmi.id="datatype_Double" name="Double"/>
+        <UML:DataType xmi.id="datatype_Byte" name="Byte"/>
+        <UML:DataType xmi.id="datatype_Short" name="Short"/>
+        <UML:DataType xmi.id="datatype_Long" name="Long"/>
+        <UML:DataType xmi.id="datatype_StringBuffer" name="StringBuffer"/>
+        <UML:DataType xmi.id="datatype_StringBuilder" name="StringBuilder"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

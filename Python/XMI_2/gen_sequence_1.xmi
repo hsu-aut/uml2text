@@ -1,0 +1,41 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_ref" name="ref">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_A" name="A" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_B" name="B" visibility="public" isAbstract="false"/>
+            <UML:Collaboration xmi.id="collaboration_newCollaboration" name="newCollaboration">
+              <UML:Collaboration.interaction>
+                <UML:Interaction xmi.id="interaction_newInteraction" name="newInteraction">
+                  <UML:Interaction.message>
+                    <UML:Message xmi.id="message_createB" name="createB" sender="role_A" receiver="role_B" action="CreateAction"/>
+                    <UML:Message xmi.id="message_doSomething" name="doSomething" sender="role_A" receiver="role_B" after="message_createB" action="CallAction"/>
+                    <UML:Message xmi.id="message_return" name="return" sender="role_B" receiver="role_A" after="message_doSomething" action="ReturnAction"/>
+                    <UML:Message xmi.id="message_signalSomething" name="signalSomething" sender="role_A" receiver="role_B" after="message_return" action="SendAction"/>
+                    <UML:Message xmi.id="message_destroyB" name="destroyB" sender="role_A" receiver="role_B" after="message_signalSomething" action="DestroyAction"/>
+                  </UML:Interaction.message>
+                  <UML:Interaction.participant>
+                    <UML:ClassifierRole xmi.id="role_A" base="class_A" multiplicity="1..1"/>
+                    <UML:ClassifierRole xmi.id="role_B" base="class_B" multiplicity="1..1"/>
+                  </UML:Interaction.participant>
+                </UML:Interaction>
+              </UML:Collaboration.interaction>
+            </UML:Collaboration>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

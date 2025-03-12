@@ -1,0 +1,163 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ModelExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4" />
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_celestial_battle" name="celestial-battle">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Klassen Definitionen -->
+        
+        <UML:Class xmi.id="class_Object" name="Object" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_Object_name" name="_name" visibility="private" />
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Transformation" name="Transformation" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_Transformation_matrix" name="_matrix" visibility="private"/>
+          <UML:Attribute xmi.id="attr_Transformation_position" name="_position" visibility="private"/>
+          <UML:Attribute xmi.id="attr_Transformation_rotation" name="_rotation" visibility="private"/>
+          <UML:Attribute xmi.id="attr_Transformation_scaling" name="_scaling" visibility="private"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PhysicalData" name="PhysicalData" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_PhysicalData_weight" name="weight" visibility="private"/>
+          <UML:Attribute xmi.id="attr_PhysicalData_force" name="force" visibility="private"/>
+          <UML:Attribute xmi.id="attr_PhysicalData_speed" name="speed" visibility="private"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Entity" name="Entity" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_Entity_transformation" name="_transformation" visibility="private" type="class_Transformation"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PhysicalObject" name="PhysicalObject" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="attr_PhysicalObject_physicalData" name="_phisicalData" visibility="private" type="class_PhysicalData"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_GraphicalObject" name="GraphicalObject" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Schnittstellen Definitionen -->
+        
+        <UML:Interface xmi.id="interface_IO" name="IO" visibility="public" isAbstract="true"/>
+        
+        <UML:Interface xmi.id="interface_IO_Read" name="IO_Read" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_IO"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_read" name="read" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_IO_Write" name="IO_Write" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_IO"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_write" name="write" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_IO_RandomAccess" name="IO_RandomAccess" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_IO"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_seek" name="seek" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_IO_ReadWrite" name="IO_ReadWrite" visibility="public" isAbstract="true">
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_Read"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_Write"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_IO_Read_RandomAccess" name="IO_Read_RandomAccess" visibility="public" isAbstract="true">
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_Read"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_RandomAccess"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_IO_Write_RandomAccess" name="IO_Write_RandomAccess" visibility="public" isAbstract="true">
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_Write"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_RandomAccess"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_IO_ReadWrite_RandomAccess" name="IO_ReadWrite_RandomAccess" visibility="public" isAbstract="true">
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_ReadWrite"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_RandomAccess"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_IO_Socket" name="IO_Socket" visibility="public" isAbstract="true">
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_ReadWrite"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+          <UML:Operation xmi.id="op_connect" name="connect" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="op_disconnect" name="disconnect" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_IO_File" name="IO_File" visibility="public" isAbstract="true">
+          <UML:Realization>
+            <UML:Realization.supplier>
+              <UML:Interface xmi.idref="interface_IO_ReadWrite_RandomAccess"/>
+            </UML:Realization.supplier>
+          </UML:Realization>
+          <UML:Operation xmi.id="op_open" name="open" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="op_close" name="close" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="op_size" name="size" visibility="public" isAbstract="true"/>
+        </UML:Interface>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

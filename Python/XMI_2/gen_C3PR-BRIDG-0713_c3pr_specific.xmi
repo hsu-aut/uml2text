@@ -1,0 +1,333 @@
+```xml
+<?xml version = "1.0" encoding = "UTF-8"?>
+<XMI xmi.version = "1.2" xmlns:UML = "org.omg.xmi.namespace.UML" >
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>YourToolNameHere</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id = "model_Root" name = "ClinicalStudySystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- EARootClass -->
+        <UML:Class xmi.id = "class_EARootClass" name = "EARootClass" visibility = "public" isAbstract = "false"/>
+        
+        <!-- Logical Model (Package) -->
+        <UML:Package xmi.id = "package_LogicalModel" name = "Logical Model" visibility = "public">
+          <UML:Namespace.ownedElement>
+            
+            <!-- StratificationFactor -->
+            <UML:Class xmi.id = "class_StratificationFactor" name = "StratificationFactor" visibility = "public" isAbstract = "false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id = "attr_displayOrder" name = "displayOrder" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id = "attr_questionText" name = "questionText" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- StratificationFactorValidAnswer -->
+            <UML:Class xmi.id = "class_StratificationFactorValidAnswer" name = "StratificationFactorValidAnswer" visibility = "public" isAbstract = "false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id = "attr_validAnswer" name = "validAnswer" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "CD"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+              <UML:AssociationEnd xmi.idref = "assocEnd_StratificationFactorAnswer_StratificationFactor"/>
+            </UML:Class>
+            
+            <!-- CoordinatingCenter -->
+            <UML:Class xmi.id = "class_CoordinatingCenter" name = "CoordinatingCenter" visibility = "public" isAbstract = "false"/>
+
+            <!-- OrganizationAssignedIdentifier -->
+            <UML:Class xmi.id = "class_OrganizationAssignedIdentifier" name = "OrganizationAssignedIdentifier" visibility = "public" isAbstract = "false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Identifier"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:AssociationEnd xmi.idref = "assocEnd_OrganizationIdentifier_Organization"/>
+            </UML:Class>
+
+            <!-- DiseaseHistory -->
+            <UML:Class xmi.id = "class_DiseaseHistory" name = "DiseaseHistory" visibility = "public" isAbstract = "false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id = "attr_otherDiseaseName" name = "otherDiseaseName" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "CD"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id = "attr_otherDiseaseSite" name = "otherDiseaseSite" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "CD"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+              <UML:AssociationEnd xmi.idref = "assocEnd_DiseaseHistory_StudyDisease"/>
+              <UML:AssociationEnd xmi.idref = "assocEnd_DiseaseHistory_StudyDiseaseSite"/>
+            </UML:Class>
+
+            <!-- StudyDisease -->
+            <UML:Class xmi.id = "class_StudyDisease" name = "StudyDisease" visibility = "public" isAbstract = "false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id = "attr_name" name = "name" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "CD"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id = "attr_primaryDiseaseIndicator" name = "primaryDiseaseIndicator" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "Boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+              <UML:AssociationEnd xmi.idref = "assocEnd_StudyDisease_StudyProtocol"/>
+            </UML:Class>
+
+            <!-- EligibilityCriterion -->
+            <UML:Class xmi.id = "class_EligibilityCriterion" name = "EligibilityCriterion" visibility = "public" isAbstract = "false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id = "attr_displayOrder" name = "displayOrder" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id = "attr_notApplicableIndicator" name = "notApplicableIndicator" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "Boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id = "attr_questionText" name = "questionText" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_InclusionEligibilityCriterion"/>
+                </UML:Generalization.child>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_ExclusionEligibilityCriterion"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- NonTreatmentEpoch -->
+            <UML:Class xmi.id = "class_NonTreatmentEpoch" name = "NonTreatmentEpoch" visibility = "public" isAbstract = "false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Epoch"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- TreatmentEpoch -->
+            <UML:Class xmi.id = "class_TreatmentEpoch" name = "TreatmentEpoch" visibility = "public" isAbstract = "false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Epoch"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:AssociationEnd xmi.idref = "assocEnd_TreatmentEpoch_EligibilityCriterion"/>
+              <UML:AssociationEnd xmi.idref = "assocEnd_TreatmentEpoch_ArmSegment"/>
+            </UML:Class>
+
+            <!-- ScheduledTreatmentEpoch -->
+            <UML:Class xmi.id = "class_ScheduledTreatmentEpoch" name = "ScheduledTreatmentEpoch" visibility = "public" isAbstract = "false">
+              <UML:AssociationEnd xmi.idref = "assocEnd_ScheduledTreatmentEpoch_StratificationFactorAnswer"/>
+              <UML:AssociationEnd xmi.idref = "assocEnd_ScheduledTreatmentEpoch_EligibilityCriterionAnswer"/>
+            </UML:Class>
+
+            <!-- StudyDiseaseSite -->
+            <UML:Class xmi.id = "class_StudyDiseaseSite" name = "StudyDiseaseSite" visibility = "public" isAbstract = "false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id = "attr_name" name = "name" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "CD"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id = "attr_primaryDiseaseSiteIndicator" name = "primaryDiseaseSiteIndicator" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "Boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- StudySubject -->
+            <UML:Class xmi.id = "class_StudySubject" name = "StudySubject" visibility = "public" isAbstract = "false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id = "attr_informedConsentSignedDate" name = "informedConsentSignedDate" visibility = "private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref = "DateTime"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+              <UML:AssociationEnd xmi.idref = "assocEnd_StudySubject_StudyProtocol"/>
+              <UML:AssociationEnd xmi.idref = "assocEnd_StudySubject_Identifier"/>
+            </UML:Class>
+
+            <!-- StratificationFactorAnswer -->
+            <UML:Class xmi.id = "class_StratificationFactorAnswer" name = "StratificationFactorAnswer" visibility = "public" isAbstract = "false">
+              <UML:AssociationEnd xmi.idref = "assocEnd_StratificationFactorAnswer_StratificationFactor"/>
+            </UML:Class>
+
+            <!-- Identifier -->
+            <UML:Class xmi.id = "class_Identifier" name = "Identifier" visibility = "public" isAbstract = "false"/>
+
+            <!-- EligibilityCriterionAnswer -->
+            <UML:Class xmi.id = "class_EligibilityCriterionAnswer" name = "EligibilityCriterionAnswer" visibility = "public" isAbstract = "false">
+              <UML:AssociationEnd xmi.idref = "assocEnd_EligibilityCriterionAnswer_EligibilityCriterion"/>
+            </UML:Class>
+
+            <!-- SystemAssignedIdentifier -->
+            <UML:Class xmi.id = "class_SystemAssignedIdentifier" name = "SystemAssignedIdentifier" visibility = "public" isAbstract = "false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Identifier"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:AssociationEnd xmi.idref = "assocEnd_SystemAssignedIdentifier_PlannedStudy"/>
+              <UML:AssociationEnd xmi.idref = "assocEnd_SystemAssignedIdentifier_Participant"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Assoziationen -->
+        <UML:Association xmi.id = "assoc_StratificationFactorAnswer_StratificationFactor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_StratificationFactorAnswer_StratificationFactor" type = "class_StratificationFactorValidAnswer" name = "stratificationFactor" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_StratificationFactorAnswer_StratificationFactorValidAnswer" type = "class_StratificationFactorValidAnswer" name = "answer" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_CoordinatingCenter_StudyCoordinatingCenter">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_CoordinatingCenter_StudyCoordinatingCenter" type = "class_CoordinatingCenter" name = "coordinatingCenter" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_CoordinatingCenter_StudyCoordinatingCenterRole" type = "class_StudyCoordinatingCenter" name = "studyCoordinatingCenter" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_OrganizationIdentifier_Organization">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_OrganizationIdentifier_Organization" type = "class_OrganizationAssignedIdentifier" name = "organizationIdentifier" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_OrganizationIdentifier_OrganizationRole" type = "class_Organization" name = "organization" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_DiseaseHistory_StudyDisease">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_DiseaseHistory_StudyDisease" type = "class_DiseaseHistory" name = "diseaseHistory" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_DiseaseHistory_StudyDiseaseRole" type = "class_StudyDisease" name = "studyDisease" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id = "assoc_DiseaseHistory_StudyDiseaseSite">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_DiseaseHistory_StudyDiseaseSite" type = "class_DiseaseHistory" name = "diseaseHistory" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_DiseaseHistory_StudyDiseaseSiteRole" type = "class_StudyDiseaseSite" name = "studyDiseaseSite" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_StudyDisease_StudyProtocol">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_StudyDisease_StudyProtocol" type = "class_StudyDisease" name = "studyDisease" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_StudyDisease_StudyProtocolRole" type = "class_StudyProtocol" name = "studyProtocol" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_TreatmentEpoch_EligibilityCriterion">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_TreatmentEpoch_EligibilityCriterion" type = "class_TreatmentEpoch" name = "treatmentEpoch" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_TreatmentEpoch_EligibilityCriterionRole" type = "class_EligibilityCriterion" name = "eligibilityCriterion" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_TreatmentEpoch_ArmSegment">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_TreatmentEpoch_ArmSegment" type = "class_TreatmentEpoch" name = "treatmentEpoch" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_TreatmentEpoch_ArmSegmentRole" type = "class_ArmSegment" name = "armSegment" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_ScheduledTreatmentEpoch_StratificationFactorAnswer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_ScheduledTreatmentEpoch_StratificationFactorAnswer" type = "class_ScheduledTreatmentEpoch" name = "scheduledTreatmentEpoch" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_ScheduledTreatmentEpoch_StratificationFactorAnswerRole" type = "class_StratificationFactorAnswer" name = "stratificationFactorAnswer" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id = "assoc_ScheduledTreatmentEpoch_EligibilityCriterionAnswer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_ScheduledTreatmentEpoch_EligibilityCriterionAnswer" type = "class_ScheduledTreatmentEpoch" name = "scheduledTreatmentEpoch" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_ScheduledTreatmentEpoch_EligibilityCriterionAnswerRole" type = "class_EligibilityCriterionAnswer" name = "eligibilityCriterionAnswer" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_StudySubject_StudyProtocol">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_StudySubject_StudyProtocol" type = "class_StudySubject" name = "studySubject" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_StudySubject_StudyProtocolRole" type = "class_StudyProtocol" name = "studyProtocol" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_StudySubject_Identifier">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_StudySubject_Identifier" type = "class_StudySubject" name = "studySubject" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_StudySubject_IdentifierRole" type = "class_Identifier" name = "identifier" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id = "assoc_StratificationFactorAnswer_StratificationFactor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_StratificationFactorAnswer_StratificationFactor" type = "class_StratificationFactorAnswer" name = "stratificationFactorAnswer" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_StratificationFactorAnswer_StratificationFactorRole" type = "class_StratificationFactor" name = "stratificationFactor" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_EligibilityCriterionAnswer_EligibilityCriterion">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_EligibilityCriterionAnswer_EligibilityCriterion" type = "class_EligibilityCriterionAnswer" name = "eligibilityCriterionAnswer" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_EligibilityCriterionAnswer_EligibilityCriterionRole" type = "class_EligibilityCriterion" name = "eligibilityCriterion" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id = "assoc_SystemAssignedIdentifier_PlannedStudy">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_SystemAssignedIdentifier_PlannedStudy" type = "class_SystemAssignedIdentifier" name = "systemAssignedIdentifier" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_SystemAssignedIdentifier_PlannedStudyRole" type = "class_PlannedStudy" name = "plannedStudy" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id = "assoc_SystemAssignedIdentifier_Participant">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id = "assocEnd_SystemAssignedIdentifier_Participant" type = "class_SystemAssignedIdentifier" name = "systemAssignedIdentifier" visibility = "public" aggregation = "none"/>
+            <UML:AssociationEnd xmi.id = "assocEnd_SystemAssignedIdentifier_ParticipantRole" type = "class_Participant" name = "participant" visibility = "public" aggregation = "none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Data Types -->
+        <UML:DataType xmi.id = "String" name = "String"/>
+        <UML:DataType xmi.id = "Boolean" name = "Boolean"/>
+        <UML:DataType xmi.id = "Integer" name = "Integer"/>
+        <UML:DataType xmi.id = "CD" name = "CD"/>
+        <UML:DataType xmi.id = "DateTime" name = "DateTime"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

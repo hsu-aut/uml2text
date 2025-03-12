@@ -1,0 +1,180 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_FinancialSystem" name="FinancialSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Journal" -->
+        <UML:Class xmi.id="class_Journal" name="Journal" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_journalnummer" name="journalnummer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_startdatum" name="startdatum" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_buchungsjahr" name="buchungsjahr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_buchungsperiode" name="buchungsperiode" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_absummiert" name="absummiert" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Tinyint"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Buchung" -->
+        <UML:Class xmi.id="class_Buchung" name="Buchung" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_belegnummer" name="belegnummer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_buchungstext" name="buchungstext" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_valutadatum" name="valutadatum" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_erfassungsdatum" name="erfassungsdatum" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Datetime"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Buchungszeile" -->
+        <UML:Class xmi.id="class_Buchungszeile" name="Buchungszeile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_betrag" name="betrag" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Decimal"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sh" name="sh" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Konto" -->
+        <UML:Class xmi.id="class_Konto" name="Konto" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_kontonummer" name="kontonummer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bezeichnung" name="bezeichnung" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_mwst" name="mwst" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_gewicht" name="gewicht" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Firma" -->
+        <UML:Class xmi.id="class_Firma" name="Firma" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_firma" name="firma" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_jahrAktuell" name="jahrAktuell" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Varchar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_periodeAktuell" name="periodeAktuell" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Char"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziation zwischen Buchung und Buchungszeile -->
+        <UML:Association xmi.id="assoc_Buchung_Buchungszeile">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Buchung_Buchungszeile_Buchung" type="class_Buchung" name="buchung" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Buchung_Buchungszeile_Buchungszeile" type="class_Buchungszeile" name="buchungszeile" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Buchungszeile und Konto -->
+        <UML:Association xmi.id="assoc_Buchungszeile_Konto">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Buchungszeile_Konto_Buchungszeile" type="class_Buchungszeile" name="buchungszeile" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Buchungszeile_Konto_Konto" type="class_Konto" name="konto" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Selbstreferenzielle Assoziation innerhalb von Konto -->
+        <UML:Association xmi.id="assoc_Konto_Konto">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Konto_Konto_Parent" type="class_Konto" name="parentKonto" visibility="public" aggregation="none" multiplicity="0..1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Konto_Konto_Child" type="class_Konto" name="childKonto" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Konto und Firma -->
+        <UML:Association xmi.id="assoc_Konto_Firma">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Konto_Firma_Konto" type="class_Konto" name="konto" visibility="public" aggregation="none" multiplicity="0..1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Konto_Firma_Firma" type="class_Firma" name="firma" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datenotypen -->
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+        <UML:DataType xmi.id="Char" name="Char"/>
+        <UML:DataType xmi.id="Varchar" name="Varchar"/>
+        <UML:DataType xmi.id="Decimal" name="Decimal"/>
+        <UML:DataType xmi.id="Tinyint" name="Tinyint"/>
+        <UML:DataType xmi.id="Datetime" name="Datetime"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

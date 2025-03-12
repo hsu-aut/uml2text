@@ -1,0 +1,97 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ToolVersion</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model" isAbstract="false" isLeaf="false" isRoot="false">
+      <UML:Stereotype xmi.id="folder" name="folder"/>
+      <UML:Stereotype xmi.id="datatype" name="datatype"/>
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="logical_view" name="Logical View" isAbstract="false">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="datatypes_package" name="Datatypes" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Class Diagram -->
+            <UML:ClassDiagram xmi.id="class_diagram" name="class diagram"/>
+
+            <!-- Basic State Diagram -->
+            <UML:StateMachine xmi.id="basic_state_diagram" name="basic state diagram">
+              <UML:StateMachine.top>
+                <UML:CompositeState xmi.id="cs1" name="Top">
+                  <UML:StateMachine.substate>
+
+                    <UML:SimpleState xmi.id="spawn_state" name="Spawn State">
+                      <UML:State.entry>
+                        <UML:CallEvent xmi.id="_spawn_finished" name="Finished Spawning"/>
+                      </UML:State.entry>
+                    </UML:SimpleState>
+
+                    <UML:SimpleState xmi.id="idle_state" name="Idle State">
+                      <UML:State.entry>
+                        <UML:ActivityGraph xmi.id="locates_target_act" name="Locates Target"/>
+                        <UML:ActivityGraph xmi.id="zero_health_act" name="Zero Health"/>
+                      </UML:State.entry>
+                    </UML:SimpleState>
+
+                    <UML:SimpleState xmi.id="attack_state" name="Attack State">
+                      <UML:State.entry>
+                        <UML:ActivityGraph xmi.id="lost_target_act" name="Lost Target"/>
+                        <UML:ActivityGraph xmi.id="zero_health_act_2" name="Zero Health"/>
+                      </UML:State.entry>
+                    </UML:SimpleState>
+
+                    <UML:SimpleState xmi.id="die_state" name="Die State"/>
+
+                    <UML:SimpleState xmi.id="melee_attack_state" name="Melee Attack"/>
+
+                    <UML:SimpleState xmi.id="ranged_attack_state" name="Ranged Attack"/>
+
+                  </UML:StateMachine.substate>
+                </UML:CompositeState>
+              </UML:StateMachine.top>
+            </UML:StateMachine>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="use_case_view" name="Use Case View" isAbstract="false"/>
+
+        <!-- Component View -->
+        <UML:Package xmi.id="component_view" name="Component View" isAbstract="false"/>
+
+        <!-- Deployment View -->
+        <UML:Package xmi.id="deployment_view" name="Deployment View" isAbstract="false"/>
+
+        <!-- Entity Relationship Model -->
+        <UML:Package xmi.id="er_model" name="Entity Relationship Model" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

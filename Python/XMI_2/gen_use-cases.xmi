@@ -1,0 +1,96 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+      <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+      <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+      
+      <!-- Logical View -->
+      <UML:Package xmi.id="package_LogicalView" name="Logical View">
+        <UML:Namespace.ownedElement>
+          <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+            <UML:Namespace.ownedElement>
+              <UML:Class xmi.id="datatype_int" name="int" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_char" name="char" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_bool" name="bool" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_float" name="float" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_double" name="double" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_short" name="short" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_long" name="long" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_unsigned_int" name="unsigned int" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_unsigned_short" name="unsigned short" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_unsigned_long" name="unsigned long" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+              <UML:Class xmi.id="datatype_string" name="string" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+        </UML:Namespace.ownedElement>
+      </UML:Package>
+      
+      <!-- Use Case View -->
+      <UML:Package xmi.id="package_UseCaseView" name="Use Case View">
+        <UML:Namespace.ownedElement>
+          <UML:Actor xmi.id="actor_player" name="player" visibility="public"/>
+          <UML:Actor xmi.id="actor_game_engine" name="game engine" visibility="public"/>
+          
+          <!-- Use Cases -->
+          <UML:UseCase xmi.id="usecase_navigate_menu" name="navigate menu" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_select_menu_option" name="select menu option" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_start_game" name="start game" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_navigate_options" name="navigate options" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_select_option" name="select option" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_select_sub_option" name="select sub-option" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_navigate_sub_options" name="navigate sub-options" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_check_state" name="check state" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_pause" name="pause" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_exit_to_menu" name="exit to menu" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_exit_program" name="exit program" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_perform_action" name="perform action" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_display_current_options" name="display current options" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_display_current_action_text" name="display current action text" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_display_action_result" name="display action result" visibility="public"/>
+          <UML:UseCase xmi.id="usecase_display_state" name="display state" visibility="public"/>
+          
+          <!-- Associations -->
+          <UML:Association xmi.id="association_Player_UseCases" name="Player Actions">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_Player" type="actor_player"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase1" type="usecase_navigate_menu"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase2" type="usecase_select_menu_option"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase3" type="usecase_start_game"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase4" type="usecase_navigate_options"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase5" type="usecase_select_option"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase6" type="usecase_select_sub_option"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase7" type="usecase_navigate_sub_options"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase8" type="usecase_check_state"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase9" type="usecase_pause"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Player_UseCase10" type="usecase_exit_to_menu"/>
+            </UML:Association.connection>
+          </UML:Association>
+          
+          <UML:Association xmi.id="association_GameEngine_UseCases" name="Game Engine Actions">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_GameEngine_GameEngine" type="actor_game_engine"/>
+              <UML:AssociationEnd xmi.id="assocEnd_GameEngine_UseCase1" type="usecase_display_current_options"/>
+              <UML:AssociationEnd xmi.id="assocEnd_GameEngine_UseCase2" type="usecase_display_current_action_text"/>
+              <UML:AssociationEnd xmi.id="assocEnd_GameEngine_UseCase3" type="usecase_display_action_result"/>
+              <UML:AssociationEnd xmi.id="assocEnd_GameEngine_UseCase4" type="usecase_display_state"/>
+            </UML:Association.connection>
+          </UML:Association>
+          
+          <!-- Generalizations -->
+          <UML:Generalization xmi.id="gen_PerformAction_DisplayActionText" parent="usecase_perform_action" child="usecase_display_current_action_text"/>
+        </UML:Namespace.ownedElement>
+      </UML:Package>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

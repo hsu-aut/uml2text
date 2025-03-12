@@ -1,0 +1,167 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_RandomModels" name="Random Models">
+      <UML:Namespace.ownedElement>
+
+        <!-- Global DataTypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="type_int" name="int"/>
+            <UML:DataType xmi.id="type_char" name="char"/>
+            <UML:DataType xmi.id="type_bool" name="bool"/>
+            <UML:DataType xmi.id="type_float" name="float"/>
+            <UML:DataType xmi.id="type_double" name="double"/>
+            <UML:DataType xmi.id="type_short" name="short"/>
+            <UML:DataType xmi.id="type_long" name="long"/>
+            <UML:DataType xmi.id="type_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="type_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="type_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="type_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Interfaces -->
+            <UML:Interface xmi.id="interface_UniformRandomSequenceGenerator" name="UniformRandomSequenceGenerator"/>
+            <UML:Interface xmi.id="interface_RandomNumberGenerator" name="RandomNumberGenerator"/>
+            <UML:Interface xmi.id="interface_InverseCumulative" name="InverseCumulative"/>
+
+            <!-- Classes -->
+            <UML:Class xmi.id="class_SobolRsg" name="SobolRsg" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_SobolRsg"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_RandomSequenceGenerator"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_MersenneTwisterUniformRng" name="MersenneTwisterUniformRng" visibility="public" isAbstract="false">
+              <UML:Realization>
+                <UML:Realization.supplier>
+                  <UML:Interface xmi.idref="interface_RandomNumberGenerator"/>
+                </UML:Realization.supplier>
+              </UML:Realization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_InverseCumulativeRsg" name="InverseCumulativeRsg" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="class_GenericLowDiscrepancy" name="GenericLowDiscrepancy" visibility="public" isAbstract="false">
+              <UML:Dependency>
+                <UML:Dependency.supplier>
+                  <UML:Interface xmi.idref="interface_InverseCumulative"/>
+                </UML:Dependency.supplier>
+              </UML:Dependency>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_GenericPseudoRandom" name="GenericPseudoRandom" visibility="public" isAbstract="false">
+              <UML:Dependency>
+                <UML:Dependency.supplier>
+                  <UML:Interface xmi.idref="interface_InverseCumulative"/>
+                </UML:Dependency.supplier>
+              </UML:Dependency>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_RandomSequenceGenerator" name="RandomSequenceGenerator" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_RandomSequenceGenerator"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_SequenceGenerator"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_InverseCumulativeNormal" name="InverseCumulativeNormal" visibility="public" isAbstract="false">
+              <UML:Abstraction>
+                <UML:Abstraction.supplier>
+                  <UML:Interface xmi.idref="interface_InverseCumulative"/>
+                </UML:Abstraction.supplier>
+              </UML:Abstraction>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_InverseCumulativePoisson" name="InverseCumulativePoisson" visibility="public" isAbstract="false">
+              <UML:Abstraction>
+                <UML:Abstraction.supplier>
+                  <UML:Interface xmi.idref="interface_InverseCumulative"/>
+                </UML:Abstraction.supplier>
+              </UML:Abstraction>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_SequenceGenerator" name="SequenceGenerator" visibility="public" isAbstract="false"/>
+
+            <UML:Class xmi.id="class_PseudoRandom" name="PseudoRandom" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_PseudoRandom"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_MersenneTwisterUniformRng"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_PoissonPseudoRandom" name="PoissonPseudoRandom" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_PoissonPseudoRandom"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_MersenneTwisterUniformRng"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+
+          <!-- Associations -->
+          <UML:Association xmi.id="assoc_RandomSequenceGenerator_UniformRandomSequenceGenerator">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_RandomSequenceGenerator" type="class_RandomSequenceGenerator" name="randomSequenceGenerator" visibility="public" aggregation="none" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_UniformRandomSequenceGenerator" type="interface_UniformRandomSequenceGenerator" name="uniformRandomSequenceGenerator" visibility="public" aggregation="none" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+          <UML:Association xmi.id="assoc_InverseCumulativeRsg_RandomNumberGenerator">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_InverseCumulativeRsg" type="class_InverseCumulativeRsg" name="inverseCumulativeRsg" visibility="public" aggregation="none" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_RandomNumberGenerator" type="interface_RandomNumberGenerator" name="randomNumberGenerator" visibility="public" aggregation="none" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+          <UML:Association xmi.id="assoc_GenericLowDiscrepancy_InverseCumulative">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_GenericLowDiscrepancy" type="class_GenericLowDiscrepancy" name="genericLowDiscrepancy" visibility="public" aggregation="composite" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_InverseCumulative" type="interface_InverseCumulative" name="inverseCumulative" visibility="public" aggregation="none" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+          <UML:Association xmi.id="assoc_GenericPseudoRandom_InverseCumulative">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_GenericPseudoRandom" type="class_GenericPseudoRandom" name="genericPseudoRandom" visibility="public" aggregation="none" multiplicity="1"/>
+              <UML:AssociationEnd xmi.id="assocEnd_InverseCumulative" type="interface_InverseCumulative" name="inverseCumulative" visibility="public" aggregation="none" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

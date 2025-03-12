@@ -1,0 +1,220 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Uni" name="Uni">
+      <UML:Namespace.ownedElement>
+
+        <!-- Classes from java.lang -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_void" name="void"/>
+        <UML:DataType xmi.id="datatype_intArray" name="int[]"/>
+        <UML:Class xmi.id="class_String" name="String"/>
+        <UML:Class xmi.id="class_Integer" name="Integer"/>
+        
+        <!-- Class from java.util -->
+        <UML:Class xmi.id="class_Date" name="Date"/>
+
+        <!-- Uni Classes -->
+        <UML:Class xmi.id="class_Grade" name="Grade" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_grade_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_grade_value" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Person" name="Person" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_person_firstName" name="firstName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_person_lastName" name="lastName" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_person_birthDate" name="birthDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_person_age" name="age" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_person_isMarried" name="isMarried" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Student" name="Student" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Student_Person" parent="class_Person"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_student_matNr" name="matNr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_student_matDate" name="matDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Date"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Employee" name="Employee" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Employee_Person" parent="class_Person"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_employee_soSecNr" name="soSecNr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_employee_wage" name="wage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_employee_taxClass" name="taxClass" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PhDStudent" name="PhDStudent" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_PhDStudent_Employee" parent="class_Employee"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_phdStudent_dissSubject" name="dissSubject" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Facility" name="Facility" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_facility_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Faculty" name="Faculty" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Faculty_Facility" parent="class_Facility"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Institute" name="Institute" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Institute_Facility" parent="class_Facility"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Paper" name="Paper" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_paper_title" name="title" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_paper_edition" name="edition" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_paper_purpose" name="purpose" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_paper_category" name="category" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_paper_inProgress" name="inProgress" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Chair" name="Chair" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Chair_Facility" parent="class_Facility"/>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_Grade_Person" name="grade">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Grade_Person_Grade" type="class_Grade" name="grade" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Grade_Person_Person" type="class_Person" name="person" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Person_Supervisor" name="supervisor">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Person_Supervisor_PersonOne" type="class_Person" name="supervisor" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Person_Supervisor_PersonTwo" type="class_Person" name="subordinate" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Facility_SubFacility" name="subFacility">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Facility_SubFacility_Super" type="class_Facility" name="superFacility" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Facility_SubFacility_Sub" type="class_Facility" name="subFacility" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Facility_Person" name="headOfFacility">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Facility_Person_Facility" type="class_Facility" name="headOfFacility" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Facility_Person_Person" type="class_Person" name="leader" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Paper_Person" name="author">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Paper_Person_Paper" type="class_Paper" name="papers" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Paper_Person_Person" type="class_Person" name="author" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_CurrentPaper_Person" name="currentPaper">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_CurrentPaper_Person_Paper" type="class_Paper" name="currentPaper" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CurrentPaper_Person_Person" type="class_Person" name="author" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

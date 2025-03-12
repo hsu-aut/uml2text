@@ -1,0 +1,80 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="NotificationSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Basisklassen und Interfaces -->
+        <UML:Class xmi.id="class_Notification" name="Notification" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_statusNew" name="STATUS_NEW" visibility="private"/>
+            <UML:Attribute xmi.id="attr_statusDone" name="STATUS_DONE" visibility="private"/>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getStatusList" name="getStatusList" visibility="public"/>
+            <UML:Operation xmi.id="op_onCreate" name="onCreate" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_NotifierInterface" name="NotifierInterface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_sendNotification" name="sendNotification" visibility="public"/>
+            <UML:Operation xmi.id="op_getConfiguration" name="getConfiguration" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Abgeleitete Klassen -->
+        <UML:Class xmi.id="class_NotificationManager" name="NotificationManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_add" name="add" visibility="public"/>
+            <UML:Operation xmi.id="op_update" name="update" visibility="public"/>
+            <UML:Operation xmi.id="op_delete" name="delete" visibility="public"/>
+            <UML:Operation xmi.id="op_notify" name="notify" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_EmailNotifier" name="EmailNotifier" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Operations für EmailNotifier -->
+          </UML:Namespace.ownedElement>
+          <UML:Generalization xmi.id="gen_EmailNotifier" parent="class_AbstractNotifier"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AbstractNotifier" name="AbstractNotifier" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <!-- Abstrakte Operationen -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Weitere Klassen und Module -->
+        <UML:Class xmi.id="class_PushAndroidNotifier" name="PushAndroidNotifier" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_PushAndroidNotifier" parent="class_AbstractNotifier"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FacebookNotifier" name="FacebookNotifier" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_FacebookNotifier" parent="class_AbstractNotifier"/>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Notification_TrackingHistory">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Notification" type="class_Notification" name="notification" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_TrackingHistory" type="class_TrackingHistory" name="trackingHistory" visibility="public" aggregation="composite" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

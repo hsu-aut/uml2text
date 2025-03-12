@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket Datatypes -->
+        <UML:Package xmi.id="Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <!-- Vordefinierte Datentypen -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Klasse level -->
+        <UML:Class xmi.id="BQ0FElXY1gIM" name="level" visibility="public" isAbstract="false"/>
+        
+        <!-- Klasse game_logic -->
+        <UML:Class xmi.id="l9JuV41qz5Wg" name="game_logic" visibility="public" isAbstract="false"/>
+        
+        <!-- Klasse entity -->
+        <UML:Class xmi.id="VqsjyK1Al1Nz" name="entity" visibility="public" isAbstract="false"/>
+
+        <!-- Klasse player -->
+        <UML:Class xmi.id="WlYo7JyRERTF" name="player" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_player" parent="VqsjyK1Al1Nz"/>
+        </UML:Class>
+
+        <!-- Klasse pickup -->
+        <UML:Class xmi.id="HQIl5lbxVYHW" name="pickup" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_pickup" parent="VqsjyK1Al1Nz"/>
+        </UML:Class>
+
+        <!-- Klasse enemy -->
+        <UML:Class xmi.id="i0Y30IvU4UIB" name="enemy" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_enemy" parent="VqsjyK1Al1Nz"/>
+        </UML:Class>
+
+        <!-- Klasse dot -->
+        <UML:Class xmi.id="0mjtSSm1bZsJ" name="dot" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_dot" parent="HQIl5lbxVYHW"/>
+        </UML:Class>
+
+        <!-- Klasse power_dot -->
+        <UML:Class xmi.id="Ou7RjdQwDEF8" name="power_dot" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_power_dot" parent="HQIl5lbxVYHW"/>
+        </UML:Class>
+
+        <!-- Assoziation zwischen game_logic und level -->
+        <UML:Association xmi.id="TuKLNHLMRfT0" name="composition_game_logic_level" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_game_logic" type="l9JuV41qz5Wg" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end_level" type="BQ0FElXY1gIM" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen entity und game_logic -->
+        <UML:Association xmi.id="QVGqAjquAH7I" name="composition_entity_game_logic" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_entity_1" type="VqsjyK1Al1Nz" aggregation="composite" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="end_game_logic_1" type="l9JuV41qz5Wg" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="MFqqLmWQyhBH" name="composition_entity_game_logic_2" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_entity_2" type="VqsjyK1Al1Nz" aggregation="composite" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="end_game_logic_2" type="l9JuV41qz5Wg" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen player und game_logic -->
+        <UML:Association xmi.id="5Puswh9GW0a7" name="association_player_game_logic" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_player" type="WlYo7JyRERTF" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end_game_logic_player" type="l9JuV41qz5Wg" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

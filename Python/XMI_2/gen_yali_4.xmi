@@ -1,0 +1,47 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_FileSystem_GUI" name="FileSystem_GUI">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Ext3FileSystem" name="Ext3FileSystem" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_NTFSFileSystem" name="NTFSFileSystem" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_XFSFileSystem" name="XFSFileSystem" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Device" name="Device" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Partition" name="Partition" visibility="public" isAbstract="false"/>
+        <UML:Operation xmi.id="operation_init" name="__init__" visibility="public"/>
+        <UML:Operation xmi.id="operation_applyRequest" name="applyRequest" visibility="public"/>
+        <UML:Operation xmi.id="operation_getDevice" name="getDevice" visibility="public"/>
+        <UML:Operation xmi.id="operation_getUser" name="getUser" visibility="public"/>
+        <UML:Class xmi.id="class_QWidget" name="QWidget" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Dialog" name="Dialog" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ErrorWidget" name="ErrorWidget" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_InformationWindow" name="InformationWindow" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_YaliException" name="YaliException" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_YaliError" name="YaliError" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Widget" name="Widget" visibility="public" isAbstract="false"/>
+        <UML:Generalization xmi.id="gen_FileSystem_Ext3FileSystem" parent="class_FileSystem" child="class_Ext3FileSystem"/>
+        <UML:Generalization xmi.id="gen_FileSystem_NTFSFileSystem" parent="class_FileSystem" child="class_NTFSFileSystem"/>
+        <UML:Generalization xmi.id="gen_FileSystem_XFSFileSystem" parent="class_FileSystem" child="class_XFSFileSystem"/>
+        <UML:Generalization xmi.id="gen_QWidget_Dialog" parent="class_QWidget" child="class_Dialog"/>
+        <UML:Generalization xmi.id="gen_QWidget_ErrorWidget" parent="class_QWidget" child="class_ErrorWidget"/>
+        <UML:Generalization xmi.id="gen_QWidget_InformationWindow" parent="class_QWidget" child="class_InformationWindow"/>
+        <UML:Association xmi.id="assoc_Device_Partition">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Device_Partition_Device" type="class_Device" name="device" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Device_Partition_Partition" type="class_Partition" name="partition" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

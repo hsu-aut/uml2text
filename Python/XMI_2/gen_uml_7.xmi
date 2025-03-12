@@ -1,0 +1,72 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="pkg_Logical_View" name="Logical View" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_Strategy" name="Strategy" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_initialize" name="initialize" visibility="public" isAbstract="true"/>
+                <UML:Operation xmi.id="op_get_next_move" name="get_next_move" visibility="public" isAbstract="true"/>
+                <UML:Operation xmi.id="op_choose_hokm" name="choose_hokm" visibility="public" isAbstract="true"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_HumanStrategy" name="HumanStrategy" visibility="public">
+              <UML:Generalization xmi.id="gen_HumanStrategy" parent="class_Strategy"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_NoobStrategy" name="NoobStrategy" visibility="public">
+              <UML:Generalization xmi.id="gen_NoobStrategy" parent="class_Strategy"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Player" name="Player" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_strategy" name="strategy" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Strategy"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_abstract_game" name="abstract_game" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_initGame" name="initGame" visibility="public" isAbstract="true"/>
+                <UML:Operation xmi.id="op_play" name="play" visibility="public" isAbstract="true"/>
+                <UML:Operation xmi.id="op_endOfGame" name="endOfGame" visibility="public" isAbstract="true"/>
+                <UML:Operation xmi.id="op_showWinner" name="showWinner" visibility="public" isAbstract="true"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_hokm_game" name="hokm_game" visibility="public">
+              <UML:Generalization xmi.id="gen_hokm_game" parent="class_abstract_game"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_GameModel" name="GameModel" visibility="public"/>
+            <UML:Class xmi.id="class_GameView" name="GameView" visibility="public"/>
+            <UML:Class xmi.id="class_GameController" name="GameController" visibility="public"/>
+            
+            <UML:Dependency xmi.id="dep_GameController_GameModel" client="class_GameController" supplier="class_GameModel"/>
+            <UML:Dependency xmi.id="dep_GameController_GameView" client="class_GameController" supplier="class_GameView"/>
+            <UML:Dependency xmi.id="dep_GameModel_GameView" client="class_GameModel" supplier="class_GameView"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

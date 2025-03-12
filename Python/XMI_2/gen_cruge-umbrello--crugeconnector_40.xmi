@@ -1,0 +1,129 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_CRUGE" name="CRUGE Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Datatypes" -->
+        <UML:Class xmi.id="class_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der Klasse "usuario" -->
+        <UML:Class xmi.id="class_usuario" name="usuario" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der Klasse "UiController" -->
+        <UML:Class xmi.id="class_UiController" name="UiController" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_UiController_actionConnector" name="actionConnector" visibility="public">
+              <UML:Parameter xmi.id="param_conn" name="x" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_UiController_actionExternalLoginResult" name="actionExternalLoginResult" visibility="public"/>
+            <UML:Operation xmi.id="op_UiController_newUser" name="_newUser" visibility="public"/>
+            <UML:Operation xmi.id="op_UiController_doLogin" name="_doLogin" visibility="public"/>
+            <UML:Operation xmi.id="op_UiController_actionExternalLoginError" name="actionExternalLoginError" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "XController" -->
+        <UML:Class xmi.id="class_XController" name="XController" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_XController"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_CrugeExternalAuthBase"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "XWebsite" -->
+        <UML:Class xmi.id="class_XWebsite" name="XWebsite" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "CrugeFactory" -->
+        <UML:Class xmi.id="class_CrugeFactory" name="CrugeFactory" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getConnectorByName" name="getConnectorByName" visibility="public"/>
+            <UML:Operation xmi.id="op_getAvailableConnectors" name="getAvailableConnectors" visibility="public"/>
+            <UML:Operation xmi.id="op_getConnectorUrl" name="getConnectorUrl" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "config/main" -->
+        <UML:Class xmi.id="class_config_main" name="config/main" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition des Interface "ICrugeExternalAuth" -->
+        <UML:Interface xmi.id="interface_ICrugeExternalAuth" name="ICrugeExternalAuth" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_ICrugeExternalAuth_doReturn" name="doReturn" visibility="public"/>
+            <UML:Operation xmi.id="op_ICrugeExternalAuth_getParameters" name="getParameters" visibility="public"/>
+            <UML:Operation xmi.id="op_ICrugeExternalAuth_actionRun" name="actionRun" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <!-- Definition der Klasse "mixed" -->
+        <UML:Class xmi.id="class_mixed" name="mixed" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "view_ui_login" -->
+        <UML:Class xmi.id="class_view_ui_login" name="view_ui_login" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "CrugeUi" -->
+        <UML:Class xmi.id="class_CrugeUi" name="CrugeUi" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_CrugeUi_displayAvailableConnectors" name="displayAvailableConnectors" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "CrugeExternalAuthBase" -->
+        <UML:Class xmi.id="class_CrugeExternalAuthBase" name="CrugeExternalAuthBase" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_CrugeExternalAuthBase_doReturn" name="doReturn" visibility="public"/>
+            <UML:Operation xmi.id="op_CrugeExternalAuthBase_getParameters" name="getParameters" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Assoziation zwischen UiController und CrugeFactory -->
+        <UML:Association xmi.id="assoc_UiController_CrugeFactory" name="UiController-CrugeFactory" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UiController" type="class_UiController" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CrugeFactory" type="class_CrugeFactory" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen view_ui_login und UiController -->
+        <UML:Association xmi.id="assoc_view_ui_login_UiController" name="view_ui_login-UiController" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_view_ui_login" type="class_view_ui_login" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UiController" type="class_UiController" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen XController und CrugeExternalAuthBase -->
+        <UML:Association xmi.id="assoc_XController_CrugeExternalAuthBase" name="XController-CrugeExternalAuthBase" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_XController" type="class_XController" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CrugeExternalAuthBase" type="class_CrugeExternalAuthBase" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen ICrugeExternalAuth und XController -->
+        <UML:Association xmi.id="assoc_ICrugeExternalAuth_XController" name="ICrugeExternalAuth-XController" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ICrugeExternalAuth" type="interface_ICrugeExternalAuth" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XController" type="class_XController" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

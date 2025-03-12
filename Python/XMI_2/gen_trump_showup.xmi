@@ -1,0 +1,104 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Paket für Datentypen -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Use Case View -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <!-- Akteure -->
+            <UML:Actor xmi.id="actor_signalled_player" name="signalled_player"/>
+            <UML:Actor xmi.id="actor_player_A" name="player_A"/>
+            <UML:Actor xmi.id="actor_player_B" name="player_B"/>
+            <UML:Actor xmi.id="actor_player_C" name="player_C"/>
+            <UML:Actor xmi.id="actor_player_D" name="player_D"/>
+            
+            <!-- Use Cases -->
+            <UML:UseCase xmi.id="usecase_asks_trump_suit" name="asks_trump_suit"/>
+            <UML:UseCase xmi.id="usecase_valiadte_request" name="valiadte_request"/>
+            <UML:UseCase xmi.id="usecase_shows_trump_suit" name="shows_trump_suit"/>
+
+            <!-- Beziehungen (Assoziationen) -->
+            <UML:Association xmi.id="assoc_signalled_player_asks_trump_suit">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_signalled_player" type="actor_signalled_player" name="signalled_player" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_asks_trump_suit" type="usecase_asks_trump_suit" name="asks_trump_suit" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_asks_trump_suit_valiadte_request">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_asks_trump_suit_end" type="usecase_asks_trump_suit" name="asks_trump_suit" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_valiadte_request" type="usecase_valiadte_request" name="valiadte_request" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_valiadte_request_shows_trump_suit">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_valiadte_request_end" type="usecase_valiadte_request" name="valiadte_request" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_shows_trump_suit" type="usecase_shows_trump_suit" name="shows_trump_suit" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Assoziation von shows_trump_suit mit allen Akteuren -->
+            <UML:Association xmi.id="assoc_shows_trump_suit_players">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_shows_trump_suit_end" type="usecase_shows_trump_suit" name="shows_trump_suit" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_player_A" type="actor_player_A" name="player_A" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_player_B" type="actor_player_B" name="player_B" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_player_C" type="actor_player_C" name="player_C" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_player_D" type="actor_player_D" name="player_D" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Component View -->
+        <UML:Package xmi.id="package_ComponentView" name="Component View">
+        </UML:Package>
+
+        <!-- Definition der Deployment View -->
+        <UML:Package xmi.id="package_DeploymentView" name="Deployment View">
+        </UML:Package>
+
+        <!-- Definition des Entity Relationship Model -->
+        <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model">
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

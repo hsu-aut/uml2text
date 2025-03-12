@@ -1,0 +1,117 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_PHPModel" name="PHPModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der UML Datentypen -->
+        <UML:DataType xmi.id="dataType_mixed" name="mixed"/>
+        <UML:DataType xmi.id="dataType_array" name="array"/>
+        <UML:DataType xmi.id="dataType_string" name="string"/>
+        <UML:DataType xmi.id="dataType_int" name="int"/>
+        <UML:DataType xmi.id="dataType_integer" name="integer"/>
+        <UML:DataType xmi.id="dataType_bool" name="bool"/>
+        <UML:DataType xmi.id="dataType_boolean" name="boolean"/>
+        <UML:DataType xmi.id="dataType_float" name="float"/>
+        <UML:DataType xmi.id="dataType_void" name="void"/>
+        <UML:DataType xmi.id="dataType_null" name="null"/>
+        <UML:DataType xmi.id="dataType_object" name="object"/>
+        <UML:DataType xmi.id="dataType_resource" name="resource"/>
+
+        <!-- Definition der Interfaces -->
+        <UML:Interface xmi.id="interface_Iterator" name="Iterator"/>
+        <UML:Interface xmi.id="interface_Countable" name="Countable"/>
+
+        <!-- Definition der Klassen -->
+        <UML:Class xmi.id="class_Exception" name="Exception" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_ORM" name="ORM" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Statische, schreibgeschützte Attribute -->
+            <UML:Attribute xmi.id="attr_data" name="data" visibility="public" isReadOnly="true" ownerScope="classifier"/>
+            <!-- Methoden -->
+            <UML:Operation xmi.id="operation_fetch" name="fetch" visibility="public"/>
+            <UML:Operation xmi.id="operation_set" name="set" visibility="public"/>
+            <UML:Operation xmi.id="operation_load" name="load" visibility="public"/>
+            <UML:Operation xmi.id="operation_validate" name="validate" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ABM" name="ABM" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ORM"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <!-- Erweiterte Methoden -->
+            <UML:Operation xmi.id="operation_add_mensaje" name="add_mensaje" visibility="public"/>
+            <UML:Operation xmi.id="operation_get_pagina_actual" name="get_pagina_actual" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ClassGetter" name="ClassGetter" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Statische Methoden -->
+            <UML:Operation xmi.id="operation_get_all" name="get_all" visibility="public" ownerScope="classifier"/>
+            <UML:Operation xmi.id="operation_get" name="get" visibility="public" ownerScope="classifier"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ORM"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <!-- Zusätzliche logische Methoden -->
+            <UML:Operation xmi.id="operation_load" name="load" visibility="public"/>
+            <UML:Operation xmi.id="operation_get_data" name="get_data" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Komponenten -->
+        <UML:Component xmi.id="component_default" name="default">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.idref="interface_Iterator"/>
+            <UML:Class xmi.idref="interface_Countable"/>
+            <UML:Class xmi.idref="class_Exception"/>
+            <UML:Class xmi.idref="class_ORM"/>
+            <UML:Class xmi.idref="class_ABM"/>
+            <UML:Class xmi.idref="class_ClassGetter"/>
+            <UML:Class xmi.idref="class_Model"/>
+          </UML:Namespace.ownedElement>
+        </UML:Component>
+
+        <!-- Paket und Artefakt -->
+        <UML:Package xmi.id="package_DeploymentView" name="Deployment View">
+          <UML:Namespace.ownedElement>
+            <UML:Artifact xmi.id="artifact_orm_class" name="orm.class.php">
+              <UML:Artifact.manifestation>
+                <UML:Manifestation>
+                  <UML:Manifestation.implemented>
+                    <UML:Class xmi.idref="class_ORM"/>
+                    <UML:Class xmi.idref="class_ABM"/>
+                    <UML:Class xmi.idref="class_ClassGetter"/>
+                    <UML:Class xmi.idref="class_Model"/>
+                  </UML:Manifestation.implemented>
+                </UML:Manifestation>
+              </UML:Artifact.manifestation>
+            </UML:Artifact>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,155 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="pkg_LogicalView" name="LogicalView">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_ThemeItem" name="ThemeItem" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_category" name="category" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_author" name="author" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_license" name="license" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_ScreenShot" name="ScreenShot" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_image" name="image" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="Image"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_thumbnail" name="thumbnail" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="Image"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_File" name="File" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_file" name="file" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="File"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Vote" name="Vote" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_rating" name="rating" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="int"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Category" name="Category" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_parent" name="parent" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="Category"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Poll" name="Poll" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_question" name="question" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_allowChangingVote" name="allow_changing_vote" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="bool"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_PollOption" name="PollOption" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_text" name="text" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_voteCount" name="vote_count" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="int"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_PollVote" name="PollVote" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_voter" name="voter" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_ipAddress" name="ip_address" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Topic" name="Topic" visibility="public" isAbstract="false"/>
+          
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="pkg_UseCaseView" name="UseCaseView">
+          <UML:Namespace.ownedElement>
+
+            <UML:Actor xmi.id="actor_Contributor" name="Contributor"/>
+            <UML:Actor xmi.id="actor_User" name="User"/>
+            <UML:Actor xmi.id="actor_Admin" name="Admin"/>
+
+            <UML:UseCase xmi.id="useCase_UploadFile" name="Upload File"/>
+            <UML:UseCase xmi.id="useCase_Approve" name="Approve"/>
+            <UML:UseCase xmi.id="useCase_Download" name="Download"/>
+            <UML:UseCase xmi.id="useCase_EnterMetadata" name="Enter Metadata"/>
+            <UML:UseCase xmi.id="useCase_Comment" name="Comment"/>
+            <UML:UseCase xmi.id="useCase_Vote" name="Vote"/>
+            <UML:UseCase xmi.id="useCase_View" name="View"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Image" name="Image"/>
+        <UML:DataType xmi.id="File" name="File"/>
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

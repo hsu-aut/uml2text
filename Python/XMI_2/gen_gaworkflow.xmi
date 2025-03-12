@@ -1,0 +1,112 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse SpoolWatcher -->
+        <UML:Class xmi.id="class_SpoolWatcher" name="SpoolWatcher" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Copier -->
+        <UML:Class xmi.id="class_Copier" name="Copier" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_startCopy" name="startCopy" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_sequencingFinished_Copier" name="sequencingFinished" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_runDir_Copier" name="runDir" kind="in" type="string"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Runner -->
+        <UML:Class xmi.id="class_Runner" name="Runner" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_sequencingFinished_Runner" name="sequencingFinished" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_runDir_Runner" name="runDir" kind="in" type="string"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_pipelineFinished" name="pipelineFinished" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_runDir_Runner_pipeline" name="runDir" kind="in" type="string"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Jumpgate -->
+        <UML:Class xmi.id="class_Jumpgate" name="Jumpgate" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_rsync" name="rsync" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Cellcenter -->
+        <UML:Class xmi.id="class_Cellcenter" name="Cellcenter" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_configPipeline" name="configPipeline" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_runPipeline" name="runPipeline" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition von Use Cases -->
+        <UML:UseCase xmi.id="usecase_RecordFlowcell" name="Record Flowcell"/>
+        <UML:UseCase xmi.id="usecase_InventExperiment" name="Invent Experiment"/>
+        <UML:UseCase xmi.id="usecase_MakeLibraryFlowcell" name="Make Library/Flowcell"/>
+
+        <!-- Definition von Akteuren -->
+        <UML:Actor xmi.id="actor_Operator" name="Operator"/>
+        <UML:Actor xmi.id="actor_Scientist" name="Scientist"/>
+        <UML:Actor xmi.id="actor_Tech" name="Tech"/>
+
+        <!-- Assoziationen zwischen Akteuren und Use Cases -->
+        <UML:Association xmi.id="assoc_Operator_RecordFlowcell">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Operator" type="actor_Operator"/>
+            <UML:AssociationEnd xmi.id="assocEnd_RecordFlowcell" type="usecase_RecordFlowcell"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Scientist_InventExperiment">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Scientist" type="actor_Scientist"/>
+            <UML:AssociationEnd xmi.id="assocEnd_InventExperiment" type="usecase_InventExperiment"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Tech_MakeLibraryFlowcell">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Tech" type="actor_Tech"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MakeLibraryFlowcell" type="usecase_MakeLibraryFlowcell"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Datatypes -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        
+        <!-- Beispiel Assoziation -->
+        <UML:Association xmi.id="assoc_example">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_example1" type="wDCVwIFrhMaS"/>
+            <UML:AssociationEnd xmi.id="assocEnd_example2" type="aary2tTYpejI"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

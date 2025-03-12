@@ -1,0 +1,62 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Datatypes Pakets -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Grundlegende Datentypen -->
+            <UML:DataType xmi.id="datatype_int" name="int" visibility="public"/>
+            <UML:DataType xmi.id="datatype_char" name="char" visibility="public"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool" visibility="public"/>
+            <UML:DataType xmi.id="datatype_float" name="float" visibility="public"/>
+            <UML:DataType xmi.id="datatype_double" name="double" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition des Objects Pakets -->
+        <UML:Package xmi.id="package_Objects" name="Objects" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Klassenbeispiele -->
+            <UML:Class xmi.id="class_AutoPartWidget" name="AutoPartWidget" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_BootLoader" name="BootLoader" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_CheckCDWidget" name="CheckCDWidget" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Device" name="Device" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_DeviceError" name="DeviceError" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_DisableNavButtonsAspect" name="DisableNavButtonsAspect" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der Klasse FileSystem -->
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Generalization xmi.idref="class_FileSystem_NTFS" name="NTFSFileSystem"/>
+            <UML:Generalization xmi.idref="class_FileSystem_Ext3" name="Ext3FileSystem"/>
+            <UML:Generalization xmi.idref="class_FileSystem_Reiser" name="ReiserFileSystem"/>
+            <UML:Generalization xmi.idref="class_FileSystem_XFS" name="XFSFileSystem"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Beziehungen Beispiel -->
+        <UML:Association xmi.id="assoc_PartRequest_MountRequest">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PartRequest_MountRequest_PartRequest" type="class_PartRequest" name="partRequest" visibility="public" aggregation="none" />
+            <UML:AssociationEnd xmi.id="assocEnd_PartRequest_MountRequest_MountRequest" type="class_MountRequest" name="mountRequest" visibility="public" aggregation="none" />
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

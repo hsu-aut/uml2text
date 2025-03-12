@@ -1,0 +1,173 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModell" name="UML Modell">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_game" name="game" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_name_game" name="name" visibility="private" />
+                <UML:Attribute xmi.id="attr_course_game" name="course" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_game_hangman" name="game_hangman" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_hangman" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_queryid_game_hangman" name="queryid" visibility="private" />
+                <UML:Attribute xmi.id="attr_letters_game_hangman" name="letters" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_game_hangman">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game" type="class_game" name="game" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game_hangman" type="class_game_hangman" name="game_hangman" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_cross" name="game_cross" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_cross" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_cols_game_cross" name="cols" visibility="private" />
+                <UML:Attribute xmi.id="attr_rows_game_cross" name="rows" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_game_cross">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game_cross" type="class_game_cross" name="game_cross" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game" type="class_game" name="game" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_cross_questions" name="game_cross_questions" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_cross_questions" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_attemptid_game_cross_questions" name="attemptid" visibility="private" />
+                <UML:Attribute xmi.id="attr_col_game_cross_questions" name="col" visibility="private" />
+                <UML:Attribute xmi.id="attr_row_game_cross_questions" name="row" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_cross_game_cross_questions">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game_cross" type="class_game_cross" name="game_cross" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game_cross_questions" type="class_game_cross_questions" name="game_cross_questions" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_millionaire" name="game_millionaire" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_millionaire" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_queryid_game_millionaire" name="queryid" visibility="private" />
+                <UML:Attribute xmi.id="attr_correct_game_millionaire" name="correct" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_game_millionaire">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game_millionaire" type="class_game_millionaire" name="game_millionaire" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game" type="class_game" name="game" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_millionaire_questions" name="game_millionaire_questions" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_millionaire_questions" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_millionaireid_game_millionaire_questions" name="millionaireid" visibility="private" />
+                <UML:Attribute xmi.id="attr_sourcemodule_game_millionaire_questions" name="sourcemodule" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_millionaire_game_millionaire_questions">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game_millionaire" type="class_game_millionaire" name="game_millionaire" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game_millionaire_questions" type="class_game_millionaire_questions" name="game_millionaire_questions" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_sudoku" name="game_sudoku" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_sudoku" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_level_game_sudoku" name="level" visibility="private" />
+                <UML:Attribute xmi.id="attr_data_game_sudoku" name="data" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_game_sudoku">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game_sudoku" type="class_game_sudoku" name="game_sudoku" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game" type="class_game" name="game" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_sudoku_questions" name="game_sudoku_questions" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_sudoku_questions" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_attemptid_game_sudoku_questions" name="attemptid" visibility="private" />
+                <UML:Attribute xmi.id="attr_ofs_game_sudoku_questions" name="ofs" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_sudoku_game_sudoku_questions">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game_sudoku" type="class_game_sudoku" name="game_sudoku" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game_sudoku_questions" type="class_game_sudoku_questions" name="game_sudoku_questions" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_bookquiz" name="game_bookquiz" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_bookquiz" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_lastchapterid_game_bookquiz" name="lastchapterid" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_game_bookquiz">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game_bookquiz" type="class_game_bookquiz" name="game_bookquiz" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game" type="class_game" name="game" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_bookquiz_questions" name="game_bookquiz_questions" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_bookquiz_questions" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_gameid_game_bookquiz_questions" name="gameid" visibility="private" />
+                <UML:Attribute xmi.id="attr_chapterid_game_bookquiz_questions" name="chapterid" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_game_bookquiz_game_bookquiz_questions">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_game_bookquiz" type="class_game_bookquiz" name="game_bookquiz" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game_bookquiz_questions" type="class_game_bookquiz_questions" name="game_bookquiz_questions" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Class xmi.id="class_game_hiddenpicture" name="game_hiddenpicture" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_game_hiddenpicture" name="id" visibility="private" />
+                <UML:Attribute xmi.id="attr_foundcells_game_hiddenpicture" name="foundcells" visibility="private" />
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

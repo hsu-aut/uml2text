@@ -1,0 +1,111 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TreeModelFramework" name="TreeModelFramework">
+      <UML:Namespace.ownedElement>
+
+        <!-- Arbaro Modeler Package -->
+        <UML:Package xmi.id="package_arbaro_modeler" name="arbaro.modeler">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_3DFormatWriter" name="_3DFormatWriter"/>
+            <UML:Interface xmi.id="interface_Model" name="Model"/>
+            <UML:Interface xmi.id="interface_ParamPersistence" name="ParamPersistence"/>
+            <UML:Interface xmi.id="interface_Params" name="Params"/>
+            <UML:Interface xmi.id="interface_Mesh" name="Mesh"/>
+            <UML:Interface xmi.id="interface_ModelGenerator" name="ModelGenerator"/>
+            <UML:Interface xmi.id="interface_ModelerConfig" name="ModelerConfig"/>
+            <UML:Class xmi.id="class_Model" name="Model"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Arbaro Treemodeler Package -->
+        <UML:Package xmi.id="package_arbaro_treemodeler" name="arbaro.treemodeler">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_Leaf" name="Leaf"/>
+            <UML:Interface xmi.id="interface_Segment" name="Segment"/>
+            <UML:Interface xmi.id="interface_Stem" name="Stem"/>
+            <UML:Interface xmi.id="interface_Tree" name="Tree"/>
+            <UML:Interface xmi.id="interface_TreeGenerator" name="TreeGenerator"/>
+            <UML:Interface xmi.id="interface_TreeModelerConfig" name="TreeModelerConfig"/>
+            <UML:Class xmi.id="class_TreeExporterImpl" name="TreeExporterImpl"/>
+            <UML:Class xmi.id="class_TreeImpl" name="TreeImpl"/>
+            <UML:Class xmi.id="class_TreeModelGeneratorImpl" name="TreeModelGeneratorImpl"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Arbaro Modelergui Package -->
+        <UML:Package xmi.id="package_arbaro_modelergui" name="arbaro.modelergui">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_ModelerGUIConfig" name="ModelerGUIConfig"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Main Components -->
+        <UML:Class xmi.id="class_ParamManager" name="ParamManager"/>
+        <UML:Class xmi.id="class_TreeModelGenerator" name="TreeModelGenerator"/>
+        <UML:Class xmi.id="class_TreeGenerator" name="TreeGenerator"/>
+        <UML:Class xmi.id="class_TreeModel" name="TreeModel"/>
+        <UML:Class xmi.id="class_MeshObjViewer" name="MeshObjViewer"/>
+        <UML:Class xmi.id="class_ParamEditor" name="ParamEditor"/>
+        <UML:Class xmi.id="class_arbaro_cmd" name="arbaro_cmd"/>
+        <UML:Class xmi.id="class_arbaro_gui" name="arbaro_gui"/>
+        <UML:Class xmi.id="class_Transformations" name="Transformations"/>
+        <UML:Class xmi.id="class_3DFormatWriter" name="3DFormatWriter"/>
+        <UML:Class xmi.id="class_arbaro_ExportDlg" name="arbaro_ExportDlg"/>
+        <UML:Class xmi.id="class_arbaro_ParamFileDlg" name="arbaro_ParamFileDlg"/>
+        <UML:Class xmi.id="class_arbaro_TreeModeler" name="arbaro_TreeModeler"/>
+        <UML:Class xmi.id="class_arbaro_Modeler" name="arbaro_Modeler"/>
+        <UML:Class xmi.id="class_arbaro_ModelerGUI" name="arbaro_ModelerGUI"/>
+
+        <!-- Main Implementation Classes -->
+        <UML:Class xmi.id="class_TreeGeneratorImpl" name="TreeGeneratorImpl" >
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_TreeGenerator"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_TreeModelGeneratorImpl" name="TreeModelGeneratorImpl" >
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_ModelGenerator"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_LeafImpl" name="LeafImpl" >
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_Leaf"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_SegmentImpl" name="SegmentImpl" >
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_Segment"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_StemImpl" name="StemImpl" >
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_Stem"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Dialog Classes Implementations -->
+        <UML:Class xmi.id="class_ParamFileDlg" name="ParamFileDlg">
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_ParamPersistence"/>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_ExportDlg" name="ExportDlg">
+          <UML:Generalization>
+            <UML:General xmi.idref="interface_3DFormatWriter"/>
+          </UML:Generalization>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

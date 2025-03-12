@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Box" -->
+        <UML:Class xmi.id="class_Box" name="Box" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_doLayout" name="doLayout" visibility="public" isAbstract="true">
+              <UML:Parameter xmi.id="param_availw" name="availw" kind="in">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="datatype_int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+              <UML:Parameter xmi.id="param_force" name="force" kind="in">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_boolean"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+              <UML:Parameter xmi.id="param_linestart" name="linestart" kind="in">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_boolean"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "TextBox" -->
+        <UML:Class xmi.id="class_TextBox" name="TextBox" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Box"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "ElementBox" -->
+        <UML:Class xmi.id="class_ElementBox" name="ElementBox" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Box"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_margin" name="margin" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LengthSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_emargin" name="emargin" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LengthSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_border" name="border" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LengthSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_padding" name="padding" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LengthSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "InlineBox" -->
+        <UML:Class xmi.id="class_InlineBox" name="InlineBox" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ElementBox"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "BlockBox" -->
+        <UML:Class xmi.id="class_BlockBox" name="BlockBox" visibility="public" isAbstract="false">
+           <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ElementBox"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_width" name="width" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "LengthSet" -->
+        <UML:Class xmi.id="class_LengthSet" name="LengthSet" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "boolean" -->
+        <UML:Class xmi.id="class_boolean" name="boolean" visibility="public" isAbstract="false"/>
+        
+        <!-- Datatype int -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

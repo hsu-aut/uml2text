@@ -1,0 +1,135 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GeospatialDataManagement" name="GeospatialDataManagement">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Definition der Klasse QgsProviderMetadata -->
+        <UML:Class xmi.id="class_QgsProviderMetadata" name="QgsProviderMetadata" visibility="public" isAbstract="false">
+          <UML:TaggedValue tag="comment" value="Dient zur Implementierung des Lazy Loadings von Datenanbietern."/>
+        </UML:Class>
+
+        <!-- Definition der Klasse QgsLayerRegistry -->
+        <UML:Class xmi.id="class_QgsLayerRegistry" name="QgsLayerRegistry" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_addLayer" name="addLayer" visibility="public">
+            <UML:Parameter xmi.id="param_map_layer" name="map_layer" kind="in" type="QgsMapLayer"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <!-- Definition der Klasse QgsMapLayer -->
+        <UML:Class xmi.id="class_QgsMapLayer" name="QgsMapLayer" visibility="public" isAbstract="false">
+          <UML:TaggedValue tag="comment" value="Entspricht einer einzigen geospatialen Schicht, die mit einer einzigartigen Datenquelle verbunden ist."/>
+          <UML:Attribute xmi.id="attr_dataSourceLayerNum" name="dataSourceLayerNum" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="int"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse QgsVectorLayer -->
+        <UML:Class xmi.id="class_QgsVectorLayer" name="QgsVectorLayer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_QgsMapLayer"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse QgsRasterLayer -->
+        <UML:Class xmi.id="class_QgsRasterLayer" name="QgsRasterLayer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_QgsMapLayer"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse QgsProviderRegistry -->
+        <UML:Class xmi.id="class_QgsProviderRegistry" name="QgsProviderRegistry" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_open" name="open" visibility="public">
+            <UML:Parameter xmi.id="param_URI" name="URI" kind="in" type="string"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <!-- Definition der Klasse QgsDataManager -->
+        <UML:Class xmi.id="class_QgsDataManager" name="QgsDataManager" visibility="public" isAbstract="false">
+          <UML:TaggedValue tag="comment" value="Verwaltet alle Schichten und deren jeweilige Datenquellen."/>
+          <UML:Operation xmi.id="op_getFileFilters" name="getFileFilters" visibility="public" >
+            <UML:Parameter xmi.id="param_return" name="return" kind="return" type="string"/>
+          </UML:Operation>
+          <UML:Operation xmi.id="op_openDataSource" name="open" visibility="public">
+            <UML:Parameter xmi.id="param_URI_2" name="URI" kind="in" type="string"/>
+            <UML:Parameter xmi.id="param_data_provider" name="data_provider" kind="in" type="string" defaultValue=""/>
+          </UML:Operation>
+        </UML:Class>
+
+        <!-- Definition der Klasse QgsLayerData -->
+        <UML:Class xmi.id="class_QgsLayerData" name="QgsLayerData" visibility="public" isAbstract="false"/>
+        <UML:Dependency xmi.id="dep_MapLayer_LayerData">
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="class_QgsMapLayer"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Class xmi.idref="class_QgsLayerData"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+        <!-- Definition der Klasse QgsDataProvider -->
+        <UML:Class xmi.id="class_QgsDataProvider" name="QgsDataProvider" visibility="public" isAbstract="false">
+          <UML:TaggedValue tag="comment" value="Interagiert mit Dateisystem, Datenbank oder Server. Kann eine oder mehrere Schichten verwalten."/>
+          <UML:Operation xmi.id="op_createLayers" name="createLayers" visibility="public"/>
+          <UML:Operation xmi.id="op_createLayer" name="createLayer" visibility="public">
+            <UML:Parameter xmi.id="param_layer_number" name="layer_number" kind="in" type="int" defaultValue="0"/>
+          </UML:Operation>
+          <UML:Operation xmi.id="op_endian" name="endian" visibility="public">
+            <UML:Parameter xmi.id="param_return_endian" name="return" kind="return" type="endian_t"/>
+          </UML:Operation>
+          <UML:Operation xmi.id="op_load" name="load" visibility="public"/>
+          <UML:Operation xmi.id="op_fileFilters" name="fileFilters" visibility="public">
+            <UML:Parameter xmi.id="param_return_fileFilters" name="return" kind="return" type="string"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <!-- Definitionen der Klassen QgsVectorDataProvider und QgsRasterDataProvider -->
+        <UML:Class xmi.id="class_QgsVectorDataProvider" name="QgsVectorDataProvider" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_QgsDataProvider"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgsRasterDataProvider" name="QgsRasterDataProvider" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_QgsDataProvider"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse QgisApp -->
+        <UML:Class xmi.id="class_QgisApp" name="QgisApp" visibility="public" isAbstract="false">
+          <UML:TaggedValue tag="comment" value="Haupt-UI-Objekt, von dem alle UI-Signale letztlich ausgesendet werden."/>
+          <UML:Operation xmi.id="op_signalAddedLayer" name="signal" visibility="public">
+            <UML:Parameter xmi.id="param_AddedLayer" name="AddedLayer" kind="in"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="string" name="string"/>
+        <UML:DataType xmi.id="endian_t" name="endian_t"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

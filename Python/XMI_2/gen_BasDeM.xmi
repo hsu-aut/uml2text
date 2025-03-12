@@ -1,0 +1,163 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Memplex" name="Memplex" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_author" name="author" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_children" name="children" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="unsigned_int[]"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_layer" name="layer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="unsigned_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_store" name="store" visibility="public">
+              <UML:Parameter xmi.id="param_store_parent" name="parent" kind="in" type="unsigned int"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+          <UML:Association xmi.id="assoc_MemplexToMemplex">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_Memplex1" type="class_Memplex" name="memplex1" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Memplex2" type="class_Memplex" name="memplex2" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Controller" name="Controller" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_activeTopNode" name="activeTopNode" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="unsigned_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_isLoggedIn" name="isLoggedIn" visibility="public"/>
+            <UML:Operation xmi.id="op_loadMemplex" name="loadMemplex" visibility="public"/>
+            <UML:Operation xmi.id="op_create" name="create" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_View" name="View" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_clear" name="clear" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CreateIssue" name="CreateIssue" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_CreateSolution" name="CreateSolution" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_CreateArgument" name="CreateArgument" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_CreateComment" name="CreateComment" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ViewList" name="ViewList" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ViewList" name="ViewList" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ViewSolution" name="ViewSolution" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ViewSolution" name="ViewSolution" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ViewComment" name="ViewComment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ViewComment" name="ViewComment" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Controller_CreateIssue">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Controller" type="class_Controller" name="controller" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CreateIssue" type="class_CreateIssue" name="createIssue" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Controller_CreateSolution">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Controller" type="class_Controller" name="controller" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CreateSolution" type="class_CreateSolution" name="createSolution" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Controller_CreateArgument">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Controller" type="class_Controller" name="controller" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CreateArgument" type="class_CreateArgument" name="createArgument" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Controller_CreateComment">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Controller" type="class_Controller" name="controller" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CreateComment" type="class_CreateComment" name="createComment" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_View_ViewList">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_View" type="class_View" name="view" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ViewList" type="class_ViewList" name="viewList" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_View_ViewSolution">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_View" type="class_View" name="view" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ViewSolution" type="class_ViewSolution" name="viewSolution" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_View_ViewComment">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_View" type="class_View" name="view" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ViewComment" type="class_ViewComment" name="viewComment" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="unsigned_int" name="unsigned_int"/>
+        <UML:DataType xmi.id="unsigned_short" name="unsigned_short"/>
+        <UML:DataType xmi.id="unsigned_long" name="unsigned_long"/>
+        <UML:DataType xmi.id="string" name="string"/>
+        <UML:DataType xmi.id="unsigned_int[]" name="unsigned_int[]"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

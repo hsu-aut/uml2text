@@ -1,0 +1,71 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class Particle -->
+        <UML:Class xmi.id="class_Particle" name="Particle" visibility="public" isAbstract="false"/>
+
+        <!-- Class GlobalRepository -->
+        <UML:Class xmi.id="class_GlobalRepository" name="GlobalRepository" visibility="public" isAbstract="false"/>
+
+        <!-- Class ParticleRepository -->
+        <UML:Class xmi.id="class_ParticleRepository" name="ParticleRepository" visibility="public" isAbstract="false"/>
+
+        <!-- Class Simulation -->
+        <UML:Class xmi.id="class_Simulation" name="Simulation" visibility="public" isAbstract="false"/>
+
+        <!-- Associations -->
+        <!-- Composition between Particle and ParticleRepository -->
+        <UML:Association xmi.id="assoc_Particle_ParticleRepository">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Particle_ParticleRepository_Particle" type="class_Particle" name="particle" aggregation="composite" visibility="public" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Particle_ParticleRepository_ParticleRepository" type="class_ParticleRepository" name="particleRepository" aggregation="none" visibility="public" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Composition between Simulation and Particle -->
+        <UML:Association xmi.id="assoc_Simulation_Particle">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Simulation_Particle_Simulation" type="class_Simulation" name="simulation" aggregation="none" visibility="public" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Simulation_Particle_Particle" type="class_Particle" name="particle" aggregation="composite" visibility="public" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Simple Association between Simulation and GlobalRepository -->
+        <UML:Association xmi.id="assoc_Simulation_GlobalRepository">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Simulation_GlobalRepository_Simulation" type="class_Simulation" name="simulation" aggregation="none" visibility="public" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Simulation_GlobalRepository_GlobalRepository" type="class_GlobalRepository" name="globalRepository" aggregation="none" visibility="public" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

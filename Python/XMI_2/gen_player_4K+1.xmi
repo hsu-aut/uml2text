@@ -1,0 +1,82 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="use_case_view" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <UML:Actor xmi.id="actor_player" name="player_4K+1"/>
+            
+            <!-- Use Cases -->
+            <UML:UseCase xmi.id="usecase_initiates" name="initiates"/>
+            <UML:UseCase xmi.id="usecase_game_k+1" name="game_k+1"/>
+            <UML:UseCase xmi.id="usecase_game_k" name="game_k"/>
+            <UML:UseCase xmi.id="usecase_game_1" name="game_1"/>
+            <UML:UseCase xmi.id="usecase_game_n" name="game_n"/>
+            
+            <!-- Associations -->
+            <UML:Association xmi.id="association_player_initiates" name="player-initiates">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_player" type="actor_player" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_initiates" type="usecase_initiates" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="association_initiates_game_k+1" name="initiates-game_k+1">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_initiates_target" type="usecase_initiates" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_game_k+1" type="usecase_game_k+1" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Component View - Placeholder -->
+        <UML:Package xmi.id="component_view" name="Component View">
+          <!-- Currently empty -->
+        </UML:Package>
+
+        <!-- Deployment View - Placeholder -->
+        <UML:Package xmi.id="deployment_view" name="Deployment View">
+          <!-- Currently empty -->
+        </UML:Package>
+
+        <!-- Entity Relationship Model - Placeholder -->
+        <UML:Package xmi.id="entity_relationship_model" name="Entity Relationship Model">
+          <!-- Currently empty -->
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

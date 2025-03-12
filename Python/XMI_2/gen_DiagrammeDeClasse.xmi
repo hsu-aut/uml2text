@@ -1,0 +1,295 @@
+```xml
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<XMI xmi.version = '1.2' xmlns:UML = 'org.omg.xmi.namespace.UML' timestamp = '2023-10-05'>
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id = 'model_Spiel' name = 'Spiel'>
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id = 'class_Entites' name = 'Entites' visibility = 'public' isAbstract = 'false'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = 'attr_pos_x' name = 'pos_x' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_pos_y' name = 'pos_y' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Batiment' name = 'Batiment' visibility = 'public' isAbstract = 'true'>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id = 'op_Batiment_constructor' name = 'Batiment'>
+              <UML:Parameter xmi.id = 'param_x' name = 'x' kind = 'in' type = 'int'/>
+              <UML:Parameter xmi.id = 'param_y' name = 'y' kind = 'in' type = 'int'/>
+            </UML:Operation>
+            <UML:Operation xmi.id = 'op_Batiment_destructor' name = '~Batiment'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Personnage' name = 'Personnage' visibility = 'public'>
+          <UML:Generalization>
+            <UML:Classifier xmi.idref='class_Element'/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = 'attr_en_collision' name = '_en_collision' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'bool'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_dest_x' name = '_dest_x' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_dest_y' name = '_dest_y' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id = 'op_estEnCollision' name = 'estEnCollision'/>
+            <UML:Operation xmi.id = 'op_rentreEnCollision' name = 'rentreEnCollision'/>
+            <UML:Operation xmi.id = 'op_getDestX' name = 'getDestX'/>
+            <UML:Operation xmi.id = 'op_setDestX' name = 'setDestX'/>
+            <UML:Operation xmi.id = 'op_getDestY' name = 'getDestY'/>
+            <UML:Operation xmi.id = 'op_setDestY' name = 'setDestY'/>
+            <UML:Operation xmi.id = 'op_effectuerTache' name = 'effectuerTache'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_GameModel' name = 'GameModel' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = 'attr_joueurs' name = '_joueurs' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'vector<void*>'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_composants' name = '_composants' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'vector<Composant*>'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id = 'op_creationMap' name = 'creationMap'/>
+            <UML:Operation xmi.id = 'op_nextStep' name = 'nextStep'/>
+            <UML:Operation xmi.id = 'op_creerIA' name = 'creerIA'/>
+            <UML:Operation xmi.id = 'op_attribuerTacheIA' name = 'attribuerTacheIA'/>
+            <UML:Operation xmi.id = 'op_construireCombattantIA' name = 'construireCombattantIA'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Joueur' name = 'Joueur' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = 'attr_batiments' name = '_batiments' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'vector<void*>'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_personnages' name = '_personnages' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'vector<void*>'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_controlable' name = '_controlable' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'vector<void*>'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id = 'op_nextStep' name = 'nextStep'/>
+            <UML:Operation xmi.id = 'op_construireBatiment' name = 'construireBatiment'/>
+            <UML:Operation xmi.id = 'op_detruireBatiment' name = 'detruireBatiment'/>
+            <UML:Operation xmi.id = 'op_construireUnite' name = 'construireUnite'/>
+            <UML:Operation xmi.id = 'op_eliminerPersonnage' name = 'eliminerPersonnage'/>
+            <UML:Operation xmi.id = 'op_estControlable' name = 'estControlable'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Tribu' name = 'Tribu' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = 'attr_numTribu' name = '_numTribu' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_nomTribu' name = '_nomTribu' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'string'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id = 'op_Tribu_constructor' name = 'Tribu'/>
+            <UML:Operation xmi.id = 'op_Tribu_destructor' name = '~Tribu'/>
+            <UML:Operation xmi.id = 'op_getCouleurTribu' name = 'getCouleurTribu'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Foyer' name = 'Foyer' visibility = 'public'>
+          <UML:Generalization>
+            <UML:Classifier xmi.idref='class_Batiment'/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Caserne' name = 'Caserne' visibility = 'public'>
+          <UML:Generalization>
+            <UML:Classifier xmi.idref='class_Batiment'/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Combattant' name = 'Combattant' visibility = 'public'>
+          <UML:Generalization>
+            <UML:Classifier xmi.idref='class_Personnage'/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = 'attr_degats' name = '_degats' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_type_tache' name = '_type_tache' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'string'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_target_perso' name = '_target_perso' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'Personnage*'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id = 'op_attaquer' name = 'attaquer'/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Artisan' name = 'Artisan' visibility = 'public'>
+          <UML:Generalization>
+            <UML:Classifier xmi.idref='class_Personnage'/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Bois' name = 'Bois' visibility = 'public'>
+          <UML:Generalization>
+            <UML:Classifier xmi.idref='class_Composant'/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Nourriture' name = 'Nourriture' visibility = 'public'>
+          <UML:Generalization>
+            <UML:Classifier xmi.idref='class_Composant'/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Cartes' name = 'Cartes' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <!-- Cartes specific operations/attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Obstacle' name = 'Obstacle' visibility = 'public'>
+          <UML:Generalization>
+            <UML:Classifier xmi.idref='class_Composant'/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_GameView' name = 'GameView' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = 'attr_hauteur_fenetre' name = 'hauteur_fenetre' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_largeur_fenetre' name = 'largeur_fenetre' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Controller' name = 'Controller' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <!-- Controller specific operations/attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Composant' name = 'Composant' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <!-- Composant specific operations/attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Element' name = 'Element' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id = 'attr_pos_x_elem' name = '_pos_x' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_pos_y_elem' name = '_pos_y' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_pts_vie' name = '_pts_vie' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'int'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_type_element' name = '_type_element' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'string'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id = 'attr_est_actif' name = '_est_actif' visibility = 'private'>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref = 'bool'/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_View' name = 'View' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <!-- View specific operations/attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Application' name = 'Application' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <!-- Application specific operations/attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id = 'class_Bouton' name = 'Bouton' visibility = 'public'>
+          <UML:Namespace.ownedElement>
+            <!-- Bouton specific operations/attributes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DataType Definitions -->
+        <UML:DataType xmi.id = 'int' name = 'int'/>
+        <UML:DataType xmi.id = 'char' name = 'char'/>
+        <UML:DataType xmi.id = 'bool' name = 'bool'/>
+        <UML:DataType xmi.id = 'float' name = 'float'/>
+        <UML:DataType xmi.id = 'double' name = 'double'/>
+        <UML:DataType xmi.id = 'short' name = 'short'/>
+        <UML:DataType xmi.id = 'long' name = 'long'/>
+        <UML:DataType xmi.id = 'unsigned int' name = 'unsigned int'/>
+        <UML:DataType xmi.id = 'unsigned short' name = 'unsigned short'/>
+        <UML:DataType xmi.id = 'unsigned long' name = 'unsigned long'/>
+        <UML:DataType xmi.id = 'string' name = 'string'/>
+        <UML:DataType xmi.id = 'vector<void*>' name = 'vector<void*>'/>
+        <UML:DataType xmi.id = 'vector<Composant*>' name = 'vector<Composant*>'/>
+        <UML:DataType xmi.id = 'Personnage*' name = 'Personnage*'/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

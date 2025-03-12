@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Package Datatypes -->
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Class xbXBase -->
+            <UML:Class xmi.id="EvFnVmiYN1OM" name="xbXBase" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="DbfList" name="DbfList" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Operation xmi.id="AddDbfToDbfList" name="AddDbfToDbfList" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="GetDbfPtr" name="GetDbfPtr" visibility="public" isSpecification="false" isQuery="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class xbDbf -->
+            <UML:Class xmi.id="8j5Kzu0HSgf3" name="xbDbf" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="MdxList" name="MdxList" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="NdxList" name="NdxList" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="DatabaseName" name="DatabaseName" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Operation xmi.id="OpenDatabase" name="OpenDatabase" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="FieldCount" name="FieldCount" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="GetFieldName" name="GetFieldName" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="GetFieldType" name="GetFieldType" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="GetDbfName" name="GetDbfName" visibility="public" isSpecification="false" isQuery="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class xbIndex -->
+            <UML:Class xmi.id="JsYPQUbJjOpT" name="xbIndex" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <!-- Class xbString -->
+            <UML:Class xmi.id="gVetymR90SEs" name="xbString" visibility="public" isAbstract="false">
+            </UML:Class>
+
+            <!-- Class xbSchema -->
+            <UML:Class xmi.id="m4Jw1zxmyThS" name="xbSchema" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="FieldName" name="FieldName" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="Type" name="Type" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="FieldLen" name="FieldLen" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                <UML:Attribute xmi.id="NoOfDec" name="NoOfDec" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Class xBaseMigrate -->
+            <UML:Class xmi.id="Ys8vRvat1slj" name="xBaseMigrate" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="Ys8vRvat1slj"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="EvFnVmiYN1OM"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="drv_copyTable" name="drv_copyTable" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="drv_readTableSchema" name="drv_readTableSchema" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="drv_tableNames" name="drv_tableNames" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="drv_getTableSize" name="drv_getTableSize" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="drv_connect" name="drv_connect" visibility="public" isSpecification="false" isQuery="false"/>
+                <UML:Operation xmi.id="drv_disconnect" name="drv_disconnect" visibility="public" isSpecification="false" isQuery="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Dependencies -->
+        <UML:Dependency xmi.id="dep1" client="m4Jw1zxmyThS" supplier="8j5Kzu0HSgf3"/>
+        <UML:Dependency xmi.id="dep2" client="EvFnVmiYN1OM" supplier="8j5Kzu0HSgf3"/>
+        <UML:Dependency xmi.id="dep3" client="Ys8vRvat1slj" supplier="gVetymR90SEs"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

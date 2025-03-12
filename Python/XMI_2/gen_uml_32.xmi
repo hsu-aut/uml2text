@@ -1,0 +1,119 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- User Package -->
+            <UML:Package xmi.id="User" name="User">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="TM_User_User" name="TM_User_User" visibility="public"/>
+                <UML:Class xmi.id="TM_User_Role" name="TM_User_Role" visibility="public"/>
+                <UML:Class xmi.id="TM_User_Profile" name="TM_User_Profile" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <!-- Task Package -->
+            <UML:Package xmi.id="Task" name="Task">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="TM_Task_Task" name="TM_Task_Task" visibility="public">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="TM_Task_Task__id" name="_id" visibility="private"/>
+                    <UML:Attribute xmi.id="TM_Task_Task__title" name="_title" visibility="private"/>
+                    <UML:Attribute xmi.id="TM_Task_Task__user" name="_user" visibility="private" type="TM_User_User"/>
+                    <UML:Operation xmi.id="TM_Task_Task_getId" name="getId" visibility="public"/>
+                    <UML:Operation xmi.id="TM_Task_Task_insertToDb" name="insertToDb" visibility="public"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Class xmi.id="TM_Task_AttribyteType" name="TM_Task_AttribyteType" visibility="public" isAbstract="false">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="D11JFRrn4PJQ"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                  <UML:Operation xmi.id="TM_Task_AttribyteType_insertToDb" name="insertToDb" visibility="public"/>
+                </UML:Class>
+                <UML:Class xmi.id="TM_Task_Attribute" name="TM_Task_Attribute" visibility="public" isAbstract="false">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="dcft5k3DNgJo"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                  <UML:Operation xmi.id="TM_Task_Attribute_insertToDb" name="insertToDb" visibility="public"/>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <!-- Document Package -->
+            <UML:Package xmi.id="Document" name="Document">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="TM_Document_AttribyteType" name="TM_Document_AttribyteType" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="D11JFRrn4PJQ"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+                <UML:Class xmi.id="TM_Document_Attribute" name="TM_Document_Attribute" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="D11JFRrn4PJQ"/>
+                      <UML:Class xmi.idref="dcft5k3DNgJo"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+                <UML:Class xmi.id="TM_Document_Document" name="TM_Document_Document" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <!-- Discussion Package -->
+            <UML:Package xmi.id="Discussion" name="Discussion">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="TM_Discussion_Discussion" name="TM_Discussion_Discussion" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <!-- Attribute Package -->
+            <UML:Package xmi.id="Attribute" name="Attribute">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="TM_Attribute_Attribute" name="TM_Attribute_Attribute" visibility="public" isAbstract="true"/>
+                <UML:Class xmi.id="TM_Attribute_AttribyteType" name="TM_Attribute_AttribyteType" visibility="public" isAbstract="true"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+      <!-- Generalization Relationships -->
+      <UML:Generalization xmi.id="gen1" parent="TM_Attribute_AttribyteType" child="TM_Document_AttribyteType"/>
+      <UML:Generalization xmi.id="gen2" parent="TM_Attribute_AttribyteType" child="TM_Task_AttribyteType"/>
+      <UML:Generalization xmi.id="gen3" parent="TM_Attribute_Attribute" child="TM_Task_Attribute"/>
+      <UML:Generalization xmi.id="gen4" parent="TM_Attribute_Attribute" child="TM_Document_Attribute"/>
+      <!-- Associations -->
+      <UML:Association xmi.id="assoc1" name="task-user">
+        <UML:Association.connection>
+          <UML:AssociationEnd xmi.id="end1" type="TM_Task_Task" multiplicity="0..*" aggregation="none"/>
+          <UML:AssociationEnd xmi.id="end2" type="TM_User_User" multiplicity="1" aggregation="none"/>
+        </UML:Association.connection>
+      </UML:Association>
+      <UML:Association xmi.id="assoc2" name="attribute-task">
+        <UML:Association.connection>
+          <UML:AssociationEnd xmi.id="end3" type="TM_Attribute_Attribute" multiplicity="0..*" aggregation="none"/>
+          <UML:AssociationEnd xmi.id="end4" type="TM_Task_Task" multiplicity="1" aggregation="none"/>
+        </UML:Association.connection>
+      </UML:Association>
+      <UML:Association xmi.id="assoc3" name="attribute-attributeType">
+        <UML:Association.connection>
+          <UML:AssociationEnd xmi.id="end5" type="TM_Attribute_Attribute" multiplicity="0..*" aggregation="none"/>
+          <UML:AssociationEnd xmi.id="end6" type="TM_Attribute_AttribyteType" multiplicity="1" aggregation="none"/>
+        </UML:Association.connection>
+      </UML:Association>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

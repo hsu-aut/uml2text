@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AuthSystem" name="AuthSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- yii/framework/web/auth Package -->
+        <UML:Package xmi.id="pkg_yii_framework_web_auth" name="yii/framework/web/auth">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_CBaseUserIdentity" name="CBaseUserIdentity" visibility="public">
+            </UML:Class>
+            <UML:Class xmi.id="class_BaseUserIdentity" name="BaseUserIdentity" visibility="public">
+            </UML:Class>
+            <UML:Class xmi.id="class_CWebUser" name="CWebUser" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_wBNCnE6ZsTva"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_CUserIdentity" name="CUserIdentity" visibility="public">
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- yii/framework/base Package -->
+        <UML:Package xmi.id="pkg_yii_framework_base" name="yii/framework/base">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_CModel" name="CModel" visibility="public">
+            </UML:Class>
+            <UML:Class xmi.id="class_CApplicationComponent" name="CApplicationComponent" visibility="public">
+            </UML:Class>
+            <UML:Class xmi.id="class_CComponent" name="CComponent" visibility="public">
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Application Package -->
+        <UML:Package xmi.id="pkg_Application" name="application">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_CFormModel" name="CFormModel" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_CModel"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Operation xmi.id="operation_login" name="login" visibility="public"/>
+              <UML:AssociationEnd xmi.id="assoc_CFormModel_UserIdentity" type="class_UserIdentity" name="authenticate" visibility="public"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_UserIdentity" name="UserIdentity" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_CUserIdentity"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Operation xmi.id="operation_authenticate" name="authenticate" visibility="public"/>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- CrugeConnector Package -->
+        <UML:Package xmi.id="pkg_CrugeConnector" name="app.ext.crugeconnector">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_CrugeConnector" name="CrugeConnector" visibility="public">
+              <UML:AssociationEnd xmi.id="assoc_CrugeConnector_RemoteWebSite" name="invoke_callback" type="class_remote-web-site" visibility="public"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_CrugeBaseClient" name="CrugeBaseClient" visibility="public">
+            </UML:Class>
+            <UML:Class xmi.id="class_LightOpenID" name="LightOpenID" visibility="public">
+            </UML:Class>
+            <UML:Interface xmi.id="interface_ICrugeClient" name="ICrugeClient" visibility="public">
+              <UML:Operation xmi.id="op_doLogin" name="doLogin" visibility="public"/>
+              <UML:Operation xmi.id="op_doCallback" name="doCallback" visibility="public"/>
+            </UML:Interface>
+            <UML:Class xmi.id="class_Facebook" name="Facebook" visibility="public">
+              <UML:Dependency supplier="interface_ICrugeClient"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Google" name="Google" visibility="public">
+              <UML:Dependency supplier="interface_ICrugeClient"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_Tester" name="Tester" visibility="public">
+              <UML:Dependency supplier="interface_ICrugeClient"/>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Generalization xmi.id="gen_CWebUser_wBNCnE6ZsTva">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_CWebUser"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_wBNCnE6ZsTva"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <!-- Additional Classes -->
+        <UML:Class xmi.id="class_remote-web-site" name="remote-web-site" visibility="public">
+        </UML:Class>
+        <UML:Class xmi.id="class_wBNCnE6ZsTva" name="wBNCnE6ZsTva" visibility="public">
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

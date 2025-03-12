@@ -1,0 +1,91 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="type_int" name="int"/>
+                <UML:DataType xmi.id="type_char" name="char"/>
+                <UML:DataType xmi.id="type_bool" name="bool"/>
+                <UML:DataType xmi.id="type_float" name="float"/>
+                <UML:DataType xmi.id="type_double" name="double"/>
+                <UML:DataType xmi.id="type_short" name="short"/>
+                <UML:DataType xmi.id="type_long" name="long"/>
+                <UML:DataType xmi.id="type_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="type_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="type_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="type_string" name="string"/>
+                <UML:DataType xmi.id="type_map" name="Map&lt;string, string&gt;"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <!-- xPLMessage Class -->
+            <UML:Class xmi.id="class_xPLMessage" name="xPLMessage">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_body" name="body" type="type_map"/>
+                <UML:Attribute xmi.id="attr_hop" name="hop" type="type_int"/>
+                <UML:Attribute xmi.id="attr_source" name="source" type="type_string"/>
+                <UML:Attribute xmi.id="attr_target" name="target" type="type_string"/>
+                <UML:Attribute xmi.id="attr_messageSchemeIdentifier" name="messageSchemeIdentifier" type="type_string"/>
+                <UML:Attribute xmi.id="attr_identifier" name="identifier" type="enum_Identifier"/>
+                <!-- Operations will be defined similarly -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            <!-- xPLInstance Class -->
+            <UML:Class xmi.id="class_xPLInstance" name="xPLInstance">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_thisDevice" name="thisDevice" type="class_xPLDevice"/>
+                <UML:Attribute xmi.id="attr_devices" name="devices[]" type="class_xPLDevice"/>
+                <!-- Operations defined here -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            <!-- xPLDevice Class -->
+            <UML:Class xmi.id="class_xPLDevice" name="xPLDevice">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_vendor" name="vendor" type="type_string"/>
+                <UML:Attribute xmi.id="attr_device" name="device" type="type_string"/>
+                <UML:Attribute xmi.id="attr_instance" name="instance" type="type_string"/>
+                <UML:Attribute xmi.id="attr_address" name="address" type="type_string"/>
+                <UML:Attribute xmi.id="attr_heartbeatInterval" name="heartbeatInterval" type="type_int"/>
+                <UML:Attribute xmi.id="attr_port" name="port" type="type_int"/>
+                <UML:Attribute xmi.id="attr_lastHeartBeat" name="lastHeartBeat" type="class_datetime"/>
+                <!-- Operations defined here -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            <!-- Identifier Enumeration -->
+            <UML:Enumeration xmi.id="enum_Identifier" name="Identifier">
+              <UML:Enumeration.literal>
+                <UML:Literal xmi.id="lit_xpl-cmnd" name="xpl-cmnd"/>
+                <UML:Literal xmi.id="lit_xpl-stat" name="xpl-stat"/>
+                <UML:Literal xmi.id="lit_xpl-trig" name="xpl-trig"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            <!-- OperationMode Enumeration -->
+            <UML:Enumeration xmi.id="enum_OperationMode" name="OperationMode">
+              <UML:Enumeration.literal>
+                <UML:Literal xmi.id="lit_Client" name="Client"/>
+                <UML:Literal xmi.id="lit_Disconnected" name="Disconnected"/>
+                <UML:Literal xmi.id="lit_Hub" name="Hub"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            <!-- datetime Class -->
+            <UML:Class xmi.id="class_datetime" name="datetime"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,111 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitled" name="modelo sin título">
+      <UML:Namespace.ownedElement>
+
+        <UML:Package xmi.id="package_test" name="test">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_car" name="car" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_car"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_resource"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+                <UML:Attribute xmi.id="attr_color" name="color" visibility="private"/>
+                <UML:Attribute xmi.id="attr_km" name="km" visibility="private"/>
+                <UML:Attribute xmi.id="attr_maxkmh" name="maxkmh" visibility="private"/>
+                <UML:Attribute xmi.id="attr_width" name="width" visibility="private"/>
+                <UML:Attribute xmi.id="attr_height" name="height" visibility="private"/>
+                <UML:Attribute xmi.id="attr_large" name="large" visibility="private"/>
+                <UML:Attribute xmi.id="attr_plate" name="plate" visibility="private"/>
+                <UML:Attribute xmi.id="attr_usable" name="usable" visibility="private"/>
+                <UML:Attribute xmi.id="attr_description" name="description" visibility="private"/>
+                <UML:Attribute xmi.id="attr_last_use" name="last_use" visibility="private"/>
+                <UML:Attribute xmi.id="attr_year" name="year" visibility="private"/>
+                <UML:Attribute xmi.id="attr_trademark" name="trademark" visibility="private"/>
+                <UML:Attribute xmi.id="attr_mediumspeed" name="mediumspeed" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_partener" name="partener" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_wheel" name="wheel" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_wheel"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_resource"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_size" name="size" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_resource" name="resource" visibility="public" isAbstract="true">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_buy_date" name="buy_date" visibility="private"/>
+                <UML:Attribute xmi.id="attr_used_from" name="used_from" visibility="private"/>
+                <UML:Attribute xmi.id="attr_stock_id" name="stock_id" visibility="private"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Enumeration xmi.id="enum_Color" name="Color">
+            </UML:Enumeration>
+
+            <UML:Enumeration xmi.id="enum_Trademark" name="Trademark">
+              <UML:Enumeration.literal name="Ford"/>
+              <UML:Enumeration.literal name="Volkswagen"/>
+              <UML:Enumeration.literal name="Renault"/>
+              <UML:Enumeration.literal name="Citroen"/>
+            </UML:Enumeration>
+
+            <UML:Association xmi.id="assoc_partener_use_car">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_used_by_car" type="class_car" name="used_by" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_used_by_partener" type="class_partener" name="used_by" visibility="public" aggregation="aggregate"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_partener_own_car">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_owned_by_car" type="class_car" name="owned_by" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_owned_by_partener" type="class_partener" name="owned_by" visibility="public" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_wheel_installed_in_car">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_installed_in_wheel" type="class_wheel" name="installed_in" visibility="public" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_installed_in_car" type="class_car" name="installed_in" visibility="public" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

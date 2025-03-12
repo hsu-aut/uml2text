@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomUMLTool</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatype Definitions -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_byte" name="byte"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_String" name="String"/>
+        <UML:Class xmi.id="datatype_List_TabField" name="List<TabField>"/>
+
+        <!-- Gui Class -->
+        <UML:Class xmi.id="class_Gui" name="Gui" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_window" name="window" visibility="private" type="class_JFrame"/>
+            <UML:Attribute xmi.id="attr_tabbedPane" name="tabbedPane" visibility="private" type="class_JTabbedPane"/>
+            <UML:Attribute xmi.id="attr_text" name="text" visibility="private" type="class_JTextArea"/>
+            <UML:Attribute xmi.id="attr_file" name="file" visibility="private" type="datatype_String"/>
+            <UML:Operation xmi.id="op_getText" name="getText" visibility="public">
+              <UML:Parameter xmi.id="param_getText_return" name="return" kind="return" type="datatype_String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getWindow" name="getWindow" visibility="public">
+              <UML:Parameter xmi.id="param_getWindow_return" name="return" kind="return" type="class_JFrame"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- JFrame Class -->
+        <UML:Class xmi.id="class_JFrame" name="JFrame" visibility="public" isAbstract="false"/>
+
+        <!-- JTabbedPane Class -->
+        <UML:Class xmi.id="class_JTabbedPane" name="JTabbedPane" visibility="public" isAbstract="false"/>
+
+        <!-- JTextArea Class -->
+        <UML:Class xmi.id="class_JTextArea" name="JTextArea" visibility="public" isAbstract="false"/>
+
+        <!-- JPanel and Tab Class -->
+        <UML:Class xmi.id="class_JPanel" name="JPanel" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Tab" name="Tab" visibility="public" isAbstract="true" generalization="class_JPanel">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_setupFields" name="setupFields" visibility="protected" isAbstract="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Subclasses of Tab -->
+        <UML:Class xmi.id="class_CameraTab" name="CameraTab" visibility="public" generalization="class_Tab"/>
+        <UML:Class xmi.id="class_AmbientLightTab" name="AmbientLightTab" visibility="public" generalization="class_Tab"/>
+        <UML:Class xmi.id="class_LightTab" name="LightTab" visibility="public" generalization="class_Tab"/>
+        <UML:Class xmi.id="class_ObjectTab" name="ObjectTab" visibility="public" generalization="class_Tab"/>
+        <UML:Class xmi.id="class_CubeTab" name="CubeTab" visibility="public" generalization="class_Tab"/>
+        <UML:Class xmi.id="class_TriangleTab" name="TriangleTab" visibility="public" generalization="class_Tab"/>
+        <UML:Class xmi.id="class_SphereTab" name="SphereTab" visibility="public" generalization="class_Tab"/>
+        <UML:Class xmi.id="class_PlaneTab" name="PlaneTab" visibility="public" generalization="class_Tab"/>
+
+        <!-- TabField and its subclasses -->
+        <UML:Class xmi.id="class_TabField" name="TabField" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DoubleTabField" name="DoubleTabField" visibility="public" generalization="class_TabField"/>
+        <UML:Class xmi.id="class_IntegerTabField" name="IntegerTabField" visibility="public" generalization="class_TabField"/>
+        <UML:Class xmi.id="class_Point3dTabField" name="Point3dTabField" visibility="public" generalization="class_TabField"/>
+
+        <!-- AbstractAction and its subclasses -->
+        <UML:Class xmi.id="class_AbstractAction" name="AbstractAction" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_actionPerformed" name="actionPerformed" visibility="public">
+              <UML:Parameter xmi.id="param_actionEvent" name="actionEvent" kind="in" type="class_ActionEvent"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_AddAction" name="AddAction" visibility="public" generalization="class_AbstractAction"/>
+        <UML:Class xmi.id="class_SaveAction" name="SaveAction" visibility="public" generalization="class_AbstractAction"/>
+        <UML:Class xmi.id="class_GenerateImageAction" name="GenerateImageAction" visibility="public" generalization="class_AbstractAction"/>
+
+        <!-- SceneManager Class -->
+        <UML:Class xmi.id="class_SceneManager" name="SceneManager" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_main" name="main" visibility="public" isStatic="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- InvokeRender Class implements Runnable -->
+        <UML:Class xmi.id="class_InvokeRender" name="InvokeRender" visibility="public" generalization="interface_Runnable">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Interface xmi.id="interface_Runnable" name="Runnable"/>
+
+        <!-- ActionEvent Class -->
+        <UML:Class xmi.id="class_ActionEvent" name="ActionEvent" visibility="public" isAbstract="false"/>
+
+        <!-- Associations and Dependencies -->
+        <UML:Association xmi.id="assoc_Gui_Tab" name="Gui-Tab">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Gui" type="class_Gui" name="Gui" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Tab" type="class_Tab" name="Tab" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Gui_AbstractAction" name="Gui-AbstractAction">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Gui_Action" type="class_Gui" name="Gui" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AbstractAction" type="class_AbstractAction" name="AbstractAction" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

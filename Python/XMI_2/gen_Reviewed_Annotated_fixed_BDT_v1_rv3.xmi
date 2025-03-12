@@ -1,0 +1,170 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DataModel" name="DataModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Basisklasse EARootClass -->
+        <UML:Class xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" name="EARootClass" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+
+        <!-- Klasse DataLocation -->
+        <UML:Class xmi.id="EAID_C76914AF_8B22_4cda_BDB8_EF911ADE75D8" name="DataLocation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_compressionType" name="compressionType" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_locationPort" name="locationPort" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_locationURL" name="locationURL" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_transportMechanismType" name="transportMechanismType" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse Metadata -->
+        <UML:Class xmi.id="EAID_DE15F263_0D6A_44ea_B798_0A3BE0CFAC1B" name="Metadata" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_value" name="value" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse DataItem -->
+        <UML:Class xmi.id="EAID_E7CBA40A_F2E3_4969_850B_1748C1A63D5A" name="DataItem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_identifier" name="identifier" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse BundledDataItem -->
+        <UML:Class xmi.id="EAID_E500805D_F58B_4f24_A144_91E32A7DBD3C" name="BundledDataItem" visibility="public" isAbstract="false" >
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="EAID_E500805D_F58B_4f24_A144_91E32A7DBD3C"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_bundleItemCount" name="bundleItemCount" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bundleMechanismType" name="bundleMechanismType" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_targetBundleSize" name="targetBundleSize" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Unterklasse Base64DataItem -->
+        <UML:Class xmi.id="EAID_1A3B9683_4451_48ad_9FF3_A474AC844EF8" name="Base64DataItem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="EAID_E500805D_F58B_4f24_A144_91E32A7DBD3C"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_binaryData" name="binaryData" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="ByteArray"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Unterklasse GridFTPDataItem -->
+        <UML:Class xmi.id="EAID_26F575F8_F333_4730_9B3C_6FE5D7AFC1D6" name="GridFTPDataItem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="EAID_E500805D_F58B_4f24_A144_91E32A7DBD3C"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+
+        <!-- Unterklasse FileSystemDataItem -->
+        <UML:Class xmi.id="EAID_5C798D7C_2C8C_4d0e_B661_D7DD329A60B8" name="FileSystemDataItem" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="EAID_E500805D_F58B_4f24_A144_91E32A7DBD3C"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        
+        <!-- Assoziation DataLocation - Metadata -->
+        <UML:Association xmi.id="assoc_DataLocation_Metadata">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataLocation" type="EAID_C76914AF_8B22_4cda_BDB8_EF911ADE75D8" name="dataLocation" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Metadata" type="EAID_DE15F263_0D6A_44ea_B798_0A3BE0CFAC1B" name="metadataCollection" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation DataLocation - DataItem -->
+        <UML:Association xmi.id="assoc_DataLocation_DataItem">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataLocation" type="EAID_C76914AF_8B22_4cda_BDB8_EF911ADE75D8" name="dataLocation" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DataItem" type="EAID_E7CBA40A_F2E3_4969_850B_1748C1A63D5A" name="dataItemCollection" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation DataItem - Metadata -->
+        <UML:Association xmi.id="assoc_DataItem_Metadata">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DataItem" type="EAID_E7CBA40A_F2E3_4969_850B_1748C1A63D5A" name="dataItem" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Metadata" type="EAID_DE15F263_0D6A_44ea_B798_0A3BE0CFAC1B" name="metadataCollection" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="ByteArray" name="ByteArray"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,137 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SoftwareStructure" name="SoftwareStructure">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Class "LogicalView" -->
+        <UML:Class xmi.id="class_LogicalView" name="Logical View" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Pakete "Datatypes" -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Verschiedene Datentypen -->
+            <UML:DataType xmi.id="type_int" name="int" visibility="public"/>
+            <UML:DataType xmi.id="type_char" name="char" visibility="public"/>
+            <UML:DataType xmi.id="type_bool" name="bool" visibility="public"/>
+            <UML:DataType xmi.id="type_float" name="float" visibility="public"/>
+            <UML:DataType xmi.id="type_double" name="double" visibility="public"/>
+            <UML:DataType xmi.id="type_short" name="short" visibility="public"/>
+            <UML:DataType xmi.id="type_long" name="long" visibility="public"/>
+            <UML:DataType xmi.id="type_string" name="string" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition der Klasse "Controller" -->
+        <UML:Class xmi.id="class_Controller" name="Controller" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="object"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_init" name="__init__" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="operation_init_return" name="return" kind="return" type="string"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Message" -->
+        <UML:Class xmi.id="class_Message" name="Message" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="object"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Ui_Receiver" -->
+        <UML:Class xmi.id="class_UiReceiver" name="Ui_Receiver" visibility="public"/>
+        
+        <!-- Definition der Klasse "Messages" -->
+        <UML:Class xmi.id="class_Messages" name="Messages" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="object"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Project" -->
+        <UML:Class xmi.id="class_Project" name="Project" visibility="public"/>
+        
+        <!-- Definition der Klasse "Projects" -->
+        <UML:Class xmi.id="class_Projects" name="Projects" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_projects" name="projects" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Project"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Settings" -->
+        <UML:Class xmi.id="class_Settings" name="Settings" visibility="public"/>
+        
+        <!-- Definition der Klasse "Elements" -->
+        <UML:Class xmi.id="class_Elements" name="Elements" visibility="public"/>
+        
+        <!-- Definition der Klasse "Line" -->
+        <UML:Class xmi.id="class_Line" name="Line" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="MultiElement"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Point" -->
+        <UML:Class xmi.id="class_Point" name="Point" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="Element"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Polygon" -->
+        <UML:Class xmi.id="class_Polygon" name="Polygon" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="MultiElement"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Filemanager" -->
+        <UML:Class xmi.id="class_Filemanager" name="Filemanager" visibility="public"/>
+        
+        <!-- Definition der Klasse "mJson" -->
+        <UML:Class xmi.id="class_mJson" name="mJson" visibility="public">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_Filemanager"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "mXML" -->
+        <UML:Class xmi.id="class_mXML" name="mXML" visibility="public"/>
+        
+        <!-- Definition der Klasse "User" -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public"/>
+        
+        <!-- Definition der Klasse "Users" -->
+        <UML:Class xmi.id="class_Users" name="Users" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_users" name="users" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_User"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- General DataType Definitions -->
+        <UML:DataType xmi.id="object" name="object" visibility="public"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,79 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_XSDataCCP4i" name="XSDataCCP4i">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" name="EARootClass" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="EAID_1F1A4C39_C7BC_48c9_B163_530FCF6DFA32" name="XSDataResultCCP4i" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_listOfOutputFiles" name="listOfOutputFiles" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_XSDataString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_2A3F88C6_8ABC_4d91_828F_5C512C24E01E" name="XSDataInputCCP4i" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dataFile" name="dataFile" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_diffractionPlan" name="diffractionPlan" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_XSDataDiffractionPlan"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_experimentalCondition" name="experimentalCondition" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_XSDataExperimentalCondition"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sample" name="sample" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_XSDataSampleCrystalMM"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_48AD5607_9579_48c8_93C9_0EA33C5360A0" name="XSDataCCP4iDataSet" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_imageFile" name="imageFile" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_XSDataFile"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_XSDataInputCCP4i_XSDataCCP4iDataSet">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_XSDataInputCCP4i" type="EAID_2A3F88C6_8ABC_4d91_828F_5C512C24E01E" name="XSDataInputCCP4i" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_XSDataCCP4iDataSet" type="EAID_48AD5607_9579_48c8_93C9_0EA33C5360A0" name="dataSet" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="EAID_XSDataString" name="XSDataString"/>
+        <UML:DataType xmi.id="EAID_XSDataFile" name="XSDataFile"/>
+        <UML:DataType xmi.id="EAID_XSDataDiffractionPlan" name="XSDataDiffractionPlan"/>
+        <UML:DataType xmi.id="EAID_XSDataExperimentalCondition" name="XSDataExperimentalCondition"/>
+        <UML:DataType xmi.id="EAID_XSDataSampleCrystalMM" name="XSDataSampleCrystalMM"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

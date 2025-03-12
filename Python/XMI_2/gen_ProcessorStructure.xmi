@@ -1,0 +1,150 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_undef" name="undef"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Class Processor -->
+        <UML:Class xmi.id="class_Processor" name="Processor" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_instruction_cache" name="instruction_cache" visibility="private"/>
+            <UML:Attribute xmi.id="attr_instructions" name="instructions" visibility="private"/>
+          </UML:Classifier.feature>
+          <UML:AssociationEnd xmi.idref="assocEnd_Processor_BaseTool"/>
+        </UML:Class>
+        
+        <!-- Class Register -->
+        <UML:Class xmi.id="class_Register" name="Register" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_operator" name="operator[]" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Class Alias -->
+        <UML:Class xmi.id="class_Alias" name="Alias" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_reg" name="reg" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Register"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_updateAlias" name="updateAlias" visibility="public"/>
+            <UML:Operation xmi.idref="op_operator"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Class Decoder -->
+        <UML:Class xmi.id="class_Decoder" name="Decoder" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_decode" name="decode" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Class Instruction -->
+        <UML:Class xmi.id="class_Instruction" name="Instruction" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_behavior" name="behavior" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Class ADC_Instruction -->
+        <UML:Class xmi.id="class_ADC_Instruction" name="ADC_Instruction" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Instruction"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Class MemoryInterface -->
+        <UML:Class xmi.id="class_MemoryInterface" name="MemoryInterface" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_read_word" name="read_word" visibility="public"/>
+            <UML:Operation xmi.id="op_read_half" name="read_half" visibility="public"/>
+            <UML:Operation xmi.id="op_read_byte" name="read_byte" visibility="public"/>
+            <UML:Operation xmi.id="op_lock_bus" name="lock_bus" visibility="public"/>
+            <UML:Operation xmi.id="op_unlock_bus" name="unlock_bus" visibility="public"/>
+            <UML:Operation xmi.id="op_write_word" name="write_word" visibility="public"/>
+            <UML:Operation xmi.id="op_write_half" name="write_half" visibility="public"/>
+            <UML:Operation xmi.id="op_write_byte" name="write_byte" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Class ToolsInterface -->
+        <UML:Class xmi.id="class_ToolsInterface" name="ToolsInterface" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_processor" name="processor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Processor"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Class GDBStub -->
+        <UML:Class xmi.id="class_GDBStub" name="GDBStub" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Class RoutineEmulator -->
+        <UML:Class xmi.id="class_RoutineEmulator" name="RoutineEmulator" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Class Profiler -->
+        <UML:Class xmi.id="class_Profiler" name="Profiler" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Class BaseTool -->
+        <UML:Class xmi.id="class_BaseTool" name="BaseTool" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_newCycle" name="newCycle" visibility="public"/>
+            <UML:Operation xmi.id="op_jumpCycle" name="jumpCycle" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Class Register32 -->
+        <UML:Class xmi.id="class_Register32" name="Register32" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Class Register8 -->
+        <UML:Class xmi.id="class_Register8" name="Register8" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <!-- Association: Processor to BaseTool -->
+        <UML:Association xmi.id="assoc_Processor_BaseTool">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Processor_BaseTool" type="class_Processor" name="processor" aggregation="composite" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_BaseTool_Processor" type="class_BaseTool" name="baseTool" aggregation="none" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,188 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Duse" name="Duse">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Klasse "DesignSpace" -->
+        <UML:Class xmi.id="class_DesignSpace" name="DesignSpace" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_designDimension" name="designDimension" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DesignDimension"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_qualityMetric" name="qualityMetric" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_QualityMetric"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "DesignDimension" -->
+        <UML:Class xmi.id="class_DesignDimension" name="DesignDimension" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_instanceSelectionRule" name="instanceSelectionRule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_variationPoint" name="variationPoint" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_VariationPoint"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_designDimensionInstance" name="designDimensionInstance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_DesignDimensionInstance"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_requiredPreviousEvaluation" name="requiredPreviousEvaluation" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_enabled" name="enabled" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "VariationPoint" -->
+        <UML:Class xmi.id="class_VariationPoint" name="VariationPoint" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_rationale" name="rationale" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_preChangeValidationRule" name="preChangeValidationRule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_modelChange" name="modelChange" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ModelChange"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_addedElement" name="addedElement" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "DesignDimensionInstance" -->
+        <UML:Class xmi.id="class_DesignDimensionInstance" name="DesignDimensionInstance" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_targetInstance" name="targetInstance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "ModelChange" -->
+        <UML:Class xmi.id="class_ModelChange" name="ModelChange" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_targetSelectionRule" name="targetSelectionRule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_valueSelectionRule" name="valueSelectionRule" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_targetProperty" name="targetProperty" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "QualityMetric" -->
+        <UML:Class xmi.id="class_QualityMetric" name="QualityMetric" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_value" name="value" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_expression" name="expression" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_DesignSpace_DesignDimension">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DesignSpace_DesignDimension_DesignSpace" type="class_DesignSpace" name="designSpace" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DesignSpace_DesignDimension_DesignDimension" type="class_DesignDimension" name="designDimension" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_DesignSpace_QualityMetric">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DesignSpace_QualityMetric_DesignSpace" type="class_DesignSpace" name="designSpace" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DesignSpace_QualityMetric_QualityMetric" type="class_QualityMetric" name="qualityMetric" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DesignDimension_VariationPoint">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DesignDimension_VariationPoint_DesignDimension" type="class_DesignDimension" name="designDimension" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DesignDimension_VariationPoint_VariationPoint" type="class_VariationPoint" name="variationPoint" visibility="public" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DesignDimensionInstance_DesignDimension">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DesignDimensionInstance_DesignDimension_DesignDimension" type="class_DesignDimension" name="designDimension" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DesignDimensionInstance_DesignDimension_DesignDimensionInstance" type="class_DesignDimensionInstance" name="designDimensionInstance" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

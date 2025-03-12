@@ -1,0 +1,89 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Interfaces "IComponent" -->
+        <UML:Interface xmi.id="interface_IComponent" name="IComponent" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_displaySelectedPhotoTags" name="displaySelectedPhotoTags" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <!-- Definition der Klasse "FBAdapter:FacebookService" -->
+        <UML:Class xmi.id="class_FBAdapter_FacebookService" name="FBAdapter:FacebookService" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_login1" name="Login" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="parameter_username" name="username" kind="in" type="String"/>
+              <UML:Parameter xmi.id="parameter_password" name="password" kind="in" type="String"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="operation_login2" name="Login" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="parameter_authToken" name="authToken" kind="in" type="String"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Singleton<T>" -->
+        <UML:Class xmi.id="class_Singleton" name="Singleton<T>" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "User" -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "FacebookAlbum" -->
+        <UML:Class xmi.id="class_FacebookAlbum" name="FacebookAlbum" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "MainWindow" -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "FacebookUser" -->
+        <UML:Class xmi.id="class_FacebookUser" name="FacebookUser" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "AlbumsPhotosControler" -->
+        <UML:Class xmi.id="class_AlbumsPhotosControler" name="AlbumsPhotosControler" visibility="public" isAbstract="false"/>
+
+        <!-- Generalisierung zwischen "Singleton<T>" und "FBAdapter:FacebookService" -->
+        <UML:Generalization xmi.id="gen_Singleton_FBAdapter" parent="class_FBAdapter_FacebookService" child="class_Singleton"/>
+
+        <!-- Realisierung der Abstraktion von "IComponent" durch "FBAdapter:FacebookService" -->
+        <UML:Abstraction xmi.id="abs_FBAdapter_IComponent">
+          <UML:ModelElement.client>
+            <UML:Dependency.client xmi.idref="class_FBAdapter_FacebookService"/>
+          </UML:ModelElement.client>
+          <UML:ModelElement.supplier>
+            <UML:Dependency.supplier xmi.idref="interface_IComponent"/>
+          </UML:ModelElement.supplier>
+        </UML:Abstraction>
+
+        <!-- Assoziation zwischen "MainWindow" und "FacebookAlbum" -->
+        <UML:Association xmi.id="assoc_MainWindow_FacebookAlbum">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MainWindow" type="class_MainWindow" name="mainWindow" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FacebookAlbum" type="class_FacebookAlbum" name="facebookAlbum" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen "FBAdapter:FacebookService" und "User" -->
+        <UML:Association xmi.id="assoc_FBAdapter_User">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_FBAdapter" type="class_FBAdapter_FacebookService" name="fbAdapter" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_User" type="class_User" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Definition der Daten Typen -->
+        <UML:DataType xmi.id="String" name="String"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,288 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DocumentManagement" name="DocumentManagement">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Document Class -->
+        <UML:Class xmi.id="class_Document" name="Document" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_specId" name="specId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getElementSpecForElement" name="getElementSpecForElement" visibility="public">
+              <UML:Parameter xmi.id="param_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_DocumentElementSpec"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+              <UML:Parameter xmi.id="param_id" name="id" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- DocumentState Class -->
+        <UML:Class xmi.id="class_DocumentState" name="DocumentState" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_NEW" name="NEW" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_EDITING" name="EDITING" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_EDITED" name="EDITED" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_RELEASED" name="RELEASED" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- DocumentSpec Class -->
+        <UML:Class xmi.id="class_DocumentSpec" name="DocumentSpec" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- DocumentSpecState Class -->
+        <UML:Class xmi.id="class_DocumentSpecState" name="DocumentSpecState" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_NEW" name="NEW" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_EDITING" name="EDITING" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_EDITED" name="EDITED" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_RELEASED" name="RELEASED" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_CLOSED" name="CLOSED" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- DocumentElement Class -->
+        <UML:Class xmi.id="class_DocumentElement" name="DocumentElement" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_specId" name="specId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_selected" name="selected" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- DocumentElementSpec Class -->
+        <UML:Class xmi.id="class_DocumentElementSpec" name="DocumentElementSpec" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_mandatory" name="mandatory" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Specialized DocumentElement Classes -->
+        <UML:Class xmi.id="class_StaticText" name="StaticText" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElement"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_EditableText" name="EditableText" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElement"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Table" name="Table" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElement"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Image" name="Image" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElement"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Link" name="Link" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElement"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Reference" name="Reference" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElement"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Specialized DocumentElementSpec Classes -->
+        <UML:Class xmi.id="class_StaticTextSpec" name="StaticTextSpec" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElementSpec"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_EditableTextSpec" name="EditableTextSpec" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElementSpec"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TableSpec" name="TableSpec" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElementSpec"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ImageSpec" name="ImageSpec" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElementSpec"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LinkSpec" name="LinkSpec" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElementSpec"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ReferenceSpec" name="ReferenceSpec" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:General xmi.idref="class_DocumentElementSpec"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- DocumentRepository Class -->
+        <UML:Class xmi.id="class_DocumentRepository" name="DocumentRepository" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_findDocumentsByDocumentSpec" name="findDocumentsByDocumentSpec" visibility="public">
+              <UML:Parameter xmi.id="param_document" name="document" kind="return">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_Document"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+              <UML:Parameter xmi.id="param_spec" name="spec" kind="in">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_DocumentSpec"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- DocumentFactory Class -->
+        <UML:Class xmi.id="class_DocumentFactory" name="DocumentFactory" visibility="public" isAbstract="false" stereotype="factory">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_createDocument" name="createDocument" visibility="public">
+              <UML:Parameter xmi.id="param_newDocument" name="newDocument" kind="return">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_Document"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_createDocumentSpec" name="createDocumentSpec" visibility="public">
+              <UML:Parameter xmi.id="param_newDocumentSpec" name="newDocumentSpec" kind="return">
+                <UML:Parameter.type>
+                  <UML:Class xmi.idref="class_DocumentSpec"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- DocumentService Class -->
+        <UML:Class xmi.id="class_DocumentService" name="DocumentService" visibility="public" isAbstract="false" stereotype="service">
+          <UML:Dependency xmi.id="dependency_toRepository">
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_DocumentService"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="class_DocumentRepository"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+          <UML:Dependency xmi.id="dependency_toFactory">
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_DocumentService"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="class_DocumentFactory"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+        </UML:Class>
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_Document_DocumentState">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Document" type="class_Document" name="document" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DocumentState" type="class_DocumentState" name="documentState" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_DocumentSpec_DocumentSpecState">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DocumentSpec" type="class_DocumentSpec" name="documentSpec" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DocumentSpecState" type="class_DocumentSpecState" name="documentSpecState" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- DataTypes -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

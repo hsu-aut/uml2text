@@ -1,0 +1,61 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Datentypen -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition der Klasse PaivaKirja -->
+        <UML:Class xmi.id="class_PaivaKirja" name="PaivaKirja" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse Kayttajat -->
+        <UML:Class xmi.id="class_Kayttajat" name="Kayttajat" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse Harjoitus -->
+        <UML:Class xmi.id="class_Harjoitus" name="Harjoitus" visibility="public" isAbstract="false"/>
+        
+        <!-- Assoziation zwischen PaivaKirja und Kayttajat -->
+        <UML:Association xmi.id="assoc_PaivaKirja_Kayttajat" name="PaivaKirja-Kayttajat" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PaivaKirja_Kayttajat_PaivaKirja" type="class_PaivaKirja" name="paivaKirja" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PaivaKirja_Kayttajat_Kayttajat" type="class_Kayttajat" name="kayttajat" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation zwischen PaivaKirja und Harjoitus -->
+        <UML:Association xmi.id="assoc_PaivaKirja_Harjoitus" name="PaivaKirja-Harjoitus" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PaivaKirja_Harjoitus_PaivaKirja" type="class_PaivaKirja" name="paivaKirja" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PaivaKirja_Harjoitus_Harjoitus" type="class_Harjoitus" name="harjoitus" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

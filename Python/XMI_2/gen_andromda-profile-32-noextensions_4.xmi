@@ -1,0 +1,123 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Packages -->
+        
+        <UML:Package xmi.id="package_ComponentView" name="Component View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Component elements would be defined here -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_datatype" name="datatype" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Primitive DataTypes -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+            
+            <!-- Complex DataTypes -->
+            <UML:DataType xmi.id="datatype_List" name="List"/>
+            <UML:DataType xmi.id="datatype_Map" name="Map"/>
+            <UML:DataType xmi.id="datatype_Guid" name="Guid"/>
+            
+            <!-- Composed DataTypes -->
+            <UML:DataType xmi.id="datatype_Timestamp" name="Timestamp"/>
+            <UML:DataType xmi.id="datatype_Collection" name="Collection"/>
+            <UML:DataType xmi.id="datatype_DateTimeArray" name="DateTime[]"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_service" name="service" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Service Stereotypes -->
+            <UML:Stereotype xmi.id="stereotype_Service" name="Service"/>
+            <UML:Stereotype xmi.id="stereotype_UserTransaction" name="UserTransaction"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_process" name="process" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Process Stereotypes -->
+            <UML:Stereotype xmi.id="stereotype_NodeLeave" name="Node Leave"/>
+            <UML:Stereotype xmi.id="stereotype_BeforeSignal" name="Before Signal"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_presentation" name="presentation" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Presentation Stereotypes -->
+            <UML:Stereotype xmi.id="stereotype_FrontEndApplication" name="FrontEndApplication"/>
+            <UML:Stereotype xmi.id="stereotype_FrontEndException" name="FrontEndException"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_meta" name="meta" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Meta Stereotypes -->
+            <UML:Stereotype xmi.id="stereotype_metaclass" name="metaclass"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_xml" name="xml" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- XML Stereotypes -->
+            <UML:Stereotype xmi.id="stereotype_XmlAttribute" name="XmlAttribute"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_persistence" name="persistence" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Persistence Stereotypes -->
+            <UML:Stereotype xmi.id="stereotype_Entity" name="Entity"/>
+            <UML:Stereotype xmi.id="stereotype_Manageable" name="Manageable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Generalizations -->
+        
+        <UML:Generalization xmi.id="gen_Integer_int" child="datatype_int" parent="datatype_Integer"/>
+        <UML:Generalization xmi.id="gen_Float_float" child="datatype_float" parent="datatype_Float"/>
+
+        <!-- Exception Stereotypes -->
+        
+        <UML:Stereotype xmi.id="stereotype_Exception" name="Exception"/>
+        <UML:Stereotype xmi.id="stereotype_ApplicationException" name="ApplicationException">
+          <UML:Stereotype.base>
+            <UML:Stereotype xmi.idref="stereotype_Exception"/>
+          </UML:Stereotype.base>
+        </UML:Stereotype>
+        <UML:Stereotype xmi.id="stereotype_UnexpectedException" name="UnexpectedException">
+          <UML:Stereotype.base>
+            <UML:Stereotype xmi.idref="stereotype_Exception"/>
+          </UML:Stereotype.base>
+        </UML:Stereotype>
+        
+        <!-- Enums -->
+        
+        <UML:Enumeration xmi.id="enum_WebServiceStyle" name="WebServiceStyle">
+          <!-- Literal definitions -->
+        </UML:Enumeration>
+        <UML:Enumeration xmi.id="enum_SpringTransactionType" name="SpringTransactionType">
+          <!-- Literal definitions -->
+        </UML:Enumeration>
+        <UML:Enumeration xmi.id="enum_EjbViewType" name="EjbViewType">
+          <!-- Literal definitions -->
+        </UML:Enumeration>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

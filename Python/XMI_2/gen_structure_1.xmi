@@ -1,0 +1,126 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Packages Datatypes -->
+        <UML:Package xmi.id="Datatypes" name="Datatypes"> 
+          <UML:Namespace.ownedElement>
+            <!-- Grundlegende Datentypen -->
+            <UML:DataType xmi.id="int" name="int"/>
+            <UML:DataType xmi.id="char" name="char"/>
+            <UML:DataType xmi.id="bool" name="bool"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <!-- Komplexere Datentypen -->
+            <UML:DataType xmi.id="vector_DNAType" name="vector&lt;DNAType&gt;"/>
+            <UML:DataType xmi.id="vector_Individual" name="vector&lt;Individual*&gt;"/>
+            <UML:DataType xmi.id="Generation" name="Generation*"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Klasse Individual -->
+        <UML:Class xmi.id="KjPTNjSMfcsf" name="Individual" isAbstract="true">
+          <UML:TemplateParameter>
+            <UML:ParameterableElement type="ScoreType" />
+            <UML:ParameterableElement type="DNAType" />
+          </UML:TemplateParameter>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_score" name="score" visibility="private" type="ScoreType"/>
+            <UML:Attribute xmi.id="attr_dna" name="dna" visibility="private" type="DNAType"/>
+            <UML:Operation xmi.id="op_recombine" name="recombine"/>
+            <UML:Operation xmi.id="op_mutate" name="mutate"/>
+            <UML:Operation xmi.id="op_generate" name="generate"/>
+            <UML:Operation xmi.id="op_updateParameters" name="updateParameters"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klasse Generation -->
+        <UML:Class xmi.id="btyoh4SHPPJ5" name="Generation" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_individuals" name="individuals" type="vector_Individual"/>
+            <UML:Attribute xmi.id="attr_individualsNum" name="individualsNum" type="int"/>
+            <UML:Attribute xmi.id="attr_mutationProbability" name="mutationProbability" type="float"/>
+            <UML:Attribute xmi.id="attr_mutationAttempts" name="mutationAttempts" type="int"/>
+            <UML:Attribute xmi.id="attr_crossoverPointsNum" name="crossoverPointsNum" type="int"/>
+            <UML:Operation xmi.id="op_test" name="test"/>
+            <UML:Operation xmi.id="op_init" name="init"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Klasse Population -->
+        <UML:Class xmi.id="SsIaL8vfrI6E" name="Population">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_previousGeneration" name="previousGeneration" type="Generation"/>
+            <UML:Attribute xmi.id="attr_currentGeneration" name="currentGeneration" type="Generation"/>
+            <UML:Operation xmi.id="op_init" name="init"/>
+            <UML:Operation xmi.id="op_nextGeneration" name="nextGeneration"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Enumerationen -->
+        <UML:Enumeration xmi.id="NuQzDqarXXI7" name="RecombinationType">
+          <UML:Enumeration.literal name="DISCRETE"/>
+          <UML:Enumeration.literal name="INTERMEDIATE"/>
+          <UML:Enumeration.literal name="LINE"/>
+          <UML:Enumeration.literal name="CROSSOVER"/>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="qEhJbex98RTF" name="NewPopulationSelectionType">
+          <UML:Enumeration.literal name="TRUNCATION_SELECTION"/>
+          <UML:Enumeration.literal name="ELITE_SELECTION"/>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="7Qjj4eBilrDk" name="ParentsChoosetType">
+          <UML:Enumeration.literal name="PANMIXION"/>
+          <UML:Enumeration.literal name="INBRIDING_FENOTYPE"/>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="hlvOKL0MGMot" name="ParentsSelectionType">
+          <UML:Enumeration.literal name="TOURNAMENT"/>
+          <UML:Enumeration.literal name="ROULETTE_WHEEL"/>
+        </UML:Enumeration>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="X4tY7h1xVeZ4">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="btyoh4SHPPJ5" name="Generation" aggregation="composite"/>
+            <UML:AssociationEnd type="KjPTNjSMfcsf" name="Individual"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="O5K4wHexJGW2">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="KjPTNjSMfcsf" name="Individual" aggregation="composite"/>
+            <UML:AssociationEnd type="7Qjj4eBilrDk" name="ParentsChoosetType"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="lLq9ApdyO8ex">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="SsIaL8vfrI6E" name="Population" aggregation="composite"/>
+            <UML:AssociationEnd type="hlvOKL0MGMot" name="ParentsSelectionType"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="j9A5Fm22oIDc">
+          <UML:Association.connection>
+            <UML:AssociationEnd type="SsIaL8vfrI6E" name="Population" aggregation="aggregate"/>
+            <UML:AssociationEnd type="hlvOKL0MGMot" name="ParentsSelectionType"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

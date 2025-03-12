@@ -1,0 +1,156 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="UMLModel" name="ComplexUMLModel">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="AnWwHLmdxWKW" name="CellComplex" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="khKYQqZRIoOW" name="PolytopeCollection" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="S0jVjkhkfKxR" name="CellCollection" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_create_ProfileCollection" name="create_ProfileCollection" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_getIndependentVars" name="getIndependentVars" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="KYJRa6BImVqC" name="ProfileCollection" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_profiles" name="profiles" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_init_ProfileCollection" name="init" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_cells" name="cells" type="S0jVjkhkfKxR" kind="in"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="LNbbCy5cym5h" name="ComplexProfile" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_primitives" name="primitives" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_init_ComplexProfile" name="init" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_cellComplex" name="cellComplex" type="AnWwHLmdxWKW" kind="in"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="XkQC2NdMuunU" name="FlowVariable" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="1zllSZvmxWN7" name="PointField" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="UThQDm6kUWuW" name="PointCollection" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getPosition" name="getPosition" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getFaceNormal" name="getFaceNormal" visibility="public" isQuery="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="rWslQdEPazA3" name="SpatialDerivative" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_modifyPowers" name="modifyPowers" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="W5pTaAY2bFTp" name="PolytopePointer" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="6xv1Wh1NRwXl" name="SpatialScheme" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="HU5CiZPqtRxO" name="BoundaryPolytopeCollection" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="QUZp0jJIDMSt" name="BoundaryPointCollection" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="5CkNPKcVBSTq" name="BoundaryCondition" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="98xJBkiAENKM" name="BoundaryConditionSet" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="i3sN844kTiF1" name="ScalarFlowVariable" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="VshqEKKAn5su" name="VectorFlowVariable" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="fepcPi8fS1ca" name="GaussianPointCollection" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="VYBLu3C8x4UO" name="VectorProfileCollection" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_components" name="components" visibility="private" changeability="changeable"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="uvy7T6F0OSWk" name="ScalarProfileCollection" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="yzCekqUE8TqR" name="PrimitiveProfile" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_pointConstraints" name="pointConstraints" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_init_PrimitiveProfile" name="init" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_cell" name="cell" type="CellPointer" kind="in"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="cKYJHng5VK2g" name="PointPointer" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_pointCollection" name="pointCollection" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_polytopeIndex" name="polytopeIndex" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_pointIndex" name="pointIndex" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_getPosition" name="getPosition" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getFaceNormal" name="getFaceNormal" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="op_getScalar" name="getScalar" visibility="public" isQuery="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="KYZXzPMG0IPB" name="Profile" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_matrix" name="matrix" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_rhs" name="rhs" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_constrained" name="constrained" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_tensorOrder" name="tensorOrder" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_buildMatrix" name="buildMatrix" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_solve" name="solve" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="MD6NvfBSpgma" name="Direction" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="ThS89QEp1QfU" name="PointConstraint" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_point" name="point" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_constraintGenerator" name="constraintGenerator" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_computeRow" name="computeRow" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_getRHSValue" name="getRHSValue" visibility="public" isQuery="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="NR6VCoxhLggA" name="PointConstraintGenerator" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_computeRow" name="computeRow" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_getValue" name="getValue" visibility="public" isQuery="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="RbiW6RkNS6WU" name="ProfileScheme" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getPowers" name="getPowers" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="PwBT5Dhpgp5A" name="ProfileTensorOrder" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="I4ADNfR92BCh" name="VariablePointerSet" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="1c8xzsAKCq17" name="RealVector" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="zXMPo5YsG1Ug" name="IntAveTensorField" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="pGy1fIeJRnRI" name="ArrivalPointCollection" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

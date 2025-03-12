@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ThreadingSystem" name="ThreadingSystem">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_Thread" name="Thread" visibility="public" isAbstract="true">
+          <UML:Operation xmi.id="operation_thread_function" name="thread_function" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_MBServer" name="MBServer" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_m_port" name="m_port" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="datatype_uint16_t"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Operation xmi.id="operation_MBServer" name="MBServer" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="interface_MBConnection" name="MBConnection" visibility="public">
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_MBMutex" name="MBMutex" visibility="public">
+        </UML:Interface>
+        
+        <UML:Class xmi.id="class_ThreadHandler" name="ThreadHandler" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_Thread"/>
+              <UML:Interface xmi.idref="interface_HandlerInterface"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="interface_MBThreadPool" name="MBThreadPool" visibility="public">
+          <UML:Attribute xmi.id="attr_m_workerThreads" name="m_workerThreads" visibility="private"/>
+          <UML:Attribute xmi.id="attr_p_worker_lock" name="p_worker_lock" visibility="private"/>
+          <UML:Attribute xmi.id="attr_m_functor_queue" name="m_functor_queue" visibility="private"/>
+          <UML:Attribute xmi.id="attr_p_functor_lock" name="p_functor_lock" visibility="private"/>
+          <UML:Operation xmi.id="operation_setLowWatermark" name="setLowWatermark" visibility="public"/>
+          <UML:Operation xmi.id="operation_getHighWatermark" name="getHighWatermark" visibility="public"/>
+          <UML:Operation xmi.id="operation_scheduler" name="scheduler" visibility="public"/>
+        </UML:Interface>
+        
+        <UML:Interface xmi.id="interface_HandlerInterface" name="HandlerInterface" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Interface xmi.idref="interface_ThreadFunctor"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Interface>
+        
+        <UML:Class xmi.id="class_DefaultDatabase" name="DefaultDatabase" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_database" name="database" visibility="private"/>
+          <UML:Operation xmi.id="operation_initDB" name="initDB" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_SlaveList" name="SlaveList" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_SlaveIndex" name="SlaveIndex" visibility="private"/>
+          <UML:Operation xmi.id="operation_getVirtualSlave" name="getVirtualSlave" visibility="public"/>
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_SingletonTemplate"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_VirtualRTUSlave" name="VirtualRTUSlave" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_SlaveID" name="SlaveID" visibility="private"/>
+          <UML:Attribute xmi.id="attr_handlerindex" name="handlerindex" visibility="private"/>
+          <UML:Attribute xmi.id="attr_database" name="database" visibility="private"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_HandlerList" name="HandlerList" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_usedHandlerIndex" name="usedHandlerIndex" visibility="private"/>
+          <UML:Attribute xmi.id="attr_lock" name="lock" visibility="private"/>
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_SingletonTemplate"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Interface xmi.id="interface_MB_HandlerInt" name="MB_HandlerInt" visibility="public">
+          <UML:Operation xmi.id="operation_handleReadAccess" name="handleReadAccess" visibility="public"/>
+          <UML:Operation xmi.id="operation_checkWriteAccess" name="checkWriteAccess" visibility="public"/>
+          <UML:Operation xmi.id="operation_setRange" name="setRange" visibility="public"/>
+        </UML:Interface>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

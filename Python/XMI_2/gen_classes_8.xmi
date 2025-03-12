@@ -1,0 +1,378 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_uml" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View Package -->
+        <UML:Package xmi.id="package_logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Data Types -->
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_internal_id" name="InternalId"/>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Milestone Class -->
+            <UML:Class xmi.id="class_milestone" name="Milestone" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_internalId" name="internalId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_internal_id"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_responsibles" name="responsibles" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_priority" name="priority" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_priority"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_project" name="project" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_project"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation_getTasks" name="getTasks" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Project Class -->
+            <UML:Class xmi.id="class_project" name="Project" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_internalId" name="internalId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_internal_id"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_connectionId" name="connectionId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_description" name="description" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation_getTasks" name="getTasks" visibility="public"/>
+                <UML:Operation xmi.id="operation_getMilestones" name="getMilestones" visibility="public"/>
+                <UML:Operation xmi.id="operation_getChildren" name="getChildren" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- TaskBase Class -->
+            <UML:Class xmi.id="class_taskbase" name="TaskBase" visibility="public" isAbstract="true">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_internalId" name="internalId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_internal_id"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_description" name="description" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_assignees" name="assignees" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_assignee"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_categories" name="categories" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_category"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_priority" name="priority" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_priority"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Task Class -->
+            <UML:Class xmi.id="class_task" name="Task" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_taskbase"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_milestone" name="milestone" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_milestone"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_project" name="project" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_project"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_parent" name="parent" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation_getChildren" name="getChildren" visibility="public"/>
+                <UML:Operation xmi.id="operation_getSubtasks" name="getSubtasks" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Subtask Class -->
+            <UML:Class xmi.id="class_subtask" name="Subtask" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_taskbase"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_task" name="task" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_task"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Connection Class -->
+            <UML:Class xmi.id="class_connection" name="Connection" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_capabilities" name="capabilities" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_pms_caps"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_internalId" name="internalId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_internal_id"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation_sync" name="sync" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Root Class -->
+            <UML:Class xmi.id="class_root" name="Root" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_projects" name="projects" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_project"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_userGroups" name="userGroups" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_user_group"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_connections" name="connections" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_connection"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Assignee Class -->
+            <UML:Class xmi.id="class_assignee" name="Assignee" visibility="public" isAbstract="true">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- User Class -->
+            <UML:Class xmi.id="class_user" name="User" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_assignee"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_group" name="group" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_user_group"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- UserGroup Class -->
+            <UML:Class xmi.id="class_user_group" name="UserGroup" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_assignee"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_parentGroup" name="parentGroup" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_user_group"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Category Class -->
+            <UML:Class xmi.id="class_category" name="Category" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_internalId" name="internalId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_internal_id"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Priority Class -->
+            <UML:Class xmi.id="class_priority" name="Priority" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_internalId" name="internalId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_internal_id"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- PMSCaps Enum -->
+            <UML:Enumeration xmi.id="enum_pms_caps" name="PMSCaps">
+              <UML:Namespace.ownedElement>
+                <UML:EnumerationLiteral xmi.id="literal_haveSubtask" name="HaveSubtask"/>
+                <UML:EnumerationLiteral xmi.id="literal_haveTaskParent" name="HaveTaskParent"/>
+                <UML:EnumerationLiteral xmi.id="literal_haveProjectParent" name="HaveProjectParent"/>
+                <UML:EnumerationLiteral xmi.id="literal_manualSync" name="ManualSync"/>
+              </UML:Namespace.ownedElement>
+            </UML:Enumeration>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_project_root">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_project_root_project" type="class_project" name="project" visibility="public" aggregation="composite" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_project_root_root" type="class_root" name="root" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_task_project">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_task_project_task" type="class_task" name="task" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_task_project_project" type="class_project" name="project" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_task_milestone">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_task_milestone_task" type="class_task" name="task" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_task_milestone_milestone" type="class_milestone" name="milestone" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_subtask_task">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_subtask_task_subtask" type="class_subtask" name="subtask" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_subtask_task_task" type="class_task" name="task" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_connection_root">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_connection_root_connection" type="class_connection" name="connection" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_connection_root_root" type="class_root" name="root" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_user_usergroup">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_user_usergroup_user" type="class_user" name="user" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_user_usergroup_usergroup" type="class_user_group" name="userGroup" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

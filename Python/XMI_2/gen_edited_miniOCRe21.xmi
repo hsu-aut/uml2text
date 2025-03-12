@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StudyDomain" name="StudyDomain">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="Entity" name="Entity" visibility="public" isAbstract="true"/>
+
+        <UML:Class xmi.id="Information_entity" name="Information_entity" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="Study" name="Study" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="NCT_number" name="NCT_number" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="Integer"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <UML:Class xmi.id="Role" name="Role" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="Person" name="Person" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="has_name" name="has_name" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="Boolean"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <UML:Class xmi.id="Investigator" name="Investigator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Role"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="FirstName" name="FirstName" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="char"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="LastName" name="LastName" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="char"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <UML:Class xmi.id="Outcome" name="Outcome" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="StudyProtocol" name="StudyProtocol" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Information_entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="public_title" name="public_title" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <UML:Class xmi.id="Terminology_code" name="Terminology_code" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="has_terminology" name="has_terminology" visibility="public"/>
+          <UML:Attribute xmi.id="has_version" name="has_version" visibility="public"/>
+          <UML:Attribute xmi.id="has_concept_id" name="has_concept_id" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="Contact_information" name="Contact_information" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="Information_entity"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Association xmi.id="association_Study_ContactInformation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="associationEnd_Study" type="Study" name="study" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="associationEnd_ContactInformation" type="Contact_information" name="contact_information" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="association_Study_Investigator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="associationEnd_Study" type="Study" name="study" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="associationEnd_Investigator" type="Investigator" name="investigator" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

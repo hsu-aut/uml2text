@@ -1,0 +1,132 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UMLModel">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_Int" name="int"/>
+            <UML:DataType xmi.id="datatype_Char" name="char"/>
+            <UML:DataType xmi.id="datatype_Bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_Float" name="float"/>
+            <UML:DataType xmi.id="datatype_Double" name="double"/>
+            <UML:DataType xmi.id="datatype_Short" name="short"/>
+            <UML:DataType xmi.id="datatype_Long" name="long"/>
+            <UML:DataType xmi.id="datatype_UnsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_UnsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_UnsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_String" name="string"/>
+            <UML:DataType xmi.id="datatype_QMap_QString" name="QMap<QString, QString>"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_ServiceBasicReply" name="ServiceBasicReply" isAbstract="true" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_result" name="result" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_ServiceReplyResultEnum"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getServiceReplyResult" name="getServiceReplyResult" visibility="protected">
+              <UML:BehavioralFeature.parameter>
+                <UML:Parameter xmi.id="param_getServiceReplyResult_return" name="return" kind="return" type="datatype_ServiceReplyResultEnum"/>
+              </UML:BehavioralFeature.parameter>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HttpConnector" name="HttpConnector" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ServiceBasicReply"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:BehavioralFeature xmi.id="op_HttpConnector_Ctor" name="HttpConnector" visibility="public">
+              <UML:Parameter xmi.id="param_QNetworkAccessManager" name="manager" kind="in" type="class_QNetworkAccessManager"/>
+            </UML:BehavioralFeature>
+            <UML:Operation xmi.id="op_setSecureProtocol" name="setSecureProtocol" visibility="public">
+              <UML:Parameter xmi.id="param_setSecureProtocol_in" name="secure" kind="in" type="datatype_Bool"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AbstractReport" name="AbstractReport" isAbstract="true" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ServiceBasicReply"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_reportDate" name="reportDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_QDateTime"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_resultMatrix" name="resultMatrix" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_QMap_QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UrlReport" name="UrlReport" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractReport"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FileReport" name="FileReport" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractReport"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FileHasher" name="FileHasher" visibility="public"/>
+
+        <UML:Association xmi.id="assoc_FileReport_FileHasher">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_FileReport" type="class_FileReport" name="fileReport" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FileHasher" type="class_FileHasher" name="fileHasher" visibility="public" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Class xmi.id="class_ApiHttpConnector" name="ApiHttpConnector" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_HttpConnector"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_WebHttpConnector" name="WebHttpConnector" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_HttpConnector"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Enumeration xmi.id="enum_ServiceReplyResultEnum" name="ServiceReplyResultEnum"/>
+
+        <UML:Class xmi.id="class_QDateTime" name="QDateTime" visibility="public"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

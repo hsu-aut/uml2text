@@ -1,0 +1,36 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Setup" name="Setup" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Config" name="Config" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Boiler" name="Boiler" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_Setup_Config" name="hasConfig" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Setup_Config_Setup" type="class_Setup" name="setup" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Setup_Config_Config" type="class_Config" name="config" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Boiler_Setup" name="hasSetup" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Boiler_Setup_Boiler" type="class_Boiler" name="boiler" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Boiler_Setup_Setup" type="class_Setup" name="setup" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

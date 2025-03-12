@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML-Modell">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Plugin Abstract Class -->
+            <UML:Class xmi.id="class_Plugin" name="Plugin" isAbstract="true">
+              <UML:Generalization xmi.id="gen_StoragePlugin" parent="class_Plugin"/>
+              <UML:Generalization xmi.id="gen_Application" parent="class_Plugin"/>
+              <UML:Generalization xmi.id="gen_Checker" parent="class_Plugin"/>
+            </UML:Class>
+
+            <!-- Storage Plugin and Subclasses -->
+            <UML:Class xmi.id="class_StoragePlugin" name="StoragePlugin" isAbstract="true"/>
+            <UML:Class xmi.id="class_DefaultStorage" name="Default Storage" isAbstract="false"/>
+            <UML:Class xmi.id="class_LimitedStorage" name="Limited Storage" isAbstract="false"/>
+            <UML:Class xmi.id="class_dump" name="dump" isAbstract="false"/>
+            <UML:Class xmi.id="class_tcl" name="tcl" isAbstract="false"/>
+            <UML:Class xmi.id="class_ni" name="ni" isAbstract="false"/>
+            <UML:Class xmi.id="class_fstab" name="fstab" isAbstract="false"/>
+            <UML:Class xmi.id="class_hosts" name="hosts" isAbstract="false"/>
+            <UML:Class xmi.id="class_simpleini" name="simpleini" isAbstract="false"/>
+            <UML:Class xmi.id="class_xmltool" name="xmltool" isAbstract="false"/>
+
+            <!-- Application and Subclasses -->
+            <UML:Class xmi.id="class_Application" name="Application" isAbstract="true"/>
+            <UML:Class xmi.id="class_glob" name="glob" isAbstract="false"/>
+            <UML:Class xmi.id="class_struct" name="struct" isAbstract="false"/>
+
+            <!-- Checker and Subclasses -->
+            <UML:Class xmi.id="class_Checker" name="Checker" isAbstract="true"/>
+            <UML:Class xmi.id="class_type" name="type" isAbstract="false"/>
+            <UML:Class xmi.id="class_path" name="path" isAbstract="false"/>
+            <UML:Class xmi.id="class_network" name="network" isAbstract="false"/>
+
+            <!-- Code Abstract Class -->
+            <UML:Class xmi.id="class_Code" name="Code" isAbstract="true">
+              <UML:Generalization xmi.id="gen_ccode" parent="class_Code"/>
+              <UML:Generalization xmi.id="gen_hexcode" parent="class_Code"/>
+              <UML:Generalization xmi.id="gen_null" parent="class_Code"/>
+              <UML:Generalization xmi.id="gen_iconv" parent="class_Code"/>
+            </UML:Class>
+
+            <!-- Specific Code Implementations -->
+            <UML:Class xmi.id="class_ccode" name="ccode" isAbstract="false"/>
+            <UML:Class xmi.id="class_hexcode" name="hexcode" isAbstract="false"/>
+            <UML:Class xmi.id="class_null" name="null" isAbstract="false"/>
+            <UML:Class xmi.id="class_iconv" name="iconv" isAbstract="false"/>
+
+            <!-- Filter Abstract Class -->
+            <UML:Class xmi.id="class_Filter" name="Filter" isAbstract="true">
+              <UML:Generalization xmi.id="gen_Code" parent="class_Filter"/>
+              <UML:Generalization xmi.id="gen_Hidden" parent="class_Filter"/>
+            </UML:Class>
+
+            <!-- Cross Cutting and Subclasses -->
+            <UML:Class xmi.id="class_CrossCutting" name="Cross Cutting" isAbstract="true"/>
+            <UML:Class xmi.id="class_dbus" name="dbus" isAbstract="false"/>
+            <UML:Class xmi.id="class_tracer" name="tracer" isAbstract="false"/>
+            <UML:Class xmi.id="class_timeofday" name="timeofday" isAbstract="false"/>
+            <UML:Class xmi.id="class_syslog" name="syslog" isAbstract="false"/>
+
+            <!-- Error Class -->
+            <UML:Class xmi.id="class_error" name="error" isAbstract="false"/>
+            
+            <!-- Hidden Class -->
+            <UML:Class xmi.id="class_Hidden" name="Hidden" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

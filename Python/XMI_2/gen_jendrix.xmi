@@ -1,0 +1,111 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MusicSystem" name="MusicSystem">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_MUSICIEN" name="MUSICIEN" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_GUITARE" name="GUITARE" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_AMPLI" name="AMPLI" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ARDUINO" name="ARDUINO" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DPACK_WIFI" name="DPACK WIFI" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SMART_PHONE_WIFI" name="SMART PHONE WIFI" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_APPLI_GUITARE" name="APPLI GUITARE" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SMART_PHONE_HARD_AUDIO" name="SMART PHONE HARD AUDIO" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_SMARTPHONE_AUDIO_EXT" name="SMARTPHONE AUDIO EXT" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Module_Audio" name="Module Audio" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Appli_Android" name="Appli Android" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_new_operation" name="new_operation" visibility="public" isAbstract="false"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Appli_Jendrix" name="Appli Jendrix" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Gestionnaire" name="Gestionnaire" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Convertisseur" name="Convertisseur" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ServeurSon" name="ServeurSon" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_GlobalView" name="GlobalView" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_GlobalActivity" name="GlobalActivity" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_JendrixMainActivity" name="JendrixMainActivity" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Activity"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Attribute xmi.id="attr_onCreate" name="onCreate" visibility="public"/>
+          <UML:Attribute xmi.id="attr_onStart" name="onStart" visibility="public"/>
+          <UML:Attribute xmi.id="attr_onRestart" name="onRestart" visibility="public"/>
+          <!-- Weitere Attribute und Operationen je nach Beschreibung -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AudioServer" name="AudioServer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Thread"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <!-- Attribute und Operationen für Audio-Management -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TcpServer" name="TcpServer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Thread"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <!-- Attribute zur Verbindungsverwaltung -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Thread" name="Thread" visibility="public" isAbstract="false"/>
+        
+        <!-- Akteure -->
+        <UML:Actor xmi.id="actor_Guitariste" name="Guitariste"/>
+        <UML:Actor xmi.id="actor_Guitare" name="Guitare"/>
+        <UML:Actor xmi.id="actor_CapteurSon" name="Capteur son"/>
+        <UML:Actor xmi.id="actor_Mobile" name="Mobile"/>
+
+        <!-- Use Cases -->
+        <UML:UseCase xmi.id="uc_GererSon" name="Gérer le son d'une guitare électrique"/>
+        <UML:UseCase xmi.id="uc_EcouterTempsReel" name="Ecouter en temps réel"/>
+        <UML:UseCase xmi.id="uc_Sampler" name="Sampler"/>
+        <UML:UseCase xmi.id="uc_Enregistrer" name="Enregistrer"/>
+        <UML:UseCase xmi.id="uc_Transmettre" name="Transmettre"/>
+        <UML:UseCase xmi.id="uc_Acquerir" name="Acquerir"/>
+        <UML:UseCase xmi.id="uc_Communiquer" name="Communiquer"/>
+        
+        <!-- Komponenten -->
+        <UML:Component xmi.id="comp_Android21" name="OS > Android 2.1"/>
+        <UML:Component xmi.id="comp_AppGuitare" name="App guitare"/>
+        <UML:Component xmi.id="comp_AppAudio" name="App Audio"/>
+
+        <!-- Artefakte -->
+        <UML:Artifact xmi.id="art_Mobile" name="Mobile"/>
+        <UML:Artifact xmi.id="art_ModuleWifi" name="Module wifi"/>
+        <UML:Artifact xmi.id="art_Arduino" name="Arduino"/>
+
+        <!-- Knoten -->
+        <UML:Node xmi.id="node_CarteControleur" name="Carte Contrôleur"/>
+        <UML:Node xmi.id="node_ModuleSansFil" name="Module sans fil"/>
+        <UML:Node xmi.id="node_Smartphone" name="Smartphone"/>
+        <UML:Node xmi.id="node_AmplificateurRehauseur" name="Amplificateur rehauseur"/>
+        <UML:Node xmi.id="node_Guitare" name="Guitare"/>
+
+        <!-- Primitive Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <!-- Weitere Datentypen können hinzugefügt werden -->
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

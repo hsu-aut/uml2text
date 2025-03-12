@@ -1,0 +1,265 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- DataType Definitions -->
+        <UML:DataType xmi.id="DataType_int" name="int"/>
+        <UML:DataType xmi.id="DataType_char" name="char"/>
+        <UML:DataType xmi.id="DataType_bool" name="bool"/>
+        <UML:DataType xmi.id="DataType_float" name="float"/>
+        <UML:DataType xmi.id="DataType_double" name="double"/>
+        <UML:DataType xmi.id="DataType_short" name="short"/>
+        <UML:DataType xmi.id="DataType_long" name="long"/>
+        <UML:DataType xmi.id="DataType_string" name="string"/>
+        
+        <!-- Classes & Inheritance Hierarchies -->
+        <UML:Class xmi.id="class_YaliBuild" name="YaliBuild" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_build"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_add_gettext_support" name="add_gettext_support"/>
+            <UML:Operation xmi.id="op_compile_ui" name="compile_ui"/>
+            <UML:Operation xmi.id="op_run_YB" name="run"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_build" name="build"/>
+
+        <UML:Class xmi.id="class_YaliClean" name="YaliClean" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_clean"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_run_YC" name="run"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_clean" name="clean"/>
+
+        <UML:Class xmi.id="class_YaliUninstall" name="YaliUninstall" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Command"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_initialize_options" name="initialize_options"/>
+            <UML:Operation xmi.id="op_finalize_options" name="finalize_options"/>
+            <UML:Operation xmi.id="op_run_YU" name="run"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Command" name="Command"/>
+
+        <UML:Class xmi.id="class_BootLoader" name="BootLoader" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_init_BL" name="__init__"/>
+            <UML:Operation xmi.id="op_find_grub_dev" name="_find_grub_dev"/>
+            <UML:Operation xmi.id="op_find_hd0" name="_find_hd0"/>
+            <UML:Operation xmi.id="op_write_grub_conf" name="write_grub_conf"/>
+            <UML:Operation xmi.id="op_grub_conf_append_win" name="grub_conf_append_win"/>
+            <UML:Operation xmi.id="op_install_grub" name="install_grub"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Constants" name="Constants" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getattr" name="__getattr__"/>
+            <UML:Operation xmi.id="op_setattr" name="__setattr__"/>
+            <UML:Operation xmi.id="op_delattr" name="__delattr__"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ConstError" name="ConstError" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_TypeError"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TypeError" name="TypeError" visibility="public"/>
+
+        <!-- FileSystem Hierarchy -->
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_init_FS" name="__init__"/>
+            <UML:Operation xmi.id="op_openPartition" name="openPartition"/>
+            <UML:Operation xmi.id="op_name" name="name"/>
+            <UML:Operation xmi.id="op_mountOptions" name="mountOptions"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Ext3FileSystem" name="Ext3FileSystem" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_FileSystem"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_format" name="format"/>
+            <UML:Operation xmi.id="op_resize" name="resize"/>
+            <UML:Operation xmi.id="op_getLabel" name="getLabel"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ReiserFileSystem" name="ReiserFileSystem" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_FileSystem"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_XFSFileSystem" name="XFSFileSystem" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_FileSystem"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SwapFileSystem" name="SwapFileSystem" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_FileSystem"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_NTFSFileSystem" name="NTFSFileSystem" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_FileSystem"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FatFileSystem" name="FatFileSystem" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_FileSystem"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Partition Hierarchy -->
+        <UML:Class xmi.id="class_Partition" name="Partition" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_init_P" name="__init__"/>
+            <UML:Operation xmi.id="op_getFormatted" name="getFormatted"/>
+            <UML:Operation xmi.id="op_isFileSystemReady" name="isFileSystemReady"/>
+            <UML:Operation xmi.id="op_setFileSystemType" name="setFileSystemType"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FreeSpace" name="FreeSpace" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Partition"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Exception Hierarchy -->
+        <UML:Class xmi.id="class_YaliException" name="YaliException" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Exception"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GUIException" name="GUIException" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Exception"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RequestException" name="RequestException" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_YaliError"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DeviceError" name="DeviceError" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_YaliError"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- PartitionType Hierarchy -->
+        <UML:Class xmi.id="class_PartitionType" name="PartitionType" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_eq" name="__eq__"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RootPartitionType" name="RootPartitionType" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_PartitionType"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HomePartitionType" name="HomePartitionType" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_PartitionType"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SwapPartitionType" name="SwapPartitionType" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_PartitionType"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ArchivePartitionType" name="ArchivePartitionType" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_PartitionType"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- PartRequest Hierarchy -->
+        <UML:Class xmi.id="class_PartRequest" name="PartRequest" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_init_PR" name="__init__"/>
+            <UML:Operation xmi.id="op_applyRequest" name="applyRequest"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FormatRequest" name="FormatRequest" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_PartRequest"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MountRequest" name="MountRequest" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_PartRequest"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LabelRequest" name="LabelRequest" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_PartRequest"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- UI Components -->
+        <UML:Class xmi.id="class_Widget" name="Widget" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Additional methods or attributes as defined in the UI widget classes -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UI" name="UI" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Additional methods or attributes as defined in the UI component classes -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ScreenWidget" name="ScreenWidget" visibility="public">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_Widget"/>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <!-- Additional methods or attributes specialized in ScreenWidget -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

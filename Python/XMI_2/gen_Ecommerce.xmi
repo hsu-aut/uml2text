@@ -1,0 +1,235 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_easyadmin" name="easyadmin">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition von UML-Package "doctrine" -->
+        <UML:Package xmi.id="package_doctrine" name="doctrine">
+          <UML:Namespace.ownedElement>
+            <!-- Definition der Datentypen -->
+            <UML:DataType xmi.id="simple_array" name="simple_array"/>
+            <UML:DataType xmi.id="datetime" name="datetime"/>
+            <UML:DataType xmi.id="datetimetz" name="datetimetz"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="string" name="string"/>
+            <UML:DataType xmi.id="bigint" name="bigint"/>
+            <UML:DataType xmi.id="boolean" name="boolean"/>
+            <UML:DataType xmi.id="integer" name="integer"/>
+            <UML:DataType xmi.id="text" name="text"/>
+            <UML:DataType xmi.id="blob" name="blob"/>
+            <UML:DataType xmi.id="binary" name="binary"/>
+            <UML:DataType xmi.id="guid" name="guid"/>
+            <UML:DataType xmi.id="date" name="date"/>
+            <UML:DataType xmi.id="json_array" name="json_array"/>
+            <UML:DataType xmi.id="time" name="time"/>
+            <UML:DataType xmi.id="array" name="array"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition von UML-Package "entity" -->
+        <UML:Package xmi.id="package_entity" name="entity">
+          <UML:Namespace.ownedElement>
+
+            <!-- Definition der Klasse "Category" -->
+            <UML:Class xmi.id="class_Category" name="Category" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Order" -->
+            <UML:Class xmi.id="class_Order" name="Order" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_incrementId" name="incrementId" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_guid" name="guid" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="guid"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_deliverySelected" name="deliverySelected" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_purchaseAt" name="purchaseAt" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datetimetz"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_shipping" name="shipping" visibility="private">
+                  <!-- Type left intentionally unspecified as described -->
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_preferredDeliveryHour" name="preferredDeliveryHour" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="time"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_billingAddress" name="billingAddress" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="json_array"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Product" -->
+            <UML:Class xmi.id="class_Product" name="Product" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_createdAt" name="createdAt" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datetime"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_tags" name="tags" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="simple_array"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_ean" name="ean" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="bigint"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_enabled" name="enabled" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_features" name="features" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="array"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_price" name="price" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_name_product" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_description" name="description" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="text"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Image" -->
+            <UML:Class xmi.id="class_Image" name="Image" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_data" name="data" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="blob"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_thumbnail" name="thumbnail" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="binary"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "OrderItem" -->
+            <UML:Class xmi.id="class_OrderItem" name="OrderItem" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_quantity" name="quantity" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="smallint"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_taxRate" name="taxRate" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="decimal"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition von UML-Package "class" -->
+        <UML:Package xmi.id="package_class" name="class">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition der Klasse "Shipment" -->
+            <UML:Class xmi.id="class_Shipment" name="Shipment" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_address" name="address" visibility="private"/>
+                <UML:Attribute xmi.id="attr_cost" name="cost" visibility="private"/>
+                <UML:Attribute xmi.id="attr_transporter" name="transporter" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Assoziationen -->
+
+        <!-- Assoziation "in category" -->
+        <UML:Association xmi.id="assoc_in_category">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Category_Product_Category" type="class_Category" name="Category" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Category_Product_Product" type="class_Product" name="Product" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation "Parent/Children" -->
+        <UML:Association xmi.id="assoc_Parent_Children">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Parent_Category" type="class_Category" name="Parent" visibility="public" aggregation="none" multiplicity="0..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Children_Category" type="class_Category" name="Children" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation "ordered" -->
+        <UML:Association xmi.id="assoc_ordered">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Order_OrderItem_Order" type="class_Order" name="Order" visibility="public" aggregation="none" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Order_OrderItem_OrderItem" type="class_OrderItem" name="OrderItem" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation "Product Image" -->
+        <UML:Association xmi.id="assoc_Product_Image">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Product_Image_Product" type="class_Product" name="Product" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Product_Image_Image" type="class_Image" name="Image" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation "Content of the Order" -->
+        <UML:Association xmi.id="assoc_Content_of_the_Order">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Order_OrderItem_Content_Order" type="class_Order" name="Order" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Order_OrderItem_Content_OrderItem" type="class_OrderItem" name="OrderItem" visibility="public" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

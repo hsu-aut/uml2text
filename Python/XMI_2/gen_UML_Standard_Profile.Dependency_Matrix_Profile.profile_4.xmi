@@ -1,0 +1,135 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomUMLTool</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DependencyMatrixProfile" name="DependencyMatrixProfile">
+      <UML:Namespace.ownedElement>
+
+        <!-- Dependency Matrix Profile -->
+        <UML:Class xmi.id="class_CustomizationOfDependencyMatrix" name="CustomizationOfDependencyMatrix" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Row" name="Row" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Column" name="Column" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Stereotype xmi.id="stereotype_DependencyMatrix" name="DependencyMatrix" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_columnTextDirection" name="columnTextDirection" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_TextDirection"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_columnOwnerDisplayMode" name="columnOwnerDisplayMode" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_OwnerDisplayMode"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_showInnerDependencies" name="showInnerDependencies" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Stereotype>
+
+        <UML:Stereotype xmi.id="stereotype_MatrixFilter" name="MatrixFilter" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rowElementType" name="rowElementType" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_rowScope" name="rowScope" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Enumeration xmi.idref="enum_RelationOption"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_removedRowElements" name="removedRowElements" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Stereotype>
+
+        <!-- Extensions -->
+        <UML:Class xmi.id="class_Extensions" name="Extensions" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Association xmi.id="assoc_dm_extension" name="dm_extension">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_stereotype_DependencyMatrix" type="stereotype_DependencyMatrix"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_mf_extension" name="mf_extension">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_stereotype_MatrixFilter" type="stereotype_MatrixFilter"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="String" name="String"/>
+
+        <!-- Enumerations -->
+        <UML:Enumeration xmi.id="enum_TextDirection" name="TextDirection">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_Vertical" name="Vertical"/>
+            <UML:EnumerationLiteral xmi.id="literal_Horizontal" name="Horizontal"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_RelationOption" name="RelationOption">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_All" name="All"/>
+            <UML:EnumerationLiteral xmi.id="literal_With relations" name="With relations"/>
+            <UML:EnumerationLiteral xmi.id="literal_Without relations" name="Without relations"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_Direction" name="Direction">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_Row to column" name="Row to column"/>
+            <UML:EnumerationLiteral xmi.id="literal_Column to row" name="Column to row"/>
+            <UML:EnumerationLiteral xmi.id="literal_Both" name="Both"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_OwnerDisplayMode" name="OwnerDisplayMode">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_Complete tree" name="Complete tree"/>
+            <UML:EnumerationLiteral xmi.id="literal_Hidden" name="Hidden"/>
+            <UML:EnumerationLiteral xmi.id="literal_Full qualified name" name="Full qualified name"/>
+            <UML:EnumerationLiteral xmi.id="literal_Compact tree" name="Compact tree"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_SortingMode" name="SortingMode">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="literal_Ascending" name="Ascending"/>
+            <UML:EnumerationLiteral xmi.id="literal_Descending" name="Descending"/>
+            <UML:EnumerationLiteral xmi.id="literal_Custom" name="Custom"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

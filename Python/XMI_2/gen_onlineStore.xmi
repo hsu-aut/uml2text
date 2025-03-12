@@ -1,0 +1,203 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package: Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="int" name="int"/>
+            <UML:DataType xmi.id="char" name="char"/>
+            <UML:DataType xmi.id="bool" name="bool"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <UML:DataType xmi.id="short" name="short"/>
+            <UML:DataType xmi.id="long" name="long"/>
+            <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class: ShoppingCart -->
+        <UML:Class xmi.id="class_ShoppingCart" name="Shopping Cart" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_totalCost" name="totalCost" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_validityPeriod" name="validityPeriod" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_checkOut" name="checkOut" visibility="public"/>
+            <UML:Operation xmi.id="op_addItem" name="addItem" visibility="public">
+              <UML:Parameter xmi.id="param_CartItem" name="item" kind="in" type="CartItem"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_removeItem" name="removeItem" visibility="public">
+              <UML:Parameter xmi.id="param_CartItem_remove" name="item" kind="in" type="CartItem"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_empty" name="empty" visibility="public"/>
+            <UML:Operation xmi.id="op_getValidityPeriod" name="getValidityPeriod" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: CartItem -->
+        <UML:Class xmi.id="class_CartItem" name="CartItem" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_quantity" name="quantity" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: Product -->
+        <UML:Class xmi.id="class_Product" name="Product" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_price" name="price" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_modifyDetails" name="modifyDetails" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: Account -->
+        <UML:Class xmi.id="class_Account" name="Account" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_username" name="username" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_password" name="password" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_login" name="login" visibility="public">
+              <UML:Parameter xmi.id="param_login_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_logout" name="logout" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: OnlineStore -->
+        <UML:Class xmi.id="class_OnlineStore" name="OnlineStore" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_storeId" name="storeId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: Client -->
+        <UML:Class xmi.id="class_Client" name="Client" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_email" name="email" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: Catalog -->
+        <UML:Class xmi.id="class_Catalog" name="Catalog" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_addProduct" name="addProduct" visibility="public">
+              <UML:Parameter xmi.id="param_Product_add" name="product" kind="in" type="Product"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_removeProduct" name="removeProduct" visibility="public">
+              <UML:Parameter xmi.id="param_Product_remove" name="product" kind="in" type="Product"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_OnlineStore_Account" name="onlineStore-account" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OnlineStore" type="class_OnlineStore" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Account" type="class_Account" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Account_Client" name="account-client" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Account_Client" type="class_Account" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Client" type="class_Client" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_OnlineStore_Catalog" name="onlineStore-catalog" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OnlineStore_Catalog" type="class_OnlineStore" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Catalog" type="class_Catalog" aggregation="shared"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Catalog_Product" name="catalog-product" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Catalog_Product" type="class_Catalog" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Product" type="class_Product" aggregation="shared"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ShoppingCart_CartItem" name="shoppingCart-cartItem" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ShoppingCart" type="class_ShoppingCart" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CartItem" type="class_CartItem" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_CartItem_Product" name="cartItem-product" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_CartItem_Product" type="class_CartItem" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Product_CartItem" type="class_Product" aggregation="shared"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Account_ShoppingCart" name="account-shoppingCart" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Account_ShoppingCart" type="class_Account" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ShoppingCart_Account" type="class_ShoppingCart" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

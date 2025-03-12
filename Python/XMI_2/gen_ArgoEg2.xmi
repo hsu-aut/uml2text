@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_System" name="System">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Akteure -->
+        <UML:Actor xmi.id="actor_User" name="User"/>
+        <UML:Actor xmi.id="actor_RegisteredAdmin" name="Registered Admin"/>
+        <UML:Actor xmi.id="actor_Customer" name="Customer"/>
+        <UML:Actor xmi.id="actor_Chef" name="Chef"/>
+        <UML:Actor xmi.id="actor_RegisteredUser" name="Registered User"/>
+        <UML:Actor xmi.id="actor_User1" name="User1"/>
+        
+        <!-- Definition der Anwendungsfälle -->
+        <UML:UseCase xmi.id="usecase_BrowseAnonymously" name="Browse Anonymously"/>
+        <UML:UseCase xmi.id="usecase_Login" name="Login">
+          <UML:Extend xmi.idref="usecase_ForgotPassword"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="usecase_Register" name="Register">
+          <UML:Include xmi.idref="usecase_ConfirmRegistration"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="usecase_ConfirmRegistration" name="Confirm Registration"/>
+        <UML:UseCase xmi.id="usecase_Search" name="Search">
+          <UML:Extend xmi.idref="usecase_BrowseBySubjects"/>
+          <UML:Extend xmi.idref="usecase_SearchBooks"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="usecase_Profile" name="Profile">
+          <UML:Extend xmi.idref="usecase_Login"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="usecase_ForgotPassword" name="Forgot Password">
+          <UML:Include xmi.idref="usecase_Email"/>
+        </UML:UseCase>
+        <UML:UseCase xmi.id="usecase_Email" name="E-Mail"/>
+        <UML:UseCase xmi.id="usecase_Create" name="Create"/>
+        <UML:UseCase xmi.id="usecase_View" name="View"/>
+        <UML:UseCase xmi.id="usecase_Edit" name="Edit"/>
+        <UML:UseCase xmi.id="usecase_Print" name="Print"/>
+        <UML:UseCase xmi.id="usecase_EatFood" name="Eat Food"/>
+        <UML:UseCase xmi.id="usecase_DrinkWine" name="Drink Wine"/>
+        <UML:UseCase xmi.id="usecase_PayForFood" name="Pay for Food"/>
+        <UML:UseCase xmi.id="usecase_CookFood" name="Cook Food"/>
+        <UML:UseCase xmi.id="usecase_RemoveBookFromShoppingCart" name="Remove Book from shopping cart"/>
+        <UML:UseCase xmi.id="usecase_AddBookToShoppingCart" name="Add book to shopping cart"/>
+        <UML:UseCase xmi.id="usecase_CheckOut" name="Check Out"/>
+        
+        <!-- Assoziationen zwischen Akteuren und Anwendungsfällen -->
+        <UML:Association xmi.id="assoc_User_BrowseAnonymously">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_User" type="actor_User" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_BrowseAnonymously" type="usecase_BrowseAnonymously" name="browseAnonymously" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Weitere Assoziationen -->
+        <UML:Association xmi.id="assoc_RegisteredUser_Login">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_RegisteredUser" type="actor_RegisteredUser" name="registeredUser" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Login" type="usecase_Login" name="login" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Customer_EatFood">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Customer" type="actor_Customer" name="customer" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EatFood" type="usecase_EatFood" name="eatFood" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Customer_DrinkWine">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Customer_Drink" type="actor_Customer" name="customer" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DrinkWine" type="usecase_DrinkWine" name="drinkWine" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Customer_PayForFood">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Customer_Pay" type="actor_Customer" name="customer" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PayForFood" type="usecase_PayForFood" name="payForFood" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Chef_CookFood">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Chef" type="actor_Chef" name="chef" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CookFood" type="usecase_CookFood" name="cookFood" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_RegisteredUser_RemoveBookFromShoppingCart">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_RegisteredUser_Remove" type="actor_RegisteredUser" name="registeredUser" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_RemoveBookFromShoppingCart" type="usecase_RemoveBookFromShoppingCart" name="removeBookFromShoppingCart" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_RegisteredUser_AddBookToShoppingCart">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_RegisteredUser_Add" type="actor_RegisteredUser" name="registeredUser" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AddBookToShoppingCart" type="usecase_AddBookToShoppingCart" name="addBookToShoppingCart" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_RegisteredUser_CheckOut">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_RegisteredUser_CheckOut" type="actor_RegisteredUser" name="registeredUser" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CheckOut" type="usecase_CheckOut" name="checkOut" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

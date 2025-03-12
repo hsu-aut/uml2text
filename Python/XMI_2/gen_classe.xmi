@@ -1,0 +1,226 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AcademicStructure" name="AcademicStructure">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Etudiant-Klasse -->
+        <UML:Class xmi.id="iyWT6I4cSOU6" name="Etudiant" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="etudiant_nom" name="nom" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="etudiant_prenom" name="prenom" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="etudiant_cursus" name="cursus" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="IX0GKHMqqYsU"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="setNom" name="setNom">
+              <UML:Parameter xmi.id="setNom_param" name="nom" kind="in" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="getNom" name="getNom" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="getNom_return" name="return" kind="return" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="setPrenom" name="setPrenom">
+              <UML:Parameter xmi.id="setPrenom_param" name="prenom" kind="in" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="getPrenom" name="getPrenom" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="getPrenom_return" name="return" kind="return" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="setCursus" name="setCursus">
+              <UML:Parameter xmi.id="setCursus_param" name="cursus" kind="in" type="Cursus"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="getCursus" name="getCursus" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="getCursus_return" name="return" kind="return" type="Cursus"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Cursus-Klasse -->
+        <UML:Class xmi.id="IX0GKHMqqYsU" name="Cursus" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="cursus_semestre" name="semestre" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QVector&lt;Semestre&gt;"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="cursus_brancheSuivie" name="brancheSuivie" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="AnUbQPchGONL"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="setSemestre" name="setSemestre">
+              <UML:Parameter xmi.id="setSemestre_param" name="semestre" kind="in" type="QVector&lt;Semestre&gt;"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="getSemestre" name="getSemestre" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="getSemestre_return" name="return" kind="return" type="QVector&lt;Semestre&gt;"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Branche-Klasse -->
+        <UML:Class xmi.id="AnUbQPchGONL" name="Branche" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="branche_nom" name="nom" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="branche_sigle" name="sigle" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="verificationBranche" name="verificationBranche">
+              <UML:Parameter xmi.id="verification_result" name="result" kind="return" type="boolean"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="setNomBranche" name="setNomBranche">
+              <UML:Parameter xmi.id="setNomBranche_param" name="nom" kind="in" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="getNomBranche" name="getNomBranche" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="getNomBranche_return" name="return" kind="return" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="setSigleBranche" name="setSigleBranche">
+              <UML:Parameter xmi.id="setSigleBranche_param" name="sigle" kind="in" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="getSigleBranche" name="getSigleBranche" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="getSigleBranche_return" name="return" kind="return" type="QString"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- BrancheManager-Klasse (Singleton) -->
+        <UML:Class xmi.id="hmMRgp8r9bjC" name="BrancheManager" visibility="public" isAbstract="true" isSingleton="true">
+        </UML:Class>
+        
+        <!-- Profile-Klasse -->
+        <UML:Class xmi.id="r9r5nGD9oQCK" name="Profile" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="profile_nom" name="nom" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="profile_predicats" name="predicats" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QVector&lt;Predicat&gt;"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="setNomProfile" name="setNomProfile">
+              <UML:Parameter xmi.id="setNomProfile_param" name="nom" kind="in" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="getNomProfile" name="getNomProfile" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="getNomProfile_return" name="return" kind="return" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="setPredicats" name="setPredicats">
+              <UML:Parameter xmi.id="setPredicats_param" name="predicats" kind="in" type="QVector&lt;Predicat&gt;"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="getPredicats" name="getPredicats" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="getPredicats_return" name="return" kind="return" type="QVector&lt;Predicat&gt;"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- ProfileManager-Klasse (Singleton) -->
+        <UML:Class xmi.id="dAAvUka5ybDv" name="ProfileManager" visibility="public" isAbstract="true" isSingleton="true">
+        </UML:Class>
+        
+        <!-- Semestre-Klasse -->
+        <UML:Class xmi.id="xAPAyQ8LMsim" name="Semestre" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="semestre_inscriptions" name="inscriptions" visibility="public">
+              <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="nkAVC5T45FZX"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="semestre_date" name="date" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QDate"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+                               
+        <!-- Predicat-Klasse -->
+        <UML:Class xmi.id="1L4Wcr32J2rs" name="Predicat" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="profileValide" name="profileValide" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="profileValide_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- PredicatUVObligatoire-Klasse -->
+        <UML:Class xmi.id="ehwhiFkZ5AA3" name="PredicatUVObligatoire" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_PredicatUVObligatoire" parent="1L4Wcr32J2rs"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="obligatoireProfileValide" name="profileValide" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="obligatoireProfileValide_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- PredicatXUVParmis-Klasse -->
+        <UML:Class xmi.id="sKh52FAANDLI" name="PredicatXUVParmis" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_PredicatXUVParmis" parent="1L4Wcr32J2rs"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="parmisProfileValide" name="profileValide" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="parmisProfileValide_return" name="return" kind="return" type="bool"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Inscription-Klasse -->
+        <UML:Class xmi.id="nkAVC5T45FZX" name="Inscription" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="inscription_uv" name="uv" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="UV"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="inscription_note" name="note" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="NoteUV"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Enumeration NoteUV -->
+        <UML:Enumeration xmi.id="5DLgvj6KDnob" name="NoteUV">
+          <UML:Enumeration.literal name="A"/>
+          <UML:Enumeration.literal name="B"/>
+          <UML:Enumeration.literal name="C"/>
+          <UML:Enumeration.literal name="D"/>
+          <UML:Enumeration.literal name="E"/>
+          <UML:Enumeration.literal name="F"/>
+          <UML:Enumeration.literal name="FX"/>
+          <UML:Enumeration.literal name="RES"/>
+          <UML:Enumeration.literal name="EC"/>
+        </UML:Enumeration>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="QString" name="QString"/>
+        <UML:DataType xmi.id="QDate" name="QDate"/>
+        <UML:DataType xmi.id="QVector&lt;Semestre&gt;" name="QVector&lt;Semestre&gt;"/>
+        <UML:DataType xmi.id="QVector&lt;Predicat&gt;" name="QVector&lt;Predicat&gt;"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

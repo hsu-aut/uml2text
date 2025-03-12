@@ -1,0 +1,69 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    
+    <UML:Model xmi.id="model_PackageStructure" name="PackageStructure">
+      <UML:Namespace.ownedElement>
+
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_byte" name="byte"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+
+        <UML:Package xmi.id="package_smi" name="smi"/>
+        <UML:Package xmi.id="package_phase_file" name="phase.file"/>
+        <UML:Package xmi.id="package_phase_file_antlr" name="phase.file.antlr"/>
+        <UML:Package xmi.id="package_util_problem" name="util.problem"/>
+        <UML:Package xmi.id="package_util_phase" name="util.phase"/>
+        <UML:Package xmi.id="package_parser" name="parser"/>
+        <UML:Package xmi.id="package_parsetree_asn1" name="parsetree.asn1"/>
+        <UML:Package xmi.id="package_parsetree_smi" name="parsetree.smi"/>
+        <UML:Package xmi.id="package_phase_oid" name="phase.oid"/>
+        <UML:Package xmi.id="package_phase_mib" name="phase.mib"/>
+        <UML:Package xmi.id="package_phase_quality" name="phase.quality"/>
+        <UML:Package xmi.id="package_phase_cm" name="phase.cm"/>
+
+        <UML:Dependency xmi.id="dependency_phase_file_util_phase" name="dependency_phase_file_util_phase">
+          <UML:Dependency.client>
+            <UML:Package xmi.idref="package_phase_file"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Package xmi.idref="package_util_phase"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+        <UML:Dependency xmi.id="dependency_parsetree_asn1_parsetree_smi" name="dependency_parsetree_asn1_parsetree_smi">
+          <UML:Dependency.client>
+            <UML:Package xmi.idref="package_parsetree_asn1"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Package xmi.idref="package_parsetree_smi"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+        <UML:Dependency xmi.id="dependency_phase_file_parser" name="dependency_phase_file_parser">
+          <UML:Dependency.client>
+            <UML:Package xmi.idref="package_phase_file"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Package xmi.idref="package_parser"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,76 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_model1" name="model 1">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_libtinymailui" name="libtinymailui">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_TnyMsgView" name="TnyMsgView">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="operation_set_msg" name="set_msg"/>
+              </UML:Namespace.ownedElement>
+              <UML:Dependency xmi.id="dependency_TnyMsgView_TnyMsg" client="interface_TnyMsgView" supplier="interface_TnyMsg"/>
+            </UML:Interface>
+            <UML:Interface xmi.id="interface_TnyMsgWindow" name="TnyMsgWindow"/>
+            <UML:Interface xmi.id="interface_TnySaveStrategy" name="TnySaveStrategy"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="package_libtinymailuiGtk" name="libtinymailui-gtk">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_TnyGtkMsgWindow" name="TnyGtkMsgWindow">
+              <UML:Generalization xmi.id="generalization_TnyGtkMsgWindow_GtkWindow" parent="class_GtkWindow"/>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_msgview" name="msgview" type="interface_TnyMsgView"/>
+                <UML:Attribute xmi.id="attr_save_strategy" name="save_strategy" type="interface_TnySaveStrategy"/>
+                <UML:Operation xmi.id="operation_on_save_mime_part_clicked" name="on_save_mime_part_clicked"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            <UML:Class xmi.id="class_TnyGtkMsgView" name="TnyGtkMsgView">
+              <UML:Generalization xmi.id="generalization_TnyGtkMsgView_GtkWidget" parent="class_GtkWidget"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_TnyGtkSaveStrategy" name="TnyGtkSaveStrategy"/>
+            <UML:Class xmi.id="class_TnyGtkTextBufferStream" name="TnyGtkTextBufferStream">
+              <UML:Generalization xmi.id="generalization_TnyGtkTextBufferStream_TnyStream" parent="interface_TnyStream"/>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="package_libtinymail" name="libtinymail">
+          <UML:Namespace.ownedElement>
+            <UML:Interface xmi.id="interface_TnyMsg" name="TnyMsg"/>
+            <UML:Interface xmi.id="interface_TnyStream" name="TnyStream"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="package_libtinymailuiMozembed" name="libtinymailui-mozembed">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_TnyMozEmbedStream" name="TnyMozEmbedStream">
+              <UML:Generalization xmi.id="generalization_TnyMozEmbedStream_TnyStream" parent="interface_TnyStream"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_TnyMozEmbedMsgView" name="TnyMozEmbedMsgView">
+              <UML:Dependency xmi.id="dependency_TnyMozEmbedMsgView_TnyMsgView" client="class_TnyMozEmbedMsgView" supplier="interface_TnyMsgView"/>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="package_libgtk" name="libgtk+">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_GtkWidget" name="GtkWidget"/>
+            <UML:Class xmi.id="class_GtkWindow" name="GtkWindow">
+              <UML:Generalization xmi.id="generalization_GtkWindow_GtkWidget" parent="class_GtkWidget"/>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Application" name="Application">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View Package -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>   
+            <!-- DataType Definitions -->
+            <UML:DataType xmi.id="dataType_int" name="int"/>
+            <UML:DataType xmi.id="dataType_string" name="string"/>
+            <UML:DataType xmi.id="dataType_bool" name="bool"/>
+            <UML:DataType xmi.id="dataType_float" name="float"/>
+            <UML:DataType xmi.id="dataType_date" name="Date"/>
+            <UML:DataType xmi.id="dataType_List" name="List"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- DTOs Package -->
+        <UML:Package xmi.id="package_DTOs" name="DTOs">
+          <UML:Namespace.ownedElement>
+            <!-- AcaoDTO Class -->
+            <UML:Class xmi.id="class_AcaoDTO" name="AcaoDTO" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_datainicio" name="datainicio" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_datafim" name="datafim" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_titulo" name="titulo" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_descricao" name="descricao" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_local" name="local" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_latitude" name="latitude" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_longitude" name="longitude" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_valor" name="valor" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_usuario" name="usuario" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_UsuarioDTO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_cliente" name="cliente" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_ClienteDTO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_tipoacao" name="tipoacao" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_TipoAcaoDTO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_usuarios" name="usuarios" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_List"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- ClienteDTO Class -->
+            <UML:Class xmi.id="class_ClienteDTO" name="ClienteDTO" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_cliente" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_nome" name="nome" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_contato" name="contato" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_email" name="email" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_datacriacao" name="datacriacao" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_dataedicao" name="dataedicao" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_telefones" name="telefones" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_List"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- TelefoneDTO Class -->
+            <UML:Class xmi.id="class_TelefoneDTO" name="TelefoneDTO" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_telefone" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_telefone" name="telefone" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_cliente_telefone" name="cliente" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_ClienteDTO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_usuario_telefone" name="usuario" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_UsuarioDTO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- TipoAcaoDTO Class -->
+            <UML:Class xmi.id="class_TipoAcaoDTO" name="TipoAcaoDTO" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_tipoacao" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_tipo" name="tipo" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_datacriacao_tipoacao" name="datacriacao" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_dataedicao_tipoacao" name="dataedicao" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_date"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- UsuarioDTO Class -->
+            <UML:Class xmi.id="class_UsuarioDTO" name="UsuarioDTO" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_id_usuario" name="id" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_nome_usuario" name="nome" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_email_usuario" name="email" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_senha" name="senha" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_banco" name="banco" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_agencia" name="agencia" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_conta" name="conta" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_gerente" name="gerente" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_bool"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_telefones_usuario" name="telefones" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="dataType_List"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Model Package -->
+        <UML:Package xmi.id="package_Model" name="Model">
+          <UML:Namespace.ownedElement>
+            <!-- AbstractDAO Class -->
+            <UML:Class xmi.id="class_AbstractDAO" name="AbstractDAO" visibility="public" isAbstract="true">
+              <UML:Namespace.ownedElement>
+                <UML:Operation xmi.id="op_insert" name="insert" visibility="public" isAbstract="false"/>
+                <UML:Operation xmi.id="op_update" name="update" visibility="public" isAbstract="false"/>
+                <UML:Operation xmi.id="op_delete" name="delete" visibility="public" isAbstract="false"/>
+                <UML:Operation xmi.id="op_findById" name="findById" visibility="public" isAbstract="false"/>
+                <UML:Operation xmi.id="op_findAll" name="findAll" visibility="public" isAbstract="false"/>
+                <UML:Operation xmi.id="op_findByQuery" name="findByQuery" visibility="public" isAbstract="false"/>
+                <UML:Operation xmi.id="op_closeConexao" name="closeConexao" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- DAO Classes -->
+            <UML:Class xmi.id="class_TelefoneDAO" name="TelefoneDAO" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.general>
+                  <UML:Class xmi.idref="class_AbstractDAO"/>
+                </UML:Generalization.general>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_TipoAcaoDAO" name="TipoAcaoDAO" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.general>
+                  <UML:Class xmi.idref="class_AbstractDAO"/>
+                </UML:Generalization.general>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_UsuarioAcaoDAO" name="UsuarioAcaoDAO" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.general>
+                  <UML:Class xmi.idref="class_AbstractDAO"/>
+                </UML:Generalization.general>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_UsuarioDAO" name="UsuarioDAO" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.general>
+                  <UML:Class xmi.idref="class_AbstractDAO"/>
+                </UML:Generalization.general>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_ClienteDAO" name="ClienteDAO" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.general>
+                  <UML:Class xmi.idref="class_AbstractDAO"/>
+                </UML:Generalization.general>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_AcaoDAO" name="AcaoDAO" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.general>
+                  <UML:Class xmi.idref="class_AbstractDAO"/>
+                </UML:Generalization.general>
+              </UML:Generalization>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Controllers Package -->
+        <UML:Package xmi.id="package_Controllers" name="Controllers">
+          <UML:Namespace.ownedElement>
+            <!-- MainController Class -->
+            <UML:Class xmi.id="class_MainController" name="MainController" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_usuario_mainController" name="usuario" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_UsuarioDTO"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_verificarGerente" name="verificarGerente" visibility="public"/>
+                <UML:Operation xmi.id="op_getUsuario" name="getUsuario" visibility="public"/>
+                <UML:Operation xmi.id="op_setUsuario" name="setUsuario" visibility="public"/>
+                <UML:Operation xmi.id="op_fazerLogin" name="fazerLogin" visibility="public"/>
+                <UML:Operation xmi.id="op_fazerLogout" name="fazerLogout" visibility="public"/>
+              </UML:Namespace.ownedElement>
+              
+              <!-- Aggregation of other controllers -->
+              <UML:Attribute xmi.id="attr_LoginController" name="loginController" visibility="private" aggregation="composite">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_LoginController"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_UsuarioController" name="usuarioController" visibility="private" aggregation="composite">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_UsuarioController"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <!-- Other Controller Classes -->
+            <UML:Class xmi.id="class_AcaoController" name="AcaoController" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_ClienteController" name="ClienteController" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_LoginController" name="LoginController" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_PromotorController" name="PromotorController" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_UsuarioController" name="UsuarioController" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

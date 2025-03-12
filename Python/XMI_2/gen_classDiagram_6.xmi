@@ -1,0 +1,221 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GreenHouseManagement" name="GreenHouseManagement">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_GreenHouse" name="GreenHouse" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_plants" name="plants" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Plants"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getPlants" name="getPlants" visibility="public"/>
+            <UML:Operation xmi.id="op_setPlants" name="setPlants" visibility="public"/>
+            <UML:Operation xmi.id="op_toString" name="toString" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Plants" name="Plants" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_plant" name="plant" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Plant"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getPlant" name="getPlant" visibility="public"/>
+            <UML:Operation xmi.id="op_toString" name="toString" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Plant" name="Plant" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_soil" name="soil" visibility="private"/>
+            <UML:Attribute xmi.id="attr_origin" name="origin" visibility="private"/>
+            <UML:Attribute xmi.id="attr_visualParams" name="visualParams" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_VisualParams"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_growingTips" name="growingTips" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_GrowingTips"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_multiplying" name="multiplying" visibility="private"/>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+            <UML:Operation xmi.id="op_getName" name="getName" visibility="public"/>
+            <UML:Operation xmi.id="op_setName" name="setName" visibility="public"/>
+            <UML:Operation xmi.id="op_getSoil" name="getSoil" visibility="public"/>
+            <UML:Operation xmi.id="op_setSoil" name="setSoil" visibility="public"/>
+            <UML:Operation xmi.id="op_getOrigin" name="getOrigin" visibility="public"/>
+            <UML:Operation xmi.id="op_setOrigin" name="setOrigin" visibility="public"/>
+            <UML:Operation xmi.id="op_getVisualParams" name="getVisualParams" visibility="public"/>
+            <UML:Operation xmi.id="op_setVisualParams" name="setVisualParams" visibility="public"/>
+            <UML:Operation xmi.id="op_getGrowingTips" name="getGrowingTips" visibility="public"/>
+            <UML:Operation xmi.id="op_setGrowingTips" name="setGrowingTips" visibility="public"/>
+            <UML:Operation xmi.id="op_getMultiplying" name="getMultiplying" visibility="public"/>
+            <UML:Operation xmi.id="op_setMultiplying" name="setMultiplying" visibility="public"/>
+            <UML:Operation xmi.id="op_getId" name="getId" visibility="public"/>
+            <UML:Operation xmi.id="op_setId" name="setId" visibility="public"/>
+            <UML:Operation xmi.id="op_toString" name="toString" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_VisualParams" name="VisualParams" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_stalkColor" name="stalkColor" visibility="private"/>
+            <UML:Attribute xmi.id="attr_leafColor" name="leafColor" visibility="private"/>
+            <UML:Attribute xmi.id="attr_averageSize" name="averageSize" visibility="private"/>
+            <UML:Operation xmi.id="op_getStalkColor" name="getStalkColor" visibility="public"/>
+            <UML:Operation xmi.id="op_setStalkColor" name="setStalkColor" visibility="public"/>
+            <UML:Operation xmi.id="op_getLeafColor" name="getLeafColor" visibility="public"/>
+            <UML:Operation xmi.id="op_setLeafColor" name="setLeafColor" visibility="public"/>
+            <UML:Operation xmi.id="op_getAverageSize" name="getAverageSize" visibility="public"/>
+            <UML:Operation xmi.id="op_setAverageSize" name="setAverageSize" visibility="public"/>
+            <UML:Operation xmi.id="op_toString" name="toString" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GrowingTips" name="GrowingTips" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_temperature" name="temperature" visibility="private"/>
+            <UML:Attribute xmi.id="attr_lighting" name="lighting" visibility="private"/>
+            <UML:Attribute xmi.id="attr_watering" name="watering" visibility="private"/>
+            <UML:Operation xmi.id="op_getTemperature" name="getTemperature" visibility="public"/>
+            <UML:Operation xmi.id="op_setTemperature" name="setTemperature" visibility="public"/>
+            <UML:Operation xmi.id="op_isLighting" name="isLighting" visibility="public"/>
+            <UML:Operation xmi.id="op_setLighting" name="setLighting" visibility="public"/>
+            <UML:Operation xmi.id="op_getWatering" name="getWatering" visibility="public"/>
+            <UML:Operation xmi.id="op_setWatering" name="setWatering" visibility="public"/>
+            <UML:Operation xmi.id="op_toString" name="toString" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ObjectFactory" name="ObjectFactory" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_createGreenHouse" name="createGreenHouse" visibility="public"/>
+            <UML:Operation xmi.id="op_createGreenHousePlants" name="createGreenHousePlants" visibility="public"/>
+            <UML:Operation xmi.id="op_createGreenHousePlantsPlant" name="createGreenHousePlantsPlant" visibility="public"/>
+            <UML:Operation xmi.id="op_createGreenHousePlantsPlantVisualParams" name="createGreenHousePlantsPlantVisualParams" visibility="public"/>
+            <UML:Operation xmi.id="op_createGreenHousePlantsPlantGrowingTips" name="createGreenHousePlantsPlantGrowingTips" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DOMParser" name="DOMParser" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_parseFile" name="parseFile" visibility="public"/>
+            <UML:Operation xmi.id="op_parsePlants" name="parsePlants" visibility="public"/>
+            <UML:Operation xmi.id="op_parsePlant" name="parsePlant" visibility="public"/>
+            <UML:Operation xmi.id="op_parseVisualParams" name="parseVisualParams" visibility="public"/>
+            <UML:Operation xmi.id="op_parseGrowingTips" name="parseGrowingTips" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractXMLParser"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SAXParser" name="SAXParser" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_temp" name="temp" visibility="private"/>
+            <UML:Operation xmi.id="op_parseFile" name="parseFile" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractXMLParser"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_StAXParser" name="StAXParser" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_parseFile" name="parseFile" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractXMLParser"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_XMLParserFactory" name="XMLParserFactory" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getXMLParser" name="getXMLParser" visibility="public"/>
+            <UML:Operation xmi.id="op_getInstance" name="getInstance" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Association>
+            <UML:AssociationEnd xmi.id="assoc_XMLParserFactory_Parser" type="class_DOMParser" name="domParser" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assoc_XMLParserFactory_Parser" type="class_SAXParser" name="saxParser" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assoc_XMLParserFactory_Parser" type="class_StAXParser" name="staxParser" visibility="public" aggregation="none"/>
+          </UML:Association>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AbstractXMLParser" name="AbstractXMLParser" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_greenHouse" name="greenHouse" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_GreenHouse"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_parse" name="parse" visibility="public"/>
+            <UML:Operation xmi.id="op_renameRootElement" name="renameRootElement" visibility="public"/>
+            <UML:Operation xmi.id="op_writeDocument" name="writeDocument" visibility="public"/>
+            <UML:Operation xmi.id="op_parseFile" name="parseFile" visibility="public"/>
+            <UML:Operation xmi.id="op_validate" name="validate" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_XMLParser" name="XMLParser">
+          <UML:Operation xmi.id="op_parseXML" name="parseXML" visibility="public"/>
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_GreenHouseTags" name="GreenHouseTags" visibility="protected"/>
+
+        <UML:DataType xmi.id="enum_XMLParserType" name="XMLParserType">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="lit_DOM" name="DOM"/>
+            <UML:EnumerationLiteral xmi.id="lit_SAX" name="SAX"/>
+            <UML:EnumerationLiteral xmi.id="lit_STAX" name="STAX"/>
+          </UML:Namespace.ownedElement>
+        </UML:DataType>
+
+        <UML:Class xmi.id="class_InvalidDocumentException" name="InvalidDocumentException" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Exception"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ContentHandler" name="ContentHandler" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Locator" name="Locator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Attributes" name="Attributes" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_ProjectUtils" name="ProjectUtils" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_checkNotNull" name="checkNotNull" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Int" name="Int"/>
+        <UML:DataType xmi.id="Float" name="Float"/>
+        <UML:DataType xmi.id="Byte" name="Byte"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

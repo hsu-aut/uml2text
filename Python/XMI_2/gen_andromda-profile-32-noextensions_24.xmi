@@ -1,0 +1,92 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DataModel" name="DataModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package: datatype -->
+        <UML:Package xmi.id="package_datatype" name="datatype" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Integer" name="Integer" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_Integer_int" parent="class_int"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_int" name="int" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Boolean" name="Boolean" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_StringArray" name="String[]" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_doubleArray" name="double[]" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_DateTime" name="DateTime" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_boolean" name="boolean" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Object" name="Object" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_List" name="List" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_long" name="long" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Byte" name="Byte" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Character" name="Character" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_charArray" name="char[]" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Map" name="Map" visibility="public" isAbstract="false"/>
+            <!-- Further datatypes could be added similarly -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: webservice -->
+        <UML:Package xmi.id="package_webservice" name="webservice" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_WebService" name="WebService"/>
+            <UML:Stereotype xmi.id="stereotype_WebServiceProvider" name="WebServiceProvider">
+              <UML:Stereotype.tagDefinition>
+                <UML:TaggedValue xmi.id="taggedValue_WSP_RPC" tag="value" value="RPC"/>
+                <UML:TaggedValue xmi.id="taggedValue_WSP_EJB" tag="value" value="EJB"/>
+              </UML:Stereotype.tagDefinition>
+            </UML:Stereotype>
+            <UML:Stereotype xmi.id="stereotype_WebServiceStyle" name="WebServiceStyle">
+              <UML:Stereotype.tagDefinition>
+                <UML:TaggedValue xmi.id="taggedValue_WSS_wrapped" tag="value" value="wrapped"/>
+                <UML:TaggedValue xmi.id="taggedValue_WSS_document" tag="value" value="document"/>
+                <UML:TaggedValue xmi.id="taggedValue_WSS_rpc" tag="value" value="rpc"/>
+              </UML:Stereotype.tagDefinition>
+            </UML:Stereotype>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: service -->
+        <UML:Package xmi.id="package_service" name="service" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_Service" name="Service"/>
+            <UML:TagDefinition xmi.id="tag_andromda_spring_service_interceptors" name="@andromda.spring.service.interceptors" tagType="String"/>
+            <UML:TagDefinition xmi.id="tag_andromda_spring_service_config_only" name="@andromda.spring.service.config.only" tagType="Boolean"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: persistence -->
+        <UML:Package xmi.id="package_persistence" name="persistence" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_Manageable" name="Manageable"/>
+            <UML:Stereotype xmi.id="stereotype_Entity" name="Entity"/>
+            <UML:Stereotype xmi.id="stereotype_Criteria" name="Criteria"/>
+            <UML:Stereotype xmi.id="stereotype_FinderMethod" name="FinderMethod"/>
+            <UML:TagDefinition xmi.id="tag_andromda_persistence_column" name="@andromda.persistence.column" tagType="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package: presentation -->
+        <UML:Package xmi.id="package_presentation" name="presentation" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Stereotype xmi.id="stereotype_FrontEndApplication" name="FrontEndApplication"/>
+            <UML:Stereotype xmi.id="stereotype_FrontEndUseCase" name="FrontEndUseCase"/>
+            <UML:TagDefinition xmi.id="tag_andromda_presentation_web_action_type" name="@andromda.presentation.web.action.type" tagType="String"/>
+            <UML:TagDefinition xmi.id="tag_andromda_presentation_view_field_reset" name="@andromda.presentation.view.field.reset" tagType="Boolean"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+        <UML:Stereotype xmi.id="stereotype_pseudo" name="pseudo"/>
+        <UML:Stereotype xmi.id="stereotype_python" name="python"/>
+
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="datatype_Generator" name="Generator" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_int" name="int" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_bool" name="bool" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_Callable" name="Callable" isAbstract="false"/>
+                <UML:Class xmi.id="datatype_undef" name="undef" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="package_pyutil" name="pyutil">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_UI" name="UI" isAbstract="false"/>
+                <UML:Class xmi.id="class_Process" name="Process" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="operation_cwd" name="cwd" visibility="public"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Package xmi.id="package_exceptions_pyutil" name="exceptions">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="exception_TooLargeError_pyutil" name="TooLargeError" isAbstract="false">
+                      <UML:Generalization xmi.id="gen_TooLargeError_Exception_pyutil" parent="exception_Exception_pyutil"/>
+                    </UML:Class>
+                    <UML:Class xmi.id="exception_TimeoutError_pyutil" name="TimeoutError" isAbstract="false">
+                      <UML:Generalization xmi.id="gen_TimeoutError_Exception_pyutil" parent="exception_Exception_pyutil"/>
+                    </UML:Class>
+                    <UML:Class xmi.id="exception_SecurityError_pyutil" name="SecurityError" isAbstract="false">
+                      <UML:Generalization xmi.id="gen_SecurityError_Exception_pyutil" parent="exception_Exception_pyutil"/>
+                    </UML:Class>
+                    <UML:Class xmi.id="exception_Exception_pyutil" name="Exception" isAbstract="false"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="package_ff" name="ff">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_Dir" name="Dir" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_Dir_File" parent="class_File"/>
+                </UML:Class>
+                <UML:Class xmi.id="class_File" name="File" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_access_rights" name="access_rights" visibility="private"/>
+                    <UML:Attribute xmi.id="attr_group" name="group" visibility="private"/>
+                    <UML:Attribute xmi.id="attr_owner" name="owner" visibility="private"/>
+                    <UML:Operation xmi.id="operation_is_mountpoint" name="is_mountpoint" visibility="public"/>
+                    <UML:Operation xmi.id="operation_eq" name="__eq__" visibility="public"/>
+                    <UML:Operation xmi.id="operation_abs_path" name="abs_path" visibility="public"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Class xmi.id="class_FileFunctionality" name="FileFunctionality" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Interface xmi.id="interface_DirOps" name="DirOps"/>
+            <UML:Interface xmi.id="interface_FileOps" name="FileOps"/>
+            <UML:Interface xmi.id="interface_LinkOps" name="LinkOps"/>
+            <UML:Interface xmi.id="interface_RegOps" name="RegOps"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_python" name="python">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Function" name="Function" isAbstract="false"/>
+            <UML:Class xmi.id="class_Basic" name="Basic" isAbstract="false"/>
+            <UML:Class xmi.id="class_Container" name="Container" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_exceptions_python" name="exceptions_python">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="exception_EnvironmentError" name="EnvironmentError" isAbstract="false"/>
+            <UML:Class xmi.id="exception_IOError" name="IOError" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

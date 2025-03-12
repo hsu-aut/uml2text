@@ -1,0 +1,121 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EAModel" name="EA Model">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_EARootClass" name="EARootClass" visibility="public" isAbstract="false"/>
+        
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_DataModel" name="Data Model">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Class xmi.id="class_ADDRESS" name="ADDRESS" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_ADDRESS_ID" name="ID" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="class_Number"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_ADDRESS_ZIP" name="ZIP" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="class_String"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_PERSON" name="PERSON" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_PERSON_ID" name="ID" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="class_Number"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_PERSON_NAME" name="NAME" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="class_String"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_PERSON_ADDRESS_ID" name="ADDRESS_ID" visibility="private">
+                      <UML:StructuralFeature.type>
+                        <UML:Class xmi.idref="class_ADDRESS"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Association xmi.id="assoc_PERSON_ADDRESS" name="livesAt" visibility="public">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_PERSON_ADDRESS_PERSON" type="class_PERSON" name="person" visibility="public" aggregation="none" multiplicity="1"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_PERSON_ADDRESS_ADDRESS" type="class_ADDRESS" name="address" visibility="public" aggregation="none" multiplicity="1"/>
+                  </UML:Association.connection>
+                </UML:Association>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Package xmi.id="package_LogicalModel" name="Logical Model">
+              <UML:Namespace.ownedElement>
+                
+                <UML:Package xmi.id="package_domain" name="domain">
+                  <UML:Namespace.ownedElement>
+                    
+                    <UML:Class xmi.id="class_DomainPerson" name="Person" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_DomainPerson_id" name="id" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="class_Integer"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_DomainPerson_name" name="name" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="class_String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    
+                    <UML:Class xmi.id="class_DomainAddress" name="Address" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_DomainAddress_id" name="id" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="class_Integer"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_DomainAddress_zip" name="zip" visibility="private">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="class_String"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:DataType xmi.id="class_Integer" name="Integer"/>
+        <UML:DataType xmi.id="class_String" name="String"/>
+        <UML:DataType xmi.id="class_Number" name="Number"/>
+        <UML:Class xmi.id="class_Date" name="Date" visibility="public"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

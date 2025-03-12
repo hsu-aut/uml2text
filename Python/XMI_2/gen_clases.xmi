@@ -1,0 +1,208 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SpatialModel" name="SpatialModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse Antena -->
+        <UML:Class xmi.id="class_Antena" name="Antena" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_p" name="p" visibility="private"/>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Punto -->
+        <UML:Class xmi.id="class_Punto" name="Punto" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_z" name="z" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Nodo -->
+        <UML:Class xmi.id="class_Nodo" name="Nodo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_largo" name="largo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ancho" name="ancho" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tieneImpresora" name="tieneImpresora" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="boolean"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_descripcion" name="descripcion" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Mapa -->
+        <UML:Class xmi.id="class_Mapa" name="Mapa" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Assumed attributes based on description -->
+            <UML:Attribute xmi.id="attr_mapNodos" name="mapNodos" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mapAristas" name="mapAristas" visibility="private"/>
+            <UML:Attribute xmi.id="attr_numNodos" name="numNodos" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Triangulador -->
+        <UML:Class xmi.id="class_Triangulador" name="Triangulador" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse BaseDatos -->
+        <UML:Class xmi.id="class_BaseDatos" name="BaseDatos" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nombreBaseDatos" name="nombreBaseDatos" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_usuario" name="usuario" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_password" name="password" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse JavaServer -->
+        <UML:Class xmi.id="class_JavaServer" name="JavaServer" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Fehlerklassen -->
+        <UML:Class xmi.id="class_EliminaValorTablaException" name="EliminaValorTablaException" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_serialVersionUID_897" name="serialVersionUID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_ModificaValorTablaException" name="ModificaValorTablaException" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_serialVersionUID_954" name="serialVersionUID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_InsertaValorTablaException" name="InsertaValorTablaException" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_serialVersionUID_1184" name="serialVersionUID" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziation zwischen Antena und Punto -->
+        <UML:Association xmi.id="assoc_Antena_Punto">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Antena_Punto_Antena" type="class_Antena" name="antena" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Antena_Punto_Punto" type="class_Punto" name="punto" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Antena und Triangulador -->
+        <UML:Association xmi.id="assoc_Antena_Triangulador">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Antena_Triangulador_Antena" type="class_Antena" name="antena" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Antena_Triangulador_Triangulador" type="class_Triangulador" name="triangulador" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Nodo und Mapa -->
+        <UML:Association xmi.id="assoc_Nodo_Mapa">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Nodo_Mapa_Nodo" type="class_Nodo" name="nodo" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Nodo_Mapa_Mapa" type="class_Mapa" name="mapa" visibility="public" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Assoziation zwischen Punto und Mapa -->
+        <UML:Association xmi.id="assoc_Punto_Mapa">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Punto_Mapa_Punto" type="class_Punto" name="punto" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Punto_Mapa_Mapa" type="class_Mapa" name="mapa" visibility="public" aggregation="composite"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Triangulador und Punto -->
+        <UML:Association xmi.id="assoc_Triangulador_Punto">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Triangulador_Punto_Triangulador" type="class_Triangulador" name="triangulador" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Triangulador_Punto_Punto" type="class_Punto" name="punto" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen BaseDatos und JavaServer -->
+        <UML:Association xmi.id="assoc_BaseDatos_JavaServer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_BaseDatos_JavaServer_BaseDatos" type="class_BaseDatos" name="baseDatos" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_BaseDatos_JavaServer_JavaServer" type="class_JavaServer" name="javaServer" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="boolean" name="boolean"/>
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="long" name="long"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

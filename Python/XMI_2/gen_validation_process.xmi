@@ -1,0 +1,63 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model" visibility="public">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="m1_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedint" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedshort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedlong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="m1_UseCaseView" name="Use Case View" visibility="public"/>
+        <UML:Package xmi.id="m1_ComponentView" name="Component View" visibility="public"/>
+        <UML:Package xmi.id="m1_DeploymentView" name="Deployment View" visibility="public"/>
+        <UML:Package xmi.id="m1_EntityRelationshipModel" name="Entity Relationship Model" visibility="public"/>
+        
+        <UML:ActivityGraph xmi.id="activity_SoftwareDevelopment" name="Software Development Phases" visibility="public">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="activity_top" name="top">
+              <UML:CompositeState.subvertex>
+                <UML:ActionState xmi.id="action_GatheringRequirements" name="Gathering Requirements"/>
+                <UML:ActionState xmi.id="action_DefiningSpecification" name="Defining Specification"/>
+                <UML:ActionState xmi.id="action_ComponentPrototyping" name="Component Prototyping"/>
+                <UML:ActionState xmi.id="action_ComponentImplementation" name="Component Implementation"/>
+                <UML:ActionState xmi.id="action_ComponentTestInIsolation" name="Component Test in Isolation"/>
+                <UML:ActionState xmi.id="action_IntegrationOfComponents" name="Integration of Components"/>
+                <UML:ActionState xmi.id="action_IntegrationTesting" name="Integration Testing"/>
+                <UML:FinalState xmi.id="final_End" name="End"/>
+              </UML:CompositeState.subvertex>
+
+              <!-- State Transitions -->
+              <UML:Transition xmi.id="trans_GatheringRequirements_to_DefiningSpecification" source="action_GatheringRequirements" target="action_DefiningSpecification"/>
+              <UML:Transition xmi.id="trans_DefiningSpecification_to_ComponentPrototyping" source="action_DefiningSpecification" target="action_ComponentPrototyping"/>
+              <UML:Transition xmi.id="trans_ComponentPrototyping_to_ComponentImplementation" source="action_ComponentPrototyping" target="action_ComponentImplementation"/>
+              <UML:Transition xmi.id="trans_ComponentImplementation_to_ComponentTestInIsolation" source="action_ComponentImplementation" target="action_ComponentTestInIsolation"/>
+              <UML:Transition xmi.id="trans_ComponentTestInIsolation_to_IntegrationOfComponents" source="action_ComponentTestInIsolation" target="action_IntegrationOfComponents"/>
+              <UML:Transition xmi.id="trans_IntegrationOfComponents_to_IntegrationTesting" source="action_IntegrationOfComponents" target="action_IntegrationTesting"/>
+              <UML:Transition xmi.id="trans_IntegrationTesting_to_End" source="action_IntegrationTesting" target="final_End"/>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:ActivityGraph>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

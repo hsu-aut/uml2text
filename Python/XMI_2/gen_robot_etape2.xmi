@@ -1,0 +1,84 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_RobotArch" name="RobotArch">
+      <UML:Namespace.ownedElement>
+        <!-- Basic Datatypes -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="std::string"/>
+        <UML:DataType xmi.id="datatype_vectorObserver" name="std::vector<Observer*>"/>
+
+        <!-- Class Robot -->
+        <UML:Class xmi.id="class_Robot" name="Robot" visibility="public" isAbstract="false"/>
+
+        <!-- Class RobotObservable -->
+        <UML:Class xmi.id="class_RobotObservable" name="RobotObservable" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_observers" name="observers" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_vectorObserver"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_addObserver" name="addObserver" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="param_observer" name="observer" kind="in" type="Observer*"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_removeObserver" name="removeObserver" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="param_observer" name="observer" kind="in" type="Observer*"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_notifierAvancer" name="notifierAvancer" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="param_position" name="position" kind="in" type="Position*"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class Observer -->
+        <UML:Class xmi.id="class_Observer" name="Observer" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_changeEtat" name="changeEtat" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_bouge" name="bouge" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_tourne" name="tourne" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_saisit" name="saisit" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class ObserverTty -->
+        <UML:Class xmi.id="class_ObserverTty" name="ObserverTty" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ObserverTty" child="class_ObserverTty" parent="class_Observer"/>
+        </UML:Class>
+
+        <!-- Inheritance: RobotObservable inherits Robot -->
+        <UML:Generalization xmi.id="gen_Robot_RobotObservable" child="class_Robot" parent="class_RobotObservable"/>
+
+        <!-- Aggregation: RobotObservable to Observer  -->
+        <UML:Association xmi.id="assoc_RobotObservable_Observer">
+          <UML:AssociationEnd xmi.id="assocEnd_RobotObservable" type="class_RobotObservable" aggregation="aggregate" name="robotObservable"/>
+          <UML:AssociationEnd xmi.id="assocEnd_Observer" type="class_Observer" aggregation="none" name="observer"/>
+        </UML:Association>
+
+        <!-- Additional Related Classes -->
+        <UML:Class xmi.id="class_EtatRobot" name="EtatRobot" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Position" name="Position" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Objet" name="Objet" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Obstacle" name="Obstacle" visibility="public" isAbstract="false"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

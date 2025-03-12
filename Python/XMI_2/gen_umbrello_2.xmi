@@ -1,0 +1,129 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModèleUML" name="Modèle UML">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_vector_float" name="std::vector&lt; float >"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+
+            <UML:Class xmi.id="class_source" name="source" isAbstract="true" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_V" name="V" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_phi" name="phi" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_Ve" name="Ve" visibility="public"/>
+                <UML:Operation xmi.id="op_Ve_p" name="Ve_p" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+
+            <UML:Class xmi.id="class_echelon" name="echelon" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_source"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+
+            <UML:Class xmi.id="class_triangle" name="triangle" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_source"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+
+            <UML:Class xmi.id="class_impulsion" name="impulsion" isAbstract="false" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_T" name="T" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_float"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_source"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+
+            <UML:Class xmi.id="class_periodique" name="periodique" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_source"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+
+            <UML:Class xmi.id="class_impulsion_periodique" name="impulsion_periodique" isAbstract="false" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_impulsion"/>
+                </UML:Generalization.child>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_periodique"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:Class>
+
+
+            <UML:Class xmi.id="class_euler" name="euler" isAbstract="false" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_nmax" name="nmax" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_epsilon" name="epsilon" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_main_loop" name="main_loop" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

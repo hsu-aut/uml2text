@@ -1,0 +1,196 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_PackageManagementSystem" name="PackageManagementSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse AbtPackage -->
+        <UML:Class xmi.id="class_AbtPackage" name="AbtPackage" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_DESCRIPTION" name="DESCRIPTION" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_INTEGRITY" name="INTEGRITY" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_LICENSE" name="LICENSE" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_NAME" name="NAME" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_SRCDIR" name="SRCDIR" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_SRCFILE" name="SRCFILE" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_SRCURL" name="SRCURL" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_URL" name="URL" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_VERSION" name="VERSION" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_build" name="build" visibility="public" />
+            <UML:Operation xmi.id="op_configure" name="configure" visibility="public" />
+            <UML:Operation xmi.id="op_details" name="details" visibility="public" />
+            <UML:Operation xmi.id="op_install" name="install" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse DepEngine -->
+        <UML:Class xmi.id="class_DepEngine" name="DepEngine" visibility="public" isAbstract="false">
+          <!-- Attributes and Operations not specified -->
+        </UML:Class>
+
+        <!-- Definition der Klasse AbtPackageManager -->
+        <UML:Class xmi.id="class_AbtPackageManager" name="AbtPackageManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_downgradePackage" name="downgradePackage" visibility="public" />
+            <UML:Operation xmi.id="op_freezePackage" name="freezePackage" visibility="public" />
+            <UML:Operation xmi.id="op_installPackage" name="installPackage" visibility="public" />
+            <UML:Operation xmi.id="op_reinstallPackage" name="reinstallPackage" visibility="public" />
+            <UML:Operation xmi.id="op_removePackage" name="removePackage" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse DownloadManager -->
+        <UML:Class xmi.id="class_DownloadManager" name="DownloadManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_retrieveNewsFeed" name="retrieveNewsFeed" visibility="public" />
+            <UML:Operation xmi.id="op_retrievePackageSource" name="retrievePackageSource" visibility="public" />
+            <UML:Operation xmi.id="op_retrievePackageTree" name="retrievePackageTree" visibility="public" />
+            <UML:Operation xmi.id="op_updatePackage" name="updatePackage" visibility="public" />
+            <UML:Operation xmi.id="op_updatePackageTree" name="updatePackageTree" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse LogManager -->
+        <UML:Class xmi.id="class_LogManager" name="LogManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_cachePackage" name="cachePackage" visibility="public" />
+            <UML:Operation xmi.id="op_logPackageBuild" name="logPackageBuild" visibility="public" />
+            <UML:Operation xmi.id="op_logPackageInstall" name="logPackageInstall" visibility="public" />
+            <UML:Operation xmi.id="op_logToJournal" name="logToJournal" visibility="public" />
+            <UML:Operation xmi.id="op_logPackageIntegrity" name="logPackageIntegrity" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse AbtReportManager -->
+        <UML:Class xmi.id="class_AbtReportManager" name="AbtReportManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_generateHTMLPackageList" name="generateHTMLPackageList" visibility="public" />
+            <UML:Operation xmi.id="op_searchPackageDescriptions" name="searchPackageDescriptions" visibility="public" />
+            <UML:Operation xmi.id="op_showFileOwner" name="showFileOwner" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse AbtSystemManager -->
+        <UML:Class xmi.id="class_AbtSystemManager" name="AbtSystemManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_cleanupLogs" name="cleanupLogs" visibility="public" />
+            <UML:Operation xmi.id="op_cleanupPackageSources" name="cleanupPackageSources" visibility="public" />
+            <UML:Operation xmi.id="op_fixPackage" name="fixPackage" visibility="public" />
+            <UML:Operation xmi.id="op_setCentralRepo" name="setCentralRepo" visibility="public" />
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse AbtQueueManager -->
+        <UML:Class xmi.id="class_AbtQueueManager" name="AbtQueueManager" visibility="public" isAbstract="false">
+          <!-- Attributes and Operations not specified -->
+        </UML:Class>
+
+        <!-- Definition der Assoziationen -->
+        <UML:Association xmi.id="assoc_AbtPackageManager_AbtPackage" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtPackageManager" type="class_AbtPackageManager" name="packageManager" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtPackage" type="class_AbtPackage" name="package" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_AbtPackageManager_LogManager" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtPackageManager_LogManager" type="class_AbtPackageManager" name="packageManager" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_LogManager" type="class_LogManager" name="logManager" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_AbtPackageManager_DownloadManager" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtPackageManager_DownloadManager" type="class_AbtPackageManager" name="packageManager" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DownloadManager" type="class_DownloadManager" name="downloadManager" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_AbtPackageManager_DepEngine" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtPackageManager_DepEngine" type="class_AbtPackageManager" name="packageManager" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DepEngine" type="class_DepEngine" name="depEngine" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DownloadManager_AbtPackage" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DownloadManager_AbtPackage" type="class_DownloadManager" name="downloadManager" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtPackageDownload" type="class_AbtPackage" name="package" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_AbtSystemManager_AbtPackageManager" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtSystemManager" type="class_AbtSystemManager" name="systemManager" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtPackageManagerSystem" type="class_AbtPackageManager" name="packageManager" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_AbtQueueManager_AbtPackageManager" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtQueueManager" type="class_AbtQueueManager" name="queueManager" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AbtPackageManagerQueue" type="class_AbtPackageManager" name="packageManager" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition primitiver Datentypen -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="string" name="string"/>
+        <UML:DataType xmi.id="void" name="void"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AlarmSystem" name="AlarmSystem">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse DAOManager -->
+        <UML:Class xmi.id="class_DAOManager" name="DAOManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_alarmDAOImpl" name="_alarmDAOImpl" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ACSAlarmDAOImpl"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_categoryDAOImpl" name="_categoryDAOImpl" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ACSCategoryDAOImpl"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sourceDAOImpl" name="_sourceDAOImpl" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ACSSourceDAOImpl"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getAlarmDAO" name="getAlarmDAO" visibility="public"/>
+            <UML:Operation xmi.id="op_getCategoryDAO" name="getCategoryDAO" visibility="public"/>
+            <UML:Operation xmi.id="op_getSourceDAO" name="getSourceDAO" visibility="public"/>
+            <UML:Operation xmi.id="op_connect" name="connect" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse AlarmSystemManager -->
+        <UML:Class xmi.id="class_AlarmSystemManager" name="AlarmSystemManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_alarmsManager" name="_alarmsManager" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AlarmsManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_categoriesManager" name="_categoriesManager" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_CategoriesManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_reductionsManager" name="_reductionsManager" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ReductionsManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sourcesManager" name="_sourcesManager" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SourcesManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_instance" name="_instance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AlarmSystemManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getInstance" name="getInstance" visibility="public"/>
+            <UML:Operation xmi.id="op_getReductionsManager" name="getReductionsManager" visibility="public"/>
+            <UML:Operation xmi.id="op_getCategoriesManager" name="getCategoriesManager" visibility="public"/>
+            <UML:Operation xmi.id="op_getAlarmsManager" name="getAlarmsManager" visibility="public"/>
+            <UML:Operation xmi.id="op_getSourcesManager" name="getSourcesManager" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klassen AlarmsManager, CategoriesManager, ReductionsManager, SourcesManager -->
+        <UML:Class xmi.id="class_AlarmsManager" name="AlarmsManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_instance_alarms" name="_instance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_AlarmsManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CategoriesManager" name="CategoriesManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_instance_categories" name="_instance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_CategoriesManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ReductionsManager" name="ReductionsManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_instance_reductions" name="_instance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ReductionsManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_SourcesManager" name="SourcesManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_instance_sources" name="_instance" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SourcesManager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klassen ACSAlarmDAOImpl, ACSCategoryDAOImpl, ACSSourceDAOImpl -->
+        <UML:Class xmi.id="class_ACSAlarmDAOImpl" name="ACSAlarmDAOImpl" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ACSCategoryDAOImpl" name="ACSCategoryDAOImpl" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ACSSourceDAOImpl" name="ACSSourceDAOImpl" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

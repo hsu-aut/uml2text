@@ -1,0 +1,132 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Custom Exporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Network" name="NetworkModel">
+      <UML:Namespace.ownedElement>
+      
+        <UML:Class xmi.id="class_yappiClient" name="yappiClient" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_clientId" name="id" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_connectStatus" name="connectStatus" visibility="private" type="Integer"/>
+            <UML:Operation xmi.id="op_findDataSource" name="findDataSource" visibility="public"/>
+            <UML:Operation xmi.id="op_dataRegister" name="dataRegister" visibility="public"/>
+            <UML:Operation xmi.id="op_findPeers" name="findPeers" visibility="public"/>
+            <UML:Operation xmi.id="op_connect" name="connect" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_yappiServer" name="yappiServer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_streams" name="m_streams" visibility="private" type="dataStream*"/>
+            <UML:Attribute xmi.id="attr_serverType" name="serverType" visibility="private" type="Integer"/>
+            <UML:Operation xmi.id="op_listenConnection" name="listenConnection" visibility="public"/>
+            <UML:Operation xmi.id="op_localSearch" name="localSearch" visibility="public"/>
+            <UML:Operation xmi.id="op_forwardSearch" name="forwardSearch" visibility="public"/>
+            <UML:Operation xmi.id="op_newData" name="newData" visibility="public"/>
+            <UML:Operation xmi.id="op_onConnection" name="onConnection" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_yappiNode" name="yappiNode" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_server" name="m_server" visibility="private" type="yappiServer*"/>
+            <UML:Attribute xmi.id="attr_m_clients" name="m_clients" visibility="private" type="yappiClient*"/>
+            <UML:Operation xmi.id="op_new" name="new" visibility="public"/>
+            <UML:Operation xmi.id="op_subscribe" name="subscribe" visibility="public"/>
+            <UML:Operation xmi.id="op_updateCallback" name="updateCallback" visibility="public"/>
+            <UML:Operation xmi.id="op_statusCallBack" name="statusCallBack" visibility="public"/>
+            <UML:Operation xmi.id="op_sendupdate" name="sendupdate" visibility="public"/>
+            <UML:Operation xmi.id="op_publish" name="publish" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_yappiConnection" name="yappiConnection" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_remoteNode" name="remoteNode" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_status" name="status" visibility="private" type="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_dataEvent" name="dataEvent" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_evDEntity" name="evDEntity" visibility="private" type="dataEntity"/>
+            <UML:Attribute xmi.id="attr_data" name="data" visibility="private" type="dataTick"/>
+            <UML:Attribute xmi.id="attr_contributor" name="contributor" visibility="private" type="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_dataEntity" name="dataEntity" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_deName" name="deName" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_deDescription" name="deDescription" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_deLastUpdate" name="deLastUpdate" visibility="private" type="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_dataStream" name="dataStream" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_connections" name="m_connections" visibility="private"/>
+            <UML:Attribute xmi.id="attr_lstTick" name="lstTick" visibility="private" type="dataTick"/>
+            <UML:Operation xmi.id="op_injectData" name="injectData" visibility="public"/>
+            <UML:Operation xmi.id="op_readData" name="readData" visibility="public"/>
+            <UML:Operation xmi.id="op_onReceive" name="onReceive" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_dataTick" name="dataTick" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_time" name="time" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_xmlData" name="xmlData" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_dType" name="dType" visibility="private" type="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_dataType" name="dataType" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_dtemplate" name="dtemplate" visibility="private" type="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_yappiNode_yappiServer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_yappiNode_yappiServer_Node" type="class_yappiNode" name="node" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_yappiNode_yappiServer_Server" type="class_yappiServer" name="server" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_yappiNode_yappiClient">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_yappiNode_yappiClient_Node" type="class_yappiNode" name="node" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_yappiNode_yappiClient_Client" type="class_yappiClient" name="client" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_dataEvent_dataEntity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_dataEvent_dataEntity_Event" type="class_dataEvent" name="event" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_dataEvent_dataEntity_Entity" type="class_dataEntity" name="entity" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_dataStream_dataTick">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_dataStream_dataTick_Stream" type="class_dataStream" name="stream" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_dataStream_dataTick_Tick" type="class_dataTick" name="tick" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

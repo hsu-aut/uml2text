@@ -1,0 +1,163 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+
+        <!-- Definition der Klasse NodeFo -->
+        <UML:Class xmi.id="class_NodeFo" name="NodeFo" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_NodeFo_m_vecAttributes" name="m_vecAttributes" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_Vector_AttributeFo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_NodeFo_m_qDomElement" name="m_qDomElement" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_QDomElement"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="operation_NodeFo_attributeValueByType" name="attributeValueByType" visibility="public" isSpecification="false" isQuery="true">
+              <UML:Parameter xmi.id="param_return" name="return" kind="return" type="AttributeFoData*"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse ObjectFoDoc -->
+        <UML:Class xmi.id="class_ObjectFoDoc" name="ObjectFoDoc" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_NodeFo"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_QObject"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse ObjectFoSimpleDoc -->
+        <UML:Class xmi.id="class_ObjectFoSimpleDoc" name="ObjectFoSimpleDoc" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ObjectFoDoc"/>
+            </UML:Generalization.child>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_NodeFo"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_ObjectFoSimpleDoc_m_data" name="m_data" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_NodeFo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse ObjectFoSequencedDoc -->
+        <UML:Class xmi.id="class_ObjectFoSequencedDoc" name="ObjectFoSequencedDoc" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_ObjectFoSequencedDoc_m_pFoSimplePageMasterPart" name="m_pFoSimplePageMasterPart" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_NodeFo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ObjectFoSequencedDoc_m_pFoPageSequencePart" name="m_pFoPageSequencePart" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_NodeFo"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Generalization für FoBodyRegionDoc, PageDoc -->
+        <UML:Class xmi.id="class_FoBodyRegionDoc" name="FoBodyRegionDoc" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ObjectFoSequencedDoc"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PageDoc" name="PageDoc" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ObjectFoSequencedDoc"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse FoBlockContainerDoc -->
+        <UML:Class xmi.id="class_FoBlockContainerDoc" name="FoBlockContainerDoc" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_UpperClass"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse TextContentDoc -->
+        <UML:Class xmi.id="class_TextContentDoc" name="TextContentDoc" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_ObjectFoDoc"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse MainView -->
+        <UML:Class xmi.id="class_MainView" name="MainView" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_MainView_graphicsView" name="graphicsView" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_QGraphicsView"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_MainView_mainWindow" name="mainWindow" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_MainWindow"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse QGraphicsScene -->
+        <UML:Class xmi.id="class_QGraphicsScene" name="QGraphicsScene" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_MainView"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition für QDomElement und weiteren komplexen Datentyp -->
+        <UML:Class xmi.id="datatype_QDomElement" name="QDomElement" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="datatype_Vector_AttributeFo" name="std::vector&lt;AttributeFo*&gt;" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="datatype_AttributeFoData" name="AttributeFoData*" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

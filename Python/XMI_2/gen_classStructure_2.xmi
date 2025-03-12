@@ -1,0 +1,110 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AnalysisArchitecture" name="AnalysisArchitecture">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_TSelector" name="TSelector" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_fOutput" name="fOutput" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TList"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Begin" name="Begin" visibility="public"/>
+            <UML:Operation xmi.id="op_SlaveBegin" name="SlaveBegin" visibility="public"/>
+            <UML:Operation xmi.id="op_Process" name="Process" visibility="public"/>
+            <UML:Operation xmi.id="op_SlaveTerminate" name="SlaveTerminate" visibility="public"/>
+            <UML:Operation xmi.id="op_Terminate" name="Terminate" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AnalysisBase" name="AnalysisBase" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_TSelector"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_b_branchWhatever" name="b_branchWhatever" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TBranch"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_the_branch_" name="the_branch_" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_branchType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pureweighter_" name="pureweighter_" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_PUReweighter"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_ScaleFactorPreparation" name="ScaleFactorPreparation" visibility="public"/>
+            <UML:Operation xmi.id="op_ScaleFactorCalculation" name="ScaleFactorCalculation" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TopAnalysis" name="TopAnalysis" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_AnalysisBase"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_h_histogram" name="h_histogram" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TH1"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_TopSlaveBegin" name="SlaveBegin" visibility="public"/>
+            <UML:Operation xmi.id="op_TopProcess" name="Process" visibility="public"/>
+            <UML:Operation xmi.id="op_TopSlaveTerminate" name="SlaveTerminate" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HiggsAnalysis" name="HiggsAnalysis" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_AnalysisBase"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_h_higgsHisto" name="h_higgsHisto" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TH1"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_HiggsSlaveBegin" name="SlaveBegin" visibility="public"/>
+            <UML:Operation xmi.id="op_HiggsProcess" name="Process" visibility="public"/>
+            <UML:Operation xmi.id="op_HiggsSlaveTerminate" name="SlaveTerminate" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TList" name="TList" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TBranch" name="TBranch" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_branchType" name="branchType" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PUReweighter" name="PUReweighter" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TH1" name="TH1" visibility="public" isAbstract="false"/>
+
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:Class xmi.id="class_Tree" name="TTree" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

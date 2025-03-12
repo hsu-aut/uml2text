@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="2023-10-05">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="M1" name="UML Model" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="Logical_View" name="Logical View" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes -->
+            <UML:Package xmi.id="Datatypes" name="Datatypes" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- State Diagram: Basic State -->
+            <UML:StateMachine xmi.id="Basic_State_Diagram" name="basic state diagram">
+              <UML:State xmi.id="Spawn_State" name="Spawn State">
+                <UML:State.transitions>
+                  <UML:Transition xmi.id="Transition_Spawn_Idle" source="Spawn_State" target="Idle_State">
+                    <UML:Guard xmi.id="Guard_Spawn" expression="Finished Spawning"/>
+                  </UML:Transition>
+                </UML:State.transitions>
+              </UML:State>
+              <UML:State xmi.id="Idle_State" name="Idle State">
+                <UML:StateEntry.activity>
+                  <UML:Activity xmi.id="Activity_Locates_Target" name="Locates Target"/>
+                  <UML:Activity xmi.id="Activity_Zero_Health" name="Zero Health"/>
+                </UML:StateEntry.activity>
+                <UML:State.transitions>
+                  <UML:Transition xmi.id="Transition_Idle_Attack" source="Idle_State" target="Attack_State">
+                    <UML:Guard xmi.id="Guard_Target_Found" expression="Target Found"/>
+                  </UML:Transition>
+                  <UML:Transition xmi.id="Transition_Idle_Die" source="Idle_State" target="Die_State"/>
+                </UML:State.transitions>
+              </UML:State>
+              <UML:State xmi.id="Attack_State" name="Attack State">
+                <UML:StateEntry.activity>
+                  <UML:Activity xmi.id="Activity_Lost_Target" name="Lost Target"/>
+                  <UML:Activity xmi.id="Activity_Zero_Health_2" name="Zero Health"/>
+                </UML:StateEntry.activity>
+                <UML:State.transitions>
+                  <UML:Transition xmi.id="Transition_Attack_Idle" source="Attack_State" target="Idle_State"/>
+                  <UML:Transition xmi.id="Transition_Attack_Melee" source="Attack_State" target="Melee_Attack"/>
+                  <UML:Transition xmi.id="Transition_Attack_Ranged" source="Attack_State" target="Ranged_Attack"/>
+                </UML:State.transitions>
+              </UML:State>
+              <UML:State xmi.id="Die_State" name="Die State">
+              </UML:State>
+            </UML:StateMachine>
+
+            <!-- State Diagram: Example State -->
+            <UML:StateMachine xmi.id="Example_State_Diagram" name="example state diagram">
+              <UML:State xmi.id="Wandering_State" name="Wandering State">
+                <UML:StateEntry.activity>
+                  <UML:Activity xmi.id="Activity_Tired_Walking" name="Tired of Walking"/>
+                </UML:StateEntry.activity>
+                <UML:State.transitions>
+                  <UML:Transition xmi.id="Transition_Wandering_Standing" source="Wandering_State" target="Standing_State"/>
+                </UML:State.transitions>
+              </UML:State>
+              <UML:State xmi.id="Standing_State" name="Standing State">
+                <UML:StateEntry.activity>
+                  <UML:Activity xmi.id="Activity_Bored_Standing" name="Bored With Standing"/>
+                </UML:StateEntry.activity>
+                <UML:State.transitions>
+                  <UML:Transition xmi.id="Transition_Standing_Wandering" source="Standing_State" target="Wandering_State"/>
+                  <UML:Transition xmi.id="Transition_Standing_Alert" source="Standing_State" target="Alert_State"/>
+                </UML:State.transitions>
+              </UML:State>
+              <UML:State xmi.id="Alert_State" name="Alert State">
+                <UML:StateEntry.activity>
+                  <UML:Activity xmi.id="Activity_No_Longer_Interesting" name="No Longer Interesting"/>
+                </UML:StateEntry.activity>
+                <UML:State.transitions>
+                  <UML:Transition xmi.id="Transition_Alert_Attack" source="Alert_State" target="Attack_State"/>
+                  <UML:Transition xmi.id="Transition_Alert_Flee" source="Alert_State" target="Flee_State"/>
+                </UML:State.transitions>
+              </UML:State>
+              <UML:State xmi.id="Flee_State" name="Flee State">
+              </UML:State>
+              <UML:State xmi.id="Spawn_State_Example" name="Spawn State">
+              </UML:State>
+              <UML:State xmi.id="Death_State" name="Death State">
+              </UML:State>
+            </UML:StateMachine>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

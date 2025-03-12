@@ -1,0 +1,145 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GraphicsGeneration" name="GraphicsGeneration">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_GraphicsGenerator" name="GraphicsGenerator" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_m_command" name="m_command" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Command"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_m_template" name="m_template" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_DocumentTemplate"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_m_text" name="m_text" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_GraphicsDocument"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Operation xmi.id="op_generate" name="generate" visibility="public" isAbstract="true"/>
+          <UML:Operation xmi.id="op_convert" name="convert" visibility="public">
+            <UML:Parameter xmi.id="param_from" name="from" kind="in" type="OutputFormats"/>
+            <UML:Parameter xmi.id="param_to" name="to" kind="in" type="OutputFormats"/>
+          </UML:Operation>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TikzGenerator" name="TikzGenerator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_TikzGenerator"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GraphicsGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_generate_tikz" name="generate" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GnuplotGenerator" name="GnuplotGenerator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_GnuplotGenerator"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GraphicsGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_generate_gnuplot" name="generate" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CircuitMacrosGenerator" name="CircuitMacrosGenerator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CircuitMacrosGenerator"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GraphicsGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_generate_circuitmacros" name="generate" visibility="public"/>
+          <!-- Assuming multiple inheritance, another generalization could exist -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Command" name="Command" visibility="public" isAbstract="true">
+          <UML:Operation xmi.id="op_execute_command" name="execute" visibility="public" isAbstract="true"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_LatexCommand" name="LatexCommand" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_LatexCommand"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Command"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_execute_latex" name="execute" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GenericCommand" name="GenericCommand" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_GenericCommand"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Command"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_execute_generic" name="execute" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="enum_OutputFormats" name="OutputFormats" visibility="public" isAbstract="false">
+          <UML:Enumeration.literal name="Source"/>
+          <UML:Enumeration.literal name="Postscript"/>
+          <UML:Enumeration.literal name="Pdf"/>
+          <UML:Enumeration.literal name="Eps"/>
+          <UML:Enumeration.literal name="QtImage"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DocumentTemplate" name="DocumentTemplate" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_GraphicsDocument" name="GraphicsDocument" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_initialize_graphics" name="initialize" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CircuitMacrosDocument" name="CircuitMacrosDocument" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CircuitMacrosDocument"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GraphicsDocument"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_initialize_circuitmacros" name="initialize" visibility="public"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PreviewGenerator" name="PreviewGenerator" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_PreviewGenerator"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_GraphicsGenerator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="op_generate_preview" name="generate" visibility="public"/>
+        </UML:Class>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

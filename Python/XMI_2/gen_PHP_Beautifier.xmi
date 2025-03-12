@@ -1,0 +1,84 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_PHP_Beautifier" name="PHP_Beautifier">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Klassen im Paket php_beautifier -->
+        <UML:Class xmi.id="class_PHP_Beautifier" name="PHP_Beautifier" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_addFilter" name="addFilter" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_PHP_Beautifier_Batch" name="PHP_Beautifier_Batch" visibility="public" isAbstract="false" stereotype="ConcreteDecorator">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getBatchEngine" name="getBatchEngine" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_callBeautifier" name="callBeautifier" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_PHP_Beautifier_Common" name="PHP_Beautifier_Common" visibility="public" isAbstract="false" stereotype="boundary">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_normalizeDir" name="normalizeDir" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_getLog" name="getLog" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_PHP_Beautifier_Decorator" name="PHP_Beautifier_Decorator" visibility="public" isAbstract="true" stereotype="Decorator" />
+        
+        <UML:Class xmi.id="class_PHP_Beautifier_Filter" name="PHP_Beautifier_Filter" visibility="public" isAbstract="false" stereotype="Composite">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_aFilterTokenFunctions" name="aFilterTokenFunctions" visibility="private"/>
+            <UML:Attribute xmi.id="attr_aSettings" name="aSettings" visibility="private"/>
+            <UML:Attribute xmi.id="attr_aSettingsDefinition" name="aSettingsDefinition" visibility="private"/>
+            <UML:Attribute xmi.id="attr_sDescription" name="sDescription" visibility="private"/>
+            <UML:Attribute xmi.id="attr_bOn" name="bOn" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PHP_Beautifier_Filter_Default" name="PHP_Beautifier_Filter_Default" visibility="public" isAbstract="false"/>
+        
+        <UML:Interface xmi.id="interface_PHP_Beautifier_Interface" name="PHP_Beautifier_Interface" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_process" name="process" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_get" name="get" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_show" name="show" visibility="public" isAbstract="true"/>
+            <UML:Operation xmi.id="op_save" name="save" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Assoziationen und Generalisierungen -->
+        <UML:Generalization xmi.id="gen_filter_default" child="class_PHP_Beautifier_Filter_Default" parent="class_PHP_Beautifier_Filter"/>
+        <UML:Generalization xmi.id="gen_batch_decorator" child="class_PHP_Beautifier_Batch" parent="class_PHP_Beautifier_Decorator"/>
+        
+        <UML:Dependency xmi.id="dep_beautifier_interface" supplier="interface_PHP_Beautifier_Interface" client="class_PHP_Beautifier"/>
+
+        <UML:Association xmi.id="assoc_PHP_Beautifier_Filter" name="beautifies">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_beautifier_filter" type="class_PHP_Beautifier" aggregation="composite" name="PHP_Beautifier" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_filter_beautifier" type="class_PHP_Beautifier_Filter" name="filter" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PHP_Beautifier_Batch_Engine" name="uses">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_batch_engine" type="class_PHP_Beautifier_Batch" name="batch" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_engine_batch" type="class_PHP_Beautifier_Batch_Engine" name="engine" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```
+This representation captures the classes and their relationships in the given PHP Beautifier system, including stereotypes like Singleton, Decorator, and Composite. Each class and its operations, along with the associations and generalizations, are modeled according to the description provided.

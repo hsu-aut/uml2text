@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="2LUfambgQJs8" name="Node" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="attr_buckets" name="_buckets" visibility="private"/>
+            <UML:Attribute xmi.id="attr_connection" name="_connection" visibility="private"/>
+            <UML:Attribute xmi.id="attr_dataStore" name="_dataStore" visibility="private"/>
+            <UML:Operation xmi.id="op_init" name="__init__" visibility="public">
+              <UML:Parameter xmi.id="param_knownNodes" name="knownNodes" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_generateID" name="_generateID" visibility="private"/>
+            <UML:Operation xmi.id="op_lookupNode" name="_lookupNode" visibility="private"/>
+            <UML:Operation xmi.id="op_findNode" name="findNode" visibility="public"/>
+            <UML:Operation xmi.id="op_updateContacts" name="updateContacts" visibility="public"/>
+            <UML:Operation xmi.id="op_store" name="store" visibility="public"/>
+            <UML:Operation xmi.id="op_findValue" name="findValue" visibility="public"/>
+            <UML:Operation xmi.id="op_receiveData" name="receiveData" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="jdBZBejROQK7" name="KBucket" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_contacts" name="_contacts" visibility="private"/>
+            <UML:Operation xmi.id="op_addContact" name="addContact" visibility="public"/>
+            <UML:Operation xmi.id="op_getContacts" name="getContacts" visibility="public"/>
+            <UML:Operation xmi.id="op_removeContact" name="removeContact" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="GEZ8qdeWfnMw" name="Contact" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id_contact" name="id" visibility="private"/>
+            <UML:Attribute xmi.id="attr_address" name="address" visibility="private"/>
+            <UML:Attribute xmi.id="attr_port" name="port" visibility="private"/>
+            <UML:Operation xmi.id="op_contact_init" name="__init__" visibility="public">
+              <UML:Parameter xmi.id="param_id" name="id" kind="in"/>
+              <UML:Parameter xmi.id="param_ipAddress" name="ipAddress" kind="in"/>
+              <UML:Parameter xmi.id="param_udpPort" name="udpPort" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="7GHDWr88ADzp" name="Protocol" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_ping" name="ping" visibility="public"/>
+            <UML:Operation xmi.id="op_store_protocol" name="store" visibility="public"/>
+            <UML:Operation xmi.id="op_findNode_protocol" name="findNode" visibility="public"/>
+            <UML:Operation xmi.id="op_findValue_protocol" name="findValue" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="NbT6Jwpyf3r2" name="DataStore" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_setitem" name="__setitem__" visibility="public">
+              <UML:Parameter xmi.id="param_key" name="key" kind="in"/>
+              <UML:Parameter xmi.id="param_data" name="data" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getitem" name="__getitem__" visibility="public">
+              <UML:Parameter xmi.id="param_key" name="key" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Node_KBucket" name="node-kbucket">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_KBucket_Node" type="2LUfambgQJs8" name="node" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Node_KBucket_KBucket" type="jdBZBejROQK7" name="kbucket" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_KBucket_Contact" name="kbucket-contact">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_KBucket_Contact_KBucket" type="jdBZBejROQK7" name="kbucket" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_KBucket_Contact_Contact" type="GEZ8qdeWfnMw" name="contact" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

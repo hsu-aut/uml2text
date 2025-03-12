@@ -1,0 +1,75 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Kollaboration -->
+        <UML:Collaboration xmi.id="unattachedCollaboration" name="unattachedCollaboration" visibility="public" isSpecification="false">
+          <UML:Collaboration.ownedElement>
+            <UML:ClassifierRole xmi.id="role_Client" name="Client">
+              <UML:ClassifierRole.base>
+                <UML:Class xmi.idref="class_Client"/>
+              </UML:ClassifierRole.base>
+              <UML:ClassifierRole.message>
+                <UML:Message xmi.id="msg_outCall" name="outCall" communicationDirection="complete" sender="role_Client" receiver="role_Phone">
+                  <UML:Action xmi.id="action_outCall" name="outCallAction" isSynchronous="true"/>
+                </UML:Message>
+              </UML:ClassifierRole.message>
+            </UML:ClassifierRole>
+            <UML:ClassifierRole xmi.id="role_Phone" name="Phone">
+              <UML:ClassifierRole.base>
+                <UML:Class xmi.idref="class_Phone"/>
+              </UML:ClassifierRole.base>
+              <UML:ClassifierRole.message>
+                <UML:Message xmi.id="msg_makeCall" name="makeCall" communicationDirection="complete" sender="role_Phone" receiver="role_OutCall">
+                  <UML:Action xmi.id="action_makeCall" name="makeCallAction" isSynchronous="true"/>
+                </UML:Message>
+              </UML:ClassifierRole.message>
+            </UML:ClassifierRole>
+            <UML:ClassifierRole xmi.id="role_OutCall" name="OutCall">
+              <UML:ClassifierRole.base>
+                <UML:Class xmi.idref="class_OutCall"/>
+              </UML:ClassifierRole.base>
+              <UML:ClassifierRole.message>
+                <UML:Message xmi.id="msg_setDate" name="setDate" communicationDirection="complete" sender="role_OutCall" receiver="role_OutCall"/>
+                <UML:Message xmi.id="msg_setTime" name="setTime" communicationDirection="complete" sender="role_OutCall" receiver="role_OutCall" predecessor="msg_setDate"/>
+              </UML:ClassifierRole.message>
+            </UML:ClassifierRole>
+          </UML:Collaboration.ownedElement>
+          
+          <!-- Definition der Assoziationen in der Kollaboration -->
+          <UML:AssociationRole xmi.id="assocRole_Client_Phone" name="association_Client_Phone">
+            <UML:AssociationRole.connection>
+              <UML:AssociationEndRole xmi.id="assocEndRole_Client" type="role_Client" isNavigable="false"/>
+              <UML:AssociationEndRole xmi.id="assocEndRole_Phone" type="role_Phone" isNavigable="false"/>
+            </UML:AssociationRole.connection>
+          </UML:AssociationRole>
+          
+          <UML:AssociationRole xmi.id="assocRole_Phone_OutCall" name="association_Phone_OutCall">
+            <UML:AssociationRole.connection>
+              <UML:AssociationEndRole xmi.id="assocEndRole_Phone_2" type="role_Phone" isNavigable="false"/>
+              <UML:AssociationEndRole xmi.id="assocEndRole_OutCall" type="role_OutCall" isNavigable="false"/>
+            </UML:AssociationRole.connection>
+          </UML:AssociationRole>
+          
+        </UML:Collaboration>
+        
+        <!-- Definition der Klassen -->
+        <UML:Class xmi.id="class_Client" name="Client" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Phone" name="Phone" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_OutCall" name="OutCall" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

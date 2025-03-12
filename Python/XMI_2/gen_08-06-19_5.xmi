@@ -1,0 +1,77 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="EA_Model" name="EA_Model">
+      <UML:Namespace.ownedElement>
+        <!-- DDSProfile Package -->
+        <UML:Package xmi.id="EAPK_CF4EFABB_AA31_4484_9182_7DAEE5611EAF" name="DDSProfile">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="EAID_075E428E_EF77_428e_B0CB_B2EBA0D52C8D" name="Common" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="EAID_111D8A68_BB1A_4c80_87BF_4F2CA65BFD7F" name="DLRL" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="EAID_60C38D1B_6725_4c16_9BA0_E28D04BC5550" name="DCPS" visibility="public" isAbstract="false"/>
+            <!-- Compliance Levels Package -->
+            <UML:Package xmi.id="EAPK_Compliance_Levels" name="Compliance Levels">
+              <UML:Namespace.ownedElement>
+                <UML:Package xmi.id="EAPK_Level_1" name="Level 1"/>
+                <UML:Package xmi.id="EAPK_Level_2" name="Level 2"/>
+                <UML:Package xmi.id="EAPK_Level_3" name="Level 3"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <!-- Core Package -->
+            <UML:Package xmi.id="EAPK_Core_Package" name="Core">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="EAID_Core_NamedEntity" name="NamedEntity" visibility="public" isAbstract="true">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="EAID_Core_NamedEntity_name" name="name" visibility="public" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <UML:Class xmi.id="EAID_Core_Specification" name="Specification" visibility="public" isAbstract="false">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="EAID_Core_Specification"/>
+                    </UML:Generalization.child>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="EAID_Core_NamedEntity"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+                <UML:Class xmi.id="EAID_Core_TypedEntity" name="TypedEntity" visibility="public" isAbstract="false">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="EAID_Core_TypedEntity"/>
+                    </UML:Generalization.child>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="EAID_Core_NamedEntity"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                  <UML:Association>
+                    <UML:Association.connection>
+                      <UML:AssociationEnd type="EAID_Core_TypedEntity" aggregation="none" multiplicity="1"/>
+                      <UML:AssociationEnd type="EAID_Core_Specification" aggregation="none" multiplicity="1"/>
+                    </UML:Association.connection>
+                  </UML:Association>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <!-- Package QoS -->
+        <UML:Package xmi.id="EAPK_14DB1136_F818_4d71_A32D_022E5B7A853B" name="QoS">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="QoS_QosPolicy" name="QosPolicy" visibility="public" isAbstract="true"/>
+            <!-- QoS subclasses could be defined here -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

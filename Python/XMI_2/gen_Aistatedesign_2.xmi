@@ -1,0 +1,82 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>umbrello uml modeller</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int" />
+                <UML:DataType xmi.id="datatype_char" name="char" />
+                <UML:DataType xmi.id="datatype_bool" name="bool" />
+                <!-- Weitere Datentypen hier -->
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:StateMachine xmi.id="diagram_GwuHRIuiu1Gy" name="Basic State Diagram">
+              <UML:StateMachine.top>
+                <UML:CompositeState xmi.id="state_top" name="top">
+                  <UML:CompositeState.subvertex>
+                    <UML:State xmi.id="state_SpawnState" name="Spawn State">
+                      <UML:State.internalTransition>
+                        <UML:Transition xmi.id="trans_Spawn_Idle" name="finishedSpawning">
+                          <UML:Transition.target>
+                            <UML:State xmi.idref="state_IdleState"/>
+                          </UML:Transition.target>
+                        </UML:Transition>
+                      </UML:State.internalTransition>
+                    </UML:State>
+                    <UML:State xmi.id="state_IdleState" name="Idle State">
+                      <UML:State.internalActivity>
+                        <UML:Activity name="Locates Target"/>
+                      </UML:State.internalActivity>
+                    </UML:State>
+                    <UML:State xmi.id="state_AttackState" name="Attack State">
+                      <UML:State.internalTransition>
+                        <UML:Transition xmi.id="trans_Attack_Die" name="Zero Health">
+                          <UML:Transition.target>
+                            <UML:State xmi.idref="state_DieState"/>
+                          </UML:Transition.target>
+                        </UML:Transition>
+                      </UML:State.internalTransition>
+                    </UML:State>
+                    <UML:State xmi.id="state_DieState" name="Die State"/>
+                  </UML:CompositeState.subvertex>
+                </UML:CompositeState>
+              </UML:StateMachine.top>
+            </UML:StateMachine>
+            <UML:StateMachine xmi.id="diagram_xxYscLSelZli" name="Example State Diagram">
+              <UML:StateMachine.top>
+                <UML:CompositeState xmi.id="state_example_top" name="top">
+                  <UML:CompositeState.subvertex>
+                    <UML:State xmi.id="state_WanderingState" name="Wandering State"/>
+                    <UML:State xmi.id="state_AlertState" name="Alert State"/>
+                    <UML:State xmi.id="state_FleeState" name="Flee State">
+                      <UML:State.internalTransition>
+                        <UML:Transition xmi.id="trans_Flee_Spawn" name="Ready for Respawn">
+                          <UML:Transition.target>
+                            <UML:State xmi.idref="state_SpawnState"/>
+                          </UML:Transition.target>
+                        </UML:Transition>
+                      </UML:State.internalTransition>
+                    </UML:State>
+                    <UML:State xmi.id="state_DeathState" name="Death State"/>
+                  </UML:CompositeState.subvertex>
+                </UML:CompositeState>
+              </UML:StateMachine.top>
+            </UML:StateMachine>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,89 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="Ic9T2RHLKemK" name="DRIService" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_registerDataset" name="registerDataset" visibility="public"/>
+            <UML:Operation xmi.id="op_unregisterDataset" name="unregisterDataset" visibility="public"/>
+            <UML:Operation xmi.id="op_validateDataset" name="validateDataset" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="ItPT1bKmj6k3" name="DRIServiceImpl" visibility="public" isAbstract="false">
+          <UML:Generalization.Child>
+            <UML:Class xmi.idref="Ic9T2RHLKemK"/>
+          </UML:Generalization.Child>
+        </UML:Class>
+        <UML:Class xmi.id="B2Tty0Qpobzf" name="DatasetValidator" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_validateAll" name="validateAll" visibility="public"/>
+            <UML:Operation xmi.id="op_validate" name="validate" visibility="public"/>
+            <UML:Operation xmi.id="op_validateDataItem" name="validateDataItem" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="AiGDWbYakMS9" name="DatasetReplicator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="ul96ya4tVhWF" name="ValidationScheduler" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="6zCq0MrTFnRd" name="RegistryAccessObject" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_createDataset" name="createDataset" visibility="public"/>
+            <UML:Operation xmi.id="op_updateDataset" name="updateDataset" visibility="public"/>
+            <UML:Operation xmi.id="op_removeDataset" name="removeDataset" visibility="public"/>
+            <UML:Operation xmi.id="op_getDataset" name="getDataset" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="OIScoHZ9whZn" name="ManagedDatasetID" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="aRbFEtvxykbI" name="DataSource" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_location" name="location" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="v7EshqPp1OVj" name="ManagedDataset" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_owner" name="owner" visibility="public"/>
+            <UML:Attribute xmi.id="attr_list_of_logical_data" name="list_of_logical_data" visibility="public"/>
+            <UML:Attribute xmi.id="attr_is_managed" name="is_managed" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="BSlK0kJl9HQu" name="ManagementPolicy" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_time_interval" name="time_interval" visibility="public"/>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="knsuRBFNsgRB" name="LogicalData" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_uid" name="uid" visibility="public"/>
+            <UML:Attribute xmi.id="attr_method_generation" name="method_generation" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Interface xmi.id="JIFuC27M7uOf" name="Atmosphere Internal Registry" visibility="public"/>
+        <UML:Interface xmi.id="sTC51xoJcqfL" name="WP2 2.4 Federated Storage" visibility="public"/>
+        <UML:Interface xmi.id="UEb61ymvgVkp" name="VPH Notification Service" visibility="public"/>
+        
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_DRIServImpl_DatasetValidator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DRIServImpl_DatasetValidator_DRIServiceImpl" type="ItPT1bKmj6k3" name="accesses" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DRIServImpl_DatasetValidator_DatasetValidator" type="B2Tty0Qpobzf" name="accessedBy" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_DRIServImpl_DatasetReplicator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DRIServImpl_DatasetReplicator_DRIServiceImpl" type="ItPT1bKmj6k3" name="runs" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DRIServImpl_DatasetReplicator_DatasetReplicator" type="AiGDWbYakMS9" name="runBy" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

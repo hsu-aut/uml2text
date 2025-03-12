@@ -1,0 +1,171 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:DataType xmi.id="datatype_undef" name="undef"/>
+
+        <!-- Definition der Klasse Macro -->
+        <UML:Class xmi.id="class_Macro" name="Macro" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Klasse TextMacro -->
+        <UML:Class xmi.id="class_TextMacro" name="TextMacro" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_TextMacro" child="class_TextMacro" parent="class_Macro"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse FileMacro -->
+        <UML:Class xmi.id="class_FileMacro" name="FileMacro" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_FileMacro" child="class_FileMacro" parent="class_Macro"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse MacroSet -->
+        <UML:Class xmi.id="class_MacroSet" name="MacroSet" visibility="public" isAbstract="false">
+          <UML:Association xmi.id="assoc_MacroSet_Macro" name="macro">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_MacroSet" type="class_MacroSet" aggregation="composite"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Macro" type="class_Macro" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Definition der Klasse LocalEndpoint -->
+        <UML:Class xmi.id="class_LocalEndpoint" name="LocalEndpoint" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Klasse RemoteEndpoint -->
+        <UML:Class xmi.id="class_RemoteEndpoint" name="RemoteEndpoint" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Klasse UdpReceiver -->
+        <UML:Class xmi.id="class_UdpReceiver" name="UdpReceiver" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_UdpReceiver_LocalEndpoint" child="class_UdpReceiver" parent="class_LocalEndpoint"/>
+          <UML:Generalization xmi.id="gen_UdpReceiver_RemoteEndpoint" child="class_UdpReceiver" parent="class_RemoteEndpoint"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse UdpSender -->
+        <UML:Class xmi.id="class_UdpSender" name="UdpSender" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_UdpSender_LocalEndpoint" child="class_UdpSender" parent="class_LocalEndpoint"/>
+          <UML:Generalization xmi.id="gen_UdpSender_RemoteEndpoint" child="class_UdpSender" parent="class_RemoteEndpoint"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse MainWindow -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_connectionEditor" name="connectionEditor" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_LocalEndpointPanel"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_remoteViewer" name="remoteViewer" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_RemoteEndpointPanel"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_macroEditor" name="macroEditor" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_MacroPanel"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse LocalEndpointPanel -->
+        <UML:Class xmi.id="class_LocalEndpointPanel" name="LocalEndpointPanel" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_loadedSet" name="loadedSet" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_LocalEndpointSet"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse RemoteEndpointPanel -->
+        <UML:Class xmi.id="class_RemoteEndpointPanel" name="RemoteEndpointPanel" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_activeSet" name="activeSet" visibility="private">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_RemoteEndpointSet"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse MacroPanel -->
+        <UML:Class xmi.id="class_MacroPanel" name="MacroPanel" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse DataSinkPanel -->
+        <UML:Class xmi.id="class_DataSinkPanel" name="DataSinkPanel" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Controller -->
+        <UML:Class xmi.id="class_Controller" name="Controller" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_localEndpointSet" name="localEndpointSet" visibility="private" aggregation="composite">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_LocalEndpointSet"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_remoteEndpointSet" name="remoteEndpointSet" visibility="private" aggregation="composite">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_RemoteEndpointSet"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_dataSinkSet" name="dataSinkSet" visibility="private" aggregation="composite">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_DataSinkSet"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_macroSet" name="macroSet" visibility="private" aggregation="composite">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_MacroSet"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse LocalEndpointSet -->
+        <UML:Class xmi.id="class_LocalEndpointSet" name="LocalEndpointSet" visibility="public" isAbstract="false">
+          <UML:Association xmi.id="assoc_LocalEndpointSet_LocalEndpoint" name="localEndpoint">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_LocalEndpointSet" type="class_LocalEndpointSet" aggregation="composite"/>
+              <UML:AssociationEnd xmi.id="assocEnd_LocalEndpoint" type="class_LocalEndpoint" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Definition der Klasse RemoteEndpointSet -->
+        <UML:Class xmi.id="class_RemoteEndpointSet" name="RemoteEndpointSet" visibility="public" isAbstract="false">
+          <UML:Association xmi.id="assoc_RemoteEndpointSet_RemoteEndpoint" name="remoteEndpoint">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_RemoteEndpointSet" type="class_RemoteEndpointSet" aggregation="composite"/>
+              <UML:AssociationEnd xmi.id="assocEnd_RemoteEndpoint" type="class_RemoteEndpoint" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+
+        <!-- Definition der Klasse DataSinkSet -->
+        <UML:Class xmi.id="class_DataSinkSet" name="DataSinkSet" visibility="public" isAbstract="false">
+          <UML:Association xmi.id="assoc_DataSinkSet_DataSink" name="dataSink">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_DataSinkSet" type="class_DataSinkSet" aggregation="composite"/>
+              <UML:AssociationEnd xmi.id="assocEnd_DataSink" type="class_DataSink" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

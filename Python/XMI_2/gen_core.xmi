@@ -1,0 +1,96 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_3DRendering" name="3DRendering">
+      <UML:Namespace.ownedElement>
+        
+        <!-- BufferGeometry Class -->
+        <UML:Class xmi.id="class_BufferGeometry" name="BufferGeometry" visibility="public" isAbstract="false"/>
+
+        <!-- Object3D Class -->
+        <UML:Class xmi.id="class_Object3D" name="Object3D" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_parent" name="parent" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Object3D"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_children" name="children" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Object3D"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Raycaster Class -->
+        <UML:Class xmi.id="class_Raycaster" name="Raycaster" visibility="public" isAbstract="false"/>
+
+        <!-- Vector3 Class -->
+        <UML:Class xmi.id="class_Vector3" name="Vector3" visibility="public" isAbstract="false"/>
+        
+        <!-- Loader Class -->
+        <UML:Class xmi.id="class_Loader" name="Loader" visibility="public" isAbstract="false"/>
+
+        <!-- Light Class -->
+        <UML:Class xmi.id="class_Light" name="Light" visibility="public" isAbstract="true"/>
+
+        <!-- Specialized Light Classes -->
+        <UML:Class xmi.id="class_AmbientLight" name="AmbientLight" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_AmbientLight" parent="class_Light"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_AreaLight" name="AreaLight" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_AreaLight" parent="class_Light"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_DirectionalLight" name="DirectionalLight" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_DirectionalLight" parent="class_Light"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_PointLight" name="PointLight" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_PointLight" parent="class_Light"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_SpotLight" name="SpotLight" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_SpotLight" parent="class_Light"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_HemisphereLight" name="HemisphereLight" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_HemisphereLight" parent="class_Light"/>
+        </UML:Class>
+
+        <!-- Material and Specialized Material Classes -->
+        <UML:Class xmi.id="class_Material" name="Material" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_MeshBasicMaterial" name="MeshBasicMaterial" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_MeshBasicMaterial" parent="class_Material"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_MeshLambertMaterial" name="MeshLambertMaterial" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_MeshLambertMaterial" parent="class_Material"/>
+        </UML:Class>
+        <UML:Class xmi.id="class_MeshPhongMaterial" name="MeshPhongMaterial" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_MeshPhongMaterial" parent="class_Material"/>
+        </UML:Class>
+
+        <!-- Geometry and Related Classes -->
+        <UML:Class xmi.id="class_Geometry" name="Geometry" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Face3" name="Face3" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Face4" name="Face4" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Sphere" name="Sphere" visibility="public" isAbstract="false"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_Object3D_Object3D_parent">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Object3D_Object3D_parent" type="class_Object3D" name="parent" visibility="private" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Object3D_Object3D_children" type="class_Object3D" name="children" visibility="private" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

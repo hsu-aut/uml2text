@@ -1,0 +1,171 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_JavaHierarchy" name="JavaHierarchy">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Package: java -->
+        <UML:Package xmi.id="pkg_java" name="java">
+        
+          <!-- Package: lang within java -->
+          <UML:Package xmi.id="pkg_lang" name="lang">
+
+            <!-- Interface Comparable -->
+            <UML:Interface xmi.id="interface_Comparable" name="Comparable" visibility="public">
+              <UML:Feature>
+                <UML:Operation xmi.id="operation_compareTo" name="compareTo" visibility="public"/>
+              </UML:Feature>
+            </UML:Interface>
+            
+            <!-- Interface Cloneable -->
+            <UML:Interface xmi.id="interface_Cloneable" name="Cloneable" visibility="public"/>
+
+            <!-- Classes Boolean, Character, Class, and String -->
+            <UML:Class xmi.id="class_Boolean" name="Boolean" visibility="public"/>
+            <UML:Class xmi.id="class_Character" name="Character" visibility="public"/>
+            <UML:Class xmi.id="class_Class" name="Class" visibility="public"/>
+            <UML:Class xmi.id="class_String" name="String" visibility="public"/>
+
+          </UML:Package>
+          
+        </UML:Package>
+
+        <!-- Package: util -->
+        <UML:Package xmi.id="pkg_util" name="util">
+
+          <!-- Package: lang within util -->
+          <UML:Package xmi.id="pkg_util_lang" name="lang">
+
+            <!-- Interface Comparable -->
+            <UML:Interface xmi.id="interface_util_Comparable" name="Comparable" visibility="public">
+              <UML:Feature>
+                <UML:Operation xmi.id="operation_util_compareTo" name="compareTo" visibility="public"/>
+              </UML:Feature>
+            </UML:Interface>
+  
+          </UML:Package>
+
+          <!-- Package: regex within util -->
+          <UML:Package xmi.id="pkg_regex" name="regex">
+
+            <!-- Interface MatchResult -->
+            <UML:Interface xmi.id="interface_MatchResult" name="MatchResult" visibility="public"/>
+            
+            <!-- Class Matcher implementing MatchResult -->
+            <UML:Class xmi.id="class_Matcher" name="Matcher" visibility="public"/>
+
+            <!-- Class Pattern -->
+            <UML:Class xmi.id="class_Pattern" name="Pattern" visibility="public"/>
+
+          </UML:Package>
+
+        </UML:Package>
+
+        <!-- Class Logger -->
+        <UML:Class xmi.id="class_Logger" name="Logger" visibility="public">
+          <UML:Attribute xmi.id="attr_instance" name="instance" visibility="private"/>
+          <UML:Attribute xmi.id="attr_fp" name="fp" visibility="private"/>
+          <UML:Operation xmi.id="operation_Logger" name="Logger" visibility="public"/>
+          <UML:Operation xmi.id="operation_getInstance" name="getInstance" visibility="public"/>
+          <UML:Operation xmi.id="operation_open" name="open" visibility="public"/>
+          <UML:Operation xmi.id="operation_close" name="close" visibility="public"/>
+          <UML:Operation xmi.id="operation_log" name="log" visibility="public"/>
+        </UML:Class>
+
+        <!-- Base Class BufferedIO -->
+        <UML:Class xmi.id="class_BufferedIO" name="BufferedIO" visibility="public" isAbstract="true">
+          <UML:Attribute xmi.id="attr_fd" name="fd" visibility="private"/>
+          <UML:Attribute xmi.id="attr_buffer" name="buffer" visibility="private"/>
+          <UML:Operation xmi.id="operation_BufferedIO" name="BufferedIO" visibility="public"/>
+          <UML:Operation xmi.id="operation_Destructor_BufferedIO" name="~BufferedIO" visibility="public"/>
+        </UML:Class>
+
+        <!-- Class BufferedReader inherits BufferedIO -->
+        <UML:Class xmi.id="class_BufferedReader" name="BufferedReader" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_BufferedReader"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_BufferedIO"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="operation_readUInt8" name="readUInt8" visibility="public"/>
+          <UML:Operation xmi.id="operation_readUInt16" name="readUInt16" visibility="public"/>
+          <UML:Operation xmi.id="operation_readUInt32" name="readUInt32" visibility="public"/>
+          <UML:Operation xmi.id="operation_readUInt64" name="readUInt64" visibility="public"/>
+        </UML:Class>
+
+        <!-- Class BufferedWriter inherits BufferedIO -->
+        <UML:Class xmi.id="class_BufferedWriter" name="BufferedWriter" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_BufferedWriter"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_BufferedIO"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="operation_writeUInt8" name="writeUInt8" visibility="public"/>
+          <UML:Operation xmi.id="operation_writeUInt16" name="writeUInt16" visibility="public"/>
+          <UML:Operation xmi.id="operation_writeUInt32" name="writeUInt32" visibility="public"/>
+          <UML:Operation xmi.id="operation_writeUInt64" name="writeUInt64" visibility="public"/>
+        </UML:Class>
+
+        <!-- Class CompilerFactory -->
+        <UML:Class xmi.id="class_CompilerFactory" name="CompilerFactory" visibility="public">
+          <UML:Attribute xmi.id="attr_compilers" name="compilers" visibility="private"/>
+          <UML:Attribute xmi.id="attr_instance_CF" name="instance" visibility="private"/>
+          <UML:Operation xmi.id="operation_getInstance_CF" name="getInstance" visibility="public"/>
+          <UML:Operation xmi.id="operation_getCompiler" name="getCompiler" visibility="public"/>
+        </UML:Class>
+
+        <!-- Class Compiler -->
+        <UML:Class xmi.id="class_Compiler" name="Compiler" visibility="public">
+          <UML:Attribute xmi.id="attr_id" name="id" visibility="private"/>
+          <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+          <UML:Attribute xmi.id="attr_extension" name="extension" visibility="private"/>
+          <UML:Operation xmi.id="operation_compile" name="compile" visibility="public"/>
+          <UML:Operation xmi.id="operation_getId" name="getId" visibility="public"/>
+          <UML:Operation xmi.id="operation_getName" name="getName" visibility="public"/>
+          <UML:Operation xmi.id="operation_getExtension" name="getExtension" visibility="public"/>
+        </UML:Class>
+
+        <!-- Class Settings -->
+        <UML:Class xmi.id="class_Settings" name="Settings" visibility="public">
+          <UML:Attribute xmi.id="attr_tempDir" name="tempDir" visibility="private"/>
+          <UML:Attribute xmi.id="attr_dataDir" name="dataDir" visibility="private"/>
+          <UML:Attribute xmi.id="attr_logFile" name="logFile" visibility="private"/>
+          <UML:Operation xmi.id="operation_getInstance_Settings" name="getInstance" visibility="public"/>
+        </UML:Class>
+
+        <!-- Class Throwable -->
+        <UML:Class xmi.id="class_Throwable" name="Throwable" visibility="public"/>
+
+        <!-- Class AppException extends Throwable -->
+        <UML:Class xmi.id="class_AppException" name="AppException" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_AppException"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Throwable"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Operation xmi.id="operation_AppException" name="AppException" visibility="public"/>
+          <UML:Operation xmi.id="operation_printStackTrace" name="printStackTrace" visibility="public"/>
+        </UML:Class>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

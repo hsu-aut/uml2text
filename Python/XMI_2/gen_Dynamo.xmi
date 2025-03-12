@@ -1,0 +1,99 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="Sun May 26 18:40:26 CEST 2013">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
+      <XMI.exporterVersion>0.34(6)</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Dynamo" name="Dynamo" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        
+        <!-- ADO Package -->
+        <UML:Package xmi.id="pkg_ADO" name="ADO" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Entity_Type Class -->
+            <UML:Class xmi.id="class_Entity_Type" name="Entity_Type" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="public" changeability="changeable">
+                  <UML:TaggedValue tag="PK" value="true"/>
+                  <UML:TaggedValue tag="type" value="Identifier"/>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="public" changeability="changeable"/>
+              </UML:Classifier.feature>
+              <UML:Stereotype xmi.id="stereotype_Table" name="Table">
+                <UML:TaggedValue tag="dynamo.table.generator" value="TODO"/>
+                <UML:TaggedValue tag="dynamo.table.name" value="EntityTypeTable"/>
+              </UML:Stereotype>
+            </UML:Class>
+
+            <!-- Sequence Class -->
+            <UML:Class xmi.id="class_Sequence" name="Sequence" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_seq_name" name="name" visibility="public" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_block_size" name="block_size" visibility="public" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_value" name="value" visibility="public" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_version" name="version" visibility="public" changeability="changeable"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- AWA Package -->
+        <UML:Package xmi.id="pkg_AWA" name="AWA" visibility="public">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Module_Event Class -->
+            <UML:Class xmi.id="class_Module_Event" name="Module_Event" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_kind" name="kind" visibility="public" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_entity" name="entity" visibility="public" changeability="changeable"/>
+                <UML:Attribute xmi.id="attr_entity_type" name="entity_type" visibility="public" changeability="changeable">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Entity_Type"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- ASF Package -->
+        <UML:Package xmi.id="pkg_ASF" name="ASF" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="pkg_Parts" name="Parts" visibility="public">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Part Class -->
+                <UML:Class xmi.id="class_Part" name="Part" visibility="public" isAbstract="false">
+                  <UML:Stereotype name="Serializable"/>
+                </UML:Class>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- DataTypes -->
+        <UML:Package xmi.id="pkg_DataTypes" name="DataTypes" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt_Identifier" name="Identifier"/>
+            <UML:DataType xmi.id="dt_Blob" name="Blob"/>
+            <UML:DataType xmi.id="dt_Digits" name="Digits"/>
+            <UML:DataType xmi.id="dt_Time" name="Time"/>
+            <UML:DataType xmi.id="dt_DateTime" name="DateTime"/>
+            <UML:DataType xmi.id="dt_Date" name="Date"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

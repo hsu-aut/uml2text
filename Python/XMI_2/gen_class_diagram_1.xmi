@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="systemArchitectureModel" name="SystemArchitectureModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Class: RestServer -->
+        <UML:Class xmi.id="class_RestServer" name="RestServer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Verticle"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_start" name="start" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: SessionController -->
+        <UML:Class xmi.id="class_SessionController" name="SessionController" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Controller"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getSession" name="getSession" visibility="public"/>
+            <UML:Operation xmi.id="op_changeSession" name="changeSession" visibility="public"/>
+            <UML:Operation xmi.id="op_deleteSession" name="deleteSession" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: SessionsController -->
+        <UML:Class xmi.id="class_SessionsController" name="SessionsController" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Controller"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getSessions" name="getSessions" visibility="public"/>
+            <UML:Operation xmi.id="op_createSession" name="createSession" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: StaticFilesController -->
+        <UML:Class xmi.id="class_StaticFilesController" name="StaticFilesController" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_registerUrls" name="registerUrls" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: DebugPromiseService -->
+        <UML:Class xmi.id="class_DebugPromiseService" name="DebugPromiseService" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_registerUrls" name="registerUrls" visibility="public"/>
+            <UML:Operation xmi.id="op_doSomething" name="doSomething" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: Controller -->
+        <UML:Class xmi.id="class_Controller" name="Controller" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_sendJsonResponse" name="sendJsonResponse" visibility="public"/>
+            <UML:Operation xmi.id="op_requireAuthentication" name="requireAuthentication" visibility="public"/>
+            <UML:Operation xmi.id="op_registerUrls" name="registerUrls" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: SessionService -->
+        <UML:Class xmi.id="class_SessionService" name="SessionService" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getSession" name="getSession" visibility="public"/>
+            <UML:Operation xmi.id="op_findSession" name="findSession" visibility="public"/>
+            <UML:Operation xmi.id="op_startSession" name="startSession" visibility="public"/>
+            <UML:Operation xmi.id="op_finishSession" name="finishSession" visibility="public"/>
+            <UML:Operation xmi.id="op_deleteSession" name="deleteSession" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: LoginServiceMock -->
+        <UML:Class xmi.id="class_LoginServiceMock" name="LoginServiceMock" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ILoginService"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class: StaticFilesService -->
+        <UML:Class xmi.id="class_StaticFilesService" name="StaticFilesService" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getSystemPathOf" name="getSystemPathOf" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: GameRegistryClient -->
+        <UML:Class xmi.id="class_GameRegistryClient" name="GameRegistryClient" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_createFromAddress" name="createFromAddress" visibility="public"/>
+            <UML:Operation xmi.id="op_setUser" name="setUser" visibility="public"/>
+            <UML:Operation xmi.id="op_setToken" name="setToken" visibility="public"/>
+            <UML:Operation xmi.id="op_setBasePath" name="setBasePath" visibility="public"/>
+            <UML:Operation xmi.id="op_setConnectionTimeout" name="setConnectionTimeout" visibility="public"/>
+            <UML:Operation xmi.id="op_getUser" name="getUser" visibility="public"/>
+            <UML:Operation xmi.id="op_getToken" name="getToken" visibility="public"/>
+            <UML:Operation xmi.id="op_getBasePath" name="getBasePath" visibility="public"/>
+            <UML:Operation xmi.id="op_getConnectionTimeout" name="getConnectionTimeout" visibility="public"/>
+            <UML:Operation xmi.id="op_getPort" name="getPort" visibility="public"/>
+            <UML:Operation xmi.id="op_getHost" name="getHost" visibility="public"/>
+            <UML:Operation xmi.id="op_GetSessions" name="GetSessions" visibility="public"/>
+            <UML:Operation xmi.id="op_addSession" name="addSession" visibility="public"/>
+            <UML:Operation xmi.id="op_getSession" name="getSession" visibility="public"/>
+            <UML:Operation xmi.id="op_updateSession" name="updateSession" visibility="public"/>
+            <UML:Operation xmi.id="op_deleteSession" name="deleteSession" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class: MongoSessionRepository -->
+        <UML:Class xmi.id="class_MongoSessionRepository" name="MongoSessionRepository" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ISessionRepository"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Interface: ILoginService -->
+        <UML:Interface xmi.id="interface_ILoginService" name="ILoginService" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_isAuthenticated" name="isAuthenticated" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Interface: ISessionRepository -->
+        <UML:Interface xmi.id="interface_ISessionRepository" name="ISessionRepository" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_create" name="create" visibility="public"/>
+            <UML:Operation xmi.id="op_update" name="update" visibility="public"/>
+            <UML:Operation xmi.id="op_delete" name="delete" visibility="public"/>
+            <UML:Operation xmi.id="op_findById" name="findById" visibility="public"/>
+            <UML:Operation xmi.id="op_find" name="find" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Association: RestServer uses RouteMatcher -->
+        <UML:Association xmi.id="assoc_RestServer_RouteMatcher" name="RestServer-RouteMatcher">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_RestServer" type="class_RestServer" name="RestServer" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_RouteMatcher" type="class_RouteMatcher" name="RouteMatcher" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition of datatypes -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:Class xmi.id="class_Verticle" name="Verticle" visibility="public"/>
+        <UML:Class xmi.id="class_RouteMatcher" name="RouteMatcher" visibility="public"/>
+        <UML:Class xmi.id="class_GameSession" name="GameSession" visibility="public"/>
+        <UML:Class xmi.id="class_HttpClientResponse" name="HttpClientResponse" visibility="public"/>
+        <UML:Class xmi.id="class_Throwable" name="Throwable" visibility="public"/>
+        <UML:Class xmi.id="class_Buffer" name="Buffer" visibility="public"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

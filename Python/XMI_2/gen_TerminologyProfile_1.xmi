@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition von TerminologyProfile als UML:Package -->
+        <UML:Package xmi.id="profile_TerminologyProfile" name="TerminologyProfile" visibility="public" isSpecification="false" isAbstract="false">
+          
+          <!-- Definition von Stereotypen im Profil -->
+          <UML:Class xmi.id="stereotype_IdentifiedItem" name="IdentifiedItem" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Generalization.parent>
+                <UML:Class xmi.idref="class_NamedElement"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+          </UML:Class>
+
+          <UML:Class xmi.id="stereotype_PermissibleValue" name="PermissibleValue" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Generalization.parent>
+                <UML:Class xmi.idref="class_IdentifiedItem"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+          </UML:Class>
+          
+          <UML:Class xmi.id="stereotype_ScopedIdentifier" name="ScopedIdentifier" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Generalization.parent>
+                <UML:Class xmi.idref="class_DescribedIdentifier"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+          </UML:Class>
+          
+          <UML:Class xmi.id="stereotype_EnumeratedValueDomain" name="EnumeratedValueDomain" visibility="public" isAbstract="false">
+            <UML:Generalization>
+              <UML:Generalization.parent>
+                <UML:Class xmi.idref="class_IdentifiedItem"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+          </UML:Class>
+        </UML:Package>
+
+        <!-- Stereotyp Konstruktionen -->
+        <UML:Class xmi.id="class_ResourceReference" name="ResourceReference" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="stereotype_CodeSystemReference" name="CodeSystemReference" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ResourceReference"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="stereotype_CodeSystemVersionReference" name="CodeSystemVersionReference" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ResourceReference"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="stereotype_ConceptReference" name="ConceptReference" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ResourceReference"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="stereotype_ValueSetReference" name="ValueSetReference" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ResourceReference"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="stereotype_ValueSetDefinitionReference" name="ValueSetDefinitionReference" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ResourceReference"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ArchetypeTerm" name="ArchetypeTerm" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Entry" name="Entry" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ArchetypeTerm"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_IdEntry" name="IdEntry" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Entry"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_TermResourceTranslation" name="TermResourceTranslation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Entry"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

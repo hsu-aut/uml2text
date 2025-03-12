@@ -1,0 +1,81 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomXMIExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_undef" name="undef"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Class xmi.id="class_sld" name="sld" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_title" name="title" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_abstract" name="abstract" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_ftses" name="ftses" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_list"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_getSldString" name="getSldString" visibility="public" isQuery="true">
+                  <UML:Parameter name="return" kind="return" type="string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_addFts" name="addFts" visibility="public">
+                  <UML:Parameter xmi.id="param_FtsString" name="fts" kind="in">
+                    <UML:Parameter.type>
+                      <UML:DataType xmi.idref="datatype_string"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_saveToFile" name="saveToFile" visibility="public">
+                  <UML:Parameter xmi.id="param_FileName" name="fileName" kind="in">
+                    <UML:Parameter.type>
+                      <UML:DataType xmi.idref="datatype_string"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_saveToClipboard" name="saveToClipboard" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            <UML:Class xmi.id="class_list" name="list" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

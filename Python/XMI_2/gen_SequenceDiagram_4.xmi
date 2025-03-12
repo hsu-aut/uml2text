@@ -1,0 +1,59 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Collaboration xmi.id="collab_unattachedCollaboration" name="unattachedCollaboration" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Collaboration.ownedElement>
+        <UML:CollaborationRole xmi.id="role_user" name="user" visibility="public">
+          <UML:ClassifierRole.base>
+            <UML:Class xmi.idref="class_User"/>
+          </UML:ClassifierRole.base>
+        </UML:CollaborationRole>
+        <UML:CollaborationRole xmi.id="role_member" name="member" visibility="public">
+          <UML:ClassifierRole.base>
+            <UML:Class xmi.idref="class_Member"/>
+          </UML:ClassifierRole.base>
+        </UML:CollaborationRole>
+        <UML:CollaborationRole xmi.id="role_chair" name="chair" visibility="public">
+          <UML:ClassifierRole.base>
+            <UML:Class xmi.idref="class_Chair"/>
+          </UML:ClassifierRole.base>
+        </UML:CollaborationRole>
+      </UML:Collaboration.ownedElement>
+      <UML:Collaboration.interaction>
+        <UML:Interaction xmi.id="interaction">
+          <UML:Message xmi.id="message_createMember" name="createMember" sender="role_user" receiver="role_member">
+            <UML:Message.communicationConnection>
+              <UML:AssociationEnd xmi.idref="assoc_end_user_member"/>
+            </UML:Message.communicationConnection>
+          </UML:Message>
+          <UML:Message xmi.id="message_createChair" name="createChair" sender="role_user" receiver="role_chair">
+            <UML:Message.communicationConnection>
+              <UML:AssociationEnd xmi.idref="assoc_end_user_chair"/>
+            </UML:Message.communicationConnection>
+          </UML:Message>
+        </UML:Interaction>
+      </UML:Collaboration.interaction>
+    </UML:Collaboration>
+    <UML:Association xmi.id="assoc_user_member">
+      <UML:Association.connection>
+        <UML:AssociationEnd xmi.id="assoc_end_user_member_user" type="role_user" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+        <UML:AssociationEnd xmi.id="assoc_end_user_member_member" type="role_member" name="member" visibility="public" aggregation="none" multiplicity="1"/>
+      </UML:Association.connection>
+    </UML:Association>
+    <UML:Association xmi.id="assoc_user_chair">
+      <UML:Association.connection>
+        <UML:AssociationEnd xmi.id="assoc_end_user_chair_user" type="role_user" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+        <UML:AssociationEnd xmi.id="assoc_end_user_chair_chair" type="role_chair" name="chair" visibility="public" aggregation="none" multiplicity="1"/>
+      </UML:Association.connection>
+    </UML:Association>
+  </XMI.content>
+</XMI>
+```

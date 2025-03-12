@@ -1,0 +1,138 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLEducation" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View containing main classes -->
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View" isSpecification="false">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Class "student" -->
+            <UML:Class xmi.id="class_student" name="student" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_student_Last_name" name="Last_name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_student_First_name" name="First_name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_student_Patronymic" name="Patronymic" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_student_ex" name="ex" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_bool"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_student_avt" name="avt" visibility="public" type="class_avtomat"/>
+                <UML:Attribute xmi.id="attr_student_exam" name="exam" visibility="public" type="class_exam"/>
+                <UML:Operation xmi.id="op_student_is_exam" name="is_exam" visibility="public" isQuery="true"/>
+                <UML:Operation xmi.id="op_student_get_full_info" name="get_full_info" visibility="public" isQuery="true"/>
+                <UML:Operation xmi.id="op_student_set_info" name="set_info" visibility="public" isQuery="false"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class "exam" -->
+            <UML:Class xmi.id="class_exam" name="exam" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_exam_ball" name="ball" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_exam_set" name="set" visibility="public"/>
+                <UML:Operation xmi.id="op_exam_get" name="get" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class "kr" -->
+            <UML:Class xmi.id="class_kr" name="kr" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_kr_sred_ball" name="sred_ball" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_double"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_kr_set" name="set" visibility="public"/>
+                <UML:Operation xmi.id="op_kr_get" name="get" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Class "avtomat" -->
+            <UML:Class xmi.id="class_avtomat" name="avtomat" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_avtomat_Kr" name="Kr" visibility="public" type="class_kr"/>
+                <UML:Attribute xmi.id="attr_avtomat_olimp" name="olimp" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_bool"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_avtomat_is_olimp" name="is_olimp" visibility="public" isQuery="true"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_student_exam" name="student-exam" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_student" type="class_student" name="student" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_exam" type="class_exam" name="exam" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_student_avtomat" name="student-avtomat" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_student_2" type="class_student" name="student" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_avtomat" type="class_avtomat" name="avtomat" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_avtomat_kr" name="avtomat-kr" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_avtomat_kr" type="class_avtomat" name="avtomat" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_kr" type="class_kr" name="kr" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes" isSpecification="false">
+          <UML:Namespace.ownedElement>
+
+            <!-- Primitive DataTypes -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

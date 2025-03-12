@@ -1,0 +1,123 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="pkg_Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_const_Predicate" name="const Predicate"/>
+                <UML:DataType xmi.id="datatype_timer_ptr" name="timer*"/>
+                <UML:DataType xmi.id="datatype_ListenerHandler_ptr" name="ListenerHandler*"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- ana Package -->
+            <UML:Package xmi.id="pkg_ana" name="ana">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Classes and Generalizations -->
+                <UML:Class xmi.id="class_NetInt" name="NetInt" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="class_NetInt"/>
+                    </UML:Generalization.child>
+                  </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_NetUint" name="NetUint" visibility="public"/>
+                
+                <UML:Class xmi.id="class_Message" name="Message" visibility="public"/>
+                
+                <UML:Class xmi.id="class_Port" name="Port" visibility="public"/>
+                
+                <UML:Class xmi.id="abstract_listener_handler" name="listener_handler" isAbstract="true">
+                  <UML:Operation xmi.id="op_handle_message" name="handle_message" visibility="public"/>
+                  <UML:Operation xmi.id="op_handle_disconnect" name="handle_disconnect" visibility="public"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_connection_handler" name="connection_handler" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="abstract_listener_handler"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                  <UML:Operation xmi.id="op_handle_connect" name="handle_connect" visibility="public"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_send_handler" name="send_handler" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="abstract_listener_handler"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+                
+                <UML:Class xmi.id="abstract_server" name="server" isAbstract="true" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="abstract_timed_sender"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                  <UML:Operation xmi.id="op_send_all" name="send_all" visibility="public"/>
+                  <UML:Operation xmi.id="op_send_if" name="send_if" visibility="public"/>
+                  <UML:Operation xmi.id="op_send_one" name="send_one" visibility="public"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="abstract_timed_sender" name="timed_sender" isAbstract="true" visibility="public">
+                  <UML:Operation xmi.id="op_set_timeouts" name="set_timeouts" visibility="public"/>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_client" name="client" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="abstract_timed_sender"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+                
+                <!-- Associations -->
+                <UML:Association xmi.id="assoc_client_client_proxy" name="client-client_proxy" visibility="public"/>
+                
+                <UML:Association xmi.id="assoc_server_buffers" name="server-buffers" visibility="public">
+                  <UML:AssociationEnd type="abstract_server"/>
+                  <UML:AssociationEnd type="class_read_buffer_implementation"/>
+                  <UML:AssociationEnd type="class_copying_buffer"/>
+                </UML:Association>
+
+                <!-- Additional Classes -->
+                <UML:Class xmi.id="class_read_buffer_implementation" name="read_buffer_implementation" visibility="public"/>
+                <UML:Class xmi.id="class_copying_buffer" name="copying_buffer" visibility="public"/>
+                <UML:Class xmi.id="class_client_proxy" name="client_proxy" visibility="public"/>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,91 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Translator" name="JCVI::Translator" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Dollar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_table" name="table" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TableSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_starts" name="starts" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TableSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_reverse" name="reverse" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_TableSet"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_new" name="new" visibility="public">
+              <UML:Parameter name="id" kind="in"/>
+              <UML:Parameter name="type" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_custom" name="custom" visibility="public">
+              <UML:Parameter name="table_ref" kind="in"/>
+              <UML:Parameter name="complete" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_translate" name="translate" visibility="public">
+              <UML:Parameter name="seq_ref" kind="in"/>
+              <UML:Parameter name="params" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_translate_exons" name="translate_exons" visibility="public">
+              <UML:Parameter name="seq_ref" kind="in"/>
+              <UML:Parameter name="exons" kind="in"/>
+              <UML:Parameter name="params" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_prepare" name="_prepare" visibility="private">
+              <UML:Parameter name="strand" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_endpoints" name="_endpoints" visibility="private">
+              <UML:Parameter name="strand" kind="in"/>
+              <UML:Parameter name="lower" kind="in"/>
+              <UML:Parameter name="upper" kind="in"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op__start" name="_start" visibility="private"/>
+            <UML:Operation xmi.id="op__translate" name="_translate" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:Class xmi.id="class_TableSet" name="Table Set" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_0" name="0" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Hash"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_1" name="1" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Hash"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <UML:DataType xmi.id="Dollar" name="$"/>
+        <UML:DataType xmi.id="Array" name="[]"/>
+        <UML:DataType xmi.id="Hash" name="{}"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

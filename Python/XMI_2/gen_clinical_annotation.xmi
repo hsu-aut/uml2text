@@ -1,0 +1,96 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_EA_Model" name="EA Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Klasse DE_E_1279-->
+        <UML:Class xmi.id="DE_E_1279" name="DistantRecurrenceHealthExaminationAnnotation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_otherTissueSite" name="otherTissueSite" visibility="private"/>
+            <UML:Attribute xmi.id="attr_tissueSite" name="tissueSite" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse DE_E_1277, DE_E_1274 mit Generalisierung von DE_E_1254-->
+        <UML:Class xmi.id="DE_E_1277" name="LocalRecurrenceHealthExaminationAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_DE_E_1277_DE_E_1254" parent="DE_E_1254" child="DE_E_1277"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="DE_E_1274" name="ChemoRXAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_DE_E_1274_DE_E_1254" parent="DE_E_1254" child="DE_E_1274"/>
+        </UML:Class>
+
+        <!-- Klasse DE_E_1264 -->
+        <UML:Class xmi.id="DE_E_1264" name="TreatmentAnnotation" visibility="public" isAbstract="false" />
+
+        <!-- Klasse DE_E_1254 -->
+        <UML:Class xmi.id="DE_E_1254" name="RecurrenceHealthExaminationAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization child="DE_E_1258" parent="DE_E_1254"/>
+        </UML:Class>
+
+        <!-- Klasse DE_E_1258 -->
+        <UML:Class xmi.id="DE_E_1258" name="DeprecatedAnnotation2" visibility="public" isAbstract="false"/>
+
+        <!-- Klasse DE_E_1249 -->
+        <UML:Class xmi.id="DE_E_1249" name="HealthExaminationAnnotation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dateOfExamination" name="dateOfExamination" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse DE_E_1227 -->
+        <UML:Class xmi.id="DE_E_1227" name="TreatmentRegimen" visibility="public" isAbstract="false" />
+
+        <!-- Klasse DE_E_1290 -->
+        <UML:Class xmi.id="DE_E_1290" name="FamilyHistoryAnnotation" visibility="public" isAbstract="false" />
+
+        <!-- Klasse DE_E_1295 -->
+        <UML:Class xmi.id="DE_E_1295" name="NoEvidentDiseaseHealthAnnotation" visibility="public" isAbstract="false" />
+
+        <!-- Klasse DE_E_1297 -->
+        <UML:Class xmi.id="DE_E_1297" name="SmokingHealthAnnotation" visibility="public" isAbstract="false" />
+
+        <!-- Klasse DE_E_1300 -->
+        <UML:Class xmi.id="DE_E_1300" name="NewDiagnosisHealthAnnotation" visibility="public" isAbstract="false" />
+
+        <!-- Generalization -->
+        <UML:Generalization xmi.id="gen_DE_E_1279_parent" parent="DE_E_1254" child="DE_E_1279"/>
+        <UML:Generalization xmi.id="gen_DE_E_1271_parent" parent="DE_E_1249" child="DE_E_1277"/>
+        <UML:Generalization xmi.id="gen_DE_E_1274_parent" parent="DE_E_1249" child="DE_E_1274"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_1258_TreatmentRegimen">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_1258_TreatmentRegimen_1258" type="DE_E_1258" name="deprecatedAnnotation2" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_1258_TreatmentRegimen_TreatmentRegimen" type="DE_E_1227" name="treatmentRegimen" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ChemoRXAnnotation_TreatmentRegimen">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ChemoRXAnnotation_TreatmentRegimen_ChemoRXAnnotation" type="DE_E_1274" name="chemoRXAnnotation" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ChemoRXAnnotation_TreatmentRegimen_TreatmentRegimen" type="DE_E_1227" name="treatmentRegimen" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_HealthExaminationAnnotation_ParticipantRecordEntry">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_HealthExaminationAnnotation_ParticipantRecordEntry_HealthExamination" type="DE_E_1249" name="healthExaminationAnnotation" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_HealthExaminationAnnotation_ParticipantRecordEntry_ParticipantRecordEntry" type="ParticipantRecordEntry" name="participantRecordEntry" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

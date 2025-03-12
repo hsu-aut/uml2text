@@ -1,0 +1,150 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+                <UML:DataType xmi.id="datatype_byte" name="byte"/>
+                <UML:DataType xmi.id="datatype_ListFile" name="List<File>"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Classes -->
+            <UML:Class xmi.id="class_Console" name="Console">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_main" name="main" visibility="public" isSpecification="false" ownerScope="classifier" isQuery="false">
+                  <UML:Parameter xmi.id="param_main" name="args" kind="in" type="datatype_string"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_CMDParser" name="CMDParser">
+              <!-- No properties or operations defined -->
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Program" name="Program">
+              <!-- No properties or operations defined -->
+            </UML:Class>
+
+            <UML:Class xmi.id="class_ConnClient" name="ConnClient">
+              <!-- Part of Connection Subsystem -->
+            </UML:Class>
+
+            <UML:Class xmi.id="class_ConnServer" name="ConnServer">
+              <UML:Dependency client="class_ConnServer" supplier="interface_IServer"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Workspace" name="Workspace">
+              <!-- Part of Workspace-Paket -->
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Storage" name="Storage" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_IStorage"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_File" name="File">
+              <!-- Basic file structure -->
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Client" name="Client">
+              <UML:Dependency client="class_Client" supplier="interface_IServer"/>
+              <UML:Dependency client="class_Client" supplier="interface_IWorkspace"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Server" name="Server">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_IServer"/>
+                </UML:Generalization.parent>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_IVersionControl"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_VersionControl" name="VersionControl">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_IVersionControl"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Interfaces -->
+            <UML:Interface xmi.id="interface_IClient" name="IClient"/>
+            <UML:Interface xmi.id="interface_IServer" name="IServer"/>
+            <UML:Interface xmi.id="interface_IWorkspace" name="IWorkspace"/>
+            <UML:Interface xmi.id="interface_IVersionControl" name="IVersionControl"/>
+            <UML:Interface xmi.id="interface_IClientConn" name="IClientConn"/>
+            <UML:Interface xmi.id="interface_IStorage" name="IStorage"/>
+
+            <!-- Enumeration -->
+            <UML:Enumeration xmi.id="enum_Command" name="Command">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_COMMIT" name="COMMIT"/>
+                <UML:EnumerationLiteral xmi.id="literal_UPDATE" name="UPDATE"/>
+                <UML:EnumerationLiteral xmi.id="literal_CHECKOUT" name="CHECKOUT"/>
+                <UML:EnumerationLiteral xmi.id="literal_RELEASE" name="RELEASE"/>
+                <UML:EnumerationLiteral xmi.id="literal_DIFF" name="DIFF"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_Console_Command">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="class_Console" name="console" aggregation="none"/>
+                <UML:AssociationEnd type="enum_Command" name="command" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_CMDParser_Console">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="class_CMDParser" name="parser" aggregation="composite"/>
+                <UML:AssociationEnd type="class_Console" name="console" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_ConnClient_ConnServer">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="class_ConnClient" name="client" aggregation="none"/>
+                <UML:AssociationEnd type="class_ConnServer" name="server" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```
+This UML model is defined in XMI format based on the provided text description. It focuses on capturing the core structural elements, associations, dependencies, and generalizations. This is used for software architectural design and does not include detailed implementations or methods beyond what was specifically mentioned in the description.

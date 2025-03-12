@@ -1,0 +1,100 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Frama-C Package -->
+        <UML:Package xmi.id="package_FramaC" name="Frama-C"/>
+
+        <!-- Celia plugin Package -->
+        <UML:Package xmi.id="package_CeliaPlugin" name="Celia plugin">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_CeliaRewrite" name="Celia.Rewrite" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_CeliaNorm" name="Celia.Norm" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_CeliaInterp" name="Celia.Interp" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_CeliaInterpEqn" name="Celia.Interp_eqn" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Cinv engine Package -->
+        <UML:Package xmi.id="package_CinvEngine" name="Cinv engine">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_CinvEquation" name="Cinv.Equation" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Fixpoint engine Package -->
+        <UML:Package xmi.id="package_FixpointEngine" name="Fixpoint engine">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Fixpoint" name="Fixpoint" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Camllib Package -->
+        <UML:Package xmi.id="package_Camllib" name="Camllib">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_PSGraph" name="Camllib.PSHGraph" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Apron Package -->
+        <UML:Package xmi.id="package_Apron" name="Apron">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_ApronAbstract1" name="Apron.Abstract1" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_ApronTexpr1" name="Apron.Texpr1" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_ApronTcons1" name="Apron.Tcons1" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_ApronEnv" name="Apron.Env" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Apron interf Interface -->
+        <UML:Interface xmi.id="interface_ApronInterf" name="Apron interf" visibility="public">
+          <UML:Generalization xsi:type="UML:Generalization" xmi.id="generalization_Shapes" parent="class_Shapes"/>
+        </UML:Interface>
+
+        <!-- Shapes Class -->
+        <UML:Class xmi.id="class_Shapes" name="Shapes" visibility="public" isAbstract="false"/>
+
+      </UML:Namespace.ownedElement>
+      
+      <!-- Dependencies and Associations -->
+      <UML:Dependency xmi.id="dependency_FRAMAC" client="package_FramaC" supplier="package_CeliaPlugin"/>
+      <UML:Dependency xmi.id="dependency_CELIA_PLUGIN" client="package_CeliaPlugin" supplier="class_CeliaRewrite"/>
+      <UML:Dependency xmi.id="dependency_CINV_ENGINE" client="package_CinvEngine" supplier="class_CinvEquation"/>
+      <UML:Dependency xmi.id="dependency_FIXPOINT_ENGINE" client="package_FixpointEngine" supplier="class_Fixpoint"/>
+      <UML:Association xmi.id="association_FRAMAC_PROJECT_CILAST">
+        <UML:Association.connection>
+          <UML:AssociationEnd xmi.id="associationEnd_FRAMAC_PROJECT" type="package_FramaC" name="Project" visibility="public"/>
+          <UML:AssociationEnd xmi.id="associationEnd_FRAMAC_CILAST" type="package_FramaC" name="CilAST" visibility="public"/>
+        </UML:Association.connection>
+      </UML:Association>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

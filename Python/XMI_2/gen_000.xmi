@@ -1,0 +1,176 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_CasseBriques" name="CasseBriques">
+      <UML:Namespace.ownedElement>
+        <!-- Game Class -->
+        <UML:Class xmi.id="class_Game" name="Game" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ball" name="ball" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Ball"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bar" name="bar" visibility="private" aggregation="composite">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Bar"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bricks" name="bricks" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Brick"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_canvas" name="canvas" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_HTMLCanvas"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_aspectRatio" name="aspectRatio" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Game" name="Game" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_populate" name="populate" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_draw" name="draw" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_remove" name="remove" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_start" name="start" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_move" name="move" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_inverseAngleX" name="inverseAngleX" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_inverseAngleY" name="inverseAngleY" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <!-- Ball Class -->
+        <UML:Class xmi.id="class_Ball" name="Ball" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ball_game" name="game" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Game"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ball_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ball_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ball_r" name="r" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ball_speed" name="speed" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ball_angle" name="angle" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Ball" name="Ball" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_ball_draw" name="draw" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_ball_remove" name="remove" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_ball_start" name="start" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_ball_move" name="move" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <!-- Bar Class -->
+        <UML:Class xmi.id="class_Bar" name="Bar" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_bar_game" name="game" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Game"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bar_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bar_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bar_width" name="width" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bar_height" name="height" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_bar_yMargin" name="yMargin" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Bar" name="Bar" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_bar_draw" name="draw" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_bar_remove" name="remove" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_bar_move" name="move" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <!-- Brick Class -->
+        <UML:Class xmi.id="class_Brick" name="Brick" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_brick_game" name="game" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Game"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_brick_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_brick_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_brick_width" name="width" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_brick_height" name="height" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_Brick" name="Brick" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_brick_draw" name="draw" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_brick_remove" name="remove" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_brick_hit" name="hit" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        <!-- HTMLCanvas Class -->
+        <UML:Class xmi.id="class_HTMLCanvas" name="HTMLCanvas" visibility="public" isAbstract="false"/>
+        <!-- Float DataType -->
+        <UML:DataType xmi.id="Float" name="Float"/>
+        <!-- Integer DataType -->
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

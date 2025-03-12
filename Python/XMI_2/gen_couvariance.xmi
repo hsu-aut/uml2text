@@ -1,0 +1,179 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1" isSpecification="false">
+      <UML:Namespace.ownedElement>
+
+        <!-- Stereotypes and Datatypes -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+            <UML:DataType xmi.id="datatype_byte" name="byte"/>
+            <UML:DataType xmi.id="datatype_String" name="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- General Package -->
+            <UML:Package xmi.id="package_General_NWUJhbhJEjjv" name="General">
+              <UML:Namespace.ownedElement>
+
+                <UML:Class xmi.id="class_Sommet" name="Sommet" isAbstract="true" visibility="public">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_compatibleGraphe" name="compatibleGraphe" visibility="public"/>
+                    <UML:Operation xmi.id="op_insererGraphe" name="insererGraphe" visibility="public"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_Graphe" name="Graphe" isAbstract="true" visibility="public">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_compatibleSommet" name="compatibleSommet" visibility="public"/>
+                    <UML:Operation xmi.id="op_insererSommet" name="insererSommet" visibility="public"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                
+                <UML:Class xmi.id="class_Aret" name="Aret" isAbstract="true" visibility="public">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_compatibleAret" name="compatibleAret" visibility="public"/>
+                    <UML:Operation xmi.id="op_insererAret" name="insererAret" visibility="public"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+
+                <!-- Associations -->
+                <UML:Association xmi.id="assoc_Sommet_Aret">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_Sommet" type="class_Sommet" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Aret" type="class_Aret" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_Sommet_Graphe">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_SommetGraphe" type="class_Sommet" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_Graphe" type="class_Graphe" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+                <UML:Association xmi.id="assoc_Graphe_Aret">
+                  <UML:Association.connection>
+                    <UML:AssociationEnd xmi.id="assocEnd_GrapheAret" type="class_Graphe" aggregation="none"/>
+                    <UML:AssociationEnd xmi.id="assocEnd_AretGraphe" type="class_Aret" aggregation="none"/>
+                  </UML:Association.connection>
+                </UML:Association>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Chimie Package -->
+            <UML:Package xmi.id="package_Chimie_gPavOApQ91XN" name="Chimie">
+              <UML:Namespace.ownedElement>
+
+                <UML:Class xmi.id="class_Atome" name="Atome" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="class_Atome"/>
+                    </UML:Generalization.child>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_Sommet"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_Molecule" name="Molecule" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="class_Molecule"/>
+                    </UML:Generalization.child>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_Graphe"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_Liaison" name="Liaison" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="class_Liaison"/>
+                    </UML:Generalization.child>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_Aret"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Informatique Package -->
+            <UML:Package xmi.id="package_Informatique_CQap3cmNDxps" name="Informatique">
+              <UML:Namespace.ownedElement>
+
+                <UML:Class xmi.id="class_Ordinateur" name="Ordinateur" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="class_Ordinateur"/>
+                    </UML:Generalization.child>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_Sommet"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_Reseau" name="Reseau" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="class_Reseau"/>
+                    </UML:Generalization.child>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_Graphe"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <UML:Class xmi.id="class_Cable" name="Cable" visibility="public">
+                  <UML:Generalization>
+                    <UML:Generalization.child>
+                      <UML:Class xmi.idref="class_Cable"/>
+                    </UML:Generalization.child>
+                    <UML:Generalization.parent>
+                      <UML:Class xmi.idref="class_Aret"/>
+                    </UML:Generalization.parent>
+                  </UML:Generalization>
+                </UML:Class>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

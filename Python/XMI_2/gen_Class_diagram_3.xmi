@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <!-- Primäre Datentypen -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_array" name="array"/>
+            <UML:DataType xmi.id="datatype_tuple" name="tuple"/>
+            <UML:DataType xmi.id="datatype_dict" name="dict"/>
+            <UML:DataType xmi.id="datatype_object" name="object"/>
+            <UML:DataType xmi.id="datatype_set" name="set"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Klasse Simulation -->
+        <UML:Class xmi.id="class_Simulation" name="Simulation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_domain" name="domain" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Domain"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sim_type" name="sim_type" visibility="private" initialValue="'QM'">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_time_dependency" name="time_dependency" visibility="private" initialValue="'Stationary'">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse Domain -->
+        <UML:Class xmi.id="class_Domain" name="Domain" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nodes" name="nodes" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Nodes"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_read_mesh_file" name="read_mesh_file" visibility="public">
+              <UML:Parameter xmi.id="param_read_mesh_file_filename" name="filename" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse Nodes -->
+        <UML:Class xmi.id="class_Nodes" name="Nodes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_add" name="add" visibility="public">
+              <UML:Parameter xmi.id="param_add_self" name="self" kind="inout"/>
+              <UML:Parameter xmi.id="param_add_nodes" name="_nodes" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse Nodes.Triangles -->
+        <UML:Class xmi.id="class_Triangles" name="Triangles" visibility="private" isAbstract="false"/>
+
+        <!-- Klasse Interpreter -->
+        <UML:Class xmi.id="class_Interpreter" name="Interpreter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_global_stiffness_matrix" name="global_stiffness_matrix" visibility="public">
+              <UML:Parameter xmi.id="param_global_stiffness_matrix_self" name="self" kind="inout"/>
+              <UML:Parameter xmi.id="param_global_stiffness_matrix_simulation" name="simulation" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

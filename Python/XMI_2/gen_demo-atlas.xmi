@@ -1,0 +1,74 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="127-0-1-1-7cbf2e22:139abf4803c:-8000:000000000000620E" name="Demo" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="pkg_Atlas" name="Atlas">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="pkg_Microblog" name="Microblog">
+              <UML:Namespace.ownedElement>
+                <UML:Package xmi.id="pkg_Model" name="Model">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="class_Microblog" name="Microblog" visibility="public" isAbstract="false" isRoot="false" isLeaf="false" isSpecification="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_microblog_id" name="id" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                        <UML:Attribute xmi.id="attr_microblog_post" name="post" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                        <UML:Attribute xmi.id="attr_microblog_create_date" name="create_date" visibility="public" isSpecification="false" ownerScope="instance" changeability="frozen" targetScope="instance"/>
+                        <UML:Attribute xmi.id="attr_microblog_edit_date" name="edit_date" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                        <UML:Attribute xmi.id="attr_microblog_message" name="message" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                      </UML:Classifier.feature>
+                      <UML:Stereotype name="Persistence"/>
+                      <UML:ModelElement.taggedValue>
+                        <UML:TaggedValue tag="comment" value="The micro blog is a class to store the quick message."/>
+                      </UML:ModelElement.taggedValue>
+                    </UML:Class>
+                    
+                    <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false" isRoot="false" isLeaf="false" isSpecification="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_user_id" name="id" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    
+                    <UML:Association xmi.id="assoc_is_published_by" name="is-published-by" visibility="public" isSpecification="false">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_microblog_user" type="class_Microblog" name="microblog" visibility="public" aggregation="none" multiplicity="0..*" isNavigable="false"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_user_microblog" type="class_User" name="user" visibility="public" aggregation="none" multiplicity="1..1" isNavigable="true"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                <UML:Package xmi.id="pkg_Beans" name="Beans">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="class_Microblog_Bean" name="Microblog_Bean" visibility="public" isAbstract="false" isRoot="false" isLeaf="false" isSpecification="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_bean_message" name="message" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                        <UML:Attribute xmi.id="attr_bean_id" name="id" visibility="public" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                        <UML:Operation xmi.id="op_bean_Post" name="Post" visibility="public" isSpecification="false" isQuery="false" concurrency="sequential"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    
+                    <UML:Association xmi.id="assoc_post" name="post" visibility="public" isSpecification="false">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_bean_user" type="class_Microblog_Bean" name="microblogBean" visibility="public" aggregation="composite" multiplicity="1..1" isNavigable="false"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_user_bean" type="class_User" name="user" visibility="public" aggregation="none" multiplicity="1..1" isNavigable="true"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

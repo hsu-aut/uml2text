@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <!-- Logical View -->
+    
+    <!-- Datatypes Package -->
+    <UML:Package xmi.id="package_Datatypes" name="Datatypes" isSpecification="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:DataType xmi.id="datatype_undef" name="undef"/>
+      </UML:Namespace.ownedElement>
+    </UML:Package>
+    
+    <!-- TIMESTAMP Class -->
+    <UML:Class xmi.id="class_TIMESTAMP" name="TIMESTAMP" visibility="public" isAbstract="false">
+      <UML:Classifier.feature>
+        <!-- Features of the TIMESTAMP class can be defined here -->
+      </UML:Classifier.feature>
+    </UML:Class>
+
+    <!-- Entity Relationship Model -->
+    
+    <!-- Entity: tag -->
+    <UML:Class xmi.id="entity_tag" name="tag" visibility="public" isAbstract="false">
+      <UML:Classifier.feature>
+        <UML:Attribute xmi.id="tag_id" name="id" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="tag_time" name="time" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:Class xmi.idref="class_TIMESTAMP"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="tag_latitude" name="latitude" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_double"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="tag_longitude" name="longitude" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_double"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="tag_text" name="text" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="tag_url" name="url" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+      </UML:Classifier.feature>
+    </UML:Class>
+
+    <!-- Entity: Channel -->
+    <UML:Class xmi.id="entity_Channel" name="Channel" visibility="public" isAbstract="false">
+      <UML:Classifier.feature>
+        <UML:Attribute xmi.id="channel_id" name="id" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_unsigned_int"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="channel_description" name="description" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+      </UML:Classifier.feature>
+    </UML:Class>
+
+    <!-- Entity: tags -->
+    <UML:Class xmi.id="entity_tags" name="tags" visibility="public" isAbstract="false">
+      <UML:Classifier.feature>
+        <UML:Attribute xmi.id="tags_channel_id" name="channel_id" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="tags_mark_id" name="mark_id" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+      </UML:Classifier.feature>
+    </UML:Class>
+
+    <!-- Entity: user -->
+    <UML:Class xmi.id="entity_user" name="user" visibility="public" isAbstract="false">
+      <UML:Classifier.feature>
+        <UML:Attribute xmi.id="user_id" name="id" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_unsigned_int"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="user_login" name="login" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="user_passwd" name="passwd" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+      </UML:Classifier.feature>
+    </UML:Class>
+
+    <!-- Entity: subscription -->
+    <UML:Class xmi.id="entity_subscription" name="subscription" visibility="public" isAbstract="false">
+      <UML:Classifier.feature>
+        <UML:Attribute xmi.id="subscription_user_id" name="user_id" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_string"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="subscription_channel_id" name="channel_id" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_unsigned_int"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+        <UML:Attribute xmi.id="subscription_type" name="type" visibility="private">
+          <UML:StructuralFeature.type>
+            <UML:DataType xmi.idref="datatype_unsigned_int"/>
+          </UML:StructuralFeature.type>
+        </UML:Attribute>
+      </UML:Classifier.feature>
+    </UML:Class>
+
+    <!-- Association: tag-tags -->
+    <UML:Association xmi.id="assoc_tag_tags">
+      <UML:Association.connection>
+        <UML:AssociationEnd xmi.id="assocEnd_tag_tags_tag" type="entity_tag" name="tag" visibility="public" aggregation="none"/>
+        <UML:AssociationEnd xmi.id="assocEnd_tag_tags_tags" type="entity_tags" name="tags" visibility="public" aggregation="none"/>
+      </UML:Association.connection>
+    </UML:Association>
+    
+  </XMI.content>
+</XMI>

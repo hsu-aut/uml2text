@@ -1,0 +1,147 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package 'Component View' -->
+        <UML:Package xmi.id="package_Component_View" name="Component View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Placeholder for elements belonging to 'Component View' -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package 'datatype' -->
+        <UML:Package xmi.id="package_datatype" name="datatype" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Primitive and composite data types -->
+            <UML:DataType xmi.id="datatype_StringArray" name="String[]"/>
+            <UML:DataType xmi.id="datatype_doubleArray" name="double[]"/>
+            <UML:DataType xmi.id="datatype_Integer" name="Integer"/>
+            <UML:DataType xmi.id="datatype_DateTime" name="DateTime"/>
+            <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+            <UML:DataType xmi.id="datatype_Object" name="Object"/>
+            <UML:DataType xmi.id="datatype_List" name="List"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_Byte" name="Byte"/>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_Mappings" name="Mappings"/>
+            <UML:DataType xmi.id="datatype_Date" name="Date"/>
+            <UML:DataType xmi.id="datatype_TimestampArray" name="Timestamp[]"/>
+            <UML:DataType xmi.id="datatype_CharacterArray" name="Character[]"/>
+
+            <!-- Inheritances among data types -->
+            <UML:Generalization xmi.id="generalization_Integer_int">
+              <UML:Generalization.child xmi.idref="datatype_int"/>
+              <UML:Generalization.parent xmi.idref="datatype_Integer"/>
+            </UML:Generalization>
+            <UML:Generalization xmi.id="generalization_Byte_byte">
+              <UML:Generalization.child xmi.idref="datatype_byte"/>
+              <UML:Generalization.parent xmi.idref="datatype_Byte"/>
+            </UML:Generalization>
+            <UML:Generalization xmi.id="generalization_DateTime_Date">
+              <UML:Generalization.child xmi.idref="datatype_Date"/>
+              <UML:Generalization.parent xmi.idref="datatype_DateTime"/>
+            </UML:Generalization>
+            <UML:Generalization xmi.id="generalization_List_Collection">
+              <UML:Generalization.child xmi.idref="datatype_Collection"/>
+              <UML:Generalization.parent xmi.idref="datatype_List"/>
+            </UML:Generalization>
+            <UML:Generalization xmi.id="generalization_Set_Collection">
+              <UML:Generalization.child xmi.idref="datatype_Collection"/>
+              <UML:Generalization.parent xmi.idref="datatype_Set"/>
+            </UML:Generalization>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package 'org.andromda.profile' -->
+        <UML:Package xmi.id="package_org_andromda_profile" name="org.andromda.profile" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Stereotypes and enumerations -->
+            <UML:Enumeration xmi.id="enumeration_WebServiceProvider" name="WebServiceProvider">
+              <!-- Enumeration literals omitted for brevity -->
+            </UML:Enumeration>
+            <UML:Enumeration xmi.id="enumeration_WebServiceUse" name="WebServiceUse">
+              <!-- Enumeration literals omitted for brevity -->
+            </UML:Enumeration>
+            <UML:Enumeration xmi.id="enumeration_SpringRemotingProtocol" name="SpringRemotingProtocol">
+              <!-- Enumeration literals omitted for brevity -->
+            </UML:Enumeration>
+            <UML:Enumeration xmi.id="enumeration_EjbViewType" name="EjbViewType">
+              <!-- Enumeration literals omitted for brevity -->
+            </UML:Enumeration>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package 'process' -->
+        <UML:Package xmi.id="package_process" name="process" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Workflow related stereotypes -->
+            <UML:Class xmi.id="stereotype_NodeEnter" name="Node Enter" isAbstract="true"/>
+            <UML:Class xmi.id="stereotype_NodeLeave" name="Node Leave" isAbstract="true"/>
+            <UML:Class xmi.id="stereotype_Task" name="Task" isAbstract="true"/>
+            <!-- Tag Definitions -->
+            <UML:TaggedValue xmi.id="tag_assignment_expression" key="@andromda.process.jbpm.assignment.expression" value="Expression"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package 'presentation' -->
+        <UML:Package xmi.id="package_presentation" name="presentation" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Presentation layer stereotypes -->
+            <UML:Class xmi.id="stereotype_FrontEndException" name="FrontEndException" isAbstract="true"/>
+            <UML:Class xmi.id="stereotype_FrontEndApplication" name="FrontEndApplication" isAbstract="true"/>
+            <UML:Class xmi.id="stereotype_FrontEndUseCase" name="FrontEndUseCase" isAbstract="true"/>
+            <!-- Tag Definitions -->
+            <UML:TaggedValue xmi.id="tag_action_type" key="@andromda.presentation.web.action.type" value="ActionType"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package 'meta' -->
+        <UML:Package xmi.id="package_meta" name="meta" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Meta elements for meta-modeling -->
+            <UML:Class xmi.id="meta_metafacade" name="metafacade"/>
+            <UML:Class xmi.id="meta_metaclass" name="metaclass"/>
+            <UML:Class xmi.id="meta_PSMmetaclass" name="PSMmetaclass"/>
+            <!-- Tag Definitions -->
+            <UML:TaggedValue xmi.id="tag_generalization_hierarchy" key="@generalizationHierarchy" value="Hierarchy"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package 'xml' -->
+        <UML:Package xmi.id="package_xml" name="xml" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- XML specific stereotypes -->
+            <UML:Class xmi.id="stereotype_XmlAttribute" name="XmlAttribute" isAbstract="true"/>
+            <UML:Class xmi.id="stereotype_XmlSchemaType" name="XmlSchemaType" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package 'persistence' -->
+        <UML:Package xmi.id="package_persistence" name="persistence" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Persistence layer stereotypes -->
+            <UML:Class xmi.id="stereotype_Entity" name="Entity" isAbstract="true"/>
+            <UML:Class xmi.id="stereotype_EmbeddedValue" name="EmbeddedValue" isAbstract="true"/>
+            <UML:Class xmi.id="stereotype_Criteria" name="Criteria" isAbstract="true"/>
+            <!-- Tag Definitions -->
+            <UML:TaggedValue xmi.id="tag_orderByColumns" key="@andromda.hibernate.orderByColumns" value="Columns"/>
+            <UML:TaggedValue xmi.id="tag_foreign_identifier" key="@andromda.persistence.foreign.identifier" value="Identifier"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

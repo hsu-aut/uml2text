@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Umbrello UML Modeler</XMI.exporter>
+      <XMI.exporterVersion>1.2</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="KernelMemoryAnalyzerModel">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="Logical View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned int" name="unsigned int"/>
+                <UML:DataType xmi.id="string" name="string"/>
+                <UML:DataType xmi.id="AddressInfo" name="AddressInfo"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="jS7aLPVi59Jf" name="KernelMemoryAnalyzer" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="name" name="name" visibility="public" type="char[256]"/>
+                <UML:Attribute xmi.id="ReadValue" name="ReadValue" visibility="public" type="FuncPtr"/>
+                <UML:Attribute xmi.id="WriteValue" name="WriteValue" visibility="public" type="FuncPtr"/>
+                <UML:Attribute xmi.id="TraceValue" name="TraceValue" visibility="public" type="FuncPtr"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="AlsldwkKNpvi" name="Main" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="analyzerARM32" name="analyzerARM32" visibility="public" type="KernelMemoryAnalyzer"/>
+                <UML:Attribute xmi.id="analyzerARM64" name="analyzerARM64" visibility="public" type="KernelMemoryAnalyzer"/>
+                <UML:Operation xmi.id="SetARM32Analyzer" name="SetARM32Analyzer" visibility="public"/>
+                <UML:Operation xmi.id="InitDev" name="InitDev" visibility="public"/>
+                <UML:Operation xmi.id="CloseDev" name="CloseDev" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="9tvcYSrgDkRo" name="ARM32Analyzer" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="ARM32Init" name="ARM32Init" visibility="public"/>
+                <UML:Operation xmi.id="ARM32ReadValue" name="ARM32ReadValue" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="AddressInfo" name="AddressInfo" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="Print" name="Print" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="AddressMetadata" name="AddressMetadata" visibility="public" isAbstract="false"/>
+
+            <UML:Association xmi.id="assoc_AddressInfo_AddressMetadata">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_AddressInfo" type="AddressInfo" name="addressInfo" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_AddressMetadata" type="AddressMetadata" name="addressMetadata" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Class xmi.id="ARM32L1Desc" name="ARM32L1Desc" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="desc" name="desc" visibility="public" type="int"/>
+                <UML:Operation xmi.id="Print" name="Print" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="ARM32L2Desc" name="ARM32L2Desc" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="desc" name="desc" visibility="public" type="int"/>
+                <UML:Operation xmi.id="Print" name="Print" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="pgd" name="pgd" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="pte" name="pte" visibility="public" isAbstract="false"/>
+
+            <UML:Association xmi.id="assoc_ARM32L1Desc_pgd">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_ARM32L1Desc" type="ARM32L1Desc" name="arm32L1Desc" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_pgd" type="pgd" name="pgd" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_ARM32L2Desc_pte">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_ARM32L2Desc" type="ARM32L2Desc" name="arm32L2Desc" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_pte" type="pte" name="pte" visibility="public" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

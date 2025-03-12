@@ -1,0 +1,75 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="ORM">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_mixed" name="mixed"/>
+                <UML:DataType xmi.id="datatype_array" name="array"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+                <UML:DataType xmi.id="datatype_object" name="object"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Interface xmi.id="interface_Iterator" name="Iterator" visibility="public"/>
+            <UML:Interface xmi.id="interface_Countable" name="Countable" visibility="public"/>
+            
+            <UML:Class xmi.id="class_Exception" name="Exception" visibility="public" isAbstract="false"/>
+            
+            <UML:Class xmi.id="class_ORM" name="ORM" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_datos" name="datos" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_array"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <!-- Weitere Attribute und Operationen von ORM -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_ABM" name="ABM" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_ABM_ORM" parent="class_ORM"/>
+              <!-- Weitere Attribute und Operationen von ABM -->
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_ClassGetter" name="ClassGetter" visibility="public" isAbstract="false">
+              <!-- Funktionen und Operationen von ClassGetter -->
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_Model_Exception" parent="class_Exception"/>
+              <!-- Attribute und Operationen von Model -->
+            </UML:Class>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="deployment_view" name="Deployment View">
+          <UML:Namespace.ownedElement>
+            <UML:Artifact xmi.id="artifact_orm_php" name="orm.class.php"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Package xmi.id="use_case_view" name="Use Case View"/>
+        <UML:Package xmi.id="component_view" name="Component View"/>
+        <UML:Package xmi.id="entity_relationship_model" name="Entity Relationship Model"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

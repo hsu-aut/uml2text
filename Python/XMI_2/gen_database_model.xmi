@@ -1,0 +1,128 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Modèle_UML_m1" name="Modèle UML (m1)">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_integer" name="integer"/>
+                <UML:DataType xmi.id="datatype_unicode" name="unicode"/>
+                <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="class_Rock" name="Rock">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_rock_id" name="rock_id" type="datatype_integer"/>
+                <UML:Attribute xmi.id="attr_rock_number" name="rock_number" type="datatype_unicode"/>
+                <UML:Attribute xmi.id="attr_rock_name" name="rock_name" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Group" name="Group">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_group_id" name="group_id" type="datatype_integer"/>
+                <UML:Attribute xmi.id="attr_group_number" name="group_number" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Zone" name="Zone">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_zone_id" name="zone_id" type="datatype_integer"/>
+                <UML:Attribute xmi.id="attr_zone_number" name="zone_number" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Engraving" name="Engraving">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_engraving_id" name="engraving_id" type="datatype_integer"/>
+                <UML:Attribute xmi.id="attr_engraving_number" name="engraving_number" type="datatype_unicode"/>
+                <UML:Attribute xmi.id="attr_rock_face" name="rock_face" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Petroglyph" name="Petroglyph">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_identity" name="identity" type="datatype_unicode"/>
+                <UML:Attribute xmi.id="attr_alternate_identity" name="alternate_identity" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Historic" name="Historic">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_date" name="date" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Image" name="Image">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_image_id" name="image_id" type="datatype_integer"/>
+                <UML:Attribute xmi.id="attr_path" name="path" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Lake" name="Lake">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_lake_id" name="lake_id" type="datatype_integer"/>
+                <UML:Attribute xmi.id="attr_geo_polygon" name="geo_polygon" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Watercourse" name="Watercourse">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_geo_linestring" name="geo_linestring" type="datatype_unicode"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Association xmi.id="assoc_Rock_Engraving" name="RP31eI6bw1mh">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Rock_Engraving_Rock" type="class_Rock" name="rock" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Rock_Engraving_Engraving" type="class_Engraving" name="engraving" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Group_Rock" name="0F3wFqc6TJFq">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Group_Rock_Group" type="class_Group" name="group" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Group_Rock_Rock" type="class_Rock" name="rock" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Zone_Group" name="t2VKJlALVxYU">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Zone_Group_Zone" type="class_Zone" name="zone" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Zone_Group_Group" type="class_Group" name="group" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Zone_Rock" name="Lkx6rjBJB8sC">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Zone_Rock_Zone" type="class_Zone" name="zone" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Zone_Rock_Rock" type="class_Rock" name="rock" aggregation="none" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Generalization xmi.id="gen_Engraving_Petroglyph" parent="class_Petroglyph" child="class_Engraving"/>
+
+            <UML:Generalization xmi.id="gen_Petroglyph_Engraving" parent="class_Engraving" child="class_Petroglyph"/>
+
+            <UML:Generalization xmi.id="gen_Historic_Engraving" parent="class_Engraving" child="class_Historic"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

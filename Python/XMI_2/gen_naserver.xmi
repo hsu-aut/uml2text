@@ -1,0 +1,131 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_uml" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klassen -->
+        
+        <UML:Class xmi.id="class_Dispatcher" name="Dispatcher" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_activeEventList" name="m_activeEventList" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ActiveEventList"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_registerEvents" name="registerEvents" visibility="public"/>
+            <UML:Operation xmi.id="op_removeEvents" name="removeEvents" visibility="public"/>
+            <UML:Operation xmi.id="op_handleEvents" name="handleEvents" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Dependency>
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_Dispatcher"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="interface_EventHandler"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+          <UML:Dependency>
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_Dispatcher"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="class_Poller"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Poller" name="Poller" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_pollfds" name="m_pollfds" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Pollfds"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_registerHandles" name="registerHandles" visibility="public"/>
+            <UML:Operation xmi.id="op_poll" name="poll" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Dependency>
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_Poller"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="class_Dispatcher"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_ConcreteEventHandler" name="ConcreteEventHandler" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="interface_EventHandler"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_InetAddress" name="InetAddress" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_addr" name="m_addr" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Dependency>
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_Socket"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="class_InetAddress"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Socket" name="Socket" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_bind" name="bind" visibility="public"/>
+            <UML:Operation xmi.id="op_listen" name="listen" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Dependency>
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_Socket"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="class_InetAddress"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+          <UML:Dependency>
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_Socket"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="class_ConcreteEventHandler"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+        </UML:Class>
+
+        <!-- Definition der Interfaces -->
+        
+        <UML:Interface xmi.id="interface_EventHandler" name="EventHandler" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_handleEvent" name="handleEvent" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+        
+        <!-- Definition der Datatypes -->
+        
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

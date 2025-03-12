@@ -1,0 +1,69 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ExampleExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UseCase" name="UseCaseModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Akteur Definition -->
+        <UML:Actor xmi.id="actor_Admin" name="Admin" visibility="public" isAbstract="false"/>
+        
+        <!-- Use Cases Definition -->
+        <UML:UseCase xmi.id="useCase_CrearUsuario" name="Crear Usuario" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_ModificarUsuario" name="Modificar Usuario" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BorrarUsuario" name="Borrar Usuario" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_CambiarDeGrupo" name="Cambiar de Grupo" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_CrearGrupo" name="Crear Grupo" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_ModificarGrupo" name="Modificar Grupo" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BorrarGrupo" name="Borrar Gruppe" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_ModificarPermisos" name="Modificar Permisos" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_CopiarPermisosSkel" name="Copiar Permisos Skel" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BorrarPermisos" name="Borrar Permisos" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_CrearEmpresa" name="Crear Empresa" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_ListarUsuarios" name="Listar Usuarios" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BorrarTodosUsuarios" name="Borrar Todos Usuarios" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_ModificarEmpresa" name="Modificar Empresa" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BorrarEmpresa" name="Borrar Empresa" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_ListarGrupos" name="Listar Grupos" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BorrarTodosGrupos" name="Borrar Todos Grupos" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_ClonarGrupo" name="Clonar Grupo" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_AsignarAGrupoNuevo" name="Asignar a un grupo nuevo" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BorrarGrupoEnCascada" name="Borrar Grupo en Cascada" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BorrarEmpresaEnCascada" name="Borrar Empresa en Cascada" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_CambiarDeEmpresa" name="Cambiar de Empresa" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_AsignarAGrupoExistente" name="Asignar un grupo existente" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_AsignarAEmpresa" name="Asignar a una empresa" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BuscarUsuario" name="Buscar Usuario" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BuscarGrupo" name="Buscar Grupo" visibility="public"/>
+        <UML:UseCase xmi.id="useCase_BuscarEmpresa" name="Buscar Empresa" visibility="public"/>
+        
+        <!-- Abhängigkeiten zwischen Use Cases -->
+        <UML:Dependency xmi.id="dep_ModificarUsuario_CambiarDeGrupo" client="useCase_ModificarUsuario" supplier="useCase_CambiarDeGrupo"/>
+        <UML:Dependency xmi.id="dep_CambiarDeGrupo_ModificarUsuario" client="useCase_CambiarDeGrupo" supplier="useCase_ModificarUsuario"/>
+        <UML:Dependency xmi.id="dep_CopiarPermisosSkel_CrearGrupo" client="useCase_CopiarPermisosSkel" supplier="useCase_CrearGrupo"/>
+        <UML:Dependency xmi.id="dep_ModificarPermisos_ModificarGrupo" client="useCase_ModificarPermisos" supplier="useCase_ModificarGrupo"/>
+        <UML:Dependency xmi.id="dep_BorrarPermisos_BorrarGrupo" client="useCase_BorrarPermisos" supplier="useCase_BorrarGrupo"/>
+        <UML:Dependency xmi.id="dep_BorrarTodosUsuarios_BorrarTodosGrupos" client="useCase_BorrarTodosUsuarios" supplier="useCase_BorrarTodosGrupos"/>
+        <UML:Dependency xmi.id="dep_ClonarGrupo_CrearGrupo" client="useCase_ClonarGrupo" supplier="useCase_CrearGrupo"/>
+        <UML:Dependency xmi.id="dep_AsignarAGrupoNuevo_CrearUsuario" client="useCase_AsignarAGrupoNuevo" supplier="useCase_CrearUsuario"/>
+        <UML:Dependency xmi.id="dep_BorrarGrupoEnCascada_BorrarTodosUsuarios" client="useCase_BorrarGrupoEnCascada" supplier="useCase_BorrarTodosUsuarios"/>
+        <UML:Dependency xmi.id="dep_BorrarGrupoEnCascada_BorrarPermisos" client="useCase_BorrarGrupoEnCascada" supplier="useCase_BorrarPermisos"/>
+        <UML:Dependency xmi.id="dep_BorrarGrupoEnCascada_BorrarTodosGrupos" client="useCase_BorrarGrupoEnCascada" supplier="useCase_BorrarTodosGrupos"/>
+        <UML:Dependency xmi.id="dep_BorrarEmpresaEnCascada_BorrarTodosGrupos" client="useCase_BorrarEmpresaEnCascada" supplier="useCase_BorrarTodosGrupos"/>
+        <UML:Dependency xmi.id="dep_CambiarDeEmpresa_ModificarGrupo" client="useCase_CambiarDeEmpresa" supplier="useCase_ModificarGrupo"/>
+        <UML:Dependency xmi.id="dep_AsignarAGrupoExistente_CrearUsuario" client="useCase_AsignarAGrupoExistente" supplier="useCase_CrearUsuario"/>
+        <UML:Dependency xmi.id="dep_AsignarAEmpresa_CrearGrupo" client="useCase_AsignarAEmpresa" supplier="useCase_CrearGrupo"/>
+        <UML:Dependency xmi.id="dep_CrearGrupo_AsignarAGrupoNuevo" client="useCase_CrearGrupo" supplier="useCase_AsignarAGrupoNuevo"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

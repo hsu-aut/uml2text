@@ -1,0 +1,34 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_A" name="A" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_B" name="B" visibility="public" isAbstract="false"/>
+        <UML:AssociationClass xmi.id="assocClass_AC" name="AC" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_count" name="count" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="CustomDataType"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_AC_A" type="class_A" multiplicity="1..1" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_AC_B" type="class_B" multiplicity="1..1" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:AssociationClass>
+        <UML:DataType xmi.id="CustomDataType" name="CustomDataType"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

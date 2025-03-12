@@ -1,0 +1,203 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Game" name="GameModel">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Klasse "character" -->
+        <UML:Class xmi.id="class_character" name="character" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_hit_points" name="hit_points" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_position" name="position" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_max_jump" name="max_jump" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_max_projectiles" name="max_projectiles" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_sprite_list" name="sprite_list" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_move_speed" name="move_speed" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_last_execute_timer" name="last_execute_timer" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_execute" name="execute" visibility="public"/>
+            <UML:Operation xmi.id="op_move" name="move" visibility="public"/>
+            <UML:Operation xmi.id="op_attack" name="attack" visibility="public"/>
+            <UML:Operation xmi.id="op_gravity" name="gravity" visibility="public"/>
+            <UML:Operation xmi.id="op_jump" name="jump" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "player" -->
+        <UML:Class xmi.id="class_player" name="player" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_character"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_colormap_list" name="colormap_list" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_item_list" name="item_list" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_selected_weapon" name="selected_weapon" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_weapon_list" name="weapon_list" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_playerExecute" name="execute" visibility="public"/>
+            <UML:Operation xmi.id="op_playerMove" name="playerMove" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "npc" -->
+        <UML:Class xmi.id="class_npc" name="npc" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_character"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_shield_type" name="shield_type" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_projectile_type" name="projectile_type" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_drop_item_list" name="drop_item_list" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_move_range" name="move_range" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_artificial_intelligence_type" name="artificial_intelligence_type" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_movement" name="movement" visibility="private" changeability="changeable"/>
+            <UML:Operation xmi.id="op_npcExecute" name="execute" visibility="public"/>
+            <UML:Operation xmi.id="op_npcMove" name="npcMove" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "npc_boss" -->
+        <UML:Class xmi.id="class_npc_boss" name="npc_boss" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_npc"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_first_run" name="first_run" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_face_filename" name="face_filename" visibility="private" changeability="changeable"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "weapon" -->
+        <UML:Class xmi.id="class_weapon" name="weapon" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_projectile"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_timer" name="timer" visibility="private" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="private" changeability="changeable"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "projectile" -->
+        <UML:Class xmi.id="class_projectile" name="projectile" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Attributes and Operations would typically be defined here -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "projectileLib" -->
+        <UML:Class xmi.id="class_projectileLib" name="projectileLib" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Assuming references to owner_player and owner_npc exist -->
+            <UML:Attribute xmi.id="ref_owner_player" name="owner_player" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_player"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_owner_npc" name="owner_npc" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_npc"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "game" -->
+        <UML:Class xmi.id="class_game" name="game" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_stage_list" name="stage_list" visibility="private"/>
+            <UML:Attribute xmi.id="attr_npc_list" name="npc_list" visibility="private"/>
+            <UML:Attribute xmi.id="attr_projectileList" name="projectileList" visibility="private"/>
+            <UML:Attribute xmi.id="attr_player_list" name="player_list" visibility="private"/>
+            <UML:Attribute xmi.id="attr_scene" name="scene" visibility="private"/>
+            <UML:Attribute xmi.id="attr_game_config" name="game_config" visibility="private"/>
+            <UML:Operation xmi.id="op_init_game" name="init_game" visibility="public"/>
+            <UML:Operation xmi.id="op_show_intro" name="show_intro" visibility="public"/>
+            <UML:Operation xmi.id="op_show_game" name="show_game" visibility="public"/>
+            <UML:Operation xmi.id="op_checkScrolling" name="checkScrolling" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "graphicsLib" -->
+        <UML:Class xmi.id="class_graphicsLib" name="graphicsLib" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_gameScreen" name="gameScreen" visibility="private"/>
+            <UML:Operation xmi.id="op_initGraphics" name="initGraphics" visibility="public"/>
+            <UML:Operation xmi.id="op_updateScreen" name="updateScreen" visibility="public"/>
+            <UML:Operation xmi.id="op_surfaceFromRegion" name="surfaceFromRegion" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "soundLib" -->
+        <UML:Class xmi.id="class_soundLib" name="soundLib" visibility="public" isAbstract="false">
+          <!-- No attributes or operations defined -->
+        </UML:Class>
+
+        <!-- Definition der Klasse "inputLib" -->
+        <UML:Class xmi.id="class_inputLib" name="inputLib" visibility="public" isAbstract="false">
+          <!-- No attributes or operations defined -->
+        </UML:Class>
+
+        <!-- Definition der Klasse "st_game_config" -->
+        <UML:Class xmi.id="class_st_game_config" name="st_game_config" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_two_players" name="two_players" visibility="private"/>
+            <UML:Attribute xmi.id="attr_sound_enabled" name="sound_enabled" visibility="private"/>
+            <UML:Attribute xmi.id="attr_video_fullscreen" name="video_fullscreen" visibility="private"/>
+            <UML:Attribute xmi.id="attr_video_filter" name="video_filter" visibility="private"/>
+            <UML:Attribute xmi.id="attr_selected_player" name="selected_player" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "map" -->
+        <UML:Class xmi.id="class_map" name="map" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_loadMap" name="loadMap" visibility="public"/>
+            <UML:Operation xmi.id="op_saveMap" name="saveMap" visibility="public"/>
+            <UML:Operation xmi.id="op_setStageNumber" name="setStageNumber" visibility="public"/>
+            <UML:Operation xmi.id="op_setMapNumber" name="setMapNumber" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse "stage" -->
+        <UML:Class xmi.id="class_stage" name="stage" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_maps" name="maps" visibility="private"/>
+            <UML:Operation xmi.id="op_setStageNumber" name="setStageNumber" visibility="public"/>
+            <UML:Operation xmi.id="op_loadStage" name="loadStage" visibility="public"/>
+            <UML:Operation xmi.id="op_saveStage" name="saveStage" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der "Structure" Hilfsklassen -->
+        <UML:Class xmi.id="class_st_hitPoints" name="st_hitPoints" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_position" name="st_position" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_size" name="st_size" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_character_state" name="st_character_state" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_platform" name="st_platform" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_teleporter" name="st_teleporter" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_items" name="st_items" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_colormap" name="st_colormap" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_sprite" name="st_sprite" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_st_movement_information" name="st_movement_information" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

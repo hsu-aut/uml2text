@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_test_VertexClass" name="test.VertexClass">
+      <UML:Namespace.ownedElement>
+
+        <!-- Klasse MyGraphClass -->
+        <UML:Class xmi.id="class_MyGraphClass" name="MyGraphClass" visibility="public" isAbstract="false"/>
+
+        <!-- Klasse ASimpleVertexClass -->
+        <UML:Class xmi.id="class_ASimpleVertexClass" name="ASimpleVertexClass" visibility="public" isAbstract="false"/>
+
+        <!-- Abstrakte Klasse AnAbstractVertexClassByAttr -->
+        <UML:Class xmi.id="class_AnAbstractVertexClassByAttr" name="AnAbstractVertexClassByAttr" visibility="public" isAbstract="true"/>
+
+        <!-- Abstrakte Klasse AnAbstractVertexClassByStereotype -->
+        <UML:Class xmi.id="class_AnAbstractVertexClassByStereotype" name="AnAbstractVertexClassByStereotype" visibility="public" isAbstract="true"/>
+
+        <!-- Abstrakte Klasse AnAbstractVertexClassByAttrAndStereotype -->
+        <UML:Class xmi.id="class_AnAbstractVertexClassByAttrAndStereotype" name="AnAbstractVertexClassByAttrAndStereotype" visibility="public" isAbstract="true"/>
+
+        <!-- Klasse VertexClassWithAttribute -->
+        <UML:Class xmi.id="class_VertexClassWithAttribute" name="VertexClassWithAttribute" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_size" name="size" visibility="public" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="DataType_size"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Klasse Graph -->
+        <UML:Class xmi.id="class_Graph" name="Graph" visibility="public" isAbstract="false"/>
+
+        <!-- Klasse DirectedGraph -->
+        <UML:Class xmi.id="class_DirectedGraph" name="DirectedGraph" visibility="public" isAbstract="false">
+          <UML:Generalization name="GraphInheritance">
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_DirectedGraph"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Graph"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Klasse UndirectedGraph -->
+        <UML:Class xmi.id="class_UndirectedGraph" name="UndirectedGraph" visibility="public" isAbstract="false">
+          <UML:Generalization name="GraphInheritance">
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_UndirectedGraph"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Graph"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Klasse TGraph -->
+        <UML:Class xmi.id="class_TGraph" name="TGraph" visibility="public" isAbstract="false">
+          <UML:Generalization name="DirectedGraphInheritance">
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_TGraph"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DirectedGraph"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Generalization name="UndirectedGraphInheritance">
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_TGraph"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_UndirectedGraph"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Datentyp size -->
+        <UML:DataType xmi.id="DataType_size" name="DataType"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

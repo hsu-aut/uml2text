@@ -1,0 +1,148 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DodgeGame" name="DodgeGameModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_DodgController" name="DodgController" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dodge" name="dodge" visibility="private"/>
+            <UML:Attribute xmi.id="attr_config" name="config" visibility="private"/>
+            <UML:Attribute xmi.id="attr_timer" name="timer" visibility="private"/>
+            <UML:Attribute xmi.id="attr_gameState" name="gameState" visibility="private"/>
+            
+            <UML:Operation xmi.id="op_start" name="start" visibility="public"/>
+            <UML:Operation xmi.id="op_stop" name="stop" visibility="public"/>
+            <UML:Operation xmi.id="op_initialiseDodge" name="initialiseDodge" visibility="public"/>
+            <UML:Operation xmi.id="op_playDodge" name="playDodge" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          
+          <UML:Dependency xmi.id="dep_to_DodgeGUI">
+            <UML:Dependency.client>
+              <UML:Class xmi.idref="class_DodgController"/>
+            </UML:Dependency.client>
+            <UML:Dependency.supplier>
+              <UML:Class xmi.idref="class_DodgeGUI"/>
+            </UML:Dependency.supplier>
+          </UML:Dependency>
+          
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_DodgeGUI" name="DodgeGUI" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_dodgescene" name="dodgescene" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_DodgeConfig" name="DodgeConfig" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_DodgeConfig"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DodgController"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_gameState" name="gameState" visibility="private"/>
+            <UML:Attribute xmi.id="attr_newAttr" name="newAttr" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Timer" name="Timer" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_DodgeScene" name="DodgeScene" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_DodgeGUI"/>
+            </UML:Generalization.parent>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_DodgeScene"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_DodgeScene"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_KeyEventManager"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_actionLister" name="actionLister" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_KeyEventManager" name="KeyEventManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_keyPressed" name="keyPressed" visibility="public"/>
+            <UML:Operation xmi.id="op_keyReleased" name="keyReleased" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_AbstractSprite" name="AbstractSprite" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private"/>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private"/>
+            <UML:Attribute xmi.id="attr_dx" name="dx" visibility="private"/>
+            <UML:Attribute xmi.id="attr_dy" name="dy" visibility="private"/>
+            <UML:Operation xmi.id="op_move" name="move" visibility="public"/>
+            <UML:Operation xmi.id="op_getBounds" name="getBounds" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_DodgePlayer" name="DodgePlayer" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_DodgePlayer"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractSprite"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_FallingObject" name="FallingObject" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FallingObject"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_AbstractSprite"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Enumeration xmi.id="enum_GameState" name="GameState">
+          <UML:Namespace.ownedElement>
+            <UML:EnumerationLiteral xmi.id="enumLit_INITIALISED" name="INITIALISED"/>
+            <UML:EnumerationLiteral xmi.id="enumLit_STARTED" name="STARTED"/>
+            <UML:EnumerationLiteral xmi.id="enumLit_PAUSED" name="PAUSED"/>
+            <UML:EnumerationLiteral xmi.id="enumLit_STOPPED" name="STOPPED"/>
+          </UML:Namespace.ownedElement>
+        </UML:Enumeration>
+
+        <UML:Interface xmi.id="interface_JComponent" name="JComponent"/>
+        
+        <UML:Realization xmi.id="realization_DodgeScene_JComponent">
+          <UML:Realization.supplier>
+            <UML:Interface xmi.idref="interface_JComponent"/>
+          </UML:Realization.supplier>
+          <UML:Realization.client>
+            <UML:Class xmi.idref="class_DodgeScene"/>
+          </UML:Realization.client>
+        </UML:Realization>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

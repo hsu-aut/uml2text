@@ -1,0 +1,98 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <!-- Definition des Modells Data -->
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Paket Component View -->
+        <UML:Package xmi.id="package_ComponentView" name="Component View">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Paket datatype -->
+        <UML:Package xmi.id="package_datatype" name="datatype">
+          <UML:Namespace.ownedElement>
+            <!-- Datentyp String[] -->
+            <UML:DataType xmi.id="datatype_StringArray" name="String[]"/>
+            <!-- Datentyp double[] -->
+            <UML:DataType xmi.id="datatype_doubleArray" name="double[]"/>
+            <!-- Datentyp Integer -->
+            <UML:DataType xmi.id="datatype_Integer" name="Integer">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Classifier xmi.idref="datatype_int"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+            </UML:DataType>
+            <!-- Datentyp DateTime -->
+            <UML:DataType xmi.id="datatype_DateTime" name="DateTime">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Classifier xmi.idref="datatype_Date"/>
+                  <UML:Classifier xmi.idref="datatype_Time"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:DataType>
+            <!-- Datentyp boolean -->
+            <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+            <!-- Datentyp Object -->
+            <UML:DataType xmi.id="datatype_Object" name="Object"/>
+            <!-- Primitive Type int -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <!-- Primitive Type long -->
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <!-- Primitive Type float -->
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Enumerations -->
+        <UML:Enumeration xmi.id="enum_WebServiceStyle" name="WebServiceStyle">
+          <UML:Enumeration.literal name="wrapped"/>
+          <UML:Enumeration.literal name="document"/>
+          <UML:Enumeration.literal name="rpc"/>
+        </UML:Enumeration>
+        
+        <UML:Enumeration xmi.id="enum_WebServiceProvider" name="WebServiceProvider">
+          <UML:Enumeration.literal name="RPC"/>
+          <UML:Enumeration.literal name="EJB"/>
+        </UML:Enumeration>
+        
+        <!-- Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_Service" name="Service">
+          <UML:Stereotype.tag>
+            <tag name="interceptors"/>
+            <tag name="transaction type"/>
+          </UML:Stereotype.tag>
+        </UML:Stereotype>
+        
+        <UML:Stereotype xmi.id="stereotype_Entity" name="Entity"/>
+        <UML:Stereotype xmi.id="stereotype_ValueObject" name="ValueObject"/>
+        <UML:Stereotype xmi.id="stereotype_EmbeddedValue" name="EmbeddedValue"/>
+        <UML:Stereotype xmi.id="stereotype_ApplicationException" name="ApplicationException"/>
+        <UML:Stereotype xmi.id="stereotype_UnexpectedException" name="UnexpectedException"/>
+        
+        <UML:Stereotype xmi.id="stereotype_FrontEndUseCase" name="FrontEndUseCase"/>
+        <UML:Stereotype xmi.id="stereotype_FrontEndView" name="FrontEndView"/>
+        
+        <!-- Enumeration WebExportType -->
+        <UML:Enumeration xmi.id="enum_WebExportType" name="WebExportType">
+          <UML:Enumeration.literal name="XML"/>
+          <UML:Enumeration.literal name="CSV"/>
+        </UML:Enumeration>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

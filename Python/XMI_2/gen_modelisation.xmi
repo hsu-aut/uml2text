@@ -1,0 +1,90 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="Modèle UML">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <!-- Specialized DataTypes with Pointers omitted for brevity -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class AbstractProvider -->
+        <UML:Class xmi.id="class_AbstractProvider" name="AbstractProvider" isAbstract="true" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_provide" name="provide" visibility="public" isAbstract="true"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class ProviderLinux -->
+        <UML:Class xmi.id="class_ProviderLinux" name="ProviderLinux" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.base xmi.idref="class_AbstractProvider"/>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <!-- Inner Class Info -->
+            <UML:Class xmi.id="class_Info" name="Info" isAbstract="true" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_cpuNbCore" name="cpuNbCore" type="datatype_int" visibility="private"/>
+                <UML:Operation xmi.id="operation_defaultSettings" name="defaultSettings" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Class ProviderWindows -->
+        <UML:Class xmi.id="class_ProviderWindows" name="ProviderWindows" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.base xmi.idref="class_AbstractProvider"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class ProviderMac -->
+        <UML:Class xmi.id="class_ProviderMac" name="ProviderMac" visibility="public">
+          <UML:Dependency supplier="class_AbstractProvider"/>
+        </UML:Class>
+
+        <!-- Class Util -->
+        <UML:Class xmi.id="class_Util" name="Util" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_convertToOctets" name="convertToOctets" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class MainWindow -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.base xmi.idref="class_QMainWindow"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Associations and Dependencies -->
+        <UML:Association xmi.id="assoc_ProviderLinux_Info">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ProviderLinux_Info_ProviderLinux" type="class_ProviderLinux" name="provider" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ProviderLinux_Info_Info" type="class_Info" name="info" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Additional associations omitted for brevity -->
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

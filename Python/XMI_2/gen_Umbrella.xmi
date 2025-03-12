@@ -1,0 +1,101 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_FieldPtr" name="Field*"/>
+                <UML:DataType xmi.id="datatype_MatrixConstRef" name="Matrix const&"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Class xmi.id="class_Field" name="Field" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_pos" name="pos" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Position"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_status" name="status" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="FIELDSTATUS"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_adjacentBombs" name="adjacentBombs" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="uint8_t"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_addObserver" name="addObserver" visibility="public"/>
+                <UML:Operation xmi.id="op_reveal" name="reveal" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_Bomb" name="Bomb" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_Bomb_Field" base="class_Field"/>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_informNeighbours" name="informNeighbours" visibility="public"/>
+                <UML:Operation xmi.id="op_reveal_Bomb" name="reveal" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_FieldObserver" name="FieldObserver" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_onFieldStatusChanged" name="onFieldStatusChanged" visibility="public"/>
+                <UML:Operation xmi.id="op_onFieldDelete" name="onFieldDelete" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_Matrix" name="Matrix" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_dim" name="dim" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Dimensions"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_reset" name="reset" visibility="public"/>
+                <UML:Operation xmi.id="op_getStatus" name="getStatus" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_Dimensions" name="Dimensions" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_bombs" name="bombs" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_IndexOutOfBoundsException" name="IndexOutOfBoundsException" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_IndexOutOfBoundsException_exception" base="exception"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_JNIRef" name="JNIRef" visibility="public" isAbstract="false"/>
+            <UML:Enumeration xmi.id="enum_GAMESTATUS" name="GAMESTATUS" visibility="public"/>
+            <UML:Enumeration xmi.id="enum_FIELDSTATUS" name="FIELDSTATUS" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

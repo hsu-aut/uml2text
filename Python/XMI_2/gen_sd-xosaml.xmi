@@ -1,0 +1,60 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_CollaborationProcess" name="CollaborationProcess">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klassifiziererrollen -->
+        <UML:ClassifierRole xmi.id="role_User" name="User" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_ua" name="ua" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_example" name="example" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_idp" name="idp" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_issuer" name="issuer" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_request" name="request" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_worker" name="worker" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_response" name="response" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_assertion" name="assertion" visibility="public"/>
+        <UML:ClassifierRole xmi.id="role_status" name="status" visibility="public"/>
+        
+        <!-- Definition der Nachrichten -->
+        <UML:Message xmi.id="msg_generateHTMLPage" name="generate HTML Page" sender="role_worker" receiver="role_worker" action="call"/>
+        <UML:Message xmi.id="msg_generateResponse" name="generate Response" sender="role_idp" receiver="role_idp" action="call"/>
+        <UML:Message xmi.id="msg_accessResource" name="access Resource" sender="role_User" receiver="role_ua" action="call"/>
+        <UML:Message xmi.id="msg_sendRequest" name="send Request" sender="role_ua" receiver="role_example" action="call"/>
+        <UML:Message xmi.id="msg_respondAuthenticationRequest" name="respond-AuthenticationRequest" sender="role_example" receiver="role_worker" action="call"/>
+        
+        <!-- Beziehungen zwischen den Klassifiziererrollen -->
+        <UML:Association xmi.id="assoc_User_ua" name="User-ua">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_User_ua_User" type="role_User" name="user" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_User_ua_ua" type="role_ua" name="ua" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_ua_example" name="ua-example">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ua_example_ua" type="role_ua" name="ua" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ua_example_example" type="role_example" name="example" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_example_worker" name="example-worker">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_example_worker_example" type="role_example" name="example" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_example_worker_worker" type="role_worker" name="worker" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

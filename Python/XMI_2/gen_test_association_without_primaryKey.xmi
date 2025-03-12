@@ -1,0 +1,82 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DomainModel" name="DomainModel" visibility="public">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package: test_primaryKey -->
+        <UML:Package xmi.id="package_test_primaryKey" name="test_primaryKey" visibility="package">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Class: Parent -->
+            <UML:Class xmi.id="class_Parent" name="Parent" visibility="package" isAbstract="false" isActive="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_parentId" name="parentId" visibility="private" ownerScope="instance" changeability="changeable">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_localId" name="localId" visibility="private" ownerScope="instance" changeability="changeable">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class: Target -->
+        <UML:Class xmi.id="class_Target" name="Target" visibility="package" isAbstract="false" isActive="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_targetId" name="targetId" visibility="private" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class: Source -->
+        <UML:Class xmi.id="class_Source" name="Source" visibility="package" isAbstract="false" isActive="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_sourceId" name="sourceId" visibility="private" ownerScope="instance" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Generalization: Parent to child -->
+        <UML:Generalization xmi.id="generalization_Parent_to_Child" parent="class_Parent">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="child_Class"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+        <!-- Association: src-tgt-bi -->
+        <UML:Association xmi.id="assoc_src_tgt_bi" name="src-tgt-bi" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Source" type="class_Source" name="source" visibility="public" aggregation="none" multiplicity="1..*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Target" type="class_Target" name="target" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Data types -->
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

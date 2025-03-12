@@ -1,0 +1,103 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- StateMachine: SimpleActions -->
+        <UML:StateMachine xmi.id="statemachine_SimpleActions" name="SimpleActions">
+          <UML:Top>
+            <UML:CompositeState>
+              <UML:State xmi.id="state_Initial_SimpleActions" name="Initial">
+                <UML:State.stateMachine>
+                  <UML:Transition source="state_Initial_SimpleActions" target="state_First" trigger="trigger_FromInitialToFirst"/>
+                </UML:State.stateMachine>
+              </UML:State>
+              <UML:State xmi.id="state_First" name="First">
+                <UML:State.entry>Operation A</UML:State.entry>
+                <UML:State.doActivity>Operation C</UML:State.doActivity>
+                <UML:State.exit>Operation E</UML:State.exit>
+                <UML:State.stateMachine>
+                  <UML:Transition source="state_First" target="state_Second" trigger="trigger_E_GO"/>
+                </UML:State.stateMachine>
+              </UML:State>
+              <UML:State xmi.id="state_Second" name="Second">
+                <UML:State.entry>Operation B</UML:State.entry>
+                <UML:State.doActivity>Operation D</UML:State.doActivity>
+                <UML:State.exit>Operation F</UML:State.exit>
+                <UML:State.stateMachine>
+                  <UML:Transition source="state_Second" target="state_First" trigger="trigger_E_GO_BACK"/>
+                </UML:State.stateMachine>
+              </UML:State>
+            </UML:CompositeState>
+          </UML:Top>
+        </UML:StateMachine>
+
+        <!-- StateMachine: ConditionalScenario -->
+        <UML:StateMachine xmi.id="statemachine_ConditionalScenario" name="ConditionalScenario">
+          <UML:Top>
+            <UML:CompositeState>
+              <UML:State xmi.id="state_Initial_ConditionalScenario" name="Initial">
+                <UML:State.stateMachine>
+                  <UML:Transition source="state_Initial_ConditionalScenario" target="state_Start" trigger="trigger_FromInitialToStart"/>
+                </UML:State.stateMachine>
+              </UML:State>
+              <UML:State xmi.id="state_Start" name="Start">
+                <UML:State.stateMachine>
+                  <UML:Transition source="state_Start" target="state_FirstPosibility" guard="Condition1" trigger="trigger_E_GO"/>
+                  <UML:Transition source="state_Start" target="state_SecondPosibility" guard="Condition2" trigger="trigger_E_GO"/>
+                </UML:State.stateMachine>
+              </UML:State>
+              <UML:State xmi.id="state_FirstPosibility" name="FirstPosibility">
+                <UML:State.entry>Operation A</UML:State.entry>
+              </UML:State>
+              <UML:State xmi.id="state_SecondPosibility" name="SecondPosibility">
+                <UML:State.entry>Operation B</UML:State.entry>
+              </UML:State>
+            </UML:CompositeState>
+          </UML:Top>
+        </UML:StateMachine>
+
+        <!-- StateMachine: DetailedActionScenario -->
+        <UML:StateMachine xmi.id="statemachine_DetailedActionScenario" name="DetailedActionScenario">
+          <UML:Top>
+            <UML:CompositeState>
+              <UML:State xmi.id="state_Initial_DetailedActionScenario" name="Initial">
+                <UML:State.stateMachine>
+                  <UML:Transition source="state_Initial_DetailedActionScenario" target="state_State1" trigger="trigger_FromInitialToState1"/>
+                </UML:State.stateMachine>
+              </UML:State>
+              <UML:State xmi.id="state_State1" name="State1">
+                <UML:State.exit>Operation C</UML:State.exit>
+                <UML:State.stateMachine>
+                  <UML:Transition source="state_State1" target="state_State2" trigger="trigger_E_GO"/>
+                  <UML:Transition source="state_State1" target="state_State3" trigger="trigger_E_GO_WITHIN_SUPERPARENT"/>
+                </UML:State.stateMachine>
+              </UML:State>
+              <UML:State xmi.id="state_State2" name="State2"/>
+              <UML:State xmi.id="state_State3" name="State3"/>
+              <UML:State xmi.id="state_SuperParent" name="SuperParent">
+                <UML:State.entry>Operation A</UML:State.entry>
+                <UML:State.exit>Operation B</UML:State.exit>
+              </UML:State>
+              <UML:State xmi.id="state_Parent" name="Parent">
+                <UML:State.entry>Operation A</UML:State.entry>
+                <UML:State.exit>Operation B</UML:State.exit>
+              </UML:State>
+            </UML:CompositeState>
+          </UML:Top>
+        </UML:StateMachine>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

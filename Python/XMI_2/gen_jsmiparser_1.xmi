@@ -1,0 +1,53 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BaseModel" name="BaseModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="2" name="int"/>
+        <UML:DataType xmi.id="4" name="char"/>
+        <UML:DataType xmi.id="5" name="boolean"/>
+        <UML:DataType xmi.id="6" name="float"/>
+        <UML:DataType xmi.id="7" name="double"/>
+        <UML:DataType xmi.id="8" name="byte"/>
+        <UML:DataType xmi.id="9" name="short"/>
+        <UML:DataType xmi.id="10" name="string"/>
+
+        <!-- Definition der Pakete -->
+        <UML:Package xmi.id="11" name="smi" />
+        <UML:Package xmi.id="12" name="phase.file" />
+        <UML:Package xmi.id="14" name="util.problem" />
+        <UML:Package xmi.id="15" name="util.phase" />
+        <UML:Package xmi.id="17" name="parser" />
+        <UML:Package xmi.id="36" name="phase.file.antlr" />
+        <UML:Package xmi.id="53" name="parsetree.asn1" />
+        <UML:Package xmi.id="54" name="parsetree.smi" />
+        <UML:Package xmi.id="77" name="phase.oid" />
+        <UML:Package xmi.id="78" name="phase.mib" />
+        <UML:Package xmi.id="79" name="phase.quality" />
+        <UML:Package xmi.id="80" name="phase.cm" />
+        <UML:Package xmi.id="112" name="util.location" />
+
+        <!-- Definition der Abhängigkeiten -->
+        <UML:Dependency xmi.id="dep_parser_to_phase_file" client="17" supplier="12"/>
+        <UML:Dependency xmi.id="dep_parser_to_util_problem" client="17" supplier="14"/>
+        <UML:Dependency xmi.id="dep_parser_to_smi" client="17" supplier="11"/>
+        <UML:Dependency xmi.id="dep_phase_oid_to_smi" client="77" supplier="11"/>
+        <UML:Dependency xmi.id="dep_phase_mib_to_smi" client="78" supplier="11"/>
+        <UML:Dependency xmi.id="dep_phase_quality_to_smi" client="79" supplier="11"/>
+        <UML:Dependency xmi.id="dep_phase_cm_to_smi" client="80" supplier="11"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

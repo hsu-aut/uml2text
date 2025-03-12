@@ -1,0 +1,352 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Modelo_UML" name="Modelo UML">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Definition der Klasse "Curso" -->
+        <UML:Class xmi.id="class_Curso" name="Curso" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Curso_Id" name="Id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Guid"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curso_Nome" name="Nome" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curso_Codigo" name="Codigo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curso_TipoCurso" name="TipoCurso" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_TipoCurso"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curso_PerfilEgresso" name="PerfilEgresso" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Disciplina" -->
+        <UML:Class xmi.id="class_Disciplina" name="Disciplina" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Disciplina_Id" name="Id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Guid"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_Nome" name="Nome" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_Codigo" name="Codigo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_UrlImagem" name="UrlImagem" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_Serie" name="Serie" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_Optativa" name="Optativa" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="bool"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_Semestre" name="Semestre" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_CargaHorariaTotal" name="CargaHorariaTotal" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_Ementa" name="Ementa" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_Objetivos" name="Objetivos" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Disciplina_CargaHorariaSemanal" name="CargaHorariaSemanal" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "OfertaCurso" -->
+        <UML:Class xmi.id="class_OfertaCurso" name="OfertaCurso" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_OfertaCurso_Id" name="Id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Guid"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaCurso_Inicio" name="Inicio" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="DateTimeOffset"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaCurso_Fim" name="Fim" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="DateTimeOffset"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaCurso_Situacao" name="Situacao" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_SituacaoOfertaCurso"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaCurso_Modalidade" name="Modalidade" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_Modalidade"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Turma" -->
+        <UML:Class xmi.id="class_Turma" name="Turma" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Turma_Id" name="Id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Guid"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Turma_Codigo" name="Codigo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "OfertaDisciplina" -->
+        <UML:Class xmi.id="class_OfertaDisciplina" name="OfertaDisciplina" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_Id" name="Id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Guid"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_Inicio" name="Inicio" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="DateTimeOffset"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_Fim" name="Fim" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="DateTimeOffset"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_Programa" name="Programa" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_MetodologiaEnsino" name="MetodologiaEnsino" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_FormasAvaliacao" name="FormasAvaliacao" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_BibliografiaBasica" name="BibliografiaBasica" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_BibliografiaComplementar" name="BibliografiaComplementar" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_Url" name="Url" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_OfertaDisciplina_Ano" name="Ano" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Aluno" -->
+        <UML:Class xmi.id="class_Aluno" name="Aluno" visibility="public" isAbstract="false">
+          <!-- Keine Attribute und keine Beziehungen in der gegebenen Beschreibung -->
+        </UML:Class>
+
+        <!-- Definition der Klasse "Curriculo" -->
+        <UML:Class xmi.id="class_Curriculo" name="Curriculo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_Curriculo_Id" name="Id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Guid"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curriculo_Nome" name="Nome" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curriculo_Ano" name="Ano" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curriculo_Series" name="Series" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curriculo_Turno" name="Turno" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_Turno"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curriculo_Regime" name="Regime" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_Regime"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curriculo_PrazoConclusaoIdeal" name="PrazoConclusaoIdeal" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_Curriculo_PrazoConclusaoMaximo" name="PrazoConclusaoMaximo" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Enums -->
+
+        <UML:Enumeration xmi.id="enum_SituacaoOfertaCurso" name="SituacaoOfertaCurso" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral name="Ativa"/>
+            <UML:EnumerationLiteral name="Inativa"/>
+            <UML:EnumerationLiteral name="Encerrada"/>
+            <UML:EnumerationLiteral name="Cancelada"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+        
+        <UML:Enumeration xmi.id="enum_Regime" name="Regime" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral name="Semestral"/>
+            <UML:EnumerationLiteral name="Anual"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_Turno" name="Turno" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral name="Matutino"/>
+            <UML:EnumerationLiteral name="Vespertino"/>
+            <UML:EnumerationLiteral name="Noturno"/>
+            <UML:EnumerationLiteral name="Integral"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_TipoCurso" name="TipoCurso" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral name="Bacharelado"/>
+            <UML:EnumerationLiteral name="Licenciatura"/>
+            <UML:EnumerationLiteral name="Mestrado"/>
+            <UML:EnumerationLiteral name="Doutorado"/>
+            <UML:EnumerationLiteral name="Especializacao"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <UML:Enumeration xmi.id="enum_Modalidade" name="Modalidade" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral name="Presencial"/>
+            <UML:EnumerationLiteral name="Distancia"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Beziehungen zwischen Klassen -->
+        
+        <UML:Association xmi.id="assoc_Disciplina_OfertaDisciplina" name="possui" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Disciplina_OfertaDisciplina_Disciplina" type="class_Disciplina" name="disciplina" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Disciplina_OfertaDisciplina_OfertaDisciplina" type="class_OfertaDisciplina" name="ofertaDisciplina" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_OfertaCurso_Curriculo" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OfertaCurso_Curriculo_OfertaCurso" type="class_OfertaCurso" name="ofertaCurso" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_OfertaCurso_Curriculo_Curriculo" type="class_Curriculo" name="curriculo" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_OfertaCurso_Curso" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OfertaCurso_Curso_OfertaCurso" type="class_OfertaCurso" name="ofertaCurso" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_OfertaCurso_Curso_Curso" type="class_Curso" name="curso" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_OfertaCurso_Disciplina" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_OfertaCurso_Disciplina_OfertaCurso" type="class_OfertaCurso" name="ofertaCurso" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_OfertaCurso_Disciplina_Disciplina" type="class_Disciplina" name="disciplina" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Turma_OfertaDisciplina" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Turma_OfertaDisciplina_Turma" type="class_Turma" name="turma" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Turma_OfertaDisciplina_OfertaDisciplina" type="class_OfertaDisciplina" name="ofertaDisciplina" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="Guid" name="Guid"/>
+        <UML:DataType xmi.id="string" name="string"/>
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="DateTimeOffset" name="DateTimeOffset"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

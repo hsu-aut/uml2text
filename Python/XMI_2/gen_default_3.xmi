@@ -1,0 +1,259 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ComplexDomain" name="ComplexDomain">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Address" name="Address" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_scopeByCountry" name="scopeByCountry" visibility="public"/>
+            <UML:Operation xmi.id="op_scopeByCity" name="scopeByCity" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Admin" name="Admin" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_retailer" name="retailer" visibility="public"/>
+            <UML:Operation xmi.id="op_outlets" name="outlets" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AssignedRoles" name="AssignedRoles" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_guarded" name="guarded" visibility="private"/>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BusinessCategory" name="BusinessCategory" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_retailers" name="retailers" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Cancellation" name="Cancellation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_City" name="City" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_scopeByCountry" name="scopeByCountry" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Company" name="Company" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_table" name="table" visibility="private"/>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Consumer" name="Consumer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Country" name="Country" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_DEFAULT_COUNTRY" name="DEFAULT_COUNTRY" visibility="private"/>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_cities" name="cities" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Deal" name="Deal" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_scopeOwner" name="scopeOwner" visibility="public"/>
+            <UML:Operation xmi.id="op_service" name="service" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DealTransaction" name="DealTransaction" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_scopeOwner" name="scopeOwner" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Feedback" name="Feedback" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_scopeOwner" name="scopeOwner" visibility="public"/>
+            <UML:Operation xmi.id="op_scopeByDealId" name="scopeByDealId" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Outlet" name="Outlet" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_scopeOwner" name="scopeOwner" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_OutletDescription" name="OutletDescription" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_outlets" name="outlets" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Permission" name="Permission" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_preparePermissionsForDisplay" name="preparePermissionsForDisplay" visibility="public"/>
+            <UML:Operation xmi.id="op_preparePermissionsForSave" name="preparePermissionsForSave" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Picture" name="Picture" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_table" name="table" visibility="private"/>
+            <UML:Operation xmi.id="op_getByRefId" name="getByRefId" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Retailer" name="Retailer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_categories" name="categories" visibility="public"/>
+            <UML:Operation xmi.id="op_admin" name="admin" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Role" name="Role" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_validateRoles" name="validateRoles" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Service" name="Service" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+            <UML:Operation xmi.id="op_scopeOwner" name="scopeOwner" visibility="public"/>
+            <UML:Operation xmi.id="op_outlets" name="outlets" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ServiceCondition" name="ServiceCondition" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ServiceDetail" name="ServiceDetail" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TermsCondition" name="TermsCondition" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_rules" name="rules" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fillable" name="fillable" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_saveRoles" name="saveRoles" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AdminCommonController" name="AdminCommonController" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AdminCustomerController" name="AdminCustomerController" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AdminController" name="AdminController" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BaseController" name="BaseController" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DealRepository" name="DealRepository" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_OutletRepository" name="OutletRepository" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_RetailerRepository" name="RetailerRepository" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_UserRepository" name="UserRepository" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_IDealRepository" name="IDealRepository">
+        </UML:Interface>
+
+        <UML:Interface xmi.id="interface_IUserRepository" name="IUserRepository">
+        </UML:Interface>
+
+        <UML:Generalization>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_BaseController"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <UML:Generalization>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="class_AdminController"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_AdminCommonController"/>
+          </UML:Generalization.child>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="class_AdminCustomerController"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+        <UML:Association xmi.id="assoc_Country_City" name="country-city">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Country_City_Country" type="class_Country" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Country_City_City" type="class_City" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Array" name="Array"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

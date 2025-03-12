@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="UMLProject.1" name="UMLProjectModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Model xmi.id="UMLModel.2" name="StarUmlSampleModel">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition der Klasse Order -->
+            <UML:Class xmi.id="UMLClass.3" name="Order" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="UMLAttribute.4" name="OrderID" visibility="public">
+                  <UML:TaggedValue tag="autoinc" value="true"/>
+                  <UML:TaggedValue tag="primary" value="true"/>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="UMLAttribute.5" name="OrderDate" visibility="public"/>
+                <UML:Attribute xmi.id="UMLAttribute.6" name="CustomerName" visibility="public">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse OrderDetail -->
+            <UML:Class xmi.id="UMLClass.7" name="OrderDetail" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="UMLAttribute.8" name="OrderDetailID" visibility="public">
+                  <UML:TaggedValue tag="primary" value="true"/>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="UMLAttribute.9" name="Quantity" visibility="public"/>
+                <UML:Attribute xmi.id="UMLAttribute.10" name="Price" visibility="public"/>
+                <UML:Attribute xmi.id="UMLAttribute.11" name="ArticleDescription" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Generalization between Order and OrderDetail -->
+            <UML:Generalization xmi.id="UMLGeneralization.d1_1" child="UMLClass.7" parent="UMLClass.3"/>
+
+            <!-- Assoziationen -->
+            <UML:Association xmi.id="UMLAssociation.18" name="Order-OrderDetail" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="UMLAssociationEnd.19" type="UMLClass.3" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="UMLAssociationEnd.20" type="UMLClass.7" aggregation="aggregate"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="UMLAssociation.21" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="UMLAssociationEnd.22" type="UMLClass.3" aggregation="aggregate"/>
+                <UML:AssociationEnd xmi.id="UMLAssociationEnd.23" type="UMLClass.7" aggregation="composite"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="UMLAssociation.24" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="UMLAssociationEnd.25" type="UMLClass.3" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="UMLAssociationEnd.26" type="UMLClass.7" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="UMLAssociation.27" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="UMLAssociationEnd.28" type="UMLClass.3" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="UMLAssociationEnd.29" type="UMLClass.7" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Definition der Klasse OrderReport -->
+            <UML:Class xmi.id="UMLClass.13" name="OrderReport" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="UMLAttribute.14" name="CustomerName" visibility="public"/>
+                <UML:Attribute xmi.id="UMLAttribute.15" name="ProfitPerYear" visibility="public"/>
+                <UML:Attribute xmi.id="UMLAttribute.16" name="Year" visibility="public"/>
+              </UML:Classifier.feature>
+              <UML:TaggedValue tag="stereotype" value="view"/>
+            </UML:Class>
+
+            <!-- TemplateParameter als TableName -->
+            <UML:TemplateParameter xmi.id="TemplateParameter.17" name="TableName">
+              <UML:ParameterableElement>
+                <UML:Classifier xmi.idref="UMLClass.13"/>
+              </UML:ParameterableElement>
+            </UML:TemplateParameter>
+
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+        
+        <!-- Definition von Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,138 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ModelloUML" name="Modello UML">
+      <UML:Namespace.ownedElement>
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_utente_ptr" name="utente*"/>
+            <UML:DataType xmi.id="datatype_list_smart_utente_ptr" name="list&lt;smart_utente*&gt;"/>
+            <UML:DataType xmi.id="datatype_list_utente_ptr" name="list&lt;utente*&gt;"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class smart_utente -->
+        <UML:Class xmi.id="class_smart_utente" name="smart_utente" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_ptr_utente" name="ptr_utente" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_utente_ptr"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class utente -->
+        <UML:Class xmi.id="class_utente" name="utente" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_cerca" name="cerca" visibility="public" isAbstract="false" isQuery="true">
+              <UML:Parameter xmi.id="param_cerca_return" name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_list_utente_ptr"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class utente_gratis -->
+        <UML:Class xmi.id="class_utente_gratis" name="utente_gratis" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_utente_to_utente_gratis" parent="class_utente"/>
+        </UML:Class>
+
+        <!-- Class utente_pagamento -->
+        <UML:Class xmi.id="class_utente_pagamento" name="utente_pagamento" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_utente_to_utente_pagamento" parent="class_utente"/>
+        </UML:Class>
+
+        <!-- Class utente_business -->
+        <UML:Class xmi.id="class_utente_business" name="utente_business" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_utente_pagamento_to_utente_business" parent="class_utente_pagamento"/>
+        </UML:Class>
+
+        <!-- Class utente_basic -->
+        <UML:Class xmi.id="class_utente_basic" name="utente basic" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_utente_to_utente_basic" parent="class_utente"/>
+        </UML:Class>
+
+        <!-- Class utente_Express -->
+        <UML:Class xmi.id="class_utente_express" name="utente Express" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_utente_pagamento_to_utente_express" parent="class_utente_pagamento"/>
+        </UML:Class>
+
+        <!-- Class database -->
+        <UML:Class xmi.id="class_database" name="database" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_utenti" name="utenti" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_list_smart_utente_ptr"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Association between utente and smart_utente -->
+        <UML:Association xmi.id="assoc_utente_smart_utente">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_to_smart_utente" type="class_utente" name="utente" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_smart_utente_to_utente" type="class_smart_utente" name="smart_utente" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between utente and utente_gratis -->
+        <UML:Association xmi.id="assoc_utente_utente_gratis">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_to_utente_gratis" type="class_utente" name="utente" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_gratis_to_utente" type="class_utente_gratis" name="utente_gratis" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between utente and utente_pagamento -->
+        <UML:Association xmi.id="assoc_utente_utente_pagamento">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_to_utente_pagamento" type="class_utente" name="utente" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_pagamento_to_utente" type="class_utente_pagamento" name="utente_pagamento" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between utente_pagamento and utente_business -->
+        <UML:Association xmi.id="assoc_utente_pagamento_business">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_pagamento_to_business" type="class_utente_pagamento" name="utente_pagamento" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_business_to_pagamento" type="class_utente_business" name="utente_business" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between utente_pagamento and utente_Express -->
+        <UML:Association xmi.id="assoc_utente_pagamento_express">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_pagamento_to_express" type="class_utente_pagamento" name="utente_pagamento" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_utente_express_to_pagamento" type="class_utente_express" name="utente_express" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

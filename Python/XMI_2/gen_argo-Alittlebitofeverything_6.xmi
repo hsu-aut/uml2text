@@ -1,0 +1,93 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="xmi.1" name="testing">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="xmi.97" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="xmi.64" name="Vector" visibility="public"/>
+            <UML:Class xmi.id="xmi.67" name="Iterator" visibility="public"/>
+            <UML:Class xmi.id="xmi.71" name="Collection" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Interface xmi.id="xmi.3" name="NameIf" visibility="public"/>
+        
+        <UML:Class xmi.id="xmi.8" name="Name" visibility="public" isAbstract="false" stereotype="singleton">
+          <UML:Generalization xmi.id="xmi.4" parent="xmi.3"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="xmi.16" name="Little" visibility="public">
+          <UML:Generalization xmi.id="xmi.17" parent="xmi.60"/>
+          <UML:StateMachine xmi.id="xmi.18" name="LittleStateMachine">
+            <UML:State xmi.id="xmi.s1" name="s1"/>
+            <UML:State xmi.id="xmi.s2" name="s2"/>
+            <UML:State xmi.id="xmi.s3" name="s3"/>
+            <UML:State xmi.id="xmi.s4" name="s4"/>
+            <!-- Add transitions here as needed -->
+          </UML:StateMachine>
+        </UML:Class>
+        
+        <UML:Class xmi.id="xmi.40" name="Bit of" visibility="public" isAbstract="true">
+          <UML:ActivityGraph xmi.id="xmi.42" name="Bit ofActivityGraph">
+            <UML:ActionState xmi.id="xmi.h1" name="h1"/>
+            <UML:ActionState xmi.id="xmi.h2" name="h2"/>
+            <UML:ActionState xmi.id="xmi.h3" name="h3"/>
+            <!-- Add transitions here as needed -->
+          </UML:ActivityGraph>
+        </UML:Class>
+        
+        <UML:Class xmi.id="xmi.58" name="Everything" visibility="public">
+          <UML:Generalization xmi.id="xmi.59" parent="xmi.40"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="xmi.61" name="Simple" visibility="public">
+          <UML:Attribute xmi.id="xmi.attr1" name="attr1" visibility="private"/>
+          <UML:Attribute xmi.id="xmi.attr2" name="attr2" visibility="private"/>
+          <UML:Operation xmi.id="xmi.op1" name="operation1" visibility="public">
+            <UML:Parameter name="param1" type="xmi.64"/>
+            <UML:Parameter name="param2" type="xmi.67"/>
+            <UML:Parameter name="param3" type="xmi.71"/>
+          </UML:Operation>
+          <UML:Association xmi.id="xmi.assoc_SIMPLE_A">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="xmi.end_SIMPLE" type="xmi.61"/>
+              <UML:AssociationEnd xmi.id="xmi.end_A" type="xmi.60"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+        <UML:UseCase xmi.id="xmi.102" name="UC1"/>
+        <UML:UseCase xmi.id="xmi.108" name="UC2">
+          <UML:Generalization xmi.id="xmi.extension_UC2_UC1" parent="xmi.102"/>
+        </UML:UseCase>
+        
+        <UML:UseCase xmi.id="xmi.110" name="UnnamedUseCase">
+          <UML:Extend xmi.id="xmi.104" extendedCase="xmi.102"/>
+          <UML:Include xmi.id="xmi.109" addition="xmi.108"/>
+          <UML:ExtensionPoint name="A point"/>
+        </UML:UseCase>
+        
+        <UML:Actor xmi.id="xmi.101" name="John Wayne">
+          <UML:Association xmi.id="xmi.assoc_Actor_UC">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="xmi.end_Actor" type="xmi.101"/>
+              <UML:AssociationEnd xmi.id="xmi.end_UC" type="xmi.102"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Actor>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

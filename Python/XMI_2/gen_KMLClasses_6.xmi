@@ -1,0 +1,93 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_KMLDocument" name="KMLDocument" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_KMLContainer"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_styleList" name="m_styleList" visibility="private"/>
+            <UML:Attribute xmi.id="attr_styleMapList" name="m_styleMapList" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PlaceMark" name="PlaceMark" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_KMLFeature"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_name" name="m_name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_sympos" name="m_sympos" visibility="private"/>
+            <UML:Attribute xmi.id="attr_description" name="m_description" visibility="private"/>
+            <UML:Operation xmi.id="op_coordinate" name="coordinate" visibility="public"/>
+            <UML:Operation xmi.id="op_setCoordinate" name="setCoordinate" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PlaceMarkManager" name="PlaceMarkManager" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_addPlaceMarkFile" name="addPlaceMarkFile" visibility="public"/>
+            <UML:Operation xmi.id="op_loadKml" name="loadKml" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_KMLFeature" name="KMLFeature" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_featureName" name="m_name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_featureDescription" name="m_description" visibility="private"/>
+            <UML:Attribute xmi.id="attr_featurePhoneNumber" name="m_phoneNumber" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_KMLRegion" name="KMLRegion" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_lod" name="m_lod" visibility="private"/>
+            <UML:Attribute xmi.id="attr_latLonAltBox" name="m_latLonAltBox" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_KMLLod" name="KMLLod" visibility="public" isAbstract="false">
+          <!-- Additional features can be added here -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_KMLStyle" name="KMLStyle" visibility="public" isAbstract="false">
+          <!-- Additional features can be added here -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_KMLFeatureParser" name="KMLFeatureParser" visibility="public" isAbstract="false">
+          <!-- Additional features can be added here -->
+        </UML:Class>
+
+        <UML:Class xmi.id="class_KMLObjectParser" name="KMLObjectParser" visibility="public" isAbstract="false">
+          <!-- Additional features can be added here -->
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_Serializable" name="Serializable" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_pack" name="pack" visibility="public"/>
+            <UML:Operation xmi.id="op_unpack" name="unpack" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <UML:Generalization xmi.id="gen_KMLContainer_KMLDocument" parent="class_KMLContainer" child="class_KMLDocument"/>
+        <UML:Generalization xmi.id="gen_KMLFeature_PlaceMark" parent="class_KMLFeature" child="class_PlaceMark"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

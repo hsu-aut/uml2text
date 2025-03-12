@@ -1,0 +1,121 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View Package -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- invenio Package -->
+            <UML:Package xmi.id="package_invenio" name="invenio">
+              <UML:Namespace.ownedElement>
+
+                <!-- ExtractorInterface Class -->
+                <UML:Class xmi.id="class_ExtractorInterface" name="ExtractorInterface" visibility="public">
+                  <UML:Namespace.ownedElement>
+                    <!-- Attributes -->
+                    <UML:Attribute xmi.id="attr_attribute1" name="attribute1" visibility="private" type="VBIukS6dXxGJ"/>
+                    <UML:Attribute xmi.id="attr_attribute2" name="attribute2" visibility="private" type="VBIukS6dXxGJ"/>
+                    <UML:Attribute xmi.id="attr_attribute3" name="attribute3" visibility="private" type="VBIukS6dXxGJ"/>
+                    <!-- Operations -->
+                    <UML:Operation xmi.id="op_initializeInterface" name="initializeInterface"/>
+                    <UML:Operation xmi.id="op_manageFiles" name="manageFiles"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- PdfPageComposite Class -->
+                <UML:Class xmi.id="class_PdfPageComposite" name="PdfPageComposite" visibility="public">
+                  <UML:Generalization>
+                    <UML:Class xmi.idref="class_SD3Xlujzvh7k"/>
+                  </UML:Generalization>
+                  <UML:Namespace.ownedElement>
+                    <UML:Attribute xmi.id="attr_imageCanvas" name="imageCanvas" visibility="private" type="VBIukS6dXxGJ"/>
+                    <UML:Attribute xmi.id="attr_renderedPage" name="renderedPage" visibility="private" type="VBIukS6dXxGJ"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- ExtractorParameters Class -->
+                <UML:Class xmi.id="class_ExtractorParameters" name="ExtractorParameters" visibility="public">
+                  <UML:Generalization>
+                    <UML:Interface xmi.idref="interface_l5VtClnZ0u9Q"/>
+                  </UML:Generalization>
+                  <UML:Namespace.ownedElement>
+                    <UML:Operation xmi.id="op_getMinimalAspectRatio" name="getMinimalAspectRatio">
+                      <UML:Parameter xmi.id="param_return1" kind="return" type="Leaj6ehXLGpr"/>
+                    </UML:Operation>
+                    <UML:Operation xmi.id="op_getMaximalAspectRatio" name="getMaximalAspectRatio">
+                      <UML:Parameter xmi.id="param_return2" kind="return" type="Leaj6ehXLGpr"/>
+                    </UML:Operation>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- PDFPageOperationsManager Class -->
+                <UML:Class xmi.id="class_PDFPageOperationsManager" name="PDFPageOperationsManager" visibility="public">
+                  <UML:Namespace.ownedElement>
+                    <UML:Operation xmi.id="op_addOperation" name="addOperation"/>
+                    <UML:Operation xmi.id="op_getCurrentOperation" name="getCurrentOperation"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- PDFPageManager Class -->
+                <UML:Class xmi.id="class_PDFPageManager" name="PDFPageManager" visibility="public">
+                  <UML:Namespace.ownedElement>
+                    <UML:Operation xmi.id="op_addTextOperation" name="addTextOperation"/>
+                    <UML:Operation xmi.id="op_addGraphicalOperation" name="addGraphicalOperation"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+
+                <!-- PDFDocumentManager Class -->
+                <UML:Class xmi.id="class_PDFDocumentManager" name="PDFDocumentManager" visibility="public">
+                  <UML:Attribute xmi.id="attr_pages" name="pages" visibility="private" type="PDFPageManager"/>
+                  <UML:Namespace.ownedElement>
+                    <UML:Operation xmi.id="op_newOp" name="newOp"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Class>
+                
+                <!-- Operation and Subtypes -->
+                <UML:Class xmi.id="class_Operation" name="Operation" visibility="public"/>
+                <UML:Class xmi.id="class_TextOperation" name="TextOperation" visibility="public">
+                  <UML:Generalization>
+                    <UML:Class xmi.idref="class_DisplayedOperation"/>
+                  </UML:Generalization>
+                </UML:Class>
+                <UML:Class xmi.id="class_GraphicalOperation" name="GraphicalOperation" visibility="public">
+                  <UML:Generalization>
+                    <UML:Class xmi.idref="class_DisplayedOperation"/>
+                  </UML:Generalization>
+                </UML:Class>
+                <UML:Class xmi.id="class_TransformationOperation" name="TransformationOperation" visibility="public">
+                  <UML:Generalization>
+                    <UML:Class xmi.idref="class_DisplayedOperation"/>
+                  </UML:Generalization>
+                </UML:Class>
+
+                <!-- IPDFPageFeatureProvider Interface -->
+                <UML:Interface xmi.id="interface_IPDFPageFeatureProvider" name="IPDFPageFeatureProvider" visibility="public">
+                  <UML:Namespace.ownedElement>
+                    <UML:Operation xmi.id="op_calculateFeature" name="calculateFeature"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Interface>
+
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

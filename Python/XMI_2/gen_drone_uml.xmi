@@ -1,0 +1,140 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Class InputDevice -->
+        <UML:Class xmi.id="class_InputDevice" name="InputDevice" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_Update" name="Update" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_PollInput" name="PollInput" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_ProcessVideo" name="ProcessVideo" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_TrackSensors" name="TrackSensors" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class DeviceManager -->
+        <UML:Class xmi.id="class_DeviceManager" name="DeviceManager" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_inputDevice" name="inputDevice" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_InputDevice"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_drone" name="drone" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Drone"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class Drone -->
+        <UML:Class xmi.id="class_Drone" name="Drone" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_Update_Drone" name="Update" visibility="public" isQuery="false">
+              <UML:Parameter xmi.id="param_flightDynamics" name="flightDynamics" kind="in" type="FlightParameters"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class FlightParameters -->
+        <UML:Class xmi.id="class_FlightParameters" name="FlightParameters" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_flightDynamics" name="flightDynamics" visibility="private"/>
+            <UML:Attribute xmi.id="attr_flags" name="flags" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="enum_FlightFlags"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class DroneFeedback -->
+        <UML:Class xmi.id="class_DroneFeedback" name="DroneFeedback" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_altitude" name="altitude" visibility="private"/>
+            <UML:Attribute xmi.id="attr_flightDynamics" name="flightDynamics" visibility="private"/>
+            <UML:Attribute xmi.id="attr_speed" name="speed" visibility="private"/>
+            <UML:Attribute xmi.id="attr_batteryLife" name="batteryLife" visibility="private"/>
+            <UML:Attribute xmi.id="attr_videoFrame" name="videoFrame" visibility="private"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Class CImg -->
+        <UML:Class xmi.id="class_CImg" name="CImg" visibility="public" isAbstract="false"/>
+
+        <!-- Class XBoxDevice -->
+        <UML:Class xmi.id="class_XBoxDevice" name="XBoxDevice" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_InputDevice"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_PollInput_XBox" name="PollInput" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_ProcessVideo_XBox" name="ProcessVideo" visibility="public" isQuery="false"/>
+            <UML:Operation xmi.id="op_TrackSensors_XBox" name="TrackSensors" visibility="public" isQuery="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class KeyboardDevice -->
+        <UML:Class xmi.id="class_KeyboardDevice" name="KeyboardDevice" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_InputDevice"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Class FlightDynamics -->
+        <UML:Class xmi.id="class_FlightDynamics" name="FlightDynamics" visibility="public" isAbstract="false"/>
+
+        <!-- Enumeration FlightFlags -->
+        <UML:Enumeration xmi.id="enum_FlightFlags" name="FlightFlags" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="lit_FLAG_TAKEOFF" name="FLAG_TAKEOFF"/>
+            <UML:EnumerationLiteral xmi.id="lit_FLAG_LAND" name="FLAG_LAND"/>
+            <UML:EnumerationLiteral xmi.id="lit_FLAG_EMERGENCY" name="FLAG_EMERGENCY"/>
+            <UML:EnumerationLiteral xmi.id="lit_FLAG_SWITCHCAM" name="FLAG_SWITCHCAM"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Association between DeviceManager and InputDevice -->
+        <UML:Association xmi.id="assoc_DeviceManager_InputDevice" name="manages">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DeviceManager" type="class_DeviceManager" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_InputDevice" type="class_InputDevice" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between DeviceManager and Drone -->
+        <UML:Association xmi.id="assoc_DeviceManager_Drone" name="manages">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DeviceManager2" type="class_DeviceManager" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Drone" type="class_Drone" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Association between FlightParameters and FlightFlags -->
+        <UML:Association xmi.id="assoc_FlightParameters_FlightFlags" name="contains">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_FlightParameters" type="class_FlightParameters" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FlightFlags" type="enum_FlightFlags" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

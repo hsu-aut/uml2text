@@ -1,0 +1,141 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_double" name="double"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+        <UML:DataType xmi.id="datatype_long" name="long"/>
+        <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:DataType xmi.id="datatype_YiiAppUser" name="Yii.app.user"/>
+        
+        <!-- Definition der Klassen in yii/framework/web/auth -->
+        <UML:Class xmi.id="class_CBaseUserIdentity" name="CBaseUserIdentity"/>
+        
+        <UML:Class xmi.id="class_BaseUserIdentity" name="BaseUserIdentity"/>
+        
+        <UML:Class xmi.id="class_CWebUser" name="CWebUser">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CApplicationComponent"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CUserIdentity" name="CUserIdentity">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_BaseUserIdentity"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klassen in yii/framework/base -->
+        <UML:Class xmi.id="class_CModel" name="CModel">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CComponent"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CApplicationComponent" name="CApplicationComponent">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CComponent"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_CComponent" name="CComponent"/>
+        
+        <!-- Definition der Klassen in application -->
+        <UML:Class xmi.id="class_CFormModel" name="CFormModel">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CModel"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Operation name="login" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_UserIdentity" name="UserIdentity">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_CUserIdentity"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Operation name="authenticate" visibility="public"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_viewLogin" name="view/login"/>
+        
+        <UML:Class xmi.id="class_YourUser" name="YourUser"/>
+        
+        <!-- Definition der Assoziationen -->
+        <UML:Association xmi.id="assoc_viewLogin_UserIdentity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_viewLogin_UserIdentity_viewLogin" type="class_viewLogin" name="view/login"/>
+            <UML:AssociationEnd xmi.id="assocEnd_viewLogin_UserIdentity_UserIdentity" type="class_UserIdentity" name="UserIdentity"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_viewLogin_CFormModel">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_viewLogin_CFormModel_viewLogin" type="class_viewLogin" name="view/login"/>
+            <UML:AssociationEnd xmi.id="assocEnd_viewLogin_CFormModel_CFormModel" type="class_CFormModel" name="CFormModel"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_CFormModel_UserIdentity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_CFormModel_UserIdentity_CFormModel" type="class_CFormModel" name="CFormModel"/>
+            <UML:AssociationEnd xmi.id="assocEnd_CFormModel_UserIdentity_UserIdentity" type="class_UserIdentity" name="UserIdentity"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_UserIdentity_YourUser">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_UserIdentity_YourUser_UserIdentity" type="class_UserIdentity" name="UserIdentity"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UserIdentity_YourUser_YourUser" type="class_YourUser" name="YourUser"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_viewLogin_YiiAppUser">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_viewLogin_YiiAppUser_viewLogin" type="class_viewLogin" name="view/login"/>
+            <UML:AssociationEnd xmi.id="assocEnd_viewLogin_YiiAppUser_YiiAppUser" type="datatype_YiiAppUser" name="Yii.app.user"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Dependency xmi.id="dep_CWebUser_YiiAppUser">
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="class_CWebUser"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:DataType xmi.idref="datatype_YiiAppUser"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

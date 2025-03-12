@@ -1,0 +1,64 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="2023-10-10">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="MX_EAID_C3B1EF3A_204D_4b81_B8BF_F74AC48C134F" name="Domain Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "Parent" -->
+        <UML:Class xmi.id="EAID_A9ED5C58_31AF_4c58_8E23_8D76AD085353" name="Parent" visibility="private" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="EAID_A9ED5C58_Attr_1" name="Pk" visibility="private"/>
+            <UML:Attribute xmi.id="EAID_A9ED5C58_Attr_2" name="Pk2" visibility="private"/>
+            <UML:Attribute xmi.id="EAID_A9ED5C58_Attr_3" name="Name" visibility="private"/>
+            <UML:Attribute xmi.id="EAID_A9ED5C58_Attr_4" name="Pk3" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Child" -->
+        <UML:Class xmi.id="EAID_D799C43D_557C_4d0d_AD5C_7FA80E66AC78" name="Child" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="EAID_D799C43D_Attr_1" name="childId" visibility="private"/>
+            <UML:Attribute xmi.id="EAID_D799C43D_Attr_2" name="Name" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "associated" -->
+        <UML:Class xmi.id="EAID_C0C50602_8765_4484_914F_DEA48925DDEF" name="associated" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="EAID_C0C50602_Attr_1" name="assId" visibility="private"/>
+            <UML:Attribute xmi.id="EAID_C0C50602_Attr_2" name="assName" visibility="private"/>
+            <UML:Attribute xmi.id="EAID_C0C50602_Attr_3" name="intId" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Generalisierung -->
+        <UML:Generalization xmi.id="EAID_C5C8B661_C3D0_4a14_9878_C5CB7D4B3313">
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="EAID_D799C43D_557C_4d0d_AD5C_7FA80E66AC78"/>
+          </UML:Generalization.child>
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="EAID_A9ED5C58_31AF_4c58_8E23_8D76AD085353"/>
+          </UML:Generalization.parent>
+        </UML:Generalization>
+
+        <!-- Definition der Assoziation "ass-child" -->
+        <UML:Association xmi.id="EAID_E1192AB1_DF4C_4717_B9D8_B3588B694816" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="EAID_E1192AB1_End1" type="EAID_D799C43D_557C_4d0d_AD5C_7FA80E66AC78" name="child" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="EAID_E1192AB1_End2" type="EAID_C0C50602_8765_4484_914F_DEA48925DDEF" name="associatedClass" aggregation="none" multiplicity="0..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,225 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_lift" name="lift">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "variant" -->
+        <UML:Class xmi.id="class_variant" name="variant" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ref" name="ref" type="refid" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_variant"/>
+            <UML:Generalization.parent xmi.idref="18391"/>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_variant"/>
+            <UML:Generalization.parent xmi.idref="27327"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "entry" -->
+        <UML:Class xmi.id="class_entry" name="entry" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" type="refid" visibility="private"/>
+            <UML:Attribute xmi.id="attr_order" name="order" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_guid" name="guid" type="string" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_entry"/>
+            <UML:Generalization.parent xmi.idref="27271"/>
+          </UML:Generalization>
+          <UML:AssociationEnd>
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="4493"/>
+            </UML:AssociationEnd.type>
+            <UML:AssociationEnd.name>lexical-unit</UML:AssociationEnd.name>
+          </UML:AssociationEnd>
+          <UML:AssociationEnd>
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="4493"/>
+            </UML:AssociationEnd.type>
+            <UML:AssociationEnd.name>citation</UML:AssociationEnd.name>
+          </UML:AssociationEnd>
+          <UML:AssociationEnd>
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="4493"/>
+            </UML:AssociationEnd.type>
+            <UML:AssociationEnd.name>literal-meaning</UML:AssociationEnd.name>
+          </UML:AssociationEnd>
+        </UML:Class>
+
+        <!-- Definition der Klasse "sense" -->
+        <UML:Class xmi.id="class_sense" name="sense" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" type="refid" visibility="private"/>
+            <UML:Attribute xmi.id="attr_order" name="order" type="int" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_sense"/>
+            <UML:Generalization.parent xmi.idref="27271"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "multitext" -->
+        <UML:Class xmi.id="class_multitext" name="multitext" visibility="public" isAbstract="true">
+        </UML:Class>
+
+        <!-- Definition der Klassen "phonetic" -->
+        <UML:Class xmi.id="class_phonetic" name="phonetic" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_phonetic"/>
+            <UML:Generalization.parent xmi.idref="class_multitext"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "relation" -->
+        <UML:Class xmi.id="class_relation" name="relation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_relation"/>
+            <UML:Generalization.parent xmi.idref="class_multitext"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "range" -->
+        <UML:Class xmi.id="class_range" name="range" visibility="public" isAbstract="false">
+          <UML:AssociationEnd>
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="class_range-element"/>
+            </UML:AssociationEnd.type>
+            <UML:AssociationEnd.name>range</UML:AssociationEnd.name>
+          </UML:AssociationEnd>
+        </UML:Class>
+
+        <!-- Definition der Klasse "field-defn" -->
+        <UML:Class xmi.id="class_field-defn" name="field-defn" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_tag" name="tag" type="key" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_field-defn"/>
+            <UML:Generalization.parent xmi.idref="27271"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "lift" -->
+        <UML:Class xmi.id="class_lift" name="lift" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_version" name="version" type="float" visibility="private"/>
+            <UML:Attribute xmi.id="attr_producer" name="producer" type="string" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:AssociationEnd>
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="class_header"/>
+            </UML:AssociationEnd.type>
+          </UML:AssociationEnd>
+        </UML:Class>
+
+        <!-- Definition der Klasse "header" -->
+        <UML:Class xmi.id="class_header" name="header" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_description" name="description" type="multitext" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "etymology" -->
+        <UML:Class xmi.id="class_etymology" name="etymology" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private"/>
+            <UML:Attribute xmi.id="attr_source" name="source" type="key" visibility="private"/>
+            <UML:Attribute xmi.id="attr_gloss" name="gloss" type="form" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_etymology"/>
+            <UML:Generalization.parent xmi.idref="27271"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "example" -->
+        <UML:Class xmi.id="class_example" name="example" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_source" name="source" type="key" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_example"/>
+            <UML:Generalization.parent xmi.idref="27271"/>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_example"/>
+            <UML:Generalization.parent xmi.idref="29445"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "text" -->
+        <UML:Class xmi.id="class_text" name="text" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_text"/>
+            <UML:Generalization.parent xmi.idref="1010"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "field" -->
+        <UML:Class xmi.id="class_field" name="field" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_field"/>
+            <UML:Generalization.parent xmi.idref="class_multitext"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "span" -->
+        <UML:Class xmi.id="class_span" name="span" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_span"/>
+            <UML:Generalization.parent xmi.idref="class_multitext"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "annotation" -->
+        <UML:Class xmi.id="class_annotation" name="annotation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_who" name="who" visibility="private"/>
+            <UML:Attribute xmi.id="attr_when" name="when" type="datetime" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child xmi.idref="class_annotation"/>
+            <UML:Generalization.parent xmi.idref="class_trait"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "trait" -->
+        <UML:Class xmi.id="class_trait" name="trait" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_value" name="value" type="key" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:AssociationEnd>
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="class_annotation"/>
+            </UML:AssociationEnd.type>
+          </UML:AssociationEnd>
+        </UML:Class>
+
+        <!-- Definition der Klasse "URLRef" -->
+        <UML:Class xmi.id="class_URLRef" name="URLRef" visibility="public" isAbstract="false">
+          <UML:AssociationEnd>
+            <UML:AssociationEnd.type>
+              <UML:Class xmi.idref="class_multitext"/>
+            </UML:AssociationEnd.type>
+            <UML:AssociationEnd.name>label</UML:AssociationEnd.name>
+          </UML:AssociationEnd>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,129 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MedikamentManagement" name="MedikamentManagement">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Hersteller" name="Hersteller" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Wirkstoff" name="Wirkstoff" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Lieferant" name="Lieferant" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Medikamente" name="Medikamente" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_scanMedikament" name="scanMedikament" visibility="public">
+              <UML:Parameter xmi.id="op_scanMedikament_return" kind="return"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_abbuchen" name="abbuchen" visibility="public">
+              <UML:Parameter xmi.id="op_abbuchen_return" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Benutzer" name="Benutzer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Medikament" name="Medikament" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Erfahrungsbericht" name="Erfahrungsbericht" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Verschreibung" name="Verschreibung" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getVerschreibungen" name="getVerschreibungen" visibility="public">
+              <UML:Parameter xmi.id="op_getVerschreibungen_return" kind="return"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getMedikament" name="getMedikament" visibility="public">
+              <UML:Parameter xmi.id="op_getMedikament_return" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Patient" name="Patient" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_suchen" name="suchen" visibility="public">
+              <UML:Parameter xmi.id="op_suchen_return" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_NewClass" name="NewClass" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement/>
+        </UML:Class>
+
+        <UML:Association xmi.id="assoc_Medikamente_Wirkstoff">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Medikamente" type="class_Medikamente" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Wirkstoff" type="class_Wirkstoff" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Medikamente_Lieferant">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Medikamente_L" type="class_Medikamente" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Lieferant" type="class_Lieferant" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Medikamente_Erfahrungsbericht">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Erfahrungsbericht" type="class_Erfahrungsbericht" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Benutzer" type="class_Benutzer" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Medikamente_Verschreibung">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Medikamente_V" type="class_Medikamente" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Verschreibung" type="class_Verschreibung" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Verschreibung_Patient">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Verschreibung_P" type="class_Verschreibung" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Patient" type="class_Patient" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Erfahrungsbericht_Verschreibung">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Erfahrungsbericht_V" type="class_Erfahrungsbericht" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Verschreibung_E" type="class_Verschreibung" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="string" name="string"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

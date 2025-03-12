@@ -1,0 +1,56 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DomainModel" name="DomainModel">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_test_id" name="test_id">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Class xmi.id="class_Parent" name="Parent" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Pk" name="Pk" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Pk2" name="Pk2" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Name" name="Name" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Pk3" name="Pk3" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Child" name="Child" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_childId" name="childId" visibility="private"/>
+                <UML:Attribute xmi.id="attr_Name" name="Name" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Associated" name="Associated" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_assId" name="assId" visibility="private"/>
+                <UML:Attribute xmi.id="attr_assName" name="assName" visibility="private"/>
+                <UML:Attribute xmi.id="attr_intId" name="intId" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Generalization xmi.id="gen_Parent_Child" child="class_Child" parent="class_Parent"/>
+
+            <UML:Association xmi.id="assoc_Child_Associated" name="ass-child">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Child" type="class_Child" name="child" visibility="public" multiplicity="1" isNavigable="true"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Associated" type="class_Associated" name="associatedClass" visibility="public" multiplicity="*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

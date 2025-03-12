@@ -1,0 +1,120 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+    <XMI.header>
+        <XMI.documentation>
+            <XMI.exporter>ArgoUML</XMI.exporter>
+            <XMI.exporterVersion>0.34</XMI.exporterVersion>
+        </XMI.documentation>
+        <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+    </XMI.header>
+    <XMI.content>
+        <UML:Model xmi.id="model" name="RDFSystemModel">
+            <UML:Namespace.ownedElement>
+
+                <!-- Paket Datatypes -->
+                <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+                    <UML:Namespace.ownedElement>
+                        <UML:DataType xmi.id="datatype_int" name="int"/>
+                        <UML:DataType xmi.id="datatype_char" name="char"/>
+                        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                        <UML:DataType xmi.id="datatype_float" name="float"/>
+                        <UML:DataType xmi.id="datatype_double" name="double"/>
+                        <UML:DataType xmi.id="datatype_short" name="short"/>
+                        <UML:DataType xmi.id="datatype_long" name="long"/>
+                        <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                        <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                        <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                        <UML:DataType xmi.id="datatype_string" name="string"/>
+                    </UML:Namespace.ownedElement>
+                </UML:Package>
+
+                <!-- Klasse LiveNode -->
+                <UML:Class xmi.id="class_LiveNode" name="LiveNode" visibility="public" isAbstract="false">
+                    <UML:AssociationEnd type="class_LiveNode" aggregation="none"/>
+                    <UML:AssociationEnd type="class_LiveResource" aggregation="none"/>
+                </UML:Class>
+
+                <!-- Klasse LiveNodes -->
+                <UML:Class xmi.id="class_LiveNodes" name="LiveNodes" visibility="public" isAbstract="false"/>
+                
+                <!-- Klasse LiveResource -->
+                <UML:Class xmi.id="class_LiveResource" name="LiveResource" visibility="public" isAbstract="false"/>
+                
+                <!-- Klasse TrackerResource -->
+                <UML:Class xmi.id="class_TrackerResource" name="TrackerResource" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Generalization.parent>
+                            <UML:Class xmi.idref="class_LiveResource"/>
+                        </UML:Generalization.parent>
+                    </UML:Generalization>
+                </UML:Class>
+
+                <!-- Klasse LiveNodeModel -->
+                <UML:Class xmi.id="class_LiveNodeModel" name="LiveNodeModel" visibility="public" isAbstract="false">
+                    <UML:AssociationEnd type="class_LiveNodes" aggregation="none"/>
+                    <UML:AssociationEnd type="class_LiveResource" aggregation="none"/>
+                </UML:Class>
+
+                <!-- Klasse RDFGraph -->
+                <UML:Class xmi.id="class_RDFGraph" name="RDFGraph" visibility="public" isAbstract="false"/>
+
+                <!-- Klasse RDFService -->
+                <UML:Class xmi.id="class_RDFService" name="RDFService" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Generalization.parent>
+                            <UML:Class xmi.idref="class_RDFGraph"/>
+                        </UML:Generalization.parent>
+                    </UML:Generalization>
+                </UML:Class>
+
+                <!-- Klasse RDFClass -->
+                <UML:Class xmi.id="class_RDFClass" name="RDFClass" visibility="public" isAbstract="false">
+                    <UML:Dependency supplier="class_Live"/>
+                </UML:Class>
+
+                <!-- Klasse RDFVariable -->
+                <UML:Class xmi.id="class_RDFVariable" name="RDFVariable" visibility="public" isAbstract="false"/>
+                
+                <!-- Klasse RDFSelect -->
+                <UML:Class xmi.id="class_RDFSelect" name="RDFSelect" visibility="public" isAbstract="false">
+                    <UML:AssociationEnd type="class_RDFVariable" aggregation="none"/>
+                </UML:Class>
+
+                <!-- Klasse SelectStrategy -->
+                <UML:Class xmi.id="class_SelectStrategy" name="SelectStrategy" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Generalization.parent>
+                            <UML:Class xmi.idref="class_ContentStrategy"/>
+                        </UML:Generalization.parent>
+                    </UML:Generalization>
+                </UML:Class>
+
+                <!-- Klasse ContentStrategy -->
+                <UML:Class xmi.id="class_ContentStrategy" name="ContentStrategy" visibility="public" isAbstract="false"/>
+                
+                <!-- Klasse TripleStrategy -->
+                <UML:Class xmi.id="class_TripleStrategy" name="TripleStrategy" visibility="public" isAbstract="false">
+                    <UML:AssociationEnd type="class_TripleMode" aggregation="none"/>
+                </UML:Class>
+
+                <!-- Klasse RowCacheModel -->
+                <UML:Class xmi.id="class_RowCacheModel" name="RowCacheModel" visibility="public" isAbstract="false"/>
+
+                <!-- Klasse SparceVector -->
+                <UML:Class xmi.id="class_SparceVector" name="SparceVector" visibility="public" isAbstract="false"/>
+
+                <!-- Klasse TripleMode (erbt von RowCacheModel)-->
+                <UML:Class xmi.id="class_TripleMode" name="TripleMode" visibility="public" isAbstract="false">
+                    <UML:Generalization>
+                        <UML:Generalization.parent>
+                            <UML:Class xmi.idref="class_RowCacheModel"/>
+                        </UML:Generalization.parent>
+                    </UML:Generalization>
+                </UML:Class>
+
+            </UML:Namespace.ownedElement>
+        </UML:Model>
+    </XMI.content>
+</XMI>
+```

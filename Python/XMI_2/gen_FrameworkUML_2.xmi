@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- Packages -->
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="pkg_MAP" name="MAP" visibility="public">
+              <UML:Namespace.ownedElement>
+                <!-- Class Client -->
+                <UML:Class xmi.id="class_Client" name="Client" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_Client_ObjectBase" parent="class_ObjectBase"/>
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_AppClient" name="anwendungen">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="type_List"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Attribute xmi.id="attr_CustClient" name="kunden">
+                      <UML:StructuralFeature.type>
+                        <UML:DataType xmi.idref="type_List"/>
+                      </UML:StructuralFeature.type>
+                    </UML:Attribute>
+                    <UML:Operation xmi.id="op_NewApplication" name="NewApplication"/>
+                    <UML:Operation xmi.id="op_CreateNew" name="CreateNew"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <!-- Class Instance -->
+                <UML:Class xmi.id="class_Instance" name="Instance" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_Instance_ObjectBase" parent="class_ObjectBase"/>
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_Software" name="software"/>
+                    <UML:Attribute xmi.id="attr_Host" name="host"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <!-- Other classes in MAP omitted for brevity -->
+                <!-- Class ApplicationCollection -->
+                <UML:Class xmi.id="class_ApplicationCollection" name="ApplicationCollection" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_AppCol_ObjectCollection" parent="class_ObjectCollection"/>
+                </UML:Class>
+                <!-- Class InstanceCollection -->
+                <UML:Class xmi.id="class_InstanceCollection" name="InstanceCollection" visibility="public" isAbstract="false">
+                  <UML:Generalization xmi.id="gen_InstCol_ObjectCollection" parent="class_ObjectCollection"/>
+                </UML:Class>
+                <!-- Class Action -->
+                <UML:Class xmi.id="class_Action" name="Action" visibility="public" isAbstract="true">
+                  <UML:Generalization xmi.id="gen_Action_Auditable" parent="class_Auditable"/>
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_Argument" name="argumente"/>
+                    <UML:Attribute xmi.id="attr_MethodName" name="methodname"/>
+                    <UML:Attribute xmi.id="attr_Description" name="beschreibung"/>
+                    <UML:Operation xmi.id="op_Run" name="run"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <!-- Class ObjectBase -->
+                <UML:Class xmi.id="class_ObjectBase" name="ObjectBase" visibility="public" isAbstract="true"/>
+                <!-- Class DataCentre -->
+                <UML:Class xmi.id="class_DataCentre" name="DataCentre" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_RegionDC" name="region"/>
+                    <UML:Attribute xmi.id="attr_NameDC" name="name"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <!-- Class Region -->
+                <UML:Class xmi.id="class_Region" name="Region" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_NameRegion" name="name"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+                <!-- Class Contact -->
+                <UML:Class xmi.id="class_Contact" name="Contact" visibility="public" isAbstract="false">
+                  <UML:Classifier.feature>
+                    <UML:Attribute xmi.id="attr_Name" name="name"/>
+                    <UML:Attribute xmi.id="attr_Email" name="email"/>
+                    <UML:Attribute xmi.id="attr_Telefon" name="telefon"/>
+                  </UML:Classifier.feature>
+                </UML:Class>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <!-- Package Datatypes -->
+            <UML:Package xmi.id="pkg_Datatypes" name="Datatypes" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="type_int" name="int"/>
+                <UML:DataType xmi.id="type_char" name="char"/>
+                <UML:DataType xmi.id="type_bool" name="bool"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

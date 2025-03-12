@@ -1,0 +1,139 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ClockTower" name="ClockTower">
+      <UML:Namespace.ownedElement>
+        <!-- Paket Environment -->
+        <UML:Package xmi.id="package_Environment" name="Environment">
+          <UML:Namespace.ownedElement>
+            <!-- Klasse ClockTower -->
+            <UML:Class xmi.id="class_ClockTower" name="ClockTower" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_clock" name="clock" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Clock"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Klasse Clock -->
+            <UML:Class xmi.id="class_Clock" name="Clock" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_currentHour" name="currentHour" visibility="private" initialValue="0">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_currentMinute" name="currentMinute" visibility="private" initialValue="0">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="Integer"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_hourHand" name="hourHand" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Hand"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_minuteHand" name="minuteHand" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_Hand"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_updateHands" name="updateHands" visibility="public"/>
+                <UML:Operation xmi.id="op_addOneHour" name="addOneHour" visibility="public"/>
+                <UML:Operation xmi.id="op_addOneMinute" name="addOneMinute" visibility="public"/>
+                <UML:Operation xmi.id="op_Clock" name="Clock" visibility="public" isConstructor="true"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Klasse Hand -->
+            <UML:Class xmi.id="class_Hand" name="Hand" visibility="public" isAbstract="false"/>
+            
+            <!-- State-Machine ClockStateMachine -->
+            <UML:StateMachine xmi.id="stateMachine_ClockStateMachine" name="ClockStateMachine" visibility="public">
+              <UML:StateMachine.top>
+                <UML:CompositeState xmi.id="state_top" name="top" visibility="public" isConcurrent="false">
+                  <UML:CompositeState.subvertex>
+                    <UML:Pseudostate xmi.id="state_initial" name="initial" kind="initial"/>
+                    <UML:State xmi.id="state_Work" name="Work" visibility="public">
+                      <UML:State.entry>
+                        <UML:CallBehaviorAction name="updateHands" behavior="op_updateHands"/>
+                      </UML:State.entry>
+                    </UML:State>
+                    <UML:State xmi.id="state_AddHour" name="AddHour" visibility="public">
+                      <UML:State.entry>
+                        <UML:CallBehaviorAction name="addOneHour" behavior="op_addOneHour"/>
+                      </UML:State.entry>
+                    </UML:State>
+                  </UML:CompositeState.subvertex>
+                  <UML:CompositeState.internalTransition>
+                    <UML:Transition xmi.id="trans_initial_to_Work">
+                      <UML:Transition.source>
+                        <UML:State xmi.idref="state_initial"/>
+                      </UML:Transition.source>
+                      <UML:Transition.target>
+                        <UML:State xmi.idref="state_Work"/>
+                      </UML:Transition.target>
+                    </UML:Transition>
+                    <UML:Transition xmi.id="trans_Work_to_AddHour">
+                      <UML:Transition.trigger>
+                        <UML:Event name="AddHour"/>
+                      </UML:Transition.trigger>
+                      <UML:Transition.source>
+                        <UML:State xmi.idref="state_Work"/>
+                      </UML:Transition.source>
+                      <UML:Transition.target>
+                        <UML:State xmi.idref="state_AddHour"/>
+                      </UML:Transition.target>
+                    </UML:Transition>
+                    <UML:Transition xmi.id="trans_AddHour_to_Work">
+                      <UML:Transition.source>
+                        <UML:State xmi.idref="state_AddHour"/>
+                      </UML:Transition.source>
+                      <UML:Transition.target>
+                        <UML:State xmi.idref="state_Work"/>
+                      </UML:Transition.target>
+                    </UML:Transition>
+                  </UML:CompositeState.internalTransition>
+                </UML:CompositeState>
+              </UML:StateMachine.top>
+            </UML:StateMachine>
+            
+            <!-- Assoziationen -->
+            <UML:Association xmi.id="assoc_Clock_Hand_hourHand">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Clock_hourHand" type="class_Clock" aggregation="none" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Hand_hourHand" type="class_Hand" aggregation="none" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_Clock_Hand_minuteHand">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Clock_minuteHand" type="class_Clock" aggregation="none" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Hand_minuteHand" type="class_Hand" aggregation="none" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <UML:Association xmi.id="assoc_ClockTower_Clock">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_ClockTower_clock" type="class_ClockTower" aggregation="none" visibility="public"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Clock_clock" type="class_Clock" aggregation="none" visibility="public"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,96 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="Modèle UML">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_KDE_Plasma_Engine" name="KDE::Plasma::Engine" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_KDE_Hardware" name="KDE::Hardware" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_KDE_Hardware_Backends" name="KDE::Hardware::Backends" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_KDE_Plasma_Applets" name="KDE::Plasma::Applets" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_KDE_Hardware_Widgets" name="KDE::Hardware::Widgets" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_KDE_KCM" name="KDE::KCM" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Solid_Ifaces" name="Solid::Ifaces" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Solid_PowerManagement_Ifaces" name="Solid::PowerManagement::Ifaces" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Solid_Network_Ifaces" name="Solid::Network::Ifaces" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Solid_Network" name="Solid::Network" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Solid_PowerManagement" name="Solid::PowerManagement" visibility="public" isAbstract="false"/>
+        <UML:Package xmi.id="package_Solid" name="Solid" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Capabilities" name="Capabilities" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_Device" name="Device" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_DeviceCache" name="DeviceCache" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_DeviceManager" name="DeviceManager" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Battery" name="Battery" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Battery"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Capabilities"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Processor" name="Processor" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Processor"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Capabilities"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Sensor" name="Sensor" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Sensor"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Capabilities"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Association xmi.id="assoc_Device_DeviceCache">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Device_DeviceCache_Device" type="class_Device" name="device" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Device_DeviceCache_DeviceCache" type="class_DeviceCache" name="deviceCache" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DeviceManager_Device">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DeviceManager_Device_DeviceManager" type="class_DeviceManager" name="deviceManager" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DeviceManager_Device_Device" type="class_Device" name="device" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Dependencies -->
+        <UML:Dependency xmi.id="dep_PlasmaEngine_Hardware" name="Dependency">
+          <UML:Dependency.supplier>
+            <UML:Package xmi.idref="package_KDE_Hardware"/>
+          </UML:Dependency.supplier>
+          <UML:Dependency.client>
+            <UML:Package xmi.idref="package_KDE_Plasma_Engine"/>
+          </UML:Dependency.client>
+        </UML:Dependency>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

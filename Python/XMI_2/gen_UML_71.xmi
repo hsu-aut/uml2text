@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+      
+        <!-- Logical View -->
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- HTMLElementBuilder -->
+            <UML:Class xmi.id="HTMLElementBuilder" name="HTMLElementBuilder" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="HTMLElementBuilder_id" name="id" type="string" visibility="private"/>
+                <UML:Attribute xmi.id="HTMLElementBuilder_class" name="class" type="string" visibility="private"/>
+                <UML:Attribute xmi.id="HTMLElementBuilder_value" name="value" type="string" visibility="private"/>
+                <UML:Operation xmi.id="HTMLElementBuilder_getId" name="getId" visibility="public"/>
+                <UML:Operation xmi.id="HTMLElementBuilder_getClass" name="getClass" visibility="public"/>
+                <UML:Operation xmi.id="HTMLElementBuilder_getValue" name="getValue" visibility="public"/>
+                <UML:Operation xmi.id="HTMLElementBuilder_setId" name="setId" visibility="public"/>
+                <UML:Operation xmi.id="HTMLElementBuilder_setClass" name="setClass" visibility="public"/>
+                <UML:Operation xmi.id="HTMLElementBuilder_setValue" name="setValue" visibility="public"/>
+                <UML:Operation xmi.id="HTMLElementBuilder_build" name="build" visibility="protected"/>
+                <UML:Operation xmi.id="HTMLElementBuilder_getTag" name="getTag" visibility="protected"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- HTMLDiv (inherits from HTMLElementBuilder) -->
+            <UML:Class xmi.id="HTMLDiv" name="HTMLDiv" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="h4HYVlZgzRfh" parent="HTMLElementBuilder" child="HTMLDiv"/>
+            </UML:Class>
+
+            <!-- HTMLParagraph (inherits from HTMLElementBuilder) -->
+            <UML:Class xmi.id="HTMLParagraph" name="HTMLParagraph" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="EoFBDssj7j9C" parent="HTMLElementBuilder" child="HTMLParagraph"/>
+            </UML:Class>
+
+            <!-- HTMLSpan (inherits from HTMLElementBuilder) -->
+            <UML:Class xmi.id="HTMLSpan" name="HTMLSpan" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="NknUTueQ022y" parent="HTMLElementBuilder" child="HTMLSpan"/>
+            </UML:Class>
+
+            <!-- Client -->
+            <UML:Class xmi.id="Client" name="Client" visibility="public" isAbstract="false"/>
+            
+            <!-- Associations -->
+            <UML:Association xmi.id="GIkYX6Jf9VmD" name="Client-HTMLDiv">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="Client-HTMLDiv_end1" type="Client" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="Client-HTMLDiv_end2" type="HTMLDiv" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="EVaLyMYdDNDt" name="Client-HTMLParagraph">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="Client-HTMLParagraph_end1" type="Client" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="Client-HTMLParagraph_end2" type="HTMLParagraph" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="QtpdG0Un5KYN" name="Client-HTMLSpan">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="Client-HTMLSpan_end1" type="Client" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="Client-HTMLSpan_end2" type="HTMLSpan" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Data Types Package -->
+        <UML:Package xmi.id="datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+          
+            <UML:DataType xmi.id="int" name="int"/>
+            <UML:DataType xmi.id="char" name="char"/>
+            <UML:DataType xmi.id="bool" name="bool"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <UML:DataType xmi.id="short" name="short"/>
+            <UML:DataType xmi.id="long" name="long"/>
+            <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="string" name="string"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

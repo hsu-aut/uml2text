@@ -1,0 +1,130 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AudioProcessing" name="AudioProcessing">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "Core" im Namespace "aserver" -->
+        <UML:Class xmi.id="class_aserver_Core" name="aserver::Core" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_waves" name="waves" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="std::map&lt;std::string, aserver::SoundBuffer*>"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_generators" name="generators" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="std::map&lt;int, generator::Generator*>"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_processor" name="processor" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_processor_Processor"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_output" name="output" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_output_Output"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_period" name="period" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="param_period_return" name="return" kind="return" type="unsigned"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "SoundBuffer" im Namespace "aserver" -->
+        <UML:Class xmi.id="class_aserver_SoundBuffer" name="aserver::SoundBuffer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_framesize" name="framesize" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="unsigned short"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_data" name="data" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int16_t*"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Generator" im Namespace "generator" -->
+        <UML:Class xmi.id="class_generator_Generator" name="generator::Generator" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_buffer" name="buffer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_aserver_SoundBuffer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_location" name="location" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="std::map&lt;int, aserver::Location>"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_config" name="config" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="param_config_data" name="configData" kind="in" type="const generator::ConfigData*"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_render" name="render" visibility="public" isAbstract="true"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Primitive" als Spezialisierung von "Generator" -->
+        <UML:Class xmi.id="class_generator_Primitive" name="generator::Primitive" visibility="public" isAbstract="false">
+          <UML:Generalization parent="class_generator_Generator"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Wave" als Spezialisierung von "Generator" -->
+        <UML:Class xmi.id="class_generator_Wave" name="generator::Wave" visibility="public" isAbstract="false">
+          <UML:Generalization parent="class_generator_Generator"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Output" im Namespace "output" -->
+        <UML:Class xmi.id="class_output_Output" name="output::Output" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_write" name="write" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>       
+
+        <!-- Definition der Klasse "Processor" im Namespace "processor" -->
+        <UML:Class xmi.id="class_processor_Processor" name="processor::Processor" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_processor_buffer" name="buffer" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_aserver_SoundBuffer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_sources" name="sources" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="std::map<int, Source*>"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "generator::ConfigData" und "processor::ConfigData" -->
+        <UML:Class xmi.id="class_generator_ConfigData" name="generator::ConfigData" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="class_processor_ConfigData" name="processor::ConfigData" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="std::map&lt;std::string, aserver::SoundBuffer*>" name="std::map&lt;std::string, aserver::SoundBuffer*>"/>
+        <UML:DataType xmi.id="std::map&lt;int, generator::Generator*>" name="std::map&lt;int, generator::Generator*>"/>
+        <UML:DataType xmi.id="std::map&lt;int, aserver::Location>" name="std::map&lt;int, aserver::Location>"/>
+        <UML:DataType xmi.id="unsigned short" name="unsigned short"/>
+        <UML:DataType xmi.id="int16_t*" name="int16_t*"/>
+        <UML:DataType xmi.id="unsigned" name="unsigned"/>
+        <UML:DataType xmi.id="std::map<int, Source*>" name="std::map<int, Source*>"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

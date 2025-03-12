@@ -1,0 +1,95 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_HelloWorld" name="HelloWorld" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_newAttr" name="newAttr" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_newOperation" name="newOperation" visibility="public" isAbstract="false">
+              <UML:Operation.method>
+                <UML:Method xmi.id="method_1">
+                  <UML:Behavior.specification>
+                    <UML:Action xmi.id="action_1">
+                      <UML:ActionBody>System.out.println("Yes");</UML:ActionBody>
+                    </UML:Action>
+                  </UML:Behavior.specification>
+                </UML:Method>
+              </UML:Operation.method>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Anonymous1" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Anonymous1" parent="interface_MyInterface"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Anonymous2" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Anonymous3" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Anonymous3" parent="class_Anonymous2"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Anonymous6" isAbstract="false">
+          <UML:StateMachine xmi.id="sm_Anonymous6">
+            <UML:State xmi.id="state_1" name="State1"/>
+            <UML:Transition xmi.id="transition_1" source="state_1" target="state_1">
+              <UML:Transition.effect>
+                <UML:CallAction xmi.id="callAction_1" language="Java">
+                  <UML:ActionBody>createAction();</UML:ActionBody>
+                </UML:CallAction>
+              </UML:Transition.effect>
+            </UML:Transition>
+          </UML:StateMachine>
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_MyInterface" name="MyInterface">
+          <UML:Stereotype xmi.id="stereotype_Interface" name="interface" baseClass="Interface"/>
+        </UML:Interface>
+
+        <UML:AssociationClass xmi.id="associationClass_MyAssociationClass" name="MyAssociationClass">
+          <UML:AssociationClass.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_HelloWorld" type="class_HelloWorld"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Anonymous" type="class_Anonymous1"/>
+          </UML:AssociationClass.connection>
+        </UML:AssociationClass>
+
+        <UML:Association xmi.id="assoc_Anon1_Interface">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Anon1_Interface1" type="class_Anonymous1" aggregation="shared"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Anon1_Interface2" type="interface_MyInterface"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Anon2_MyAssociationClass">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Anon2_MyAssociationClass1" type="class_Anonymous2" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Anon2_MyAssociationClass2" type="associationClass_MyAssociationClass"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:UseCase xmi.id="usecase_AnonUseCase" name="AnonymousUseCase"/>
+        <UML:Actor xmi.id="actor_AnonymousActor" name="AnonymousActor">
+          <UML:AssociationEnd xmi.id="assocEnd_Actor_UseCase" type="usecase_AnonUseCase"/>
+        </UML:Actor>
+
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_void" name="void"/>
+        <UML:DataType xmi.id="datatype_short" name="short"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

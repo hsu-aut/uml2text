@@ -1,0 +1,69 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="y4nIkSTgUwxg" name="VisibleObject" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <UML:Class xmi.id="FWhpYuePFDKE" name="CollidingObject" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <UML:Class xmi.id="n5z3LPTT8oxL" name="DamageableObject" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <UML:Class xmi.id="f5Zbrhne0E0U" name="GameState" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <UML:Class xmi.id="K04khADbTOvr" name="Engine" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <UML:Class xmi.id="i9fkjfO6dbMh" name="Banquier" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Banquier_CollidingObject" parent="FWhpYuePFDKE"/>
+          <UML:Generalization xmi.id="gen_Banquier_DamageableObject" parent="n5z3LPTT8oxL"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="k6U51xne0Nqp" name="Enemy" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Enemy_DamageableObject" parent="n5z3LPTT8oxL"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="j9NPaWAnMrdh" name="Projectile" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Projectile_CollidingObject" parent="FWhpYuePFDKE"/>
+        </UML:Class>
+        
+        <UML:Class xmi.id="koNTPkXyzEfr" name="TextObject" visibility="public" isAbstract="false">
+          <UML:Association xmi.id="assoc_TextObject_CollidingObject">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assoc_end_TextObject" type="koNTPkXyzEfr" name="textObject" visibility="public" aggregation="none"/>
+              <UML:AssociationEnd xmi.id="assoc_end_CollidingObject" type="FWhpYuePFDKE" name="collidingObject" visibility="public" aggregation="none"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+        <UML:Class xmi.id="2ieUhKxYQVai" name="FPSCounter" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <UML:Class xmi.id="s5h1s6vFYnOH" name="Background" visibility="public" isAbstract="false">
+        </UML:Class>
+        
+        <UML:Generalization xmi.id="gen_CollidingObject_VisibleObject" child="FWhpYuePFDKE" parent="y4nIkSTgUwxg"/>
+        <UML:Generalization xmi.id="gen_DamageableObject_CollidingObject" child="n5z3LPTT8oxL" parent="FWhpYuePFDKE"/>
+        <UML:Generalization xmi.id="gen_PlayState_GameState" child="PlayState" parent="f5Zbrhne0E0U"/>
+        <UML:Generalization xmi.id="gen_PauseState_GameState" child="PauseState" parent="f5Zbrhne0E0U"/>
+        <UML:Generalization xmi.id="gen_IntroState_GameState" child="IntroState" parent="f5Zbrhne0E0U"/>
+        <UML:Generalization xmi.id="gen_EndingState_GameState" child="EndingState" parent="f5Zbrhne0E0U"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

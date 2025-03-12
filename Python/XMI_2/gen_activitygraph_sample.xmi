@@ -1,0 +1,79 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>Custom Exporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        
+        <UML:ActivityGraph xmi.id="activityGraph_1">
+          <UML:Top>
+            <UML:CompositeState xmi.id="compositeState_top" name="top">
+              <UML:Subvertex>
+                
+                <UML:Pseudostate xmi.id="pseudostate_initial" kind="initial">
+                  <UML:Outgoing>
+                    <UML:Transition xmi.idref="transition_initial_to_action"/>
+                  </UML:Outgoing>
+                </UML:Pseudostate>
+                
+                <UML:ActionState xmi.id="actionState_1" name="ActionState">
+                  <UML:Incoming>
+                    <UML:Transition xmi.idref="transition_initial_to_action"/>
+                  </UML:Incoming>
+                  <UML:Outgoing>
+                    <UML:Transition xmi.idref="transition_action_to_junction"/>
+                  </UML:Outgoing>
+                </UML:ActionState>
+                
+                <UML:Pseudostate xmi.id="pseudostate_junction" kind="junction">
+                  <UML:Incoming>
+                    <UML:Transition xmi.idref="transition_action_to_junction"/>
+                  </UML:Incoming>
+                  <UML:Outgoing>
+                    <UML:Transition xmi.idref="transition_junction_to_call"/>
+                    <UML:Transition xmi.idref="transition_junction_to_final"/>
+                  </UML:Outgoing>
+                </UML:Pseudostate>
+                
+                <UML:CallState xmi.id="callState_1" name="CallState">
+                  <UML:Incoming>
+                    <UML:Transition xmi.idref="transition_junction_to_call"/>
+                  </UML:Incoming>
+                  <UML:Outgoing>
+                    <UML:Transition xmi.idref="transition_call_to_objectFlow"/>
+                  </UML:Outgoing>
+                </UML:CallState>
+                
+                <UML:ObjectFlowState xmi.id="objectFlowState_1" name="ObjectFlowState">
+                  <UML:Incoming>
+                    <UML:Transition xmi.idref="transition_call_to_objectFlow"/>
+                  </UML:Incoming>
+                  <UML:Outgoing>
+                    <UML:Transition xmi.idref="transition_objectFlow_to_final"/>
+                  </UML:Outgoing>
+                </UML:ObjectFlowState>
+                
+                <UML:FinalState xmi.id="finalState_1" name="FinalState">
+                  <UML:Incoming>
+                    <UML:Transition xmi.idref="transition_objectFlow_to_final"/>
+                    <UML:Transition xmi.idref="transition_junction_to_final"/>
+                  </UML:Incoming>
+                </UML:FinalState>
+                
+              </UML:Subvertex>
+            </UML:CompositeState>
+          </UML:Top>
+        </UML:ActivityGraph>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

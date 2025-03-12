@@ -1,0 +1,114 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="struct" name="struct"/>
+                <UML:DataType xmi.id="enum" name="enum"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Klasse Bank -->
+            <UML:Class xmi.id="L5wzIfoPZ7rA" name="Bank" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private" datatype="string"/>
+                <UML:Attribute xmi.id="attr_nummer" name="nummer" visibility="private" datatype="int"/>
+                <UML:AssociationEnd xmi.id="assocend_ber_Konten" name="Konten" visibility="public">
+                  <UML:AssociationEnd.type>
+                    <UML:Class xmi.idref="J3Z9ua1RLUcG"/>
+                  </UML:AssociationEnd.type>
+                </UML:AssociationEnd>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Klasse Konto -->
+            <UML:Class xmi.id="J3Z9ua1RLUcG" name="Konto" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_type" name="type" visibility="private" datatype="string"/>
+                <UML:Attribute xmi.id="attr_start" name="start" visibility="private" datatype="int"/>
+                <UML:AssociationEnd xmi.id="assocend_buchung" name="buchung" visibility="public">
+                  <UML:AssociationEnd.type>
+                    <UML:Class xmi.idref="NXrgBh0VmwS2"/>
+                  </UML:AssociationEnd.type>
+                </UML:AssociationEnd>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Klasse Transaktion -->
+            <UML:Class xmi.id="NXrgBh0VmwS2" name="Transaktion" visibility="public" isAbstract="false"/>
+            
+            <!-- Klasse Party -->
+            <UML:Class xmi.id="gEXjFqb4zFy3" name="Party" visibility="public" isAbstract="false"/>
+
+            <!-- Klasse Kategorie -->
+            <UML:Class xmi.id="kjlTPKcgCx7K" name="Kategorie" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:AssociationEnd xmi.id="assocend_sub" name="sub" visibility="public">
+                  <UML:AssociationEnd.type>
+                    <UML:Class xmi.idref="dIZYiFlFy05Z"/>
+                  </UML:AssociationEnd.type>
+                </UML:AssociationEnd>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Klasse Subkategorie -->
+            <UML:Class xmi.id="dIZYiFlFy05Z" name="Subkategorie" visibility="public" isAbstract="false"/>
+            
+            <!-- Klasse Planer -->
+            <UML:Class xmi.id="53n16Vkrx7CZ" name="Planer" visibility="public" isAbstract="false"/>
+            
+            <!-- Klasse MasterState -->
+            <UML:Class xmi.id="nMUsg61KOaq6" name="MasterState" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_master" name="master" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="L5wzIfoPZ7rA"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_party" name="party" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="gEXjFqb4zFy3"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_kategorie" name="Kategorie" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="kjlTPKcgCx7K"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_planer" name="planer" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="53n16Vkrx7CZ"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

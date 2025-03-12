@@ -1,0 +1,82 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DBSystem" name="DBSystem">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_BackendInterface" name="Backend Interface" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_BackendInterface_init" name="_ggzdb_init" visibility="public">
+              <UML:Parameter xmi.id="return_BackendInterface_init" name="return" kind="return" type="GGZReturn"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ServerLinkInterface" name="Server Link Interface" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_ServerLinkInterface_init" name="ggzdb_init" visibility="public">
+              <UML:Parameter xmi.id="return_ServerLinkInterface_init" name="return" kind="return" type="int"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_PostgreSQLBackend" name="PostgreSQL Backend" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_BackendInterface"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_DB4Backend" name="DB4 Backend" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_BackendInterface"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ServerLinkCode" name="Server Link Code" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_ServerLinkInterface"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_GGZServer" name="GGZ Server" visibility="public">
+          <!-- Assoziation zu Server Link Interface -->
+          <UML:AssociationEnd xmi.id="assoc_GGZServer_ServerLinkInterface" type="class_ServerLinkInterface"/>
+        </UML:Class>
+
+        <UML:Interface xmi.id="interface_NuevoInterfaz" name="Nuevo Interfaz" visibility="public" isAbstract="true"/>
+        
+        <UML:Package xmi.id="package_GGZDatabase" name="GGZ Database" visibility="public">
+
+          <UML:Namespace.ownedElement>
+            <!-- Klassen innerhalb des Pakets können hier eingebunden werden -->
+          </UML:Namespace.ownedElement>
+          
+        </UML:Package>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="association_Backend_ServerLinkCode" name="Backend-ServerLinkCode" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Backend_ServerLinkCode_Backend" type="class_BackendInterface" name="backend" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Backend_ServerLinkCode_ServerLinkCode" type="class_ServerLinkCode" name="serverLink" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

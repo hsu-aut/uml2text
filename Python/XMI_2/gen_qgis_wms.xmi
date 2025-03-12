@@ -1,0 +1,96 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML-Modell">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_int" name="int" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_char" name="char" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_bool" name="bool" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_float" name="float" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_double" name="double" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="pointer_QgsMapLayer" name="QgsMapLayer*" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="pointer_QString" name="QString*" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Class xmi.id="class_QgsWMSServer" name="QgsWMSServer" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_QgsWmsServer" name="QgsWmsServer" visibility="public"/>
+            <UML:Operation xmi.id="op_getCapabilities" name="getCapabilities" visibility="public"/>
+            <UML:Operation xmi.id="op_getMap" name="getMap" visibility="public"/>
+            <UML:Operation xmi.id="op_getFeatureInfo" name="getFeatureInfo" visibility="public"/>
+            <UML:Operation xmi.id="op_getLegendGraphics" name="getLegendGraphics" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgsSLDParser" name="QgsSLDParser" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_mXmlDoc" name="mXmlDoc" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mScaleDenominator" name="mScaleDenominator" visibility="private"/>
+            <UML:Attribute xmi.id="attr_mFallbackSLDParser" name="mFallbackSLDParser*" visibility="private"/>
+            <UML:Operation xmi.id="op_QgsSLDParser" name="QgsSLDParser" visibility="public"/>
+            <UML:Operation xmi.id="op_mapLayerFromStyle" name="mapLayerFromStyle" visibility="public"/>
+            <UML:Operation xmi.id="op_legendForMapLayer" name="legendForMapLayer" visibility="public"/>
+            <UML:Operation xmi.id="op_layersAndStylesCapabilities" name="layersAndStylesCapabilities" visibility="public"/>
+            <UML:Operation xmi.id="op_layersAndStyles" name="layersAndStyles" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_QgsWMSRequestHandler" name="QgsWMSRequestHandler" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_QgsGetRequestHandler" name="QgsGetRequestHandler" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QgsWMSRequestHandler"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_QgsPostRequestHandler" name="QgsPostRequestHandler" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QgsWMSRequestHandler"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_QgsCommandLineAppRequestHandler" name="QgsCommandLineAppRequestHandler" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QgsWMSRequestHandler"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_QgsSOAPRequestHandler" name="QgsSOAPRequestHandler" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Class xmi.idref="class_QgsWMSRequestHandler"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_QgsWMSServiceException" name="QgsWMSServiceException" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="association_QgsWMSServer_QgsSLDParser" name="Server-Parsers" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end1" type="class_QgsWMSServer" name="server" visibility="private" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end2" type="class_QgsSLDParser" name="parser" visibility="private" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="association_QgsWMSServer_QgsWMSServiceException" name="Server-Exception" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end3" type="class_QgsWMSServer" name="server" visibility="private" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end4" type="class_QgsWMSServiceException" name="exception" visibility="private" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

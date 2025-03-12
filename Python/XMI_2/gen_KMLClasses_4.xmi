@@ -1,0 +1,246 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_KMLDocument" name="KMLDocument">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse KMLDocument -->
+        <UML:Class xmi.id="class_KMLDocument" name="KMLDocument" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_styleList" name="m_styleList" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QList"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_styleMapList" name="m_styleMapList" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QList"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_load" name="load" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_KMLContainer"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_KMLFolder"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse PlaceMark -->
+        <UML:Class xmi.id="class_PlaceMark" name="PlaceMark" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_name" name="m_name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_sympos" name="m_sympos" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_coordinate" name="coordinate" visibility="public"/>
+            <UML:Operation xmi.id="op_setCoordinate" name="setCoordinate" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_KMLFeature"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_KMLPlaceMark"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse PlaceMarkManager -->
+        <UML:Class xmi.id="class_PlaceMarkManager" name="PlaceMarkManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_addPlaceMarkFile" name="addPlaceMarkFile" visibility="public"/>
+            <UML:Operation xmi.id="op_getPlaceContainer" name="getPlaceContainer" visibility="public"/>
+            <UML:Operation xmi.id="op_loadKml" name="loadKml" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse PlaceMarkPainter -->
+        <UML:Class xmi.id="class_PlaceMarkPainter" name="PlaceMarkPainter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_paintPlaceFolder" name="paintPlaceFolder" visibility="public"/>
+            <UML:Operation xmi.id="op_setLabelColor" name="setLabelColor" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse KMLObject -->
+        <UML:Class xmi.id="class_KMLObject" name="KMLObject" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_id" name="m_id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_targetId" name="m_targetId" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse KMLFeature -->
+        <UML:Class xmi.id="class_KMLFeature" name="KMLFeature" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_name" name="m_name" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_description" name="m_description" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_visible" name="m_visible" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_KMLObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse KMLContainer -->
+        <UML:Class xmi.id="class_KMLContainer" name="KMLContainer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_region" name="region" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_KMLRegion"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_KMLFeature"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- Definition der Klasse KMLFolder -->
+        <UML:Class xmi.id="class_KMLFolder" name="KMLFolder" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_KMLContainer"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse KMLPlaceMark -->
+        <UML:Class xmi.id="class_KMLPlaceMark" name="KMLPlaceMark" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_coordinate" name="m_coordinate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Coordinate"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_attribute" name="attribute" visibility="public"/>
+            <UML:Operation xmi.id="op_setAttribute" name="setAttribute" visibility="public"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_KMLFeature"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse KMLStyle -->
+        <UML:Class xmi.id="class_KMLStyle" name="KMLStyle" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_iconstyle" name="m_iconstyle" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="IconStyle"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_labelstyle" name="m_labelstyle" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="LabelStyle"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_KMLStyleSelector"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse KMLRegion -->
+        <UML:Class xmi.id="class_KMLRegion" name="KMLRegion" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_latLonAltBox" name="m_latLonAltBox" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_KMLLatLonAltBox"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_m_lod" name="m_lod" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_KMLLod"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse KMLLod -->
+        <UML:Class xmi.id="class_KMLLod" name="KMLLod" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_minLodPixels" name="m_minLodPixels" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_maxFadeExtent" name="m_maxFadeExtent" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse KMLLatLonAltBox -->
+        <UML:Class xmi.id="class_KMLLatLonAltBox" name="KMLLatLonAltBox" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_north" name="m_north" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_east" name="m_east" visibility="private"/>
+            <UML:Attribute xmi.id="attr_m_maxAltitude" name="m_maxAltitude" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse StylesFactory -->
+        <UML:Class xmi.id="class_StylesFactory" name="StylesFactory" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_registerStyle" name="registerStyle" visibility="public"/>
+            <UML:Operation xmi.id="op_getStyleById" name="getStyleById" visibility="public"/>
+            <UML:Operation xmi.id="op_getStyleByRole" name="getStyleByRole" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition des Interfaces Serializable -->
+        <UML:Interface xmi.id="interface_Serializable" name="Serializable">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_pack" name="pack" visibility="public"/>
+            <UML:Operation xmi.id="op_unpack" name="unpack" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <!-- Definition von Datentypen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Coordinate" name="Coordinate"/>
+        <UML:DataType xmi.id="IconStyle" name="IconStyle"/>
+        <UML:DataType xmi.id="LabelStyle" name="LabelStyle"/>
+        <UML:DataType xmi.id="QList" name="QList"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

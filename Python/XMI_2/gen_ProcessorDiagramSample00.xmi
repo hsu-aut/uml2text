@@ -1,0 +1,103 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="Logical View" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="Hh9aWZtUekPL" name="int"/>
+                <UML:DataType xmi.id="6nMgIzeG53Jb" name="char"/>
+                <UML:DataType xmi.id="tPO3wFHDxOlR" name="bool"/>
+                <UML:DataType xmi.id="ycvaMItR6D7M" name="float"/>
+                <UML:DataType xmi.id="FotogJCjFS1Q" name="double"/>
+                <UML:DataType xmi.id="NN9oLlht70mY" name="short"/>
+                <UML:DataType xmi.id="4zfO7O0NBu9r" name="long"/>
+                <UML:DataType xmi.id="BMYOmXo7vvtE" name="unsigned int"/>
+                <UML:DataType xmi.id="ga8nYsKaqxyx" name="unsigned short"/>
+                <UML:DataType xmi.id="MxIXrSM0msOY" name="unsigned long"/>
+                <UML:DataType xmi.id="QAfJ5YXl6dWd" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Class xmi.id="pKKFUxWXT4GZ" name="Processor" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="BbOVNYnThL6d" name="threads" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="P6LMcsng8KMs"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="t3oRoH69NhUQ" name="now" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="GZH9yNUIzK5e"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="SrIOEkgB4lpU" name="register" visibility="public">
+                  <UML:Parameter xmi.id="param1" name="object" kind="in">
+                    <UML:Parameter.type>
+                      <UML:Class xmi.idref="qOYAzsoP7Fgs"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                  <UML:Parameter xmi.id="param2" name="function" kind="in">
+                    <UML:Parameter.type>
+                      <UML:Class xmi.idref="Ucij7TVAPX4Z"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+                <UML:Operation xmi.id="1GeuQJVMiYxn" name="run" visibility="public"/>
+                <UML:Operation xmi.id="1kKkJqrybcVn" name="kill" visibility="public">
+                  <UML:Parameter xmi.id="param3" name="object" kind="in">
+                    <UML:Parameter.type>
+                      <UML:Class xmi.idref="qOYAzsoP7Fgs"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                  <UML:Parameter xmi.id="param4" name="function" kind="in">
+                    <UML:Parameter.type>
+                      <UML:Class xmi.idref="Ucij7TVAPX4Z"/>
+                    </UML:Parameter.type>
+                  </UML:Parameter>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="P6LMcsng8KMs" name="Array" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="GZH9yNUIzK5e" name="Date" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="qOYAzsoP7Fgs" name="Object" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="Ucij7TVAPX4Z" name="function" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="nl3v4tAT55Nf" name="object" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="uV1KilZADVHh" name="SampleThread" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="tNV9VAvUA9q6" name="now" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="GZH9yNUIzK5e"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="EtGYc05kDa2u" name="run" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Association xmi.id="assoc_1">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Processor_SampleThread_1" type="pKKFUxWXT4GZ" name="processor" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_SampleThread_1" type="uV1KilZADVHh" name="sampleThread" visibility="public" aggregation="aggregate" multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_2">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Processor_SampleThread_2" type="pKKFUxWXT4GZ" name="processor" visibility="public" aggregation="none" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_SampleThread_2" type="uV1KilZADVHh" name="sampleThread" visibility="public" aggregation="aggregate" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

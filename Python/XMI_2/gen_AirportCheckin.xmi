@@ -1,0 +1,64 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AirportCheckin" name="AirportCheckin">
+      <UML:Namespace.ownedElement>
+        <UML:Activity xmi.id="activity_Check-in" name="Check-in Prozess" visibility="public" isAbstract="false">
+          <UML:Activity.graph>
+            
+            <!-- Initial Node -->
+            <UML:InitialNode xmi.id="initialNode_1" name="Initial Node"/>
+
+            <!-- Opaque Actions -->
+            <UML:OpaqueAction xmi.id="opaqueAction_showTicket" name="Show ticket"/>
+            <UML:OpaqueAction xmi.id="opaqueAction_verifyTicket" name="Verify ticket"/>
+            <UML:OpaqueAction xmi.id="opaqueAction_checkLuggage" name="Check luggage"/>
+            <UML:OpaqueAction xmi.id="opaqueAction_acceptLuggage" name="Accept luggage"/>
+            <UML:OpaqueAction xmi.id="opaqueAction_payFee" name="Pay fee"/>
+            <UML:OpaqueAction xmi.id="opaqueAction_issueBoardingPass" name="Issue boarding pass"/>
+            <UML:OpaqueAction xmi.id="opaqueAction_referCustomerService" name="Refer to customer service"/>
+            <UML:OpaqueAction xmi.id="opaqueAction_doNotPay" name="Do not pay"/>
+
+            <!-- Decision Nodes -->
+            <UML:DecisionNode xmi.id="decisionNode_1" name="Decision-Merge"/>
+            <UML:DecisionNode xmi.id="decisionNode_2" name="Decision-Merge2"/>
+
+            <!-- Merge Nodes -->
+            <UML:MergeNode xmi.id="mergeNode_1" name="Decision-Merge1"/>
+            <UML:MergeNode xmi.id="mergeNode_2" name="Decision-Merge3"/>
+
+            <!-- Activity Final Node -->
+            <UML:ActivityFinalNode xmi.id="activityFinalNode_1" name="Activity Final Node"/>
+
+          </UML:Activity.graph>
+        </UML:Activity>
+
+        <!-- Control Flows -->
+        <UML:ControlFlow xmi.id="controlFlow_1" source="initialNode_1" target="opaqueAction_showTicket"/>
+        <UML:ControlFlow xmi.id="controlFlow_2" source="opaqueAction_showTicket" target="opaqueAction_verifyTicket"/>
+        <UML:ControlFlow xmi.id="controlFlow_3" source="opaqueAction_verifyTicket" target="decisionNode_1"/>
+        <UML:ControlFlow xmi.id="controlFlow_4" source="decisionNode_1" target="opaqueAction_checkLuggage"/>
+        <UML:ControlFlow xmi.id="controlFlow_5" source="opaqueAction_checkLuggage" target="opaqueAction_acceptLuggage"/>
+        <UML:ControlFlow xmi.id="controlFlow_6" source="opaqueAction_acceptLuggage" target="decisionNode_2"/>
+        <UML:ControlFlow xmi.id="controlFlow_7" source="decisionNode_2" target="opaqueAction_payFee"/>
+        <UML:ControlFlow xmi.id="controlFlow_8" source="decisionNode_2" target="opaqueAction_doNotPay"/>
+        <UML:ControlFlow xmi.id="controlFlow_9" source="opaqueAction_doNotPay" target="mergeNode_2"/>
+        <UML:ControlFlow xmi.id="controlFlow_10" source="opaqueAction_payFee" target="mergeNode_2"/>
+        <UML:ControlFlow xmi.id="controlFlow_11" source="mergeNode_2" target="opaqueAction_issueBoardingPass"/>
+        <UML:ControlFlow xmi.id="controlFlow_12" source="decisionNode_1" target="opaqueAction_referCustomerService"/>
+        <UML:ControlFlow xmi.id="controlFlow_13" source="opaqueAction_issueBoardingPass" target="activityFinalNode_1"/>
+        <UML:ControlFlow xmi.id="controlFlow_14" source="opaqueAction_referCustomerService" target="activityFinalNode_1"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

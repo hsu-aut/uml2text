@@ -1,0 +1,79 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UnbenanntesModell" name="UnbenanntesModell">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Phone" name="Phone" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_voiceMsg" name="voiceMsg" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_inCall" name="inCall" visibility="public"></UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_InCall" name="InCall" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_date" name="date" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/> <!-- Assuming int for simplicity -->
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_time" name="time" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_setTime" name="setTime" visibility="public">
+              <UML:Parameter name="newTime" type="class_String"/>
+              <UML:Parameter name="return" type="void" kind="return"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_setDate" name="setDate" visibility="public">
+              <UML:Parameter name="newDate" type="int"/>
+              <UML:Parameter name="return" type="void" kind="return"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_acceptCall" name="acceptCall" visibility="public">
+              <UML:Parameter name="return" type="void" kind="return"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <UML:Association xmi.id="assoc_Phone_InCall">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Phone" type="class_Phone" name="receives" visibility="public" aggregation="none" multiplicity="*"/>
+            <UML:AssociationEnd xmi.id="assocEnd_InCall" type="class_InCall" name="inCall" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="void" name="void"/>
+
+        <UML:Package xmi.id="package_java" name="java">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_lang" name="lang">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_String" name="String" visibility="public" isAbstract="false"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,79 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UseCases" name="UseCases">
+      <UML:Namespace.ownedElement>
+
+        <!-- Akteure -->
+        <UML:Actor xmi.id="actor_Joueur" name="Joueur" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Joueur_gggzgzg" name="gggzgzg" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Actor>
+        
+        <UML:Actor xmi.id="actor_Administrateur" name="Administrateur" visibility="public"/>
+        
+        <!-- Use-Cases -->
+        <UML:UseCase xmi.id="useCase_EditerProfil" name="Editer son profil" visibility="public">
+          <UML:Extend xmi.id="extend_EditerProfil" extendedCase="actor_Joueur"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_SeConnecterJoueur" name="Se connecter en tant que joueur" visibility="public">
+          <UML:UseCase.extensionPoint>
+            <UML:ExtensionPoint xmi.id="extensionPoint_NewEP" name="newEP"/>
+          </UML:UseCase.extensionPoint>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_ModifierIP" name="Modifier l'ip du serveur" visibility="public">
+          <UML:Dependency xmi.id="dependency_ModifierIP" type="useCase_SeConnecterJoueur"/>
+          <UML:Extend xmi.id="extend_ModifierIP" extendedCase="useCase_SeConnecterJoueur"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_AttendreDebutPartie" name="Attendre le début de la partie" visibility="public">
+          <UML:UseCase.extensionPoint>
+            <UML:ExtensionPoint xmi.id="extensionPoint_AttendreDebutPartie" name="newEP"/>
+          </UML:UseCase.extensionPoint>
+          <UML:AssociationEnd xmi.id="assoc_AttendreDebutPartie_SeConnecter" type="useCase_SeConnecterJoueur" aggregation="none"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_RegarderListe" name="Regarder la liste des joueur se connectant" visibility="public">
+          <UML:Extend xmi.id="extend_RegarderListe" extendedCase="useCase_AttendreDebutPartie"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_ConquerirZone" name="Conquérir la zone" visibility="public">
+          <UML:AssociationEnd xmi.id="assoc_ConquerirZone_TrouverZone" type="useCase_TrouverZone"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_Deplacer" name="Se déplacer" visibility="public"/>
+        
+        <UML:UseCase xmi.id="useCase_SeBattre" name="Se battre contre un ennemi" visibility="public">
+          <UML:AssociationEnd xmi.id="assoc_SeBattre_Deplacer" type="useCase_Deplacer"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_Ressuciter" name="Ressuciter" visibility="public">
+          <UML:AssociationEnd xmi.id="assoc_Ressuciter_TrouverZoneRegen" type="useCase_TrouverZoneRegen"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_GagnerPartie" name="Gagner la partie" visibility="public"/>
+        
+        <UML:UseCase xmi.id="useCase_OuvrirConnection" name="Ouvrir la connection aux joueurs" visibility="public">
+          <UML:Dependency xmi.id="dependency_SeConnecterAdmin" type="useCase_SeConnecterAdmin"/>
+        </UML:UseCase>
+
+        <UML:UseCase xmi.id="useCase_AttendreConnection" name="Attendre que les joueurs se connectent" visibility="public">
+          <UML:AssociationEnd xmi.id="assoc_AttendreConnection_OuvrirConnection" type="useCase_OuvrirConnection"/>
+        </UML:UseCase>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

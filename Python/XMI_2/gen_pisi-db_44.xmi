@@ -1,0 +1,313 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_DatabaseManagement" name="DatabaseManagement">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse InstallDB und InstallInfo -->
+        <UML:Class xmi.id="class_InstallDB" name="InstallDB" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LockedDBShelf"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_db" name="db">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_LockedDBShelf"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Class xmi.id="class_InstallInfo" name="InstallInfo" visibility="public">
+              <UML:Attribute xmi.id="attr_state" name="state">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_version" name="version">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_release" name="release">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_build" name="build">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="String"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_size" name="size">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="Long"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse LockedDBShelf -->
+        <UML:Class xmi.id="class_LockedDBShelf" name="LockedDBShelf" visibility="public"/>
+
+        <!-- Definition der Klasse RepoDB und Repo -->
+        <UML:Class xmi.id="class_RepoDB" name="RepoDB" visibility="public">
+          <UML:Attribute xmi.id="attr_d" name="d">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_LockedDBShelf"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        <UML:Class xmi.id="class_Repo" name="Repo" visibility="public">
+          <UML:Attribute xmi.id="attr_indexuri" name="indexuri">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse FilesDB und FileInfo -->
+        <UML:Class xmi.id="class_FilesDB" name="FilesDB" visibility="public">
+          <UML:Attribute xmi.id="attr_d" name="d">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_LockedDBShelf"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        <UML:Class xmi.id="class_FileInfo" name="FileInfo" visibility="public">
+          <UML:Attribute xmi.id="attr_path" name="path">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_type" name="type">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_hash" name="hash">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_size" name="size">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="Long"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_permanent" name="permanent">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="Boolean"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse ItemByRepo und Enumeration repo -->
+        <UML:Class xmi.id="class_ItemByRepo" name="ItemByRepo" visibility="public">
+          <UML:Attribute xmi.id="attr_d" name="d">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_LockedDBShelf"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        <UML:Enumeration xmi.id="enum_repo" name="repo" visibility="public">
+          <UML:Enumeration.literal>
+            <UML:EnumerationLiteral xmi.id="enum_repo_installed" name="installed"/>
+            <UML:EnumerationLiteral xmi.id="enum_repo_thirdparty" name="thirdparty"/>
+          </UML:Enumeration.literal>
+        </UML:Enumeration>
+
+        <!-- Definition der Klasse ComponentDB und Component -->
+        <UML:Class xmi.id="class_ComponentDB" name="ComponentDB" visibility="public">
+          <UML:Attribute xmi.id="attr_d" name="d">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_ItemByRepo"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        <UML:Class xmi.id="class_Component" name="Component" visibility="public">
+          <UML:Attribute xmi.id="attr_name" name="name">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_localname" name="localname">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_summary" name="summary">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_description" name="description">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_dependencies" name="dependencies">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_packages" name="packages">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_sources" name="sources">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse PackageDB und Package -->
+        <UML:Class xmi.id="class_PackageDB" name="PackageDB" visibility="public">
+          <UML:Attribute xmi.id="attr_d" name="d">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_ItemByRepo"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_dr" name="dr">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_ItemByRepo"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        <UML:Class xmi.id="class_Package" name="Package" visibility="public">
+          <UML:Attribute xmi.id="attr_name" name="name">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_summary" name="summary">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_description" name="description">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_partof" name="partof">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="String"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_packageDependencies" name="packageDependencies">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_componentDependencies" name="componentDependencies">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_files" name="files">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Definition der Klasse SourceDB und SpecFile -->
+        <UML:Class xmi.id="class_SourceDB" name="SourceDB" visibility="public">
+          <UML:Attribute xmi.id="attr_d" name="d">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_ItemByRepo"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_dpkgtosrc" name="dpkgtosrc">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_ItemByRepo"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        <UML:Class xmi.id="class_SpecFile" name="SpecFile" visibility="public">
+          <UML:Attribute xmi.id="attr_source" name="source">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Source"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_packages" name="packages">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_history" name="history">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_components" name="components">
+            <UML:StructuralFeature.type>
+              <UML:DataType xmi.idref="List"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        
+        <!-- Beziehungen zwischen den Klassen -->
+        <UML:Association xmi.id="assoc_InstallDB_InstallInfo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_InstallDB_InstallInfo_InstallDB" type="class_InstallDB" name="installDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_InstallDB_InstallInfo_InstallInfo" type="class_InstallInfo" name="installInfo" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_RepoDB_Repo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_RepoDB_Repo_RepoDB" type="class_RepoDB" name="repoDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_RepoDB_Repo_Repo" type="class_Repo" name="repo" visibility="public" aggregation="aggregate" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_FilesDB_FileInfo">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_FilesDB_FileInfo_FilesDB" type="class_FilesDB" name="filesDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FilesDB_FileInfo_FileInfo" type="class_FileInfo" name="fileInfo" visibility="public" aggregation="aggregate" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_ComponentDB_Component">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ComponentDB_Component_ComponentDB" type="class_ComponentDB" name="componentDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ComponentDB_Component_Component" type="class_Component" name="component" visibility="public" aggregation="aggregate" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_PackageDB_Package">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PackageDB_Package_PackageDB" type="class_PackageDB" name="packageDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_PackageDB_Package_Package" type="class_Package" name="package" visibility="public" aggregation="aggregate" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_SourceDB_SpecFile">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SourceDB_SpecFile_SourceDB" type="class_SourceDB" name="sourceDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SourceDB_SpecFile_SpecFile" type="class_SpecFile" name="specFile" visibility="public" aggregation="aggregate" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition von Daten- und Listen-Typen -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Long" name="Long"/>
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="List" name="List"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

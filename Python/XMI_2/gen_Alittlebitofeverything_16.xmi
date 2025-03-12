@@ -1,0 +1,105 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_testing" name="Model_Management.Model (testing)">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package" name="Model_Management.Package" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Definition der Klasse "Name" -->
+            <UML:Class xmi.id="class_Name" name="Name" visibility="public" isAbstract="false" isLeaf="false" isRoot="false">
+              <UML:Helper.stereotype>
+                <UML:Stereotype xmi.id="stereotype_singleton" name="singleton"/>
+              </UML:Helper.stereotype>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_Name_Operation" name="Operation" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Little" -->
+            <UML:Class xmi.id="class_Little" name="Little" visibility="public" isAbstract="false" isLeaf="false" isRoot="false">
+              <UML:Generalization xmi.id="generalization_Little_A" parent="class_A"/>
+              <UML:Partition xmi.id="partition_LittleStateMachine" stateMachine="LittleStateMachine"/>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Bit of" -->
+            <UML:Class xmi.id="class_Bit_of" name="Bit of" visibility="public" isAbstract="true" isLeaf="false" isRoot="false">
+              <UML:Generalization xmi.id="generalization_Everything_Bit_of" child="class_Everything"/>
+              <UML:ActivityGraph xmi.id="activityGraph_Bit_ofActivityGraph"/>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Simple" -->
+            <UML:Class xmi.id="class_Simple" name="Simple" visibility="public" isAbstract="false" isLeaf="false" isRoot="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_attr1" name="attr1" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_attr2" name="attr2" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation_Simple_Operation" name="Operation" visibility="public">
+                  <UML:Parameter xmi.id="param_Simple_Operation_Param" name="param" kind="in" type="java.lang.Object"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Model" -->
+            <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false" isLeaf="false" isRoot="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_private1" name="private1" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="operation_Oper1" name="Oper1" visibility="public"/>
+                <UML:Operation xmi.id="operation_Oper2" name="Oper2" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- Definition der Klasse "Everything" -->
+            <UML:Class xmi.id="class_Everything" name="Everything" visibility="public" isAbstract="false" isLeaf="false" isRoot="false">
+              <UML:Generalization xmi.id="generalization_Everything_Bit_of" parent="class_Bit_of"/>
+              <!-- Kommentardarstellung -->
+              <UML:Comment xmi.id="comment_Everything" body="This is the Everything class, inheriting from Bit of."/>
+            </UML:Class>
+
+            <!-- Definition des Interface "NameIf" -->
+            <UML:Interface xmi.id="interface_NameIf" name="NameIf" visibility="public" isLeaf="false" isRoot="false">
+              <UML:TaggedValue tag="realize" value="Name"/>
+            </UML:Interface>
+            
+            <!-- Definition von Use-Cases und Akteuren -->
+            <UML:UseCase xmi.id="usecase_UC1" name="UC1"/>
+            <UML:UseCase xmi.id="usecase_UC2" name="UC2">
+              <UML:Generalization xmi.id="generalization_UC2_UC1" parent="usecase_UC1"/>
+            </UML:UseCase>
+            <UML:Actor xmi.id="actor_John_Wayne" name="John Wayne">
+              <UML:AssociationEnd xmi.id="associationEnd_Actor_UseCase" type="usecase_UC1"/>
+            </UML:Actor>
+
+            <!-- Definition von Kollaboration -->
+            <UML:Collaboration xmi.id="collaboration_Collab" name="Collab">
+              <UML:CollaborationOccurance.message>
+                <UML:Message xmi.id="message_happening_first" name="happening first"/>
+              </UML:CollaborationOccurance.message>
+            </UML:Collaboration>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

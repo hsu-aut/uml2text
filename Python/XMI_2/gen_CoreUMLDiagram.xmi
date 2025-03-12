@@ -1,0 +1,224 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "GrayTranslationFunction" -->
+        <UML:Class xmi.id="class_GrayTranslationFunction" name="GrayTranslationFunction" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_slope" name="slope" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_intercept" name="intercept" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_fromHU" name="fromHU" visibility="public">
+              <UML:Parameter xmi.id="param_value" name="value" kind="in" type="float"/>
+              <UML:Parameter xmi.id="op_fromHU_return" name="return" kind="return" type="float"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_toHU" name="toHU" visibility="public">
+              <UML:Parameter xmi.id="param_value" name="value" kind="in" type="float"/>
+              <UML:Parameter xmi.id="op_toHU_return" name="return" kind="return" type="float"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "GrayValue" -->
+        <UML:Class xmi.id="class_GrayValue" name="GrayValue" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "HundsfieldValue" -->
+        <UML:Class xmi.id="class_HundsfieldValue" name="HundsfieldValue" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_HundsfieldValue_GrayValue" parent="class_GrayValue" />
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_max" name="max" visibility="public">
+              <UML:Parameter xmi.id="op_max_return" name="return" kind="return" type="float"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_min" name="min" visibility="public">
+              <UML:Parameter xmi.id="op_min_return" name="return" kind="return" type="float"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "GrayViewWindow" -->
+        <UML:Class xmi.id="class_GrayViewWindow" name="GrayViewWindow" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_min" name="min" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_max" name="max" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_luminosity" name="luminosity" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_contrast" name="contrast" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Image" -->
+        <UML:Class xmi.id="class_Image" name="Image" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="ref_image3d" name="image3d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Image3d"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Image3d" -->
+        <UML:Class xmi.id="class_Image3d" name="Image3d" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_width" name="width" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_depth" name="depth" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_maxValue" name="maxValue" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_minValue" name="minValue" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="float"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Examen" -->
+        <UML:Class xmi.id="class_Examen" name="Examen" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="ref_examenParams" name="examenParams" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_ExamenParams"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_volume" name="volume" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Volume"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_mask3d" name="mask3d" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Mask3d"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_skeleton" name="skeleton" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Skeleton"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "ExamenParams" -->
+        <UML:Class xmi.id="class_ExamenParams" name="ExamenParams" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_information" name="information" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Information"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Volume" -->
+        <UML:Class xmi.id="class_Volume" name="Volume" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Mask3d" -->
+        <UML:Class xmi.id="class_Mask3d" name="Mask3d" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Skeleton" -->
+        <UML:Class xmi.id="class_Skeleton" name="Skeleton" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="ref_skeletonSlice" name="skeletonSlice" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_SkeletonSlice"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="ref_branch" name="branch" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Branch"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "SkeletonSlice" -->
+        <UML:Class xmi.id="class_SkeletonSlice" name="SkeletonSlice" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Branch" -->
+        <UML:Class xmi.id="class_Branch" name="Branch" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Information" -->
+        <UML:Class xmi.id="class_Information" name="Information" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziationen  -->
+        <UML:Association xmi.id="assoc_GrayViewWindow_GrayTranslationFunction">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_GrayViewWindow_GrayTranslationFunction_GrayViewWindow" type="class_GrayViewWindow" name="grayViewWindow" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_GrayViewWindow_GrayTranslationFunction_GrayTranslationFunction" type="class_GrayTranslationFunction" name="grayTranslationFunction" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="int" name="int"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

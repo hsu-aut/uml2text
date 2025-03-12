@@ -1,0 +1,87 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_constructor" name="constructor"/>
+        <UML:Stereotype xmi.id="stereotype_enum" name="enum"/>
+        
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_int" name="int"/>
+                <UML:Class xmi.id="class_char" name="char"/>
+                <UML:Class xmi.id="class_bool" name="bool"/>
+                <UML:Class xmi.id="class_float" name="float"/>
+                <UML:Class xmi.id="class_QString" name="QString"/>
+                <UML:Class xmi.id="class_QModelIndex" name="QModelIndex"/>
+                <UML:Class xmi.id="class_StatClass" name="StatClass"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="class_ QString" name="QString" visibility="public"/>
+            
+            <UML:Class xmi.id="class_Number" name="Number" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_decimalPart" name="decimalPart" visibility="private"/>
+                <UML:Attribute xmi.id="attr_wholePart" name="wholePart" visibility="private"/>
+                <UML:Operation xmi.id="op_isDecimal" name="isDecimal" visibility="public">
+                  <UML:Parameter xmi.id="param_isDecimal_return" name="return" kind="return" type="bool"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_toFloat" name="toFloat" visibility="public">
+                  <UML:Parameter xmi.id="param_toFloat_return" name="return" kind="return" type="float"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_CoreData" name="CoreData" visibility="public">
+              <UML:Generalization xmi.id="generalization_CoreData" child="class_CoreData" parent="class_QObject"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_SampleSpaceModel" name="SampleSpaceModel" visibility="public">
+              <UML:Generalization xmi.id="generalization_SampleSpaceModel" child="class_SampleSpaceModel" parent="class_QAbstractTableModel"/>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_rowCount" name="rowCount" visibility="public"/>
+                <UML:Operation xmi.id="op_columnVisibility" name="columnVisibility" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Sample" name="Sample" visibility="public">
+              <UML:AssociationEnd xmi.id="assocEnd_Sample_CoreData" type="class_CoreData" name="coreData" visibility="public"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Sample_Histogram" type="class_Histogram" name="histogram" visibility="public"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Sample_SampleSpaceModel" type="class_SampleSpaceModel" name="sampleSpaceModel" visibility="public"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Sample_StatClassModel" type="class_StatClassModel" name="statClassModel" visibility="public"/>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_MathStat" name="MathStat" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_m_view" name="m_view" visibility="private"/>
+                <UML:Attribute xmi.id="attr_m_samples" name="m_samples" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_QAction" name="QAction" visibility="public"/>
+            <UML:Class xmi.id="class_QToolBar" name="QToolBar" visibility="public"/>
+            <UML:Class xmi.id="class_QPushButton" name="QPushButton" visibility="public"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

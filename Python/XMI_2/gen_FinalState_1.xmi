@@ -1,0 +1,62 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StateMachine" name="StateMachineModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Zustandmaschine -->
+        <UML:StateMachine xmi.id="stateMachine_1" name="StateMachine">
+          <UML:Top>
+            <!-- Oberster Verbundzustand -->
+            <UML:CompositeState xmi.id="compositeState_top" name="top" isConcurrent="false">
+              <UML:Substate>
+                
+                <!-- Start-Pseudostatus -->
+                <UML:Pseudostate xmi.id="pseudostate_start" kind="initial">
+                  <UML:Outgoing>
+                    <UML:Transition xmi.idref="transition_0919"/>
+                  </UML:Outgoing>
+                </UML:Pseudostate>
+                
+                <!-- Einfacher Zustand -->
+                <UML:SimpleState xmi.id="simpleState_1" name="SimpleState">
+                  <UML:Incoming>
+                    <UML:Transition xmi.idref="transition_0919"/>
+                  </UML:Incoming>
+                  <UML:Outgoing>
+                    <UML:Transition xmi.idref="transition_091B"/>
+                  </UML:Outgoing>
+                </UML:SimpleState>
+                
+                <!-- Endzustand -->
+                <UML:FinalState xmi.id="finalState_end" name="FinalState">
+                  <UML:Incoming>
+                    <UML:Transition xmi.idref="transition_091B"/>
+                  </UML:Incoming>
+                </UML:FinalState>
+
+              </UML:Substate>
+            </UML:CompositeState>
+          </UML:Top>
+          
+          <!-- Transition vom Pseudostatus zum Einfachen Zustand -->
+          <UML:Transition xmi.id="transition_0919" source="pseudostate_start" target="simpleState_1"/>
+          
+          <!-- Transition vom Einfachen Zustand zum Endzustand -->
+          <UML:Transition xmi.id="transition_091B" source="simpleState_1" target="finalState_end"/>
+          
+        </UML:StateMachine>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

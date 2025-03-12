@@ -1,0 +1,137 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Stereotype xmi.id="st_folder" name="folder"/>
+        <UML:Stereotype xmi.id="st_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="st_constructor" name="constructor"/>
+        
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_int" name="int"/>
+                <UML:Class xmi.id="class_char" name="char"/>
+                <UML:Class xmi.id="class_bool" name="bool"/>
+                <UML:Class xmi.id="class_float" name="float"/>
+                <UML:Class xmi.id="class_double" name="double"/>
+                <UML:Class xmi.id="class_short" name="short"/>
+                <UML:Class xmi.id="class_long" name="long"/>
+                <UML:Class xmi.id="class_unsigned_int" name="unsigned int"/>
+                <UML:Class xmi.id="class_unsigned_short" name="unsigned short"/>
+                <UML:Class xmi.id="class_unsigned_long" name="unsigned long"/>
+                <UML:Class xmi.id="class_string" name="string"/>
+                <UML:DataType xmi.id="datatype_vector_color" name="const std::vector&lt; Color &gt;"/>
+                <UML:DataType xmi.id="datatype_const_color" name="const Color&"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="pkg_std" name="std">
+              <UML:Namespace.ownedElement>
+                <UML:Class xmi.id="class_vector" name="vector"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Package xmi.id="pkg_addutil" name="addutil"/>
+            
+            <UML:Package xmi.id="pkg_freekick" name="freekick">
+              <UML:Namespace.ownedElement>
+
+                <UML:Package xmi.id="pkg_soccer" name="soccer">
+                  <UML:Namespace.ownedElement>
+
+                    <UML:Class xmi.id="class_Kit" name="Kit">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_jerseytype" name="jerseytype">
+                          <UML:StructuralFeature.type>
+                            <UML:Class xmi.idref="class_string"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_jerseycolors" name="jerseycolors">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="datatype_vector_color"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_jerseypic" name="jerseypic">
+                          <UML:StructuralFeature.type>
+                            <UML:Class xmi.idref="class_string"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_shortscolor" name="shortscolor">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="datatype_const_color"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_sockscolor" name="sockscolor">
+                          <UML:StructuralFeature.type>
+                            <UML:DataType xmi.idref="datatype_const_color"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Operation xmi.id="op_constructor" name="Kit">
+                          <UML:Parameter xmi.id="param_jerseytype" name="jerseytype"/>
+                          <UML:Parameter xmi.id="param_jerseycolors" name="jerseycolors"/>
+                          <UML:Parameter xmi.id="param_jerseypic" name="jerseypic"/>
+                          <UML:Parameter xmi.id="param_shortscolor" name="shortscolor"/>
+                          <UML:Parameter xmi.id="param_sockscolor" name="sockscolor"/>
+                        </UML:Operation>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+
+                    <UML:Class xmi.id="class_Pitch" name="Pitch">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_width" name="width" visibility="public">
+                          <UML:StructuralFeature.type>
+                            <UML:Class xmi.idref="class_float"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Attribute xmi.id="attr_length" name="length" visibility="public">
+                          <UML:StructuralFeature.type>
+                            <UML:Class xmi.idref="class_float"/>
+                          </UML:StructuralFeature.type>
+                        </UML:Attribute>
+                        <UML:Operation xmi.id="op_constructor" name="Pitch"/>
+                        <UML:Operation xmi.id="op_getID" name="getID"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+
+                    <UML:Class xmi.id="class_Stadium" name="Stadium">
+                      <UML:Generalization>
+                        <UML:Generalization.child>
+                          <UML:Class xmi.idref="class_Stadium"/>
+                        </UML:Generalization.child>
+                        <UML:Generalization.parent>
+                          <UML:Class xmi.idref="class_StaticEntity"/>
+                        </UML:Generalization.parent>
+                      </UML:Generalization>
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_generalStadiumAttr" name="someAttribute"/>
+                        <UML:Operation xmi.id="op_getID" name="getID"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="class_Color" name="Color"/>
+        <UML:Class xmi.id="class_StaticEntity" name="StaticEntity"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

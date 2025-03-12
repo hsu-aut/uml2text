@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="Logical View">
+      <UML:Namespace.ownedElement>
+        <!-- DataTypes -->
+        <UML:Package xmi.id="Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="int" name="int"/>
+            <UML:DataType xmi.id="char" name="char"/>
+            <UML:DataType xmi.id="bool" name="bool"/>
+            <UML:DataType xmi.id="float" name="float"/>
+            <UML:DataType xmi.id="double" name="double"/>
+            <UML:DataType xmi.id="short" name="short"/>
+            <UML:DataType xmi.id="long" name="long"/>
+            <UML:DataType xmi.id="unsigned int" name="unsigned int"/>
+            <UML:DataType xmi.id="unsigned short" name="unsigned short"/>
+            <UML:DataType xmi.id="unsigned long" name="unsigned long"/>
+            <UML:DataType xmi.id="string" name="string"/>
+            <UML:DataType xmi.id="array" name="array"/>
+            <UML:DataType xmi.id="tuple" name="tuple"/>
+            <UML:DataType xmi.id="dict" name="dict"/>
+            <UML:DataType xmi.id="object" name="object"/>
+            <UML:DataType xmi.id="set" name="set"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Interfaces -->
+        <UML:Interface xmi.id="LosWpbeWcTtx" name="IConnectionFactory"/>
+        <UML:Interface xmi.id="JdFzo8Hv5Dlx" name="IAgency"/>
+        <UML:Interface xmi.id="qCtumccNVbbj" name="IAgencyAgent"/>
+        <UML:Interface xmi.id="RunPrDQ7EsfV" name="IMessagingClient"/>
+        <UML:Interface xmi.id="protocols.IInterest" name="protocols.IInterest"/>
+        <UML:Interface xmi.id="protocols.IInitiator" name="protocols.IInitiator"/>
+
+        <!-- Messaging Package -->
+        <UML:Package xmi.id="messaging" name="messaging">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="QzrtqoJ9eNRN" name="Messaging"/>
+            <UML:Class xmi.id="FR7Z3xpotLuq" name="Connection"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Database Package -->
+        <UML:Package xmi.id="database" name="database">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="h8In0av7Ndyu" name="Database"/>
+            <UML:Class xmi.id="k8PEumAIOz41" name="Connection"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Agency Package -->
+        <UML:Package xmi.id="agency" name="agency">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="xCp08RRDRSTT" name="Agency">
+              <UML:Dependency>
+                <UML:Dependency.client>
+                  <UML:Interface xmi.idref="JdFzo8Hv5Dlx"/>
+                </UML:Dependency.client>
+              </UML:Dependency>
+            </UML:Class>
+            <UML:Class xmi.id="ubztfqZ6uIA7" name="AgencyAgent"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Other Classes -->
+        <UML:Class xmi.id="34w1RNamZaPy" name="Agent">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="protocols.IInitiator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="qvqsDPCBZ4iR" name="AgencyContractor"/>
+        <UML:Class xmi.id="Bw97NXDFjMOe" name="contracts.AgencyManager"/>
+        <UML:Class xmi.id="zF9LrFzxr872" name="requests.AgencyRequester"/>
+        <UML:Class xmi.id="rAmm2su2pf5I" name="requests.AgencyReplier"/>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="Assoc_Agency_AgencyAgent">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="AgencyEnd" type="xCp08RRDRSTT" name="Agency" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="AgencyAgentEnd" type="ubztfqZ6uIA7" name="AgencyAgent" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

@@ -1,0 +1,114 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="xmi.1" name="testing" visibility="public" isRoot="true">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="xmi.97" name="java" visibility="public"/>
+
+        <UML:Class xmi.id="xmi.16" name="Little" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="xmi.60" name="A" visibility="public" isAbstract="false"/>
+
+        <UML:Generalization xmi.id="xmi.17" name="GeneralizationLittleA">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="xmi.60"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="xmi.16"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+        <UML:StateMachine xmi.id="xmi.18" name="LittleStateMachine" visibility="public" context="xmi.16"/>
+
+        <UML:Class xmi.id="xmi.40" name="Bit of" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="xmi.58" name="Everything" visibility="public" isAbstract="false"/>
+
+        <UML:Generalization xmi.id="xmi.41" name="GeneralizationBitOfEverything">
+          <UML:Generalization.parent>
+            <UML:Class xmi.idref="xmi.40"/>
+          </UML:Generalization.parent>
+          <UML:Generalization.child>
+            <UML:Class xmi.idref="xmi.58"/>
+          </UML:Generalization.child>
+        </UML:Generalization>
+
+        <UML:ActivityGraph xmi.id="xmi.42" name="Bit ofActivityGraph" context="xmi.40"/>
+
+        <UML:Class xmi.id="xmi.8" name="Name" visibility="public" isAbstract="false"/>
+        <UML:Interface xmi.id="xmi.3" name="NameIf" visibility="public"/>
+
+        <UML:Abstraction xmi.id="xmi.4" name="AbstractionNameIfToName">
+          <UML:Dependency.supplier>
+            <UML:Interface xmi.idref="xmi.3"/>
+          </UML:Dependency.supplier>
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="xmi.8"/>
+          </UML:Dependency.client>
+          <UML:ModelElement.stereotype>
+            <UML:Stereotype xmi.id="xmi.11" name="realize"/>
+          </UML:ModelElement.stereotype>
+        </UML:Abstraction>
+
+        <UML:Class xmi.id="xmi.61" name="Simple" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="xmi.62" name="attr1" visibility="public"/>
+            <UML:Attribute xmi.id="xmi.63" name="attr2" visibility="public"/>
+            <UML:Operation xmi.id="xmi.64" name="Operation" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Association xmi.id="xmi.75" name="AssociationSimpleA">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="xmi.76" type="xmi.61" aggregation="aggregate"/>
+            <UML:AssociationEnd xmi.id="xmi.77" type="xmi.60" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Class xmi.id="xmi.82" name="Model" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="xmi.83" name="attr" visibility="public"/>
+            <UML:Operation xmi.id="xmi.84" name="Oper1" visibility="public"/>
+            <UML:Operation xmi.id="xmi.85" name="Oper2" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Association xmi.id="xmi.94" name="OpaqueAssociationModelSimple">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="xmi.95" type="xmi.82" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="xmi.96" type="xmi.61" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Collaboration xmi.id="xmi.117" name="Collaborations">
+
+          <UML:AssociationRole xmi.id="xmi.119" name="j1" base="xmi.75"/>
+          <UML:AssociationRole xmi.id="xmi.120" name="/j2" base="xmi.94"/>
+          <UML:AssociationRole xmi.id="xmi.121" name="j3" base="xmi.94"/>
+
+          <UML:ClassifierRole xmi.id="xmi.122" name="Role1"/>
+          <UML:ClassifierRole xmi.id="xmi.123" name="Role2"/>
+          <UML:Message xmi.id="xmi.124" name="1 happening first"/>
+          <UML:Message xmi.id="xmi.125" name="2 happening then"/>
+
+        </UML:Collaboration>
+
+        <UML:Actor xmi.id="xmi.101" name="John Wayne"/>
+        <UML:UseCase xmi.id="xmi.102" name="UC1"/>
+        <UML:UseCase xmi.id="xmi.108" name="UC2"/>
+
+        <UML:Extend xmi.id="xmi.104" base="xmi.102"/>
+        <UML:Include xmi.id="xmi.109" base="xmi.102"/>
+
+        <UML:Generalization xmi.id="xmi.110" parent="xmi.102" child="xmi.108"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

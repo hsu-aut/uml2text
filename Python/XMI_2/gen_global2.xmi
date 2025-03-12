@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="Sun May 26 18:40:26 CEST 2013">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML (using Netbeans XMI Writer version 1.0)</XMI.exporter>
+      <XMI.exporterVersion>0.34(6) revised on $Date: 2010-01-11 22:20:14 +0100 (Mon, 11 Jan 2010) $ </XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SoftwareArchitecture" name="SoftwareArchitecture" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        <UML:DataType xmi.id="datatype_mixed" name="mixed"/>
+        <UML:DataType xmi.id="datatype_array" name="array"/>
+        <UML:DataType xmi.id="datatype_string" name="string"/>
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_integer" name="integer"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+        <UML:DataType xmi.id="datatype_float" name="float"/>
+        <UML:DataType xmi.id="datatype_void" name="void"/>
+        <UML:DataType xmi.id="datatype_null" name="null"/>
+        <UML:DataType xmi.id="datatype_object" name="object"/>
+        <UML:DataType xmi.id="datatype_resource" name="resource"/>
+
+        <UML:Interface xmi.id="interface_Iterator" name="Iterator"/>
+        <UML:Interface xmi.id="interface_Countable" name="Countable"/>
+        <UML:Interface xmi.id="interface_B" name="B"/>
+        <UML:Interface xmi.id="interface_O" name="O"/>
+        <UML:Interface xmi.id="interface_test" name="test"/>
+        <UML:Interface xmi.id="interface_BigBlackHole" name="BigBlackHole"/>
+        <UML:Interface xmi.id="interface_SecondBigBlackHole" name="SecondBigBlackHole"/>
+        <UML:Interface xmi.id="interface_Contract" name="Contract"/>
+
+        <!-- Example for Class definition -->
+        <UML:Class xmi.id="class_Exception" name="Exception" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Attributes and operations would be defined here -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_A_090827" name="A_090827" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_B_090827" name="B_090827" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_bug_772441" name="bug_772441" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_adodbExtract" name="adodbExtract" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Universe" name="Universe" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_PHP_UML_Metamodel_NamedElement" name="PHP_UML_Metamodel_NamedElement" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TestClass1" name="TestClass1" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_TestClass2" name="TestClass2" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Kiddie_b587733" name="Kiddie_b587733" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Bootstrap" name="Bootstrap" visibility="public" isAbstract="false"/>
+
+        <!-- Generalizations -->
+        <UML:Generalization xmi.id="gen_TestClass2_TestClass1" parent="class_TestClass1" child="class_TestClass2"/>
+        <UML:Generalization xmi.id="gen_A_Exception" parent="class_Exception" child="class_A_090827"/>
+        <UML:Generalization xmi.id="gen_C_A" parent="class_A_090827" child="class_C"/>
+        <UML:Generalization xmi.id="gen_iHTMLConverter_iConverter" parent="interface_Contract" child="interface_O"/>
+
+        <!-- Realizations -->
+        <UML:Realization xmi.id="realization_SequenceIterator_Iterator" supplier="interface_Iterator" client="class_PHP_UML_Metamodel_NamedElement"/>
+
+        <!-- Associations (Example) -->
+        <UML:Association xmi.id="association_SomeRelation" name="SomeRelation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end1" type="class_TestClass1" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end2" type="class_TestClass2" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

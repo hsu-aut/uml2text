@@ -1,0 +1,271 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_HealthAnnotation" name="HealthAnnotation">
+      <UML:Namespace.ownedElement>
+
+        <!-- ParticipantRecordEntry -->
+        <UML:Class xmi.id="class_ParticipantRecordEntry" name="ParticipantRecordEntry" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- TreatmentAnnotation -->
+        <UML:Class xmi.id="class_TreatmentAnnotation" name="TreatmentAnnotation" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id_TA" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_doseUnits" name="doseUnits" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_dose" name="dose" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Double"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_agent" name="agent" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_otherAgent" name="otherAgent" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- RecurrenceHealthExaminationAnnotation -->
+        <UML:Class xmi.id="class_RecurrenceHealthExaminationAnnotation" name="RecurrenceHealthExaminationAnnotation" visibility="public" isAbstract="true">
+          <!-- This class does not have direct attributes or operations specified -->
+        </UML:Class>
+
+        <!-- DistantRecurrenceHealthExaminationAnnotation -->
+        <UML:Class xmi.id="class_DistantRecurrenceHealthExaminationAnnotation" name="DistantRecurrenceHealthExaminationAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_RecurrenceHealthExaminationAnnotation"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id_DRHEA" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_otherTissueSite" name="otherTissueSite" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_tissueSite" name="tissueSite" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- LocalRecurrenceHealthExaminationAnnotation -->
+        <UML:Class xmi.id="class_LocalRecurrenceHealthExaminationAnnotation" name="LocalRecurrenceHealthExaminationAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_RecurrenceHealthExaminationAnnotation"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id_LRHEA" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- ChemoRXAnnotation -->
+        <UML:Class xmi.id="class_ChemoRXAnnotation" name="ChemoRXAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_DeprecatedAnnotation2"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id_ChemoRX" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- RadRXAnnotation -->
+        <UML:Class xmi.id="class_RadRXAnnotation" name="RadRXAnnotation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_DeprecatedAnnotation2"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id_RadRX" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- DeprecatedAnnotation1 -->
+        <UML:Class xmi.id="class_DeprecatedAnnotation1" name="DeprecatedAnnotation1" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ageAtDiagnosis" name="ageAtDiagnosis" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_otherClinicalDiagnosis" name="otherClinicalDiagnosis" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_clinicalDiagnosis" name="clinicalDiagnosis" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Duration -->
+        <UML:Class xmi.id="class_Duration" name="Duration" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_durationInDays" name="durationInDays" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_startDate" name="startDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_endDate" name="endDate" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- GeneralHealthDiagnosis -->
+        <UML:Class xmi.id="class_GeneralHealthDiagnosis" name="GeneralHealthDiagnosis" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_ageAtDiagnosis_GHD" name="ageAtDiagnosis" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_otherClinicalDiagnosis_GHD" name="otherClinicalDiagnosis" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_clinicalDiagnosis_GHD" name="clinicalDiagnosis" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- TreatmentOrder -->
+        <UML:Class xmi.id="class_TreatmentOrder" name="TreatmentOrder" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_cycle" name="cycle" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- TreatmentRegimen -->
+        <UML:Class xmi.id="class_TreatmentRegimen" name="TreatmentRegimen" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id_TR" name="id" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Long"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_treatmentRegimen" name="treatmentRegimen" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Chemotherapy -->
+        <UML:Class xmi.id="class_Chemotherapy" name="Chemotherapy" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_RadRXAnnotation"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+          <!-- Specific operations related to TreatmentOrder -->
+        </UML:Class>
+
+        <!-- RadRXAnnotationSet -->
+        <UML:Class xmi.id="class_RadRXAnnotationSet" name="RadRXAnnotationSet" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.base>
+              <UML:Class xmi.idref="class_RadRXAnnotation"/>
+            </UML:Generalization.base>
+          </UML:Generalization>
+          <!-- Contains connections to TreatmentOrder -->
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_TreatmentOrder_Regimen">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TreatmentOrder" type="class_TreatmentOrder" name="order" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Regimen" type="class_TreatmentRegimen" name="regimen" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_TreatmentOrder_Chemotherapy">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_TreatmentOrder_Chemo" type="class_TreatmentOrder" name="order" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Chemotherapy" type="class_Chemotherapy" name="chemotherapy" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Data types -->
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Long" name="Long"/>
+        <UML:DataType xmi.id="Double" name="Double"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

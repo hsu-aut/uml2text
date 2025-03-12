@@ -1,0 +1,176 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML-методель">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Datatypes -->
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt_int" name="int"/>
+            <UML:DataType xmi.id="dt_char" name="char"/>
+            <UML:DataType xmi.id="dt_bool" name="bool"/>
+            <UML:DataType xmi.id="dt_float" name="float"/>
+            <UML:DataType xmi.id="dt_double" name="double"/>
+            <UML:DataType xmi.id="dt_short" name="short"/>
+            <UML:DataType xmi.id="dt_long" name="long"/>
+            <UML:DataType xmi.id="dt_uint" name="unsigned int"/>
+            <UML:DataType xmi.id="dt_ushort" name="unsigned short"/>
+            <UML:DataType xmi.id="dt_ulong" name="unsigned long"/>
+            <UML:DataType xmi.id="dt_string" name="string"/>
+            <UML:DataType xmi.id="dt_double_array" name="double[]"/>
+            <UML:DataType xmi.id="dt_Point_array" name="Point[]"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Definition der Klasse Point -->
+        <UML:Class xmi.id="class_Point" name="Point" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_x" name="x" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_y" name="y" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getCoordinates" name="getCoordinates" visibility="public">
+              <UML:Parameter xmi.id="param_return" name="return" kind="return" type="dt_int"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Shape -->
+        <UML:Class xmi.id="class_Shape" name="Shape" visibility="public" isAbstract="true"/>
+
+        <!-- Definition der Klasse Rectangle -->
+        <UML:Class xmi.id="class_Rectangle" name="Rectangle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Shape"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_sides_rect" name="sides" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pointStorage_rect" name="pointStorage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_Point_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Triangle -->
+        <UML:Class xmi.id="class_Triangle" name="Triangle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Shape"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_sides_tri" name="sides" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pointStorage_tri" name="pointStorage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_Point_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Circle -->
+        <UML:Class xmi.id="class_Circle" name="Circle" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Shape"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_radius" name="radius" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pointStorage_cir" name="pointStorage" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="dt_Point_array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Main -->
+        <UML:Class xmi.id="class_Main" name="Main" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_rectangle1" name="rectangle1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Rectangle"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_triangle1" name="triangle1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Triangle"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_circle1" name="circle1" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Circle"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Assoziation zwischen Shape und Point -->
+        <UML:Association xmi.id="assoc_Shape_Point">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Shape_Point_Shape" type="class_Shape" name="shape" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Shape_Point_Point" type="class_Point" name="point" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Main und Rectangle -->
+        <UML:Association xmi.id="assoc_Main_Rectangle">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Main_Rectangle_Main" type="class_Main" name="main" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Main_Rectangle_Rectangle" type="class_Rectangle" name="rectangle" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Main und Triangle -->
+        <UML:Association xmi.id="assoc_Main_Triangle">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Main_Triangle_Main" type="class_Main" name="main" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Main_Triangle_Triangle" type="class_Triangle" name="triangle" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Assoziation zwischen Main und Circle -->
+        <UML:Association xmi.id="assoc_Main_Circle">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Main_Circle_Main" type="class_Main" name="main" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Main_Circle_Circle" type="class_Circle" name="circle" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,156 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ComplexUML" name="ComplexUMLModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse "Name" -->
+        <UML:Class xmi.id="class_Name" name="Name" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Operation der Klasse "Name" -->
+            <UML:Operation xmi.id="operation_Example" name="exampleOperation" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+          <UML:Class.stereotypes>
+            <UML:Stereotype xmi.idref="stereotype_Realize"/>
+            <UML:Stereotype xmi.idref="stereotype_Singleton"/>
+          </UML:Class.stereotypes>
+        </UML:Class>
+
+        <!-- Definition der Schnittstelle "NameIf" -->
+        <UML:Interface xmi.id="interface_NameIf" name="NameIf" visibility="public">
+          <UML:Classifier.feature>
+            <!-- Operation der Schnittstelle "NameIf" -->
+            <UML:Operation xmi.id="operation_IfExample" name="ifOperation" visibility="public" isAbstract="true"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <!-- Definition der Klasse "Little" -->
+        <UML:Class xmi.id="class_Little" name="Little" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+          </UML:Classifier.feature>
+          <!-- Zustandsmaschine "LittleStateMachine" -->
+          <UML:StateMachine xmi.id="stateMachine_Little" name="LittleStateMachine">
+            <UML:CompositeState.subvertex>
+              <UML:PseudoState xmi.id="stateMachine_Little_initial" kind="initial"/>
+              <UML:SimpleState xmi.id="stateMachine_Little_s1" name="s1"/>
+              <UML:SimpleState xmi.id="stateMachine_Little_s2" name="s2"/>
+              <UML:SimpleState xmi.id="stateMachine_Little_s3" name="s3"/>
+              <UML:FinalState xmi.id="stateMachine_Little_final"/>
+            </UML:CompositeState.subvertex>
+          </UML:StateMachine>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Bit of" -->
+        <UML:Class xmi.id="class_BitOf" name="Bit of" visibility="public" isAbstract="true">
+          <!-- Aktivitätsgraph "Bit ofActivityGraph" -->
+          <UML:ActivityGraph xmi.id="activityGraph_BitOf" name="Bit ofActivityGraph">
+            <UML:Partition.contents>
+              <UML:ActionState xmi.id="activityGraph_BitOf_h1" name="h1"/>
+              <UML:ActionState xmi.id="activityGraph_BitOf_h2" name="h2"/>
+              <UML:ActionState xmi.id="activityGraph_BitOf_h3" name="h3"/>
+              <UML:FinalState xmi.id="activityGraph_BitOf_final"/>
+            </UML:Partition.contents>
+          </UML:ActivityGraph>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Everything" -->
+        <UML:Class xmi.id="class_Everything" name="Everything" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Everything_BitOf" parent="class_BitOf" child="class_Everything"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse "A" -->
+        <UML:Class xmi.id="class_A" name="A" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der Klasse "Simple" -->
+        <UML:Class xmi.id="class_Simple" name="Simple" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Attribute der Klasse "Simple" -->
+            <UML:Attribute xmi.id="attr_Simple_attr1" name="attr1" visibility="private" changeability="changeable" targetScope="instance" type="class_Vector"/>
+            <UML:Attribute xmi.id="attr_Simple_attr2" name="attr2" visibility="private" changeability="changeable" targetScope="instance" type="class_Iterator"/>
+            <!-- Öffentliche Operation der Klasse "Simple" -->
+            <UML:Operation xmi.id="operation_Simple_operation" name="operation" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+          <UML:Class.aggregation>
+            <!-- Aggregation zwischen Simple und A -->
+            <UML:Association xmi.id="assoc_Simple_A" name="SimpleA" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Simple_A_Simple" type="class_Simple" aggregation="none" multiplicity="0..1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Simple_A_A" type="class_A" aggregation="aggregate" multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Class.aggregation>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Model" -->
+        <UML:Class xmi.id="class_Model" name="Model" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <!-- Privates Attribut der Klasse "Model" -->
+            <UML:Attribute xmi.id="attr_Model_attr" name="attr" visibility="private" changeability="changeable" targetScope="instance"/>
+            <!-- Operationen der Klasse "Model" -->
+            <UML:Operation xmi.id="operation_Model_Oper1" name="Oper1" visibility="public"/>
+            <UML:Operation xmi.id="operation_Model_Oper2" name="Oper2" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Schnittstelle "Iterable" -->
+        <UML:Interface xmi.id="interface_Iterable" name="Iterable" visibility="public"/>
+
+        <!-- Definition der Klasse "Vector" -->
+        <UML:Class xmi.id="class_Vector" name="Vector" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "Iterator" -->
+        <UML:Class xmi.id="class_Iterator" name="Iterator" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "Collection" -->
+        <UML:Class xmi.id="class_Collection" name="Collection" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Generalisierung zwischen "Little" und "A" -->
+        <UML:Generalization xmi.id="gen_Little_A" parent="class_A" child="class_Little"/>
+
+        <!-- Definition der Komposition zwischen "Little" und "Bit of" -->
+        <UML:Association xmi.id="assoc_Little_BitOf" name="LittleBitOf" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Little_BitOf_Little" type="class_Little" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Little_BitOf_BitOf" type="class_BitOf" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- Definition der Use Cases -->
+        <UML:UseCase xmi.id="usecase_UC1" name="UC1" visibility="public"/>
+        <UML:UseCase xmi.id="usecase_UC2" name="UC2" visibility="public">
+          <UML:Generalization xmi.id="gen_UC2_UC1" parent="usecase_UC1" child="usecase_UC2"/>
+        </UML:UseCase>
+
+        <!-- Definition des Schauspielers "John Wayne" -->
+        <UML:Actor xmi.id="actor_JohnWayne" name="John Wayne" visibility="public"/>
+
+        <!-- Definition der Kollaboration -->
+        <UML:Collaboration xmi.id="collaboration_Example" name="ExampleCollaboration" visibility="public">
+          <UML:Collaboration.interaction>
+            <UML:Interaction>
+              <UML:Message>
+                <UML:Message.sendEvent xmi.id="messageSend_event1" name="1 happening first"/>
+                <UML:Message.receiveEvent xmi.id="messageReceive_event2" name="2 happening then"/>
+              </UML:Message>
+            </UML:Interaction>
+          </UML:Collaboration.interaction>
+        </UML:Collaboration>
+
+        <!-- Definition der Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_Realize" name="realize"/>
+        <UML:Stereotype xmi.id="stereotype_Singleton" name="singleton"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

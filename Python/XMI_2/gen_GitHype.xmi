@@ -1,0 +1,85 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="Sun May 26 18:40:26 CEST 2013">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Githype" name="Githype" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Akteure -->
+        <UML:Actor xmi.id="actor_User" name="User" visibility="public" isSpecification="false"/>
+        <UML:Actor xmi.id="actor_Github" name="Github" visibility="public" isSpecification="false"/>
+        
+        <!-- Definition der Use Cases -->
+        <UML:UseCase xmi.id="usecase_LogIn" name="Log in to site using github account" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_CreateAccount" name="Create Github account (If none created)" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_RetrieveConfig" name="Retrieve Last Configuration (If one exists)" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_SelectRepos" name="Select which repos to watch" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_SelectNotifications" name="Select notifications to enable" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_SelectEvents" name="Select events to track" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_ReplyIssues" name="Reply to Issues" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_CreateIssues" name="Create Issues" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_DownloadSource" name="Download repo source" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_GetCloneURL" name="Get clone URL" visibility="public" isSpecification="false"/>
+        <UML:UseCase xmi.id="usecase_CreateBranch" name="Create new branch" visibility="public" isSpecification="false"/>
+        
+        <!-- Assoziationen zwischen Akteuren und Use Cases -->
+        <UML:Association xmi.id="assoc_User_LogIn">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_User_LogIn_User" type="actor_User" name="user" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_User_LogIn_LogIn" type="usecase_LogIn" name="logIn" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_User_SelectRepos">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_User_SelectRepos_User" type="actor_User" name="user" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_User_SelectRepos_SelectRepos" type="usecase_SelectRepos" name="selectRepos" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Github_DownloadSource">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Github_DownloadSource_Github" type="actor_Github" name="github" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Github_DownloadSource_DownloadSource" type="usecase_DownloadSource" name="downloadSource" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Github_GetCloneURL">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Github_GetCloneURL_Github" type="actor_Github" name="github" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Github_GetCloneURL_GetCloneURL" type="usecase_GetCloneURL" name="getCloneURL" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Github_CreateBranch">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Github_CreateBranch_Github" type="actor_Github" name="github" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Github_CreateBranch_CreateBranch" type="usecase_CreateBranch" name="createBranch" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Generalisierung zwischen Use Cases -->
+        <UML:Generalization xmi.id="gen_CreateAccount" child="usecase_CreateAccount" parent="usecase_LogIn"/>
+        <UML:Generalization xmi.id="gen_RetrieveConfig" child="usecase_RetrieveConfig" parent="usecase_LogIn"/>
+        <UML:Generalization xmi.id="gen_SelectNotifications" child="usecase_SelectNotifications" parent="usecase_SelectRepos"/>
+        <UML:Generalization xmi.id="gen_SelectEvents" child="usecase_SelectEvents" parent="usecase_SelectRepos"/>
+        
+        <!-- Client Klasse -->
+        <UML:Class xmi.id="class_Client" name="Client" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Repo" name="repo" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+      
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

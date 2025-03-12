@@ -1,0 +1,232 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_MainModel" name="MainModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Package Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+            <UML:DataType xmi.id="datatype_byte" name="byte"/>
+            <UML:DataType xmi.id="datatype_String" name="String"/>
+            <UML:DataType xmi.id="datatype_Integer" name="Integer"/>
+            <UML:DataType xmi.id="datatype_Character" name="Character"/>
+            <UML:DataType xmi.id="datatype_Boolean" name="Boolean"/>
+            <UML:DataType xmi.id="datatype_Float" name="Float"/>
+            <UML:DataType xmi.id="datatype_Double" name="Double"/>
+            <UML:DataType xmi.id="datatype_Byte" name="Byte"/>
+            <UML:DataType xmi.id="datatype_Short" name="Short"/>
+            <UML:DataType xmi.id="datatype_Long" name="Long"/>
+            <UML:DataType xmi.id="datatype_StringBuffer" name="StringBuffer"/>
+            <UML:DataType xmi.id="datatype_StringBuilder" name="StringBuilder"/>
+
+            <!-- Generalization for 'undef' -->
+            <UML:DataType xmi.id="datatype_undef" name="undef"/>
+            <UML:Generalization xmi.id="gen_undef_self">
+              <UML:Generalization.child>
+                <UML:DataType xmi.idref="datatype_undef"/>
+              </UML:Generalization.child>
+              <UML:Generalization.parent>
+                <UML:DataType xmi.idref="datatype_undef"/>
+              </UML:Generalization.parent>
+            </UML:Generalization>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Package Modele Donnees -->
+        <UML:Package xmi.id="package_ModeleDonnees" name="Modele Donnees">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Privilege" name="Privilège" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_p_nom" name="nom" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Utilisateur" name="Utilisateur" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_u_courriel" name="courriel" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_u_motDePasse" name="motDePasse" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Coordonnees" name="Coordonnées" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_c_nom" name="nom" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_c_dateDiplome" name="dateDiplome" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_c_telephone" name="telephone" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_c_permissionLecture" name="permissionLecture" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Competence" name="Compétence" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_cp_nom" name="nom" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- Associations inside Modele Donnees Package -->
+            <UML:Association xmi.id="assoc_utilisateur_coordonnees">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="class_Utilisateur" />
+                <UML:AssociationEnd type="class_Coordonnees" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_utilisateur_competence">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="class_Utilisateur" />
+                <UML:AssociationEnd type="class_Competence" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_utilisateur_privilege">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="class_Utilisateur" />
+                <UML:AssociationEnd type="class_Privilege" />
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <UML:Actor xmi.id="actor_Utilisateur" name="Utilisateur" />
+            <UML:Actor xmi.id="actor_Personne" name="Personne">
+              <UML:Generalization xmi.id="gen_personne_utilisateur">
+                <UML:Generalization.child>
+                  <UML:Actor xmi.idref="actor_Personne"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Actor xmi.idref="actor_Utilisateur"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Actor>
+
+            <UML:UseCase xmi.id="usecase_Communiquer" name="Communiquer" />
+            <UML:UseCase xmi.id="usecase_ConsulterProfil" name="Consulter un Profil" />
+            <UML:UseCase xmi.id="usecase_CreerProfil" name="Creer son Profil" />
+            <UML:UseCase xmi.id="usecase_ListerProfils" name="Lister les Profils" />
+            <UML:UseCase xmi.id="usecase_ModifierProfil" name="Modifier de son Profil" />
+            <UML:UseCase xmi.id="usecase_Liker" name="Liker" />
+            <UML:UseCase xmi.id="usecase_Authentification" name="Authentification" />
+            <UML:UseCase xmi.id="usecase_SuppressionProfil" name="Suppression de son Profil" />
+
+            <UML:Association xmi.id="assoc_acteur_usecase1">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="actor_Utilisateur" />
+                <UML:AssociationEnd type="usecase_Communiquer" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_acteur_usecase2">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="actor_Utilisateur" />
+                <UML:AssociationEnd type="usecase_ConsulterProfil" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_acteur_usecase3">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="actor_Utilisateur" />
+                <UML:AssociationEnd type="usecase_CreerProfil" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_acteur_usecase4">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="actor_Utilisateur" />
+                <UML:AssociationEnd type="usecase_ListerProfils" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_acteur_usecase5">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="actor_Utilisateur" />
+                <UML:AssociationEnd type="usecase_ModifierProfil" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_acteur_usecase6">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="actor_Utilisateur" />
+                <UML:AssociationEnd type="usecase_Liker" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_acteur_usecase7">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="actor_Utilisateur" />
+                <UML:AssociationEnd type="usecase_Authentification" />
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_acteur_usecase8">
+              <UML:Association.connection>
+                <UML:AssociationEnd type="actor_Utilisateur" />
+                <UML:AssociationEnd type="usecase_SuppressionProfil" />
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,67 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+
+        <UML:Interface xmi.id="interface_ILoginable" name="ILoginable" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_ILoginable_Login" name="Login" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Interface>
+
+        <UML:Class xmi.id="class_FacebookService" name="FacebookService" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_FacebookService_Login" name="Login" visibility="public">
+              <UML:Parameter xmi.id="param_Login_params" name="params" kind="in"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_FBAdapter" name="FBAdapter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="operation_FBAdapter_Login" name="Login" visibility="public"/>
+            <UML:Attribute xmi.id="attr_LoggedInUser" name="LoggedInUser" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_User"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_m_FBAdapter" name="m_FBAdapter" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Interface xmi.idref="interface_ILoginable"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Generalization xmi.id="gen_FBAdapter_FacebookService" parent ="class_FacebookService" child="class_FBAdapter"/>
+
+        <UML:Realization xmi.id="real_FBAdapter_ILoginable" supplier="interface_ILoginable" client="class_FBAdapter"/>
+
+        <UML:Association xmi.id="assoc_MainWindow_ILoginable">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_MainWindow" type="class_MainWindow" name="MainWindow" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ILoginable" type="interface_ILoginable" name="ILoginable" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

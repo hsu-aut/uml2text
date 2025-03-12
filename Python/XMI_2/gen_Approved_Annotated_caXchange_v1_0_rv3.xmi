@@ -1,0 +1,87 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_caXchange" name="caXchange">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" name="EARootClass" visibility="public" isAbstract="false"/>
+        
+        <UML:Package xmi.id="EAPK_6A1F7B6A_C113_44b4_85DC_AC4BBBA11077" name="Logical Model" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="EAPK_CB699A04_2FDB_43de_9F15_2FBB5DA90527" name="Diagrams" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Class xmi.id="EAID_10E00E45_7870_4c85_8580_DAA2FB81BABD" name="Request" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attribute_businessMessagePayload" name="businessMessagePayload" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_287B53AB_81E9_4398_8E5B_9B9ADED91B87"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_046035C5_6938_49a8_B89E_3530DB986186" name="ResponseMessage" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attribute_responseMetadata" name="responseMetadata" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_E35118D8_1397_4ee2_AC86_A397144AC9C8"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attribute_response" name="response" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="EAID_10F4528E_983F_47ac_8CED_30E8C105A5F7"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_287B53AB_81E9_4398_8E5B_9B9ADED91B87" name="MessagePayload" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attribute_payloadXML" name="payloadXML" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="EAID_10F4528E_983F_47ac_8CED_30E8C105A5F7" name="Response" visibility="public"/>
+
+        <UML:Class xmi.id="EAID_3EA7A352_96BE_4f34_B51D_05ED066748E8" name="ErrorDetails" visibility="public"/>
+
+        <UML:Class xmi.id="EAID_E35118D8_1397_4ee2_AC86_A397144AC9C8" name="ResponseMetadata" visibility="public"/>
+
+        <UML:Class xmi.id="EAID_C5D69CE5_AA9E_4d5e_BC9F_0905341305B9" name="Credentials" visibility="public"/>
+
+        <UML:Class xmi.id="EAID_CF02E21B_F76D_493b_8F9F_5429B8AD8DE7" name="Metadata" visibility="public"/>
+
+        <UML:DataType xmi.id="String" name="String"/>
+
+        <UML:Association xmi.id="assoc_Request_MessagePayload">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Request" type="EAID_10E00E45_7870_4c85_8580_DAA2FB81BABD" name="request" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_MessagePayload" type="EAID_287B53AB_81E9_4398_8E5B_9B9ADED91B87" name="messagePayload" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ResponseMessage_ResponseMetadata_Response">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ResponseMessage" type="EAID_046035C5_6938_49a8_B89E_3530DB986186" name="responseMessage" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ResponseMetadata" type="EAID_E35118D8_1397_4ee2_AC86_A397144AC9C8" name="responseMetadata" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Response" type="EAID_10F4528E_983F_47ac_8CED_30E8C105A5F7" name="response" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

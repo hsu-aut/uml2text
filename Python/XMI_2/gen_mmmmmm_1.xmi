@@ -1,0 +1,143 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<XMI xmi.version = "1.2" xmlns:UML = "org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34(6)</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition des Stereotypes "folder" -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder" visibility="public"/>
+        
+        <!-- Definition des Stereotypes "datatype" -->
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype" visibility="public"/>
+
+        <!-- Definition der "Logical View" -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+          
+          <!-- Definition des Pakets "Datatypes" -->
+          <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+            <UML:Namespace.ownedElement>
+              
+              <!-- Grundlegende Datentypen mit dem Stereotype "datatype" -->
+              <UML:DataType xmi.id="datatype_int" name="int" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+              
+              <UML:DataType xmi.id="datatype_char" name="char" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_bool" name="bool" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_float" name="float" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_double" name="double" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_short" name="short" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_long" name="long" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+              <UML:DataType xmi.id="datatype_string" name="string" visibility="public">
+                <UML:ModelElement.stereotype>
+                  <UML:Stereotype xmi.idref="stereotype_datatype"/>
+                </UML:ModelElement.stereotype>
+              </UML:DataType>
+
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+
+          <!-- Definition der Klasse User -->
+          <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false"/>
+
+          <!-- Definition der Klasse user -->
+          <UML:Class xmi.id="class_user" name="user" visibility="public" isAbstract="false"/>
+
+          <!-- Definition der Klasse Graph representation -->
+          <UML:Class xmi.id="class_GraphRepresentation" name="Graph representation" visibility="public" isAbstract="false"/>
+        
+        </UML:Package>
+
+        <!-- Definition eines Aktivitätsdiagramms "LanguagesActivity" -->
+        <UML:Activity xmi.id="activity_LanguagesActivity" name="LanguagesActivity" visibility="public" isSpecification="false">
+          <UML:Activity.graph>
+            <UML:ActivityGraph xmi.id="activityGraph_Languages">
+              <UML:State xmi.id="state_undefined1" name="" isSpecification="false"/>
+              <UML:State xmi.id="state_ChoseLanguage" name="Chose language" isSpecification="false"/>
+              <UML:State xmi.id="state_ChangeLanguage" name="Change language" isSpecification="false"/>
+              <UML:State xmi.id="state_undefined2" name="" isSpecification="false"/>
+              <UML:ObjectFlowState xmi.id="object_Language" name="Language" isSpecification="false">
+                <UML:ClassifierInState xmi.id="classifier_Language_Changed" state="Changed"/>
+              </UML:ObjectFlowState>
+              <UML:Transition xmi.id="transition_1" source="state_undefined1" target="state_ChoseLanguage"/>
+              <UML:Transition xmi.id="transition_2" source="state_ChoseLanguage" target="state_ChangeLanguage"/>
+              <UML:Transition xmi.id="transition_3" source="state_ChangeLanguage" target="state_undefined2"/>
+            </UML:ActivityGraph>
+          </UML:Activity.graph>
+        </UML:Activity>
+        
+        <!-- Definition eines Sequenzdiagramms "VisualizeDiagrameSeq" -->
+        <UML:Collaboration xmi.id="collaboration_VisualizeDiagrameSeq" name="VisualizeDiagrameSeq">
+          <UML:Collaboration.interaction>
+            <UML:Interaction xmi.id="interaction_VisualizeInteraction">
+              <UML:Message xmi.id="message_ChoseObject" name="Chose object"/>
+              <UML:Message xmi.id="message_AttendChosenObject" name="attend the chosen object"/>
+            </UML:Interaction>
+          </UML:Collaboration.interaction>
+          <UML:Collaboration.participant>
+            <UML:ClassifierRole xmi.id="participant_user" base="class_user"/>
+            <UML:ClassifierRole xmi.id="participant_GraphRepresentation" base="class_GraphRepresentation"/>
+          </UML:Collaboration.participant>
+        </UML:Collaboration>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

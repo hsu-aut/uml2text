@@ -1,0 +1,110 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_GeneratorReferenceModel" name="Generator Reference Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_org" name="org">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_soulspace" name="soulspace">
+              <UML:Namespace.ownedElement>
+                <UML:Package xmi.id="package_dummy" name="dummy">
+                  <UML:Namespace.ownedElement>
+                    <UML:Class xmi.id="class_Partner" name="Partner" visibility="public" isAbstract="true">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_Partner_name" name="name" visibility="public" changeability="frozen" ownerScope="instance"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_Address" name="Address" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_Address_street" name="street" visibility="public" changeability="changeable" ownerScope="instance"/>
+                        <UML:Attribute xmi.id="attr_Address_houseNo" name="houseNo" visibility="public" changeability="changeable" ownerScope="instance"/>
+                        <UML:Attribute xmi.id="attr_Address_zip" name="zip" visibility="public" changeability="changeable" ownerScope="instance"/>
+                        <UML:Attribute xmi.id="attr_Address_city" name="city" visibility="public" changeability="changeable" ownerScope="instance"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_UserService" name="UserService" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Operation xmi.id="op_UserService_findUser" name="findUser" visibility="public" isAbstract="false" isQuery="false">
+                          <UML:Parameter xmi.id="param_findUser_userId" name="userId" kind="in" type="int"/>
+                          <UML:Parameter xmi.id="param_findUser_return" name="return" kind="return" type="class_User"/>
+                        </UML:Operation>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_GeoCode" name="GeoCode" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_GeoCode_type" name="type" visibility="protected" changeability="changeable" ownerScope="instance"/>
+                        <UML:Attribute xmi.id="attr_GeoCode_latitude" name="latitude" visibility="public" changeability="changeable" ownerScope="instance"/>
+                        <UML:Attribute xmi.id="attr_GeoCode_longitude" name="longitude" visibility="public" changeability="changeable" ownerScope="instance"/>
+                        <UML:Attribute xmi.id="attr_GeoCode_height" name="height" visibility="public" changeability="changeable" ownerScope="instance"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_User_userId" name="userId" visibility="private" changeability="frozen" ownerScope="instance"/>
+                        <UML:Attribute xmi.id="attr_User_password" name="password" visibility="private" changeability="frozen" ownerScope="instance"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_NatPerson" name="NatPerson" visibility="public" isAbstract="false">
+                      <UML:Generalization>
+                        <UML:Generalization.parent>
+                          <UML:Class xmi.idref="class_Partner"/>
+                        </UML:Generalization.parent>
+                      </UML:Generalization>
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_NatPerson_firstName" name="firstName" visibility="public" changeability="changeable" ownerScope="instance"/>
+                        <UML:Attribute xmi.id="attr_NatPerson_birthday" name="birthday" visibility="public" changeability="changeable" ownerScope="instance"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    <UML:Class xmi.id="class_JurPerson" name="JurPerson" visibility="public" isAbstract="false">
+                      <UML:Generalization>
+                        <UML:Generalization.parent>
+                          <UML:Class xmi.idref="class_Partner"/>
+                        </UML:Generalization.parent>
+                      </UML:Generalization>
+                      <UML:Classifier.feature>
+                        <UML:Attribute xmi.id="attr_JurPerson_legalForm" name="legalForm" visibility="public" changeability="changeable" ownerScope="instance"/>
+                      </UML:Classifier.feature>
+                    </UML:Class>
+                    <UML:Association xmi.id="assoc_PartnerHasAddresses" name="PartnerHasAddresses" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_PartnerHasAddresses_partner" type="class_Partner" visibility="public" aggregation="none" multiplicity="1..1"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_PartnerHasAddresses_address" type="class_Address" visibility="public" aggregation="none" multiplicity="1..*"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                    <UML:Association xmi.id="assoc_AddressHasGeoCode" name="AddressHasGeoCode" visibility="public">
+                      <UML:Association.connection>
+                        <UML:AssociationEnd xmi.id="assocEnd_AddressHasGeoCode_address" type="class_Address" visibility="public" aggregation="none" multiplicity="0..*"/>
+                        <UML:AssociationEnd xmi.id="assocEnd_AddressHasGeoCode_geoCode" type="class_GeoCode" visibility="public" aggregation="none" multiplicity="1..*"/>
+                      </UML:Association.connection>
+                    </UML:Association>
+                    <UML:Dependency xmi.id="dep_UserService_User" name="UserService-User" visibility="public">
+                      <UML:Dependency.client>
+                        <UML:Class xmi.idref="class_UserService"/>
+                      </UML:Dependency.client>
+                      <UML:Dependency.supplier>
+                        <UML:Class xmi.idref="class_User"/>
+                      </UML:Dependency.supplier>
+                    </UML:Dependency>
+                    <UML:Exception xmi.id="exception_UnknownUserException" name="UnknownUserException" visibility="public"/>
+                    <UML:Exception xmi.id="exception_WrongPasswordException" name="WrongPasswordException" visibility="public"/>
+                    <UML:DataType xmi.id="type_int" name="int"/>
+                    <UML:DataType xmi.id="type_void" name="void"/>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

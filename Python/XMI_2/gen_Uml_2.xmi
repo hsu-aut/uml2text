@@ -1,0 +1,116 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <UML:Class xmi.id="class_Scene" name="Scene" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_objects" name="objects" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_BasicObject"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_cameras" name="cameras" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Camera"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_ambientLight" name="ambientLight" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Light"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_lights" name="lights" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Light"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Object" name="Object" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_texture" name="texture" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="class_Texture"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_BasicObject"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Mesh" name="Mesh" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Object"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Cube" name="Cube" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Mesh"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Plane" name="Plane" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_TriPointed"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_TriPointed" name="TriPointed" visibility="public" isAbstract="true">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Object"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Sphere" name="Sphere" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Object"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BasicObject" name="BasicObject" visibility="public" isAbstract="true">
+          <UML:Operation xmi.id="op_computeColor" name="computeColor" isAbstract="true"/>
+          <UML:Operation xmi.id="op_distance" name="distance" isAbstract="true"/>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Ray" name="Ray" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Point3d" name="Point3d" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Vector3d" name="Vector3d" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Texture" name="Texture" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Light" name="Light" visibility="public" isAbstract="false"/>
+
+        <UML:Class xmi.id="class_Camera" name="Camera" visibility="public" isAbstract="false"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

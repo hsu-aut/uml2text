@@ -1,0 +1,54 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UnbenanntesModell" name="Unbenanntes Modell">
+      <UML:Namespace.ownedElement>
+        <UML:Collaboration xmi.id="collab_UnattachedCollaboration" name="Unattached Collaboration">
+          <UML:Collaboration.interaction>
+            <UML:Interaction xmi.id="interaction_UnattachedInteraction" name="Unattached Interaction"/>
+          </UML:Collaboration.interaction>
+          <UML:Collaboration.part>
+            <UML:ClassifierRole xmi.id="role_Member" name="member" base="10EC" multiplicity="1..1"/>
+            <UML:ClassifierRole xmi.id="role_Reviewform" name="reviewform" base="10EF" multiplicity="1..1"/>
+            <UML:ClassifierRole xmi.id="role_Submission" name="submission" base="10F5" multiplicity="1..1"/>
+          </UML:Collaboration.part>
+          <UML:Collaboration.associationRole>
+            <UML:AssociationRole xmi.id="ar_10F9" name="member_to_reviewform" base="10F9">
+              <UML:AssociationEndRole participant="role_Member"/>
+              <UML:AssociationEndRole participant="role_Reviewform"/>
+            </UML:AssociationRole>
+            <UML:AssociationRole xmi.id="ar_10FF" name="reviewform_to_submission" base="10FF">
+              <UML:AssociationEndRole participant="role_Reviewform"/>
+              <UML:AssociationEndRole participant="role_Submission"/>
+            </UML:AssociationRole>
+          </UML:Collaboration.associationRole>
+        </UML:Collaboration>
+
+        <UML:Message xmi.id="msg_createReviewForm" name="createReviewForm">
+          <UML:Message.sendEvent type="role_Member" action="createAction" target="role_Reviewform"/>
+        </UML:Message>
+        <UML:Action xmi.id="createAction" name="CreateAction" type="CreateAction"/>
+        
+        <UML:Message xmi.id="msg_rank" name="rank">
+          <UML:Message.sendEvent type="role_Reviewform" action="rankAction" target="role_Submission"/>
+        </UML:Message>
+        <UML:Action xmi.id="rankAction" name="CallAction" type="CallAction"/>
+        
+        <UML:Message xmi.id="msg_notify" name="notify">
+          <UML:Message.sendEvent type="role_Submission" action="notifyAction" target="role_Submission"/>
+        </UML:Message>
+        <UML:Action xmi.id="notifyAction" name="CallAction" type="CallAction"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

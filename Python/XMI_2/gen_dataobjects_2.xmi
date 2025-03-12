@@ -1,0 +1,113 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Objects" name="DataObjectModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "DataObject" -->
+        <UML:Class xmi.id="2" name="DataObject" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="DataObject_constructor" name="DataObject" visibility="public">
+              <UML:Parameter xmi.id="DataObject_constructor_param" name="name" kind="in" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_readFrom" name="readFrom" visibility="public">
+              <UML:Parameter xmi.id="DataObject_readFrom_param" name="source" kind="in" type="QObject"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_writeTo" name="writeTo" visibility="public">
+              <UML:Parameter xmi.id="DataObject_writeTo_param" name="dest" kind="inout" type="QObject"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_equals" name="equals" visibility="public">
+              <UML:Parameter xmi.id="DataObject_equals_param1" name="other" kind="in" type="QObject"/>
+              <UML:Parameter xmi.id="DataObject_equals_param2" name="compareChildren" kind="in" type="Bool"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_operatorEquals" name="operator ==" visibility="public">
+              <UML:Parameter xmi.id="DataObject_operatorEquals_param" name="other" kind="in" type="DataObject"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_className" name="className" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="DataObject_className_return" name="return" kind="return" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_propertyNames" name="propertyNames" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="DataObject_propertyNames_return" name="return" kind="return" type="QStringList"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_numProperties" name="numProperties" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="DataObject_numProperties_return" name="return" kind="return" type="uint"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_toString" name="toString" visibility="public">
+              <UML:Parameter xmi.id="DataObject_toString_param" name="indentlevel" kind="in" type="int"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_property" name="property" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="DataObject_property_param" name="name" kind="in" type="string"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_clone" name="clone" visibility="public">
+              <UML:Parameter xmi.id="DataObject_clone_return" name="return" kind="return" type="DataObject"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="DataObject_setProperty" name="setProperty" visibility="public">
+              <UML:Parameter xmi.id="DataObject_setProperty_param1" name="propName" kind="in" type="string"/>
+              <UML:Parameter xmi.id="DataObject_setProperty_param2" name="qv" kind="in" type="QVariant"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        
+        <!-- Definition der Klasse "PropsMap" -->
+        <UML:Class xmi.id="40" name="PropsMap" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="PropsMap_mValueMap" name="mValueMap" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:Class xmi.idref="QMap<QString, QVariant>"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="PropsMap_mClassName" name="mClassName" visibility="private" type="QString"/>
+            <UML:Operation xmi.id="PropsMap_constructor" name="PropsMap" visibility="public">
+              <UML:Parameter xmi.id="PropsMap_constructor_param" name="classn" kind="in" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="PropsMap_readFrom" name="readFrom" visibility="public">
+              <UML:Parameter xmi.id="PropsMap_readFrom_param" name="source" kind="in" type="QObject"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="PropsMap_property" name="property" visibility="public" isQuery="true">
+              <UML:Parameter xmi.id="PropsMap_property_param" name="key" kind="in" type="QString"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="PropsMap_propertyNames" name="propertyNames" visibility="public" isQuery="true"/>
+            <UML:Operation xmi.id="PropsMap_clone" name="clone" visibility="public">
+              <UML:Parameter xmi.id="PropsMap_clone_return" name="return" kind="return" type="PropsMap"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="PropsMap_setProperty" name="setProperty" visibility="public">
+              <UML:Parameter xmi.id="PropsMap_setProperty_param1" name="key" kind="in" type="QString"/>
+              <UML:Parameter xmi.id="PropsMap_setProperty_param2" name="value" kind="in" type="QVariant"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="PropsMap_setPropertyString" name="setProperty" visibility="public">
+              <UML:Parameter xmi.id="PropsMap_setPropertyString_param1" name="key" kind="in" type="QString"/>
+              <UML:Parameter xmi.id="PropsMap_setPropertyString_param2" name="value" kind="in" type="QString"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        
+        <!-- Definition der anderen Klassen und Datentypen -->
+        <UML:Class xmi.id="61" name="QObject" visibility="public" isAbstract="true"/>
+        <UML:Class xmi.id="66" name="QString" visibility="public"/>
+        <UML:Class xmi.id="72" name="QStringList" visibility="public"/>
+        <UML:Class xmi.id="73" name="uint" visibility="public"/>
+        <UML:Class xmi.id="75" name="QVariant" visibility="public"/>
+        <UML:Class xmi.id="80" name="QMap<QString, QVariant>" visibility="public"/>
+
+        
+        <!-- Generalisation zwischen DataObject und QObject -->
+        <UML:Generalization xmi.id="Generalization_DataObject_QObject" parent="61" child="2"/>
+
+        
+        <!-- Generalisation zwischen PropsMap und DataObject -->
+        <UML:Generalization xmi.id="41" parent="2" child="40"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

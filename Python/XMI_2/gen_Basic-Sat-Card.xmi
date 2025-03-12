@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package 'java' -->
+        <UML:Package xmi.id="package_java" name="java">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Package 'lang' -->
+            <UML:Package xmi.id="package_lang" name="lang">
+              <UML:Namespace.ownedElement>
+                
+                <!-- Class 'String' -->
+                <UML:Class xmi.id="class_String" name="String" visibility="public" isAbstract="false"/>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Package 'Package_1' -->
+        <UML:Package xmi.id="package_Package_1" name="Package_1">
+          <UML:Namespace.ownedElement>
+            
+            <!-- DataType 'int' -->
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            
+            <!-- DataType 'boolean' -->
+            <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+            
+            <!-- Class 'Paper' -->
+            <UML:Class xmi.id="class_Paper" name="Paper" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_wordCount" name="wordCount" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_int"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_posterOnly" name="posterOnly" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_studentPaper" name="studentPaper" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Class 'Researcher' -->
+            <UML:Class xmi.id="class_Researcher" name="Researcher" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="class_String"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_isStudent" name="isStudent" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_boolean"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <!-- Association 'Writes' -->
+            <UML:Association xmi.id="association_Writes" name="Writes" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Writes_Researcher" type="class_Researcher" name="author" visibility="public" aggregation="none" multiplicity="1..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Writes_Paper" type="class_Paper" name="manuscript" visibility="public" aggregation="none" multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+            <!-- Association 'Reviews' -->
+            <UML:Association xmi.id="association_Reviews" name="Reviews" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Reviews_Researcher" type="class_Researcher" name="referee" visibility="public" aggregation="none" multiplicity="1..*"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Reviews_Paper" type="class_Paper" name="submission" visibility="public" aggregation="none" multiplicity="1..*"/>
+              </UML:Association.connection>
+            </UML:Association>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

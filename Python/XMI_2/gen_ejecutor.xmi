@@ -1,0 +1,112 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- Stereotypes -->
+        <UML:Stereotype xmi.id="folder" name="folder"/>
+        <UML:Stereotype xmi.id="datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="constructor" name="constructor"/>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes -->
+            <UML:Package xmi.id="Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="BtVOJBBADT70" name="int"/>
+                <UML:DataType xmi.id="U5WxjglA5Cw8" name="char"/>
+                <UML:DataType xmi.id="50WwUPXgG02a" name="bool"/>
+                <UML:DataType xmi.id="9DkMepN7ut4b" name="float"/>
+                <UML:DataType xmi.id="Xnldxhl2fFwA" name="double"/>
+                <UML:DataType xmi.id="cRotQoTZ1Bwd" name="short"/>
+                <UML:DataType xmi.id="0HksAmUiXFJU" name="long"/>
+                <UML:DataType xmi.id="v2UaHRisqWlG" name="unsigned int"/>
+                <UML:DataType xmi.id="KEqJNmxL3fDB" name="unsigned short"/>
+                <UML:DataType xmi.id="ShrzvASoCwOS" name="unsigned long"/>
+                <UML:DataType xmi.id="L7KCb3QuFGDc" name="string"/>
+                <UML:DataType xmi.id="Jjrpt451zmkM" name="ejecutor*">
+                  <UML:DataType.elementReference>
+                    <UML:Class xmi.idref="3d8ibpWRW4SN"/>
+                  </UML:DataType.elementReference>
+                </UML:DataType>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Classes -->
+            <UML:Class xmi.id="3d8ibpWRW4SN" name="ejecutor" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_ejecutar" name="ejecutar" visibility="public" isSpecification="false" isQuery="false">
+                  <UML:Parameter name="return" kind="return" type="BtVOJBBADT70"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <UML:Class xmi.id="6bSnxLaHDcYe" name="OpenMPejecutor" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="3d8ibpWRW4SN"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_OpenMP_ejecutar" name="ejecutar" visibility="public" isSpecification="false" isQuery="false">
+                  <UML:Parameter name="return" kind="return" type="BtVOJBBADT70"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="QnhP4zEOrIhb" name="MPIejecutor" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="3d8ibpWRW4SN"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_MPI_ejecutar" name="ejecutar" visibility="public" isSpecification="false" isQuery="false">
+                  <UML:Parameter name="return" kind="return" type="BtVOJBBADT70"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="uWMiB30oPcG9" name="CUDAejecutor" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="3d8ibpWRW4SN"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_CUDA_ejecutar" name="ejecutar" visibility="public" isSpecification="false" isQuery="false">
+                  <UML:Parameter name="return" kind="return" type="BtVOJBBADT70"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="8emi9zPvW5Y1" name="ejecucion" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_m_estrategia" name="m_estrategia" visibility="private" type="Jjrpt451zmkM"/>
+                <UML:Operation xmi.id="op_setEjecutor" name="setEjecutor" visibility="public" isSpecification="false" isQuery="false">
+                  <UML:Parameter name="ejecutor" kind="in" type="Jjrpt451zmkM"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_Ejecuta" name="Ejecuta" visibility="public" isSpecification="false" isQuery="false">
+                  <UML:Parameter name="return" kind="return" type="BtVOJBBADT70"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

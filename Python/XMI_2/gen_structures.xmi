@@ -1,0 +1,124 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="mXBT7gRCzhDE" name="Int"/>
+                <UML:DataType xmi.id="pQTZ0cXiXeD2" name="Char"/>
+                <UML:DataType xmi.id="M7Ow0Q8mxJD2" name="Bool"/>
+                <UML:DataType xmi.id="xfFuKQ89qcip" name="Float"/>
+                <UML:DataType xmi.id="CDXjpij9n86l" name="Double"/>
+                <UML:DataType xmi.id="WEXSVjUTMhNe" name="Short"/>
+                <UML:DataType xmi.id="8Uow4UlGgGxV" name="Long"/>
+                <UML:DataType xmi.id="xgfkolWLx1nQ" name="Unsigned Int"/>
+                <UML:DataType xmi.id="kFt4xFj3hXzl" name="Unsigned Short"/>
+                <UML:DataType xmi.id="zj1fzy9weofR" name="Unsigned Long"/>
+                <UML:DataType xmi.id="XBkUCVuvkmzf" name="String"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <UML:Class xmi.id="DNQqKOzF0luP" name="Channel" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_ChannelName" name="Name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="XBkUCVuvkmzf"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Class xmi.id="I59kFcfANPA0" name="Instruction" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_InstructionData" name="Data" visibility="private"/>
+                <UML:Attribute xmi.id="attr_InstructionPosition" name="Position" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="mXBT7gRCzhDE"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_InstructionObjectType" name="ObjectType" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="XBkUCVuvkmzf"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="Osh26LTHit70" name="User" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_UserLoginKey" name="LoginKey" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="XBkUCVuvkmzf"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_UserCommunicationKey" name="CommunicationKey" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="XBkUCVuvkmzf"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <UML:Class xmi.id="F5FDo9d7CkrS" name="Channelset" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_ChannelsetName" name="Name" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="XBkUCVuvkmzf"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            
+            <UML:Association xmi.id="l5VOSm79V7V4">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Channel_Instruction_Channel" type="DNQqKOzF0luP" name="channel" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Channel_Instruction_Instruction" type="I59kFcfANPA0" name="instruction" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="mReswg3nXOGM">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Channelset_User_Channelset" type="F5FDo9d7CkrS" name="channelset" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Channelset_User_User" type="Osh26LTHit70" name="user" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="bC26ZITElDFO">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_User_Instruction_User" type="Osh26LTHit70" name="user" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_User_Instruction_Instruction" type="I59kFcfANPA0" name="instruction" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="NUcitmiFfNHj">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Channelset_Channel_Channelset" type="F5FDo9d7CkrS" name="channelset" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Channelset_Channel_Channel" type="DNQqKOzF0luP" name="channel" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="bljHTHDOfSl2">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Instruction_User_Instruction" type="I59kFcfANPA0" name="instruction" visibility="public" aggregation="composite"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Instruction_User_User" type="Osh26LTHit70" name="user" visibility="public" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

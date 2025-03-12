@@ -1,0 +1,123 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SystemModel" name="SystemModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse FileSystem -->
+        <UML:Class xmi.id="class_FileSystem" name="FileSystem" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_NTFSFileSystem" name="NTFSFileSystem" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_NTFSFileSystem_FileSystem" parent="class_FileSystem" />
+            </UML:Class>
+            <UML:Class xmi.id="class_SwapFileSystem" name="SwapFileSystem" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_SwapFileSystem_FileSystem" parent="class_FileSystem" />
+            </UML:Class>
+            <UML:Class xmi.id="class_Ext3FileSystem" name="Ext3FileSystem" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_Ext3FileSystem_FileSystem" parent="class_FileSystem" />
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Partition -->
+        <UML:Class xmi.id="class_Partition" name="Partition" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_PartitionType" name="PartitionType" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der GUI Klassen -->
+        <UML:Class xmi.id="class_Widget" name="Widget" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_RebootWidget" name="RebootWidget" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_RebootWidget_Widget" parent="class_Widget" />
+            </UML:Class>
+            <UML:Class xmi.id="class_ErrorWidget" name="ErrorWidget" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_ErrorWidget_Widget" parent="class_Widget" />
+            </UML:Class>
+            <UML:Class xmi.id="class_CloseButton" name="CloseButton" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_CloseButton_Widget" parent="class_Widget" />
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Device -->
+        <UML:Class xmi.id="class_Device" name="Device" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_getModel" name="getModel" visibility="public" isAbstract="false"/>
+          <UML:Operation xmi.id="op_update" name="update" visibility="public" isAbstract="false"/>
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_DeviceItem" name="DeviceItem" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_UserItem" name="UserItem" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_SetupUsersWidget" name="SetupUsersWidget" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_SetupUsersWidget_Widget" parent="class_Widget" />
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition von Dialog Klassen -->
+        <UML:Class xmi.id="class_Dialog" name="Dialog" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_slotOK" name="slotOK" visibility="public"/>
+          <UML:Operation xmi.id="op_slotCancel" name="slotCancel" visibility="public"/>
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_WarningDialog" name="WarningDialog" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_InformationWindow" name="InformationWindow" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_InformationWindow_Widget" parent="class_Widget" />
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Aspect Klassen -->
+        <UML:Class xmi.id="class_DisableNavButtonsAspect" name="DisableNavButtonsAspect" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_DisableNavButtonsAspect" parent="class_Widget" />
+        </UML:Class>
+        <UML:Class xmi.id="class_EnableNavButtonsAspect" name="EnableNavButtonsAspect" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_EnableNavButtonsAspect" parent="class_Widget" />
+        </UML:Class>
+        
+        <!-- Definition von Screen Klassen -->
+        <UML:Class xmi.id="class_ScreenWidget" name="ScreenWidget" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ScreenWidget_Widget" parent="class_Widget" />
+        </UML:Class>
+        <UML:Class xmi.id="class_Screens" name="Screens" visibility="public" isAbstract="false">
+          <UML:Association xmi.id="assoc_Screens_ScreenWidget">
+            <UML:Association.connection>
+              <UML:AssociationEnd xmi.id="assocEnd_ScreenWidget_Screens" type="class_ScreenWidget" name="screenWidget" visibility="public" aggregation="composite" multiplicity="0..*"/>
+              <UML:AssociationEnd xmi.id="assocEnd_Screens_ScreenWidget" type="class_Screens" name="screens" visibility="public" aggregation="composite" multiplicity="1"/>
+            </UML:Association.connection>
+          </UML:Association>
+        </UML:Class>
+        
+        <!-- Definition von Partition Requests -->
+        <UML:Class xmi.id="class_PartRequest" name="PartRequest" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_FormatRequest" name="FormatRequest" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_FormatRequest_PartRequest" parent="class_PartRequest" />
+            </UML:Class>
+            <UML:Class xmi.id="class_MountRequest" name="MountRequest" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_MountRequest_PartRequest" parent="class_PartRequest" />
+            </UML:Class>
+            <UML:Class xmi.id="class_LabelRequest" name="LabelRequest" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_LabelRequest_PartRequest" parent="class_PartRequest" />
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

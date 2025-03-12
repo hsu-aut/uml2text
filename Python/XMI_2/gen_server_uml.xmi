@@ -1,0 +1,117 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML_Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der API-Klasse -->
+        <UML:Class xmi.id="class_API" name="API" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_Edit_acl" name="Edit_acl" visibility="public"/>
+            <UML:Operation xmi.id="op_Create_acl" name="Create_acl" visibility="public"/>
+            <UML:Operation xmi.id="op_Create_board" name="Create_board" visibility="public"/>
+            <UML:Operation xmi.id="op_Edit_board" name="Edit_board" visibility="public"/>
+            <UML:Operation xmi.id="op_Get_board" name="Get_board" visibility="public"/>
+            <UML:Operation xmi.id="op_Delete_board" name="Delete_board" visibility="public"/>
+            <UML:Operation xmi.id="op_New_ticket" name="New_ticket" visibility="public"/>
+            <UML:Operation xmi.id="op_Edit_ticket" name="Edit_ticket" visibility="public"/>
+            <UML:Operation xmi.id="op_Get_ticket" name="Get_ticket" visibility="public"/>
+            <UML:Operation xmi.id="op_Delete_ticket" name="Delete_ticket" visibility="public"/>
+            <UML:Operation xmi.id="op_Move_ticket" name="Move_ticket" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Routine-Klasse -->
+        <UML:Class xmi.id="class_Routine" name="Routine" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_parse_protobuf" name="parse_protobuf" visibility="public"/>
+            <UML:Operation xmi.id="op_import_protobuf" name="import_protobuf" visibility="public"/>
+            <UML:Operation xmi.id="op_exec_query" name="exec_query" visibility="public"/>
+            <UML:Operation xmi.id="op_return_answer" name="return_answer" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Client-Klasse -->
+        <UML:Class xmi.id="class_Client" name="Client" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_mess_with_the_server" name="mess_with_the_server" visibility="private" />
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der DATABASE-Klasse -->
+        <UML:Class xmi.id="class_DATABASE" name="DATABASE" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Script_control-Klasse -->
+        <UML:Class xmi.id="class_Script_control" name="Script_control" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_do_script" name="do_script" visibility="public"/>
+            <UML:Operation xmi.id="op_check_loop" name="check_loop" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition des DB_WRAPPER-Interface -->
+        <UML:Interface xmi.id="interface_DB_WRAPPER" name="DB_WRAPPER" visibility="public">
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.id="generalization_DB_WRAPPER_API" child="class_API"/>
+          </UML:GeneralizableElement.generalization>
+        </UML:Interface>
+
+        <!-- Definition des Script_managment-Interface -->
+        <UML:Interface xmi.id="interface_Script_managment" name="Script_managment" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_New_Script" name="New_Script" visibility="public"/>
+            <UML:Operation xmi.id="op_Delete_Script" name="Delete_Script" visibility="public"/>
+            <UML:Operation xmi.id="op_Edit_Script" name="Edit_Script" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <!-- Definition des Socket-Interface -->
+        <UML:Interface xmi.id="interface_Socket" name="Socket" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_do_socket" name="do_socket" visibility="public"/>
+            <UML:Operation xmi.id="op_do_listen" name="do_listen" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Routine_API" name="Routine_API">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Routine_API_Routine" type="class_Routine" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Routine_API_API" type="class_API" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Client_Socket" name="Client_Socket">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Client_Socket_Client" type="class_Client" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Client_Socket_Socket" type="interface_Socket" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_API_Script_control" name="API_Script_control">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_API_Script_control_API" type="class_API" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_API_Script_control_Script_control" type="class_Script_control" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DATABASE_DB_WRAPPER" name="DATABASE_DB_WRAPPER">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DATABASE_DB_WRAPPER_DATABASE" type="class_DATABASE" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DATABASE_DB_WRAPPER_DB_WRAPPER" type="interface_DB_WRAPPER" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

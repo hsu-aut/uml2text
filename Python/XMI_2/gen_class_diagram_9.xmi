@@ -1,0 +1,158 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML_Model" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse Tplanilla -->
+        <UML:Class xmi.id="QPbtM0gyT2d6" name="Tplanilla" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="m8I93T5JIBo9" name="TIPO_PLAN_TPL" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Subtplanilla -->
+        <UML:Class xmi.id="r6Rltxh5XvbH" name="Subtplanilla" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="m8I93T5JIBo9" name="TIPO_PLAN_TPL" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="newAttr1" name="SUBT_PLAN_STP" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse Concepto -->
+        <UML:Class xmi.id="vCU8KxAiKlbg" name="Concepto" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Tomo -->
+        <UML:Class xmi.id="kHeDKGH9KisE" name="Tomo" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Folio -->
+        <UML:Class xmi.id="daHATrSN3uTL" name="Folio" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse FolioConcepto -->
+        <UML:Class xmi.id="pd49Mfn6vPHD" name="FolioConcepto" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse PlanillaHistorica -->
+        <UML:Class xmi.id="fYMyGDCslR0E" name="PlanillaHistorica" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse MestroPersonal -->
+        <UML:Class xmi.id="QdTjznZVkyCw" name="MestroPersonal" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse Moneda -->
+        <UML:Class xmi.id="x0Eg3i9JMkLf" name="Moneda" visibility="public" isAbstract="false"/>
+        
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_Subtplanilla_PlanillaHistorica">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end1" type="r6Rltxh5XvbH" name="subtplanilla" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="end2" type="fYMyGDCslR0E" name="planillaHistorica" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Tplanilla_PlanillaHistorica">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end3" type="QPbtM0gyT2d6" name="tplanilla" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="end4" type="fYMyGDCslR0E" name="planillaHistorica" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Concepto_PlanillaHistorica">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end5" type="vCU8KxAiKlbg" name="concepto" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="end6" type="fYMyGDCslR0E" name="planillaHistorica" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_FolioConcepto_Concepto">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end7" type="pd49Mfn6vPHD" name="folioConcepto" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end8" type="vCU8KxAiKlbg" name="concepto" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Folio_FolioConcepto">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end9" type="daHATrSN3uTL" name="folio" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="end10" type="pd49Mfn6vPHD" name="folioConcepto" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Tomo_Folio">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end11" type="kHeDKGH9KisE" name="tomo" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="end12" type="daHATrSN3uTL" name="folio" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Tplanilla_Subtplanilla">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end13" type="QPbtM0gyT2d6" name="tplanilla" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end14" type="r6Rltxh5XvbH" name="subtplanilla" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Folio_PlanillaHistorica">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end15" type="daHATrSN3uTL" name="folio" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end16" type="fYMyGDCslR0E" name="planillaHistorica" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_MestroPersonal_PlanillaHistorica">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end17" type="QdTjznZVkyCw" name="mestroPersonal" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end18" type="fYMyGDCslR0E" name="planillaHistorica" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Subtplanilla_Folio">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end19" type="r6Rltxh5XvbH" name="subtplanilla" visibility="public" aggregation="none" isNavigable="false"/>
+            <UML:AssociationEnd xmi.id="end20" type="daHATrSN3uTL" name="folio" visibility="public" aggregation="none" isNavigable="true"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Moneda_Folio">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end21" type="x0Eg3i9JMkLf" name="moneda" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end22" type="daHATrSN3uTL" name="folio" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <!-- Definition der Datentypen -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+        <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+        <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+        <UML:DataType xmi.id="string" name="string"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

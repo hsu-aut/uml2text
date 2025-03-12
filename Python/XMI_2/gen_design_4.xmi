@@ -1,0 +1,126 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="IsabelSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse Gateway -->
+        <UML:Class xmi.id="class_Gateway" name="Gateway" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_Gateway_FlowInfo" parent="class_FlowInfo"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_siteReady" name="siteReady"/>
+            <UML:Operation xmi.id="op_connect" name="connect"/>
+            <UML:Operation xmi.id="op_setupVideo" name="setupVideo"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse MCUWrapper -->
+        <UML:Class xmi.id="class_MCUWrapper" name="MCUWrapper" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_setupVideo_MCU" name="setupVideo"/>
+            <UML:Operation xmi.id="op_setupAudio" name="setupAudio"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse IsabelClient -->
+        <UML:Class xmi.id="class_IsabelClient" name="IsabelClient" visibility="public" isAbstract="false">
+          <UML:Dependency xmi.id="dep_IsabelClient_MemberInfo" supplier="class_MemberInfo"/>
+        </UML:Class>
+        
+        <!-- Definition der Klasse Result -->
+        <UML:Class xmi.id="class_Result" name="Result" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getCode" name="getCode"/>
+            <UML:Operation xmi.id="op_getDescription" name="getDescription"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse FlowInfo -->
+        <UML:Class xmi.id="class_FlowInfo" name="FlowInfo" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getPT" name="getPT"/>
+            <UML:Operation xmi.id="op_getLocalPort" name="getLocalPort"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Klasse MemberInfo -->
+        <UML:Class xmi.id="class_MemberInfo" name="MemberInfo" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_SSRC" name="SSRC"/>
+            <UML:Attribute xmi.id="attr_NickName" name="NickName"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der Enumeration VideoMode -->
+        <UML:Enumeration xmi.id="enum_VideoMode" name="VideoMode"/>
+        
+        <!-- Definition der Enumeration GridMode -->
+        <UML:Enumeration xmi.id="enum_GridMode" name="GridMode"/>
+        
+        <!-- Definition des Interfaces IsabelClientListener -->
+        <UML:Interface xmi.id="interface_IsabelClientListener" name="IsabelClientListener" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_newIsabelSite" name="newIsabelSite"/>
+            <UML:Operation xmi.id="op_siteDisconnection" name="siteDisconnection"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <!-- Definition des Interfaces GAPIListener -->
+        <UML:Interface xmi.id="interface_GAPIListener" name="GAPIListener" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_addMember" name="addMember"/>
+            <UML:Operation xmi.id="op_removeMember" name="removeMember"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <!-- Definition des Interfaces GAPI -->
+        <UML:Interface xmi.id="interface_GAPI" name="GAPI" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_connectNode" name="connectNode"/>
+            <UML:Operation xmi.id="op_disconnectNode" name="disconnectNode"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <!-- Definition des Interfaces IMCUWrapper -->
+        <UML:Interface xmi.id="interface_IMCUWrapper" name="IMCUWrapper" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_configureVideo" name="configureVideo"/>
+            <UML:Operation xmi.id="op_configureAudio" name="configureAudio"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <!-- Association Classes -->
+        <UML:Association xmi.id="assoc_Gateway_IsabelClientListener">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Gateway_IsabelClientListener_Gateway" type="class_Gateway" name="gateway" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Gateway_IsabelClientListener_IsabelClientListener" type="interface_IsabelClientListener" name="isabelClientListener" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Gateway_GAPIListener">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Gateway_GAPIListener_Gateway" type="class_Gateway" name="gateway" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Gateway_GAPIListener_GAPIListener" type="interface_GAPIListener" name="gapiListener" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Gateway_IsabelClient">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Gateway_IsabelClient_Gateway" type="class_Gateway" name="gateway" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Gateway_IsabelClient_IsabelClient" type="class_IsabelClient" name="isabelClient" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

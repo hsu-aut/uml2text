@@ -1,0 +1,118 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML-Modell">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="type_int" name="int"/>
+                <UML:DataType xmi.id="type_char" name="char"/>
+                <UML:DataType xmi.id="type_bool" name="bool"/>
+                <UML:DataType xmi.id="type_float" name="float"/>
+                <UML:DataType xmi.id="type_double" name="double"/>
+                <UML:DataType xmi.id="type_short" name="short"/>
+                <UML:DataType xmi.id="type_long" name="long"/>
+                <UML:DataType xmi.id="type_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="type_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="type_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="type_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Use Case View -->
+        <UML:Package xmi.id="package_UseCaseView" name="Use Case View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Actor -->
+            <UML:Actor xmi.id="actor_Developer" name="Developer"/>
+            
+            <!-- Use Cases -->
+            <UML:UseCase xmi.id="usecase_downloads_emerge_Installer" name="downloads emerge Installer"/>
+            <UML:UseCase xmi.id="usecase_runs_installer" name="runs installer"/>
+            <UML:UseCase xmi.id="usecase_configure_installation" name="configure installation"/>
+            <UML:UseCase xmi.id="usecase_build_packages_applications" name="build packages/applications"/>
+            <UML:UseCase xmi.id="usecase_uploads_package_application_to_release_server" name="uploads package/application to release server"/>
+            <UML:UseCase xmi.id="usecase_debug_packages_applications" name="debug packages/applications"/>
+            <UML:UseCase xmi.id="usecase_may_download_install_required_3rdparty_packages" name="may download/install required 3rdparty packages"/>
+
+            <!-- Associations -->
+            <UML:Association xmi.id="assoc_Developer_downloads_emerge_Installer">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_downloads_emerge_Installer" type="usecase_downloads_emerge_Installer" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Developer_runs_installer">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_runs_installer" type="usecase_runs_installer" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Developer_configure_installation">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_configure_installation" type="usecase_configure_installation" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Developer_build_packages_applications">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_build_packages_applications" type="usecase_build_packages_applications" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Developer_uploads_package_application_to_release_server">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_uploads_package_application_to_release_server" type="usecase_uploads_package_application_to_release_server" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Developer_debug_packages_applications">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_debug_packages_applications" type="usecase_debug_packages_applications" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_Developer_may_download_install_required_3rdparty_packages">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Developer" type="actor_Developer" aggregation="none"/>
+                <UML:AssociationEnd xmi.id="assocEnd_may_download_install_required_3rdparty_packages" type="usecase_may_download_install_required_3rdparty_packages" aggregation="none"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Component View Placeholder -->
+        <UML:Package xmi.id="package_ComponentView" name="Component View" visibility="public"/>
+        
+        <!-- Deployment View Placeholder -->
+        <UML:Package xmi.id="package_DeploymentView" name="Deployment View" visibility="public"/>
+        
+        <!-- Entity Relationship Model Placeholder -->
+        <UML:Package xmi.id="package_EntityRelationshipModel" name="Entity Relationship Model" visibility="public"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

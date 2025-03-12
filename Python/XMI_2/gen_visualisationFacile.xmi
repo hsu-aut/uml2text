@@ -1,0 +1,98 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_AbstractObjet" name="AbstractObjetModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "AbstractObjet" -->
+        <UML:Class xmi.id="class_AbstractObjet" name="AbstractObjet" visibility="public" isAbstract="true">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nom" name="nom" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QString"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_forme" name="forme" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="QList<QVector3D>"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_orientation" name="orientation" visibility="private"/>
+            <UML:Attribute xmi.id="attr_taille" name="taille" visibility="private"/>
+            <UML:Attribute xmi.id="attr_deplacable" name="deplacable" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "ObjetClassique" -->
+        <UML:Class xmi.id="class_ObjetClassique" name="ObjetClassique" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_AbstractObjet_ObjetClassique" general="class_AbstractObjet"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_masse" name="masse" visibility="private"/>
+            <UML:Attribute xmi.id="attr_deformation" name="deformation" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Camera" -->
+        <UML:Class xmi.id="class_Camera" name="Camera" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ObjetClassique_Camera" general="class_ObjetClassique"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_pointFocus" name="pointFocus" visibility="private"/>
+            <UML:Attribute xmi.id="attr_surfaceCamera" name="surfaceCamera" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Lampe" -->
+        <UML:Class xmi.id="class_Lampe" name="Lampe" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ObjetClassique_Lampe" general="class_ObjetClassique"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_couleurAmbiante" name="couleurAmbiante" visibility="private"/>
+            <UML:Attribute xmi.id="attr_forceAmbiante" name="forceAmbiante" visibility="private"/>
+            <UML:Attribute xmi.id="attr_surfaceLampe" name="surfaceLampe" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "Micro" -->
+        <UML:Class xmi.id="class_Micro" name="Micro" visibility="public" isAbstract="false">
+          <UML:Generalization xmi.id="gen_ObjetClassique_Micro" general="class_ObjetClassique"/>
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_surfaceMicro" name="surfaceMicro" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "MesObjets" -->
+        <UML:Class xmi.id="class_MesObjets" name="MesObjets" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_objets" name="objets" visibility="private"/>
+            <UML:Attribute xmi.id="attr_statistics" name="statistics" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "GLWidget" -->
+        <UML:Class xmi.id="class_GLWidget" name="GLWidget" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_initOpenGL" name="initOpenGL" visibility="private"/>
+            <UML:Operation xmi.id="op_controlGUI" name="controlGUI" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse "MyWindow" -->
+        <UML:Class xmi.id="class_MyWindow" name="MyWindow" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_widgets" name="widgets" visibility="private"/>
+            <UML:Attribute xmi.id="attr_menus" name="menus" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

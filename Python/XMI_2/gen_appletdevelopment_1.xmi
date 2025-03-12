@@ -1,0 +1,85 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View -->
+        <UML:Package xmi.id="logical_view" name="Logical View">
+          
+          <!-- Datatypes -->
+          <UML:Package xmi.id="datatypes" name="Datatypes">
+            <UML:Namespace.ownedElement>
+              <UML:DataType xmi.id="type_int" name="int"/>
+              <UML:DataType xmi.id="type_char" name="char"/>
+              <UML:DataType xmi.id="type_bool" name="bool"/>
+              <UML:DataType xmi.id="type_float" name="float"/>
+              <UML:DataType xmi.id="type_double" name="double"/>
+              <UML:DataType xmi.id="type_short" name="short"/>
+              <UML:DataType xmi.id="type_long" name="long"/>
+              <UML:DataType xmi.id="type_unsigned_int" name="unsigned int"/>
+              <UML:DataType xmi.id="type_unsigned_short" name="unsigned short"/>
+              <UML:DataType xmi.id="type_unsigned_long" name="unsigned long"/>
+              <UML:DataType xmi.id="type_string" name="string"/>
+            </UML:Namespace.ownedElement>
+          </UML:Package>
+
+          <!-- Interfaces -->
+          <UML:Interface xmi.id="BWWOSIohsaMK" name="DuiAppletInterface">
+            <UML:Classifier.feature>
+              <UML:Operation xmi.id="operation_constructWidget" name="constructWidget">
+                <UML:Parameter xmi.id="param1" name="param1" type="bEjGwvJvUu3u"/>
+                <UML:Parameter xmi.id="param2" name="param2" type="vDNc664Ojzol"/>
+                <UML:Parameter xmi.id="param3" name="param3" type="4zXYoSWpeWqH"/>
+              </UML:Operation>
+            </UML:Classifier.feature>
+          </UML:Interface>
+
+          <UML:Interface xmi.id="vDNc664Ojzol" name="DuiDataStore"/>
+          <UML:Interface xmi.id="bEjGwvJvUu3u" name="DuiAppletMetaData"/>
+          <UML:Interface xmi.id="4zXYoSWpeWqH" name="DuiDataAccess"/>
+
+          <!-- Classes -->
+          <UML:Class xmi.id="ZDbxh8poXADB" name="MyApplet">
+            <UML:Dependency client="ZDbxh8poXADB" supplier="vDNc664Ojzol"/>
+            <UML:Dependency client="ZDbxh8poXADB" supplier="bEjGwvJvUu3u"/>
+            <UML:Dependency client="ZDbxh8poXADB" supplier="4zXYoSWpeWqH"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="9F0rL6PEh6JT" name="MyAppletWidget">
+            <UML:Generalization child="9F0rL6PEh6JT" parent="MrcUTxZrcMym"/>
+          </UML:Class>
+
+          <UML:Class xmi.id="MrcUTxZrcMym" name="DuiWidget"/>
+        </UML:Package>
+
+        <!-- Component View -->
+        <UML:Package xmi.id="component_view" name="Component View">
+          
+          <!-- Abstraktion -->
+          <UML:Abstraction xmi.id="abstraction1" supplier="ZDbxh8poXADB" client="BWWOSIohsaMK"/>
+
+          <!-- Dependencies -->
+          <UML:Dependency xmi.id="dependency1" client="ZDbxh8poXADB" supplier="vDNc664Ojzol"/>
+          <UML:Dependency xmi.id="dependency2" client="ZDbxh8poXADB" supplier="bEjGwvJvUu3u"/>
+          <UML:Dependency xmi.id="dependency3" client="ZDbxh8poXADB" supplier="4zXYoSWpeWqH"/>
+          <UML:Dependency xmi.id="dependency4" client="0WOIXMB1k040" supplier="vDNc664Ojzol"/>
+          <UML:Dependency xmi.id="dependency5" client="0WOIXMB1k040" supplier="bEjGwvJvUu3u"/>
+          <UML:Dependency xmi.id="dependency6" client="0WOIXMB1k040" supplier="4zXYoSWpeWqH"/>
+
+          <UML:Class xmi.id="0WOIXMB1k040" name="DuiAppletRunner"/>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,78 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLEntity" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Class xmi.id="class_BaseFacebook" name="BaseFacebook" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_setPersistentData" name="setPersistentData" visibility="protected" isAbstract="true">
+                  <UML:Parameter xmi.id="param_key" name="key" kind="in" type="string"/>
+                  <UML:Parameter xmi.id="param_value" name="value" kind="in" type="string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getPersistentData" name="getPersistentData" visibility="protected" isAbstract="true">
+                  <UML:Parameter xmi.id="param_key" name="key" kind="in" type="string"/>
+                  <UML:Parameter xmi.id="param_default" name="default" kind="in" type="boolean"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_clearPersistentData" name="clearPersistentData" visibility="protected" isAbstract="true">
+                  <UML:Parameter xmi.id="param_key" name="key" kind="in" type="string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_clearAllPersistentData" name="clearAllPersistentData" visibility="protected" isAbstract="true"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Facebook" name="Facebook" visibility="public">
+              <UML:Generalization xmi.id="gen_BaseFacebook_Facebook" parent="class_BaseFacebook"/>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_FacebookApiException" name="FacebookApiException" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_message" name="message" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="string"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+              </UML:Classifier.feature>
+              <UML:Association xmi.id="assoc_FacebookApiException_Exception">
+                <UML:Association.connection>
+                  <UML:AssociationEnd xmi.id="assocEnd_FacebookApiException_Exception_FacebookApiException" type="class_FacebookApiException" name="facebookApiException" visibility="public" aggregation="none" multiplicity="1"/>
+                  <UML:AssociationEnd xmi.id="assocEnd_FacebookApiException_Exception_Exception" type="class_Exception" name="exception" visibility="public" aggregation="none" multiplicity="1"/>
+                </UML:Association.connection>
+              </UML:Association>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_Exception" name="Exception" visibility="public"/>
+            
+            <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model" visibility="public" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Basic DataTypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Class: SobolRsg -->
+            <UML:Class xmi.id="class_SobolRsg" name="SobolRsg" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_BaseClass"/>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <!-- Class: MersenneTwisterUniformRng -->
+            <UML:Class xmi.id="class_MersenneTwisterUniformRng" name="MersenneTwisterUniformRng" visibility="public" isAbstract="false"/>
+            
+            <!-- Class: InverseCumulativeRsg -->
+            <UML:Class xmi.id="class_InverseCumulativeRsg" name="InverseCumulativeRsg" visibility="public" isAbstract="false"/>
+            
+            <!-- Class: GenericLowDiscrepancy -->
+            <UML:Class xmi.id="class_GenericLowDiscrepancy" name="GenericLowDiscrepancy" visibility="public" isAbstract="false"/>
+            
+            <!-- Class: GenericPseudoRandom -->
+            <UML:Class xmi.id="class_GenericPseudoRandom" name="GenericPseudoRandom" visibility="public" isAbstract="false"/>
+            
+            <!-- Class: RandomSequenceGenerator -->
+            <UML:Class xmi.id="class_RandomSequenceGenerator" name="RandomSequenceGenerator" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_SequenceGenerator"/>
+              </UML:Generalization>
+              <UML:Dependency>
+                <UML:Interface xmi.idref="interface_UniformRandomSequenceGenerator"/>
+              </UML:Dependency>
+            </UML:Class>
+            
+            <!-- Class: PseudoRandom -->
+            <UML:Class xmi.id="class_PseudoRandom" name="PseudoRandom" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_n8PDqTSa5n6l"/>
+              </UML:Generalization>
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_MersenneTwisterUniformRng"/>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <!-- Class: PoissonPseudoRandom -->
+            <UML:Class xmi.id="class_PoissonPseudoRandom" name="PoissonPseudoRandom" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_MersenneTwisterUniformRng"/>
+              </UML:Generalization>
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_JUgrQdnNN9tL"/>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Class: LowDiscrepancy -->
+            <UML:Class xmi.id="class_LowDiscrepancy" name="LowDiscrepancy" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_n8PDqTSa5n6l"/>
+              </UML:Generalization>
+              <UML:Generalization>
+                <UML:Class xmi.idref="class_SobolRsg"/>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- Interface: UniformRandomSequenceGenerator -->
+            <UML:Interface xmi.id="interface_UniformRandomSequenceGenerator" name="UniformRandomSequenceGenerator" visibility="public"/>
+
+            <!-- Interface: RandomNumberGenerator -->
+            <UML:Interface xmi.id="interface_RandomNumberGenerator" name="RandomNumberGenerator" visibility="public"/>
+
+            <!-- Interface: InverseCumulative -->
+            <UML:Interface xmi.id="interface_InverseCumulative" name="InverseCumulative" visibility="public"/>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

@@ -1,0 +1,193 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_InstallDB" name="InstallDB System">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="InstallDB" name="InstallDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_db" name="db" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="InstallInfo" name="InstallInfo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_state" name="state" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_version" name="version" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_release" name="release" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_build" name="build" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_distribution" name="distribution" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_time" name="time" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="InstallInfo"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="InstallDB"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="LockedDBShelf" name="LockedDBShelf" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="RepoDB" name="RepoDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="Repo" name="Repo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_indexuri" name="indexuri" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="FilesDB" name="FilesDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="FileInfo" name="FileInfo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_path" name="path" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_type" name="type" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_size" name="size" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_hash" name="hash" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_permanent" name="permanent" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="ItemByRepo" name="ItemByRepo" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="ComponentDB" name="ComponentDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="Component" name="Component" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_localname" name="localname" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_summary" name="summary" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_dependencies" name="dependencies" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_packages" name="packages" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_sources" name="sources" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="PackageDB" name="PackageDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_dr" name="dr" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="Package" name="Package" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_summary" name="summary" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_description" name="description" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_partof" name="partof" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_license" name="license" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="SourceDB" name="SourceDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_d" name="d" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_dpkgtosrc" name="dpkgtosrc" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="SpecFile" name="SpecFile" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_source" name="source" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_packages" name="packages" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_history" name="history" visibility="private" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attr_components" name="components" visibility="private" ownerScope="instance" changeability="changeable"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="Source" name="Source" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="History" name="History" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="assoc_InstallDB_InstallInfo" name="InstallDB-InstallInfo" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_InstallDB" type="InstallDB" name="installDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_InstallInfo" type="InstallInfo" name="installInfo" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_RepoDB_Repo" name="RepoDB-Repo" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_RepoDB" type="RepoDB" name="repoDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Repo" type="Repo" name="repo" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_FilesDB_FileInfo" name="FilesDB-FileInfo" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_FilesDB" type="FilesDB" name="filesDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_FileInfo" type="FileInfo" name="fileInfo" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ComponentDB_Component" name="ComponentDB-Component" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ComponentDB" type="ComponentDB" name="componentDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Component" type="Component" name="component" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_PackageDB_Package" name="PackageDB-Package" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_PackageDB" type="PackageDB" name="packageDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Package" type="Package" name="package" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_SourceDB_SpecFile" name="SourceDB-SpecFile" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SourceDB" type="SourceDB" name="sourceDB" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SpecFile" type="SpecFile" name="specFile" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Enumeration xmi.id="enum_repo" name="repo">
+          <UML:EnumLiteral name="EnumerationValue" visibility="public"/>
+        </UML:Enumeration>
+
+        <UML:Dependency xmi.id="dep_ItemByRepo_repo" name="ItemByRepo-repo">
+          <UML:Dependency.client>
+            <UML:Class xmi.idref="ItemByRepo"/>
+          </UML:Dependency.client>
+          <UML:Dependency.supplier>
+            <UML:Enumeration xmi.idref="enum_repo"/>
+          </UML:Dependency.supplier>
+        </UML:Dependency>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

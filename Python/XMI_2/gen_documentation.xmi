@@ -1,0 +1,170 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_OpticalSystem" name="OpticalSystem">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package for Datatypes -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_array" name="array"/>
+            <UML:DataType xmi.id="datatype_tuple" name="tuple"/>
+            <UML:DataType xmi.id="datatype_dict" name="dict"/>
+            <UML:DataType xmi.id="datatype_object" name="object"/>
+            <UML:DataType xmi.id="datatype_set" name="set"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Logical View Package -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- OpticalSheetController Class -->
+            <UML:Class xmi.id="class_OpticalSheetController" name="OpticalSheetController" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_findOpticalSheetById" name="findOpticalSheetById" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_opticalSheetId" name="opticalSheetId" kind="in" type="datatype_int"/>
+                  <UML:Parameter xmi.id="param_opticalSheetById_return" name="return" kind="return" type="class_OpticalSheet"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_findOpticalSheetByTimePeriod_Cycle_Term" name="findOpticalSheetByTimePeriod_Cycle_Term" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_timePeriod" name="timePeriod" kind="in" type="datatype_string"/>
+                  <UML:Parameter xmi.id="param_findOpticalSheetByTimePeriod_Cycle_Term_return" name="return" kind="return" type="class_OpticalSheet"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getOpticalSheetData" name="getOpticalSheetData" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_opticalSheetData_return" name="return" kind="return" type="datatype_string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getOldOpticalSheets" name="getOldOpticalSheets" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_getOldOpticalSheets_return" name="return" kind="return" type="datatype_array"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_storeOpticalSheet" name="storeOpticalSheet" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_opticalSheet" name="opticalSheet" kind="in" type="class_OpticalSheet"/>
+                  <UML:Parameter xmi.id="param_storeOpticalSheet_return" name="return" kind="return" type="datatype_bool"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- OpticalSheet Class -->
+            <UML:Class xmi.id="class_OpticalSheet" name="OpticalSheet" visibility="public">
+            </UML:Class>
+            
+            <!-- Cycle Class -->
+            <UML:Class xmi.id="class_Cycle" name="Cycle" visibility="public">
+            </UML:Class>
+            
+            <!-- ColumnsController Class -->
+            <UML:Class xmi.id="class_ColumnsController" name="ColumnsController" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_findCourses" name="findCourses" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_findCourses_return" name="return" kind="return" type="datatype_array"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_expandCourse" name="expandCourse" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_courseId" name="courseId" kind="in" type="datatype_int"/>
+                  <UML:Parameter xmi.id="param_expandCourse_return" name="return" kind="return" type="datatype_bool"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getOffers" name="getOffers" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_getOffers_return" name="return" kind="return" type="datatype_array"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getEncodings" name="getEncodings" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_getEncodings_return" name="return" kind="return" type="datatype_array"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_removeCycleFromOpticalSheet" name="removeCycleFromOpticalSheet" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_cycleId" name="cycleId" kind="in" type="datatype_int"/>
+                  <UML:Parameter xmi.id="param_removeCycleFromOpticalSheet_return" name="return" kind="return" type="datatype_bool"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <!-- QuestionController Class -->
+            <UML:Class xmi.id="class_QuestionController" name="QuestionController" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_findQuestion" name="findQuestion" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_questionId" name="questionId" kind="in" type="datatype_int"/>
+                  <UML:Parameter xmi.id="param_findQuestion_return" name="return" kind="return" type="datatype_string"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getAnswerTypes" name="getAnswerTypes" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_getAnswerTypes_return" name="return" kind="return" type="datatype_array"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_storeQuestion" name="storeQuestion" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_question" name="question" kind="in" type="datatype_string"/>
+                  <UML:Parameter xmi.id="param_storeQuestion_return" name="return" kind="return" type="datatype_bool"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Printer Class -->
+            <UML:Class xmi.id="class_Printer" name="Printer" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_fileName" name="fileName" visibility="private" type="datatype_string"/>
+                <UML:Attribute xmi.id="attr_filePath" name="filePath" visibility="private" type="datatype_string"/>
+                <UML:Attribute xmi.id="attr_text" name="text" visibility="private" type="datatype_string"/>
+                <UML:Operation xmi.id="op_createPDF" name="createPDF" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_createPDF_return" name="return" kind="return" type="datatype_bool"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_getPDF" name="getPDF" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_getPDF_return" name="return" kind="return" type="datatype_string"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- QualitativeQuestionnairePrinter Class -->
+            <UML:Class xmi.id="class_QualitativeQuestionnairePrinter" name="QualitativeQuestionnairePrinter" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Printer"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_specificAttribute" name="specificAttribute" visibility="private" type="datatype_string"/>
+                <UML:Operation xmi.id="op_printQualitativeQuestionnaire" name="printQualitativeQuestionnaire" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_printQualitativeQuestionnaire_return" name="return" kind="return" type="datatype_bool"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_createCodes" name="createCodes" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_createCodes_return" name="return" kind="return" type="datatype_array"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- OpticalSheetPrinter Class -->
+            <UML:Class xmi.id="class_OpticalSheetPrinter" name="OpticalSheetPrinter" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_Printer"/>
+                </UML:Generalization.child>
+              </UML:Generalization>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_designOpticalSheet" name="designOpticalSheet" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_designOpticalSheet_return" name="return" kind="return" type="datatype_bool"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_positionElements" name="positionElements" visibility="public" isSpecification="false">
+                  <UML:Parameter xmi.id="param_positionElements_return" name="return" kind="return" type="datatype_bool"/>
+                </UML:Operation>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

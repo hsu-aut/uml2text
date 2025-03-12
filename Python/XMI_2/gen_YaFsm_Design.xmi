@@ -1,0 +1,102 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TrafficLightFSM" name="TrafficLightFSMModel">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klasse "TrafficLightFSM" -->
+        <UML:Class xmi.id="class_TrafficLightFSM" name="TrafficLightFSM" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_moActionHandler" name="moActionHandler" visibility="private" />
+          <UML:Attribute xmi.id="attr_mpoCurrentState" name="mpoCurrentState" visibility="private" />
+          <UML:Attribute xmi.id="attr_moStateerror" name="moStateerror" visibility="private" />
+          <UML:Attribute xmi.id="attr_moStaterun" name="moStaterun" visibility="private" />
+          <UML:Attribute xmi.id="attr_moStatered" name="moStatered" visibility="private" />
+          <UML:Attribute xmi.id="attr_moStateyellow" name="moStateyellow" visibility="private" />
+          <UML:Attribute xmi.id="attr_moStategreen" name="moStategreen" visibility="private" />
+        </UML:Class>
+
+        <!-- Definition der Klasse "FSMEvent" -->
+        <UML:Class xmi.id="class_FSMEvent" name="FSMEvent" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_mCBHandler" name="mCBHandler" visibility="private" />
+          <UML:Attribute xmi.id="attr_mEventMap" name="mEventMap" visibility="private" />
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_QObject"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse "FSMTimer" -->
+        <UML:Class xmi.id="class_FSMTimer" name="FSMTimer" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_setTimerID" name="setTimerID" visibility="public" />
+          <UML:Operation xmi.id="op_startTimerID" name="startTimerID" visibility="public" />
+          <UML:Operation xmi.id="op_stopTimerID" name="stopTimerID" visibility="public" />
+        </UML:Class>
+
+        <!-- Definition des Interfaces "ITrafficLightFSMState" -->
+        <UML:Interface xmi.id="interface_ITrafficLightFSMState" name="ITrafficLightFSMState" visibility="public">
+          <UML:Operation xmi.id="op_enter" name="enter" visibility="public" />
+          <UML:Operation xmi.id="op_exit" name="exit" visibility="public" />
+          <UML:Operation xmi.id="op_blink" name="blink" visibility="public" />
+          <UML:Operation xmi.id="op_run" name="run" visibility="public" />
+          <UML:Operation xmi.id="op_timergreen" name="timergreen" visibility="public" />
+          <UML:Operation xmi.id="op_timerblinkYellow" name="timerblinkYellow" visibility="public" />
+          <UML:Operation xmi.id="op_error" name="error" visibility="public" />
+          <UML:Operation xmi.id="op_timerred" name="timerred" visibility="public" />
+          <UML:Operation xmi.id="op_timeryellow" name="timeryellow" visibility="public" />
+        </UML:Interface>
+
+        <!-- Definition der Klassen für spezifische Ampelzustände -->
+        <UML:Class xmi.id="class_Stateerror" name="Stateerror" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ITrafficLightFSMState"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Staterun" name="Staterun" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ITrafficLightFSMState"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_Statered" name="Statered" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ITrafficLightFSMState"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Stateyellow" name="Stateyellow" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ITrafficLightFSMState"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Stategreen" name="Stategreen" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.idref="interface_ITrafficLightFSMState"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

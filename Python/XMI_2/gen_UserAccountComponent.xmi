@@ -1,0 +1,99 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UserAccountComponent" name="UserAccountComponent">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Package definitions -->
+        <UML:Package xmi.id="package_org" name="org">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_soulspace" name="soulspace">
+              <UML:Namespace.ownedElement>
+                <UML:Package xmi.id="package_useraccount" name="useraccount">
+                  <UML:Namespace.ownedElement>
+                    <UML:Package xmi.id="package_domain" name="domain">
+
+                      <!-- Class definitions -->
+                      <UML:Class xmi.id="class_Password" name="Password" visibility="public" isAbstract="false">
+                        <UML:Namespace.ownedElement>
+                          <UML:Attribute xmi.id="attr_value" name="value" visibility="private" multiplicity="1..1"/>
+                          <UML:Attribute xmi.id="attr_initial" name="initial" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable" targetScope="instance"/>
+                        </UML:Namespace.ownedElement>
+                      </UML:Class>
+
+                      <UML:Class xmi.id="class_UserAccount" name="UserAccount" visibility="public" isAbstract="false">
+                        <UML:Namespace.ownedElement>
+                          <UML:Attribute xmi.id="attr_personId" name="personId" visibility="private" multiplicity="1..1" />
+                          <UML:Attribute xmi.id="attr_loginName" name="loginName" visibility="private" multiplicity="1..1" />
+                          <UML:Attribute xmi.id="attr_locked" name="locked" visibility="private" multiplicity="1..1"/>
+                          <UML:Attribute xmi.id="attr_lastLogin" name="lastLogin" visibility="private" multiplicity="0..1"/>
+                        </UML:Namespace.ownedElement>
+                      </UML:Class>
+
+                      <UML:Class xmi.id="class_UserAccountFactory" name="UserAccountFactory" visibility="public" isAbstract="false">
+                        <UML:Dependency supplier="class_UserAccount"/>
+                      </UML:Class>
+
+                      <UML:Class xmi.id="class_UserAccountRepository" name="UserAccountRepository" visibility="public" isAbstract="false">
+                        <UML:Dependency supplier="class_UserAccount"/>
+                      </UML:Class>
+
+                      <UML:Class xmi.id="class_Note" name="Note" visibility="public" isAbstract="false">
+                        <UML:Namespace.ownedElement>
+                          <UML:Attribute xmi.id="attr_text" name="text" visibility="private"/>
+                        </UML:Namespace.ownedElement>
+                      </UML:Class>
+
+                      <UML:Class xmi.id="class_UserAccountService" name="UserAccountService" visibility="public" isAbstract="false">
+                        <UML:Dependency supplier="class_UserAccountFactory"/>
+                        <UML:Dependency supplier="class_UserAccountRepository"/>
+                        <UML:Namespace.ownedElement>
+                          <UML:Operation xmi.id="op_authenticate" name="authenticate" visibility="public">
+                            <UML:Parameter xmi.id="param_return" name="return" kind="return" type="Boolean"/>
+                          </UML:Operation>
+                          <UML:Operation xmi.id="op_changePassword" name="changePassword" visibility="public">
+                            <UML:Parameter xmi.id="param_return" name="return" kind="return" type="Void"/>
+                          </UML:Operation>
+                        </UML:Namespace.ownedElement>
+                      </UML:Class>
+                      
+                      <!-- Association definitions -->
+                      <UML:Association xmi.id="assoc_UserAccount_Password">
+                        <UML:Association.connection>
+                          <UML:AssociationEnd xmi.id="assocEnd_UserAccount_Password_UserAccount" type="class_UserAccount" name="userAccount" visibility="public" multiplicity="*"/>
+                          <UML:AssociationEnd xmi.id="assocEnd_UserAccount_Password_Password" type="class_Password" name="password" visibility="public" multiplicity="0..*"/>
+                        </UML:Association.connection>
+                      </UML:Association>
+
+                      <UML:Association xmi.id="assoc_UserAccount_Note">
+                        <UML:Association.connection>
+                          <UML:AssociationEnd xmi.id="assocEnd_UserAccount_Note_UserAccount" type="class_UserAccount" name="userAccount" visibility="public" multiplicity="*"/>
+                          <UML:AssociationEnd xmi.id="assocEnd_UserAccount_Note_Note" type="class_Note" name="note" visibility="public" multiplicity="0..*"/>
+                        </UML:Association.connection>
+                      </UML:Association>
+
+                    </UML:Package>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Data types -->
+        <UML:DataType xmi.id="Boolean" name="Boolean"/>
+        <UML:DataType xmi.id="Void" name="Void"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

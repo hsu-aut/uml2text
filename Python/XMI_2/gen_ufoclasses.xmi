@@ -1,0 +1,173 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UfoDB" name="UfoDB_Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- UfoDB Class -->
+        <UML:Class xmi.id="class_UfoDB" name="UfoDB" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_theSingleton" name="theSingleton" visibility="private"/>
+            <UML:Attribute xmi.id="attr_nextFlockSN" name="nextFlockSN" visibility="private"/>
+            <UML:Attribute xmi.id="attr_nextPilotSN" name="nextPilotSN" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pluginDirectories" name="pluginDirectories" visibility="private"/>
+            <UML:Attribute xmi.id="attr_plugins" name="plugins" visibility="private"/>
+            <UML:Attribute xmi.id="attr_flockFactories" name="flockFactories" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pilotFactories" name="pilotFactories" visibility="private"/>
+            <UML:Attribute xmi.id="attr_behaviourFactories" name="behaviourFactories" visibility="private"/>
+            <UML:Attribute xmi.id="attr_steerableFactories" name="steerableFactories" visibility="private"/>
+            <UML:Attribute xmi.id="attr_flocks" name="flocks" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pilots" name="pilots" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_the" name="the" visibility="public"/>
+            <UML:Operation xmi.id="op_reset" name="reset" visibility="public"/>
+            <UML:Operation xmi.id="op_addPluginDirectory" name="addPluginDirectory" visibility="public"/>
+            <UML:Operation xmi.id="op_swapPluginDirectories" name="swapPluginDirectories" visibility="public"/>
+            <UML:Operation xmi.id="op_registerFlockType" name="registerFlockType" visibility="public"/>
+            <UML:Operation xmi.id="op_registerPilotType" name="registerPilotType" visibility="public"/>
+            <UML:Operation xmi.id="op_registerBehaviourType" name="registerBehaviourType" visibility="public"/>
+            <UML:Operation xmi.id="op_registerSteerableType" name="registerSteerableType" visibility="public"/>
+            <UML:Operation xmi.id="op_getFlockFactory" name="getFlockFactory" visibility="public"/>
+            <UML:Operation xmi.id="op_getPilotFactory" name="getPilotFactory" visibility="public"/>
+            <UML:Operation xmi.id="op_getBehaviourFactory" name="getBehaviourFactory" visibility="public"/>
+            <UML:Operation xmi.id="op_getSteerableFactory" name="getSteerableFactory" visibility="public"/>
+            <UML:Operation xmi.id="op_update" name="update" visibility="public"/>
+            <UML:Operation xmi.id="op_getFlocks" name="getFlocks" visibility="public"/>
+            <UML:Operation xmi.id="op_getFlockBySN" name="getFlockBySN" visibility="public"/>
+            <UML:Operation xmi.id="op_getPilots" name="getPilots" visibility="public"/>
+            <UML:Operation xmi.id="op_getPilotBySN" name="getPilotBySN" visibility="public"/>
+            <UML:Operation xmi.id="op_getPilotsByAttribute" name="getPilotsByAttribute" visibility="public"/>
+            <UML:Operation xmi.id="op_print" name="print" visibility="public"/>
+            <UML:Operation xmi.id="op_addFlock" name="addFlock" visibility="public"/>
+            <UML:Operation xmi.id="op_addPilot" name="addPilot" visibility="public"/>
+            <UML:Operation xmi.id="op_removeFlock" name="removeFlock" visibility="public"/>
+            <UML:Operation xmi.id="op_removePilot" name="removePilot" visibility="public"/>
+            <UML:Operation xmi.id="op_findPluginFile" name="findPluginFile" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Configurator Class -->
+        <UML:Class xmi.id="class_Configurator" name="Configurator" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_plugindirs" name="plugindirs" visibility="private"/>
+            <UML:Attribute xmi.id="attr_plugindirs_save" name="plugindirs_save" visibility="private"/>
+            <UML:Attribute xmi.id="attr_elements" name="elements" visibility="private"/>
+            <UML:Attribute xmi.id="attr_templates" name="templates" visibility="private"/>
+            <UML:Attribute xmi.id="attr_flocks" name="flocks" visibility="private"/>
+            <UML:Attribute xmi.id="attr_pilots" name="pilots" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_bind" name="bind" visibility="public"/>
+            <UML:Operation xmi.id="op_print" name="print" visibility="public"/>
+            <UML:Operation xmi.id="op_lookupTemplateName" name="lookupTemplateName" visibility="public"/>
+            <UML:Operation xmi.id="op_lookupTemplateParameters" name="lookupTemplateParameters" visibility="public"/>
+            <UML:Operation xmi.id="op_lookupTemplateChildren" name="lookupTemplateChildren" visibility="public"/>
+            <UML:Operation xmi.id="op_bindFlock" name="bindFlock" visibility="public"/>
+            <UML:Operation xmi.id="op_bindPilot" name="bindPilot" visibility="public"/>
+            <UML:Operation xmi.id="op_bindBehaviour" name="bindBehaviour" visibility="public"/>
+            <UML:Operation xmi.id="op_bindSteerable" name="bindSteerable" visibility="public"/>
+            <UML:Operation xmi.id="op_internalCleanup" name="internalCleanup" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Pilot Class -->
+        <UML:Class xmi.id="class_Pilot" name="Pilot" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_SN" name="SN" visibility="private"/>
+            <UML:Attribute xmi.id="attr_attributes" name="attributes" visibility="private"/>
+            <UML:Attribute xmi.id="attr_attitude" name="attitude" visibility="private"/>
+            <UML:Attribute xmi.id="attr_vehicle" name="vehicle" visibility="private"/>
+            <UML:Attribute xmi.id="attr_myFlock" name="myFlock" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_destroy" name="destroy" visibility="public"/>
+            <UML:Operation xmi.id="op_steer" name="steer" visibility="public"/>
+            <UML:Operation xmi.id="op_getPosition" name="getPosition" visibility="public"/>
+            <UML:Operation xmi.id="op_getOrientation" name="getOrientation" visibility="public"/>
+            <UML:Operation xmi.id="op_getVelocity" name="getVelocity" visibility="public"/>
+            <UML:Operation xmi.id="op_getAttribute" name="getAttribute" visibility="public"/>
+            <UML:Operation xmi.id="op_setAttribute" name="setAttribute" visibility="public"/>
+            <UML:Operation xmi.id="op_getFlock" name="getFlock" visibility="public"/>
+            <UML:Operation xmi.id="op_getSN" name="getSN" visibility="public"/>
+            <UML:Operation xmi.id="op_print" name="print" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Flock Class -->
+        <UML:Class xmi.id="class_Flock" name="Flock" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_attributes" name="attributes" visibility="private"/>
+            <UML:Attribute xmi.id="attr_SN" name="SN" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_destroy" name="destroy" visibility="public"/>
+            <UML:Operation xmi.id="op_update" name="update" visibility="public"/>
+            <UML:Operation xmi.id="op_getSN" name="getSN" visibility="public"/>
+            <UML:Operation xmi.id="op_getAttribute" name="getAttribute" visibility="public"/>
+            <UML:Operation xmi.id="op_setAttribute" name="setAttribute" visibility="public"/>
+            <UML:Operation xmi.id="op_operator" name="operator[]" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Steerable Class -->
+        <UML:Class xmi.id="class_Steerable" name="Steerable" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_steer" name="steer" visibility="public"/>
+            <UML:Operation xmi.id="op_getPosition" name="getPosition" visibility="public"/>
+            <UML:Operation xmi.id="op_getOrientation" name="getOrientation" visibility="public"/>
+            <UML:Operation xmi.id="op_getVelocity" name="getVelocity" visibility="public"/>
+            <UML:Operation xmi.id="op_print" name="print" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Behaviour Class -->
+        <UML:Class xmi.id="class_Behaviour" name="Behaviour" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_myPilot" name="myPilot" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_destroy" name="destroy" visibility="public"/>
+            <UML:Operation xmi.id="op_yield" name="yield" visibility="public"/>
+            <UML:Operation xmi.id="op_registerPilot" name="registerPilot" visibility="public"/>
+            <UML:Operation xmi.id="op_print" name="print" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- ConfigurationReader Class -->
+        <UML:Class xmi.id="class_ConfigurationReader" name="ConfigurationReader" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_readConfig" name="readConfig" visibility="public"/>
+            <UML:Operation xmi.id="op_addPluginDir" name="addPluginDir" visibility="public"/>
+            <UML:Operation xmi.id="op_addElement" name="addElement" visibility="public"/>
+            <UML:Operation xmi.id="op_setTemplate" name="setTemplate" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- ConfigurationElement Class -->
+        <UML:Class xmi.id="class_ConfigurationElement" name="ConfigurationElement" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_elementType" name="elementType" visibility="private"/>
+            <UML:Attribute xmi.id="attr_fromTemplate" name="fromTemplate" visibility="private"/>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+            <UML:Attribute xmi.id="attr_parameters" name="parameters" visibility="private"/>
+            <UML:Attribute xmi.id="attr_children" name="children" visibility="private"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_print" name="print" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

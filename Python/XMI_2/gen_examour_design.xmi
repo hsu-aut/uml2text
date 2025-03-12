@@ -1,0 +1,117 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Stereotypes -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+        <UML:Stereotype xmi.id="stereotype_enum" name="enum"/>
+        
+        <!-- Datatypes Package -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- ExAmour Package -->
+        <UML:Package xmi.id="package_ExAmour" name="ExAmour">
+          <UML:Namespace.ownedElement>
+            
+            <!-- Core Package -->
+            <UML:Package xmi.id="package_Core" name="Core">
+              <UML:Namespace.ownedElement>
+                <UML:Interface xmi.id="interface_kernel_core" name="kernel_core">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_start" name="_start"/>
+                    <UML:Operation xmi.id="op_main" name="main"/>
+                    <UML:Operation xmi.id="op_get_idt" name="get_idt"/>
+                    <UML:Operation xmi.id="op_set_idt" name="set_idt"/>
+                  </UML:Classifier.feature>
+                </UML:Interface>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Environnement Package -->
+            <UML:Package xmi.id="package_Environnement" name="Environnement">
+              <UML:Namespace.ownedElement>
+                <UML:Interface xmi.id="interface_kernel_env_ui" name="kernel_env_ui">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_env_create" name="env_create"/>
+                    <UML:Operation xmi.id="op_get_current_env" name="get_current_env"/>
+                    <UML:Operation xmi.id="op_timeslice_request" name="timeslice_request"/>
+                  </UML:Classifier.feature>
+                </UML:Interface>
+                <UML:Interface xmi.id="interface_kernel_env_ki" name="kernel_env_ki">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_env_create_ki" name="env_create"/>
+                    <UML:Operation xmi.id="op_get_current_env_ki" name="get_current_env"/>
+                    <UML:Operation xmi.id="op_timeslice_request_ki" name="timeslice_request"/>
+                  </UML:Classifier.feature>
+                </UML:Interface>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Event Package -->
+            <UML:Package xmi.id="package_Event" name="Event">
+              <UML:Namespace.ownedElement>
+                <UML:Interface xmi.id="interface_kernel_event_ui" name="kernel_event_ui">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_io_grant" name="io_grant"/>
+                    <UML:Operation xmi.id="op_event_ref" name="event_ref"/>
+                    <UML:Operation xmi.id="op_event_startup" name="event_startup"/>
+                  </UML:Classifier.feature>
+                </UML:Interface>
+                <UML:Interface xmi.id="interface_kernel_event_ki" name="kernel_event_ki">
+                  <UML:Classifier.feature>
+                    <UML:Operation xmi.id="op_io_grant_ki" name="io_grant"/>
+                    <UML:Operation xmi.id="op_event_ref_ki" name="event_ref"/>
+                    <UML:Operation xmi.id="op_event_startup_ki" name="event_startup"/>
+                  </UML:Classifier.feature>
+                </UML:Interface>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- MM Package -->
+            <UML:Package xmi.id="package_MM" name="MM">
+              <UML:Namespace.ownedElement>
+                <UML:Interface xmi.id="interface_kernel_mm_segmented_ui" name="kernel_mm_segmented_ui"/>
+                <UML:Interface xmi.id="interface_kernel_mm_paged_ui" name="kernel_mm_paged_ui"/>
+                <UML:Interface xmi.id="interface_kernel_mm_ki" name="kernel_mm_ki"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Enumerations -->
+        <UML:Enumeration xmi.id="enum_alloc_permissions" name="alloc_permissions">
+          <UML:Enumeration.literal name="READ"/>
+          <UML:Enumeration.literal name="WRITE"/>
+          <UML:Enumeration.literal name="EXECUTE"/>
+        </UML:Enumeration>
+        <UML:Enumeration xmi.id="enum_share_permissions" name="share_permissions"/>
+        <UML:Enumeration xmi.id="enum_gdt_type" name="gdt_type"/>
+        <UML:Enumeration xmi.id="enum_idt_type" name="idt_type"/>
+        <UML:Enumeration xmi.id="enum_granularity" name="granularity"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

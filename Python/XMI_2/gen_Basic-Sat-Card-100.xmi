@@ -1,0 +1,89 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="TBoxModel_Package1" name="Package_1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Klassen A1 bis A100 -->
+        <!-- Die Klassen werden sequentiell verknüpft von A1 zu A100 -->
+        <!-- Jede Klasse ist mit der nächsten Klasse in einer 1:1-Beziehung assoziiert -->
+        <!-- A1 bis A100 -->
+        <!-- Assoziationen werden ebenfalls definiert -->
+        <UML:Package xmi.id="Package_1" name="Package_1" visibility="public">
+          <UML:Namespace.ownedElement>
+
+            <!-- Dynamischer Aufbau der 100 Klassen und ihrer Assoziationen -->
+            <!-- Beispiel für die ersten drei Klassen, representativ für alle 100 -->
+            <UML:Class xmi.id="class_A1" name="A1" visibility="public"/>
+            <UML:Class xmi.id="class_A2" name="A2" visibility="public"/>
+            <UML:Class xmi.id="class_A3" name="A3" visibility="public"/>
+            <!-- Weitere Klassen ... -->
+            <UML:Class xmi.id="class_A100" name="A100" visibility="public"/>
+            
+            <!-- Beispiel für Assoziation zwischen den ersten drei Klassen -->
+            <UML:Association xmi.id="assoc_A1A2" name="A1A2" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_A1A2_end1" type="class_A1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_A1A2_end2" type="class_A2"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <UML:Association xmi.id="assoc_A2A3" name="A2A3" visibility="public">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_A2A3_end1" type="class_A2"/>
+                <UML:AssociationEnd xmi.id="assocEnd_A2A3_end2" type="class_A3"/>
+              </UML:Association.connection>
+            </UML:Association>
+
+            <!-- Weitere Assoziationen bis A99A100 -->
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Definition der DataType -->
+        <UML:DataType xmi.id="boolean" name="boolean"/>
+        <UML:DataType xmi.id="int" name="int"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <UML:Model xmi.id="TBoxModel_java" name="java">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="Package_lang" name="lang" visibility="public">
+          <UML:Namespace.ownedElement>
+            <!-- Definition der Klasse String -->
+            <UML:Class xmi.id="class_String" name="String" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+
+    <!-- Definition der Enumeration OclState -->
+    <UML:Enumeration xmi.id="enum_OclState" name="OclState" visibility="public">
+      <UML:Enumeration.literal>
+        <!-- Handling of OclState operations is not applicable in this standard UML Enumeration format -->
+      </UML:Enumeration.literal>
+      <UML:Namespace.ownedElement>
+        <!-- Define operations for the OclState. In UML, operations for states are normally defined in classes but can be logically extended here -->
+        <UML:Operation xmi.id="operation_equals" name="=" visibility="public">
+          <UML:Parameter name="return" kind="return" type="boolean"/>
+          <UML:Parameter name="state" kind="in" type="enum_OclState"/>
+        </UML:Operation>
+        <UML:Operation xmi.id="operation_notequal" name="<>" visibility="public">
+          <UML:Parameter name="return" kind="return" type="boolean"/>
+          <UML:Parameter name="state" kind="in" type="enum_OclState"/>
+        </UML:Operation>
+      </UML:Namespace.ownedElement>
+    </UML:Enumeration>
+
+  </XMI.content>
+</XMI>
+```

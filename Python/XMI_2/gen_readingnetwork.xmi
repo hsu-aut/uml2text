@@ -1,0 +1,186 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Logical View - Datatypes Package -->
+        <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+            <UML:DataType xmi.id="datatype_pointerInt" name="int*"/>
+            <UML:DataType xmi.id="datatype_pointerString" name="string*"/>
+            <UML:DataType xmi.id="datatype_pointerUnsignedInt" name="unsigned int*"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Class void -->
+        <UML:Class xmi.id="class_void" name="void" visibility="public" isAbstract="false"/>
+        
+        <!-- Class node -->
+        <UML:Class xmi.id="class_node" name="node" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_numprocs" name="numprocs" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_numtask" name="numtask" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_idnode" name="idnode" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_natr" name="natr" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int*"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_setIdnode" name="setIdnode" visibility="public">
+              <UML:Parameter name="id" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_setNamenode" name="setNamenode" visibility="public">
+              <UML:Parameter name="name" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_setNumnode" name="setNumnode" visibility="public">
+              <UML:Parameter name="number" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_setNThreads" name="setNThreads" visibility="public">
+              <UML:Parameter name="threads" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_RoXKu1N7pTzq" name="RoXKu1N7pTzq" visibility="public"/>
+            <UML:Operation xmi.id="op_setValueatr" name="setValueatr" visibility="public">
+              <UML:Parameter name="value" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getNatr" name="getNatr" visibility="public">
+              <UML:Parameter name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_int*"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getValueatr" name="getValueatr" visibility="public">
+              <UML:Parameter name="return" kind="return">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class jsonfile -->
+        <UML:Class xmi.id="class_jsonfile" name="jsonfile" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_pathfile" name="pathfile" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_jsonfile_construct" name="jsonfile" visibility="public"/>
+            <UML:Operation xmi.id="op_setPathfile" name="setPathfile" visibility="public">
+              <UML:Parameter name="path" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_jsonwrite" name="jsonwrite" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Class gpu -->
+        <UML:Class xmi.id="class_gpu" name="gpu" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_deviceCount" name="deviceCount" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_name" name="name" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_string"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_major" name="major" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_minor" name="minor" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_int"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_totalGlobalMem" name="totalGlobalMem" visibility="private" changeability="changeable">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="datatype_unsignedLong"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_setDeviceCount" name="setDeviceCount" visibility="public">
+              <UML:Parameter name="count" kind="in">
+                <UML:Parameter.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:Parameter.type>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_pack" name="pack" visibility="public"/>
+            <UML:Operation xmi.id="op_setPresent" name="setPresent" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Association between node and gpu -->
+        <UML:Association xmi.id="assoc_node_gpu" name="gpuinfo" visibility="public">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_node_gpu_node" type="class_node" name="node" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_node_gpu_gpu" type="class_gpu" name="gpu" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

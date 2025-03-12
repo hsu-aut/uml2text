@@ -1,0 +1,141 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="Logical View">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="pkg_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="dt_int" name="int"/>
+            <UML:DataType xmi.id="dt_char" name="char"/>
+            <UML:DataType xmi.id="dt_boolean" name="boolean"/>
+            <UML:DataType xmi.id="dt_float" name="float"/>
+            <UML:DataType xmi.id="dt_double" name="double"/>
+            <UML:DataType xmi.id="dt_byte" name="byte"/>
+            <UML:DataType xmi.id="dt_short" name="short"/>
+            <UML:DataType xmi.id="dt_long" name="long"/>
+            <UML:DataType xmi.id="dt_String" name="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <UML:Class xmi.id="class_ItemValidator" name="ItemValidator" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_LectorDeDTD" name="Lector de DTD" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_DTDPERRO" name="DTDPERRO" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_ValidacionSintactica" name="ValidacionSintactica" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Cargador" name="Cargador" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_Validador" name="Validador" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_el" name="el" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_att" name="att" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_elBicho" name="el bicho" visibility="public" isAbstract="false"/>
+        <UML:Interface xmi.id="interface_newInterface" name="new_interface" visibility="public" isAbstract="false"/>
+        
+        <UML:Association xmi.id="assoc_ItemValidator_LectorDeDTD">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ItemValidator" type="class_ItemValidator" name="itemValidator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_LectorDeDTD" type="class_LectorDeDTD" name="lectorDeDTD" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ItemValidator_DTDPERRO">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ItemValidator_DTD" type="class_ItemValidator" name="itemValidator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DTDPERRO" type="class_DTDPERRO" name="dtdperro" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_ValidacionSintactica_LectorDeDTD">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidacionSintactica" type="class_ValidacionSintactica" name="validacionSintactica" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_LectorDeDTD_2" type="class_LectorDeDTD" name="lectorDeDTD" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ItemValidator_ValidacionSintactica">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ItemValidator_Sintactica" type="class_ItemValidator" name="itemValidator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidacionSintactica_Sintactica" type="class_ValidacionSintactica" name="validacionSintactica" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ItemValidator_Cargador">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ItemValidator_Cargador" type="class_ItemValidator" name="itemValidator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Cargador" type="class_Cargador" name="cargador" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_ValidacionSintactica_att">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidacionSintactica_att" type="class_ValidacionSintactica" name="validacionSintactica" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_att" type="class_att" name="att" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ValidacionSintactica_el">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidacionSintactica_el" type="class_ValidacionSintactica" name="validacionSintactica" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_el" type="class_el" name="el" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ItemValidator_elBicho">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ItemValidator_elBicho" type="class_ItemValidator" name="itemValidator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_elBicho" type="class_elBicho" name="elBicho" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ItemValidator_newInterface">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ItemValidator_newInterface" type="class_ItemValidator" name="itemValidator" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_newInterface" type="interface_newInterface" name="newInterface" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Cargador_LectorDeDTD">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Cargador_LectorDeDTD" type="class_Cargador" name="cargador" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_LectorDeDTD_Cargador" type="class_LectorDeDTD" name="lectorDeDTD" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_LectorDeDTD_DTDPERRO">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_LectorDeDTD_DTDPERRO" type="class_LectorDeDTD" name="lectorDeDTD" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DTDPERRO_LectorDeDTD" type="class_DTDPERRO" name="dtdperro" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ValidacionSintactica_Cargador">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidacionSintactica_Cargador" type="class_ValidacionSintactica" name="validacionSintactica" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Cargador_Validacion" type="class_Cargador" name="cargador" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ValidacionSintactica_Validador">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ValidacionSintactica_Validador" type="class_ValidacionSintactica" name="validacionSintactica" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Validador_Validacion" type="class_Validador" name="validador" visibility="public" aggregation="none" multiplicity="1..*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Composite xmi.id="composite_ItemValidator_Validador">
+          <UML:Composite.connection>
+            <UML:CompositeEnd xmi.id="compositeEnd_ItemValidator_validador" type="class_ItemValidator" name="itemValidator" visibility="public" aggregation="composite" multiplicity="1"/>
+            <UML:CompositeEnd xmi.id="compositeEnd_Validador" type="class_Validador" name="validador" visibility="public" aggregation="composite" multiplicity="1"/>
+          </UML:Composite.connection>
+        </UML:Composite>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

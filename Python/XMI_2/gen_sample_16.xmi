@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Root" name="EARootClass">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="package_LogicalModel" name="Logical Model" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Package xmi.id="package_gov" name="gov" visibility="public">
+                  <UML:Namespace.ownedElement>
+                    <UML:Package xmi.id="package_nih" name="nih" visibility="public">
+                      <UML:Namespace.ownedElement>
+                        <UML:Package xmi.id="package_nci" name="nci" visibility="public">
+                          <UML:Namespace.ownedElement>
+                            <UML:Package xmi.id="package_caadapter" name="caadapter" visibility="public">
+                              <UML:Namespace.ownedElement>
+                                <UML:Package xmi.id="package_gme" name="gme" visibility="public">
+                                  <UML:Namespace.ownedElement>
+                                    <UML:Class xmi.id="class_Book" name="Book" visibility="public" isAbstract="false">
+                                      <UML:Namespace.ownedElement>
+                                        <UML:Association xmi.id="assoc_Book_Author" name="book-author">
+                                          <UML:Association.connection>
+                                            <UML:AssociationEnd xmi.id="assocEnd_Book_Author_Book" type="class_Book" name="book" visibility="public" aggregation="none"/>
+                                            <UML:AssociationEnd xmi.id="assocEnd_Book_Author_Author" type="class_Author" name="author" visibility="public" aggregation="none"/>
+                                          </UML:Association.connection>
+                                        </UML:Association>
+                                        <UML:Attribute xmi.id="attr_bookCollection" name="bookCollection" visibility="public" aggregation="composite"/>
+                                      </UML:Namespace.ownedElement>
+                                    </UML:Class>
+                                    <UML:Class xmi.id="class_Author" name="Author" visibility="public" isAbstract="false">
+                                      <UML:Namespace.ownedElement>
+                                        <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="public">
+                                          <UML:StructuralFeature.type>
+                                            <UML:DataType xmi.idref="String"/>
+                                          </UML:StructuralFeature.type>
+                                        </UML:Attribute>
+                                        <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="public">
+                                          <UML:StructuralFeature.type>
+                                            <UML:DataType xmi.idref="String"/>
+                                          </UML:StructuralFeature.type>
+                                        </UML:Attribute>
+                                      </UML:Namespace.ownedElement>
+                                    </UML:Class>
+                                    <UML:Class xmi.id="class_Address" name="Address" visibility="public" isAbstract="false">
+                                      <UML:Namespace.ownedElement>
+                                        <UML:Attribute xmi.id="attr_city" name="city" visibility="public">
+                                          <UML:StructuralFeature.type>
+                                            <UML:DataType xmi.idref="String"/>
+                                          </UML:StructuralFeature.type>
+                                        </UML:Attribute>
+                                        <UML:Attribute xmi.id="attr_state" name="state" visibility="public">
+                                          <UML:StructuralFeature.type>
+                                            <UML:DataType xmi.idref="String"/>
+                                          </UML:StructuralFeature.type>
+                                        </UML:Attribute>
+                                        <UML:Attribute xmi.id="attr_streetLine" name="streetLine" visibility="public">
+                                          <UML:StructuralFeature.type>
+                                            <UML:DataType xmi.idref="String"/>
+                                          </UML:StructuralFeature.type>
+                                        </UML:Attribute>
+                                        <UML:Attribute xmi.id="attr_zipcode" name="zipcode" visibility="public">
+                                          <UML:StructuralFeature.type>
+                                            <UML:DataType xmi.idref="String"/>
+                                          </UML:StructuralFeature.type>
+                                        </UML:Attribute>
+                                      </UML:Namespace.ownedElement>
+                                    </UML:Class>
+                                    <UML:Class xmi.id="class_BookStore" name="BookStore" visibility="public" isAbstract="false">
+                                      <UML:Namespace.ownedElement>
+                                        <UML:Attribute xmi.id="attr_bookCollection" name="bookCollection" visibility="public" aggregation="composite"/>
+                                        <UML:Association xmi.id="assoc_BookStore_Address" name="bookstore-address">
+                                          <UML:Association.connection>
+                                            <UML:AssociationEnd xmi.id="assocEnd_BookStore_Address_BookStore" type="class_BookStore" name="bookstore" visibility="public" aggregation="none"/>
+                                            <UML:AssociationEnd xmi.id="assocEnd_BookStore_Address_Address" type="class_Address" name="address" visibility="public" aggregation="none"/>
+                                          </UML:Association.connection>
+                                        </UML:Association>
+                                      </UML:Namespace.ownedElement>
+                                    </UML:Class>
+                                  </UML:Namespace.ownedElement>
+                                </UML:Package>
+                              </UML:Namespace.ownedElement>
+                            </UML:Package>
+                          </UML:Namespace.ownedElement>
+                        </UML:Package>
+                      </UML:Namespace.ownedElement>
+                    </UML:Package>
+                  </UML:Namespace.ownedElement>
+                </UML:Package>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:DataType xmi.id="String" name="String"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

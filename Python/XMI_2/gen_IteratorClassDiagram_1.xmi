@@ -1,0 +1,137 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_SocialMediaManagement" name="SocialMediaManagement">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Schnittstelle IComponent -->
+        <UML:Interface xmi.id="interface_IComponent" name="IComponent" visibility="public" isSpecification="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_displaySelectedPhotoTags" name="displaySelectedPhotoTags" visibility="private" isSpecification="false" isQuery="true">
+              <UML:Parameter xmi.id="parameter_displaySelectedPhotoTags_return" name="return" kind="return" type="void"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Interface>
+
+        <!-- Definition der Klasse Singleton<T> -->
+        <UML:Class xmi.id="class_Singleton" name="Singleton<T>" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_T" name="T" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse FBAdapter -->
+        <UML:Class xmi.id="class_FBAdapter" name="FBAdapter" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_FBAdapter"/>
+            </UML:Generalization.child>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Singleton"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+          <UML:InterfaceRealization supplier="interface_IComponent"/>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_Login1" name="Login" visibility="public"/>
+            <UML:Operation xmi.id="operation_Login2" name="Login" visibility="public">
+              <UML:Parameter xmi.id="parameter_Login_params" name="params" kind="in" type="void"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+          <UML:AssociationEnd xmi.id="assocEnd_FBAdapter_User" type="class_FBAdapter" aggregation="none"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse FacebookAlbum -->
+        <UML:Class xmi.id="class_FacebookAlbum" name="FacebookAlbum" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_displaySelectedAlbumsPhotos" name="displaySelectedAlbumsPhotos" visibility="private"/>
+            <UML:Attribute xmi.id="attribute_m_Album" name="m_Album" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse MainWindow -->
+        <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attribute_m_FBAdapter" name="m_FBAdapter" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable"/>
+            <UML:Attribute xmi.id="attribute_m_FacebookUser" name="m_FacebookUser" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable"/>
+          </UML:Classifier.feature>
+          <UML:AssociationEnd xmi.id="assocEnd_IComponent_MainWindow" type="interface_IComponent" aggregation="none"/>
+        </UML:Class>
+
+        <!-- Definition der Klasse AlbumPhotosAggregate -->
+        <UML:Class xmi.id="class_AlbumPhotosAggregate" name="AlbumPhotosAggregate" visibility="public" isAbstract="false">
+          <UML:InterfaceRealization supplier="interface_IAggregate"/>
+          <UML:Classifier.feature>
+            <!-- Methode zur Erstellung eines Iterators -->
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse AlbumPhotosIterator -->
+        <UML:Class xmi.id="class_AlbumPhotosIterator" name="AlbumPhotosIterator" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- Definition der abstrakten Klasse Comparer -->
+        <UML:Class xmi.id="class_Comparer" name="Comparer" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="operation_ShouldSwap" name="ShouldSwap" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Spezialisierungen der Klasse Comparer -->
+        <UML:Class xmi.id="class_ComparerASCAlbumsByPhotosCount" name="ComparerASCAlbumsByPhotosCount" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Comparer"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComparerDESCAlbumsByPhotosCount" name="ComparerDESCAlbumsByPhotosCount" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Comparer"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComparerASCFriendsByAge" name="ComparerASCFriendsByAge" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Comparer"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_ComparerDESCFriendsByAge" name="ComparerDESCFriendsByAge" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Comparer"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse Sorter -->
+        <UML:Class xmi.id="class_Sorter" name="Sorter" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attribute_comparer" name="comparer" visibility="private" isSpecification="false" ownerScope="instance" changeability="changeable">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Comparer"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

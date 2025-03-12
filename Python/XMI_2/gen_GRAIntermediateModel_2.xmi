@@ -1,0 +1,107 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="enum_ExchangePattern" name="ExchangePattern" isAbstract="true" isLeaf="false" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="ep_FireAndForget" name="FIRE-AND-FORGET" visibility="public"/>
+            <UML:Attribute xmi.id="ep_RequestReply" name="REQUEST-REPLY" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_InteractionRequirements" name="InteractionRequirements" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_ServiceConsumerAuthentication" name="ServiceConsumerAuthentication" visibility="public"/>
+            <UML:Attribute xmi.id="attr_MessageIntegrity" name="MessageIntegrity" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_GRAServiceAnnotationBase" name="GRAServiceAnnotationBase" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_Name" name="Name" visibility="public"/>
+            <UML:Attribute xmi.id="attr_Documentation" name="Documentation" visibility="public"/>
+            <UML:Attribute xmi.id="attr_Template" name="Template" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_Participant" name="Participant" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_GRAServiceAnnotationBase"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Interface" name="Interface" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_GRAServiceAnnotationBase"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Service" name="Service" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_GRAServiceAnnotationBase"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_Operation" name="Operation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_GRAServiceAnnotationBase"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_ServiceDescription" name="ServiceDescription" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_MajorVersion" name="MajorVersion" visibility="public"/>
+            <UML:Attribute xmi.id="attr_ServicePurpose" name="ServicePurpose" visibility="public"/>
+            <UML:Attribute xmi.id="attr_ServiceLevelAgreement" name="ServiceLevelAgreement" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        <UML:Class xmi.id="class_ServiceInteraction" name="ServiceInteraction" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_UseCase" name="UseCase" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="class_WSDLInterface" name="WSDLInterface" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Interface"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_WSDLOperation" name="WSDLOperation" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.child>
+              <UML:Class xmi.idref="class_Operation"/>
+            </UML:Generalization.child>
+          </UML:Generalization>
+        </UML:Class>
+        <UML:Class xmi.id="class_WSDLMessage" name="WSDLMessage" visibility="public" isAbstract="false"/>
+        <UML:Association xmi.id="assoc_Operation_Parameter" name="Operation-Parameter">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Operation_Parameter_Operation" type="class_Operation" name="operation" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Operation_Parameter_Message" type="class_WSDLMessage" name="message" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_Service_Port_Provider" name="Service-Port-Provider">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Service_Port" type="class_Service" name="service" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Service_Provider" type="class_Participant" name="provider" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Association xmi.id="assoc_ServiceDescription_UseCase" name="ServiceDescription-UseCase">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ServiceDescription_UseCase" type="class_ServiceDescription" name="description" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_UseCase_RealWorldEffects" type="class_UseCase" name="useCase" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

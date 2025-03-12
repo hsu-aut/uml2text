@@ -1,0 +1,70 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BCOMModel" name="BCOMModel">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_General" name="General" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_General_feature_BMF" name="feature_BMF" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="param_General_feature_BMF_return" name="return" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_BCOM" name="BCOM" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_BCOM_feature_BMF" name="feature_BMF" visibility="public" isAbstract="false">
+              <UML:Parameter xmi.id="param_BCOM_feature_BMF_return" name="return" kind="return"/>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Boiler" name="Boiler" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Prepare" name="Prepare" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Handle" name="Handle" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_Template" name="Template" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="assoc_Boiler_BCOM">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Boiler_BCOM_BCOM" type="class_BCOM" name="bcom" visibility="public" aggregation="none" isNavigable="false" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Boiler_BCOM_Boiler" type="class_Boiler" name="boiler" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Prepare_BCOM">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Prepare_BCOM_BCOM" type="class_BCOM" name="bcom" visibility="public" aggregation="none" isNavigable="false" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Prepare_BCOM_Prepare" type="class_Prepare" name="prepare" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Handle_BCOM">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Handle_BCOM_BCOM" type="class_BCOM" name="bcom" visibility="public" aggregation="none" isNavigable="false" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Handle_BCOM_Handle" type="class_Handle" name="handle" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Template_BCOM">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Template_BCOM_BCOM" type="class_BCOM" name="bcom" visibility="public" aggregation="none" isNavigable="false" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Template_BCOM_Template" type="class_Template" name="template" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

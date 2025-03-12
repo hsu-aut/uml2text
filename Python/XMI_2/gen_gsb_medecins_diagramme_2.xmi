@@ -1,0 +1,123 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View -->
+        <!-- Datatypes Definition -->
+        <UML:DataType xmi.id="datatype_int" name="int"/>
+        <UML:DataType xmi.id="datatype_char" name="char"/>
+        <UML:DataType xmi.id="datatype_bool" name="bool"/>
+        
+        <!-- Control Package -->
+        <UML:Class xmi.id="class_Control" name="XwxPsCRHVVvH" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_init" name="init" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_processRequest" name="processRequest" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_doGet" name="doGet" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_doPost" name="doPost" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_getServletInfo" name="getServletInfo" visibility="public" isAbstract="false"/>
+            <UML:Attribute xmi.id="attr_gsb" name="gsb" visibility="private" isSpecification="false" type="class_Pays"/>
+          </UML:Classifier.feature>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_HttpServlet"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_HttpServlet" name="wK1nE3bgtYkC" visibility="public" isAbstract="false"/>
+
+        <!-- Collection Package -->
+        <UML:Class xmi.id="class_Collection" name="AR3DQMRhsjN1" visibility="public" isAbstract="true"/>
+
+        <!-- Dep Class Definition -->
+        <UML:Class xmi.id="class_Dep" name="ec0zkVDtyKqO" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_num" name="num" visibility="private" type="datatype_int"/>
+            <UML:Attribute xmi.id="attr_lesMeds" name="lesMeds" visibility="private" type="class_Collection"/>
+            <UML:Operation xmi.id="op_getNum" name="getNum" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_getLesMeds" name="getLesMeds" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_addUnMed" name="addUnMed" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_Comparable"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Spe Class Definition -->
+        <UML:Class xmi.id="class_Spe" name="xW30sgfaqOMc" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_libelle" name="libelle" visibility="private" type="datatype_char"/>
+            <UML:Attribute xmi.id="attr_lesMeds" name="lesMeds" visibility="private" type="class_Collection"/>
+            <UML:Operation xmi.id="op_getLibelle" name="getLibelle" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_getLesMeds" name="getLesMeds" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Med Class Definition -->
+        <UML:Class xmi.id="class_Med" name="M7r9a0D2e4xk" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_nom" name="nom" visibility="private" type="datatype_char"/>
+            <UML:Attribute xmi.id="attr_prenom" name="prenom" visibility="private" type="datatype_char"/>
+            <UML:Attribute xmi.id="attr_adresse" name="adresse" visibility="private" type="datatype_char"/>
+            <UML:Attribute xmi.id="attr_tel" name="tel" visibility="private" type="datatype_char"/>
+            <UML:Attribute xmi.id="attr_spe" name="spe" visibility="private" type="class_Spe"/>
+            <UML:Attribute xmi.id="attr_dep" name="dep" visibility="private" type="class_Dep"/>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private" type="datatype_int"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Pays Class Definition -->
+        <UML:Class xmi.id="class_Pays" name="gBVtkcGJIMmW" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_lesDeps" name="lesDeps" visibility="private" type="class_Collection"/>
+            <UML:Attribute xmi.id="attr_lesSpes" name="lesSpes" visibility="private" type="class_Collection"/>
+            <UML:Operation xmi.id="op_getLesDeps" name="getLesDeps" visibility="public" isAbstract="false"/>
+            <UML:Operation xmi.id="op_getLesSpes" name="getLesSpes" visibility="public" isAbstract="false"/>
+          </UML:Classifier.feature>
+          <UML:AssociationAssociationEnd>
+            <UML:AssociationEnd xmi.id="assoc_Pays_Dep" type="class_Dep" name="lesDeps" visibility="public" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assoc_Pays_Spe" type="class_Spe" name="lesSpes" visibility="public" aggregation="composite"/>
+          </UML:AssociationAssociationEnd>
+        </UML:Class>
+
+        <!-- DAO Class Definition -->
+        <UML:Class xmi.id="class_DAO" name="0ZtNVCugbAtB" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_getLesDeps" name="getLesDeps" visibility="public" isAbstract="false"/>
+          <UML:Operation xmi.id="op_getLesSpes" name="getLesSpes" visibility="public" isAbstract="false"/>
+          <UML:Operation xmi.id="op_getLesMeds" name="getLesMeds" visibility="public" isAbstract="false"/>
+        </UML:Class>
+
+        <!-- Connect Class Definition -->
+        <UML:Class xmi.id="class_Connect" name="Vxf78ZHV9f7b" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_cnx" name="cnx" visibility="private" type="datatype_char"/>
+          <UML:Operation xmi.id="op_open" name="open" visibility="public" isAbstract="false"/>
+          <UML:Operation xmi.id="op_get" name="get" visibility="public" isAbstract="false"/>
+          <UML:Operation xmi.id="op_close" name="close" visibility="public" isAbstract="false"/>
+        </UML:Class>
+
+        <!-- Comparable Class Definition -->
+        <UML:Class xmi.id="class_Comparable" name="UAymomBuCHpO" visibility="public" isAbstract="true"/>
+
+        <!-- test Package -->
+        <UML:Class xmi.id="class_Test" name="v3gSyshQjVpT" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_main" name="main" visibility="public" isAbstract="false"/>
+        </UML:Class>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

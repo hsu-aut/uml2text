@@ -1,0 +1,157 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="projectManagementModel" name="ProjectManagement">
+      <UML:Namespace.ownedElement>
+
+        <!-- Definition der Klasse hs_hr_time_event -->
+        <UML:Class xmi.id="class_hs_hr_time_event" name="hs_hr_time_event" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_time_event_id" name="time_event_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_project_id" name="project_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_activity_id" name="activity_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_employee_id" name="employee_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_timesheet_id" name="timesheet_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_start_time" name="start_time" visibility="private"/>
+            <UML:Attribute xmi.id="attr_end_time" name="end_time" visibility="private"/>
+            <UML:Attribute xmi.id="attr_reported_date" name="reported_date" visibility="private"/>
+            <UML:Attribute xmi.id="attr_duration" name="duration" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_description" name="description" type="string" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ohrm_project -->
+        <UML:Class xmi.id="class_ohrm_project" name="ohrm_project" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_project_id" name="project_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_customer_id" name="customer_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_name" name="name" type="string" visibility="private"/>
+            <UML:Attribute xmi.id="attr_description" name="description" type="string" visibility="private"/>
+            <UML:Attribute xmi.id="attr_deleted" name="deleted" type="bool" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ohrm_customer -->
+        <UML:Class xmi.id="class_ohrm_customer" name="ohrm_customer" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_customer_id" name="customer_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_name" name="name" type="string" visibility="private"/>
+            <UML:Attribute xmi.id="attr_description" name="description" type="string" visibility="private"/>
+            <UML:Attribute xmi.id="attr_deleted" name="deleted" type="bool" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse hs_hr_timesheet -->
+        <UML:Class xmi.id="class_hs_hr_timesheet" name="hs_hr_timesheet" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_timesheet_id" name="timesheet_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_employee_id" name="employee_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_timesheet_period_id" name="timesheet_period_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_start_date" name="start_date" visibility="private"/>
+            <UML:Attribute xmi.id="attr_end_date" name="end_date" visibility="private"/>
+            <UML:Attribute xmi.id="attr_status" name="status" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_comment" name="comment" type="string" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse hs_hr_timesheet_submission_period -->
+        <UML:Class xmi.id="class_hs_hr_timesheet_submission_period" name="hs_hr_timesheet_submission_period" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_timesheet_period_id" name="timesheet_period_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_name" name="name" type="string" visibility="private"/>
+            <UML:Attribute xmi.id="attr_frequency" name="frequency" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_period" name="period" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_start_day" name="start_day" visibility="private"/>
+            <UML:Attribute xmi.id="attr_end_day" name="end_day" visibility="private"/>
+            <UML:Attribute xmi.id="attr_description" name="description" type="string" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse hs_hr_employee_timesheet_period -->
+        <UML:Class xmi.id="class_hs_hr_employee_timesheet_period" name="hs_hr_employee_timesheet_period" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_timesheet_period_id" name="timesheet_period_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_employee_id" name="employee_id" type="int" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ohrm_project_activity -->
+        <UML:Class xmi.id="class_ohrm_project_activity" name="ohrm_project_activity" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_activity_id" name="activity_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_project_id" name="project_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_name" name="name" type="string" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Definition der Klasse ohrm_project_admin -->
+        <UML:Class xmi.id="class_ohrm_project_admin" name="ohrm_project_admin" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_project_id" name="project_id" type="int" visibility="private"/>
+            <UML:Attribute xmi.id="attr_emp_number" name="emp_number" type="int" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Assoziationen -->
+        <UML:Association xmi.id="assoc_ohrm_project_customer">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ohrm_project" type="class_ohrm_project" name="ohrm_project" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ohrm_customer" type="class_ohrm_customer" name="ohrm_customer" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_hs_hr_time_event_project">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_hs_hr_time_event" type="class_hs_hr_time_event" name="hs_hr_time_event" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ohrm_project" type="class_ohrm_project" name="ohrm_project" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_hs_hr_time_event_timesheet">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_hs_hr_time_event" type="class_hs_hr_time_event" name="hs_hr_time_event" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_hs_hr_timesheet" type="class_hs_hr_timesheet" name="hs_hr_timesheet" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_hs_hr_timesheet_period_submission">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_hs_hr_timesheet" type="class_hs_hr_timesheet" name="hs_hr_timesheet" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_hs_hr_timesheet_submission_period" type="class_hs_hr_timesheet_submission_period" name="hs_hr_timesheet_submission_period" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_hs_hr_employee_timesheet_period">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_hs_hr_employee_timesheet_period" type="class_hs_hr_employee_timesheet_period" name="hs_hr_employee_timesheet_period" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_hs_hr_timesheet_submission_period" type="class_hs_hr_timesheet_submission_period" name="hs_hr_timesheet_submission_period" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ohrm_project_activity_time_event">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ohrm_project_activity" type="class_ohrm_project_activity" name="ohrm_project_activity" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_hs_hr_time_event" type="class_hs_hr_time_event" name="hs_hr_time_event" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_ohrm_project_admin_project">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_ohrm_project_admin" type="class_ohrm_project_admin" name="ohrm_project_admin" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ohrm_project" type="class_ohrm_project" name="ohrm_project" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

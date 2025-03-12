@@ -1,0 +1,70 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_TimeTracker" name="TimeTracker">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_domain" name="domain">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_username" name="username" visibility="private"/>
+                <UML:Attribute xmi.id="attr_password" name="password" visibility="private"/>
+                <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="private"/>
+                <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="private"/>
+                <UML:Attribute xmi.id="attr_email" name="email" visibility="private"/>
+                <UML:Attribute xmi.id="attr_isActive" name="isActive" visibility="private"/>
+                <UML:Attribute xmi.id="attr_creationDate" name="creationDate" visibility="private"/>
+                <UML:Attribute xmi.id="attr_comment" name="comment" visibility="private"/>
+                <UML:Operation xmi.id="op_getUserDetails" name="getUserDetails" visibility="public" isQuery="true"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_TimecardStatus" name="TimecardStatus" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_status" name="status" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_Task" name="Task" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="private"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_TimeAllocation" name="TimeAllocation" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Timecard" name="Timecard" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_TimePeriod" name="TimePeriod" visibility="public" isAbstract="false"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:Package xmi.id="package_service" name="service">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_UserService" name="UserService" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_getAllUsers" name="getAllUsers" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_TimeTrackingService" name="TimeTrackingService" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_findTimecards" name="findTimecards" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_SecurityService" name="SecurityService" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_getUserDetails" name="getUserDetails" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        <UML:UseCase xmi.id="useCase_SearchTimecards" name="Search Timecards"/>
+        <UML:UseCase xmi.id="useCase_TimeTrackerHome" name="TimeTracker Home"/>
+        <UML:UseCase xmi.id="useCase_TimecardDetails" name="Timecard Details"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

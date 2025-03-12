@@ -1,0 +1,98 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_StateWidgets" name="StateWidgets">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="state_ClickOnBookmarklet" name="Click on Bookmarklet" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Intentionally left empty as state representations are abstract processes -->
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="state_KIOSlaveInvoked" name="KIO Slave Invoked" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="state_FindActiveKonqueror" name="Find Active Konqueror" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="state_GoBack" name="Go Back" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="state_CleanupHistory" name="Cleanup History" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="state_CheckJavaScript" name="Check JavaScript" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="state_CheckMetaData" name="Check MetaData" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="state_AskUser" name="Ask User" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="state_SaveMetaData" name="Save MetaData" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="state_ExecuteJS" name="Execute JS" visibility="public" isAbstract="false"/>
+
+        <!-- Associations mimicking process flow between states -->
+        <UML:Association xmi.id="assoc_ClickOnBookmarklet_KIOSlaveInvoked">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_ClickOnBookmarklet" type="state_ClickOnBookmarklet" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_KIOSlaveInvoked" type="state_KIOSlaveInvoked" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_KIOSlaveInvoked_FindActiveKonqueror">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_KIOSlaveInvoked" type="state_KIOSlaveInvoked" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_FindActiveKonqueror" type="state_FindActiveKonqueror" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_FindActiveKonqueror_GoBack">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_FindActiveKonqueror" type="state_FindActiveKonqueror" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_GoBack" type="state_GoBack" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_GoBack_CleanupHistory">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_GoBack" type="state_GoBack" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_CleanupHistory" type="state_CleanupHistory" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_CleanupHistory_CheckJavaScript">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_CleanupHistory" type="state_CleanupHistory" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_CheckJavaScript" type="state_CheckJavaScript" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_CheckJavaScript_CheckMetaData">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_CheckJavaScript" type="state_CheckJavaScript" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_CheckMetaData" type="state_CheckMetaData" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_CheckMetaData_AskUser">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_CheckMetaData" type="state_CheckMetaData" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_AskUser" type="state_AskUser" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_AskUser_SaveMetaData">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_AskUser" type="state_AskUser" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_SaveMetaData" type="state_SaveMetaData" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_SaveMetaData_ExecuteJS">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_SaveMetaData" type="state_SaveMetaData" name="source" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="end_ExecuteJS" type="state_ExecuteJS" name="target" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

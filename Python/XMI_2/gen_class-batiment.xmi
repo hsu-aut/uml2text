@@ -1,0 +1,99 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Batiment" name="Batiment" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_niveauActuel" name="niveauActuel" visibility="private"/>
+            <UML:Attribute xmi.id="attr_niveauMax" name="niveauMax" visibility="private"/>
+            <UML:Operation xmi.id="op_ameliorer" name="ameliorer" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_buyBuilding" name="buyBuilding" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_view" name="view" visibility="public"/>
+            <UML:Operation xmi.id="op_buy" name="buy" visibility="public"/>
+            <UML:Operation xmi.id="op_checkIfEnoughtMoney" name="checkIfEnoughtMoney" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_centreRecrutement" name="centre recrutement" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_view_centreRecrutement" name="view" visibility="public"/>
+            <UML:Operation xmi.id="op_newOperation" name="newOperation" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <UML:Class xmi.id="class_remiseABalait" name="remise a balait" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_view_remiseABalait" name="view" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Stade" name="Stade" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_capaciter" name="capaciter" visibility="private"/>
+            <UML:Attribute xmi.id="attr_prixPlace" name="prixPlace" visibility="private"/>
+            <UML:Operation xmi.id="op_ameliorer_Stade" name="ameliorer" visibility="public"/>
+            <UML:Operation xmi.id="op_startMatch" name="startMatch" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Fanshop" name="Fanshop" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_capaciterMax" name="capaciterMax" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Buvette" name="Buvette" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <UML:Class xmi.id="class_Hospital" name="Hospital" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_heal" name="heal" visibility="public"/>
+            <UML:Operation xmi.id="op_ViewTimeForHeal" name="ViewTimeForHeal" visibility="public"/>
+            <UML:Operation xmi.id="op_ViewMoneyForHeal" name="ViewMoneyForHeal" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_actionSurJoueur" name="actionSurJoueur" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_reserverJoueurPourDurer" name="reserverJoueurPourDurer" visibility="public"/>
+            <UML:Operation xmi.id="op_TimeNeedForAction" name="TimeNeedForAction" visibility="public"/>
+            <UML:Operation xmi.id="op_MoneyNeedForAction" name="MoneyNeedForAction" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_CentreEntrainement" name="Centre d'entrainement" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_AmeliorerAttribut" name="AmeliorerAttribut" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Class xmi.id="class_AgencePub" name="Agence de pub" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_AmeliorerReputation" name="AmeliorerReputation" visibility="public"/>
+            <UML:Operation xmi.id="op_fairePubliciter" name="fairePubliciter" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <UML:Generalization xmi.id="gen1" child="class_Stade" parent="class_Batiment"/>
+        <UML:Generalization xmi.id="gen2" child="class_buyBuilding" parent="class_Batiment"/>
+        <UML:Generalization xmi.id="gen3" child="class_centreRecrutement" parent="class_buyBuilding"/>
+        <UML:Generalization xmi.id="gen4" child="class_remiseABalait" parent="class_buyBuilding"/>
+        <UML:Generalization xmi.id="gen5" child="class_Hospital" parent="class_actionSurJoueur"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,125 @@
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Package xmi.id="package_Logical_View" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                
+                <UML:DataType xmi.id="datatype_undef" name="undef">
+                  <UML:Generalization xmi.id="gen_undef"/>
+                </UML:DataType>
+                
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <UML:Class xmi.id="class_MainWindow" name="MainWindow" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_user_list" name="user_list" type="class_UserList"/>
+                <UML:Attribute xmi.id="attr_user_details" name="user_details" type="class_UserDetails"/>
+                <UML:Attribute xmi.id="attr_bscw_interface" name="bscw_interface" type="class_BscwInterface"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_UserList" name="UserList" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_user_list_model" name="user_list_model" type="class_UserListModel"/>
+                <UML:Operation xmi.id="op_getSelection" name="getSelection"/>
+                <UML:Operation xmi.id="op_setFilter" name="setFilter"/>
+                <UML:Operation xmi.id="op_loadList" name="loadList"/>
+                <UML:Operation xmi.id="op_changeHeaderData" name="changeHeaderData"/>
+                <UML:Operation xmi.id="op_removeUser" name="removeUser"/>
+                <UML:Operation xmi.id="op_updateUserAttr" name="updateUserAttr"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_BscwInterface" name="BscwInterface" visibility="public">
+              <UML:Generalization xmi.id="gen_BscwInterface_object" parent="object"/>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_login" name="login"/>
+                <UML:Operation xmi.id="op_logout" name="logout"/>
+                <UML:Operation xmi.id="op_getAllUser" name="getAllUser"/>
+                <UML:Operation xmi.id="op_deleteUser" name="deleteUser"/>
+                <UML:Operation xmi.id="op_lockUser" name="lockUser"/>
+                <UML:Operation xmi.id="op_unlockUser" name="unlockUser"/>
+                <UML:Operation xmi.id="op_destroyTrash" name="destroyTrash"/>
+                <UML:Operation xmi.id="op_destroyClipboard" name="destroyClipboard"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_UserListModel" name="UserListModel" visibility="public">
+              <UML:Generalization xmi.id="gen_UserListModel_QAbstractTableModel" parent="QAbstractTableModel"/>
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="op_formatMemory" name="formatMemory"/>
+                <UML:Operation xmi.id="op_rowCount" name="rowCount"/>
+                <UML:Operation xmi.id="op_columnCount" name="columnCount"/>
+                <UML:Operation xmi.id="op_data" name="data"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_UserDetails" name="UserDetails" visibility="public">
+              <UML:Generalization xmi.id="gen_UserDetails_QDockWidget" parent="QDockWidget"/>
+              <UML:Generalization xmi.id="gen_UserDetails_Ui_UserDetails" parent="Ui_UserDetails"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_Use_Case_View" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <UML:Actor xmi.id="actor_Benutzer" name="Benutzer"/>
+            <UML:Actor xmi.id="actor_BSCW_Server" name="BSCW Server"/>
+
+            <UML:UseCase xmi.id="useCase_Anmelden" name="Anmelden">
+              <UML:UseCase.extensionPoint xmi.id="extension_Anmelden"/>
+            </UML:UseCase>
+            <UML:UseCase xmi.id="useCase_Benutzerdaten_anzeigen" name="Benutzerdaten anzeigen"/>
+            <UML:UseCase xmi.id="useCase_Benutzer_sperren" name="Benutzer sperren"/>
+            <UML:UseCase xmi.id="useCase_Benutzer_entsperren" name="Benutzer entsperren"/>
+            <UML:UseCase xmi.id="useCase_Benutzer_loeschen" name="Benutzer löschen"/>
+            <UML:UseCase xmi.id="useCase_Muelleimer_leeren" name="Mülleimer leeren"/>
+            <UML:UseCase xmi.id="useCase_Zwischenablage_aufraeumen" name="Zwischenablage aufräumen"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_Component_View" name="Component View">
+          <UML:Namespace.ownedElement>
+            <!-- Components can be added here as needed -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="package_Deployment_View" name="Deployment View">
+          <UML:Namespace.ownedElement>
+            <!-- Deployment elements can be added here as needed -->
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,172 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UserTimeManagement" name="UserTimeManagement">
+      <UML:Namespace.ownedElement>
+        <!-- User Class -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public" isAbstract="false" stereotype="Entity">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_username" name="username" visibility="private" type="String" taggedValue="USERNAME_INDEX"/>
+            <UML:Attribute xmi.id="attr_password_User" name="password" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_firstName" name="firstName" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_lastName" name="lastName" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_email" name="email" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_isActive" name="isActive" visibility="private" type="boolean"/>
+            <UML:Attribute xmi.id="attr_creationDate" name="creationDate" visibility="private" type="Date"/>
+            <UML:Attribute xmi.id="attr_comment" name="comment" visibility="private" type="String"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getUserDetails" name="getUserDetails" visibility="public">
+              <UML:Parameter xmi.id="param_username" name="username" kind="in" type="String"/>
+              <UML:Parameter xmi.id="param_return_User" name="return" kind="return" type="User"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- TimecardStatus Enumeration -->
+        <UML:Enumeration xmi.id="enum_TimecardStatus" name="TimecardStatus" visibility="public">
+          <UML:Enumeration.literal name="draft"/>
+          <UML:Enumeration.literal name="submitted"/>
+          <UML:Enumeration.literal name="approved"/>
+          <UML:Enumeration.literal name="rejected"/>
+        </UML:Enumeration>
+        
+        <!-- Task Class -->
+        <UML:Class xmi.id="class_Task" name="Task" visibility="public" isAbstract="false" stereotype="Entity">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_name_Task" name="name" visibility="private" type="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- TimeAllocation Class -->
+        <UML:Class xmi.id="class_TimeAllocation" name="TimeAllocation" visibility="public" isAbstract="false" stereotype="Entity">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_timePeriod" name="timePeriod" visibility="private" type="TimePeriod"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- TimePeriod Embedded Value -->
+        <UML:DataType xmi.id="embedded_TimePeriod" name="TimePeriod">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_startTime" name="startTime" visibility="private" type="Date"/>
+            <UML:Attribute xmi.id="attr_endTime" name="endTime" visibility="private" type="Date"/>
+          </UML:Namespace.ownedElement>
+        </UML:DataType>
+
+        <!-- Timecard Class -->
+        <UML:Class xmi.id="class_Timecard" name="Timecard" visibility="public" isAbstract="false" stereotype="Entity">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_status" name="status" visibility="private" type="TimecardStatus"/>
+            <UML:Attribute xmi.id="attr_startDate" name="startDate" visibility="private" type="Date"/>
+            <UML:Attribute xmi.id="attr_comments" name="comments" visibility="private" type="String"/>
+          </UML:Namespace.ownedElement>
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_addTimeAllocation" name="addTimeAllocation" visibility="public">
+              <UML:Parameter xmi.id="param_timeAllocation" name="timeAllocation" kind="in" type="TimeAllocation"/>
+              <UML:Parameter xmi.id="param_return_void" name="return" kind="return" type="void"/>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_findByCriteria" name="findByCriteria" visibility="public">
+              <UML:Parameter xmi.id="param_criteria" name="criteria" kind="in" type="TimecardSearchCriteriaVO"/>
+              <UML:Parameter xmi.id="param_return_List" name="return" kind="return" type="List"/>
+            </UML:Operation>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- UserRole Class -->
+        <UML:Class xmi.id="class_UserRole" name="UserRole" visibility="public" isAbstract="false" stereotype="Entity">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_role" name="role" visibility="private" type="Role"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Role Enumeration -->
+        <UML:Enumeration xmi.id="enum_Role" name="Role" visibility="public">
+          <UML:Enumeration.literal name="standardUser"/>
+          <UML:Enumeration.literal name="administrator"/>
+        </UML:Enumeration>
+
+        <!-- UserDetailsVO ValueObject -->
+        <UML:Class xmi.id="vo_UserDetailsVO" name="UserDetailsVO" visibility="public" isAbstract="false" stereotype="ValueObject">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_password_VO" name="password" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_email_VO" name="email" visibility="private" type="String"/>
+            <UML:Attribute xmi.id="attr_isActive_VO" name="isActive" visibility="private" type="boolean"/>
+            <UML:Attribute xmi.id="attr_creationDate_VO" name="creationDate" visibility="private" type="Date"/>
+            <UML:Attribute xmi.id="attr_userRoles" name="userRoles" visibility="private" type="List"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- TimecardVO ValueObject -->
+        <UML:Class xmi.id="vo_TimecardVO" name="TimecardVO" visibility="public" isAbstract="false" stereotype="ValueObject">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_allocations" name="allocations" visibility="private" type="Array"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- UserRoleVO ValueObject -->
+        <UML:Class xmi.id="vo_UserRoleVO" name="UserRoleVO" visibility="public" isAbstract="false" stereotype="ValueObject">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_id" name="id" visibility="private" type="Long"/>
+            <UML:Attribute xmi.id="attr_role_VO" name="role" visibility="private" type="Role"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- TimecardSearchCriteriaVO ValueObject -->
+        <UML:Class xmi.id="vo_TimecardSearchCriteriaVO" name="TimecardSearchCriteriaVO" visibility="public" isAbstract="false" stereotype="ValueObject">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_submitterId" name="submitterId" visibility="private" type="Long"/>
+            <UML:Attribute xmi.id="attr_approverId" name="approverId" visibility="private" type="Long"/>
+            <UML:Attribute xmi.id="attr_status_Criteria" name="status" visibility="private" type="TimecardStatus"/>
+            <UML:Attribute xmi.id="attr_startDateMin" name="startDateMin" visibility="private" type="Date"/>
+            <UML:Attribute xmi.id="attr_startDateMax" name="startDateMax" visibility="private" type="Date"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_User_UserRole">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_User_UserRole_User" type="class_User" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_User_UserRole_UserRole" type="class_UserRole" name="userRole" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Task_TimeAllocation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Task_TimeAllocation_Task" type="class_Task" name="task" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Task_TimeAllocation_TimeAllocation" type="class_TimeAllocation" name="timeAllocation" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Timecard_TimeAllocation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Timecard_TimeAllocation_Timecard" type="class_Timecard" name="timecard" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Timecard_TimeAllocation_TimeAllocation" type="class_TimeAllocation" name="timeAllocation" visibility="public" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Timecard_User">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Timecard_User_Timecard" type="class_Timecard" name="submitter" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Timecard_User_User" type="class_User" name="user" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:DataType xmi.id="String" name="String"/>
+        <UML:DataType xmi.id="Date" name="Date"/>
+        <UML:DataType xmi.id="boolean" name="boolean"/>
+        <UML:DataType xmi.id="Long" name="Long"/>
+        <UML:DataType xmi.id="Array" name="Array"/>
+        <UML:DataType xmi.id="List" name="List"/>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

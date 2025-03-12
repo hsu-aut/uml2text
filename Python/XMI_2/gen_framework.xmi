@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_LogicalView" name="LogicalView">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Datatypes -->
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="float" name="float"/>
+        <UML:DataType xmi.id="double" name="double"/>
+        <UML:DataType xmi.id="short" name="short"/>
+        <UML:DataType xmi.id="long" name="long"/>
+        <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+        <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+        <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+        <UML:DataType xmi.id="string" name="string"/>
+
+        <!-- Definition der Klasse Transformer -->
+        <UML:Class xmi.id="class_Transformer" name="Transformer" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_toJSON" name="toJSON"/>
+            <UML:Operation xmi.id="op_toDOM" name="toDOM"/>
+            <UML:Operation xmi.id="op_toXML" name="toXML"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Entity -->
+        <UML:Class xmi.id="class_Entity" name="Entity" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_setGlobalData" name="setGlobalData"/>
+            <UML:Operation xmi.id="op_setSlotData" name="setSlotData"/>
+            <UML:Operation xmi.id="op_loadArray" name="loadArray"/>
+            <UML:Operation xmi.id="op_loadObject" name="loadObject"/>
+          </UML:Classifier.feature>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.id="interface_Serializable" name="Serializable"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse Form -->
+        <UML:Class xmi.id="class_Form" name="Form" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_toHTML" name="toHTML"/>
+            <UML:Operation xmi.id="op_setFlagAndFunction" name="setFlagAndFunction"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse Errors -->
+        <UML:Class xmi.id="class_Errors" name="Errors" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_exist" name="exist"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Schnittstelle Serializable -->
+        <UML:Interface xmi.id="interface_Serializable" name="Serializable" visibility="public"/>
+  
+        <!-- Definition der Klasse EList -->
+        <UML:Class xmi.id="class_EList" name="EList" visibility="public">
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Interface xmi.id="interface_Iterator" name="Iterator"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Definition der Klasse DBConnection -->
+        <UML:Class xmi.id="class_DBConnection" name="DBConnection" visibility="public" isAbstract="true">
+        </UML:Class>
+
+        <!-- Definition der Klasse DBCommon -->
+        <UML:Class xmi.id="class_DBCommon" name="DBCommon" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_loadEntity" name="loadEntity"/>
+            <UML:Operation xmi.id="op_saveEntity" name="saveEntity"/>
+            <UML:Operation xmi.id="op_deleteEntity" name="deleteEntity"/>
+            <UML:Operation xmi.id="op_findEntity" name="findEntity"/>
+            <UML:Operation xmi.id="op_loadEList" name="loadEList"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- Definition der Klasse DBError -->
+        <UML:Class xmi.id="class_DBError" name="DBError" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse User -->
+        <UML:Class xmi.id="class_User" name="User" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse Track -->
+        <UML:Class xmi.id="class_Track" name="Track" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse Login -->
+        <UML:Class xmi.id="class_Login" name="Login" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse Order -->
+        <UML:Class xmi.id="class_Order" name="Order" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse Item -->
+        <UML:Class xmi.id="class_Item" name="Item" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse Orderlist -->
+        <UML:Class xmi.id="class_Orderlist" name="Orderlist" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse Tracklist -->
+        <UML:Class xmi.id="class_Tracklist" name="Tracklist" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse new_class -->
+        <UML:Class xmi.id="class_new_class" name="new_class" visibility="public">
+        </UML:Class>
+
+        <!-- Definition der Klasse Items -->
+        <UML:Class xmi.id="class_Items" name="Items" visibility="public">
+        </UML:Class>
+
+        <!-- Assoziationen -->
+
+        <UML:Association xmi.id="assoc_Transformer_Entity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Transformer" type="class_Transformer"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity" type="class_Entity"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Form_Errors">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Form" type="class_Form"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Errors" type="class_Errors" aggregation="aggregate"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Form_Entity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Form" type="class_Form"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity" type="class_Entity"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_EList_Entity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_EList" type="class_EList" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity" type="class_Entity"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DBCommon_DBConnection">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DBCommon" type="class_DBCommon"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DBConnection" type="class_DBConnection"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DBCommon_EList">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DBCommon" type="class_DBCommon"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EList" type="class_EList"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_DBError_DBConnection">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_DBError" type="class_DBError"/>
+            <UML:AssociationEnd xmi.id="assocEnd_DBConnection" type="class_DBConnection"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Login_Entity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Login" type="class_Login"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity" type="class_Entity"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Order_Entity">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Order" type="class_Order"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Entity" type="class_Entity"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Order_Item">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Order" type="class_Order" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_Item" type="class_Item"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_Items_EList">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Items" type="class_Items"/>
+            <UML:AssociationEnd xmi.id="assocEnd_EList" type="class_EList"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Kount" name="Kount">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Hauptklasse "Kount" -->
+        <UML:Class xmi.id="class_Kount" name="Kount" visibility="public" isAbstract="false"/>
+
+        <!-- Definition der Klasse "Kount_Ris_ArraySettings" -->
+        <UML:Class xmi.id="class_Kount_Ris_ArraySettings" name="Kount_Ris_ArraySettings" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_settings" name="settings" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_construct" name="__construct" visibility="public"/>
+            <UML:Operation xmi.id="op_getMerchantId" name="getMerchantId" visibility="public"/>
+            <UML:Operation xmi.id="op_getApiKey" name="getApiKey" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition der abstrakten Klasse "Kount_Ris_Request" -->
+        <UML:Class xmi.id="class_Kount_Ris_Request" name="Kount_Ris_Request" visibility="public" isAbstract="true">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_VERSION" name="VERSION" visibility="public">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="String"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_data" name="data" visibility="protected">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Definition des Interfaces "Kount_Ris_Settings" -->
+        <UML:Interface xmi.id="interface_Kount_Ris_Settings" name="Kount_Ris_Settings" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_getMerchantId_interface" name="getMerchantId" visibility="public"/>
+            <UML:Operation xmi.id="op_getRisUrl" name="getRisUrl" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <!-- Definition des Interfaces "Kount_Log_Binding_Logger" -->
+        <UML:Interface xmi.id="interface_Kount_Log_Binding_Logger" name="Kount_Log_Binding_Logger" visibility="public">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_debug" name="debug" visibility="public"/>
+            <UML:Operation xmi.id="op_info" name="info" visibility="public"/>
+            <UML:Operation xmi.id="op_warn" name="warn" visibility="public"/>
+            <UML:Operation xmi.id="op_error" name="error" visibility="public"/>
+            <UML:Operation xmi.id="op_fatal" name="fatal" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Interface>
+        
+        <!-- Definition der Klasse "Kount_Log_Binding_NopLogger" -->
+        <UML:Class xmi.id="class_Kount_Log_Binding_NopLogger" name="Kount_Log_Binding_NopLogger" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Realization>
+              <UML:Supplier>
+                <UML:Class xmi.idref="interface_Kount_Log_Binding_Logger"/>
+              </UML:Supplier>
+            </UML:Realization>
+            <UML:Operation xmi.id="op_debug_nop" name="debug" visibility="public"/>
+            <UML:Operation xmi.id="op_info_nop" name="info" visibility="public"/>
+            <UML:Operation xmi.id="op_warn_nop" name="warn" visibility="public"/>
+            <UML:Operation xmi.id="op_error_nop" name="error" visibility="public"/>
+            <UML:Operation xmi.id="op_fatal_nop" name="fatal" visibility="public"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+        
+        <!-- Definition der Klasse "Kount_Log_Factory_LogFactory" -->
+        <UML:Class xmi.id="class_Kount_Log_Factory_LogFactory" name="Kount_Log_Factory_LogFactory" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Ausnahme "Kount_Ris_IllegalArgumentException" -->
+        <UML:Class xmi.id="class_Kount_Ris_IllegalArgumentException" name="Kount_Ris_IllegalArgumentException" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Ausnahme "Kount_Ris_ValidationException" -->
+        <UML:Class xmi.id="class_Kount_Ris_ValidationException" name="Kount_Ris_ValidationException" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Kount_Ris_Data_KcEvent" -->
+        <UML:Class xmi.id="class_Kount_Ris_Data_KcEvent" name="Kount_Ris_Data_KcEvent" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der Klasse "Kount_Ris_Data_CartItem" -->
+        <UML:Class xmi.id="class_Kount_Ris_Data_CartItem" name="Kount_Ris_Data_CartItem" visibility="public" isAbstract="false"/>
+        
+        <!-- Datentypen -->
+        <UML:DataType xmi.id="String" name="string"/>
+        <UML:DataType xmi.id="Array" name="array"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

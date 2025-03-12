@@ -1,0 +1,123 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML Model">
+      <UML:Namespace.ownedElement>
+        
+        <UML:Class xmi.id="class_disk_drive" name="disk_drive" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_DriveLabel" name="DriveLabel" visibility="private"/>
+            <UML:Attribute xmi.id="attr_DriveSizeInBytes" name="DriveSizeInBytes" visibility="private"/>
+            
+            <UML:Class xmi.id="struct_partition" name="partition" visibility="public" isAbstract="false"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_DiskManager" name="DiskManager" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_updateDiskDetails" name="updateDiskDetails"/>
+            <UML:Operation xmi.id="op_queryDiskDetails" name="queryDiskDetails"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_ScrubPattern" name="ScrubPattern" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_ScrubPass" name="ScrubPass" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Enumeration xmi.id="enum_PASS_TYPE" name="PASS_TYPE">
+              <UML:Enumeration.literal>
+                <UML:Literal name="NORMAL"/>
+                <UML:Literal name="VERIFY"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_Scrubber" name="Scrubber" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_workMode" name="workMode" visibility="private"/>
+            <UML:Attribute xmi.id="attr_patterns" name="patterns" visibility="private"/>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_ScrubLogger" name="ScrubLogger" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Enumeration xmi.id="enum_MSG_TYPE" name="MSG_TYPE">
+              <UML:Enumeration.literal>
+                <UML:Literal name="SCRUB_START"/>
+                <UML:Literal name="SCRUB_END"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_Shredder" name="Shredder" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_ShredThread" name="ShredThread" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization.general>
+              <UML:Class xmi.idref="class_QThread"/>
+            </UML:Generalization.general>
+          </UML:Generalization>
+        </UML:Class>
+
+        
+        <UML:Class xmi.id="class_QMainWindow" name="QMainWindow" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_QDialog" name="QDialog" visibility="public" isAbstract="true"/>
+        
+        <UML:Class xmi.id="class_Histogram" name="Histogram" visibility="public" isAbstract="false"/>
+        
+        <UML:Class xmi.id="class_InputDialog" name="InputDialog" visibility="public" isAbstract="false"/>
+        
+        <UML:Generalization xmi.id="gen_ShredThread_QThread" child="class_ShredThread" parent="class_QThread"/>
+
+        <UML:Association xmi.id="assoc_Scrubber_ScrubLogger">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_Scrubber" type="class_Scrubber" name="scrubber" visibility="public" aggregation="none"/>
+            <UML:AssociationEnd xmi.id="assocEnd_ScrubLogger" type="class_ScrubLogger" name="scrubLogger" visibility="public" aggregation="none"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Aggregation xmi.id="agg_disk_drive_partition">
+          <UML:Aggregation.aggregate>
+            <UML:Class xmi.idref="class_disk_drive"/>
+          </UML:Aggregation.aggregate>
+          <UML:Aggregation.part>
+            <UML:Class xmi.idref="struct_partition"/>
+          </UML:Aggregation.part>
+        </UML:Aggregation>
+
+        <UML:Aggregation xmi.id="agg_DiskManager_disk_drive">
+          <UML:Aggregation.aggregate>
+            <UML:Class xmi.idref="class_DiskManager"/>
+          </UML:Aggregation.aggregate>
+          <UML:Aggregation.part>
+            <UML:Class xmi.idref="class_disk_drive"/>
+          </UML:Aggregation.part>
+        </UML:Aggregation>
+
+        <UML:DataType xmi.id="int" name="int"/>
+        <UML:DataType xmi.id="char" name="char"/>
+        <UML:DataType xmi.id="bool" name="bool"/>
+        <UML:DataType xmi.id="std_vector" name="std::vector<...>"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

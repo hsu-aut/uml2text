@@ -1,0 +1,99 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <!-- Veritas::Test Class -->
+        <UML:Class xmi.id="LjL5P9mmFA3d" name="Veritas::Test" visibility="public" isAbstract="true">
+        </UML:Class>
+
+        <!-- QTest::Case Class -->
+        <UML:Class xmi.id="bcpJqpOmahvv" name="QTest::Case" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization xmi.idref="LjL5P9mmFA3d"/>
+          </UML:Generalization>
+        </UML:Class>
+        
+        <!-- QTest::Command Class -->
+        <UML:Class xmi.id="AACt7QAN26bF" name="QTest::Command" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization xmi.idref="LjL5P9mmFA3d"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- QTest::Suite Class -->
+        <UML:Class xmi.id="iMroFQO4jCt5" name="QTest::Suite" visibility="public" isAbstract="false">
+          <UML:Generalization>
+            <UML:Generalization xmi.idref="LjL5P9mmFA3d"/>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- QTest::SuiteBuilder Class -->
+        <UML:Class xmi.id="yUnrPzwY98PF" name="QTest::SuiteBuilder" visibility="public" isAbstract="false"></UML:Class>
+
+        <!-- QTest::ModelBuilder Class -->
+        <UML:Class xmi.id="5TqmghqeBdWZ" name="QTest::ModelBuilder" visibility="public" isAbstract="false">
+        </UML:Class>
+
+        <!-- QTest::Executable Class -->
+        <UML:Class xmi.id="MqI1iKhiBqjp" name="QTest::Executable" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+            <UML:Operation xmi.id="op_fetchFunctions" name="fetchFunctions" visibility="public"/>
+          </UML:Classifier.feature>
+        </UML:Class>
+
+        <!-- QTest::OutputParser Class -->
+        <UML:Class xmi.id="ffKleePx0DG0" name="QTest::OutputParser" visibility="public" isAbstract="false"></UML:Class>
+
+        <!-- QTest::OutputMorpher Class -->
+        <UML:Class xmi.id="hdlXKZl9oLWk" name="QTest::OutputMorpher" visibility="public" isAbstract="false"></UML:Class>
+
+        <!-- Veritas::TestTreeBuilder Interface -->
+        <UML:Interface xmi.id="n42EHVS9jYWK" name="Veritas::TestTreeBuilder" visibility="public"></UML:Interface>
+
+        <!-- QTest::XMLRegister Class -->
+        <UML:Class xmi.id="2yrrQkXUZTOo" name="QTest::XMLRegister" visibility="public" isAbstract="false"></UML:Class>
+
+        <!-- Associations and Aggregations -->
+
+        <!-- QTest::SuiteBuilder Composition with QTest::XMLRegister -->
+        <UML:Association xmi.id="assoc1">
+          <UML:AssociationEnd xmi.id="assocEnd1_1" type="yUnrPzwY98PF" name="suiteBuilder" visibility="public" aggregation="composite"/>
+          <UML:AssociationEnd xmi.id="assocEnd1_2" type="2yrrQkXUZTOo" name="xmlRegister" visibility="public"/>
+        </UML:Association>
+
+        <!-- QTest::SuiteBuilder Aggregation with QTest::ModelBuilder -->
+        <UML:Association xmi.id="assoc2">
+          <UML:AssociationEnd xmi.id="assocEnd2_1" type="yUnrPzwY98PF" name="suiteBuilder" visibility="public" aggregation="aggregate"/>
+          <UML:AssociationEnd xmi.id="assocEnd2_2" type="5TqmghqeBdWZ" name="modelBuilder" visibility="public"/>
+        </UML:Association>
+
+        <!-- QTest::Case Aggregation with QTest::Command -->
+        <UML:Association xmi.id="assoc3">
+          <UML:AssociationEnd xmi.id="assocEnd3_1" type="bcpJqpOmahvv" name="testcase" visibility="public" aggregation="aggregate"/>
+          <UML:AssociationEnd xmi.id="assocEnd3_2" type="AACt7QAN26bF" name="command" visibility="public"/>
+        </UML:Association>
+
+        <!-- QTest::Case Composition with QTest::Suite -->
+        <UML:Association xmi.id="assoc4">
+          <UML:AssociationEnd xmi.id="assocEnd4_1" type="bcpJqpOmahvv" name="case" visibility="public" aggregation="composite"/>
+          <UML:AssociationEnd xmi.id="assocEnd4_2" type="iMroFQO4jCt5" name="suite" visibility="public"/>
+        </UML:Association>
+
+        <!-- QTest::ViewData Association not previously defined -->
+        <!-- Additional associations if needed -->
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

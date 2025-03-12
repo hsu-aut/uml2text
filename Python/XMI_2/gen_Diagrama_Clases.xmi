@@ -1,0 +1,137 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_1" name="Modelo UML">
+      <UML:Namespace.ownedElement>
+        <!-- Definition der Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder" />
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype" />
+        <UML:Stereotype xmi.id="stereotype_typedef" name="typedef" />
+        <UML:Stereotype xmi.id="stereotype_enum" name="enum" />
+        <UML:Stereotype xmi.id="stereotype_constructor" name="constructor" />
+        
+        <!-- Paket: Logical View -->
+        <UML:Package xmi.id="package_logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <!-- Paket: Datatypes -->
+            <UML:Package xmi.id="package_datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <!-- Primitive Datatypes -->
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <!-- Erweiterte Primitive Datatypes -->
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <!-- Komplexere Datatypes -->
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_char_ptr" name="char*"/>
+                <UML:DataType xmi.id="datatype_qwidget_ptr" name="QWidget*"/>
+                <UML:DataType xmi.id="datatype_qgraphicsscene_ptr" name="QGraphicsScene*"/>
+                <UML:DataType xmi.id="datatype_qimage_ptr" name="QImage*"/>
+                <UML:DataType xmi.id="datatype_iplimage_ptr" name="IplImage*"/>
+                <UML:DataType xmi.id="datatype_imageimpro_ptr" name="ImageImPro*"/>
+                <UML:DataType xmi.id="datatype_openimprolib_ptr" name="OpenImProLib*"/>
+                <UML:DataType xmi.id="datatype_controller_ptr" name="Controller*"/>
+                <UML:DataType xmi.id="datatype_ui_mainwindow_ptr" name="Ui::MainWindow*"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Klassen in Logical View -->
+            <UML:Class xmi.id="class_QImage" name="QImage" />
+            <UML:Class xmi.id="class_IplImage" name="IplImage" />
+            
+            <UML:Class xmi.id="class_ImageImPro" name="ImageImPro" visibility="public" isAbstract="true" />
+            <UML:Class xmi.id="class_ImageImProDepth" name="ImageImProDepth">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Classifier xmi.idref="class_ImageImProDepth"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Classifier xmi.idref="class_ImageImPro"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+
+            <UML:Class xmi.id="class_OpenImProLib" name="OpenImProLib" visibility="public" isAbstract="true" />
+            
+            <UML:Class xmi.id="class_ImageImPro_OpenCvImpl" name="ImageImPro_OpenCvImpl">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Classifier xmi.idref="class_ImageImPro_OpenCvImpl"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Classifier xmi.idref="class_ImageImPro"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_OpenImProLib_OpenCvImpl" name="OpenImProLib_OpenCvImpl">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Classifier xmi.idref="class_OpenImProLib_OpenCvImpl"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Classifier xmi.idref="class_OpenImProLib"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_ThresholdType" name="ThresholdType" />
+            
+            <UML:Class xmi.id="class_exception" name="exception" />
+            
+            <UML:Class xmi.id="class_ControllerException" name="ControllerException">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Classifier xmi.idref="class_ControllerException"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Classifier xmi.idref="class_exception"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+            <UML:Class xmi.id="class_MainWindow" name="MainWindow">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Classifier xmi.idref="class_MainWindow"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Classifier name="QMainWindow"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <!-- Ui Paket -->
+        <UML:Package xmi.id="package_ui" name="Ui">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Ui_MainWindow" name="MainWindow" />
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- Beziehungen -->
+        <UML:Dependency xmi.id="dependency_Controller_ImageImPro" supplier="class_ImageImPro" client="class_ControllerException" />
+        <UML:Dependency xmi.id="dependency_Controller_OpenImProLib" supplier="class_OpenImProLib" client="class_ControllerException" />
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

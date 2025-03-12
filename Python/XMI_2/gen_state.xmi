@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Main" name="MainModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- Logical View - Datatypes -->
+        <UML:Package xmi.id="package_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:DataType xmi.id="datatype_int" name="int"/>
+            <UML:DataType xmi.id="datatype_char" name="char"/>
+            <UML:DataType xmi.id="datatype_bool" name="bool"/>
+            <UML:DataType xmi.id="datatype_float" name="float"/>
+            <UML:DataType xmi.id="datatype_double" name="double"/>
+            <UML:DataType xmi.id="datatype_short" name="short"/>
+            <UML:DataType xmi.id="datatype_long" name="long"/>
+            <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+            <UML:DataType xmi.id="datatype_unsigned_short" name="unsigned short"/>
+            <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+            <UML:DataType xmi.id="datatype_string" name="string"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+        
+        <!-- State Diagram - State Machine -->
+        <UML:StateMachine xmi.id="stateMachine_state" name="state">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="state_Top" name="Top">
+              <UML:CompositeState.subvertex>
+                <UML:SimpleState xmi.id="state_Opened" name="opened"/>
+                <UML:SimpleState xmi.id="state_Ready" name="ready"/>
+                <UML:SimpleState xmi.id="state_Closed" name="closed"/>
+              </UML:CompositeState.subvertex>
+              <UML:Transition xmi.id="transition_kdbOpen">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="state_Top"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="state_Opened"/>
+                </UML:Transition.target>
+                <UML:Transition.effect>
+                  <UML:CallAction xmi.id="action_kdbOpen" name="kdbOpen()"/>
+                </UML:Transition.effect>
+              </UML:Transition>
+              <UML:Transition xmi.id="transition_kdbGet">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="state_Opened"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="state_Ready"/>
+                </UML:Transition.target>
+                <UML:Transition.effect>
+                  <UML:CallAction xmi.id="action_kdbGet" name="kdbGet()"/>
+                </UML:Transition.effect>
+              </UML:Transition>
+              <UML:Transition xmi.id="transition_kdbSet_successful">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="state_Ready"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="state_Opened"/>
+                </UML:Transition.target>
+                <UML:Transition.effect>
+                  <UML:CallAction xmi.id="action_kdbSet_successful" name="kdbSet() [successful]"/>
+                </UML:Transition.effect>
+              </UML:Transition>
+              <UML:Transition xmi.id="transition_kdbSet_conflict">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="state_Ready"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="state_Closed"/>
+                </UML:Transition.target>
+                <UML:Transition.effect>
+                  <UML:CallAction xmi.id="action_kdbSet_conflict" name="kdbSet() [conflict]"/>
+                </UML:Transition.effect>
+              </UML:Transition>
+              <UML:Transition xmi.id="transition_kdbClose">
+                <UML:Transition.source>
+                  <UML:State xmi.idref="state_Ready"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:State xmi.idref="state_Closed"/>
+                </UML:Transition.target>
+                <UML:Transition.effect>
+                  <UML:CallAction xmi.id="action_kdbClose" name="kdbClose()"/>
+                </UML:Transition.effect>
+              </UML:Transition>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

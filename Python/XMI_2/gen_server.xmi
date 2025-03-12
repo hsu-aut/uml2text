@@ -1,0 +1,107 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="package_LogicalView" name="Logical View" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_Int" name="int"/>
+                <UML:DataType xmi.id="datatype_Char" name="char"/>
+                <UML:DataType xmi.id="datatype_Bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_Float" name="float"/>
+                <UML:DataType xmi.id="datatype_Double" name="double"/>
+                <UML:DataType xmi.id="datatype_Short" name="short"/>
+                <UML:DataType xmi.id="datatype_Long" name="long"/>
+                <UML:DataType xmi.id="datatype_UnsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_UnsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_UnsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_String" name="string"/>
+                <UML:DataType xmi.id="datatype_Boolean" name="boolean"/>
+                <UML:DataType xmi.id="datatype_Byte" name="byte"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- Important Classes -->
+            <UML:Class xmi.id="class_List" name="List" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_MessageConsumer" name="MessageConsumer" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Session" name="Session" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Connection" name="Connection" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Long" name="Long" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_BigDecimal" name="BigDecimal" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Map" name="Map" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_Keys" name="Keys" visibility="public"/>
+                <UML:Attribute xmi.id="attr_Values" name="Values" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_MessageProducer" name="MessageProducer" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Date" name="Date" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_SimpleDateFormat" name="SimpleDateFormat" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Document" name="Document" visibility="public" isAbstract="false"/>
+            <UML:Interface xmi.id="interface_Runnable" name="Runnable" visibility="public">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_Run" name="run" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Interface>
+            
+            <!-- StockIndex and Implementations -->
+            <UML:Class xmi.id="class_StockIndex" name="StockIndex" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Attribute xmi.id="attr_id" name="id" visibility="public" type="datatype_String"/>
+                <UML:Attribute xmi.id="attr_key" name="key" visibility="public" type="datatype_String"/>
+                <UML:Attribute xmi.id="attr_name" name="name" visibility="public" type="datatype_String"/>
+                <UML:Attribute xmi.id="attr_value" name="value" visibility="public" type="datatype_Double"/>
+                <UML:Attribute xmi.id="attr_change" name="change" visibility="public" type="datatype_Double"/>
+                <UML:Attribute xmi.id="attr_timestamp" name="timestamp" visibility="public" type="datatype_Date"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Interface xmi.id="interface_StockIndexProvider" name="StockIndexProvider" visibility="public"/>
+            <UML:Class xmi.id="class_BankierStockIndexProvider" name="BankierStockIndexProvider" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_BankierStockIndexProvider"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_StockIndexProvider"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_SampleStockIndexProvider" name="SampleStockIndexProvider" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child>
+                  <UML:Class xmi.idref="class_SampleStockIndexProvider"/>
+                </UML:Generalization.child>
+                <UML:Generalization.parent>
+                  <UML:Interface xmi.idref="interface_StockIndexProvider"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+            </UML:Class>
+            <UML:Class xmi.id="class_StockIndexPublisher" name="StockIndexPublisher" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_StockIndexSubscriber" name="StockIndexSubscriber" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_App" name="App" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <UML:Operation xmi.id="operation_Main" name="main" visibility="public"/>
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- StockIndexListener Interface -->
+            <UML:Interface xmi.id="interface_StockIndexListener" name="StockIndexListener" visibility="public"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,88 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <!-- Package "Surgery" -->
+    <UML:Model xmi.id="pkg_Surgery" name="Surgery">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Klasse "SurgeryVisit" -->
+        <UML:Class xmi.id="class_SurgeryVisit" name="SurgeryVisit" visibility="public" isAbstract="false"></UML:Class>
+        
+        <!-- Klasse "SurgeryInitialVisit" -->
+        <UML:Class xmi.id="class_SurgeryInitialVisit" name="SurgeryInitialVisit" visibility="public" isAbstract="false"></UML:Class>
+        
+        <!-- Klasse "InitialIntraoperativeProgress" -->
+        <UML:Class xmi.id="class_InitialIntraoperativeProgress" name="InitialIntraoperativeProgress" visibility="public" isAbstract="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="attr_anesthesia" name="anesthesia" visibility="private"></UML:Attribute>
+            <UML:Attribute xmi.id="attr_complications" name="complications" visibility="private"></UML:Attribute>
+            <UML:Attribute xmi.id="attr_bloodLossOrReplacement" name="bloodLossOrReplacement" visibility="private"></UML:Attribute>
+          </UML:Classifier.feature>
+        </UML:Class>
+        
+        <!-- Klasse "InitialSiteOfSurgery" -->
+        <UML:Class xmi.id="class_InitialSiteOfSurgery" name="InitialSiteOfSurgery" visibility="public" isAbstract="false"></UML:Class>
+        
+        <!-- Klasse "SurgeryFollowUpVisit" -->
+        <UML:Class xmi.id="class_SurgeryFollowUpVisit" name="SurgeryFollowUpVisit" visibility="public" isAbstract="false"></UML:Class>
+        
+        <!-- Assoziationen im Package "Surgery" -->
+        <UML:Association xmi.id="assoc_SurgeryVisit_InitialVisit">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SurgeryVisit_InitialVisit" type="class_SurgeryVisit" name="initialVisit" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SurgeryVisit_Initial" type="class_SurgeryInitialVisit" name="surgeryInitialVisit" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_SurgeryVisit_FollowUpVisit">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_SurgeryVisit_FollowUp" type="class_SurgeryVisit" name="followUpVisit" visibility="public"/>
+            <UML:AssociationEnd xmi.id="assocEnd_SurgeryVisit_FollowUp_Visit" type="class_SurgeryFollowUpVisit" name="surgeryFollowUpVisit" visibility="public"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+    
+    <!-- Package "java" -->
+    <UML:Model xmi.id="pkg_java" name="java">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Long" name="Long" visibility="public" isAbstract="false"></UML:Class>
+        <UML:Class xmi.id="class_String" name="String" visibility="public" isAbstract="false"></UML:Class>
+        <UML:Class xmi.id="class_Float" name="Float" visibility="public" isAbstract="false"></UML:Class>
+        <UML:Class xmi.id="class_Integer" name="Integer" visibility="public" isAbstract="false"></UML:Class>
+        <UML:Class xmi.id="class_Boolean" name="Boolean" visibility="public" isAbstract="false"></UML:Class>
+        <UML:Class xmi.id="class_Double" name="Double" visibility="public" isAbstract="false"></UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+    
+    <!-- Package "util" -->
+    <UML:Model xmi.id="pkg_util" name="util">
+      <UML:Namespace.ownedElement>
+        <UML:Class xmi.id="class_Collection" name="Collection" visibility="public" isAbstract="false"></UML:Class>
+        <UML:Class xmi.id="class_Date" name="Date" visibility="public" isAbstract="false"></UML:Class>
+        <UML:Class xmi.id="class_Time" name="Time" visibility="public" isAbstract="false"></UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+    
+    <!-- Additional Classes -->
+    <UML:Class xmi.id="class_Relapse" name="Relapse" visibility="public" isAbstract="false">
+      <UML:Classifier.feature>
+        <UML:Attribute xmi.id="attr_dateOfRelapse" name="dateOfRelapse" visibility="private"></UML:Attribute>
+        <UML:Attribute xmi.id="attr_responseToLastSurgery" name="responseToLastSurgery" visibility="private"></UML:Attribute>
+      </UML:Classifier.feature>
+    </UML:Class>
+    
+    <UML:Class xmi.id="class_FollowUpIntraoperativeProgress" name="FollowUpIntraoperativeProgress" visibility="public" isAbstract="false"></UML:Class>
+    
+  </XMI.content>
+</XMI>
+```

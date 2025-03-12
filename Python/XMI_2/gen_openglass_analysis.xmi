@@ -1,0 +1,160 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+      
+        <UML:Package xmi.id="pkg_LogicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="pkg_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="unsigned_short" name="unsigned short"/>
+                <UML:DataType xmi.id="unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            
+            <!-- Message Class -->
+            <UML:Class xmi.id="trTC4GdgssAu" name="Message" visibility="public" isAbstract="false">
+              <UML:Generalization>
+                <UML:Generalization.child xmi.idref="trTC4GdgssAu"/>
+                <UML:Generalization.parent xmi.idref="x8axxwypdQ0z"/>
+              </UML:Generalization>
+              <UML:Attribute xmi.id="attr_Message_aggregation1" name="TestCase" type="5aKWgHPIFupR" aggregation="composite"/>
+              <UML:Attribute xmi.id="attr_Message_aggregation2" name="Tags" type="ad0TxxSPzKrc" aggregation="composite"/>
+              <UML:Attribute xmi.id="attr_Message_aggregation3" name="MessageParser" type="QiNft84zgOTM" aggregation="composite"/>
+            </UML:Class>
+
+            <!-- TestCase Class -->
+            <UML:Class xmi.id="5aKWgHPIFupR" name="TestCase" visibility="public" isAbstract="false">
+              <!-- Associations with other classes -->
+            </UML:Class>
+
+            <!-- Admin Class -->
+            <UML:Class xmi.id="b7X4HaLuGDnP" name="Admin" visibility="public" isAbstract="false"/>
+
+            <!-- Scheduler Class -->
+            <UML:Class xmi.id="cstfm6LLDqPS" name="Scheduler" visibility="public" isAbstract="false"/>
+
+            <!-- MessageParser Class -->
+            <UML:Class xmi.id="QiNft84zgOTM" name="MessageParser" visibility="public" isAbstract="false"/>
+
+            <!-- Event Class -->
+            <UML:Class xmi.id="I9z2FKNR9ltX" name="Event" visibility="public" isAbstract="false"/>
+
+            <!-- ProtocolConnection Interface -->
+            <UML:Interface xmi.id="3cnNDe04MRKh" name="ProtocolConnection" visibility="public"/>
+
+            <!-- TestCaseConfig Class -->
+            <UML:Class xmi.id="KFohc4zffk2q" name="TestCaseConfig" visibility="public" isAbstract="false"/>
+
+            <!-- McastReceiver Class -->
+            <UML:Class xmi.id="sjSCO9d0tKx1" name="McastReceiver" visibility="public" isAbstract="false"/>
+
+            <!-- McastSender Class -->
+            <UML:Class xmi.id="R1rSfBiTqKVp" name="McastSender" visibility="public" isAbstract="false"/>
+
+            <!-- Protocol Class -->
+            <UML:Class xmi.id="x8axxwypdQ0z" name="Protocol" visibility="public" isAbstract="false">
+              <UML:Dependency>
+                <UML:Client xmi.idref="x8axxwypdQ0z"/>
+                <UML:Supplier xmi.idref="3cnNDe04MRKh"/>
+              </UML:Dependency>
+            </UML:Class>
+
+            <!-- Tags Class -->
+            <UML:Class xmi.id="ad0TxxSPzKrc" name="Tags" visibility="public" isAbstract="false"/>
+
+            <!-- TCPReceiver Class -->
+            <UML:Class xmi.id="TX3IpW5mddka" name="TCPReceiver" visibility="public" isAbstract="false"/>
+
+            <!-- TCPSender Class -->
+            <UML:Class xmi.id="YgNB7N9fz96w" name="TCPSender" visibility="public" isAbstract="false"/>
+
+            <!-- ArcaDirectMsg Class -->
+            <UML:Class xmi.id="Ahe3YslnAywH" name="ArcaDirectMsg" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child xmi.idref="Ahe3YslnAywH"/>
+                <UML:Generalization.parent xmi.idref="trTC4GdgssAu"/>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- ArcaBookMsg Class -->
+            <UML:Class xmi.id="CKw6sL1sJ49E" name="ArcaBookMsg" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child xmi.idref="CKw6sL1sJ49E"/>
+                <UML:Generalization.parent xmi.idref="trTC4GdgssAu"/>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- ScriptEvent Class -->
+            <UML:Class xmi.id="AsugjdUtbQ8s" name="ScriptEvent" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child xmi.idref="AsugjdUtbQ8s"/>
+                <UML:Generalization.parent xmi.idref="I9z2FKNR9ltX"/>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- MessageEvent Class -->
+            <UML:Class xmi.id="N4bOwvQ49uJq" name="MessageEvent" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.child xmi.idref="N4bOwvQ49uJq"/>
+                <UML:Generalization.parent xmi.idref="I9z2FKNR9ltX"/>
+              </UML:Generalization>
+            </UML:Class>
+
+            <!-- ReportModule Class -->
+            <UML:Class xmi.id="GRNoqemomU7Z" name="ReportModule" visibility="public" isAbstract="false"/>
+
+            <!-- Sender Class -->
+            <UML:Class xmi.id="yPiUtdmXfDkh" name="Sender" visibility="public" isAbstract="false"/>
+
+            <!-- Receiver Class -->
+            <UML:Class xmi.id="HJbUfmVNMMo8" name="Receiver" visibility="public" isAbstract="false"/>
+
+            <!-- SenderAndReceiver Class -->
+            <UML:Class xmi.id="N2KrPLqp4Igf" name="SenderAndReceiver" visibility="public" isAbstract="false"/>
+
+            <!-- FactoryMethod Class -->
+            <UML:Class xmi.id="8VO2Olc6QVwd" name="FactoryMethod" visibility="public" isAbstract="false"/>
+
+            <!-- Project Class -->
+            <UML:Class xmi.id="JZ11xhhbE1vj" name="Project" visibility="public" isAbstract="false"/>
+
+            <!-- User Class -->
+            <UML:Class xmi.id="pvR7xuc0VZCk" name="User" visibility="public" isAbstract="false"/>
+
+            <!-- MessageInfo Class -->
+            <UML:Class xmi.id="rZBP8vkP2TtH" name="MessageInfo" visibility="public" isAbstract="false"/>
+
+            <!-- LoadedTags Class -->
+            <UML:Class xmi.id="D8GRIXoEnpDZ" name="LoadedTags" visibility="public" isAbstract="false">
+              <UML:Attribute xmi.id="attr_LoadedTags_aggregation1" name="Tags" type="ad0TxxSPzKrc" aggregation="composite"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

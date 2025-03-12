@@ -1,0 +1,40 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:Collaboration xmi.id="collab_unattachedCollaboration" name="unattachedCollaboration">
+          <UML:Collaboration.interaction>
+            <UML:Interaction xmi.id="interaction_newInteraction" name="newInteraction">
+              <UML:Interaction.message>
+                <UML:Message xmi.id="message_incomingCall" name="incomingCall" sender="role_InCall" receiver="role_Phone"/>
+                <UML:Message xmi.id="message_acceptCall" name="acceptCall" sender="role_Phone" receiver="role_InCall"/>
+                <UML:Message xmi.id="message_setTime" name="setTime" sender="role_InCall" receiver="role_InCall"/>
+                <UML:Message xmi.id="message_setDate" name="setDate" sender="role_InCall" receiver="role_InCall"/>
+              </UML:Interaction.message>
+            </UML:Interaction>
+          </UML:Collaboration.interaction>
+          <UML:Collaboration.participatingClassifier>
+            <UML:ClassifierRole xmi.id="role_Phone" name="Phone" base="Phone" multiplicity="1..1"/>
+            <UML:ClassifierRole xmi.id="role_InCall" name="InCall" base="InCall" multiplicity="1..1"/>
+          </UML:Collaboration.participatingClassifier>
+          <UML:Collaboration.associationRole>
+            <UML:AssociationRole xmi.id="assocRole_Phone_InCall">
+              <UML:AssociationEndRole xmi.id="assocEndRole_Phone" type="role_Phone"/>
+              <UML:AssociationEndRole xmi.id="assocEndRole_InCall" type="role_InCall"/>
+            </UML:AssociationRole>
+          </UML:Collaboration.associationRole>
+        </UML:Collaboration>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

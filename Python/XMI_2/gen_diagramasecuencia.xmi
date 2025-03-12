@@ -1,0 +1,73 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Modelo_sin_Título" name="Modelo sin Título">
+      <UML:Namespace.ownedElement>
+
+        <UML:Collaboration xmi.id="unattachedCollaboration" name="Collaboration"/>
+        
+        <UML:ActivityGraph xmi.id="activityGraph_1" name="ActivityGraph"/>
+        
+        <UML:Class xmi.id="role_Director" name="Director" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="role_ArduBand" name="ArduBand" visibility="public" isAbstract="false"/>
+        <UML:Class xmi.id="role_Músico" name="Músico" visibility="public" isAbstract="false"/>
+
+        <UML:Association xmi.id="association_1" name="AssociationRole">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_director_arduband" type="role_Director" name="director" visibility="public" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="assocEnd_arduband_director" type="role_ArduBand" name="arduband" visibility="public" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Message xmi.id="message_encender" name="encender()">
+          <UML:Message.sender>
+            <UML:ClassifierRole xmi.idref="role_Director"/>
+          </UML:Message.sender>
+          <UML:Message.receiver>
+            <UML:ClassifierRole xmi.idref="role_ArduBand"/>
+          </UML:Message.receiver>
+        </UML:Message>
+
+        <UML:Message xmi.id="message_sistemaEncendido" name="sistemaEncendido">
+          <UML:Message.sender>
+            <UML:ClassifierRole xmi.idref="role_ArduBand"/>
+          </UML:Message.sender>
+          <UML:Message.receiver>
+            <UML:ClassifierRole xmi.idref="role_Director"/>
+          </UML:Message.receiver>
+        </UML:Message>
+
+        <UML:Message xmi.id="message_insertarTempo" name="insertarTempo()">
+          <UML:Message.sender>
+            <UML:ClassifierRole xmi.idref="role_Director"/>
+          </UML:Message.sender>
+          <UML:Message.receiver>
+            <UML:ClassifierRole xmi.idref="role_ArduBand"/>
+          </UML:Message.receiver>
+        </UML:Message>
+
+        <UML:ActionState xmi.id="action_encender" name="Encender">
+          <UML:Action>
+            <UML:CallAction name="call_encender"/>
+          </UML:Action>
+        </UML:ActionState>
+
+        <UML:ActionState xmi.id="action_destroy" name="Destroy">
+          <UML:Action>
+            <UML:DestroyAction name="destroy"/>
+          </UML:Action>
+        </UML:ActionState>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

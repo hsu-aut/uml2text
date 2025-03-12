@@ -1,0 +1,359 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_BTree" name="BTreeModel">
+      <UML:Namespace.ownedElement>
+
+        <!-- BTree Class Definition -->
+        <UML:Class xmi.id="class_BTree" name="BTree" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_height" name="height" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_insert" name="insert" visibility="public">
+              <UML:Parameter name="v" kind="in">
+                <UML:DataType name="Value"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_erase" name="erase" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_find" name="find" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_lower_bound" name="lower_bound" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Node Class Definition -->
+        <UML:Class xmi.id="class_Node" name="Node" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_me" name="me" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_size" name="size" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_node_find" name="find" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+              <UML:Parameter name="h" kind="in">
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_node_lower_bound" name="lower_bound" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+              <UML:Parameter name="h" kind="in">
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_node_insert" name="insert" visibility="public">
+              <UML:Parameter name="v" kind="in">
+                <UML:DataType name="Value"/>
+              </UML:Parameter>
+              <UML:Parameter name="h" kind="in">
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:Parameter>
+              <UML:Parameter name="s" kind="in">
+                <UML:DataType name="Splitter"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_node_erase" name="erase" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+              <UML:Parameter name="h" kind="in">
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Leaf Class Definition -->
+        <UML:Class xmi.id="class_Leaf" name="Leaf" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_leaf_me" name="me" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pred" name="pred" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_succ" name="succ" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_leaf_size" name="size" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_leaf_find" name="find" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_increment" name="increment" visibility="public">
+              <UML:Parameter name="i" kind="in">
+                <UML:DataType name="Iterator"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_decrement" name="decrement" visibility="public">
+              <UML:Parameter name="i" kind="in">
+                <UML:DataType name="Iterator"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_leaf_lower_bound" name="lower_bound" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_leaf_insert" name="insert" visibility="public">
+              <UML:Parameter name="v" kind="in">
+                <UML:DataType name="Value"/>
+              </UML:Parameter>
+              <UML:Parameter name="s" kind="in">
+                <UML:DataType name="Splitter"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_leaf_erase" name="erase" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- RootNode Class Definition -->
+        <UML:Class xmi.id="class_RootNode" name="RootNode" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_root_insert" name="insert" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+              <UML:Parameter name="b" kind="in">
+                <UML:DataType name="BID"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_root_erase" name="erase" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_root_find" name="find" visibility="public">
+              <UML:Parameter name="k" kind="in">
+                <UML:DataType name="Key"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- NodeCache Class Definition -->
+        <UML:Class xmi.id="class_NodeCache" name="NodeCache" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_nodes" name="nodes" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="Array"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_BID2int" name="BID2int" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="Map"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_pager" name="pager" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="Pager"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_freeNodes" name="freeNodes" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="List"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Operation xmi.id="op_getNode" name="getNode" visibility="public">
+              <UML:Parameter name="b" kind="in">
+                <UML:DataType name="BID"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getNewNode" name="getNewNode" visibility="public">
+              <UML:Parameter name="l" kind="in">
+                <UML:DataType name="Leaf"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_deleteLeaf" name="deleteLeaf" visibility="public">
+              <UML:Parameter name="b" kind="in">
+                <UML:DataType name="BID"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_fixNode" name="fixNode" visibility="public">
+              <UML:Parameter name="b" kind="in">
+                <UML:DataType name="BID"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_unfixNode" name="unfixNode" visibility="public">
+              <UML:Parameter name="b" kind="in">
+                <UML:DataType name="BID"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- LeafCache Class Definition -->
+        <UML:Class xmi.id="class_LeafCache" name="LeafCache" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_getLeaf" name="getLeaf" visibility="public">
+              <UML:Parameter name="l" kind="in">
+                <UML:DataType name="Leaf"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_prefetch" name="prefetch" visibility="public">
+              <UML:Parameter name="b" kind="in">
+                <UML:DataType name="BID"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_getNewLeaf" name="getNewLeaf" visibility="public">
+              <UML:Parameter name="l" kind="in">
+                <UML:DataType name="Leaf"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_deleteLeaf" name="deleteLeaf" visibility="public">
+              <UML:Parameter name="b" kind="in">
+                <UML:DataType name="BID"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- IteratorMap Class Definition -->
+        <UML:Class xmi.id="class_IteratorMap" name="IteratorMap" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Operation xmi.id="op_register" name="register" visibility="public">
+              <UML:Parameter name="i" kind="in">
+                <UML:DataType name="Iterator"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_unregister" name="unregister" visibility="public">
+              <UML:Parameter name="i" kind="in">
+                <UML:DataType name="Iterator"/>
+              </UML:Parameter>
+            </UML:Operation>
+            <UML:Operation xmi.id="op_find" name="find" visibility="public">
+              <UML:Parameter name="b" kind="in">
+                <UML:DataType name="BID"/>
+              </UML:Parameter>
+              <UML:Parameter name="pos" kind="in">
+                <UML:DataType xmi.idref="Integer"/>
+              </UML:Parameter>
+            </UML:Operation>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Iterator Class Definition -->
+        <UML:Class xmi.id="class_Iterator" name="Iterator" visibility="public" isAbstract="false">
+          <!-- Stereotype is implied by the constructor role of this class -->
+        </UML:Class>
+
+        <!-- Splitter Class Definition -->
+        <UML:Class xmi.id="class_Splitter" name="Splitter" visibility="public" isAbstract="false">
+          <UML:Namespace.ownedElement>
+            <UML:Attribute xmi.id="attr_k" name="k" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="Key"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+            <UML:Attribute xmi.id="attr_b" name="b" visibility="private">
+              <UML:StructuralFeature.type>
+                <UML:DataType name="BID"/>
+              </UML:StructuralFeature.type>
+            </UML:Attribute>
+          </UML:Namespace.ownedElement>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="agg_BTree_RootNode" name="btree-rootnode">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_BTree" type="class_BTree" name="btree" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end_RootNode" type="class_RootNode" name="rootNode" aggregation="none" multiplicity="1"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_BTree_Node" name="btree-node">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_BTreeNode" type="class_BTree" name="btree" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end_Node" type="class_Node" name="node" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_Node_Leaf" name="node-leaf">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_NodeLeaf" type="class_Node" name="node" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end_Leaf" type="class_Leaf" name="leaf" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="agg_NodeCache_Node" name="nodecache-node">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_NodeCache" type="class_NodeCache" name="nodeCache" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end_CachedNode" type="class_Node" name="cachedNode" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="agg_LeafCache_Leaf" name="leafcache-leaf">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_LeafCache" type="class_LeafCache" name="leafCache" aggregation="composite" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end_CachedLeaf" type="class_Leaf" name="cachedLeaf" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+        
+        <UML:Association xmi.id="assoc_IteratorMap_Iterator" name="iteratormap-iterator">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="end_IteratorMap" type="class_IteratorMap" name="iteratorMap" aggregation="none" multiplicity="1"/>
+            <UML:AssociationEnd xmi.id="end_Iterator" type="class_Iterator" name="iterator" aggregation="none" multiplicity="*"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <!-- DataType Definitions -->
+        <UML:DataType xmi.id="Integer" name="Integer"/>
+        <UML:DataType xmi.id="Value" name="Value"/>
+        <UML:DataType xmi.id="Key" name="Key"/>
+        <UML:DataType xmi.id="BID" name="BID"/>
+        <UML:DataType xmi.id="Array" name="Array"/>
+        <UML:DataType xmi.id="Map" name="Map"/>
+        <UML:DataType xmi.id="Pager" name="Pager"/>
+        <UML:DataType xmi.id="List" name="List"/>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+      
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_interface" name="interface"/>
+        
+        <UML:Package xmi.id="logical_view_1" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes -->
+            <!-- At this stage, define various datatype placeholders -->
+            
+            <!-- UI Class -->
+            <UML:Class xmi.id="class_UI" name="UI" visibility="public" isAbstract="true">
+              <UML:Classifier.feature>
+                <!-- Features of UI class -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            <UML:Class xmi.id="class_CommandLineUI" name="CommandLineUI" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_CommandLineUI_UI" parent="class_UI"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_GtkUI" name="GtkUI" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_GtkUI_UI" parent="class_UI"/>
+            </UML:Class>
+
+            <!-- Configuration Class -->
+            <UML:Class xmi.id="class_Configuration" name="Configuration" visibility="public" isAbstract="false">
+              <UML:Classifier.feature>
+                <!-- Features of Configuration -->
+              </UML:Classifier.feature>
+            </UML:Class>
+            
+            <!-- Mailing List Related Classes -->
+            <UML:Class xmi.id="class_MailingList" name="MailingList" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Subscribers" name="Subscribers" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Subscriber" name="Subscriber" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Message" name="Message" visibility="public" isAbstract="false"/>
+
+            <!-- Date Specialty Classes -->
+            <UML:Class xmi.id="class_Date" name="Date" visibility="public" isAbstract="true">
+            </UML:Class>
+            <UML:Class xmi.id="class_MailDate" name="MailDate" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_MailDate_Date" parent="class_Date"/>
+            </UML:Class>
+            <UML:Class xmi.id="class_FileDate" name="FileDate" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_FileDate_Date" parent="class_Date"/>
+            </UML:Class>
+
+            <!-- Other Classes -->
+            <UML:Class xmi.id="class_SWAML" name="SWAML" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Mbox" name="Mbox" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Index" name="Index" visibility="public" isAbstract="false"/>
+            <UML:Class xmi.id="class_Buxon" name="Buxon" visibility="public" isAbstract="false">
+              <UML:Generalization xmi.id="gen_Buxon_CommandLineUI" parent="class_CommandLineUI"/>
+              <UML:Generalization xmi.id="gen_Buxon_GtkUI" parent="class_GtkUI"/>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="use_case_view_3" name="Use Case View">
+          <UML:Namespace.ownedElement>
+            <!-- Use Cases -->
+            <UML:UseCase xmi.id="use_case_publicar" name="publicar"/>
+            <UML:UseCase xmi.id="use_case_enriquecer" name="enriquecer"/>
+            <UML:UseCase xmi.id="use_case_consultar" name="consultar"/>
+
+            <!-- Actors -->
+            <UML:Actor xmi.id="actor_Usuario" name="Usuario"/>
+            <UML:Actor xmi.id="actor_Administrador" name="Administrador"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="component_view_4" name="Component View">
+          <UML:Namespace.ownedElement>
+            <!-- Components -->
+            <UML:Component xmi.id="component_SWAML" name="SWAML"/>
+            <UML:Component xmi.id="component_Buxon" name="Buxon"/>
+            <UML:Component xmi.id="component_FOAF_Enricher" name="FOAF Enricher"/>
+            <UML:Component xmi.id="component_KML_Exporter" name="KML Exporter"/>
+            <UML:Component xmi.id="component_configWizard" name="configWizard"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="deployment_view_5" name="Deployment View">
+          <UML:Namespace.ownedElement>
+            <!-- Nodes -->
+            <UML:Node xmi.id="node_HTTP_Server" name="HTTP Server"/>
+            <UML:Node xmi.id="node_RDF" name="RDF"/>
+            <UML:Node xmi.id="node_Config_File" name="Config File"/>
+            <UML:Node xmi.id="node_KML_File" name="KML File"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

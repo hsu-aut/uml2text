@@ -1,0 +1,47 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_untitledModel" name="untitledModel">
+      <UML:Namespace.ownedElement>
+        <UML:StateMachine xmi.id="stateMachine_SimpleStateMachine" name="Simple State Machine">
+          <UML:StateMachine.top>
+            <UML:CompositeState xmi.id="compositeState_top" name="top">
+              <UML:CompositeState.substate>
+                <UML:SimpleState xmi.id="state_Init" name="Init"/>
+                <UML:SimpleState xmi.id="state_Process" name="Process"/>
+                <UML:SimpleState xmi.id="state_Finish" name="Finish"/>
+              </UML:CompositeState.substate>
+              <UML:CompositeState.internalTransition>
+                <UML:Transition xmi.id="transition_start" name="start">
+                  <UML:Transition.source>
+                    <UML:State xmi.idref="state_Init"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:State xmi.idref="state_Process"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+                <UML:Transition xmi.id="transition_endProcess" name="end process">
+                  <UML:Transition.source>
+                    <UML:State xmi.idref="state_Process"/>
+                  </UML:Transition.source>
+                  <UML:Transition.target>
+                    <UML:State xmi.idref="state_Finish"/>
+                  </UML:Transition.target>
+                </UML:Transition>
+              </UML:CompositeState.internalTransition>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

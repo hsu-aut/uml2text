@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_Data" name="Data">
+      <UML:Namespace.ownedElement>
+        
+        <!-- Definition der Datentyp-Klassen -->
+        <UML:DataType xmi.id="datatype_String" name="String"/>
+        <UML:DataType xmi.id="datatype_Integer" name="Integer"/>
+        <UML:DataType xmi.id="datatype_DateTime" name="DateTime"/>
+        <UML:DataType xmi.id="datatype_boolean" name="boolean"/>
+        <UML:DataType xmi.id="datatype_Object" name="Object"/>
+        <UML:DataType xmi.id="datatype_URI" name="URI"/>
+
+        <!-- Definition der Generalisierungen -->
+        <UML:Class xmi.id="class_int" name="int" visibility="public" isAbstract="false"/>
+        <UML:Generalization xmi.id="gen_Integer_int" parent="class_int" child="datatype_Integer"/>
+
+        <UML:Class xmi.id="class_DateTimeExtension" name="DateTimeExtension" visibility="public" isAbstract="false"/>
+        <UML:Generalization xmi.id="gen_DateTime_DateTimeExtension" parent="datatype_DateTime" child="class_DateTimeExtension"/>
+
+        <!-- Definition von Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_WebService" name="WebService"/>
+        <UML:Stereotype xmi.id="stereotype_Service" name="Service"/>
+        <UML:Stereotype xmi.id="stereotype_UserTransaction" name="UserTransaction"/>
+        <UML:Stereotype xmi.id="stereotype_Interceptor" name="Interceptor"/>
+
+        <!-- Tag definitions for Stereotypes -->
+        <UML:TaggedValue xmi.id="tag_andromda_ejb_transaction_type" tag="andromda_ejb_transaction_type"/>
+        
+        <!-- Definition von Präsentations- und Web-Stereotypen -->
+        <UML:Stereotype xmi.id="stereotype_FrontEndApplication" name="FrontEndApplication"/>
+        <UML:Stereotype xmi.id="stereotype_FrontEndUseCase" name="FrontEndUseCase"/>
+        <UML:Stereotype xmi.id="stereotype_FrontEndView" name="FrontEndView"/>
+        
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>

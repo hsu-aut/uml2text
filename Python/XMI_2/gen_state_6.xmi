@@ -1,0 +1,255 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_ContentFlow" name="ContentFlow">
+      <UML:Namespace.ownedElement>
+
+        <!-- Hauptprozessklasse ContentFlow -->
+        <UML:Class xmi.id="class_ContentFlow" name="ContentFlow" visibility="public" isAbstract="false"/>
+        
+        <!-- Definition der StateMachine Flows -->
+        <UML:StateMachine xmi.id="flow_main" name="main-flow">
+          <UML:StateMachine.top>
+            <UML:CompositeState>
+              <UML:Subvertex>
+
+                <!-- Pseudostate start -->
+                <UML:Pseudostate xmi.id="state_start" kind="initial"/>
+                
+                <!-- SimpleState login -->
+                <UML:SimpleState xmi.id="state_login" name="login">
+                  <UML:ModelElement.stereotype>
+                    <UML:Stereotype name="view state"/>
+                  </UML:ModelElement.stereotype>
+                </UML:SimpleState>
+                
+                <!-- SimpleState menu -->
+                <UML:SimpleState xmi.id="state_menu" name="menu"/>
+                
+                <!-- Submachine state document -->
+                <UML:SubmachineState xmi.id="state_document" name="document">
+                  <UML:StateMachine.submachine>
+                    <UML:StateMachine xmi.idref="flow_document"/>
+                  </UML:StateMachine.submachine>
+                </UML:SubmachineState>
+                
+                <!-- Submachine state documentspec -->
+                <UML:SubmachineState xmi.id="state_documentspec" name="documentspec">
+                  <UML:StateMachine.submachine>
+                    <UML:StateMachine xmi.idref="flow_documentspec"/>
+                  </UML:StateMachine.submachine>
+                </UML:SubmachineState>
+                
+                <!-- SimpleState logout -->
+                <UML:SimpleState xmi.id="state_logout" name="logout">
+                  <UML:ModelElement.stereotype>
+                    <UML:Stereotype name="action state"/>
+                  </UML:ModelElement.stereotype>
+                </UML:SimpleState>
+                
+                <!-- FinalState end -->
+                <UML:FinalState xmi.id="state_end" name="end"/>
+
+              </UML:Subvertex>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:Pseudostate xmi.idref="state_start"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SimpleState xmi.idref="state_login"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_initial"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_login"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SimpleState xmi.idref="state_menu"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_success" name="success"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_menu"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SubmachineState xmi.idref="state_document"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_manageDocuments" name="manageDocuments"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SubmachineState xmi.idref="state_document"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SimpleState xmi.idref="state_menu"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_finish" name="finish"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_menu"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SubmachineState xmi.idref="state_documentspec"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_manageDocumentSpecs" name="manageDocumentSpecs"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SubmachineState xmi.idref="state_documentspec"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SimpleState xmi.idref="state_menu"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_finish_documentspec" name="finish"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_menu"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SimpleState xmi.idref="state_logout"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_logout" name="logout"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_logout"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:FinalState xmi.idref="state_end"/>
+                </UML:Transition.target>
+              </UML:Transition>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+
+        <!-- Definition der StateMachine für document-flow -->
+        <UML:StateMachine xmi.id="flow_document" name="document-flow">
+          <UML:StateMachine.top>
+            <UML:CompositeState>
+              <UML:Subvertex>
+                <UML:SimpleState xmi.id="state_showDocumentList" name="showDocumentList"/>
+                <UML:SimpleState xmi.id="state_showDocument" name="showDocument">
+                  <UML:ModelElement.stereotype>
+                    <UML:Stereotype name="view state"/>
+                  </UML:ModelElement.stereotype>
+                </UML:SimpleState>
+                <UML:SimpleState xmi.id="state_editDocument" name="editDocument">
+                  <UML:ModelElement.stereotype>
+                    <UML:Stereotype name="action state"/>
+                  </UML:ModelElement.stereotype>
+                </UML:SimpleState>
+              </UML:Subvertex>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_showDocumentList"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SimpleState xmi.idref="state_showDocument"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_showDocument" name="showDocument">
+                    <UML:Parameter name="documentId" type="String"/>
+                  </UML:Event>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_showDocument"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:SimpleState xmi.idref="state_editDocument"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_editDocument" name="editDocument"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_editDocument"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:CompositeState xmi.idref="state_end"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_finish_edit" name="finish"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+
+        <!-- Definition der StateMachine für documentspec-flow -->
+        <UML:StateMachine xmi.id="flow_documentspec" name="documentspec-flow">
+          <UML:StateMachine.top>
+            <UML:CompositeState>
+              <UML:Subvertex>
+                <UML:SimpleState xmi.id="state_showDocumentSpecs" name="showDocumentSpecs"/>
+                <UML:FinalState xmi.id="state_finish" name="finish"/>
+              </UML:Subvertex>
+              <UML:Transition>
+                <UML:Transition.source>
+                  <UML:SimpleState xmi.idref="state_showDocumentSpecs"/>
+                </UML:Transition.source>
+                <UML:Transition.target>
+                  <UML:FinalState xmi.idref="state_finish"/>
+                </UML:Transition.target>
+                <UML:Transition.trigger>
+                  <UML:Event xmi.id="event_finish_spec" name="finish"/>
+                </UML:Transition.trigger>
+              </UML:Transition>
+            </UML:CompositeState>
+          </UML:StateMachine.top>
+        </UML:StateMachine>
+
+        <!-- Java Packages und Datenstrukturen -->
+        <UML:Package xmi.id="pkg_java_lang" name="java.lang">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Integer" name="Integer"/>
+            <UML:Class xmi.id="class_Long" name="Long"/>
+            <UML:Class xmi.id="class_Object" name="Object"/>
+            <UML:Class xmi.id="class_Short" name="Short"/>
+            <UML:Class xmi.id="class_String" name="String"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+        <UML:Package xmi.id="pkg_java_util" name="java.util">
+          <UML:Namespace.ownedElement>
+            <UML:Class xmi.id="class_Iterator" name="Iterator"/>
+            <UML:Class xmi.id="class_List" name="List"/>
+            <UML:Class xmi.id="class_Set" name="Set"/>
+            <UML:Class xmi.id="class_SortedSet" name="SortedSet"/>
+            <UML:Class xmi.id="class_Time" name="Time"/>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,149 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_m1" name="m1">
+      <UML:Namespace.ownedElement>
+        <!-- Logical View -->
+        <UML:Package xmi.id="package_LogView" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="datatype_unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_TH1Ptr" name="TH1*"/>
+                <UML:DataType xmi.id="datatype_TBranchPtr" name="TBranch*"/>
+                <UML:DataType xmi.id="datatype_vectorLV" name="vector&lt;LV>"/>
+                <UML:DataType xmi.id="datatype_branchTypePtr" name="branchType*"/>
+                <UML:DataType xmi.id="datatype_PUReweighterPtr" name="PUReweighter*"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- TSelector Class -->
+            <UML:Class xmi.id="class_TSelector" name="TSelector" visibility="public">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_fOutput" name="fOutput" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="datatype_TList"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_Begin" name="Begin" visibility="public"/>
+                <UML:Operation xmi.id="op_SlaveBegin" name="SlaveBegin" visibility="public">
+                  <UML:Parameter xmi.id="param_dummy" name="dummy" kind="in" type="TTree*"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_Process" name="Process" visibility="public">
+                  <UML:Parameter xmi.id="param_entry" name="entry" kind="in" type="Long64_t"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_SlaveTerminate" name="SlaveTerminate" visibility="public"/>
+                <UML:Operation xmi.id="op_Terminate" name="Terminate" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- AnalysisBase Class -->
+            <UML:Class xmi.id="class_AnalysisBase" name="AnalysisBase" visibility="public" isAbstract="true">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_TSelector"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_b_branchWhatever" name="b_branchWhatever" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_TBranchPtr"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_the_branch_" name="the_branch_" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_branchTypePtr"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_pureweighter_" name="pureweighter_" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_PUReweighterPtr"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_Begin_AB" name="Begin" visibility="public"/>
+                <UML:Operation xmi.id="op_ScaleFactorPreparation" name="ScaleFactorPreparation" visibility="public"/>
+                <UML:Operation xmi.id="op_ScaleFactorCalculation" name="ScaleFactorCalculation" visibility="public"/>
+                <UML:Operation xmi.id="op_SetAnalysisOptions" name="SetAnalysisOptions" visibility="public"/>
+                <UML:Operation xmi.id="op_GetRecoBranches" name="GetRecoBranches" visibility="public">
+                  <UML:Parameter xmi.id="param_entry_AB" name="entry" kind="in" type="Long64_t"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_GetSignalBranches" name="GetSignalBranches" visibility="public"/>
+                <UML:Operation xmi.id="op_GetHiggsSignalBranches" name="GetHiggsSignalBranches" visibility="public"/>
+                <UML:Operation xmi.id="op_SlaveTerminate_AB" name="SlaveTerminate" visibility="public"/>
+                <UML:Operation xmi.id="op_Terminate_AB" name="Terminate" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- TopAnalysis Class -->
+            <UML:Class xmi.id="class_TopAnalysis" name="TopAnalysis" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_AnalysisBase"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_h_histogram" name="h_histogram" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_TH1Ptr"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_SlaveBegin_TA" name="SlaveBegin" visibility="public">
+                  <UML:Parameter xmi.id="param_dummy_TA" name="dummy" kind="in" type="TTree*"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_Process_TA" name="Process" visibility="public">
+                  <UML:Parameter xmi.id="param_entry_TA" name="entry" kind="in" type="Long64_t"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_SlaveTerminate_TA" name="SlaveTerminate" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+            <!-- HiggsAnalysis Class -->
+            <UML:Class xmi.id="class_HiggsAnalysis" name="HiggsAnalysis" visibility="public">
+              <UML:Generalization>
+                <UML:Generalization.parent>
+                  <UML:Class xmi.idref="class_AnalysisBase"/>
+                </UML:Generalization.parent>
+              </UML:Generalization>
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_h_higgsHisto" name="h_higgsHisto" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="datatype_TH1Ptr"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_SlaveBegin_HA" name="SlaveBegin" visibility="public">
+                  <UML:Parameter xmi.id="param_dummy_HA" name="dummy" kind="in" type="TTree*"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_Process_HA" name="Process" visibility="public">
+                  <UML:Parameter xmi.id="param_entry_HA" name="entry" kind="in" type="Long64_t"/>
+                </UML:Operation>
+                <UML:Operation xmi.id="op_SlaveTerminate_HA" name="SlaveTerminate" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

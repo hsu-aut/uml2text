@@ -1,0 +1,107 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="m1" name="UML Model">
+      <UML:Namespace.ownedElement>
+        <UML:Package xmi.id="logicalView" name="Logical View">
+          <UML:Namespace.ownedElement>
+            <UML:Package xmi.id="datatypesPackage" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="int" name="int"/>
+                <UML:DataType xmi.id="char" name="char"/>
+                <UML:DataType xmi.id="bool" name="bool"/>
+                <UML:DataType xmi.id="float" name="float"/>
+                <UML:DataType xmi.id="double" name="double"/>
+                <UML:DataType xmi.id="short" name="short"/>
+                <UML:DataType xmi.id="long" name="long"/>
+                <UML:DataType xmi.id="unsignedInt" name="unsigned int"/>
+                <UML:DataType xmi.id="unsignedShort" name="unsigned short"/>
+                <UML:DataType xmi.id="unsignedLong" name="unsigned long"/>
+                <UML:DataType xmi.id="string" name="string"/>
+                <UML:DataType xmi.id="arrayFunc" name="Array[][3] of functions">
+                  <UML:DataType.type>
+                    <UML:Class xmi.idref="class_Array"/>
+                  </UML:DataType.type>
+                </UML:DataType>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+            <UML:Class xmi.id="class_Automata" name="Automata" visibility="public" isAbstract="false">
+              <UML:Namespace.ownedElement>
+                <UML:Attribute xmi.id="attr_state" name="state" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="enumState"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_stateChange" name="stateChange" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="enumStateChange"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_currentState" name="currentState" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:Class xmi.idref="enumCurrentState"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Attribute xmi.id="attr_solicitor" name="solicitor" visibility="private">
+                  <UML:StructuralFeature.type>
+                    <UML:DataType xmi.idref="arrayFunc"/>
+                  </UML:StructuralFeature.type>
+                </UML:Attribute>
+                <UML:Operation xmi.id="op_run" name="run" visibility="public"/>
+              </UML:Namespace.ownedElement>
+            </UML:Class>
+            <UML:Class xmi.id="class_Array" name="Array" visibility="public" isAbstract="false"/>
+            <UML:Enumeration xmi.id="enumState" name="state">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_none" name="none"/>
+                <UML:EnumerationLiteral xmi.id="literal_walking" name="walking"/>
+                <UML:EnumerationLiteral xmi.id="literal_running" name="running"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            <UML:Enumeration xmi.id="enumStateChange" name="stateChange">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_up" name="up"/>
+                <UML:EnumerationLiteral xmi.id="literal_steady" name="steady"/>
+                <UML:EnumerationLiteral xmi.id="literal_down" name="down"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            <UML:Enumeration xmi.id="enumCurrentState" name="currentState">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_previous" name="previous"/>
+                <UML:EnumerationLiteral xmi.id="literal_current" name="current"/>
+                <UML:EnumerationLiteral xmi.id="literal_requested" name="requested"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+            <UML:Association xmi.id="assoc_Automata_state">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_state_automata" type="class_Automata" aggregation="aggregate" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_state_state" type="enumState" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Automata_stateChange">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_stateChange_automata" type="class_Automata" aggregation="aggregate" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_stateChange_stateChange" type="enumStateChange" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+            <UML:Association xmi.id="assoc_Automata_currentState">
+              <UML:Association.connection>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_currentState_automata" type="class_Automata" aggregation="aggregate" multiplicity="1"/>
+                <UML:AssociationEnd xmi.id="assocEnd_Automata_currentState_currentState" type="enumCurrentState" aggregation="none" multiplicity="1"/>
+              </UML:Association.connection>
+            </UML:Association>
+          </UML:Namespace.ownedElement>
+        </UML:Package>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

@@ -1,0 +1,162 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>ArgoUML</XMI.exporter>
+      <XMI.exporterVersion>0.34</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UMLModel" name="UML Model">
+      <UML:Namespace.ownedElement>
+
+        <!-- Stereotype Definitions -->
+        <UML:Stereotype xmi.id="stereotype_folder" name="folder"/>
+        <UML:Stereotype xmi.id="stereotype_datatype" name="datatype"/>
+        <UML:Stereotype xmi.id="stereotype_enum" name="enum"/>
+
+        <!-- Logical View -->
+        <UML:Model xmi.id="logical_view" name="Logical View">
+          <UML:Namespace.ownedElement>
+
+            <!-- Datatypes Package -->
+            <UML:Package xmi.id="package_Datatypes" name="Datatypes">
+              <UML:Namespace.ownedElement>
+                <UML:DataType xmi.id="datatype_int" name="int"/>
+                <UML:DataType xmi.id="datatype_char" name="char"/>
+                <UML:DataType xmi.id="datatype_bool" name="bool"/>
+                <UML:DataType xmi.id="datatype_float" name="float"/>
+                <UML:DataType xmi.id="datatype_double" name="double"/>
+                <UML:DataType xmi.id="datatype_short" name="short"/>
+                <UML:DataType xmi.id="datatype_long" name="long"/>
+                <UML:DataType xmi.id="datatype_unsigned_int" name="unsigned int"/>
+                <UML:DataType xmi.id="datatype_unsigned_long" name="unsigned long"/>
+                <UML:DataType xmi.id="datatype_string" name="string"/>
+                <UML:DataType xmi.id="datatype_Map" name="Map<string, string>"/>
+              </UML:Namespace.ownedElement>
+            </UML:Package>
+
+            <!-- xPLMessage Class -->
+            <UML:Class xmi.id="class_xPLMessage" name="xPLMessage" visibility="public">
+              <UML:Attribute xmi.id="attr_body" name="body" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_Map"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_hop" name="hop" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_source" name="source" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_target" name="target" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_identifier" name="identifier" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Enumeration xmi.idref="enum_Identifier"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_messageSchemeIdentifier" name="messageSchemeIdentifier" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <!-- Methods -->
+              <UML:Operation xmi.id="op_xPLMessage_init" name="xPLMessage" visibility="public"/>
+              <UML:Operation xmi.id="op_addBodyItem" name="addBodyItem" visibility="public"/>
+              <UML:Operation xmi.id="op_addHeadItem" name="addHeadItem" visibility="public"/>
+            </UML:Class>
+
+            <!-- Identifier Enumeration -->
+            <UML:Enumeration xmi.id="enum_Identifier" name="Identifier" visibility="public">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_xpl-cmnd" name="xpl-cmnd"/>
+                <UML:EnumerationLiteral xmi.id="literal_xpl-stat" name="xpl-stat"/>
+                <UML:EnumerationLiteral xmi.id="literal_xpl-trig" name="xpl-trig"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+
+            <!-- xPLInstance Class -->
+            <UML:Class xmi.id="class_xPLInstance" name="xPLInstance" visibility="public">
+              <UML:Attribute xmi.id="attr_thisDevice" name="thisDevice" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_xPLDevice"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_devices" name="devices[]" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:Class xmi.idref="class_xPLDevice"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <!-- Methods -->
+              <UML:Operation xmi.id="op_bindDevices" name="bindDevices" visibility="public"/>
+              <UML:Operation xmi.id="op_sendMessage" name="sendMessage" visibility="public"/>
+            </UML:Class>
+
+            <!-- xPLDevice Class -->
+            <UML:Class xmi.id="class_xPLDevice" name="xPLDevice" visibility="public">
+              <UML:Attribute xmi.id="attr_vendor" name="vendor" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_device" name="device" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_instance" name="instance" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_address" name="address" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_string"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_heartbeatInterval" name="heartbeatInterval" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_port" name="port" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_int"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+              <UML:Attribute xmi.id="attr_lastHeartBeat" name="lastHeartBeat" visibility="private">
+                <UML:StructuralFeature.type>
+                  <UML:DataType xmi.idref="datatype_datetime"/>
+                </UML:StructuralFeature.type>
+              </UML:Attribute>
+            </UML:Class>
+
+            <!-- OperationMode Enumeration -->
+            <UML:Enumeration xmi.id="enum_OperationMode" name="OperationMode" visibility="public">
+              <UML:Enumeration.literal>
+                <UML:EnumerationLiteral xmi.id="literal_Client" name="Client"/>
+                <UML:EnumerationLiteral xmi.id="literal_Disconnected" name="Disconnected"/>
+                <UML:EnumerationLiteral xmi.id="literal_Hub" name="Hub"/>
+              </UML:Enumeration.literal>
+            </UML:Enumeration>
+
+            <!-- Datetime Class -->
+            <UML:Class xmi.id="class_datetime" name="datetime" visibility="public"/>
+            
+          </UML:Namespace.ownedElement>
+        </UML:Model>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```

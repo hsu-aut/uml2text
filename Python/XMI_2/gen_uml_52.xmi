@@ -1,0 +1,179 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML">
+  <XMI.header>
+    <XMI.documentation>
+      <XMI.exporter>CustomExporter</XMI.exporter>
+      <XMI.exporterVersion>1.0</XMI.exporterVersion>
+    </XMI.documentation>
+    <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="model_UML" name="UML">
+      <UML:Namespace.ownedElement>
+        <!-- Datatypes -->
+        <UML:Class xmi.id="class_Datatypes" name="Datatypes" visibility="public" isAbstract="false"/>
+        
+        <!-- Coordinates Class -->
+        <UML:Class xmi.id="class_coordinates" name="coordinates" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_x" name="x" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_y" name="y" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Character Class -->
+        <UML:Class xmi.id="class_character" name="character" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_coords" name="coords" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_coordinates"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_direction" name="direction" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_coordinates"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Operation xmi.id="op_moveStep" name="moveStep" visibility="public"/>
+          <UML:Operation xmi.id="op_changeDirection" name="changeDirection" visibility="public"/>
+          <UML:Operation xmi.id="op_show" name="show" visibility="public"/>
+          <UML:Operation xmi.id="op_loadData" name="loadData" visibility="public"/>
+          <UML:Operation xmi.id="op_concreteLoad" name="concreteLoad" visibility="public" isAbstract="true"/>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_non_animated"/>
+              <UML:Class xmi.idref="class_animated"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Animated Class -->
+        <UML:Class xmi.id="class_animated" name="animated" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_animation" name="animation" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_animation"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Operation xmi.id="op_concreteLoad" name="concreteLoad" visibility="public"/>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_player"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Non-Animated Class -->
+        <UML:Class xmi.id="class_non_animated" name="non_animated" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_concreteLoad" name="concreteLoad" visibility="public"/>
+          <UML:Generalization>
+            <UML:Generalization.parent>
+              <UML:Class xmi.idref="class_ghost"/>
+            </UML:Generalization.parent>
+          </UML:Generalization>
+        </UML:Class>
+
+        <!-- Player Class -->
+        <UML:Class xmi.id="class_player" name="player" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_lives" name="lives" visibility="public" initialValue="3">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_points" name="points" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_ate_pill" name="ate_pill" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Ghost Class -->
+        <UML:Class xmi.id="class_ghost" name="ghost" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_temporarly_dead" name="temporarly_dead" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_color" name="color" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_color"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Color Class -->
+        <UML:Class xmi.id="class_color" name="color" visibility="public" isAbstract="false">
+          <UML:Attribute xmi.id="attr_r" name="r" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_g" name="g" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_b" name="b" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+          <UML:Attribute xmi.id="attr_a" name="a" visibility="public">
+            <UML:StructuralFeature.type>
+              <UML:Class xmi.idref="class_Datatypes"/>
+            </UML:StructuralFeature.type>
+          </UML:Attribute>
+        </UML:Class>
+
+        <!-- Image Class -->
+        <UML:Class xmi.id="class_image" name="image" visibility="public" isAbstract="false"/>
+
+        <!-- Animation Class -->
+        <UML:Class xmi.id="class_animation" name="animation" visibility="public" isAbstract="false">
+          <UML:Operation xmi.id="op_animate" name="animate" visibility="public"/>
+        </UML:Class>
+
+        <!-- Associations -->
+        <UML:Association xmi.id="assoc_character_coordinates" name="character-coordinates">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_character" type="class_character" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_coordinates" type="class_coordinates"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_animated_animation" name="animated-animation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_animated" type="class_animated" aggregation="composite"/>
+            <UML:AssociationEnd xmi.id="assocEnd_animation" type="class_animation"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_image_animation" name="image-animation">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_image" type="class_image"/>
+            <UML:AssociationEnd xmi.id="assocEnd_mult_animation" type="class_animation"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+        <UML:Association xmi.id="assoc_image_non_animated" name="image-non_animated">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="assocEnd_image_non_anim" type="class_image"/>
+            <UML:AssociationEnd xmi.id="assocEnd_non_animated" type="class_non_animated"/>
+          </UML:Association.connection>
+        </UML:Association>
+
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+```
